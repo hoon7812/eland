@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery-ui.js"></script> <!-- D: 추가 -->
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.ui.touch-punch.min.js"></script>  <!-- D : 추가 -->
+</head>
+<body class="renewal2 sch_part cate_part emall_21"><!-- addClass:emall_21 -->
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER -->
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+<!-- //INC_HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<!-- TITLE -->
+	<div class="cts_tit_wrap"><!-- 2021-12-29 -->
+		<div class="cts_tit">
+			<h2>
+				<div class="ctg_sel">
+					<label for="ctg_sel" class="ir">카테고리 선택</label>
+					<select id="ctg_sel">
+						<option selected="selected">패션의류</option>
+						<option>냄비</option>
+						<option>후라이팬</option>
+						<option>유리컵</option>
+						<option>접시</option>
+						<option>그릇</option>
+					</select>
+				</div>
+				<button type="button" class="back"><em class="ir">이전페이지</em></button>
+			</h2>
+		</div>
+	</div>
+	<!-- //TITLE -->
+
+	<!-- SEARCH -->
+	<div class="search_wrap">
+
+		<!-- top_bn -->
+       <div class="main_bn_wrap new ctg" id="main_bn_wrap">
+			<div class="main_bn swiper-container" id="main_bn">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<a href="#"><img src="../images/mobile/temp/bn_720x407_0.jpg" alt="SI, 이사베이 외 코트/다운/니트까지 겨울 아이템 총 집합"></a>
+					</li>
+					<li class="swiper-slide">
+						<a href="#"><img src="../images/mobile/temp/bn_720x407_0.jpg" alt="SI, 이사베이 외 코트/다운/니트까지 겨울 아이템 총 집합"></a>
+					</li>
+					<li class="swiper-slide">
+						<a href="#"><img src="../images/mobile/temp/bn_720x407_0.jpg" alt="SI, 이사베이 외 코트/다운/니트까지 겨울 아이템 총 집합"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="main_bn_option">
+				<div class="pg_num"><b>0</b>/<em>0</em></div>					
+			</div>
+	   </div>
+	   <script type="text/javascript">
+			$(document).ready(function() {
+				var myTop_bn = new Swiper('#main_bn',{
+					createPagination: false,
+					simulateTouch: true,
+					calculateHeight: true,
+					loop: true,
+					autoplay: 3000,
+					onSlideChangeEnd : function() {
+						loop_active_index();
+						myTop_bn.startAutoplay();
+					}
+				});
+				 var slide_num = $('#main_bn_wrap').find('.swiper-slide').length;
+				 $('#main_bn_wrap').find('.pg_num em').text(slide_num - 2);
+				 loop_active_index();
+				function loop_active_index() {
+					$('#main_bn_wrap').find('.pg_num b').text(myTop_bn.activeLoopIndex+1);
+				}
+				$(window).resize(function(){	
+					myTop_bn.reInit();
+				});
+			});
+	   </script>
+		<!--// top_bn -->
+
+		<!-- time_sale -->
+		<div class="ctgBx time_sale">
+			<h3 class="ctg_m_tit">타임세일</h3>
+			<div class="g_time"><em>남은시간</em><strong id="g_time">00:00:00</strong></div>
+			<div class="g_wrap">
+				<a href="#" class="g_link">
+					<span class="g_img">
+						<img src="../images/mobile/temp/img_350x350_0.jpg" alt="" />
+					</span>
+					<div class="g_info">
+						<b class="g_brand">코인코즈</b>
+						<span class="g_tit">추가10%+무배 하이넥 왕골지 밑단 스트링 점퍼</span>
+						<span class="g_prc">
+							<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>
+							<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span>
+							<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</span>
+						<span class="g_tag">
+							<em>단독특가</em>
+							<em>무료배송</em>
+							<em>HIT</em>
+						</span>
+						<span class="purch">206개 구매</span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#g_time').countdown('2022/12/17 00:00:00', function (e) {
+				var totalHours;
+				if(e.offset.totalDays > 3) {
+					totalHours = '%H';
+				}else{
+					 totalHours = e.offset.totalDays * 24 + e.offset.hours;
+				}
+				$(this).html(e.strftime(totalHours+':%M:%S'));
+			});
+		});
+		</script>
+		<!--// time_sale -->
+
+		<!-- brdLst -->
+		<div class="ctgBx ctg_brdLst">
+			<h3 class="ir">브랜드링크</h3>
+			<ul>
+				<li><a href="#"><img src="../images/mobile/temp/sample_brd_0.jpg" alt="슈펜"></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/sample_brd_1.jpg" alt="애니바디"></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/sample_brd_2.jpg" alt="알토"></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/sample_brd_3.jpg" alt="버터"></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/sample_brd_4.jpg" alt="에블린"></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/sample_brd_5.jpg" alt="켄싱턴호텔"></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/sample_brd_6.jpg" alt="더데이걸"></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/sample_brd_7.jpg" alt="펠릭스키즈"></a></li>
+				<li><a href="#"><span class="more">인기브랜드</span><img src="../images/mobile/category/ctg_brdLst_bg.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<!--// brdLst -->
+
+		<!-- ctg_trend -->
+		<div class="ctgBx ctg_trend">
+			<h3 class="ctg_m_tit">트렌드패션</h3>
+			<div class="goods_list hrzScroll">
+				<ul>
+					<li>
+						<div class="g_wrap">
+							<a href="javascript:;" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_300x300_0.jpg" alt="" /></span>
+								</span>
+								<span class="g_brd">에잇컨셉</span>
+								<span class="g_tit">세상편해,매일편애★4SET 편애세트 4장구</span>
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+									<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+								</span>
+								<span class="g_rv">
+									<span class="scr s45"><em class="ir">별점평균:90</em></span>
+									<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+								</span>
+								<span class="g_bnf">
+									<span class="bnf1">마감임박</span>
+									<span class="bnf2">무료배송</span>
+									<span class="bnf4">BEST</span>
+								</span>
+							</a>
+							<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+							<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+						</div>
+					</li>
+					<li>
+						<div class="g_wrap">
+							<a href="javascript:;" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_300x300_1.jpg" alt="" /></span>
+								</span>
+								<span class="g_brd">미쏘</span>
+								<span class="g_tit">세상편해,매일편애★4SET 편애세트 4장구</span>
+								<span class="g_prc">
+									<span class="sale"><em class="ir">판매가:</em><b>36,000</b>원</span>
+								</span>
+								<span class="g_rv">
+									<span class="scr s45"><em class="ir">별점평균:90</em></span>
+									<span class="cnt"><em class="rv">리뷰</em>(1212)</span>
+								</span>
+							</a>
+							<a href="javascript:;" class="g_wish on" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+							<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+						</div>
+					</li>
+					<li>
+						<div class="g_wrap">
+							<a href="javascript:;" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_600x600_0.jpg" alt="" /></span>
+								</span>
+								<span class="g_brd">코인코스</span>
+								<span class="g_tit">후드 포인트 롱 다운 패딩 (2colors)_RMJDA4VR11</span>
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+									<span class="g_per"><em class="ir">할인율</em><b>10</b>%</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+								</span>
+								<span class="g_rv">
+									<span class="scr s45"><em class="ir">별점평균:90</em></span>
+									<span class="cnt"><em class="rv">리뷰</em>(12)</span>
+								</span>
+							</a>
+							<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+							<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+						</div>
+					</li>
+					<li>
+						<div class="g_wrap">
+							<a href="javascript:;" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_600x600_1.jpg" alt="" /></span>
+								</span>
+								<span class="g_brd">에이비플러스</span>
+								<span class="g_tit">후드 포인트 롱 다운 패딩 (2colors)_RMJDA4VR11</span>
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+									<span class="g_per"><em class="ir">할인율</em><b>9</b>%</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+								</span>
+								<span class="g_rv">
+									<span class="scr s45"><em class="ir">별점평균:90</em></span>
+									<span class="cnt"><em class="rv">리뷰</em>(1)</span>
+								</span>
+								<span class="g_bnf">
+									<span class="bnf3">최저가</span>
+								</span>
+							</a>
+							<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+							<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+						</div>
+					</li>
+					<li>
+						<div class="g_wrap">
+							<a href="javascript:;" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_600x600_2.jpg" alt="" /></span>
+								</span>
+								<span class="g_brd">에이비플러스</span>
+								<span class="g_tit">후드 포인트 롱 다운 패딩 (2colors)_RMJDA4VR11</span>
+								<span class="g_prc">
+									<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+								</span>
+								<span class="g_rv">
+									<span class="scr s45"><em class="ir">별점평균:90</em></span>
+									<span class="cnt"><em class="rv">리뷰</em>(1212)</span>
+								</span>
+								<span class="g_bnf">
+									<span class="bnf1">마감임박</span>
+									<span class="bnf2">무료배송</span>
+									<span class="bnf3">최저가</span>
+								</span>
+							</a>
+							<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+							<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="ctgMore"><a href="#">더보기</a></div>
+		</div>
+		<!--// ctg_trend -->
+
+		<!-- ctg_gds_list -->
+		<div class="ctg_gds_list">
+
+			<!-- ctg_gnb -->
+			<div class="ctg_gnb_wrap">
+				<div class="ctg_gnb" id="ctg_gnb_scr" data-start="0">
+					<div class="hrzScroll">
+						<ul>
+							<li><button type="button" role="tab" aria-controls="panel_ctg_0" aria-selected="true">전체</button></li>
+							<li><button type="button" role="tab" aria-controls="panel_ctg_1" aria-selected="false" onClick="setFilter(1);return false;">여성의류</button></li>
+							<!-- sample: ajax 콜이후 setFilter(로드된 tabpanel id 넘버);실행 -->
+							<li><button type="button" role="tab" aria-controls="panel_ctg_2" aria-selected="false">캐주얼/유니섹스</button></li>
+							<li><button type="button" role="tab" aria-controls="panel_ctg_3" aria-selected="false">원피스</button></li>
+							<li><button type="button" role="tab" aria-controls="panel_ctg_4" aria-selected="false">셔츠/블라우스</button></li>
+							<li><button type="button" role="tab" aria-controls="panel_ctg_5" aria-selected="false">언더웨어/잠옷</button></li>
+							<li><button type="button" role="tab" aria-controls="panel_ctg_6" aria-selected="false">패션잡화/가죽</button></li>
+							<li><button type="button" role="tab" aria-controls="panel_ctg_7" aria-selected="false">티셔츠/맨투맨/후드</button></li>
+							<li><button type="button" role="tab" aria-controls="panel_ctg_8" aria-selected="false">셔츠/남방</button></li>
+							<li><button type="button" role="tab" aria-controls="panel_ctg_9" aria-selected="false">자켓</button></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+			$(document).ready(function(){
+				var gtStart = $('#ctg_gnb_scr').attr('data-start')
+				fn_subFixed('.ctg_gnb_wrap','.ctg_gnb_wrap > .ctg_gnb')
+				gtTabs('#ctg_gnb_scr', 'panel_ctg_', gtStart, false)
+				setFilter(gtStart)
+				$('#ctg_gnb_scr button').on('click', function(){
+					$("html,body").stop(true).animate({scrollTop: $('.ctg_gnb_wrap').offset().top - 53 }, 300);
+				})
+			})
+			function setFilter(start){
+				var activeTab = $('#panel_ctg_'+start)
+				if(!activeTab.hasClass('ready')){
+					activeTab.find('.filters_tab a').click(function(){
+						if($(this).hasClass('on')){
+							$(this).removeClass('on')
+							activeTab.find('.filters_cont').removeClass('on')
+							activeTab.find('.filters_cont .filter[data-filter-tab='+$(this).data('filterTab')+']').removeClass('active');
+						}
+						else{
+							activeTab.find('.filters_tab a').removeClass('on')
+							$(this).addClass('on');
+							activeTab.find('.filters_cont').addClass('on')
+							activeTab.find('.filters_cont .filter').removeClass('active');
+							activeTab.find('.filters_cont .filter[data-filter-tab='+$(this).data('filterTab')+']').addClass('active');
+						}
+						var $that = $(this)
+						calcLine($that)
+						activeTab.addClass('ready')
+					});
+					$(window).resize(function(){
+						if($('.filters_tab li a.on').length){
+							$('.filter li').not('.more').removeClass();
+							 calcLine($('.filters_tab li a.on'))
+						}
+					});
+				}
+			}
+			</script>
+			<!--// ctg_gnb -->
+
+			<!-- panel.전체 -->
+			<div id="panel_ctg_0" role="tabpanel">
+				<!-- ctg_sub -->
+				<div class="ctg_gds_sub">
+					<h4 class="ir">중소분류선택</h4>
+					<div>
+						<button type="button" class="on">전체</button>
+						<button type="button">캐주얼</button>
+						<button type="button">티셔츠/맨투맨/후드</button>
+						<button type="button">테일러드</button>
+						<button type="button">가죽/무스탕</button>
+						<button type="button">데님/레이어</button>
+						<button type="button">숏/볼레로</button>
+						<button type="button">가죽/퍼</button>
+						<button type="button">기타</button>
+					</div>
+				</div>
+				<!--// ctg_sub -->
+
+				<!-- SORT -->	
+				<div class="sch_sort">
+					<div class="filters_tab">
+						<ul>
+							<li><a href="javascript:;" data-filter-tab="1">브랜드</a></li>
+							<li><a href="javascript:;" data-filter-tab="2">색상</a></li>
+						</ul>
+					</div>
+					<div class="sort_wrap">
+						<div class="s_sort">
+							<label for="s_sort" class="ir">상품정렬 순서 선택</label>
+							<select id="s_sort">
+								<option selected="selected">추천순</option>
+								<option>신상품순</option>
+								<option>낮은가격순</option>
+								<option>높은가격순</option>
+								<option>상품평순</option>
+								<option>할인율높은순</option>
+							</select>
+						</div>
+					</div>
+					<div class="s_filter">
+						<a href="javascript:;" onclick="fn_layer_open('sch_detail');return false;" onkeypress="this.onclick;">필터<em class="ir">열기</em></a>
+					</div>
+				</div>
+				<!-- //SORT -->
+
+				<!-- 필터 노출 부 -->
+				<div class="filters_cont">
+					<div class="filter" data-filter-tab="1">
+						<ul>
+							<li><a href="javascript:;">베스티벨리</a></li>
+							<li><a href="javascript:;">로엠</a></li>
+							<li><a href="javascript:;">시슬리</a></li>
+							<li><a href="javascript:;">지고트</a></li>
+							<li><a href="javascript:;">ENC</a></li>
+							<li><a href="javascript:;">미쏘</a></li>
+							<li><a href="javascript:;">클라비스</a></li>
+							<li><a href="javascript:;">코인코즈</a></li>
+							<li><a href="javascript:;">비지트인뉴욕</a></li>
+							<li><a href="javascript:;">미쏘</a></li>
+							<li><a href="javascript:;">클라비스</a></li>
+							<li class="more"><a href="javascript:;">더보기</a></li>
+						</ul>
+					</div>
+					<div class="filter color" data-filter-tab="2">
+						<ul>
+							<li><input type="checkbox" id="cchk01" class="ir"><label for="cchk01"><img src="../images/mobile/category/color_chip_01.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk02" class="ir"><label for="cchk02"><img src="../images/mobile/category/color_chip_02.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk03" class="ir"><label for="cchk03"><img src="../images/mobile/category/color_chip_03.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk04" class="ir"><label for="cchk04" class="white"><img src="../images/mobile/category/color_chip_04.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk05" class="ir"><label for="cchk05"><img src="../images/mobile/category/color_chip_05.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk06" class="ir"><label for="cchk06"><img src="../images/mobile/category/color_chip_06.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk07" class="ir"><label for="cchk07"><img src="../images/mobile/category/color_chip_07.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk08" class="ir"><label for="cchk08"><img src="../images/mobile/category/color_chip_08.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk09" class="ir"><label for="cchk09"><img src="../images/mobile/category/color_chip_09.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk10" class="ir"><label for="cchk10"><img src="../images/mobile/category/color_chip_10.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk11" class="ir"><label for="cchk11"><img src="../images/mobile/category/color_chip_11.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk12" class="ir"><label for="cchk12"><img src="../images/mobile/category/color_chip_12.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk13" class="ir"><label for="cchk13"><img src="../images/mobile/category/color_chip_13.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk14" class="ir"><label for="cchk14"><img src="../images/mobile/category/color_chip_14.png" alt="색이름"></label></li>
+							<li class="more"><a href="javascript:;" onclick="fn_layer_open('sch_detail');fn_filter_open($(this));return false;" keypress="this.onclick" data-filter-matching="1">더보기</a></li>  <!-- D : data-filter-matching의 값은 데이터 형식에 관계 없이 개발에서 편한 값으로 사용하셔도 됩니다.  -->
+						</ul>
+					</div>
+				</div>
+				<!-- //필터 노출 부 -->
+
+				<!-- 선택된 필터 -->
+				<div class="slctd_fltr on">
+					<div class="fltr_sld hrzScroll">
+						<ul>
+							<li>
+								<a href="javascript:;">
+									<i class="white"><img src="../images/mobile/category/color_chip_04.png" alt="화이트"></i>
+									화이트
+								</a>
+							</li>
+							<li><a href="javascript:;">여성정장</a></li>
+							<li><a href="javascript:;">미쏘</a></li>
+							<li><a href="javascript:;"><i><img src="../images/mobile/category/color_chip_06.png" alt="색이름"></i>오렌지</a></li>
+							<li><a href="javascript:;">필터05</a></li>
+							<li><a href="javascript:;">필터06</a></li>
+							<li><a href="javascript:;">필터07</a></li>
+							<li><a href="javascript:;">필터08</a></li>
+						</ul>
+					</div>
+					<button type="button" class="reset"><em class="ir">삭제</em></button>
+				</div>
+				<!-- //선택된 필터 -->
+						
+				<!-- MSG. 20160223 -->
+				<!-- <div class="sch_none_msg">
+					<div class="msg"><b>‘수납/욕실/생활’</b>에 전시된<br>상품이 <b>없습니다. </b></div>
+				</div> -->
+				<!-- //MSG. -->
+				
+				<!-- MSG 160309 -->
+				<!-- <div class="sch_none_msg">
+					<div class="msg">선택한 조건의 상품이 <b>없습니다.</b><br> 다시 선택해주세요.</div>
+				</div> -->
+				<!-- //MSG 160309 -->
+
+				<!-- LIST -->
+				<div class="goods_list" id="goods_list">
+					<h3 class="ir">상품리스트</h3>
+					<ul class="glist">
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="ico_new qck"><em class="ir">오늘받송</em></span>
+										<!-- <span class="ico_new drct"><em class="ir">오늘직송</em></span> -->
+										<span class="ico_new str"><em class="ir">스토어픽</em></span>
+										<span class="img"><img src="../images/mobile/temp/img_600x600_0.jpg" alt="" /></span>
+										<span class="flag s"><img src="../images/pcweb/common/flag_sample1_120X120.png" alt="플래그아이콘"></span>
+									</span>
+									<span class="g_brd">휘슬러</span>
+									<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1 후드 포인트 롱 다운 패딩 (2colors)_RMJDA4VR11 후드 포인트 롱 다운 패딩 (2colors)_RMJDA4VR11</span>
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>10</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish on" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+										<span class="img"><img src="../images/mobile/temp/img_600x600_1.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">후드 포인트 롱 다운 패딩 (2colors)_RMJDA4VR11</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(106)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_3.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>56,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>16</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>46,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(30)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_2.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">코인코스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트</span> 
+									<span class="g_prc">
+										<span class="sale"><em class="ir">판매가:</em><b>301,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(12)</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_4.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf6">SALE</span>
+										<span class="bnf">세트할인</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_5.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf6">SALE</span>
+										<span class="bnf">세트할인</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_6.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">코인코스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_7.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_8.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- //LIST -->
+				
+				<!-- MORE BUTTON -->
+				<div class="goods_list_more">
+					<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+				</div>
+				<!-- /MORE BUTTON -->
+
+			</div>
+			<!--// panel.전체 -->
+			<!-- panel.여성의류 -->
+			<div id="panel_ctg_1" role="tabpanel">
+				<!-- ctg_sub -->
+				<div class="ctg_gds_sub">
+					<h4 class="ir">중소분류선택</h4>
+					<div>
+						<button type="button" class="on">숏/볼레로</button>
+						<button type="button">가죽/퍼</button>
+						<button type="button">캐주얼</button>
+						<button type="button">티셔츠/맨투맨/후드</button>
+						<button type="button">기타</button>
+					</div>
+				</div>
+				<!--// ctg_sub -->
+
+				<!-- SORT -->	
+				<div class="sch_sort">
+					<div class="filters_tab">
+						<ul>
+							<li><a href="javascript:;" data-filter-tab="3">브랜드</a></li>
+							<li><a href="javascript:;" data-filter-tab="4">색상</a></li>
+						</ul>
+					</div>
+					<div class="sort_wrap">
+						<div class="s_sort">
+							<label for="s_sort" class="ir">상품정렬 순서 선택</label>
+							<select id="s_sort">
+								<option selected="selected">추천순</option>
+								<option>신상품순</option>
+								<option>낮은가격순</option>
+								<option>높은가격순</option>
+								<option>상품평순</option>
+								<option>할인율높은순</option>
+							</select>
+						</div>
+					</div>
+					<div class="s_filter">
+						<a href="javascript:;" onclick="fn_layer_open('sch_detail');return false;" onkeypress="this.onclick;">필터<em class="ir">열기</em></a>
+					</div>
+				</div>
+				<!-- //SORT -->
+
+				<!-- 필터 노출 부 -->
+				<div class="filters_cont">
+					<div class="filter" data-filter-tab="3">
+						<ul>
+							<li><a href="javascript:;">로엠</a></li>
+							<li><a href="javascript:;">시슬리</a></li>
+							<li><a href="javascript:;">ENC</a></li>
+							<li><a href="javascript:;">코인코즈</a></li>
+							<li><a href="javascript:;">비지트인뉴욕</a></li>
+							<li><a href="javascript:;">미쏘</a></li>
+							<li><a href="javascript:;">클라비스</a></li>
+							<li><a href="javascript:;">베스티벨리</a></li>
+							<li><a href="javascript:;">미쏘</a></li>
+							<li><a href="javascript:;">클라비스</a></li>
+							<li class="more"><a href="javascript:;">더보기</a></li>
+						</ul>
+					</div>
+					<div class="filter color" data-filter-tab="4">
+						<ul>
+							<li><input type="checkbox" id="cchk01_0" class="ir"><label for="cchk01_0"><img src="../images/mobile/category/color_chip_01.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk02_0" class="ir"><label for="cchk02_0"><img src="../images/mobile/category/color_chip_02.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk03_0" class="ir"><label for="cchk03_0"><img src="../images/mobile/category/color_chip_03.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk04_0" class="ir"><label for="cchk04_0" class="white"><img src="../images/mobile/category/color_chip_04.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk05_0" class="ir"><label for="cchk05_0"><img src="../images/mobile/category/color_chip_05.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk06_0" class="ir"><label for="cchk06_0"><img src="../images/mobile/category/color_chip_06.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk07_0" class="ir"><label for="cchk07_0"><img src="../images/mobile/category/color_chip_07.png" alt="색이름"></label></li>
+							<li><input type="checkbox" id="cchk08_0" class="ir"><label for="cchk08_0"><img src="../images/mobile/category/color_chip_08.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk09_0" class="ir"><label for="cchk09_0"><img src="../images/mobile/category/color_chip_09.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk10_0" class="ir"><label for="cchk10_0"><img src="../images/mobile/category/color_chip_10.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk11_0" class="ir"><label for="cchk11_0"><img src="../images/mobile/category/color_chip_11.png" alt="색이름"></label></li>
+							<li class="second_line"><input type="checkbox" id="cchk12_0" class="ir"><label for="cchk12_0"><img src="../images/mobile/category/color_chip_12.png" alt="색이름"></label></li>
+							<li class="more"><a href="javascript:;" onclick="fn_layer_open('sch_detail');fn_filter_open($(this));return false;" keypress="this.onclick" data-filter-matching="1">더보기</a></li>  <!-- D : data-filter-matching의 값은 데이터 형식에 관계 없이 개발에서 편한 값으로 사용하셔도 됩니다.  -->
+						</ul>
+					</div>
+				</div>
+				<!-- //필터 노출 부 -->
+
+				<!-- LIST -->
+				<div class="goods_list" id="goods_list">
+					<h3 class="ir">상품리스트</h3>
+					<ul class="glist">
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_2.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">코인코스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트</span> 
+									<span class="g_prc">
+										<span class="sale"><em class="ir">판매가:</em><b>301,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(12)</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_4.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf6">SALE</span>
+										<span class="bnf">세트할인</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_5.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf6">SALE</span>
+										<span class="bnf">세트할인</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="ico_new qck"><em class="ir">오늘받송</em></span>
+										<!-- <span class="ico_new drct"><em class="ir">오늘직송</em></span> -->
+										<span class="ico_new str"><em class="ir">스토어픽</em></span>
+										<span class="img"><img src="../images/mobile/temp/img_600x600_0.jpg" alt="" /></span>
+										<span class="flag s"><img src="../images/pcweb/common/flag_sample1_120X120.png" alt="플래그아이콘"></span>
+									</span>
+									<span class="g_brd">휘슬러</span>
+									<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1 후드 포인트 롱 다운 패딩 (2colors)_RMJDA4VR11 후드 포인트 롱 다운 패딩 (2colors)_RMJDA4VR11</span>
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>10</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish on" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+										<span class="img"><img src="../images/mobile/temp/img_600x600_1.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">후드 포인트 롱 다운 패딩 (2colors)_RMJDA4VR11</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(106)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_3.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>56,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>16</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>46,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(30)</span>
+									</span>
+									<span class="g_bnf">
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_6.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">코인코스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_7.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="javascript:;" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_600x600_8.jpg" alt="" /></span>
+									</span>
+									<span class="g_brd">에이비플러스</span>
+									<span class="g_tit">울 블렌디드 컬러드 코트 (3colors) RMJHA1101A</span> 
+									<span class="g_prc">
+										<span class="org"><em class="ir">정상가:</em><b>250,000</b>원</span> 
+										<span class="g_per"><em class="ir">할인율</em><b>29</b>%</span> 
+										<span class="sale"><em class="ir">판매가:</em><b>236,000</b>원</span>
+									</span>
+									<span class="g_rv">
+										<span class="scr s45"><em class="ir">별점평균:90</em></span>
+										<span class="cnt"><em class="rv">리뷰</em>(2)</span>
+									</span>
+								</a>
+								<a href="javascript:;" class="g_wish" onclick="commonUI.wishTogDev($(this));"><em class="ir">상품 찜하기</em></a>
+								<a href="javascript:;" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- //LIST -->
+				
+				<!-- MORE BUTTON -->
+				<div class="goods_list_more">
+					<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+				</div>
+				<!-- /MORE BUTTON -->
+			</div>
+			<!--// panel.여성의류 -->
+			<!-- panel.캐주얼/유니섹스 -->
+			<div id="panel_ctg_2" role="tabpanel">
+				<div class="emall_loading"><span>로딩중</span></div>
+			</div>
+			<!--// panel.캐주얼/유니섹스 -->
+
+
+		</div>
+		<!--// ctg_gds_list -->
+
+	</div>
+	<!-- //SEARCH -->
+
+</div>
+<!-- //CONTENT -->
+
+
+
+<!-- LAYER_POPUP 맞춤 상세검색 -->
+<div id="sch_detail" class="layer_fix sch_detail_lyr">
+	<h3 class="pop_tit">필터<em>99,999+개 상품</em></h3>
+	<button class="fltrs_reset active" type="button">초기화</button>
+	<div class="pop_con">
+
+		<div class="pop_sch_dtl">
+			<div class="fltrs_wrap on"> <!-- D: .active 으로 노출/비노출 컨트롤 -->
+				<div class="fltrs">
+					<ul>
+						<li><a href="javascript:;"><i class="white"><img src="../images/mobile/category/color_chip_04.png" alt="화이트" /></i>화이트</a></li>
+						<li><a href="javascript:;">여성정장</a></li>
+						<li><a href="javascript:;">미쏘</a></li>
+						<li><a href="javascript:;"><i><img src="../images/mobile/category/color_chip_06.png" alt="색이름" /></i>오렌지</a></li>
+						<li><a href="javascript:;">필터05</a></li>
+						<li><a href="javascript:;">필터06</a></li>
+						<li><a href="javascript:;">필터07</a></li>
+						<li><a href="javascript:;">필터08</a></li>
+						<li><a href="javascript:;"><i class="white"><img src="../images/mobile/category/color_chip_04.png" alt="화이트" /></i>화이트</a></li>
+						<li><a href="javascript:;">여성정장</a></li>
+						<li><a href="javascript:;">미쏘</a></li>
+						<li><a href="javascript:;"><i><img src="../images/mobile/category/color_chip_06.png" alt="색이름" /></i>오렌지</a></li>
+						<li><a href="javascript:;">필터05</a></li>
+						<li><a href="javascript:;">필터06</a></li>
+						<li><a href="javascript:;">필터07</a></li>
+						<li><a href="javascript:;">필터08</a></li>
+					</ul>
+				</div>
+			</div>
+			<dl>
+				<dt><input type="checkbox" id="qck_tit" /><label for="qck_tit"><b>빠른배송</b></label></dt>
+				<dd class="n1">
+					<ul>
+						<li>
+							<input type="checkbox" id="qck01" />
+							<label for="qck01"><span>NC 강남점 <em>(99,999)</em></span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="qck02" />
+							<label for="qck02"><span>NC 송파점 <em>(99,999)</em></span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="qck03" />
+							<label for="qck03"><span>NC 강동점 <em>(99,999)</em></span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="qck04" />
+							<label for="qck04"><span>NC 강서점 <em>(99,999)</em></span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="qck05" />
+							<label for="qck05"><span>NC 평촌점 <em>(99,999)</em></span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><input type="checkbox" id="str_tit" /><label for="str_tit"><b>스토어픽</b></label></dt>
+				<dd class="n1">
+					<ul>
+						<li>
+							<input type="checkbox" id="str01" />
+							<label for="str01"><span>NC 강남점 <em>(99,999)</em></span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="str02" />
+							<label for="str02"><span>NC 송파점 <em>(99,999)</em></span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="str03" />
+							<label for="str03"><span>NC 강동점 <em>(99,999)</em></span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="str04" />
+							<label for="str04"><span>NC 강서점 <em>(99,999)</em></span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="str05" />
+							<label for="str05"><span>NC 평촌점 <em>(99,999)</em></span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>카테고리</b></button></dt>
+				<dd class="tg_hgt ctg n1"> <!-- .tg_hgt : 3개 자르기/보여주기  -->
+					<div class="sub_dt">
+						<strong>전체</strong>
+					</div>
+					<ul>
+						<li>
+							<input type="radio" name="cate_sel" id="cate01" />
+							<label for="cate01"><span>NC 강남점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate02" />
+							<label for="cate02"><span>NC 송파점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate03" />
+							<label for="cate03"><span>NC 강동점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate04" />
+							<label for="cate04"><span>NC 강서점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate05" />
+							<label for="cate05"><span>NC 평촌점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate06" />
+							<label for="cate06"><span>NC 강남점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate07" />
+							<label for="cate07"><span>NC 송파점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate08" />
+							<label for="cate08"><span>NC 강동점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate09" />
+							<label for="cate09"><span>NC 강서점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate10" />
+							<label for="cate10"><span>NC 평촌점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate11" />
+							<label for="cate11"><span>NC 강남점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate12" />
+							<label for="cate12"><span>NC 송파점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate13" />
+							<label for="cate13"><span>NC 강동점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate14" />
+							<label for="cate14"><span>NC 강서점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="radio" name="cate_sel" id="cate15" />
+							<label for="cate15"><span>NC 평촌점</span> <em>(99,999)</em></label>
+						</li>
+					</ul>
+					<div class="tg_btns">
+						<button type="button" class="open_btn">전체보기</button>
+						<button type="button" class="close_btn">접기</button>
+					</div>
+				</dd>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>브랜드</b></button></dt>
+				<dd class="tg_hgt n1 brd">
+					<ul>
+						<li>
+							<input type="checkbox" id="brd01" />
+							<label for="brd01"><span>모던하우스 모던하우스 모던하우스 모던하우스</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd02" />
+							<label for="brd02"><span>비전</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd03" />
+							<label for="brd03"><span>창신리빙</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd04" />
+							<label for="brd04"><span>토프</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd05" />
+							<label for="brd05"><span>WMF</span><em>(19)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd06" />
+							<label for="brd06"><span>GSW</span><em>(19)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd07" />
+							<label for="brd07"><span>휘슬러</span><em>(19)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd08" />
+							<label for="brd08"><span>올리오</span><em>(10)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd09" />
+							<label for="brd09"><span>프렌치불</span><em>(10)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd10" />
+							<label for="brd10"><span>해피콜</span><em>(10)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd11" />
+							<label for="brd11"><span>코렐</span><em>(10)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd12" />
+							<label for="brd12"><span>오션글라스</span><em>(10)</em></label>
+						</li>
+					</ul>
+					<div class="tg_btns">
+						<button type="button" class="open_btn">전체보기</button>
+						<button type="button" class="close_btn">접기</button>
+					</div>
+				</dd>
+			</dl>
+			<dl data-filter-matching="1">
+				<dt><button type="button"><b>색상</b></button></dt>
+				<dd class="clr_lst">
+					<ul>
+						<li><input type="checkbox" id="lchk01" class="ir" /><label for="lchk01"><em><img src="../images/mobile/category/color_chip_01.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk02" class="ir" /><label for="lchk02"><em><img src="../images/mobile/category/color_chip_02.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk03" class="ir" /><label for="lchk03"><em><img src="../images/mobile/category/color_chip_03.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk04" class="ir" /><label for="lchk04" class="white"><em><img src="../images/mobile/category/color_chip_04.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk05" class="ir" /><label for="lchk05"><em><img src="../images/mobile/category/color_chip_05.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk06" class="ir" /><label for="lchk06"><em><img src="../images/mobile/category/color_chip_06.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk07" class="ir" /><label for="lchk07"><em><img src="../images/mobile/category/color_chip_07.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk08" class="ir" /><label for="lchk08"><em><img src="../images/mobile/category/color_chip_08.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk09" class="ir" /><label for="lchk09"><em><img src="../images/mobile/category/color_chip_09.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk10" class="ir" /><label for="lchk10"><em><img src="../images/mobile/category/color_chip_10.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk11" class="ir" /><label for="lchk11"><em><img src="../images/mobile/category/color_chip_11.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk12" class="ir" /><label for="lchk12"><em><img src="../images/mobile/category/color_chip_12.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk13" class="ir" /><label for="lchk13"><em><img src="../images/mobile/category/color_chip_13.png" alt="색이름" /></em></label></li>
+						<li><input type="checkbox" id="lchk14" class="ir" /><label for="lchk14"><em><img src="../images/mobile/category/color_chip_14.png" alt="색이름" /></em></label></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>사이즈</b></button></dt>
+				<dd class="tg_hgt n2">
+					<div class="dot_tit"><span>상의</span></div>
+					<ul>
+						<li>
+							<input type="checkbox" id="siz01" />
+							<label for="siz01"><span>XS</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz02" />
+							<label for="siz02"><span>S</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz03" />
+							<label for="siz03"><span>M</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz04" />
+							<label for="siz04"><span>L</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz05" />
+							<label for="siz05"><span>XL</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz06" />
+							<label for="siz06"><span>XXL</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz07" />
+							<label for="siz07"><span>FREE</span></label>
+						</li>
+					</ul>
+					<div class="dot_tit"><span>하의</span></div>
+					<ul>
+						<li>
+							<input type="checkbox" id="bttm01" />
+							<label for="bttm01"><span>60(24inch)</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bttm02" />
+							<label for="bttm02"><span>61(24inch)</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bttm03" />
+							<label for="bttm03"><span>64(25inch)</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bttm04" />
+							<label for="bttm04"><span>66(26inch)</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bttm05" />
+							<label for="bttm05"><span>92(37inch)</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bttm06" />
+							<label for="bttm06"><span>94(38inch)</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bttm07" />
+							<label for="bttm07"><span>96(39inch)</span></label>
+						</li>
+					</ul>
+					<div class="dot_tit"><span>신발</span></div>
+					<ul>
+						<li>
+							<input type="checkbox" id="shoe01" />
+							<label for="shoe01"><span>230</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="shoe02" />
+							<label for="shoe02"><span>240</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="shoe03" />
+							<label for="shoe03"><span>250</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="shoe04" />
+							<label for="shoe04"><span>260</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="shoe05" />
+							<label for="shoe05"><span>270</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="shoe06" />
+							<label for="shoe06"><span>280</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="shoe07" />
+							<label for="shoe07"><span>290</span></label>
+						</li>
+					</ul>
+					<div class="tg_btns">
+						<button type="button" class="open_btn">전체보기</button>
+						<button type="button" class="close_btn">접기</button>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>가격</b></button></dt>
+				<dd class="price_sel">
+					<div class="disp_price">
+						<span id="min_price"><em>0</em>원</span> ~ <span id="max_price"><em>10000</em>원</span>
+					</div>
+					<div class="set_range">
+						<div id="slider-range"></div>
+					</div>
+					<div class="divide">
+						<span>10,000</span>
+						<span>20,000</span>
+						<span>30,000</span>
+					</div>
+					<div class="input_range">
+						<input type="hidden" id="l_range" class="input_txt wide range_left" value="0" onKeyUp="slideRngChange();" title="최소 가격" />
+						<input type="hidden" id="r_range" class="input_txt wide range_right" value="10000" onKeyUp="slideRngChange();" title="최대 가격" />
+					</div>
+
+					<script>
+						$(function() {
+							$( "#slider-range" ).slider({
+								range: true,
+								min: 0,
+								max: 10000,
+								values: [ 0, 10000 ],
+								slide: function( event, ui ) {
+									$( "#l_range" ).val(ui.values[ 0 ]);
+									$( "#r_range" ).val(ui.values[ 1 ]);
+									$("#min_price em").html(ui.values[ 0 ]);
+									$("#max_price em").html(ui.values[ 1 ]);
+								}
+							});
+						});
+
+						function slideRngChange() {
+							var min_val = $(".input_range #l_range").val();
+							var max_val = $(".input_range #r_range").val();
+							$( "#slider-range" ).slider('values',[ min_val , max_val ]);
+						}
+					</script>
+				
+				</dd>
+				<dd class="n2">
+					<ul>
+						<li>
+							<input type="radio" name="prc_3" id="prc_31" />
+							<label for="prc_31"><span>10만원 이하</span></label>
+						</li>
+						<li>
+							<input type="radio" name="prc_3" id="prc_32" />
+							<label for="prc_32"><span>75만원 이하</span></label>
+						</li>
+						<li>
+							<input type="radio" name="prc_3" id="prc_33" />
+							<label for="prc_33"><span>30만원 이하</span></label>
+						</li>
+						<li>
+							<input type="radio" name="prc_3" id="prc_34" />
+							<label for="prc_34"><span>100만원 이하</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>지점</b></button></dt>
+				<dd class="tg_hgt n1">
+					<div class="department">
+						<input id="department" type="checkbox" class="chkbox"><label for="department"><span>백화점 상품보기</span></label>
+					</div>
+					<ul>
+						<li>
+							<input type="checkbox" id="rct01" />
+							<label for="rct01"><span>NC 강남점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="rct02" />
+							<label for="rct02"><span>NC 송파점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="rct03" />
+							<label for="rct03"><span>NC 강동점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="rct04" />
+							<label for="rct04"><span>NC 강서점</span> <em>(99,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="rct05" />
+							<label for="rct05"><span>NC 평촌점</span> <em>(99,999)</em></label>
+						</li>
+					</ul>
+					<div class="tg_btns">
+						<button type="button" class="open_btn">전체보기</button>
+						<button type="button" class="close_btn">접기</button>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>혜택</b></button></dt>
+				<dd class="n2">
+					<ul>
+						<li>
+							<input type="checkbox" id="bnf01" />
+							<label for="bnf01"><span>셋트할인</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bnf02" />
+							<label for="bnf02"><span>즉시할인</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bnf03" />
+							<label for="bnf03"><span>무료배송</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bnf04" />
+							<label for="bnf04"><span>무이자할부</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>소재</b></button></dt>
+				<dd class="tg_hgt n2">
+					<ul>
+						<li>
+							<input type="checkbox" id="mch01" />
+							<label for="mch01"><span>린넨</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch02" />
+							<label for="mch02"><span>면혼방</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch03" />
+							<label for="mch03"><span>울</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch04" />
+							<label for="mch04"><span>폴리에스테스</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch05" />
+							<label for="mch05"><span>나일론</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch06" />
+							<label for="mch06"><span>가죽</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch07" />
+							<label for="mch07"><span>레이온</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch08" />
+							<label for="mch08"><span>캐시미어</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch09" />
+							<label for="mch09"><span>인조가죽</span></label>
+						</li>
+					</ul>
+					<div class="tg_btns">
+						<button type="button" class="open_btn">전체보기</button>
+						<button type="button" class="close_btn">접기</button>
+					</div>
+				</dd>
+			</dl>
+			<!-- 할인율 추가 -->
+			<dl>
+				<dt><button type="button"><b>할인율</b></button></dt>
+				<dd class="price">
+					<span class="inp"><input type="text" class="input" name="dis_21" value="0%" title="최소 할인율" /></span>
+					<span class="tx">~</span>
+					<span class="inp"><input type="text" class="input on" name="dis_22" value="100%" title="최고 할인율" /></span>
+					<span class="bt"><button type="button">적용</button></span>
+				</dd>
+				<dd class="n2">
+					<ul>
+						<li>
+							<input type="radio" name="dis_3" id="dis_31" />
+							<label for="dis_31"><span>50% 이상</span></label>
+						</li>
+						<li>
+							<input type="radio" name="dis_3" id="dis_32" />
+							<label for="dis_32"><span>60% 이상</span></label>
+						</li>
+						<li>
+							<input type="radio" name="dis_3" id="dis_33" />
+							<label for="dis_33"><span>65% 이상</span></label>
+						</li>
+						<li>
+							<input type="radio" name="dis_3" id="dis_34" />
+							<label for="dis_34"><span>80% 이상</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<!-- //할인율 추가 -->
+			<dl>
+				<dt><button type="button"><b>상품 보기방식</b></button></dt>
+				<dd class="set_list" id="set_list">
+					<ul>
+						<li>
+							<input type="radio" name="set_list" id="set_list1" class="ir" data-type="tlist" />
+							<label for="set_list1" class="t_list"><span>리스트보기</span></label>
+						</li>
+						<li>
+							<input type="radio" name="set_list" id="set_list2" class="ir" data-type="glist" />
+							<label for="set_list2" class="t_glist"><span>이미지보기</span></label>
+						</li>
+						<li>
+							<input type="radio" name="set_list" id="set_list3" class="ir" data-type="blist" />
+							<label for="set_list3" class="t_blist"><span>크게보기</span></label>
+						</li>
+					</ul>
+					<script>
+						$('#set_list input').click(function(){
+							$("#goods_list ul").not(".pr_cont ul").attr("class","");
+							$("#goods_list ul").not(".pr_cont ul").addClass($(this).attr("data-type"));
+						});
+					</script>
+				</dd>
+			</dl>
+			<script>
+				$('dd .tg_btns .open_btn').click(function(){
+					$(this).parent().parent('dd.tg_hgt').addClass('open');
+				});
+				$('dd .tg_btns .close_btn').click(function(){
+					$(this).parent().parent('dd.tg_hgt').removeClass('open');
+				});
+			</script>
+		</div>
+		<!-- D :  삭제 -->
+		<!-- <div class="sch_dtl_btn">
+			<button type="button" class="re"><em>선택초기화</em></button>
+			<button type="button" class="ok"><em>선택 결과보기</em></button>
+		</div> -->
+		<!-- 레이어 팝업 닫기 추가 -->
+		<div class="btn_layertop">
+			<a href="#close"><span class="ir">레이어 팝업 닫기</span></a>
+		</div>
+		<!-- //레이어 팝업 닫기 추가 -->
+	</div>
+	<!-- D : 삭제 <a href="#close" class="btn_close" id="btn_close"><span class="ir">레이어 팝업 닫기</span></a> -->
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		/* 모바일 메인에서만 사용함 
+		var btnPermanent = $(".btn_permanent").clone();
+		var sch_detail = $("#sch_detail").clone();
+		$(".btn_permanent").remove();
+		$("#sch_detail").remove();
+		$("body").append(btnPermanent);
+		$("body").append(sch_detail);
+		
+		//Layer Close      
+		$('#sch_detail #btn_close').click(function () {
+		    var this_name = '#' + $(this).parent().attr('id');
+			$('#header').css('z-index', '');
+			$('#contents').unbind('touchmove');
+
+			$('#contents').css({ 'position': '', 'z-index': ''});
+			$("html,body").scrollTop(scrpos);
+
+		    layer_close(this_name);
+		    scroll_on();
+		});
+
+		// Layer Close_OK
+		$('#btn_ok').click(function(){
+	        var this_name = '#' + $(this).parent().parent().parent().attr('id');
+			$('#header').css('z-index', '');
+			$('#contents').unbind('touchmove');
+
+			$('#contents').css({ 'position': '', 'z-index': ''});
+			$("html,body").scrollTop(scrpos);
+		
+	        layer_close(this_name);
+	        scroll_on();
+		});
+								
+		$('.pop_sch_dtl').find('dl').each(function(){
+			var bx = $(this);
+			var opt = bx.find('dd');
+			bx.find('dt button').unbind("click");
+			bx.find('dt button').click(function(){
+				if(bx.hasClass('active')){
+					$('.pop_sch_dtl dl').removeClass('active');
+					opt.slideUp(150);
+				}else{
+					$('.pop_sch_dtl dl').removeClass('active');
+					$('.pop_sch_dtl dl dd').slideUp(100);
+					bx.addClass('active');
+					opt.slideDown(150);
+				}
+			})
+		});
+
+		$(document).ready(function(){
+			if($('div').hasClass('goods_img') || $('div').hasClass('main_bn_wrap')){
+				$('.goods_img, .main_bn_wrap').addClass('ready');
+			}
+		}); */						
+		var popCtgTit = $(".pop_sch_dtl .ctg_list .tit");
+		var popCtgMore = $(".pop_sch_dtl .ctg_list_more .more");
+
+		popCtgTit.click(function(e){
+			e.preventDefault();
+			$(this).toggleClass("selected");
+		});
+		popCtgMore.click(function(){
+			$(this).toggleClass("selected");
+			$(this).next().toggle();
+		});
+
+		$("#sch_detail .btn_layertop").click(function(e){
+			e.preventDefault();
+			 var this_name = '#' + $(this).parent().parent().attr('id');
+			$("#sch_detail").hide();
+			$('#header').css('z-index', '');
+			$('#contents').unbind('touchmove');
+			$('#contents').css({ 'position': '', 'z-index': ''});
+			$("html,body").scrollTop(scrpos);
+	        layer_close(this_name);
+	        scroll_on();
+		});
+	});
+</script>
+<!-- //LAYER_POPUP 맞춤 상세검색 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="javascript:;"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="javascript:;"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>

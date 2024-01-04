@@ -1,0 +1,3462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이랜드</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<script src="common/js/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+@charset "utf-8";
+/* reset */
+*{margin:0; padding:0;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+body{line-height:1;line-height:16px;}
+h1, h2, h3, h4, h5, h6, input, select, textarea, option, label, button{font-size:100%; font-weight:normal;}
+fieldset, img, abbr, acronym{border:0 none;}
+ol, ul{list-style:none;}
+table{border-collapse:collapse; border-spacing:0;}
+em{font-style:normal;color:#A00327 !important;}
+img, a, input, select, textarea, label, button, span, em, strong{vertical-align:baseline;}
+hr{display:none;}
+
+/* common */
+html, body{width:100%; height:100%; font-size:12px; font-family:"나눔고딕", NanumGothic, "돋움", Dotum;}
+html{overflow-y:scroll;}
+body{min-width:1000px; background:#F3F3F3;}
+a{color:#000; text-decoration:none;}
+caption, legend{overflow:hidden; width:0; height:0; font-size:0; line-height:0; visibility:0;}
+.red {color:#ff6600;}
+
+/* 본문스타일 */
+.overlay{position:absolute; top:0; left:0; display:none; width:100%; height:auto !important; height:100%; min-height:100%; background-color: rgba(0, 0, 0, 0.5); z-index:1; zoom:1;}
+.wrapper{padding:10px 20px 20px 20px;}
+
+h1{margin-bottom:10px;text-align:center;}
+h1 span{display:inline-block; padding:10px 50px; -webkit-border-radius:5px; border-radius:5px; font-size:20px; color:#fff; background:#000;}
+
+.menuWrap{position:relative;padding-top:34px;}
+.menu, .menu table{width:100%;}
+.menu>dt{position:absolute; top:0; width:10%;}
+.menu>dt a{display:block; margin-top:2px; padding:8px 0 7px 0; border:1px solid #CCC; border-bottom:0; border-left:0; text-align:center; cursor:pointer;font-weight:bold;background:#fff;}
+.menu>dt a.selected{margin-top:0; padding:9px 0; background:#333; color:#fff; border-color:#333;}
+.menu>dt a.tm.selected{border-color:#333;}
+.menu>dt a.tm{border-left:1px solid #CCC;}
+.menu>dt.tm1 a{border-left:1px solid #CCC;}
+.menu>dt.tm1 a.selected{border-left:1px solid #333;}
+.tm2{left:10%;}
+.tm3{left:20%;}
+.tm4{left:30%;}
+.tm5{left:40%;}
+.tm6{left:50%;}
+.tm7{left:60%;}
+.tm8{left:70%;}
+.tm9{left:80%;}
+.tm10{left:90%;}
+.viewAll{right:0;}
+.menu>dd{display:none; padding:20px 0; border-top:1px solid #ccc;}
+.menu>dd>p:first-child{padding-bottom:5px;}
+
+.menu_link{overflow:hidden;}
+.menu_link li{float:left;padding:7px 5px;}
+.menu_link li a{color:#333;}
+.menu_link li a:hover{text-decoration:underline;}
+
+table{border-bottom:1px solid #ccc;}
+tr{background:#fff;}
+tr:hover {background:#666;color:#fff;}
+tr:hover td a{color:#fff;}
+tr:hover td a:hover{text-decoration:underline;color:orange;}
+tr.tit{border-top:2px solid #222;}
+th{padding:5px 0; color:#fff; background:#999; border-top:1px solid #ccc;border-left:1px solid #ccc}
+td{padding:7px 5px; border-top:1px solid #ccc;border-left:1px solid #ccc;line-height:16px;}
+th:first-child, td:first-child{border-left:0;}
+th a{color:#fff;}
+table tr td.aCenter,table tr td.ct {text-align:center;}
+tr.launch{background:#e1e1e1;}
+tr.launch:hover{background:#666;color:#fff;}
+td .ck1{color:#1f8504;font-weight:600;}
+td .ck2{color:#ed4545;font-weight:600;}
+td .ck3{color:#4574ed;font-weight:600;}
+td .ck4{color:#eda845;font-weight:600;}
+td .lyr{display:inline-block;padding-left:3px;line-height:18px;color:#305ed2;}
+td:hover .lyr{color:#b5e8fd;}
+
+.hold td, .hold{background:#DDC8DA}
+.del td, .del{background:#999; text-decoration:line-through;}
+.ing td, .ing{background:#FC6;}
+.link td, .link {background:#b7cedf;}
+.noHtml td, .noHtml{background:#bad8ba;}
+.sIcon{display:inline-block; width:20px; height:13px;vertical-align:middle;}
+.line{border-left:1px solid #f6f6f6 !important;}
+
+.hisWrap{position:relative; zoom:1; }
+.hisList li{display:none; padding:1px 0;}
+.hisList .on{display:block;}
+
+.btn{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#1A5599; color:#fff;}
+.btn1{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#000; color:#fff;}
+.btn2{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#53056a; color:#fff;}
+.btn3{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#275d06; color:#fff;}
+.btn4{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#b50000; color:#fff;}
+
+.btn.ex{background:#eeab24;}
+.btnHis{position:absolute; top:0; right:10px; cursor:pointer;}
+.tip{position:relative; display:inline-block; cursor:pointer;}
+.tip span{display:none; position:absolute; z-index:1; top:17px; left:0; min-width:120px; margin-left:-60px; padding:3px; font-weight:normal; font-size:11px; background:#FF0; -webkit-border-radius:3px; border-radius:3px; border:1px solid #F90; color:#000; line-height:17px;}
+tbody .tip span{width:200px; margin-left:-80px;}
+
+.notice{display:table; width:100%;}
+.notice dl{position:relative;width:33%; float:left;}
+.notice dt, .notice dd{width:100%; padding:5px 0;}
+.notice dd{position:absolute;top:25px;left:0;width:80%;padding:5px 5%;border:1px solid #666;background:#fff;z-index:1;}
+.notice li{width:90%; position:relative; padding:0 0 3px 8px; font-size:11px; line-height:14px; color:#767676;}
+.notice .bul{position:absolute; top:5px; left:0; width:2px; height:2px; background:#626262;}
+.dNotice{display:none; position:absolute; top:50%; left:50%; z-index:2; padding:20px; width:680px; margin:-300px 0 0 -361px; border:1px solid #999; background:#F9F9F9;}
+.dNotice li{width:100%; padding-bottom:10px;}
+
+.siteInfo{display:table; width:100%;}
+.siteInfo dt{display:table-cell; width:10%; min-width:120px;  padding:5px; border:1px solid #999; background:#555; color:#fff; font-weight:bold;text-align:center; vertical-align:middle;}
+.siteInfo dd{display:table-cell;  padding:5px 10px; border:1px solid #ccc; border-right:0; border-left:0;}
+
+.tabIntab{padding:10px 0;}
+.tabIntab li{display:inline; padding:0 10px; border-left:1px solid #ccc;}
+.tabIntab li:first-child{border-left:0; padding-left:0;}
+
+#toTop{display:none; position:fixed; bottom:0; width:100%;}
+#toTop a{display:block; padding:9px 10px; background:#333; color:#FFF; text-align:center;}
+</style>
+
+<!-- urlOpen -->
+<script type="text/javascript">
+function urlOpen(url,width,height, scrollbars) {
+	window.open(url,'', 'width='+width+', height='+height+', left=0, top=0, statusbar=0, scrollbars='+scrollbars);
+}
+function fnToggle(targetId){
+	$("#"+targetId).toggle();
+	$("#"+targetId).parent().siblings().children("dd").hide();
+}
+
+$(function($){
+
+	// 전체페이지 및 수정완료 수량 체크
+	var TotalBtn1 = $("td.button").length;
+	var TotalBtn2 = $("td").find(".btn2").length;	
+	var TotalEnd = $(".button").find(".btn").length;
+	var TotalStand = TotalBtn1 - TotalEnd;	
+	var TotalRate = (TotalEnd/TotalBtn1)*100;
+		TotalRate = TotalRate.toFixed(2) + " %"; 
+
+	$(".cntadd").html(TotalBtn1);
+	$(".cntadd2").html(TotalBtn2);
+	$(".count1").html(TotalEnd);
+	$(".count2").html(TotalStand);
+	$(".count3").html(TotalRate);
+
+	$('.hisList li:first-child').addClass('on');
+
+	$('.hisList').each(function(){
+		$(this).wrap('<div class="hisWrap" />');
+		var nodes=$(this).children();
+		if(nodes.length>1){
+			$('<a class="btn off btnHis" />').prependTo($(this).parent('div')).text('수정이력');
+		}
+	});
+	$('.tm').click(function(){
+		$(this).addClass('selected');
+		$('.menu>dd').show().siblings('dt').children('a').removeClass('selected');
+		return false;
+	});
+	$('.menu>dt a').click(function(){
+		$('.tm').removeClass('selected');
+		$(this).addClass('selected').parent('dt').siblings('dt').children('a').removeClass('selected');
+		$(this).parent('dt').next('dd').show().siblings('dd').hide();
+		return false;
+	});
+	$('.btnHis').click(function(){
+		$(this).toggleClass('off');
+		$(this).next('.hisList').children('li:not(.on)').toggle();
+		return false;
+	});
+	$('.tip').hover(function(){
+		$(this).children('span').toggle();
+	});
+	$('.notice li').append('<span class="bul"></span>');
+	// to top
+	var scrollDiv = document.createElement('div');
+	$(scrollDiv).attr('id', 'toTop').html('<a href="#nohref">↑ 처음으로 이동</a>').appendTo('body');    
+	$(window).scroll(function(){
+		if ($(this).scrollTop() != 0) {
+			$('#toTop').fadeIn();
+		} else {
+			$('#toTop').fadeOut();
+		}
+	});
+	$('#toTop').click(function(){
+		$('body,html').animate({scrollTop: 0},	600);
+		return false;
+	});
+	$('.overlay').click(function(){
+		$('.dNotice').hide(200); $('.overlay').fadeOut();
+	});
+
+});
+</script>
+</head>
+
+<body>
+<div class="overlay"></div>
+<div class="wrapper">
+	<h1><span>이랜드 - 모바일웹 코딩리스트</span></h1>
+	<!--<p style="text-align:center; color:#ccc;">※ 코딩맵은 크롬, 파이어폭스, ie9이상, 사파리등 표준 브라우저에 최적화되어있습니다.</p> -->
+
+	<dl class="siteInfo">
+		<dt>Infomation</dt>
+		<dd><a href="mindex.html">mindex.html</a></dd>
+		<dt>진행상황</dt>
+		<dd>전체페이지 : <span class="button btn1 cntadd"></span></dd>
+		<dd>완료 페이지 : <b class="btn btn count1"></b></dd>
+		<dd>수정 페이지 : <span class="btn btn2 cntadd2"></span></dd>
+		<dd>대기 페이지 : <span class="btn btn3 count2"></span></dd>
+		<dd>진척율 : <b class="btn btn4 count3"></b></dd>
+	</dl>
+	<div class="notice">
+		<dl>
+			<dt><a href="#none" onClick="fnToggle('noti1');return false;" onKeyPress="this.onclick;">개발자 알림 ▼</a></dt>
+			<dd id="noti1" style="display:none">
+				<ul>
+					<li> html을 클릭하시면 html 페이지 확인 가능.</li>
+					<li>퍼블리싱이 완료된 기본 레이아웃은 수정해야할 경우 퍼블리셔 상의.</li>
+					<li>내부 링크일 경우 수정 이력은 원본 파일에만 표기.</li>
+					<li>마크업 변경 안내 : 해당 HTML페이지내, &lt;-- 07.15 --&gt; 으로 주석처리.</li>
+				</ul>
+			</dd>
+		</dl>
+		<dl>
+			<dt><a href="#none" onClick="fnToggle('noti2');return false;" onKeyPress="this.onclick;">퍼블리셔 알림 ▼</a></dt>
+			<dd id="noti2" style="display:none">
+				<ul>
+					<li>페이지 완료시 퍼블리싱 체크후 담당자 이름과 완료일을 기재해주세요</li>
+					<li>w3c, 디바이스체크, 자체 접근성 체크 후 ○ 표시</li>
+					<li>범위 : OS 젤리빈(4.1~4.3) 이상/ iOS 9.0 이상</li>
+					<li>최저단말 : 갤럭시 S3, 노트2, iPhone 4S / 타켓단말: 노트3, S4, iPhone 6</li>
+					<li><strong class="red">juery 스크립트 부분은 각 담당자가 스크립트를 삽입합니다.</strong></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl>
+			<dt><a href="#none" onClick="fnToggle('noti3');return false;" onKeyPress="this.onclick;">작업 안내▼</a></dt>
+			<dd id="noti3" style="display:none">
+				<ul>
+					<li>페이지 완료시 퍼블리싱 체크후 담당자 이름과 완료일을 기재.</li>
+					<li>완료일 : 페이지 처음 완료된 날 기입. <b style="color:blue">파란색bg</b>로 표시.</li>
+					<li>수정완료일 : 페이지 마지막으로 완료된 날 기입. <b style="color:red">빨간색 bg</b>로 표시.</li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+	<br>
+	<div class="menuWrap">
+		<dl class="menu">
+			<dt class="viewAll"><a class="tm">전체보기</a></dt>
+			<dt class="tm1"><a class="selected">메인/검색/몰</a></dt>
+			<dd style="display:block;">
+				<!--<p><strong>메인/검색/몰</strong></p>-->
+				<table>
+					<colgroup>
+						<col width="100" />
+						<col width="" />
+						<col width="" />
+						<col width="70" />
+						<col width="70" />
+						<col width="130" />
+						<col width="70" />
+						<col width="70" />
+						<col width="70" />
+						<col width="40" />
+						<col width="40" />
+						<col width="280" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+							<th scope="col" rowspan="2">담당자</th>
+							<th rowspan="2" align="center" scope="col">완료일</th>
+							<th rowspan="2" align="center" scope="col">수정 완료일</th>
+							<th scope="col" colspan="2">체크</th>
+							<th scope="col" rowspan="2">메모</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+							<th scope="col">W3C</th>
+							<th scope="col">D/C</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 코딩가이드 -->
+						<tr>
+							<td><strong>코딩가이드</strong></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/guide.html" target="_blank">html_mo/guide.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">04.12</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- 리뉴얼 메인 -->
+						<tr>
+							<td><strong>리뉴얼 메인</strong></td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/renewal_Main.html" target="_blank">html_mo/renewal_Main.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.08.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>body class="renewal2"클래스 추가,<br>
+							css : main_new.css import<br>
+							js: ui.mobile.renewal.js</td>
+						</tr>
+						<tr>
+							<td><strong>리뉴얼 메인</strong></td>
+							<td>킴스장보기-나의구매내역(단일페이지)</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/renewal_main_buyhis.html" target="_blank">html_mo/renewal_main_buyhis.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.11.28</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong>리뉴얼 브랜몰 Header</strong></td>
+							<td>공통</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/layout_brand_hdr.html" target="_blank">html_mo/layout_brand_hdr.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.12.18</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong>리뉴얼 좌측메뉴</strong></td>
+							<td>공통</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/renewal_leftmenu.html" target="_blank">html_mo/renewal_leftmenu.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.08.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong>리뉴얼 좌측메뉴(브랜드몰_type1)</strong></td>
+							<td>공통</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/renewal_leftmenu_type2.html" target="_blank">html_mo/renewal_leftmenu_type2.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.11.28</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong>리뉴얼 좌측메뉴(브랜드몰_type2)</strong></td>
+							<td>공통</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/renewal_leftmenu_type3.html" target="_blank">html_mo/renewal_leftmenu_type3.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.11.28</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong>리뉴얼 좌측메뉴(브랜드몰_type3)</strong></td>
+							<td>공통</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/renewal_leftmenu_type4.html" target="_blank">html_mo/renewal_leftmenu_type4.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.11.28</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong>리뉴얼 좌측메뉴(브랜드몰_type4)</strong></td>
+							<td>공통</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/renewal_leftmenu_type5.html" target="_blank">html_mo/renewal_leftmenu_type5.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.11.28</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong>LNB_서비스메뉴</strong></td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/new_Main_crop_service_mn.html" target="_blank">html_mo/new_Main_crop_service_mn.html</a></td>
+							<td class="ct">정의찬</td>
+							<td align="center" class="button"><span class="btn">17.07.20</span></td>
+							<td align="center"></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td>앱 개발 참고용 페이지</td>
+						</tr>
+						<!-- 리뉴얼 메인 -->
+						<tr>
+							<td><strong>리뉴얼 메인</strong></td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/new_Main.html" target="_blank">html_mo/new_Main.html</a></td>
+							<td class="ct">문연희,<br>김연진</td> 
+							<td align="center" class="button"><span class="btn">17.02.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>body class="renewal"클래스 추가,<br>
+							css : main_new.css import
+							js: ui.new_mobile.js (주석 1702 표기 메인 이벤트배너관련 js만 수정하였음)</td>
+						</tr>
+						<tr>
+							<td><strong>LNB_서비스메뉴</strong></td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/new_Main_crop_service_mn.html" target="_blank">html_mo/new_Main_crop_service_mn.html</a></td>
+							<td class="ct">정의찬</td>
+							<td align="center" class="button"><span class="btn">17.07.20</span></td>
+							<td align="center"></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td>앱 개발 참고용 페이지</td>
+						</tr>
+						<!-- 공통 -->
+						<tr>
+							<td><strong>통합몰</strong></td>
+							<td>GNB, 공통(헤더, 푸터)<br/>
+								<span class="lyr">- 서랍식 메뉴</span>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Gnb.html" target="_blank">html_mo/Gnb.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.18</span></td>
+							<td align="center"><span class="btn btn2 up">03.17</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>서랍식 메뉴 추가</td>
+						</tr>
+						<!-- 메인 -->
+						<tr>
+							<td></td>
+							<td>메인<br/><span class="lyr"> - 이벤트 전체 레이어</span></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Main.html" target="_blank">html_mo/Main.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"><span class="btn btn2 up">06.24</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>메인 - no ajax slide start</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Main_no_ajax_slide0.html" target="_blank">html_mo/Main_no_ajax_slide0.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">11.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>메인<br/><span class="lyr"> 팝업 공지배너1</span></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Main_pop1.html" target="_blank">html_mo/Main_pop1.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">06.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>메인<br/><span class="lyr"> 팝업 공지배너2</span></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Main_pop2.html" target="_blank">html_mo/Main_pop2.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">06.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>홈</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Main_Home.html" target="_blank">html_mo/Main_Home.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.25</span></td>
+							<td align="center"><span class="btn btn2 up">02.23</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>추천기획전 배너형 추가</td>
+						</tr>
+						<!-- 검색 고도화 -->
+						<tr class="tit">
+							<td><strong>검색 고도화</strong></td>
+							<td>검색어 입력</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Form_New.html" target="_blank">html_mo/Search_Form_New.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.07.21</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>통합몰/브랜드몰 공통 적용</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>검색결과<br/>
+								<span class="lyr">- 상세 검색 레이어</span>
+							</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Lst.html" target="_blank">html_mo/Search_Lst.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.07.21</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>통합몰만 적용</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>카테고리 매장</td>
+							<td>대분류</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Category_Lst.html" target="_blank">html_mo/Category_Lst.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.07.21</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>중/소분류</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/CategorySm_Lst.html" target="_blank">html_mo/CategorySm_Lst.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.07.21</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>리뉴얼 통합몰 검색<br/>
+								<span class="lyr">- 상세 검색 레이어</span>
+							</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Form_renewal.html" target="_blank">html_mo/Search_Form_renewal.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.08.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>통합몰만 적용</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>리뉴얼 통합몰 검색QR<br/>
+								<span class="lyr">- 상세 검색 레이어</span>
+							</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Qr_Form_renewal.html" target="_blank">html_mo/Search_Qr_Form_renewal.html</a></td>
+							<td class="ct">정성희</td> 
+							<td align="center" class="button"><span class="btn">18.08.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>통합몰만 적용</td>
+						</tr>
+						<!-- 검색 -->
+						<tr class="tit">
+							<td><strong>통합검색</strong></td>
+							<td>검색하기</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Form.html" target="_blank">html_mo/Search_Form.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.18</span></td>
+							<td align="center"><span class="btn btn2 up">03.17</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>레이어로 변경</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>검색하기 - QR코드</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Qr_Form.html" target="_blank">html_mo/Search_Qr_Form.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.19</span></td>
+							<td align="center"><span class="btn btn2 up">03.17</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>레이어로 변경</td>
+						</tr>
+						<!-- 검색 고도화 검색결과 동일 페이지로 삭제 <tr>
+							<td></td>
+							<td>검색결과<br/>
+								<span class="lyr">- 상세 검색 레이어</span>
+							</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Lst.html" target="_blank">html_mo/Search_Lst.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.21</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr> -->
+						<tr>
+							<td></td>
+							<td>상세 검색 레이어(신규)<br/>
+							</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Lst02.html" target="_blank">html_mo/Search_Lst02.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">11.02</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>결과없음</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_None.html" target="_blank">html_mo/Search_None.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.18</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- 모던하우스 -->
+						<tr class="tit">
+							<td><strong>모던하우스</strong></td>
+							<td>GNB, 공통(헤더, 푸터)<br/>
+								<span class="lyr">- 서랍식 메뉴</span>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_Gnb.html" target="_blank">html_mo/Md_Gnb.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"><span class="btn btn2 up">02.23</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>브랜드 보기 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>메인</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_Main.html" target="_blank">html_mo/Md_Main.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"><span class="btn btn2 up">10.05</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>앱다운유도 디자인변경</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>홈</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_Main_Home.html" target="_blank">html_mo/Md_Main_Home.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>매장</td>
+							<td>신상품</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_Shop_New.html" target="_blank">html_mo/Md_Shop_New.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>베스트</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_Shop_Best.html" target="_blank">html_mo/Md_Shop_Best.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>스토리쇼핑</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_Shop_Story.html" target="_blank">html_mo/Md_Shop_Story.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>체험단 모집</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_Experience.html" target="_blank">html_mo/Md_Experience.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.18</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>이랜드 몰 소개</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_Main_mall.html" target="_blank">html_mo/Md_Main_mall.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">10.06</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>오프라인 매장안내</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_offShop.html" target="_blank">html_mo/Md_offShop.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">11.22</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- KIM'S CLUB -->
+						<tr class="tit">
+							<td><strong>KIM'S CLUB</strong></td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_Main.html" target="_blank">html_mo/kims_Main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.17</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기획전</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_Plan_Main.html" target="_blank">html_mo/kims_Plan_Main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.17</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>앵커형</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_Plan_Anchor.html" target="_blank">html_mo/kims_Plan_Anchor.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.17</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>툴팁 UI템플릿</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_Plan_tooltip.html" target="_blank">html_mo/kims_Plan_tooltip.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.17</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>베스트</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_Best.html" target="_blank">html_mo/kims_Best.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.17</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_main_2.html" style="font-weight:bold">kims_main_2.html</a> 파일과 동일함<br>참고:셀렉트 박스는 고정입니다. 실제 메인에서 셀렉트박스는 움직이지 않습니다.</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>카테고리</td>
+							<td>카테고리(대분류) B타입</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_Category_TypeB.html" target="_blank">html_mo/kims_Category_TypeB.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.17</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>카테고리(대분류) C타입</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_Category_TypeC.html" target="_blank">html_mo/kims_Category_TypeC.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.17</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>카테고리 중/소분류</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_Category_Lst.html" target="_blank">html_mo/kims_Category_Lst.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.17</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>오프라인 매장안내</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_offShop_kims.html" target="_blank">html_mo/Md_offShop_kims.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.21</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>킴스클럽소개</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kims_about.html" target="_blank">html_mo/kims_about.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.03.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- NB KIDS -->
+						<tr class="tit">
+							<td><strong>NB KIDS</strong></td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/nbkids_Main.html" target="_blank">html_mo/nbkids_Main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>검색</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Qr_Form_nbkids.html" target="_blank">html_mo/Search_Qr_Form_nbkids.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>상품상세</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Goods_Dtl_nbkids.html" target="_blank">html_mo/Goods_Dtl_nbkids.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>오프라인 매장안내</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Md_offShop_nbkids.html" target="_blank">html_mo/Md_offShop_nbkids.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.02.07</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- BAHUS -->
+						<tr class="tit">
+							<td><strong>BAHUS</strong></td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Main.html" target="_blank">html_mo/bahus_Main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.06</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>카테고리</td>
+							<td>COLLECTION</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_collection.html" target="_blank">html_mo/bahus_collection.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.09</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>카테고리(대분류) B타입</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Category_TypeB.html" target="_blank">html_mo/bahus_Category_TypeB.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.09</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>카테고리(대분류) C타입</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Category_TypeC.html" target="_blank">html_mo/bahus_Category_TypeC.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.09</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>카테고리 중/소분류</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_CategorySm_Lst.html" target="_blank">html_mo/bahus_CategorySm_Lst.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.10</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기획전</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Plan_Main.html" target="_blank">html_mo/bahus_Plan_Main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.10</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>앵커형 일반/배너형</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Plan_Anchor.html" target="_blank">html_mo/bahus_Plan_Anchor.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.10</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>상품상세</td>
+							<td>(포토리뷰레이어)</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Goods_Dtl.html" target="_blank">html_mo/bahus_Goods_Dtl.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">17.01.11</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>검색</td>
+							<td>검색레이어</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Search_Form.html" target="_blank">html_mo/bahus_Search_Form.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">17.01.12</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>검색결과(상세검색레이어 신규)</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Search_Lst.html" target="_blank">html_mo/bahus_Search_Lst.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">17.01.11</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>검색결과없음</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Search_None.html" target="_blank">html_mo/bahus_Search_None.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">17.01.11</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>커뮤니티</td>
+							<td>REVIEW/MEDIA & PRESS/E-CATALOG</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_community.html" target="_blank">html_mo/bahus_community.html</a></td>
+							<td class="ct">김연진</td> 
+							<td align="center" class="button"><span class="btn">17.01.13</span></td>
+							<td align="center"><span class="btn btn2 up">17.02.16</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>170216 레이어팝업 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>MEDIA & PRESS 상세</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_mgz_detail.html" target="_blank">html_mo/bahus_mgz_detail.html</a></td>
+							<td class="ct">김연진</td> 
+							<td align="center" class="button"><span class="btn">17.01.13</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기획전</td>
+							<td>툴팁 UI템플릿</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Plan_tooltip.html" target="_blank">html_mo/bahus_Plan_tooltip.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">17.01.17</span></td>
+							<td align="center"><span class="btn btn2 up">17.02.15</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>170215 레이어 팝업 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>주문서</td>
+							<td>주문서 작성</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_Order_Ins.html" target="_blank">html_mo/bahus_Order_Ins.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.02.01</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>마이페이지</td>
+							<td>상세주문내역</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ord_detail2.html" target="_blank">html_mo/Mys_ord_detail2.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.02.01</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>ABOUT BAHUS</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/bahus_about.html" target="_blank">html_mo/bahus_about.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.02.21</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- SHOOPEN -->
+						<tr class="tit">
+							<td><strong>SHOOPEN</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/shoopen_Main.html" target="_blank">html_mo/shoopen_Main.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">11.08</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>검색하기 - QR코드<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Search_Qr_Form_shoopen.html" target="_blank">html_mo/Search_Qr_Form_shoopen.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">11.09</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>상품상세<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Goods_Dtl_shoopen.html" target="_blank">html_mo/Goods_Dtl_shoopen.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">11.09</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- FOLDER -->
+						<tr class="tit">
+							<td><strong>FOLDER</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/folder_Main.html" target="_blank">html_mo/folder_Main.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">06.21</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- MIXXO -->
+						<tr class="tit">
+							<td><strong>MIXXO</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/mixxo_Main.html" target="_blank">html_mo/mixxo_Main.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">06.22</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- OST -->
+						<tr class="tit">
+							<td><strong>OST</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/ost_Main.html" target="_blank">html_mo/ost_Main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">06.22</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- kinder -->
+						<tr class="tit">
+							<td><strong>E-LAND Kids</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/kinder_Main.html" target="_blank">html_mo/kinder_Main.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">06.22</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- CLUE -->
+						<tr class="tit">
+							<td><strong>클루</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/clue_Main.html" target="_blank">html_mo/clue_Main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">06.22</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- NEW BALANCE -->
+						<tr class="tit">
+							<td><strong>NEW BALANCE</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/newbal_Main.html" target="_blank">html_mo/newbal_Main.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">06.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- SPAO -->
+						<tr class="tit">
+							<td><strong>SPAO</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/spao_Main.html" target="_blank">html_mo/spao_Main.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">06.27</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td></td>
+							<td>WITH STAR</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/spao_mgz_list.html" target="_blank">html_mo/spao_mgz_list.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">07.14</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td></td>
+							<td>WITH STAR 상세</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/spao_mgz_detail.html" target="_blank">html_mo/spao_mgz_detail.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">07.12</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td></td>
+							<td>기획전</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/spao_plan.html" target="_blank">html_mo/spao_plan.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">08.03</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td></td>
+							<td>이벤트</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/spao_evt.html" target="_blank">html_mo/spao_evt.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">08.03</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- ROEM -->
+						<tr class="tit">
+							<td><strong>ROEM</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/roem_Main.html" target="_blank">html_mo/roem_Main.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">06.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td></td>
+							<td>ROEM;AGINE</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/roem_mgz_list.html" target="_blank">html_mo/roem_mgz_list.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">07.14</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td></td>
+							<td>ROEM;AGINE 상세</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/roem_mgz_detail.html" target="_blank">html_mo/roem_mgz_detail.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">07.12</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- EBLIN -->
+						<tr class="tit">
+							<td><strong>EBLIN</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/eblin_Main.html" target="_blank">html_mo/eblin_Main.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">06.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td></td>
+							<td>MAGAZINE</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/eblin_mgz_list.html" target="_blank">html_mo/eblin_mgz_list.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">07.14</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td></td>
+							<td>MAGAZINE 상세</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/eblin_mgz_detail.html" target="_blank">html_mo/eblin_mgz_detail.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">07.12</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- WHO.A.U -->
+						<tr class="tit">
+							<td><strong>WHO.A.U</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/whoau_Main.html" target="_blank">html_mo/whoau_Main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">06.30</span></td>
+							<td align="center"><span class="btn btn2 up">07.14</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>160714 메인수정</td>
+						</tr>
+						<!-- LLOYD -->
+						<tr class="tit">
+							<td><strong>LLOYD</strong></td>
+							<td>메인<br/>
+							</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/lloyd_Main.html" target="_blank">html_mo/lloyd_Main.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">06.30</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- 전문관 -->
+						<tr class="tit">
+							<td><strong>전문관</strong></td>
+							<td>임직원 복지몰</td>
+							<td>메인</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Welfare_Mall.html" target="_blank">html_mo/Welfare_Mall.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.29</span></td>
+							<td align="center"><span class="btn btn2 up">02.16</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>카테고리선택 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>기부하기</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Welfare_Do.html" target="_blank">html_mo/Welfare_Do.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.29</span></td>
+							<td align="center"><span class="btn btn2 up">03.24</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>카테고리선택 수정(02.16), 기부완료추가(03.24)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>상품권</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Welfare_Lst.html" target="_blank">html_mo/Welfare_Lst.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.29</span></td>
+							<td align="center"><span class="btn btn2 up">02.16</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>카테고리선택 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><span style="text-decoration:line-through;">상품권 이용가이드</span>(사용안함)</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Welfare_Guide.html" target="_blank">html_mo/Welfare_Guide.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>켄싱턴 둘러보기 </td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Welfare_Look.html" target="_blank">html_mo/Welfare_Look.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">03.22</span></td>
+							<td align="center"><span class="btn btn2 up">03.29</span></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td>이미지 추가</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>켄싱턴 스타일가이드</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Welfare_Style.html" target="_blank">html_mo/Welfare_Style.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">03.17</span></td>
+							<td align="center"><span class="btn btn2 up">04.07</span></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td>텍스트 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Luxury Gallery</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Special_Lst.html" target="_blank">html_mo/Special_Lst.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.02</span></td>
+							<td align="center"><span class="btn btn2 up">02.16</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>카테고리선택 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>유아동관</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Child_Lst.html" target="_blank">html_mo/Child_Lst.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.02</span></td>
+							<td align="center"><span class="btn btn2 up">02.16</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>카테고리선택 수정</td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm2"><a class="">상세/전시</a></dt>
+			<dd>
+				<!--<p><strong>상세/전시</strong></p>-->
+				<table>
+					<colgroup>
+						<col width="100" />
+						<col width="" />
+						<col width="" />
+						<col width="70" />
+						<col width="70" />
+						<col width="130" />
+						<col width="70" />
+						<col width="70" />
+						<col width="70" />
+						<col width="40" />
+						<col width="40" />
+						<col width="280" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+							<th scope="col" rowspan="2">담당자</th>
+							<th rowspan="2" align="center" scope="col">완료일</th>
+							<th rowspan="2" align="center" scope="col">수정 완료일</th>
+							<th scope="col" colspan="2">체크</th>
+							<th scope="col" rowspan="2">메모</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+							<th scope="col">W3C</th>
+							<th scope="col">D/C</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 상품 -->
+						<tr class="tit">
+							<td><strong>상품</strong></td>
+							<td>일반<br/>
+								<span class="lyr">- 상품 원본 보기, 해피딜 상품표시</span><br/>
+								<span class="lyr">- N+1,상품권,지점 옵션선택</span><br/>
+								<span class="lyr">- SNS 공유하기, 찜,장바구니 알림</span><br/>
+								<span class="lyr">- 다른지점보기, 카드혜택보기</span><br/>
+								<span class="lyr">- 사이즈비교하기, 문의하기</span>
+							</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Goods_Dtl.html" target="_blank">html_mo/Goods_Dtl.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.04</span></td>
+							<td align="center"><span class="btn btn2 up">02.18</span><span class="btn btn2 up">06.24</span><span class="btn btn2 up">08.02</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>기획반영 수정(02.18), 출고일 지정상품 배송정보 추가(06.24), 인증마크 수정(08.02)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>묶음<br/>
+								<span class="lyr">- 문의하기</span><br/>
+								<span class="lyr">- 옵션 자세히 보기</span>
+							</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Goods_Dtl_Bundle.html" target="_blank">html_mo/Goods_Dtl_Bundle.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.04</span></td>
+							<td align="center"><span class="btn btn2 up">02.16</span><span class="btn btn2 up">08.02</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>기획반영 수정(02.16),인증마크 수정(08.02)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>세트<br/>
+								<span class="lyr">- 옵션 자세히 보기</span>
+							</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Goods_Dtl_Set.html" target="_blank">html_mo/Goods_Dtl_Set.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.04</span></td>
+							<td align="center"><span class="btn btn2 up">02.16</span><span class="btn btn2 up">08.02</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>기획반영 수정(02.16),인증마크 수정(08.02)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기부상품 - 옵션</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Goods_Dtl_Donate.html" target="_blank">html_mo/Goods_Dtl_Donate.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.04</span></td>
+							<td align="center"><span class="btn btn2 up">02.16</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>기획반영 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기부상품 - 모금완료(품절)</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Goods_Dtl_Donate_End.html" target="_blank">html_mo/Goods_Dtl_Donate_End.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">03.22</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>상세 - 테스트(구매하기)</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Goods_Dtl_test.html" target="_blank">html_mo/Goods_Dtl_test.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">04.14</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- 전시 -->
+						<tr>
+							<td><strong>전시</strong></td>
+							<td>대분류</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Category_Lst.html" target="_blank">html_mo/Category_Lst.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.20</span></td>
+							<td align="center"><span class="btn btn2 up">02.16</span><span class="btn btn2 up">07.29</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>0216 카테고리선택 수정, 0729 컬러칩 추가</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>중/소/세분류</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/CategorySm_Lst.html" target="_blank">html_mo/CategorySm_Lst.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.20</span></td>
+							<td align="center"><span class="btn btn2 up">02.23</span><span class="btn btn2 up">07.29</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>0223 카테고리선택 수정, 전시없음 추가, 0729 컬러칩 추가</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>브랜드</td>
+							<td>매장</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Brand_Lst.html" target="_blank">html_mo/Brand_Lst.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.20</span></td>
+							<td align="center"><span class="btn btn2 up">03.03</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>이벤트 배너 추가</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>대분류</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Brand_Catg.html" target="_blank">html_mo/Brand_Catg.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.20</span></td>
+							<td align="center"><span class="btn btn2 up">02.16</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>카테고리선택 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기획전</td>
+							<td>쇼핑기획전 홈</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Plan_Main.html" target="_blank">html_mo/Plan_Main.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>쇼핑기획전(TAB TYPE)</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Plan_Tab.html" target="_blank">html_mo/Plan_Tab.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.26</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>쇼핑기획전(ANCHOR TYPE)</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Plan_Anchor.html" target="_blank">html_mo/Plan_Anchor.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.26</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>반품샵</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Plan_Retrun.html" target="_blank">html_mo/Plan_Retrun.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>라이벌매치</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Plan_Match.html" target="_blank">html_mo/Plan_Match.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.28</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>매장</td>
+							<td>해피딜</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_lucky.html" target="_blank">html_mo/Shop_lucky.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>하나더</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_More.html" target="_blank">html_mo/Shop_More.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>무료배송</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_Free.html" target="_blank">html_mo/Shop_Free.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>베스트100</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_Best.html" target="_blank">html_mo/Shop_Best.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>공동구매</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_Joint_01.html" target="_blank">html_mo/Shop_Joint_01.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">10.25</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>공동구매_무료배송</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_Joint.html" target="_blank">html_mo/Shop_Joint.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.28</span></td>
+							<td align="center"><span class="btn btn2 up">06.24</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>공동구매 매장 상품 가격 정보 수정(06.24)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>0원딜</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_Deal.html" target="_blank">html_mo/Shop_Deal.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">01.28</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>Mix &amp; Match</td>
+							<td class="aCenter">메인</td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_Mix.html" target="_blank">html_mo/Shop_Mix.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.15</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter">상세보기</td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_Mix_Viw.html" target="_blank">html_mo/Shop_Mix_Viw.html</a></td>
+							<td class="ct">박상호</td> 
+							<td align="center" class="button"><span class="btn">02.15</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter">제작하기</td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Shop_Mix_Make.html" target="_blank">html_mo/Shop_Mix_Make.html</a></td>
+							<td class="ct">박상호</td>
+							<td align="center" class="button"><span class="btn">02.15</span></td>
+							<td align="center"><span class="btn btn2 up">03.03</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>수량선택 스크립트 추가</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>라이프매거진</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mgz_list.html" target="_blank">html_mo/Mgz_list.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">07.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter">상세</td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mgz_detail.html" target="_blank">html_mo/Mgz_detail.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">07.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm3"><a href="#">장바구니/주문</a></dt>
+			<dd>
+				<!-- <p><strong>장바구니/주문</strong></p> -->
+				<table>
+					<colgroup>
+						<col width="100" />
+						<col width="" />
+						<col width="" />
+						<col width="70" />
+						<col width="70" />
+						<col width="130" />
+						<col width="70" />
+						<col width="70" />
+						<col width="70" />
+						<col width="40" />
+						<col width="40" />
+						<col width="280" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+							<th scope="col" rowspan="2">담당자</th>
+							<th rowspan="2" align="center" scope="col">완료일</th>
+							<th rowspan="2" align="center" scope="col">수정 완료일</th>
+							<th scope="col" colspan="2">체크</th>
+							<th scope="col" rowspan="2">메모</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+							<th scope="col">W3C</th>
+							<th scope="col">D/C</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 장바구니 -->
+						<tr>
+							<td><strong>장바구니</strong></td>
+							<td>&nbsp;</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cart.html" target="_blank">html_mo/Cart.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">01.20</span></td>
+							<td align="center"><span class="btn btn2 up">02.29</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>APP 알림 메시지 추가</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>담긴상품 없음</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cart_nolist.html" target="_blank">html_mo/Cart_nolist.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">01.20</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>장바구니-옵션/수량 변경하기</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cart_option.html" target="_blank">html_mo/Cart_option.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">01.20</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>상품 상태별</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cart_prod.html" target="_blank">html_mo/Cart_prod.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">01.20</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+
+						<!-- 주문결제 -->
+						<tr  class="tit">
+							<td><strong>주문</strong></td>
+							<td>주문서(일반회원)</td>
+							<td>주문서 작성</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Order_Ins.html" target="_blank">html_mo/Order_Ins.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">01.28</span></td>
+							<td align="center"><span class="btn btn2 up">06.24</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>디지털 상품권,페이코 결제수단 추가(06.24)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>주문서(비회원)</td>
+							<td>약관</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Order_Ins_nonMember_terms.html" target="_blank">html_mo/Order_Ins_nonMember_terms.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">01.28</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>주문서 작성</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Order_Ins_nonMember.html" target="_blank">html_mo/Order_Ins_nonMember.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">01.28</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>주문서(임직원)</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Order_Ins_staff.html" target="_blank">html_mo/Order_Ins_staff.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">01.28</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>선물함 인증</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/gift_auth.html" target="_blank">html_mo/gift_auth.html</a></td>
+							<td class="ct">정의찬</td> 
+							<td align="center" class="button"><span class="btn">2018.10.30</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>선물 배송정보 입력</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/gift_info.html" target="_blank">html_mo/gift_info.html</a></td>
+							<td class="ct">정의찬</td> 
+							<td align="center" class="button"><span class="btn">2018.10.30</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>주문완료</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Order_Ins_ok.html" target="_blank">html_mo/Order_Ins_ok.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">01.28</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>희망 배송일 선택</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Order_dlv_slt.html" target="_blank">html_mo/Order_dlv_slt.html</a></td>
+							<td class="ct">정의찬</td> 
+							<td align="center" class="button"><span class="btn">2019.05.13</span></td>
+							<td align="center"><!-- <span class="btn btn2 up">01.11</span> --></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>히스토리 : 디자인-퍼블리싱을 거치지 않고 만들어진 페이지임.  [NGCPO-5917 모던 가구 외부몰 URL 페이지 수정]의 사다리차 이용약관 동의 부분을 삽입하기 위해 개발페이지를 그대로 따와 생성 된 페이지임</td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm4"><a href="#">마이페이지</a></dt>
+			<dd>
+				<!-- <p><strong>마이페이지</strong></p> -->
+				<table>
+					<colgroup>
+						<col width="100" />
+						<col width="" />
+						<col width="" />
+						<col width="70" />
+						<col width="70" />
+						<col width="130" />
+						<col width="70" />
+						<col width="70" />
+						<col width="70" />
+						<col width="40" />
+						<col width="40" />
+						<col width="280" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+							<th scope="col" rowspan="2">담당자</th>
+							<th rowspan="2" align="center" scope="col">완료일</th>
+							<th rowspan="2" align="center" scope="col">수정 완료일</th>
+							<th scope="col" colspan="2">체크</th>
+							<th scope="col" rowspan="2">메모</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+							<th scope="col">W3C</th>
+							<th scope="col">D/C</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 마이페이지 -->
+						<tr>
+							<td><strong>마이페이지</strong></td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_main.html" target="_blank">html_mo/Mys_main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.05</span></td>
+							<td align="center"><span class="btn btn2 up">03.10</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>회원 등급 class명 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>주문/배송 조회</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ord_delivery.html" target="_blank">html_mo/Mys_ord_delivery.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.05</span></td>
+							<td align="center"><span class="btn btn2 up">03.17</span><span class="btn btn2 up">06.24</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>지점상품(픽업완료) 수정(03.17), 디지털 상품권 추가(06.24)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>주문 내역 없음</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ord_delivery2.html" target="_blank">html_mo/Mys_ord_delivery2.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.05</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>상세주문내역</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ord_detail.html" target="_blank">html_mo/Mys_ord_detail.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.05</span></td>
+							<td align="center"><span class="btn btn2 up">03.07</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>배송메세지 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>배송 정보(주문취소, 반품, 지점수령)</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ord_detail2.html" target="_blank">html_mo/Mys_ord_detail2.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.05</span></td>
+							<td align="center"><span class="btn btn2 up">06.24</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>디지털 상품권 추가(06.24)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>취소 신청</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_apply_cancel.html" target="_blank">html_mo/Mys_apply_cancel.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.05</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>취소 신청 완료</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_apply_cancel2.html" target="_blank">html_mo/Mys_apply_cancel2.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.05</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>교환/반품 신청</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ord_exchange.html" target="_blank">html_mo/Mys_ord_exchange.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"><span class="btn btn2 up">02.29</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>반품 신청 완료</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ord_returnOk.html" target="_blank">html_mo/Mys_ord_returnOk.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>
+								반품 신청<br>
+								<span class="lyr">디지털 상품권/입장권 case 추가</span>
+							</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ord_return.html" target="_blank">html_mo/Mys_ord_return.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">06.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>
+								받은 선물함<br>
+								<span class="lyr">수명매장 선택하기 레이어(임시배치)</span>
+							</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/gift_box.html" target="_blank">html_mo/gift_box.html</a></td>
+							<td class="ct">정의찬</td> 
+							<td align="center" class="button"><span class="btn">2018.10.30</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>취소/교환/반품 내역</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ord_cancel.html" target="_blank">html_mo/Mys_ord_cancel.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>나의 쇼핑 통장</td>
+							<td>포인트 조회</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_point.html" target="_blank">html_mo/Mys_point.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"><span class="btn btn2 up">03.09</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>기간검색 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>쿠폰 조회</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_coupon.html" target="_blank">html_mo/Mys_coupon.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"><span class="btn btn2 up">02.29</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>APP 알림 메시지 추가</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>예치금 조회</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_deposit.html" target="_blank">html_mo/Mys_deposit.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.11</span></td>
+							<td align="center"><span class="btn btn2 up">02.26</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td>나의 서비스 정보</td>
+							<td>나의상품평</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_prd_comment.html" target="_blank">html_mo/Mys_prd_comment.html</a></td>
+							<td class="ct">정성희</td>
+							<td align="center" class="button"><span class="btn">02.16</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>상품평쓰기</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_prd_comment2.html" target="_blank">html_mo/Mys_prd_comment2.html</a></td>
+							<td class="ct">정성희</td>
+							<td align="center" class="button"><span class="btn">02.16</span></td>
+							<td align="center"><span class="btn btn2 up">03.17</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>텍스트 수정 160317</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>상품평수정</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_prd_comment3.html" target="_blank">html_mo/Mys_prd_comment3.html</a></td>
+							<td class="ct">문연희</td>
+							<td align="center" class="button"><span class="btn">02.17</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>나의 문의/답변</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_Qa.html" target="_blank">html_mo/Mys_Qa.html</a></td>
+							<td class="ct">정성희</td>
+							<td align="center" class="button"><span class="btn">02.16</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>이벤트 참여현황</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_Evt.html" target="_blank">html_mo/Mys_Evt.html</a></td>
+							<td class="ct">정성희</td>
+							<td align="center" class="button"><span class="btn">02.16</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>나의 Mix&amp;Match</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_mix.html" target="_blank">html_mo/Mys_mix.html</a></td>
+							<td class="ct">문연희</td>
+							<td align="center" class="button"><span class="btn">02.16</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>나의 찜 목록</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_Like_Lst.html" target="_blank">html_mo/Mys_Like_Lst.html</a></td>
+							<td class="ct">문연희</td>
+							<td align="center" class="button"><span class="btn">02.15</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>최근 본 상품</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_recent.html" target="_blank">html_mo/Mys_recent.html</a></td>
+							<td class="ct">문연희</td>
+							<td align="center" class="button"><span class="btn">02.15</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>회원정보</td>
+							<td>배송지 관리</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_ship_addr.html" target="_blank">html_mo/Mys_ship_addr.html</a></td>
+							<td class="ct">문연희</td>
+							<td align="center" class="button"><span class="btn">02.15</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>환불 계좌 관리</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_Refund_Account.html" target="_blank">html_mo/Mys_Refund_Account.html</a></td>
+							<td class="ct">정성희</td>
+							<td align="center" class="button"><span class="btn">02.12</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>환불 계좌 관리(등록)</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_Refund_Account2.html" target="_blank">html_mo/Mys_Refund_Account2.html</a></td>
+							<td class="ct">정성희</td>
+							<td align="center" class="button"><span class="btn">02.12</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>환불 계좌 관리(수정)</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_Refund_Account3.html" target="_blank">html_mo/Mys_Refund_Account3.html</a></td>
+							<td class="ct">정성희</td>
+							<td align="center" class="button"><span class="btn">02.12</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>주문정보 수신 설정</td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mys_Recept_Msg.html" target="_blank">html_mo/Mys_Recept_Msg.html</a></td>
+							<td class="ct">정성희</td>
+							<td align="center" class="button"><span class="btn">02.15</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm5"><a href="#">고객센터/매장안내</a></dt>
+			<dd>
+				<!-- <p><strong>고객센터/매장안내</strong></p> -->
+				<table>
+					<colgroup>
+						<col width="100" />
+						<col width="" />
+						<col width="" />
+						<col width="70" />
+						<col width="70" />
+						<col width="130" />
+						<col width="70" />
+						<col width="70" />
+						<col width="70" />
+						<col width="40" />
+						<col width="40" />
+						<col width="280" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+							<th scope="col" rowspan="2">담당자</th>
+							<th rowspan="2" align="center" scope="col">완료일</th>
+							<th rowspan="2" align="center" scope="col">수정 완료일</th>
+							<th scope="col" colspan="2">체크</th>
+							<th scope="col" rowspan="2">메모</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+							<th scope="col">W3C</th>
+							<th scope="col">D/C</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 고객센터 -->
+						<tr>
+							<td><strong>고객센터</strong></td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cst_main.html" target="_blank">html_mo/Cst_main.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>1:1 친절상담</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cst_counsel.html" target="_blank">html_mo/Cst_counsel.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>자주하는 질문</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cst_faq.html" target="_blank">html_mo/Cst_faq.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>자주하는 질문(검색결과)</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cst_faq2.html" target="_blank">html_mo/Cst_faq2.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>자주하는 질문(검색결과 없음)</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cst_faq3.html" target="_blank">html_mo/Cst_faq3.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>공지사항</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cst_notice.html" target="_blank">html_mo/Cst_notice.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>복지제도 안내</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Cst_welfare.html" target="_blank">html_mo/Cst_welfare.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.23</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm6"><a href="#">로그인/회원</a></dt>
+			<dd>
+				<!-- <p><strong>로그인/회원</strong></p> -->
+				<table>
+					<colgroup>
+						<col width="100" />
+						<col width="" />
+						<col width="" />
+						<col width="70" />
+						<col width="70" />
+						<col width="130" />
+						<col width="70" />
+						<col width="70" />
+						<col width="70" />
+						<col width="40" />
+						<col width="40" />
+						<col width="280" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+							<th scope="col" rowspan="2">담당자</th>
+							<th rowspan="2" align="center" scope="col">완료일</th>
+							<th rowspan="2" align="center" scope="col">수정 완료일</th>
+							<th scope="col" colspan="2">체크</th>
+							<th scope="col" rowspan="2">메모</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+							<th scope="col">W3C</th>
+							<th scope="col">D/C</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 로그인 -->
+						<tr>
+							<td><strong>로그인</strong></td>
+							<td>로그인</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Login.html" target="_blank">html_mo/Login.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.01</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>로그인 레이어팝업</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Login_lypop.html" target="_blank">html_mo/Login_lypop.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.24</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>비밀번호 변경 알림 시스템 팝업</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Login_pop.html" target="_blank">html_mo/Login_pop.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.01</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>결혼기념일, 생일축하 쿠폰 알림 레이어</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Login_ly_cou.html" target="_blank">html_mo/Login_ly_cou.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"><span class="btn btn2 up">03.17</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>생일축하 레이어 추가</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>로그인 팝업메시지 템플릿</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Login_ly_tem.html" target="_blank">html_mo/Login_ly_tem.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>원클릭 로그인 팝업메시지</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Login_ly_onclick.html" target="_blank">html_mo/Login_ly_onclick.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">03.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>임직원 회원가입/인증</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Login_staff.html" target="_blank">html_mo/Login_staff.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">08.14</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm7"><a href="#">이벤트&헤택존/기타</a></dt>
+			<dd>
+				<!-- <p><strong>이벤트&헤택존/기타</strong></p> -->
+				<table>
+					<colgroup>
+						<col width="100" />
+						<col width="" />
+						<col width="" />
+						<col width="70" />
+						<col width="70" />
+						<col width="130" />
+						<col width="70" />
+						<col width="70" />
+						<col width="70" />
+						<col width="40" />
+						<col width="40" />
+						<col width="280" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+							<th scope="col" rowspan="2">담당자</th>
+							<th rowspan="2" align="center" scope="col">완료일</th>
+							<th rowspan="2" align="center" scope="col">수정 완료일</th>
+							<th scope="col" colspan="2">체크</th>
+							<th scope="col" rowspan="2">메모</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+							<th scope="col">W3C</th>
+							<th scope="col">D/C</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 이벤트 -->
+						<tr>
+							<td><strong>이벤트&amp;혜택존</strong></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Event_Lst.html" target="_blank">html_mo/Event_Lst.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>회원 등급 안내</td>
+							<td>로그인</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mem_rat.html" target="_blank">html_mo/Mem_rat.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"><span class="btn btn2 up">03.10</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>회원 등급 class명 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>비로그인</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Mem_rat2.html" target="_blank">html_mo/Mem_rat2.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>출석체크 이벤트</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Event_Chk.html" target="_blank">html_mo/Event_Chk.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>템플릿 <span class="lyr">게시형</span></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Event_case1.html" target="_blank">html_mo/Event_case1.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"><span class="btn btn2 up">03.30</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>ANCHOR TYPE으로 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>템플릿 <span class="lyr">응모형</span></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Event_case2.html" target="_blank">html_mo/Event_case2.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"><span class="btn btn2 up">03.30</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>ANCHOR TYPE으로 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>템플릿 <span class="lyr">구매합산 응모형</span></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Event_case3.html" target="_blank">html_mo/Event_case3.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"><span class="btn btn2 up">03.30</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>ANCHOR TYPE으로 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>템플릿 <span class="lyr">댓글형</span></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Event_case4.html" target="_blank">html_mo/Event_case4.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"><span class="btn btn2 up">03.30</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>ANCHOR TYPE으로 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>템플릿 <span class="lyr">설문참여형</span></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Event_case5.html" target="_blank">html_mo/Event_case5.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"><span class="btn btn2 up">03.30</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>ANCHOR TYPE으로 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>템플릿 <span class="lyr">행운번호 응모형</span></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Event_case6.html" target="_blank">html_mo/Event_case6.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.26</span></td>
+							<td align="center"><span class="btn btn2 up">03.30</span></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td>ANCHOR TYPE으로 수정</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>템플릿 <span class="lyr">상품평</span></td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Event_Review.html" target="_blank">html_mo/Event_Review.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">17.01.20</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<!-- 기타 -->
+						<tr class="tit">
+							<td><strong>기타</strong></td>
+							<td>403 에러</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Err_403.html" target="_blank">html_mo/Err_403.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>404 에러</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Err_404.html" target="_blank">html_mo/Err_404.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>500 에러</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Err_500.html" target="_blank">html_mo/Err_500.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>서비스접속 에러</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Err_service.html" target="_blank">html_mo/Err_service.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>시스템 정기점검</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Err_system.html" target="_blank">html_mo/Err_system.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">02.29</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>디지털 상품권</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Giftcard.html" target="_blank">html_mo/Giftcard.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">06.28</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>무실적 계정 안내</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/layer_no_acct.html" target="_blank">html_mo/layer_no_acct.html</a></td>
+							<td class="ct">백두산</td> 
+							<td align="center" class="button"><span class="btn">07.01</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>임시 비밀번호 로그인 안내</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/Tem_pwd.html" target="_blank">html_mo/Tem_pwd.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">07.22</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>이랜드몰 오픈 이벤트</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/coming.html" target="_blank">html_mo/coming.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">08.04</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>로그인</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="html_mo/coming_login.html" target="_blank">html_mo/coming_login.html</a></td>
+							<td class="ct">문연희</td> 
+							<td align="center" class="button"><span class="btn">08.05</span></td>
+							<td align="center"></td>
+							<td class="aCenter">○</td>
+							<td class="aCenter"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>
+		</dl>
+	</div>
+</div>
+</body>
+</html>

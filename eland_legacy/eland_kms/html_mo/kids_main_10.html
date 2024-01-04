@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>kidikidi</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_kids.css" type="text/css"> <!-- kids add css -->
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<style>
+	.brandHis_wrap{background-color: #f8f8f8;}
+	.slide_brandHis_wrapper{padding:0 1.35vw;}
+	.slide_brandHis_pic{width:100%; overflow: hidden; border-bottom-left-radius: 23% 17%;}
+	.slide_brandHis_tit{text-align: right; margin-top:5%; font-size: 3vw; color: #000;}
+</style>
+</head>
+<body class="renewal renewal2_brand kids">
+
+<!-- CONTENT -->
+<div class="contents" id="contents"> 
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide">
+
+				<!-- SWIPER 0 -->
+				<div class="slide_cont" data-index="0">
+
+					<!-- 브랜드 스토리 -->
+					<div class="area_lv1">
+						<div class="brandHis_wrap ptb_vw">
+							<div class="kids_container">
+								<h3 class="kids_main_tit">브랜드 스토리</h3>
+							</div>
+							<div class="kids_container_l">
+								<div class="kids_slide02_wrap">
+									<div class="slide_brandHis kids_slide02 swiper-container">
+										<ul class="swiper-wrapper">
+											<li class="swiper-slide swiper-scrollbar">
+												<a href="#">
+													<div class="slide_brandHis_wrapper">
+														<p class="slide_brandHis_pic"><img src="../images/mobile/temp/kids_brandHis_sample.jpg"></p>
+														<p class="slide_brandHis_tit">리미떼두두</p>
+													</div>
+												</a>
+											</li>
+											<li class="swiper-slide swiper-scrollbar">
+												<a href="#">
+													<div class="slide_brandHis_wrapper">
+														<p class="slide_brandHis_pic"><img src="../images/mobile/temp/kids_brandHis_sample_02.jpg"></p>
+														<p class="slide_brandHis_tit">리미떼두두</p>
+													</div>
+												</a>
+											</li>
+											<li class="swiper-slide swiper-scrollbar">
+												<a href="#">
+													<div class="slide_brandHis_wrapper">
+														<p class="slide_brandHis_pic"><img src="../images/mobile/temp/kids_brandHis_sample.jpg"></p>
+														<p class="slide_brandHis_tit">리미떼두두</p>
+													</div>
+												</a>
+											</li>
+											<!-- <li class="swiper-slide swiper-scrollbar">
+												<a href="#">
+													<div class="slide_brandHis_wrapper">
+														<p class="slide_brandHis_pic"><img src="../images/mobile/temp/kids_brandHis_sample.jpg"></p>
+														<p class="slide_brandHis_tit">리미떼두두</p>
+													</div>
+												</a>
+											</li> -->
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(document).ready(function() {
+								$('.slide_brandHis .swiper-slide').show();
+								var gutter = $('.kids_container_l').width() * 0.065;
+								$(window).resize(
+									function(){
+										gutter = $('.kids_container_l').width() * 0.065;
+										kidsSlideBrandHis.params.offsetPxBefore=gutter;
+										kidsSlideBrandHis.params.offsetPxAfter=gutter;
+									}
+								)
+								var kidsSlideBrandHis = new Swiper('.slide_brandHis',{
+									slidesPerView: 2.5,
+									simulateTouch: true,
+									calculateHeight: true,
+									offsetPxBefore: gutter,
+									offsetPxAfter: gutter,
+									onTouchStart: function(){
+										unableSwiping()
+									},
+									onTouchEnd: function(){
+										enableSwiping()
+									},
+								});
+
+								// kidsSlideBrandHis.activeSlide()
+									
+								$(window).resize(function(){	
+									kidsSlideBrandHis.reInit();
+									kidsSlideBrandHis.resizeFix()
+								});
+
+								function fixSwiperWidthBrandHis() {
+									var swiperWrapperWidth = Math.ceil($(".slide_brandHis .swiper-wrapper").outerWidth() + 2);
+									$(".slide_brandHis .swiper-wrapper").css("width", swiperWrapperWidth+"px");
+								}
+								fixSwiperWidthBrandHis();
+								$(window).resize(function(){
+									fixSwiperWidthBrandHis();
+								});
+								
+								function unableSwiping(){
+									if(typeof mainCate !== "undefined"){
+									mainCate.params.onlyExternal=true;
+									}
+								}
+								function enableSwiping(){
+									if(typeof mainCate !== "undefined"){
+									mainCate.params.onlyExternal=false;
+									}
+								}
+								// 최상위 스와이퍼 mainCate 스와이프 제한 함수
+							});
+						</script>
+					</div>
+					<!-- //브랜드 스토리 -->
+
+				</div>
+				<!-- //SWIPER 0 -->				
+            </li>
+		</ul>
+    </div>
+    
+</div>
+<!-- //CONTENT -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

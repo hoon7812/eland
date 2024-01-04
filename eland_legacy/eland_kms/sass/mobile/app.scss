@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+// LNB _Service Menu
+.app_lnb_cn{clear:both;
+	ul{position:relative;overflow:hidden;border-top:1px solid #e1e2e3;background:url("../../images/mobile/common/bg_lnb_line.png") repeat-y 50% 0;
+		&:after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:#e1e2e3;}
+		li{position:static;clear:none;float:left;width:50%;height:40px;border-bottom:1px solid #e1e2e3;
+			a{display:block;padding-left:33px;margin-right:0;font-size:13px;line-height:42px;color:#3f3f41;background-repeat:no-repeat;background-position:10px 50%;background-size:20px 20px;-webkit-background-size:20px 20px;
+				&.bs{background-image:url("../../images/mobile/common/ico_lnb_bs.png");}
+				&.dl{background-image:url("../../images/mobile/common/ico_lnb_dl.png");}
+				&.eb{background-image:url("../../images/mobile/common/ico_lnb_eb.png");}
+				&.ev{background-image:url("../../images/mobile/common/ico_lnb_ev.png");}
+				&.fi{background-image:url("../../images/mobile/common/ico_lnb_fi.png");}
+				&.fo{background-image:url("../../images/mobile/common/ico_lnb_fo.png");}
+				&.fs{background-image:url("../../images/mobile/common/ico_lnb_fs.png");}
+				&.hp{background-image:url("../../images/mobile/common/ico_lnb_hp.png");}
+				&.ma{background-image:url("../../images/mobile/common/ico_lnb_ma.png");}
+				&.md{background-image:url("../../images/mobile/common/ico_lnb_md.png");}
+				&.mm{background-image:url("../../images/mobile/common/ico_lnb_mm.png");}
+				&.ne{background-image:url("../../images/mobile/common/ico_lnb_ne.png");}
+				&.nw{background-image:url("../../images/mobile/common/ico_lnb_nw.png");}
+				&.om{background-image:url("../../images/mobile/common/ico_lnb_om.png");}
+				&.on{background-image:url("../../images/mobile/common/ico_lnb_on.png");}
+				&.rm{background-image:url("../../images/mobile/common/ico_lnb_rm.png");}
+				&.ro{background-image:url("../../images/mobile/common/ico_lnb_ro.png");}
+				&.rt{background-image:url("../../images/mobile/common/ico_lnb_rt.png");}
+				&.sa{background-image:url("../../images/mobile/common/ico_lnb_sa.png");}
+				&.sc{background-image:url("../../images/mobile/common/ico_lnb_sc.png");}
+				&.sl{background-image:url("../../images/mobile/common/ico_lnb_sl.png");}
+				&.sp{background-image:url("../../images/mobile/common/ico_lnb_sp.png");}
+				&.ss{background-image:url("../../images/mobile/common/ico_lnb_ss.png");}
+				&.tg{background-image:url("../../images/mobile/common/ico_lnb_tg.png");}
+				&.to{background-image:url("../../images/mobile/common/ico_lnb_to.png");}
+				&.wi{background-image:url("../../images/mobile/common/ico_lnb_wi.png");}
+				&.at{background-image:url("../../images/mobile/common/ico_lnb_at.png");}
+				&.off{background-image:url("../../images/mobile/common/ico_lnb_off.png");}
+				&.re{background-image:url("../../images/mobile/common/ico_lnb_re.png");}
+				&.mp{background-image:url("../../images/mobile/common/ico_lnb_mp.png");}
+				&.ec{background-image:url("../../images/mobile/common/ico_lnb_ec.png");}
+				&.st{background-image:url("../../images/mobile/common/ico_lnb_st.png");}
+				&.ba{background-image:url("../../images/mobile/common/ico_lnb_ba.png");}
+				&.nt{background-image:url("../../images/mobile/common/ico_lnb_nt.png");}
+				&.qa{background-image:url("../../images/mobile/common/ico_lnb_qa.png");}
+				&.nc{background-image:url("../../images/mobile/common/ico_lnb_nc.png");}
+			}
+		}
+	}
+}
+.cts_tit{top:0!important;z-index:41;}
+.header_bn.ready{top:45px!important;}
+.goods_wrap .catg_nav , .renewal2 .goods_wrap .catg_nav {top:45px!important;}
+.head_up .goods_wrap .catg_nav , .renewal2.head_up .goods_wrap .catg_nav {top:45px!important;}
+.head_up .header_bn.ready{top:-100px!important;}
+header,.main_top{display:none;}
+
+// event
+.evtp{
+	.contents{padding-top:0!important;}
+	.btn_back,.btn_top{display:none!important;}
+}
+
+// 임시 앱뷰 padding 제거
+.renewal, .renewal2{
+	.contents.temp{padding-top:0 !important;}
+}
+
+
+//goods Detail    JSP에서 이관.
+.layer_detail{//display:none;position:absolute;left:0;top:0;width:100%;height:100%;padding:0 0 0 0;box-sizing:border-box;-webkit-box-sizing:border-box;background:#fff;z-index:101;   // 상품상세를 웹뷰+레이어로 띄우는 경우 상단 잘림 현상 처리 // 히스토리 확인 불가.
+	.gd_bundle{padding: 0 0 60px 0;}
+}
+
+
+
+//앱 -> 앱뷰로 검색이 넘어오는 케이스 대응
+.renewal2.sch_part, .renewal2_brand.sch_part{
+	//&.head_up{
+	//	.search_wrap .sch_sort{position:absolute !important; top:0 !important;}
+	//}
+	// 스크립트에서 처리로 강제 처리 해제
+	// .contents{padding-top:42px !important;transition:none;}
+	.sch_kwd{top:0;}
+}
+.renewal2.sch_part.head_up:not(.cate_part) .contents, .renewal2_brand.sch_part.head_up:not(.cate_part) .contents{padding-top:42px !important;transition:none;}
+.renewal2.sch_part .contents{padding-top:0 !important;}
+.renewal2.sch_part.tdy .contents{padding-top:44px !important;
+	.cts_tit{position:fixed !important;}
+}
+.renewal2.sch_part .header_bn, .renewal2_brand.sch_part .header_bn{position:relative !important;top:0 !important;margin-top:44px;}
+.renewal2.sch_part .plan_top ~ .search_wrap .sch_sort.fixed{top:44px !important;}

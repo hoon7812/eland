@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.order.js"></script>
+	<script type="text/javascript">
+	commonUI.orderFunc();
+	</script>
+
+	<!-- 전달을 위한 css 입니다 -->
+	<style type="text/css"> 
+	#content{min-height:auto;}
+	.layer_pop{position:relative;left:50%;top:0;z-index: 6000;}
+	.center_btm_banner{display:none;}
+	</style>
+
+	<script>
+	//배송메세지 NGCPO-6849
+	$(function(){
+		$(".sel_box").change(function(){ 
+		    $(".sel_box option:selected").each(function(){
+			    msg = $(this).text();
+		        if(msg == "메시지 직접입력 (배송기사/매장 전달)"){
+		        	$(this).parent().parent().parent().find("select").hide();
+		        	$(this).parent().parent().parent().find(".msg_selected").hide();
+		        	$(this).parent().parent().append("<textarea cols='30' rows='2' class='w100'>배송 시 전달사항을 입력해주세요.</textarea>");
+		        }else{
+			        $(this).parent().parent().find(".msg_selected").show().find("span").text(msg);
+		        }
+		    });  
+		});
+	});
+	</script>
+
+</head>
+<body>
+
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+
+		<!-- container -->
+		<div id="container">
+		
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+
+			<!-- content -->
+			<div id="content">
+				<div class="layer_pop_section">
+
+					<!-- 배송지 등록 -->
+					<div class="layer_pop d_layer_pop on">
+						<div class="lay_wrap">
+							<div class="lay_tit02"><strong>배송지 등록</strong></div> <!-- 배송지 변경 텍스트 변경 사용 -->
+							<div class="lay_cont deli">
+								<div class="deli_tb">
+									<table>
+										<caption>배송지 등록 표이며 배송지명, 받으시는 분, 전화번호, 휴대폰번호, 배송지 주소, 배송 메시지 순으로 제공합니다.</caption>
+										<colgroup>
+											<col style="width:110px"></col>
+											<col style="width:346px"></col>
+										</colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">배송지명</th>
+											<td>
+												<div class="row" style="position:relative">
+													<input type="text" class="input_txt" placeholder="10자 이내" title="배송지명" />							
+													<span class="input_wrap">
+														<input id="chk_basic_ship" type="checkbox" class="chkbox ml20"> 
+														<label for="chk_basic_ship"></label>기본 배송지	
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">받으시는 분</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt" title="받으시는 분" /></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">전화번호(선택)</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="지역번호 선택" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 두번째 자리" />
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 세번째 자리" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대전화</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="휴대폰번호 첫번째 자리" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 두번째 자리" />
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 세번째 자리" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="v_top">주소</th>
+											<td>
+												<ul class="txt_row03 no_tit">
+													<li>
+														<div class="zip_input">
+															<p><input type="text" class="input_txt mid readonly" readonly="readonly" title="우편번호" /> <button type="button" class="addr_sch"><span>주소찾기</span></button></p>
+															<p><input type="text" class="input_txt wide readonly" readonly="readonly" title="주소지 상세1" /></p>
+															<p><input type="text" class="input_txt wide" title="주소지 상세2" /></p>
+														</div>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송 메시지</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt wide" title="배송 메시지" /></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="set_btn closed"><!-- closed 추가 -->
+									<button type="button" class="btn02"><span>등록</span></button>
+									<button type="button" class="btn02 c01"><span>취소</span></button>
+									<!--
+									<button type="button" class="btn02 c01"><span>초기화</span></button>
+									<button type="button" class="btn02 c01"><span>배송지 목록</span></button>
+								-->
+								</div>
+							</div>
+							<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+						</div>
+					</div>
+					<!-- //배송지 등록 -->
+
+					<!-- 배송지 수정 -->
+					<div class="layer_pop d_layer_pop on">
+						<div class="lay_wrap">
+							<div class="lay_tit02"><strong>배송지 수정</strong></div>
+							<div class="lay_cont deli">
+								<div class="deli_tb">
+									<table>
+										<caption>배송지 등록 표이며 배송지명, 받으시는 분, 전화번호, 휴대폰번호, 배송지 주소, 배송 메시지 순으로 제공합니다.</caption>
+										<colgroup>
+											<col style="width:110px"></col>
+											<col style="width:346px"></col>
+										</colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">배송지명</th>
+											<td>
+												<div class="row" style="position:relative">
+													<input type="text" class="input_txt" placeholder="10자 이내" title="배송지명" />							
+													<span class="input_wrap">
+														<input id="chk_basic_ship" type="checkbox" class="chkbox ml20" value="우리집"> 
+														<label for="chk_basic_ship"></label>기본 배송지	
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">받으시는 분</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt" title="받으시는 분" value="이랜드"/></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">전화번호(선택)</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="지역번호 선택" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 두번째 자리" value="1234"/>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 세번째 자리" value="1234"/>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대전화</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="휴대폰번호 첫번째 자리" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 두번째 자리" value="1234"/>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 세번째 자리" value="1234"/>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="v_top">주소</th>
+											<td>
+												<ul class="txt_row03 no_tit">
+													<li>
+														<div class="zip_input">
+															<p><input type="text" class="input_txt mid readonly" readonly="readonly" title="우편번호" value="12345"/> <button type="button" class="addr_sch"><span>주소찾기</span></button></p>
+															<p><input type="text" class="input_txt wide readonly" readonly="readonly" title="주소지 상세1" value="서울시 구로구 구일로10"/></p>
+															<p><input type="text" class="input_txt wide" title="주소지 상세2" value="1동 1234호"/></p>
+														</div>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송 메시지</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt wide" title="배송 메시지" value="전화주세요"/></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="set_btn closed"><!-- closed 추가 -->
+									<button type="button" class="btn02"><span>등록</span></button>
+									<button type="button" class="btn02 c01"><span>취소</span></button>
+									<!--
+									<button type="button" class="btn02 c01"><span>초기화</span></button>
+									<button type="button" class="btn02 c01"><span>배송지 목록</span></button>
+								-->
+								</div>
+							</div>
+							<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+						</div>
+					</div>
+					<!-- //배송지 수정 -->
+
+					<!-- 배송지 변경 -->
+					<div class="layer_pop d_layer_pop on">
+						<div class="lay_wrap">
+							<div class="lay_tit02"><strong>배송지 변경</strong></div>
+							<div class="lay_cont deli">
+								<div class="deli_tb">
+									<table>
+										<caption>배송지 등록 표이며 배송지명, 받으시는 분, 전화번호, 휴대폰번호, 배송지 주소, 배송 메시지 순으로 제공합니다.</caption>
+										<colgroup>
+											<col style="width:110px"></col>
+											<col style="width:346px"></col>
+										</colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">배송지명</th>
+											<td>
+												<div class="row" style="position:relative">
+													<input type="text" class="input_txt" placeholder="10자 이내" title="배송지명" />							
+													<span class="input_wrap">
+														<input id="chk_basic_ship" type="checkbox" class="chkbox ml20" value="우리집"> 
+														<label for="chk_basic_ship"></label>기본 배송지	
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">받으시는 분</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt" title="받으시는 분" value="이랜드"/></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">전화번호(선택)</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="지역번호 선택" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 두번째 자리" value="1234"/>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 세번째 자리" value="1234"/>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대전화</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="휴대폰번호 첫번째 자리" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 두번째 자리" value="1234"/>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 세번째 자리" value="1234"/>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="v_top">주소</th>
+											<td>
+												<ul class="txt_row03 no_tit">
+													<li>
+														<div class="zip_input">
+															<p><input type="text" class="input_txt mid readonly" readonly="readonly" title="우편번호" value="12345"/> <button type="button" class="addr_sch"><span>주소찾기</span></button></p>
+															<p><input type="text" class="input_txt wide readonly" readonly="readonly" title="주소지 상세1" value="서울시 구로구 구일로10"/></p>
+															<p><input type="text" class="input_txt wide" title="주소지 상세2" value="1동 1234호"/></p>
+														</div>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송 메시지</th>
+											<td>
+												<div class="row">
+													<select class="sel_box w100">
+														<option>선택해 주세요</option>
+														<option>부재시 경비(관리)실에 맡겨주세요</option>
+														<option>빠른 배송 부탁드려요</option>
+														<option>부재시 문 앞에 놓아주세요</option>
+														<option>파손의 위험이 있는 상품이 있습니다.</option>
+														<option>배송전에 연락주세요</option>
+														<option>메시지 직접입력 (배송기사/매장 전달)</option>
+													</select>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="set_btn closed"><!-- closed 추가 -->
+									<button type="button" class="btn02"><span>등록</span></button>
+									<button type="button" class="btn02 c01"><span>취소</span></button>
+									<!--
+									<button type="button" class="btn02 c01"><span>초기화</span></button>-->
+									<button type="button" class="btn02 c01"><span>배송지 목록</span></button>
+								
+								</div>
+							</div>
+							<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+						</div>
+					</div>
+					<!-- //배송지 변경 -->
+
+					<!-- 회수지 변경 -->
+					<div class="layer_pop d_layer_pop on">
+						<div class="lay_wrap">
+							<div class="lay_tit02"><strong>회수지 변경</strong></div>
+							<div class="lay_cont deli">
+								<div class="deli_tb">
+									<table>
+										<caption>배송지 등록 표이며 배송지명, 받으시는 분, 전화번호, 휴대폰번호, 배송지 주소, 배송 메시지 순으로 제공합니다.</caption>
+										<colgroup>
+											<col style="width:110px"></col>
+											<col style="width:346px"></col>
+										</colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">배송지명</th>
+											<td>
+												<div class="row" style="position:relative">
+													<input type="text" class="input_txt" placeholder="10자 이내" title="배송지명" />							
+													<span class="input_wrap">
+														<input id="chk_basic_ship" type="checkbox" class="chkbox ml20" value="우리집"> 
+														<label for="chk_basic_ship"></label>기본 배송지	
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">받으시는 분</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt" title="받으시는 분" value="이랜드"/></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">전화번호(선택)</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="지역번호 선택" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 두번째 자리" value="1234"/>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 세번째 자리" value="1234"/>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대전화</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="휴대폰번호 첫번째 자리" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 두번째 자리" value="1234"/>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 세번째 자리" value="1234"/>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="v_top">주소</th>
+											<td>
+												<ul class="txt_row03 no_tit">
+													<li>
+														<div class="zip_input">
+															<p><input type="text" class="input_txt mid readonly" readonly="readonly" title="우편번호" value="12345"/> <button type="button" class="addr_sch"><span>주소찾기</span></button></p>
+															<p><input type="text" class="input_txt wide readonly" readonly="readonly" title="주소지 상세1" value="서울시 구로구 구일로10"/></p>
+															<p><input type="text" class="input_txt wide" title="주소지 상세2" value="1동 1234호"/></p>
+														</div>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">회수 메시지</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt wide" title="배송 메시지" value="전화주세요"/></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="set_btn closed"><!-- closed 추가 -->
+									<button type="button" class="btn02"><span>등록</span></button>
+									<button type="button" class="btn02 c01"><span>취소</span></button>
+									<!--
+									<button type="button" class="btn02 c01"><span>초기화</span></button>-->
+									<button type="button" class="btn02 c01"><span>회수지 목록</span></button>
+								
+								</div>
+							</div>
+							<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+						</div>
+					</div>
+					<!-- //회수지 변경 -->
+
+				</div>
+				
+			</div>
+			<!-- //content -->
+
+			<div id="temp_dimm" class="lp_dimm"></div>	
+
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+
+	</div>
+	<!-- //wrapper -->
+
+</body>
+</html>

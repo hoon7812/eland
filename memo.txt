@@ -1,0 +1,554 @@
+
+
+
+========이랜드몰============
+
+
+1. 출근 기록
+2. 일일 업무보고 :  오후 3시반까지 완료
+3. WBS 기록
+4. 매주 목요일 주간보고 10시
+6. 퇴근 기록 (커밋/푸시 후 퇴근)
+ 
+​
+노트북 시리얼넘버 : PF2T56GR
+내 IP :  10.157.48.208
+메일주소 : cho.jeonghun@eland-partner.co.kr
+​​
+
+PC로그인
+​cho.jeonghun
+#12qawsed
+
+​
+라드씨엔에스 어플 계정
+cho.jeonghun / 1111
+
+메일
+cho.jeonghun@eland-partner.co.kr
+
+
+이랜드SSO
+http://sso.eland.com/eland-portal/login.do?returnURL=http%3a%2f%2fenet.eland.co.kr%2f
+
+
+추가 케이스
+https://dev.elandmall.com/
+https://qas.elandmall.com/
+내부 산출물 케이스
+\\10.23.81.38\hdd3-퍼블리셔(이랜드몰)\이랜드몰 퍼블리싱 산출물_20200212\
+
+깃랩 계정
+dev_ui1
+*dev_ui1*
+
+
+슬랙 계정
+라드씨앤에스 : radcns.slack.com
+ui개발 : ui-iht4017.slack.com
+cho.jeonghun@eland-partner.co.kr
+#12qawsed
+
+
+공인IP		
+125.176.40.211
+
+퍼블리셔 공유폴더
+\\10.23.81.38\퍼블리셔(이랜드몰)\mo공통화_json공유
+
+
+Bitbucket
+fpyk8rndsh@privaterelay.appleid.com
+hoon7812 애플
+
+
+
+=================================================
+
+
+
+========검수 체크=============
+
+2. 포커스
+3. 레이어 팝업 체크 (빠진 부분 없는지, dimmed 위로 나오는지)
+4. 해상도 체크
+5. 스와이퍼 체크
+6. 공통화 부분 영향
+7. 밸리데이션 체크	
+
+
+
+=============================================================
+
+
+   ===이미지 사용시===                            
+                                <span class="js-picture" data-async>
+                                    <img src="/img/blank.gif" data-srcset="/img/pc/temp_600x600.jpg" width="600" height="600" alt="">
+                                </span>
+
+   ===레이어팝업 이미지 사용시===
+   <span class="js-picture">
+       <img src="/img/blank.gif" data-srcset="/img/pc/temp_600x600.jpg" alt="" width="" height="">
+   </span>
+
+   =-==스와이프 이미지 사용시===
+   <img src="/img/blank.gif" data-src="/img/pc/prd_330x330_01.jpg" width="330" height="330" alt="" class="swiper-lazy">        
+
+
+
+
+========== 재검수=========
+
+=== 마크업/CSS 변경 ===
+1. h2 태그안 div, span 삭제, 타이틀 있을 경우 변경
+2. 불필요한 태그 및 CSS 삭제
+3. a링크 role 확인 : <a 
+4. alt와 blind 설명 중복 제거
+5. js-picture 클래스 중복시 data-async 확인
+6. background: url "" 따옴표 적용 : url(/
+7. css important 제거                                                  !important
+8. CSS 제거 : webkit
+
+
+=== 스와이퍼 ===
+1. swiper > slidesOffsetBefore / After가 css로 대체
+2. swiper 자동재생 아닐시 옵션 제거
+3. swiper 기본 css가 포함된 경우
+   .swiper-wrapper
+   .swiper-slide
+
+=== 게시판 ===
+1. cm-pagination > on을 active로 변경                              .on
+2. 더보기 버튼 제일 뒤로
+
+===팝업===
+1. dimmed 넣기
+
+=== 결과 ===
+0. IE 크로스브라우징 체크 (PC만)
+1. 비정상적으로 출력되는 부분 확인
+2. 포커스링 확인
+3. 글자 잘림 확인
+5. 마크업 validator 체크
+
+
+============3차 공통체크==============================
+
+class="ir"-> blind 변경
+on -> active 변경 (띄어쓰고on" 등으로 검색)
+img src에 blank 이미지가 아닌 이미지가 들어간 경우(띄어쓰고 src="/img/pc,mo 등으로 검색..)
+
+=== JSON true 처리 ===
+1. date 필히 같이 수정
+   - ‘버튼 클릭 → 아코디언 열림’
+   - ‘일정 지점 이후로 스크롤 시 sticky 처리’
+   - ‘상품 리스트 보기 방식 변경(크게 보기, 2열 보기, 리스트 보기 등)’
+   - ‘swiper 현재 페이지 index가 좌 우 버튼 내부에 실시간으로 표시됨’
+
+=====최적화 작업 추후 이슈=======
+
+- 이슈 컴퍼넌트
+main-mo-pop, main-mo-fullpop : MO 스와이퍼 data-lazy 삭제해야 정상작동
+main-food-ban, main-mid-ban, ks-main-visual : MO 스와이퍼 data-lazy 삭제해야 정상 height
+ks-display-best : PC 두번째탭 스와이퍼 이전,다음 버튼 안나옴
+ks-board-detail : PC 스와이퍼로 인한 체크박스 잘림
+PC : lnb-filter-cont 라디오버튼 포커스링
+
+- 킴스클럽 메인 이미지스와이퍼, 킴스특가 추가
+- 모던하우스 모던매거진, 오프라인 매장안내 배너
+main-prd-store : 스와이퍼 ie 오류
+group-buy-form : 달력 컴퍼넌트 추후 작업
+
+
+
+
+
+===========작업 프로세스==========================================================
+
+1. 컴퍼넌트명
+2. 컴퍼넌트 주소
+"component":"../pc/emall/pop-sns/component.html",
+"component":"../mo/emall/pop-sns/component.html",
+3. js, swiper 사용여부
+4. 메모
+5. 날짜
+ "memo": "메인 스와이프",
+"date":"2022-03-17",
+6. 커멘트 (수정시)
+        [
+                 "[2022-03-16] 최적화 수정"
+          ]
+
+============
+
+
+2. h1 제목수정
+3. h2 제목수정
+3. importer 컴퍼넌트명 추가
+4. html 컴퍼넌트명 2개 기입
+5. 클래스 변경 :  ir -> blind
+5. on ---> active  클래스 교체
+6. 페이지 이동없는 버튼 :  <a href="#" role="button
+7. 새창일시 :  title="새창"                                                   
+
+9. ul 클래스명 -list 추가
+11. float시 : @include: clearfix;
+<!-- [D] active 클래스 추가 시 활성화 -->
+
+   js빠졌을시
+    <script src="/js/apps/components/global/ui-library/main.js"></script>
+
+12. 밸리데이션 wah  검사
+13. 오픈왁스 검사
+14. 키보드 탭으로 포커스 가는지 확인
+15. 크롬, 파폭, 엣지, ie10, ie11 크로스브라우징
+16. 콘솔창 오류 체크
+16. success : true
+
+
+
+
+===툴팁===
+ data-tooltip-btn
+ data-tooltip-panel
+ data-tooltip-close
+
+
+class="ico-tooltip" data-tooltip-btn
+class="set-tooltip active" data-tooltip-panel
+class="tip_close" data-tooltip-close
+
+
+===탭 주의사항===
+
+탭이 여러개일 경우,
+data-tab="tab" / data-tab-panel="tab"
+data-tab="tab2 / data-tab-panel="tab2"
+탭 속에 탭이 있는 경우,
+data-tab="tab" , data-tab="tab:tab_2" / data-tab-panel="tab" , data-tab-panel="tab:tab_2"
+탭이 여러개일 경우 이름을 각각 유니크하게 해주시고,
+탭 속에 탭일 경우에는 : 따옴표로 하이라키하게 해주시면 됩니다.
+부모가 tab 이면, 부모:tab_2 이렇게,
+ tab_p 이면, tab_p:tab:tab_2
+이런식으로 : 로 추가해서 넣어주시면 됩니다.
+탭이 여러개라 작동이 안 될때 위와 같이 data-tab, data-tab-panel 이름을 다르게 넣어 주시면 됩니다
+
+
+
+
+=====킴스클럽 reset =======
+.kims-default-pc {
+    * {
+        box-sizing: content-box;
+    }
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, select, textarea, p, blockquote, th, td, legend, button {
+        margin:0;
+        padding:0;
+        color:#666;
+        font-family:'Noto Sans KR', 'Malgun Gothic', "Roboto","Droid Sans","AppleSDGothicNeo",sans-serif;
+        font-size:13px;
+        line-height:1.25em;
+        -webkit-font-smoothing:antialiased;
+        font-weight:400;
+    }
+    a[role="button"] {
+        display: inline-block;
+        line-height: normal;
+        box-sizing: border-box;
+        vertical-align: middle;
+        border: none;
+    }
+}
+.kims-default-mo {
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, select, textarea, p, blockquote, th, td, legend, button {
+        margin: 0;
+        padding: 0;
+        font-family: "Noto Sans KR", "Malgun Gothic", "Roboto", "Droid Sans", "AppleSDGothicNeo", "Helvetica", sans-serif !important;
+        font-size: 14px; 
+        color: #191919 !important;
+    }
+    a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        color: #191919;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1) !important;
+     }
+}
+
+
+
+================================================
+
+
+​*** 모바일 뷰포트 ***
+기본 : 360
+아이폰 : 375
+G8 : 412
+안드로이드 확대시 : 320
+​
+
+===접근성 작업절차===
+1. 코딩
+2. 유효성검사
+3. aria 적용작업
+4. 스크린리더,포커스 이동점검
+5. text확대
+6. 최종수정
+
+​
+===ARIA====================
+웹접근성 마크업시 ARIA 적용 코딩
+https://github.com/lezhin/accessibility/blob/master/aria/README.md
+​
+​
+1. 제목있는 영역 aria-labelledby="제목ID"
+2. 관계있는 제목ID와 버튼 연결 button aria-describedby=“abc_1 abc_2”
+3. 별점 5개 aria-valuemax="5" aria-vaulemin="0" aria-vaulenow="3"
+​4. 태그에 역할없는 경우만 role사용
+   - nav일 경우 role="navigation" (nav에는 쓰지 말 것)
+   - div 역할없는 경우 role="application"
+   - 배너 role="banner"
+   - main role="main" (main의 경우 쓰지 말 것)
+   - aside role="aside"
+   - 검색시 role="search"
+   - 텍스트 role="text"
+   - 폼 role="form"
+   - 설명 role="contentinfo"  
+   - 상태메세지 role="status" (장바구니 숫자 등)
+ ​
+​
+==공통==
+설명  aria-label=""
+페이징,메뉴 등 현재항목시 aria-current=“page” 아닐시 false
+​
+==버튼==
+팝업버튼 aria-haspopup="true"
+접혔을시 버튼 aria-expanded="false" 열렸을시 버튼 true
+요소의 눌림상태 aria-pressed="false"
+​
+==팝업==
+모달있을시 aria-modal="true"
+숨겨져있는 요소 aira-hidden="false" 보일시 true
+툴팁요소의 아이디 : aria-describedby="인풋ID"
+실시간 업데이트정보 : " aria-live="assertive" 접속할수없습니다.
+​
+==탭인덱스==
+탭과 본문 연결 aria-controls="본문ID"
+본문과 탭연결 aria-labelledby="탭ID"
+탭 선택시 aria-selected="true" 아닐시 false
+role="tablist" : role="tab"과 함께 사용되는 복합형 Role속성이며 요소에 탭목록 역할을 부여한다.
+role="tab" : role="tablist"의 자식속성으로 사용되며 탭 역할을 부여한다.
+role="tabpanel" : 탭의 본문 역할을 부여한다.
+​
+​
+​​
+=======웹접근성=======
+​
+==인증기관==
+한국웹접근성인증평가원   www.wa.or.kr
+웹와치                         www.webwatch.or.kr
+한국웹접근성평가센터      www.kwacc.or.kr
+* 마크업 유효성검사
+* 자가진단 결과서 필수  Kado-WHA
+​
+==모바일 검사==
+http://www.wa.or.kr/board/view.asp?sn=162&page=1&search=&SearchString=&BoardID=0004&cate=
+https://www.w3.org/TR/mobile-bp/
+http://www.websoul.co.kr/accessibility/MA_guide.asp
+http://www.webwatch.or.kr/MA/020201.html?MenuCD=220
+​
+​
+==고대비 모드
+L shift + alt + Prt Screen
+​
+​
+==확인사항==
+1. 대체텍스트
+2. 스크린리더 정상적인 흐름인지
+3. 색에 관계없이 인식(패턴,텍스트 추가 등)
+4. 버튼,이미지 명도 최소대비 4.5: 1 (확대기능 있을시 3:1)
+5. 자동재생되는 컨텐츠 재생/정지,이전/다음 기능
+6. 키보드 제어(pc시)
+7. 기본언어 명시 (컨텐츠중 다른 언어있을시 lang="OO")
+8. 영상 자막제공
+9. 테이블 피그캡션
+10. 최상단 바로가기 링크
+11. 폰트 축소/확대 > 앱에서 폰트제한시 버튼으로 축소/확대, 폰트제한안할시 버튼X 사용자설정으로
+12. 시간제한 두지 않아야함 (인트로, 팝업 등)
+13. 팝업레이어 안에서만 초점이동 (닫을시 이전 초점으로)
+14. 오류메세지엔 구체적인 오류정보/해결책을 표기해야함
+15. 주문시 확인팝업 등 제출전에 확인할수있는 방법을 제공해야함.
+16. 레이어팝업 / 툴팁 ESC버튼으로 닫히도록
+​
+​
+​
+==접근성 인증마크 참고사이트==
+https://www.skbp.com
+https://m.shop.uplus.co.kr/mw/main?gclid=CjwKCAjw_o-HBhAsEiwANqYhp-hZ8rd2heGMAj8JsVkw82EhEx_baB8jw9a9OHkDCYZsqxvDdduNohoCAFsQAvD_BwE
+https://m.shop.kt.com:444/m/main.do
+https://m.epost.go.kr/mobile/index.jsp
+https://www.lge.co.kr/care-solutions/dryers  : 스크립트 참고
+http://www.emarteveryday.co.kr/
+https://kr.lgappstv.com/main
+https://www.shinhanlife.co.kr/hp/cdha0010.do
+​
+​
+​
+​​
+=======================
+​
+시멘틱마크업
+http://www.w3c.or.kr/Events/html5/html5/Best_Practice_of_HTML5_Semantic_Markup.pdf
+​
+========================
+​
+드래그 앤 드랍 (소터블)
+http://design.hbedu.co.kr/lms/fc/Mathlearning/pop_smartTestMagician04.html
+​
+============================
+​
+슬라이더
+https://owlcarousel2.github.io/OwlCarousel2/
+​
+카테고리 전체열기
+https://tinkerbell93.github.io/edyia-clone/
+​
+스와이퍼
+https://www.biew.co.kr/entry/%EB%B0%98%EC%9D%91%ED%98%95-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%8D%94-Swiper
+​
+각종 버튼
+https://blogpack.tistory.com/876
+​
+오늘하루 그만보기
+​
+========================
+​
+온클릭 링크
+onclick="location.href='Privacy_agree.html'"
+​
+=========================
+​
+wai aria
+https://mulder21c.github.io/aria-practices/#intro
+​
+사스
+https://poiemaweb.com/sass-css-extention#1-nesting
+​
+css 코드 한줄 정렬
+https://lpla.tistory.com/66
+
+​
+=======참고소스========
+ //토글
+   $(".cta button").click(function(){
+       $(this).siblings().slideToggle();
+       $(this).parent().toggleClass("on");
+       $(this).text( $(this).text() == '닫기' ? "보기" : "닫기");
+       $("#wrap").toggleClass("cta_on", 350);    
+   });
+
+
+===스와이프 중복시===
+            observer: true,
+            observeParents: true
+-----------------------------------------------------------------------------------------------
+
+== 가운데정렬 비율크기 유지 div ===
+.soldout {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                    background: url(/img/mo/bg_soldout_mo.png) repeat 0 0;
+                    em {
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        height: 0;
+                        padding-top: 100%;
+                        background: url(/img/mo/img_soldout.png) no-repeat center; 
+                        background-size: 50% 50%;   
+                        b {
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            font-size: 18px;
+                            line-height: 20px;
+                            color: #333;
+                            font-weight: bold;
+                            text-align: center;      
+                        }
+                    }
+                }
+
+
+
+-----------------------------------------------------------------------------------------------
+
+부모보다 높이 긴 absolute 자식 
+ .ctg_ly {
+        position: absolute;
+        width: 100%;
+        height: auto; 
+        &::before {    
+            position: absolute; 
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            height: 100%;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            content: "";
+        } 
+}
+​
+
+-----------------------------------------------------------------------------------------------
+
+VS CODE 파일 찾기
+(ks-item[\s\S\n]*js-picture)|(js-picture[\s\S\n]*ks-item)
+
+-----------------------------------------------------------------------------------------------
+
+백그라운드 그라데이션
+
+        background: linear-gradient(0deg, transparent, rgba(0,0,0,0.3) 100%);
+
+
+-----------------------------------------------------------------------------------------------
+
+부모 width와 상관없이
+자식  width 자동 :  width: max-content; ie 안됨.
+
+                            width: auto; 
+                            white-space: nowrap;
+
+
+
+-----------------------------------------------------------------------------------------------
+
+hrzscroll 안될시  ul
+                    display: inline-flex;
+                    flex-wrap: nowrap;
+                    width: auto;
+
+-----------------------------------------------------------------------------------------------
+
+가로스크롤 (스와이프 대신)
+
+.mo .hrzScroll {
+    position: relative;
+    overflow: hidden;
+    overflow-x: auto;
+  
+    >           
+        flex-wrap: nowrap;
+        display: inline-flex;
+        width: auto;
+        align-items: stretch;
+        -webkit-box-align: stretch;
+        white-space: nowrap;

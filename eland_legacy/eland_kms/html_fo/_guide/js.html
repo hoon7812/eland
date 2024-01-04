@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>E랜드 통합몰 - 가이드 | 테이블</title>
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/common.css">
+	<link rel="stylesheet" type="text/css" href="./css/guide.css">
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+</head>
+<body>
+<h1 class="guide-tit-h1">가이드 - JS</h1>
+<div class="guide-section">
+	<div class="guide-data-table02 mt10">
+		<table summary="html 폴더 구조 안내 표입니다. 순서, 속성, 의미 순으로 나옵니다. ">
+			<colgroup>
+				<col width="25%" /><col width="800" /><col />
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col">함수</th>
+				<th scope="col">스크립트</th>
+				<th scope="col">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>ui.header.onlycoding.js</td>
+				<td>
+					<a class="guide-lnk" href="../common/layout.html" target="_blank">#link</a>
+					<div><img src="images/js00.jpg" alt="" /></div>
+					<div class="mt10"><img src="images/js01.jpg" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>페이지 내<br />- mainBillboard = function() { ... }</td>
+				<td>
+					<a class="guide-lnk" href="../main/hm01_01.html" target="_blank">#link</a>
+					<div><img src="images/js03.jpg" alt="" style="width:600px;" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					페이지 내<br />
+					- slTabInit()<br />
+					- hpdInit()
+				</td>
+				<td>
+					<a class="guide-lnk" href="../main/hm01_01.html" target="_blank">#link</a>
+					<div><img src="images/js04.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					페이지 내<br />
+					- recomEvtInit()<br />
+					- lttSlider()
+				</td>
+				<td>
+					<a class="guide-lnk" href="../main/hm01_01.html" target="_blank">#link</a>
+					<div><img src="images/js05.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					페이지 내<br />- mdRecominit()
+				</td>
+				<td>
+					<a class="guide-lnk" href="../main/hm01_01.html" target="_blank">#link</a>
+					<div><img src="images/js06.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					페이지 내<br />- brandRollInit()
+				</td>
+				<td>
+					<a class="guide-lnk" href="../main/hm01_01.html" target="_blank">#link</a>
+					<div><img src="images/js07.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					ui.js<br />- commonUI.view.depth1Slider01Func()
+				</td>
+				<td>
+					<a class="guide-lnk" href="../main/hm01_02.html" target="_blank">#link</a>
+					<div><img src="images/js08.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					idangerous.swiper.min.js
+				</td>
+				<td>
+					<a class="guide-lnk" href="../main/hm01_02.html" target="_blank">#link</a>
+					<div>
+						<img src="images/js09.jpg" style="width:600px" alt="" /><br />
+						(이하 같은 유형 생략)
+					</div>
+<pre style="overflow:auto;">
+$(window).ready(function() {
+	var fs_opt = { pagination: '.list_roll_fs .d_indi' , speed: 300 , autoplay: 3000 , simulateTouch : false , createPagination: false , paginationElement : "a" , paginationClickable : true , loop : true}
+	if($('.box_fs .swiper-slide').size() <= 1) {
+		$('.box_fs .set_indicator').hide();
+		$('.box_fs .fs_controll').hide();
+		return;
+	}
+	var fsBnr = new Swiper('.list_roll_fs .swiper-container',fs_opt);
+
+	var swiperEle = {
+		$target : $('.list_roll_fs')
+		,status : true
+		,last_idx : 0
+		,ins : fsBnr
+	};// 최상단 박스 , $target : autoplay - play , status : stop 버튼 관련 , last_idx : autoplay 관련 , ins : swiper instance name
+
+	swiperEle.$target.hover(
+		function (e) { //mouseenter
+			swiperEle.ins.stopAutoplay();
+			e.preventDefault();
+		},
+		function (e) { //mouseleave
+			if ( swiperEle.status ) swiperEle.ins.startAutoplay();
+			e.preventDefault();
+		}
+	);
+
+	swiperEle.$target.find('.d_indi a').on('click',function(e){
+		e.preventDefault();
+	});
+
+	swiperEle.$target.find('.d_play').on('click', function(e){
+		swiperEle.status = true;
+		swiperEle.ins.startAutoplay();
+
+		$(this).parent().removeClass("ons");
+		swiperEle.$target.find('.d_stop').focus();
+		e.preventDefault();
+	});
+
+	swiperEle.$target.find('.d_stop').on('click', function(e){
+		swiperEle.status = false;
+		swiperEle.ins.stopAutoplay();
+
+		$(this).parent().addClass("ons");
+		swiperEle.$target.find('.d_play').focus();
+		e.preventDefault();
+	});
+
+	swiperEle.$target.on("keydown", ".swiper-slide" , function(e) {
+		var idx = Math.floor($(this).attr('data-index'));
+		if(e.keyCode == 9){ swiperEle.ins.swipeTo(idx, 0 , 0 );}
+		swiperEle.last_idx = idx;
+	});
+
+	var end_idx = parseInt(swiperEle.$target.find(".swiper-slide").data("index"))+1; // 마지막 blur 처리
+	swiperEle.$target.find(".swiper-slide").eq(end_idx).on("blur", "a:last" ,function(e){
+		swiperEle.ins.startAutoplay();
+		e.preventDefault();
+	})
+
+	swiperEle.$target.on("focusin" , "a" , function(e) {
+		swiperEle.ins.stopAutoplay();
+	});
+
+	swiperEle.$target.on("focus", ".swiper-slide" ,function(){
+		var idx = Math.floor($(this).attr('data-index'));
+		swiperEle.ins.stopAutoplay();
+		swiperEle.ins.swipeTo( idx, 0 , 0 )
+	});
+
+	swiperEle.$target.find('.d_prev_fs').on('click',function(e) {
+		swiperEle.ins.swipePrev();
+		e.preventDefault();
+	});
+	swiperEle.$target.find('.d_next_fs').on('click',function(e) {
+		swiperEle.ins.swipeNext();
+		e.preventDefault();
+	});
+
+	swiperEle.$target.find(".swiper-slide-duplicate a").attr('tabindex','-1');
+	swiperEle.$target.find(".swiper-slide:not(.swiper-slide-duplicate)").attr('tabindex','0');
+
+});
+</pre>					
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					ui.js<br />
+					- commonUI.view.navCate()
+				</td>
+				<td>
+					<a class="guide-lnk" href="../lp/lp01_01.html" target="_blank">#link</a>
+					<div><img src="images/js10.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td>
+					ui.js<br />
+					- commonUI.view.listProduct()
+				</td>
+				<td>
+					<a class="guide-lnk" href="lp.html" target="_blank">#link</a>
+					<div><img src="images/js02.jpg" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					ui.js<br />
+					- commonUI.view.searchFilter()
+				</td>
+				<td>
+					<a class="guide-lnk" href="../lp/lp01_02.html" target="_blank">#link</a>
+					<div><img src="images/js11.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					ui.js<br />
+					jquery.elevatezoom.js<br />
+					idangerous.swiper.min.js<br />
+					ui.productdetail.js<br />
+					- elevateSet();<br />
+					- elevateGalleryRoll();<br />
+					- commonUI.view.detail.detailDesFunc();
+				</td>
+				<td>
+					<a class="guide-lnk" href="../gd/gd01_01.html" target="_blank">#link</a>
+					<div><img src="images/js12.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					ui.productdetail.js<br />
+					- commonUI.view.detail.tabFocus();
+				</td>
+				<td>
+					<a class="guide-lnk" href="../gd/gd01_01.html" target="_blank">#link</a>
+					<div><img src="images/js13.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td class="vat">
+					ui.productdetail.js<br />
+					- commonUI.view.reviewTable();
+				</td>
+				<td>
+					<a class="guide-lnk" href="../gd/gd01_01.html" target="_blank">#link</a>
+					<div><img src="images/js14.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td class="vat">
+					ui.js<br />
+					- commonUI.view.qnaTable();
+				</td>
+				<td>
+					<a class="guide-lnk" href="../gd/gd01_01.html" target="_blank">#link</a>
+					<div><img src="images/js15.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					jquery.plugin.js
+				</td>
+				<td>
+					<a class="guide-lnk" href="../gd/gd01_09.html" target="_blank">#link</a>
+					<div><img src="images/js16.jpg" style="width:600px" alt="" /></div>
+					<pre>
+var serverTime = "20160129091419";
+var serverHour = "091419";
+$(document).ready(function() {
+	$('#d_time').countdown('2016/03/31 23:59:59', function (e) {
+		var $this = $(this);
+		var tims = "남은 날짜 : "+e.strftime('%D')+"일 "+e.strftime('%H')+":"+e.strftime('%M')+":"+e.strftime('%S');
+		$this.html(tims);
+
+	});
+});
+					</pre>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					페이지 내<br />
+					- detailDescription(id);
+				</td>
+				<td>
+					<a class="guide-lnk" href="../gd/gd01_15.html" target="_blank">#link</a>
+					<div><img src="images/js17.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					페이지 내<br />
+					- commonUI.search.schRank();
+				</td>
+				<td>
+					<a class="guide-lnk" href="../common/sr01_01.html" target="_blank">#link</a>
+					<div><img src="images/js18.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					ui.js<br />
+					- commonUI.view.NavCommonCate = function(id) { ... };
+				</td>
+				<td>
+					<a class="guide-lnk" href="../brand/br02_01.html" target="_blank">#link</a>
+					<div><img src="images/js19.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					ui.js<br />
+					idangerous.swiper.min.js<br />
+					jquery.plugin.js<br />
+					- hdealSwiperInit();
+				</td>
+				<td>
+					<a class="guide-lnk" href="../shop/dp01_01.html" target="_blank">#link</a>
+					<div><img src="images/js20.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					ui.js<br />
+					- commonUI.view.VerticalListMenu = function(id) { ... }
+				</td>
+				<td>
+					<a class="guide-lnk" href="../shop/dp02_01.html" target="_blank">#link</a>
+					<div><img src="images/js21.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					ui.order.js<br />
+					- commonUI.view.scrollFunc();
+				</td>
+				<td>
+					<a class="guide-lnk" href="../shop/dp02_01.html" target="_blank">#link</a>
+					<div><img src="images/js22.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="vat">
+					ui.js<br />
+					- commonUI.view.toolTip();
+				</td>
+				<td>
+					<a class="guide-lnk" href="../my/my02_01.html" target="_blank">#link</a>
+					<div><img src="images/js23.jpg" style="width:600px" alt="" /></div>
+				</td>
+				<td></td>
+			</tr>
+			
+			</tbody>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

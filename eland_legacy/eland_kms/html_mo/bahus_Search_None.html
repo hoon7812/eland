@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>'ㅁㄴㄴㅇㅈ' 검색결과 | BAHUS</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_bahus.css" type="text/css"><!-- bahus add css -->
+
+<link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/bahus_200.jpg">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/bahus_200.jpg">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/bahus_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/bahus_160.png">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="bahus"><!-- brand bahus : CALSS -->
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" onClick="left_lnb_open()"><b class="ir">카테고리 전체메뉴 열기</b></button></div>
+		<h1><a href="bahus_Main.html"><b class="ir">BAHUS 메인</b></a></h1>
+		<div class="hnb">
+			<ul>
+				<li class="sch"><button type="button"><b class="ir">검색 열기</b></button></li>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<!-- //HEADER -->
+
+<!-- LEFT MENU -->
+<div id="lnb" class="lnb_wrap">
+	<div class="lnb">
+		<div class="lnb_hd">
+			<div class="hd">
+				<a class="home" href="Md_Main.html"><b class="ir">메인 바로가기</b></a>
+				<!-- <a class="login" href="#">로그인</a> --> 
+				<a class="logout" href="#">로그아웃</a>
+			</div>
+		</div>
+		
+		<!-- LEFT CATG. -->
+		<div class="lnb_mn ctg_btn"><a href="#" class="on"><b class="ir">카테고리 열기</b></a></div>
+		<div class="lnb_cont">
+			<div class="lnb_log"><b>홍길동 님</b>
+				<em class="m0000005">Family</em>
+				<!--
+				<em class="m0000004">Bronze</em>
+				<em class="m0000003">Silver</em>
+				<em class="m0000002">Gold</em>
+				<em class="m0000001">Platinum</em>
+				-->
+			</div>
+			<div class="lnb_tnb">
+				<ul>
+					<li class="myp"><a href="#"><b>마이페이지</b></a></li>
+					<li class="drv"><a href="#"><b>주문배송조회</b></a></li>
+					<li class="wish"><a href="#"><b>나의 찜목록</b></a></li>
+					<!-- <li class="cs"><a href="#"><b>고객센터</b></a></li> -->
+					<li class="cpn"><a href="#"><b>쿠폰 12장</b></a></li> 
+				</ul>
+			</div>
+
+			<div  id="lnb_ctg" class="lnb_ctg scroller">
+				<div  class="lnb_scroll">
+					<!-- MENU -->
+					<div  class="menu" id="menu" tabindex="0">
+						<dl>
+							<dt>CATEGORY</dt>
+							<dd>  
+								<ul>  
+									<li><a href="#" class="tit">COLLECTION<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">COLLECTION 이동</em></a>
+										<ul>
+											<li><a href="#">CHARA</a></li>
+											<li><a href="#">RIBE</a></li>
+											<li><a href="#">KOGE</a></li>
+											<li><a href="#">&nbsp;</a></li>
+										</ul>
+									</li>
+									<li><a href="#" class="tit">LIVING ROOM<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">LIVING ROOM 이동</em></a></li>
+									<li><a href="#" class="tit">BED ROOM<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">BED ROOM 이동</em></a></li>
+									<li><a href="#" class="tit">DINNING ROOM<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">DINNING ROOM 이동</em></a></li>
+									<li><a href="#" class="tit">WORKSPACE<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">WORKSPACE 이동</em></a></li>
+									<li><a href="#" class="tit">LIVING<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">LIVING 이동</em></a></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+					<!-- //MENU -->
+					
+					<div class="lnb_gd">
+						<dl>
+							<dt>최근 본 상품</dt>
+							<dd>
+								<ul>
+									<li><a href="#"><img src="../images/mobile/temp/img_154_01.jpg" width="154" height="154" alt="주방용품" /></a></li>
+									<li><a href="#"><img src="../images/mobile/temp/img_154_02.jpg" width="154" height="154" alt="소파쿠션" /></a></li>
+									<li><a href="#"><img src="../images/mobile/temp/img_154_03.jpg" width="154" height="154" alt="폴햄패딩" /></a></li>
+								</ul>
+							</dd>
+							<dd class="more"><a href="#" title="최근 본 상품 더보기">MORE</a></dd>
+						</dl>
+					</div>
+			
+					<div class="lnb_cn">
+						<ul>
+							<li><a href="#" class="bs">BEST</a></li>
+							<li><a href="#" class="ne">NEW</a></li>
+							<li><a href="#" class="sp">PROMOTION</a></li>
+							<li><a href="#" class="re">REVIEW</a></li>
+							<li><a href="#" class="mp">MEDIA&amp;PRESS</a></li>
+							<li><a href="#" class="ec">E-CATALOG</a></li>
+							<li><a href="#" class="ev">EVENT</a></li>
+							<li><a href="#" class="st">STORE</a></li>
+							<li><a href="#" class="ba">ABOUT BAHUS</a></li>
+							<li><a href="#" class="nt">NOTICE</a></li>
+							<li><a href="#" class="qa">Q&amp;A</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //LEFT CATG. -->
+
+		<!-- LEFT MALL -->
+		<div class="lnb_mn mall_btn"><a href="#"><b class="ir">몰 열기</b></a></div>
+		<div class="lnb_cont">
+			<dl class="lnb_mall">
+				<dt>몰이동</dt>
+				<dd>
+					<div id="lnb_mlst" class="lnb_mlst scroller">
+						<ul>
+							<li class="selected"> <!-- 몰 선택시 .selected -->
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_00.jpg" alt="이랜드 통합몰">
+									<em>이랜드 통합몰</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_12.jpg" alt="모던하우스">
+									<em>모던하우스</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_18.jpg" alt="슈펜">
+									<em>슈펜</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_04.jpg" alt="뉴발란스">
+									<em>뉴발란스</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_13.jpg" alt="뉴발란스 키즈">
+									<em>뉴발란스 키즈</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_14.jpg" alt="라템">
+									<em>라템</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_07.jpg" alt="로엠">
+									<em>로엠</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_08.jpg" alt="로이드">
+									<em>로이드</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_15.jpg" alt="루켄">
+									<em>루켄</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_16.jpg" alt="몰리">
+									<em>몰리</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_01.jpg" alt="미쏘">
+									<em>미쏘</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_17.jpg" alt="버터">
+									<em>버터</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_11.jpg" alt="스파오">
+									<em>스파오</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_09.jpg" alt="에블린">
+									<em>에블린</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_19.jpg" alt="ENC">
+									<em>ENC</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_10.jpg" alt="킨더리그">
+									<em>킨더리그</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_02.jpg" alt="OST">
+									<em>OST</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_20.jpg" alt="클로비스">
+									<em>클로비스</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_05.jpg" alt="클루">
+									<em>클루</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_21.jpg" alt="태창">
+									<em>태창</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_22.jpg" alt="투미">
+									<em>투미</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_23.jpg" alt="티니위니">
+									<em>티니위니</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_03.jpg" alt="폴더">
+									<em>폴더</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_24.jpg" alt="헌트">
+									<em>헌트</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_06.jpg" alt="후아유">
+									<em>후아유</em>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //LEFT MALL -->
+		<div class="lnb_cls"><button type="button" id="left_cls" class="left_cls"><b class="ir">카테고리 전체메뉴 닫기</b></button></div>
+	</div>
+</div>
+<div class="lnb_dim"></div>
+<!-- //LEFT MENU -->     
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>'ㅁㄴㄴㅇㅈ'</b> 검색결과
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>		
+			<button type="button" class="wish"><em class="ir">검색결과 저장하기</em></button>	
+		</h2>		
+	</div>
+
+	<!-- SEARCH -->
+	<div class="search_wrap">
+		<div class="sch_none_msg">
+			<div class="msg"><b>ㅁㄴㄴㅇㅈ’</b>에 대한<br/>검색결과가 <b>없습니다. </b></div>
+			<div class="txt">
+				<ul>
+					<li>검색어가 올바른지 다시 확인 후 정확하게 입력해 주세요.</li>
+					<li>상품명을 정확히 모르시면 상품과 관련된 단어를 입력해 보세요.</li>
+					<li>상품 카테고리, 제조사, 가격 등을 입력하시면 더 정확한 검색 결과를 확인하실 수 있습니다.</li>
+					<li>상품이 매진되거나, 품절 되었을 경우 검색 되지 않을 수도 있습니다.</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- KEYWORD -->
+		<div class="sch_rank">
+			<dl>
+				<dt>실시간 급상승 검색어</dt>
+				<dd>
+					<ol>
+						<li><a href="#"><em class="num">1</em><span>아이폰 6S</span><em class="ico up">300</em></a></li>
+						<li><a href="#"><em class="num">2</em><span>모던하우스</span><em class="ico new">NEW</em></a></li>
+						<li><a href="#"><em class="num">3</em><span>패딩</span><em class="ico up">30</em></a></li>
+						<li><a href="#"><em class="num">4</em><span>겨울잠바</span><em class="ico up">3</em></a></li>
+						<li><a href="#"><em class="num">5</em><span>스파오</span><em class="ico new">NEW</em></a></li>
+						<li><a href="#"><em class="num">6</em><span>여성 영클부츠</span><em class="ico up">30</em></a></li>
+						<li><a href="#"><em class="num">7</em><span>코트</span><em class="ico new">NEW</em></a></li>
+						<li><a href="#"><em class="num">8</em><span>암막커튼</span><em class="ico up">300</em></a></li>
+						<li><a href="#"><em class="num">9</em><span>신상품</span><em class="ico up">30</em></a></li>
+						<li><a href="#"><em class="num">10</em><span>가구</span><em class="ico up">3</em></a></li>
+					</ol>
+				</dd>
+			</dl>
+		</div>
+		<!-- //KEYWORD -->
+		
+	</div>
+	<!-- //SEARCH -->
+
+</div>
+<!-- //CONTENT -->
+
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<div class="ft_bn" style="background-color:#878384">
+		<a href="#"><img src="../images/mobile/temp/bahus_foot_100_01.jpg" width="640" height="100" alt="2016 WINTER NEW ARRIVAL" /></a>
+	</div>
+	<div class="ft_menu">
+		<ul>
+			<li><a href="#">로그아웃</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li><a href="#">장바구니</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드리테일</dt>
+		<dd>고객센터 : <a href="tel:1899-9500">1899-9500</a></dd>
+		<dd>사업자등록번호 : 114-81-01855  <a href="#">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 제 2007-서울서초-09998호</dd>
+		<dd>서울시 서초구 잠원동 70-2 대표이사 : 이광일/김연배</dd>
+		<dd>개인정보 보호책임자 : 대표이사 김연배</dd>
+		<dd>
+			<a href="#" target="_blank" title="새창"><strong>개인정보처리방침</strong></a> | <a href="#" target="_blank" title="새창">약관안내</a>
+		</dd>
+	</dl>
+	<div class="ft_sns">
+		<ul>
+			<li><a href="#" class="fb"><em class="ir">페이스북</em></a></li>
+			<li><a href="#" class="is"><em class="ir">인스타그램</em></a></li>
+			<li><a href="#" class="bl"><em class="ir">블로그</em></a></li>
+		</ul>
+	</div>
+	<div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="ft_app">
+		<ul>
+			<li><a href="#">BAHUS APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- LAYER_POPUP 2016-11-02 -->
+<div id="sch_detail" class="layer_fix">
+	<h3 class="pop_tit">상세검색</h3>
+	<div class="pop_con">
+		<div class="pop_sch_dtl">
+			<dl>
+				<dt><button type="button"><b>브랜드</b><em>* 중복선택이 가능합니다.</em></button></dt>
+				<dd class="n2 brd">
+					<ul>
+						<li>
+							<input type="checkbox" id="brd01" class="ir" />
+							<label for="brd01"><span>모던하우스 모던하우스 모던하우스 모던하우스</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd02" class="ir" />
+							<label for="brd02"><span>비전</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd03" class="ir" />
+							<label for="brd03"><span>창신리빙</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd04" class="ir" />
+							<label for="brd04"><span>토프</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd05" class="ir" />
+							<label for="brd05"><span>WMF</span><em>(19)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd06" class="ir" />
+							<label for="brd06"><span>GSW</span><em>(19)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd07" class="ir" />
+							<label for="brd07"><span>휘슬러</span><em>(19)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd08" class="ir" />
+							<label for="brd08"><span>올리오</span><em>(10)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd09" class="ir" />
+							<label for="brd09"><span>프렌치불</span><em>(10)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd10" class="ir" />
+							<label for="brd10"><span>해피콜</span><em>(10)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd11" class="ir" />
+							<label for="brd11"><span>코렐</span><em>(10)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd12" class="ir" />
+							<label for="brd12"><span>오션글라스</span><em>(10)</em></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>지점</b><em>* 중복선택이 가능합니다.</em></button></dt>
+				<dd class="n2">
+					<ul>
+						<li>
+							<input type="checkbox" id="rct01" class="ir" />
+							<label for="rct01"><span>NC 강남점</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="rct02" class="ir" />
+							<label for="rct02"><span>NC 송파점</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="rct03" class="ir" />
+							<label for="rct03"><span>NC 강동점</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="rct04" class="ir" />
+							<label for="rct04"><span>NC 강서점</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="rct05" class="ir" />
+							<label for="rct05"><span>NC 평촌점</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>혜택</b><em>* 중복선택이 가능합니다.</em></button></dt>
+				<dd class="n3">
+					<ul>
+						<li>
+							<input type="checkbox" id="bnf01" class="ir" />
+							<label for="bnf01"><span>셋트할인</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bnf02" class="ir" />
+							<label for="bnf02"><span>즉시할인</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bnf03" class="ir" />
+							<label for="bnf03"><span>무료배송</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="bnf04" class="ir" />
+							<label for="bnf04"><span>무이자할부</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>사이즈</b><em>* 중복선택이 가능합니다.</em></button></dt>
+				<dd class="n3">
+					<ul>
+						<li>
+							<input type="checkbox" id="siz01" class="ir" />
+							<label for="siz01"><span>XS</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz02" class="ir" />
+							<label for="siz02"><span>S</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz03" class="ir" />
+							<label for="siz03"><span>M</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz04" class="ir" />
+							<label for="siz04"><span>L</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz05" class="ir" />
+							<label for="siz05"><span>XL</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz06" class="ir" />
+							<label for="siz06"><span>XXL</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz07" class="ir" />
+							<label for="siz07"><span>FREE</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>색상</b><em>* 중복선택이 가능합니다.</em></button></dt>
+				<dd class="clr_lst">
+					<ul>     
+						<li>
+							<input type="checkbox" id="lchk01" class="ir" >
+							<label for="lchk01"><em><img src="../images/mobile/temp/img_color_1.png" width="54" height="54" alt="파랑" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk02" class="ir" >
+							<label for="lchk02"><em><img src="../images/mobile/temp/img_color_2.png" width="54" height="54" alt="분홍" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk03" class="ir" >
+							<label for="lchk03"><em><img src="../images/mobile/temp/img_color_3.png" width="54" height="54" alt="소라" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk04" class="ir" >
+							<label for="lchk04"><em><img src="../images/mobile/temp/img_color_4.png" width="54" height="54" alt="고동" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk05" class="ir" >
+							<label for="lchk05"><em><img src="../images/mobile/temp/img_color_5.png" width="54" height="54" alt="검정" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk06" class="ir" >
+							<label for="lchk06"><em><img src="../images/mobile/temp/img_color_6.png" width="54" height="54" alt="그레이" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk07" class="ir" >
+							<label for="lchk07"><em><img src="../images/mobile/temp/img_color_7.png" width="54" height="54" alt="빨강" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk08" class="ir" >
+							<label for="lchk08"><em><img src="../images/mobile/temp/img_color_8.png" width="54" height="54" alt="노랑" /></em></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>가격</b></button></dt>
+				<dd class="price">
+					<span class="inp"><input type="text" class="input" name="prc_21" value="19,000" title="최저가" /></span>
+					<span class="tx">~</span>
+					<span class="inp"><input type="text" class="input on" name="prc_22" value="219,000" title="최고가" /></span>
+					<span class="bt"><button type="button"><em class="ir">가격검색</em>확인</button></span>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>소재</b><em>* 중복선택이 가능합니다.</em></button></dt>
+				<dd class="n3">
+					<ul>
+						<li>
+							<input type="checkbox" id="mch01" class="ir" />
+							<label for="mch01"><span>린넨</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch02" class="ir" />
+							<label for="mch02"><span>면혼방</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch03" class="ir" />
+							<label for="mch03"><span>울</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch04" class="ir" />
+							<label for="mch04"><span>폴리에스테스</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch05" class="ir" />
+							<label for="mch05"><span>나일론</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch06" class="ir" />
+							<label for="mch06"><span>가죽</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch07" class="ir" />
+							<label for="mch07"><span>레이온</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch08" class="ir" />
+							<label for="mch08"><span>캐시미어</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="mch09" class="ir" />
+							<label for="mch09"><span>인조가죽</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<div class="sch_dtl_btn">
+			<button type="button" class="re"><em>선택초기화</em></button>
+			<button type="button" class="ok"><em>선택 결과보기</em></button>
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">레이어 팝업 닫기</span></a>
+</div>
+<!-- //LAYER_POPUP 2016-11-02 -->
+
+
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>

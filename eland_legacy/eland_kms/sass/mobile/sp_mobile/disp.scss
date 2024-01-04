@@ -1,0 +1,219 @@
+// author : Jeong EuiChan @ pionnet    with    SASS
+
+
+
+
+
+
+@charset "utf-8";
+@import  "color";
+@import  "figure";
+@import  "basic";
+
+
+//모아보기
+.collect_cont{padding-bottom:73px;overflow:hidden;
+	.rep_menu{padding:20px 30px 0;border-bottom:8px solid $c_contback;
+		ul{position:relative;padding-bottom:25px;
+			&:after{position:absolute;bottom:0;left:-100vw;width:200vw;height:1px;background:$c_light;content:"";}
+			li{position:relative;height:50px;padding:0 13px 0 0;line-height:50px;font-size:0;color:$c_txt_black;@include rightArr(10px,10px,$c_tborder);overflow:hidden;
+				&:after{left:auto;right:3px;}
+				>p{height:100%;line-height:inherit;font-size:inherit;color:inherit;}
+				a,span{color:inherit;
+					i{display:inline-block;width:30px;height:30px;margin-right:8px;vertical-align:middle;
+						img{display:block;width:100%;height:100%;}
+					}
+					b{margin-right:8px;font-size:20px;font-weight:bold;letter-spacing:-0.02em;vertical-align:middle;color:inherit;}
+					em{font-size:12px;color:$c_txt_light;font-weight:bold;vertical-align:middle;}
+				}
+			}
+		}
+	}
+	.divs_menu{margin:15px 30px 0;padding-bottom:35px;
+		.pagination{display:flex;height:50px;font-size:0;
+			.swiper-pagination-bullet{flex:0 0 auto;width:auto;height:35px;margin:auto auto auto 0;border-radius:unset;opacity:1;background:none;font-size:20px;line-height:34px;color:$c_txt_light;outline:none;@include mukta-bd;
+				&.swiper-pagination-bullet-active{position:relative;color:$c_txt_black;
+					&:after{position:absolute;bottom:0;left:0;right:0;height:3px;background:$c_main;content:"";}
+				}
+			}
+		}
+		ul{padding:15px 0;
+			&+ul{border-top:1px solid $c_light;}
+			li{position:relative;height:50px;line-height:50px;color:$c_txt_black;@include rightArr(10px,10px,$c_tborder);overflow:hidden;
+				&:after{left:auto;right:3px;}
+				>p{height:100%;line-height:inherit;font-size:inherit;color:inherit;}
+				a,span{font-size:18px;letter-spacing:-0.02em;vertical-align:middle;color:inherit;font-weight:bold;
+					em{margin-left:8px;font-size:12px;color:$c_txt_point;@include mukta-ex;vertical-align:2px;}
+				}
+			}
+		}
+	}
+}
+
+
+//기획전
+.plan_top{position:relative;clear:both;overflow:hidden;
+	.plan_bn{position:relative;overflow:hidden;
+		img{display:block;max-width:100%;height:auto;margin:0 auto;}
+	}
+}
+
+//카테고리, 베스트/뉴/세일/슈텐다드/콜라보레이션
+// .cate_wrap{
+// 	.tab_menu ul li a{font-weight:normal;}
+// }
+.cate_box{height:0;overflow:hidden;opacity:0;
+	&.active{height:auto;overflow:visible;opacity:1;}
+}
+
+
+//검색
+// .sch_sort{position: relative;width: 100%;height: 46px;border: 0;padding: 0 64px 0 12px;background: #fff;box-sizing: border-box;
+// 	.filters_tab{float: left;width: calc(100vw - 12px - 64px - 83px);
+// 		ul{font-size: 0;white-space: nowrap;
+// 			li{display: inline-block;height: 45px;margin-right: 9px;
+// 				a{position: relative;display: block;height: 100%;padding: 0 4px;font-size: 13px;line-height: 45px;letter-spacing: -0.01em;}
+// 				&.on{
+// 					a{color: #c9000b;
+// 						&:after{position:absolute;bottom:0;left:0;right:0;height:3px;background:#c9000b;content:"";}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.sort_wrap{position:relative;float:right;width:83px;margin-top:10px;padding-right:83px;box-sizing:border-box;
+// 		.s_sort{position:absolute;right:0;width:83px;padding:0 8px 0 0;font-size:12px;color:#333;	
+// 			select{width:100%;height:25px;padding:0 16px 0 0;font-size:13px;line-height:25px;text-align:right;font-size:13px;color:#333;letter-spacing:-0.01em;direction:rtl;background:url(../../../images/mobile/category/ico_sort.png) no-repeat right center;background-size:14px 10px;border:0;box-sizing:border-box;}
+// 				&:after{position:absolute;top:0;bottom:0;right:0;width:1px;height:11px;margin:auto;background:#ddd;content:"";}
+// 		}
+// 	}
+// 	.s_filter{position:absolute;top:10px;right:12px;width:50px;height:25px;border-radius:3px;border:0;background:url(../../../images/mobile/category/ico_filter.png) no-repeat 33px 6px;background-size:11px 12px;z-index:4;
+// 		a{width:100%;height:100%;padding-right:15px;text-align:center;line-height:25px;font-size:13px;color:#333;letter-spacing:-0.01em;background:none;box-sizing:border-box;}
+// 		&.on{background-image: url(../../../images/mobile/category/ico_filter_on.png);
+// 			a{color: #c9000b;}
+// 		}
+// 	}
+// }
+// .filters_cont{background:$c_contback;
+// 	.filter{position:relative;height:0;overflow:hidden;opacity:0;
+// 		&.active{height:auto;overflow:visible;opacity:1;}
+// 		ul{max-height:75px;padding:6px 12px 7px 7px;line-height:0;font-size:0;overflow:hidden;
+// 			li{display:inline-block;height:30px;margin:5px 0 0 5px;padding:0 12px;line-height:31px;font-size:12px;color:#666;letter-spacing:-0.05em;vertical-align:top;background:#fff;border:1px solid #ddd;border-radius:16px;
+// 				&.line_out{display:none;}
+// 				&.more{position:relative;
+// 					a{position:static;color: #333;margin-right: 3px;
+// 						&:after{position:absolute;top:0;bottom:2px;right:9px;width:7px;height:7px;margin:auto;border:solid #333;border-width:1px 1px 0 0;transform:rotate(45deg);content:"";}
+// 					}
+// 				}
+// 			}
+// 		}
+// 		&.color{
+// 			li:not(.more){width:30px;height:30px;margin-top:6px;padding:0;border-radius:15px;border:0;overflow:hidden;
+// 				input:checked+label{
+// 					&:after{position:absolute;top:0;bottom:0;left:0;right:0;width:12px;height:9px;margin:auto;background:url(../../../images/mobile/category/ico_chk_white.png) no-repeat;background-size:cover;content:"";}
+// 				}
+// 				label{position:relative;display:block;
+// 					img{display:block;width:30px;height:30px;border-radius:15px;overflow:hidden;}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+
+// .slctd_fltr{position:relative;background:#fff;border-top:1px solid #ccc;height:0;overflow:hidden;opacity:0;
+// 	&.on{height:auto;overflow:visible;opacity:1;}
+// 	.fltr_sld{position:relative;width:calc(100vw - 12px - 40px);height:45px;margin:0 40px 0 12px;box-sizing:border-box;
+// 		li{width:auto;height:45px;line-height:45px;margin-left:-0.2px;
+// 			a{display:block;padding-right:11px;font-size:11px;color:#c9000b;letter-spacing:-0.05em;
+// 				i{display:inline-block;width:10px;height:10px;margin-right:3px;vertical-align:-1px;
+// 					img{display:block;width:10px;height:10px;}
+// 				}
+// 				&:after{display:inline-block;width:7px;height:7px;margin-left:3px;background:url(../../../images/mobile/category/ico_x.png) no-repeat;background-size:cover;content:"";}
+// 			}
+// 		}
+// 	}
+// 	.reset{position:absolute;top:1px;bottom:1px;right:-40px;width:40px;background:url(../../../images/mobile/category/ico_refresh.png) center center no-repeat #fff;background-size:17px 17px;z-index:1;}
+// }
+
+// .layer_fix.sch_detail_lyr{display:none;position:fixed;top:0;left:0;width:72%;height:100%;padding-left:28%;background:rgba(0,0,0,0.6);z-index:111;
+// 		.pop_tit{width:72%;height:50px;margin-left:28%;padding-left:15px;line-height:50px;box-sizing:border-box;text-align:left;background:#f4f5f7;border:solid #fff;border-width:1px 0 0 1px;
+// 	}
+// }
+
+
+// // 검색결과 레이어 수정 170526
+// .sch_detail_lyr{width:72%;padding-left:28%;background:rgba(0,0,0,0.6);
+// 	.pop_tit{position: fixed;
+//     top: 0;
+//     left: 0;width:72%;height:50px;margin-left:28%;padding-left:15px;line-height:50px;box-sizing:border-box;text-align:left;background:#f4f5f7;border:solid #fff;border-width:1px 0 0 1px;font-size: 16px;
+//     font-weight: bold;
+//     color: #333;z-index: 99;
+// 		em{margin-left:3px;font-size:12px;letter-spacing:-0.02em;color:#666;}
+// 	}
+// 	.fltrs_reset{display:none;position:absolute;top:13px;right:15px;width:66px;height:25px;line-height:25px;color:#333;font-size:11px;letter-spacing:-0.02em;background:$c_white;border:1px solid #ddd;border-radius:13px;z-index:100;
+// 		&:before{display:inline-block;width:13px;height:12px;margin-right:3px;vertical-align:-2px;background:url("../../../images/mobile/category/ico_refresh_2.png") no-repeat;background-size:cover;content:"";}
+// 		&.active{display:block;}
+// 	}
+// 	.pop_con{position: relative;height: 100%;padding: 45px 0 0;width:100%;padding-top:50px;background:#fff;box-sizing: border-box;}
+// }
+// .pop_sch_dtl{position:relative;clear:both;overflow:hidden;height:100%;overflow-y:auto;
+// 	.fltrs_wrap{max-height:101px;overflow-y:auto;border-bottom:1px solid #666;
+// 		&.on{
+// 			.fltrs{display:block;}
+// 		}
+// 		.fltrs{display:none;padding: 10px 15px 5px 10px;
+// 			&.on{display:block;}
+// 			ul{
+// 				li{display:inline-block;height:22px;margin:0 5px 5px 0;padding:0 6px 0 5px;line-height:21px;background:#f4f5f7;
+// 					a{color: #cc0000;font-size: 11px;
+// 						i{display:inline-block;width:10px;height:10px;margin-right:3px;vertical-align:-1px;
+// 							img{display:block;width:10px;height:10px;}
+// 						}
+// 						&:after{display:inline-block;width:7px;height:7px;margin-left:3px;background:url(../../../images/mobile/category/ico_x_2.png) no-repeat;background-size:cover;content:"";}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	 dl{
+// 		// &.active dt button b,&.active dt label b{color:#c00;}
+// 		dd{
+// 			.sub_dt{height:50px;padding:0 12px;line-height:50px;font-size:14px;color:#666;letter-spacing:-0.02em;background:#f4f5f7;}
+// 			.dot_tit{height:48px;margin-top:3px;padding:0 15px;line-height:48px;border-bottom:1px solid #e1e1e1;
+// 				span{display:block;color:#333;font-size:13px;letter-spacing:-0.02em;
+// 					&:before{display:inline-block;width:2px;height:2px;margin-right:5px;vertical-align:3px;background:#333;border-radius:1px;content:"";}
+// 				}
+// 			}
+// 			.ctg_list{position:relative;margin-bottom:-1px;
+// 				.tit{position:relative;display:block;padding:0 12px;font-size:14px;color:#666;height:42px;line-height:42px;border-bottom:1px solid #e1e1e1;
+// 					&.selected{color:#c00;font-weight:600;}
+// 				}
+// 			}
+// 			.ctg_list_more{
+// 				.more{position:absolute;top:0;right:0;width:44px;height:42px;font-size:0;color:transparent;text-indent:-9999px;background:url(../../../images/mobile/category/pop_sch_ctg_list01.png) center center no-repeat;background-size:18px 18px;z-index:10;
+// 					&.selected{background:url(../../../images/mobile/category/pop_sch_ctg_list02.png) center center no-repeat;background-size:18px 18px;}
+// 				}
+// 				ol{display:none;
+// 					li{position:relative;padding-left:24px;border-bottom:1px solid #e1e1e1;background:#fff;
+// 						&:first-child{}
+// 						&:before{content:'';position:absolute;top:18px;left:12px;width:6px;height:6px;background:#fff;border-bottom:1px solid #adadad;border-left:1px solid #adadad;}
+// 						label{display:block;height:42px;line-height:42px;font-size:14px;color:#666;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+// 						em{margin-left:5px;}
+// 					}
+// 				}
+// 				input[type="checkbox"]:checked + label{color:#c00;
+// 					span{font-weight:600;}
+// 				}
+// 			}
+// 			ul li input[type="radio"]:checked + label{color:#c00;
+// 				em{color:inherit;}
+// 			}
+// 		}
+// 	}
+// }
+// .m_cts{.slide_cont #sch_detail,#sch_detail .pop_tit{position:absolute;}
+// }
+// #sch_detail .btn_layertop{position:fixed;top:0;left:0;width:28%;height:100%;z-index:10;
+// 	a{display:block;width:100%;height:100%;}
+// }

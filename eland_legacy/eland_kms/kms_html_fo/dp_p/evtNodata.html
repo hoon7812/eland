@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>KIMS CLUB</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean&family=Roboto:wght@400;700&display=swap">
+  <link rel="shortcut icon" type="image/x-icon" href="../../images/pcweb/kms_pcweb/common/ico_kms.ico" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_main.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/category.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/kms_pcweb/main.css" />
+  <script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/jquery.plugin.js"></script> 
+  <script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/kms_ui.js"></script>
+</head>
+
+<body>
+ <!-- wrapper -->
+ <div id="wrapper" class="kims">
+  
+  <!-- HEADER -->
+  <script src="../common/incHeaderW.js"></script>
+  <script type="text/javascript">
+    //gnb
+    $(document).ready(function(){
+      cateSwiper('gnbScroll',10,1)
+    })
+    //gnbAllCate
+    $('.catg_lyr .lnb_cate_main ul li').on('focusin mouseover', function(){
+      $(this).addClass('on').siblings('li').removeClass('on');
+    })
+    .on('mouseleave', function() {
+      $(this).removeClass('on');
+    });   
+    //topBn
+    $(document).ready (function(){
+      $(".btn_hdtb_close").on("click",function(){
+        $(".header_top_banner").removeClass("on");
+        $(".btn_hdtb_open").focus();
+      });
+      $(".btn_hdtb_open").on("click",function(){
+        $(".header_top_banner").addClass("on");
+        $(".btn_hdtb_img").focus();
+      });
+    });
+  </script> 
+  <!-- //HEADER -->
+
+  <!-- container -->
+  <div id="container">
+   <!-- content -->
+   	<div id="content" class="content">     
+
+	    <!-- Title -->
+	    <div class="tit_shop">이벤트/쿠폰</div>
+	    <!-- //Title -->    
+
+			<!-- 고객 정보 -->
+			<div class="user_grade brz"> <!-- 등급별 class : VIP - vip, GOLD - gld, SILVER - slv, BRONZE - brz, WELCOME - 없음 -->
+				<!-- <span class="ico_grd"><em class="ir">구매등급 아이콘  : Welcome</em></span>
+				<span class="ico_grd"><em class="ir">구매등급 아이콘  : Bronze</em></span>
+				<span class="ico_grd"><em class="ir">구매등급 아이콘  : Silver</em></span>
+				<span class="ico_grd"><em class="ir">구매등급 아이콘  : Gold</em></span> -->
+				<span class="ico_grd"><em class="ir">구매등급 아이콘  : VIP</em></span>
+				<div class="info">
+					<span class="tit"><em class="name">이랜드</em>님의 4월 구매등급은 <em class="grade">Bronze</em> 입니다.</span>
+					<p class="nxt_info">
+						<!-- 조건 충족 시 : 상승-->
+						<!-- 현재 다음달 <em class="nxt_grd">Bronze</em> 등급 상승조건이 충족되었습니다. (산정기간 : 2017.12~2018.03) -->
+
+						<!-- 조건 충족 시 : VIP 유지-->
+						구매건수 <em class="nxt_grd">2건</em>, 구매금액 <em class="nxt_grd">100,000원</em>을 달성하면 다음달 <em class="nxt_grade">SILVER</em> 등급으로 승급됩니다.  						
+
+						<!-- VIP일경우 : 등급을 유지하기 위해서는 -->
+						<!-- <em class="nxt_grd">2월 VIP</em> 등급으로 상승하기 위해서는<br />
+						구매건수 <em class="num">9</em>건 / 구매금액은 <em class="num"> 99,999</em>원 이 필요합니다.(산정기간 : 2017.12~2018.03) -->						
+					</p>
+					<span class="btn_wrap">
+						<a href="#none" class="chk_btn btn04 c01 ico_arrow08"><span>이번 달 등급산정 보기 </span></a>
+						<a href="#none" class="chk_btn btn04 c01 ico_arrow08"><span>다음 달 예상등급 보기 </span></a>											
+					</span>
+				</div>
+			</div>
+			<!-- //고객 정보 -->
+
+			<!-- 고객 정보 비로그인 CASE -->
+			<div class="user_grade no_login"><!-- nolg -->
+				<span class="tit">로그인 하시면 고객님의 구매등급/쿠폰을 확인하실 수 있습니다.</span><a href="#none" class="chk_btn"><span>로그인</span></a>
+			</div>
+			<!-- //고객 정보 비로그인 CASE -->
+			
+	    <!-- 진행중인 이벤트 없음 -->
+	    <div class="no_data plan">
+	      <div class="no_data_txt">
+	        준비중 입니다.
+	      </div>
+	    </div>
+	    <!-- //진행중인 이벤트 없음 -->
+
+		</div>
+		<!-- content -->
+	</div>
+	<!--- //container -->
+
+	<!-- FOOTER -->
+	<script src="../common/incFooter.js"></script>
+	<!-- //FOOTER -->
+</div>
+<!-- //wrapper -->
+
+</body>
+</html>

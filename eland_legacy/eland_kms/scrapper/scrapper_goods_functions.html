@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<title>최근 본 상품</title>
+<script type="text/javascript" src="/common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/common/js/jquery-cookie.js"></script>
+<script type="text/javascript">
+function getScrapperGoodsList() {
+	$.cookie.raw = true;
+	scrapper_goods_list = $.cookie('gnb_scraper_lately');
+	if (scrapper_goods_list == undefined) {
+		scrapper_goods_list = new Array();
+	} else {
+		scrapper_goods_list = JSON.parse(scrapper_goods_list);
+	}
+	
+	$.each(scrapper_goods_list, function(i, d){
+		if (d.imgfile == undefined) d.imgfile = d.imgFile;
+	});
+	
+	return scrapper_goods_list;
+}
+
+function setScrapperGoods(scrapper_goods_list, domain, path, expires) {
+	if (domain == undefined) domain = ".elandmall.com";
+	if (path == undefined) path = "/scrapper";
+	if (expires == undefined) expires = 1;
+
+	$.cookie.raw = true;
+	$.cookie('gnb_scraper_lately', JSON.stringify(scrapper_goods_list), {expires: expires, path: path, domain: domain});
+}
+
+function getLoadRecentGoods() {
+	$.cookie.raw = true;
+	load_recent_goods = $.cookie('load_recent_goods');
+	if (load_recent_goods == undefined) {
+		load_recent_goods = "";
+	} else {
+		load_recent_goods = load_recent_goods;
+	}
+	
+	return load_recent_goods;
+}
+
+function setLoadRecentGoods(load_recent_goods, domain, path, expires) {
+	if (domain == undefined) domain = ".elandmall.com";
+	if (path == undefined) path = "/scrapper";
+	if (expires == undefined) expires = 1;
+
+	$.cookie.raw = true;
+	$.cookie('load_recent_goods', load_recent_goods, {expires: expires, path: path, domain: domain});
+}
+</script>
+
+</html>

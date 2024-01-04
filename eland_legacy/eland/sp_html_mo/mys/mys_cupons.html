@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no">
+<base href="../../" />
+<title>SHOOPEN | 쿠폰조회</title>
+<link rel="stylesheet" href="css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/sp_mobile/common.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/sp_mobile/mys.css" type="text/css">
+
+<link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/icon/icon_60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/icon/icon_76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/icon/icon_120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/icon/icon_152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/icon/icon_180.png">
+<link rel="apple-touch-icon-precomposed" href="images/icon/icon_192.png">
+<link rel="apple-touch-icon-precomposed" href="images/icon/icon_160.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="images/icon/icon_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="images/icon/icon_160.png">
+<script type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="mobile/js/jquery.plugin.mobile.sp.js"></script>
+<script type="text/javascript" src="mobile/js/ui.mobile.sp.js"></script>
+
+
+
+</head>
+<body>
+<!-- .wrapper -->
+<div class="wrapper">
+	<div class="accessibility"><a href="#skip_cont">본문 바로가기</a></div><!-- accessibility -->
+	
+	<!-- .container -->
+	<div class="container">
+		<!-- .contents -->
+		<div class="sub_contents">
+			<h1 class="ir">Shoopen</h1>
+			<div class="top_tit">
+				<h2>
+					<b>쿠폰 조회</b>
+					<button type="button" class="back"><em class="ir">이전페이지</em></button>
+				</h2>
+				<div class="hnb">
+					<ul>
+						<li class="sch"><a href="javascript:;"><b class="ir">검색레이어</b></a></li>
+						<li class="cart"><a href="javascript:;" aria-label="장바구니 이동"><span class="num" role="status"><em class="ir">장바구니 담긴수</em>99</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- .my_con -->
+			<div class="my_con">
+				<div class="cupon_qmn">
+					<a href="javascript:;">추가쿠폰 받기</a>
+					<a href="javascript:;">오프라인 쿠폰 등록하기</a>
+				</div>
+
+				<!-- .coupon_box -->
+				<div class="coupon_box">
+					<div class="sch_order">
+						<ul>
+							<li><a href="javascript:;" class="on">1주일</a></li>
+							<li><a href="javascript:;">1개월</a></li>
+							<li><a href="javascript:;">3개월</a></li>
+							<li><a href="javascript:;">6개월</a></li>
+							<li><a href="javascript:;" class="set">기간설정</a></li>
+						</ul>
+						<div class="sch_period">
+							<div class="inp_box">
+								<input type="text" title="시작날짜" placeholder="예시)20160101">
+								<span class="dash">~</span>
+								<input type="text" title="종료날짜" placeholder="예시)20160101">
+							</div>
+							<div class="btn">
+								<a href="javascript:;">조회</a>
+							</div>
+							<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+						</div>
+						<script type="text/javascript">
+							//조회기간 선택
+							$(function(){
+								$(".sch_order li a").bind("click", function(){
+									$(this).parent().parent().find("li a").removeClass("on");
+									$(this).addClass("on");
+									$(this).parent().parent().parent().find(".sch_period").hide();
+								});
+								$(".sch_order li a.set").bind("click", function(){
+									$(this).parent().parent().parent().find(".sch_period").show();
+								});
+							});
+						</script>
+					</div>
+					<div class="cpn_list">
+						<strong class="cpn_tit">스페셜 쿠폰</strong>
+						<ul>
+							<li>
+								<span class="disc">100,000<em>원</em></span>
+								<span class="cpn_name">[APP전용] 슈펜 플랫폼 전용 즉시할인 쿠폰 (A123456789)</span>
+								<span class="period">20.06.01~20.06.14</span>
+								<a href="#none" class="disc_inp">상세내용</a>
+							</li>
+							<li>
+								<span class="disc">10<em>%</em></span>
+								<span class="cpn_name">[APP전용] 슈펜 플랫폼 전용 즉시할인 쿠폰 (A123456789)</span>
+								<span class="period">20.06.01~20.06.14</span>
+								<a href="#none" class="disc_inp">상세내용</a>
+							</li>
+							<li>
+								<span class="disc">10<em>%</em></span>
+								<span class="cpn_name">[APP전용] 슈펜 플랫폼 전용 즉시할인 쿠폰 (A123456789)</span>
+								<span class="period">20.06.01~20.06.14</span>
+								<a href="#none" class="disc_inp">상세내용</a>
+							</li>
+							<li class="last">
+								<div class="btn_more">
+									<a href="#"><span class="ico">더보기 (20/1000)</span></a>
+								</div>
+							</li>
+						</ul>
+
+						<strong class="cpn_tit">기획전 쿠폰</strong>
+						<ul>
+							<li>
+								<span class="disc">10<em>%</em></span>
+								<span class="cpn_name">[APP전용] 슈펜 플랫폼 전용 즉시할인 쿠폰 (A123456789)</span>
+								<span class="period">20.06.01~20.06.14</span>
+								<a href="#none" class="disc_inp">상세내용</a>
+								<a href="#none" class="disc_prd">적용상품</a>
+							</li>
+							<li>
+								<span class="disc">10<em>%</em></span>
+								<span class="cpn_name">[APP전용] 슈펜 플랫폼 전용 즉시할인 쿠폰 (A123456789)</span>
+								<span class="period">20.06.01~20.06.14</span>
+								<a href="#none" class="disc_inp">상세내용</a>
+								<a href="#none" class="disc_prd">적용상품</a>
+							</li>
+							<li class="last">
+								<div class="btn_more">
+									<a href="#"><span class="ico">더보기 (20/1000)</span></a>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				<!-- //.coupon_box -->
+			</div>
+			<!-- //.my_con -->
+		</div>
+		<!-- //.contents -->
+	</div>
+	<!-- //.container -->
+
+</div>
+<!-- // .wrapper -->
+
+<footer class="footer" id="footer">
+	<div class="ft_menu">
+	    <ul>
+	        <li><a href="javascript:;">로그아웃</a></li>
+	        <li><a href="javascript:;">마이페이지</a></li>
+	        <li><a href="javascript:;">고객센터</a></li>
+			<li><a href="javascript:;">공지사항</a></li>
+	    </ul>
+	</div>
+    <div class="ft_info">
+		<p><strong class="cop">(주)이랜드리테일</strong></p>
+		<p>사업자등록번호 : 114-81-01855 <a href="javascript:;">사업자정보확인</a></p>
+		<p>통신판매업 신고번호 : 서초 제 09998호</p>
+        <p>서울시 서초구 잠원동70-2</p>
+        <p>대표이사 : 김우섭/석창현</p>
+        <p class="foot_link">
+        	<a href="https://m.oneclick.elandretail.com/terms/privacyTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개||개인정보처리방침">개인정보처리방침</a>
+        	<a href="https://m.oneclick.elandretail.com/terms/memberShipClubTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개|| 약관안내">약관안내</a>
+        	<a href="javascript:;">브랜드비전</a>
+        	<a href="javascript:;">대량구매/협업문의</a>
+        </p>
+    </div>
+    <div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+</footer>
+
+<nav>
+	<ul>
+		<li class="home on"><a href="javascript:;"><span>홈</span></a></li>
+		<li class="cura"><a href="javascript:;"><span>큐레이션</span></a></li>
+		<li class="coll"><a href="javascript:;"><span>카테고리</span></a></li>
+		<li class="wish"><a href="javascript:;"><span>찜목록</span></a></li>
+		<li class="mys"><a href="javascript:;"><span>마이슈펜</span></a></li>
+	</ul>
+</nav>
+
+<div class="btn_top" id="btn_top"><a href="javascript:;"><b class="ir">상단으로 이동</b></a></div>
+
+</body>
+</html>

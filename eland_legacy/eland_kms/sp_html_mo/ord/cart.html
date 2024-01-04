@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no">
+<base href="../../" />
+<title>SHOOPEN</title>
+<link rel="stylesheet" href="css/mobile/sp_mobile/common.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/sp_mobile/cura.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/order.css" type="text/css"> <!-- 장바구니 -->
+<link rel="stylesheet" href="css/mobile/sp_mobile/gds.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/sp_mobile/order.css" type="text/css">
+
+<link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/icon/icon_60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/icon/icon_76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/icon/icon_120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/icon/icon_152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/icon/icon_180.png">
+<link rel="apple-touch-icon-precomposed" href="images/icon/icon_192.png">
+<link rel="apple-touch-icon-precomposed" href="images/icon/icon_160.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="images/icon/icon_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="images/icon/icon_160.png">
+<script type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="mobile/js/jquery.plugin.mobile.sp.js"></script>
+<script type="text/javascript" src="mobile/js/ui.mobile.sp.js"></script>
+<script type="text/javascript" src="mobile/js/ui.mobile.old.js"></script>
+
+
+
+</head>
+<body>
+<!-- .wrapper -->
+<div class="wrapper">
+	<div class="accessibility"><a href="#skip_cont">본문 바로가기</a></div><!-- accessibility -->
+	
+	<!-- .container -->
+	<div class="container">
+		<!-- .contents -->
+		<div class="sub_contents">
+			<h1 class="ir">Shoopen</h1>
+			<div class="top_tit not_fix">
+				<h2>
+					<b>장바구니</b>
+					<button type="button" class="back"><em class="ir">이전페이지</em></button>
+				</h2>
+				<div class="hnb">
+					<ul>
+						<li class="home"><a href="javascript:;"><b class="ir">홈으로</b></a></li>
+						<!-- <li class="sch"><a href="javascript:;"><b class="ir">검색</b></a></li> -->
+						<!-- <li class="share"><a href="javascript:;" onclick="fn_layer_open('sns_lyr');return false;" onkeypress="this.onclick;"><b class="ir">공유</b></a></li> -->
+					</ul>
+				</div>
+			</div>
+
+			<!-- .cart_wrap -->
+			<div class="cart_wrap">
+				<script type="text/javascript">
+					//옵션 수량
+				    $(document).ready(function() {
+				        $(".basket_prd .sel .opt").bind("click", function() {
+				            $(this).toggleClass("on");
+				            $(this).parent().parent().find(".opt_open").slideToggle(200);
+				        });
+				    });
+				</script>
+				<div class="tab_menu stck_top fnLnkTab" name="cartTab">
+					<ul>
+						<li class="on" data-link-tab="1"><a href="javascript:;">장바구니<em>99</em></a></li>
+						<li data-link-tab="2"><a href="javascript:;">찜한 상품<em>99</em></a></li>
+					</ul>
+				</div>
+				<div class="cart_cont fnLnkCont active" name="cartTab" data-link-cont="1">
+					<div class="cate_swp">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<div class="basket_content">
+									<!-- 로그인 전 -->
+									<div class="basket_chk log">
+										<span class="txt">장바구니 상품 보관을 위해 <a href="javascript:;">로그인</a> 해주세요.</span>
+									</div>
+									<!-- //로그인 전  -->
+								
+									<!-- 상품이 없는 경우  -->
+									<!-- <div class="no_list">
+										<span>장바구에 저장된 상품이 없습니다.</span>
+									</div> -->
+									<!-- // 상품이 없는 경우 -->
+								
+									<div class="cart_con on">
+										<!-- 택배배송 -->
+										<div class="basket_box">
+											<div class="tit_delivery">
+												<div class="btn">
+													<a href="javascript:;" class="btn_line01 c02">선택삭제</a>
+												</div>
+												<!-- //160712 버튼 추가 -->
+											</div>
+								
+											<!-- 출고지(배송지)가 같은 상품 -->
+											<div class="prd_group">
+												<div class="sel_group">
+													<input type="checkbox" id="chk01">
+													<label for="chk01">전체선택</label>
+												</div>
+								
+												<!-- NGCPO-4561 [FO][MO] 주문서 항목 위치 변경 -->
+												<div class="basket_prd">
+													<div class="top_chkbox">
+														<input type="checkbox" title="상품선택">
+														<div class="right">
+															<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+															<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+														</div>
+													</div>
+													<a href="javascript:;">
+														<div class="basket_txt">
+															<div class="pic"><img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지"></div>
+															<span class="prodtit">슈펜</span>
+															<span class="prodname">[슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+															<!-- <dd class="prc">
+																<span class="op"><em class="ir">정상가</em><em>1,100,000</em></span>
+																<span class="sp"><em class="ir"></em><b>1,000,000</b>원</span>
+																<span class="rt"><b>50</b>%</span>
+															</dd> -->
+															<span class="prodprice">
+																<span class="dis">1,072,000원</span>
+																<span class="sp">1,001,600원</span>
+															</span>
+															<span class="prodopt">BK(89)/M / 1개</span>
+															<span class="dlv_time">발송예정일 2020.07.23(목)</span>
+														</div>
+													</a>
+													<div class="sel">
+														<div class="opt w100"><span>옵션변경</span></div>
+														<!-- <div class="absL"><a href="javascript:;" class="btn_line01 c05">더블쿠폰 <span class="ico_coupon"><em>5</em>%</span></a></div> -->
+														<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+													</div>
+													<!-- 옵션,수량 변경 -->
+													<div class="opt_open  newdiv">
+														<div class="dl_scroll">
+															<dl>
+																<dt class="ir"><label for="item_opt_nm1">색상</label></dt>
+																<dd>
+																	<div class="lyr_select">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상품을 선택해 주세요." name="item_opt_nm1" data-value="" id="item_opt_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">상품을 선택해 주세요.</span>
+																		</button>
+								
+																		<div class="lyr_options">
+																			<ul class="options" name="options_nm1" id="options_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">
+																				<li data-value="10002" data-vir_vend_no="VV20018345" data-item_show_nm="네이비" data-sale_poss_qty="981">
+																					<span class="ancor">
+																						<span class="opt_name">네이비</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																				<li data-value="10001" data-vir_vend_no="VV20018345" data-item_show_nm="아이베이지" data-sale_poss_qty="974">
+																					<span class="ancor">
+																						<span class="opt_name">아이베이지</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt class="ir"><label for="item_opt_nm2">사이즈</label></dt>
+																<dd>
+																	<div class="lyr_select disabled">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상위 옵션을 먼저 선택해 주세요." data-value="" name="item_opt_nm2" id="item_opt_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">상위 옵션을 먼저 선택해 주세요.</span>
+																				<!-- <option value="" selected="selected">상위 옵션을 먼저 선택해 주세요.</option> -->
+																		</button>
+								
+																		<div class="lyr_options">
+																				<ul class="options" name="options_nm2" id="options_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">
+																				</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt>수량</dt>
+																<dd>
+																	<div class="numbox" id="qty_box" data-sale_poss_qty="981" data-max_qty="0" data-min_qty="1">
+																		<a href="javascript:void(0);" class="minus"><img src="images/mobile/sp_mobile/ord/bts_minus.png" alt="삭제"></a>
+																		<input type="text" class="inp_txt" name="ord_qty" id="ord_qty" value="1" title="수량">
+																		<a href="javascript:void(0);" class="plus"><img src="images/mobile/sp_mobile/ord/bts_plus.png" alt="추가"></a>
+																	</div>
+																</dd>
+															</dl>
+															<div class="btnbox"><a href="javascript:void(0);" id="item_layer_change_button" class="btn_line01 c02">변경완료</a></div>
+														</div>
+													</div>
+													<!-- //옵션,수량 변경 -->
+												</div>
+												<!-- NGCPO-4561 [FO][MO] 주문서 항목 위치 변경 -->
+								
+												<!-- NGCPO-4914 명품CD 구매대행 상품/주문처리 기능 추가 -->
+												<div class="basket_prd">
+													<div class="top_chkbox">
+														<input type="checkbox" title="상품선택">
+														<div class="right">
+															<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+															<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+														</div>
+													</div>
+													<a href="javascript:;">
+														<div class="basket_txt">
+															<div class="pic"><img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지"></div>
+															<span class="prodtit">슈펜</span>
+															<span class="prodname">[슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+															<!-- <dd class="prc">
+																<span class="op"><em class="ir">정상가</em><em>1,100,000</em></span>
+																<span class="sp"><em class="ir"></em><b>1,000,000</b>원</span>
+																<span class="rt"><b>50</b>%</span>
+															</dd> -->
+															<span class="prodprice">
+																<span class="dis">1,072,000원</span>
+																<span class="sp">1,001,600원</span>
+															</span>
+															<span class="prodopt">BK(89)/M / 1개</span>
+															<span class="dlv_time">발송예정일 2020.07.23(목)</span>
+															<span class="soldout">상품가격이 장바구니에 담으셨을 때 보다 <em>5.5% 인하</em>되었습니다.</span>
+														</div>
+													</a>
+													<div class="sel">
+														<div class="opt w100"><span>옵션변경</span></div>
+														<!-- <div class="absL"><a href="javascript:;" class="btn_line01 c05">더블쿠폰 <span class="ico_coupon"><em>5</em>%</span></a></div> -->
+														<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+													</div>
+													<!-- 옵션,수량 변경 -->
+													<div class="opt_open  newdiv">
+														<div class="dl_scroll">
+															<dl>
+																<dt class="ir"><label for="item_opt_nm1">색상</label></dt>
+																<dd>
+																	<div class="lyr_select">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상품을 선택해 주세요." name="item_opt_nm1" data-value="" id="item_opt_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">상품을 선택해 주세요.</span>
+																		</button>
+								
+																		<div class="lyr_options">
+																			<ul class="options" name="options_nm1" id="options_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">
+																				<li data-value="10002" data-vir_vend_no="VV20018345" data-item_show_nm="네이비" data-sale_poss_qty="981">
+																					<span class="ancor">
+																						<span class="opt_name">네이비</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																				<li data-value="10001" data-vir_vend_no="VV20018345" data-item_show_nm="아이베이지" data-sale_poss_qty="974">
+																					<span class="ancor">
+																						<span class="opt_name">아이베이지</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt class="ir"><label for="item_opt_nm2">사이즈</label></dt>
+																<dd>
+																	<div class="lyr_select disabled">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상위 옵션을 먼저 선택해 주세요." data-value="" name="item_opt_nm2" id="item_opt_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">상위 옵션을 먼저 선택해 주세요.</span>
+																				<!-- <option value="" selected="selected">상위 옵션을 먼저 선택해 주세요.</option> -->
+																		</button>
+								
+																		<div class="lyr_options">
+																				<ul class="options" name="options_nm2" id="options_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">
+																				</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt>수량</dt>
+																<dd>
+																	<div class="numbox" id="qty_box" data-sale_poss_qty="981" data-max_qty="0" data-min_qty="1">
+																		<a href="javascript:void(0);" class="minus"><img src="images/mobile/sp_mobile/ord/bts_minus.png" alt="삭제"></a>
+																		<input type="text" class="inp_txt" name="ord_qty" id="ord_qty" value="1" title="수량">
+																		<a href="javascript:void(0);" class="plus"><img src="images/mobile/sp_mobile/ord/bts_plus.png" alt="추가"></a>
+																	</div>
+																</dd>
+															</dl>
+															<div class="btnbox"><a href="javascript:void(0);" id="item_layer_change_button" class="btn_line01 c02">변경완료</a></div>
+														</div>
+													</div>
+													<!-- //옵션,수량 변경 -->
+												</div>
+												<!-- //NGCPO-4914 명품CD 구매대행 상품/주문처리 기능 추가 -->
+								
+												<div class="basket_prd">
+													<div class="top_chkbox">
+														<input type="checkbox" title="상품선택">
+														<div class="right">
+															<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+															<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+														</div>
+													</div>
+													<a href="javascript:;">
+														<div class="basket_txt">
+															<div class="pic"><img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지"></div>
+															<span class="prodtit">슈펜</span>
+															<span class="prodname">[슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+															<!-- <dd class="prc">
+																<span class="op"><em class="ir">정상가</em><em>1,100,000</em></span>
+																<span class="sp"><em class="ir"></em><b>1,000,000</b>원</span>
+																<span class="rt"><b>50</b>%</span>
+															</dd> -->
+															<span class="prodprice">
+																<span class="dis">1,072,000원</span>
+																<span class="sp">1,001,600원</span>
+															</span>
+															<span class="prodopt">BK(89)/M / 1개</span>
+															<span class="dlv_time">발송예정일 2020.07.23(목)</span>
+														</div>
+													</a>
+													<div class="sel">
+														<div class="opt w100"><span>옵션변경</span></div>
+														<div class="absL"><a href="javascript:;" class="btn_line01 c05">더블쿠폰 <span class="ico_coupon"><em>5</em>%</span></a></div>
+														<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+													</div>
+													<!-- 옵션,수량 변경 -->
+													<div class="opt_open  newdiv">
+														<div class="dl_scroll">
+															<dl>
+																<dt class="ir"><label for="item_opt_nm1">색상</label></dt>
+																<dd>
+																	<div class="lyr_select">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상품을 선택해 주세요." name="item_opt_nm1" data-value="" id="item_opt_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">상품을 선택해 주세요.</span>
+																		</button>
+								
+																		<div class="lyr_options">
+																			<ul class="options" name="options_nm1" id="options_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">
+																				<li data-value="10002" data-vir_vend_no="VV20018345" data-item_show_nm="네이비" data-sale_poss_qty="981">
+																					<span class="ancor">
+																						<span class="opt_name">네이비</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																				<li data-value="10001" data-vir_vend_no="VV20018345" data-item_show_nm="아이베이지" data-sale_poss_qty="974">
+																					<span class="ancor">
+																						<span class="opt_name">아이베이지</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt class="ir"><label for="item_opt_nm2">사이즈</label></dt>
+																<dd>
+																	<div class="lyr_select disabled">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상위 옵션을 먼저 선택해 주세요." data-value="" name="item_opt_nm2" id="item_opt_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">상위 옵션을 먼저 선택해 주세요.</span>
+																				<!-- <option value="" selected="selected">상위 옵션을 먼저 선택해 주세요.</option> -->
+																		</button>
+								
+																		<div class="lyr_options">
+																				<ul class="options" name="options_nm2" id="options_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">
+																				</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt>수량</dt>
+																<dd>
+																	<div class="numbox" id="qty_box" data-sale_poss_qty="981" data-max_qty="0" data-min_qty="1">
+																		<a href="javascript:void(0);" class="minus"><img src="images/mobile/sp_mobile/ord/bts_minus.png" alt="삭제"></a>
+																		<input type="text" class="inp_txt" name="ord_qty" id="ord_qty" value="1" title="수량">
+																		<a href="javascript:void(0);" class="plus"><img src="images/mobile/sp_mobile/ord/bts_plus.png" alt="추가"></a>
+																	</div>
+																</dd>
+															</dl>
+															<div class="btnbox"><a href="javascript:void(0);" id="item_layer_change_button" class="btn_line01 c02">변경완료</a></div>
+														</div>
+													</div>
+													<!-- //옵션,수량 변경 -->
+												</div>
+								
+												<div class="basket_prd">
+													<div class="top_chkbox">
+														<input type="checkbox" title="상품선택">
+														<div class="right">
+															<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+															<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+														</div>
+													</div>
+													<a href="javascript:;">
+														<div class="basket_txt">
+															<div class="pic"><img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지"></div>
+															<span class="prodtit">슈펜</span>
+															<span class="prodname">[슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+															<span class="prodprice">77,200<span class="won">원</span></span>
+															<span class="prodopt">BK(89)/M / 1개</span>
+															<span class="prodopt">GY(34)/M / 1개</span>
+														</div>
+													</a>
+													<div class="sel">
+														<div class="opt w100"><span>옵션변경</span></div>
+														<!-- <div class="absL"><a href="javascript:;" class="btn_line01 c05">더블쿠폰 <span class="ico_coupon"><em>5</em>%</span></a></div> -->
+														<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+													</div>
+													<!-- 옵션,수량 변경 -->
+													<div class="opt_open  newdiv">
+														<div class="dl_scroll">
+															<dl>
+																<dt class="ir"><label for="item_opt_nm1">색상</label></dt>
+																<dd>
+																	<div class="lyr_select">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상품을 선택해 주세요." name="item_opt_nm1" data-value="" id="item_opt_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">상품을 선택해 주세요.</span>
+																		</button>
+								
+																		<div class="lyr_options">
+																			<ul class="options" name="options_nm1" id="options_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">
+																				<li data-value="10002" data-vir_vend_no="VV20018345" data-item_show_nm="네이비" data-sale_poss_qty="981">
+																					<span class="ancor">
+																						<span class="opt_name">네이비</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																				<li data-value="10001" data-vir_vend_no="VV20018345" data-item_show_nm="아이베이지" data-sale_poss_qty="974">
+																					<span class="ancor">
+																						<span class="opt_name">아이베이지</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt class="ir"><label for="item_opt_nm2">사이즈</label></dt>
+																<dd>
+																	<div class="lyr_select disabled">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상위 옵션을 먼저 선택해 주세요." data-value="" name="item_opt_nm2" id="item_opt_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">상위 옵션을 먼저 선택해 주세요.</span>
+																				<!-- <option value="" selected="selected">상위 옵션을 먼저 선택해 주세요.</option> -->
+																		</button>
+								
+																		<div class="lyr_options">
+																				<ul class="options" name="options_nm2" id="options_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">
+																				</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt>수량</dt>
+																<dd>
+																	<div class="numbox" id="qty_box" data-sale_poss_qty="981" data-max_qty="0" data-min_qty="1">
+																		<a href="javascript:void(0);" class="minus"><img src="images/mobile/sp_mobile/ord/bts_minus.png" alt="삭제"></a>
+																		<input type="text" class="inp_txt" name="ord_qty" id="ord_qty" value="1" title="수량">
+																		<a href="javascript:void(0);" class="plus"><img src="images/mobile/sp_mobile/ord/bts_plus.png" alt="추가"></a>
+																	</div>
+																</dd>
+															</dl>
+															<div class="btnbox"><a href="javascript:void(0);" id="item_layer_change_button" class="btn_line01 c02">변경완료</a></div>
+														</div>
+													</div>
+													<!-- //옵션,수량 변경 -->
+												</div>
+												<!-- 상품금액,배송비 합계 -->
+												<div class="prd_total dlv_save">
+													<span class="price">307,200<em>원</em></span> + 
+													<span class="price">2,500<em>원(배송비)</em></span>
+													<div class="save_info">
+														<span>50,000원 이상 무료배송</span>
+														<a href="javascript:;" class="goto_shop">배송비 절약하기</a>
+													</div>
+												</div>
+												<!-- //상품금액,배송비 합계 -->
+											</div>
+											<!-- //출고지(배송지)가 같은 상품 -->
+								
+											<div class="prd_group">
+												<div class="basket_prd">
+													<div class="top_chkbox">
+														<input type="checkbox" title="상품선택">
+														<div class="right">
+															<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+															<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+														</div>
+													</div>
+													<a href="javascript:;">
+														<div class="basket_txt">
+															<div class="pic"><img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지"></div>
+															<span class="prodtit">슈펜</span>
+															<span class="prodname">[슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+															<span class="prodprice">77,200<span class="won">원</span></span>
+															<span class="prodopt">화이트 / 1개</span>
+														</div>
+													</a>
+													<div class="sel">
+														<div class="opt w100"><span>옵션변경</span></div>
+														<div class="absL"><a href="javascript:;" class="btn_line01 c05">더블쿠폰 <span class="ico_coupon"><em>10</em>%</span></a></div>
+														<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+													</div>
+													<!-- 옵션,수량 변경 -->
+													<div class="opt_open  newdiv">
+														<div class="dl_scroll">
+															<dl>
+																<dt class="ir"><label for="item_opt_nm1">색상</label></dt>
+																<dd>
+																	<div class="lyr_select">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상품을 선택해 주세요." name="item_opt_nm1" data-value="" id="item_opt_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">상품을 선택해 주세요.</span>
+																		</button>
+								
+																		<div class="lyr_options">
+																			<ul class="options" name="options_nm1" id="options_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">
+																				<li data-value="10002" data-vir_vend_no="VV20018345" data-item_show_nm="네이비" data-sale_poss_qty="981">
+																					<span class="ancor">
+																						<span class="opt_name">네이비</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																				<li data-value="10001" data-vir_vend_no="VV20018345" data-item_show_nm="아이베이지" data-sale_poss_qty="974">
+																					<span class="ancor">
+																						<span class="opt_name">아이베이지</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt class="ir"><label for="item_opt_nm2">사이즈</label></dt>
+																<dd>
+																	<div class="lyr_select disabled">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상위 옵션을 먼저 선택해 주세요." data-value="" name="item_opt_nm2" id="item_opt_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">상위 옵션을 먼저 선택해 주세요.</span>
+																				<!-- <option value="" selected="selected">상위 옵션을 먼저 선택해 주세요.</option> -->
+																		</button>
+								
+																		<div class="lyr_options">
+																				<ul class="options" name="options_nm2" id="options_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">
+																				</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt>수량</dt>
+																<dd>
+																	<div class="numbox" id="qty_box" data-sale_poss_qty="981" data-max_qty="0" data-min_qty="1">
+																		<a href="javascript:void(0);" class="minus"><img src="images/mobile/sp_mobile/ord/bts_minus.png" alt="삭제"></a>
+																		<input type="text" class="inp_txt" name="ord_qty" id="ord_qty" value="1" title="수량">
+																		<a href="javascript:void(0);" class="plus"><img src="images/mobile/sp_mobile/ord/bts_plus.png" alt="추가"></a>
+																	</div>
+																</dd>
+															</dl>
+															<div class="btnbox"><a href="javascript:void(0);" id="item_layer_change_button" class="btn_line01 c02">변경완료</a></div>
+														</div>
+													</div>
+													<!-- //옵션,수량 변경 -->
+												</div>
+												<!-- 상품금액,배송비 합계 -->
+												<div class="prd_total">
+													<span class="price">307,200<em>원</em></span> <!-- + 
+													<span class="price">2,500<em>원(배송비)</em></span> -->
+												</div>
+												<!-- //상품금액,배송비 합계 -->
+											</div>
+										</div>
+										<!-- //택배배송 -->
+								
+										<!-- 매장수령 -->
+										<div class="basket_box mt30">
+											<div class="sel_store">
+												<div class="ico_store"><strong>매장수령</strong> (<em>2</em>개)</div>
+											</div>
+								
+											<div class="prd_group">
+												<div class="basket_prd">
+													<div class="top_chkbox">
+														<input type="checkbox" title="상품선택">
+														<div class="right">
+															<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+															<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+														</div>
+													</div>
+													<a href="javascript:;">
+														<div class="basket_txt">
+															<div class="pic"><img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지"></div>
+															<span class="prodtit">슈펜</span>
+															<span class="prodname">[슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+															<span class="prodprice">87,200<span class="won">원</span></span>
+															<span class="prodopt"><em>[NC 평촌점]</em> BK(89)/M / 1개</span>
+														</div>
+													</a>
+													<div class="sel">
+														<div class="opt w100"><span>옵션변경</span></div>
+														<div class="absL"><a href="javascript:;" class="btn_line01 c05">더블쿠폰 <span class="ico_coupon"><em>5</em>%</span></a></div>
+														<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+													</div>
+													<!-- 옵션,수량 변경 -->
+													<div class="opt_open newdiv">
+														<dl class="dl_scroll">
+															<dt>수량</dt>
+															<dd>
+																<div class="numbox">
+																	<span class="minus"><img src="images/mobile/order/bts_minus_default.png" alt="삭제"></span>
+																	<!--a href="javascript:;" class="minus"><img src="images/mobile/sp_mobile/ord/bts_minus.png" alt="삭제" /></a-->
+																	<input type="text" class="inp_txt" value="1" title="수량">
+																	<!--span class="plus"><img src="images/mobile/order/bts_plus_default.png" alt="추가" /></span-->
+																	<a href="javascript:;" class="plus"><img src="images/mobile/sp_mobile/ord/bts_plus.png" alt="추가"></a>
+																</div>
+															</dd>
+														</dl>
+														<div class="btnbox"><a href="javascript:;" class="btn_line01 c02">변경완료</a></div>
+													</div>
+													<!-- //옵션,수량 변경 -->
+												</div>
+												<!-- 지점, 합계 -->
+												<div class="prd_total">
+													<div class="store">
+														<a href="javascript:;" onclick="fn_layer_open('pop_store');return false;" onkeypress="this.onclick;"><span>NC 평촌점</span></a>
+														<p>에서 매장수령 하실 상품입니다.</p>
+													</div>
+													<span class="price">307,200<em>원</em></span>
+												</div>
+												<!-- //지점, 합계 -->
+											</div>
+								
+											<div class="prd_group">
+												<div class="basket_prd">
+													<div class="top_chkbox">
+														<input type="checkbox" title="상품선택">
+														<div class="right">
+															<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+															<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+														</div>
+													</div>
+													<a href="javascript:;">
+														<div class="basket_txt">
+															<div class="pic"><img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지"></div>
+															<span class="prodtit">슈펜</span>
+															<span class="prodname">[슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+															<span class="prodprice">87,200<span class="won">원</span></span>
+															<span class="prodopt"><em>[NC 평촌점]</em> BK(89)/M / 1개</span>
+														</div>
+													</a>
+													<div class="sel">
+														<div class="opt w100"><span>옵션변경</span></div>
+														<div class="absL"><a href="javascript:;" class="btn_line01 c05">더블쿠폰 <span class="ico_coupon"><em>5</em>%</span></a></div>
+														<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+													</div>
+													<!-- 옵션,수량 변경 -->
+													<div class="opt_open  newdiv">
+														<div class="dl_scroll">
+															<dl>
+																<dt class="ir"><label for="item_opt_nm1">색상</label></dt>
+																<dd>
+																	<div class="lyr_select">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상품을 선택해 주세요." name="item_opt_nm1" data-value="" id="item_opt_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">상품을 선택해 주세요.</span>
+																		</button>
+								
+																		<div class="lyr_options">
+																			<ul class="options" name="options_nm1" id="options_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">
+																				<li data-value="10002" data-vir_vend_no="VV20018345" data-item_show_nm="네이비" data-sale_poss_qty="981">
+																					<span class="ancor">
+																						<span class="opt_name">네이비</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																				<li data-value="10001" data-vir_vend_no="VV20018345" data-item_show_nm="아이베이지" data-sale_poss_qty="974">
+																					<span class="ancor">
+																						<span class="opt_name">아이베이지</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt class="ir"><label for="item_opt_nm2">사이즈</label></dt>
+																<dd>
+																	<div class="lyr_select disabled">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상위 옵션을 먼저 선택해 주세요." data-value="" name="item_opt_nm2" id="item_opt_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">상위 옵션을 먼저 선택해 주세요.</span>
+																				<!-- <option value="" selected="selected">상위 옵션을 먼저 선택해 주세요.</option> -->
+																		</button>
+								
+																		<div class="lyr_options">
+																				<ul class="options" name="options_nm2" id="options_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">
+																				</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt>수량</dt>
+																<dd>
+																	<div class="numbox" id="qty_box" data-sale_poss_qty="981" data-max_qty="0" data-min_qty="1">
+																		<a href="javascript:void(0);" class="minus"><img src="images/mobile/sp_mobile/ord/bts_minus.png" alt="삭제"></a>
+																		<input type="text" class="inp_txt" name="ord_qty" id="ord_qty" value="1" title="수량">
+																		<a href="javascript:void(0);" class="plus"><img src="images/mobile/sp_mobile/ord/bts_plus.png" alt="추가"></a>
+																	</div>
+																</dd>
+															</dl>
+															<div class="btnbox"><a href="javascript:void(0);" id="item_layer_change_button" class="btn_line01 c02">변경완료</a></div>
+														</div>
+													</div>
+													<!-- //옵션,수량 변경 -->
+												</div>
+												<!-- 지점, 합계 -->
+												<div class="prd_total">
+													<div class="store">
+														<a href="javascript:;" onclick="fn_layer_open('pop_store');return false;" onkeypress="this.onclick;"><span>NC 평촌점</span></a>
+														<p>에서 매장수령 하실 상품입니다.</p>
+													</div>
+													<span class="price">307,200<em>원</em></span>
+												</div>
+												<!-- //지점, 합계 -->
+											</div>
+										</div>
+										<!-- //매장수령 -->
+								
+										<!-- 품절/판매종료 상품 -->
+										<div class="basket_box soldout">
+											<div class="tit_soldout">
+												<strong>품절/판매종료 상품</strong> (<em class="num">5</em>개)
+												<div class="absR"><a href="javascript:;" class="btn_open"><span>열기</span></a></div>
+											</div>
+								
+											<div class="soldout_con">
+												<div class="btn_area">
+													<a href="javascript:;" class="btn_brd01 c01">전체삭제</a>
+												</div>
+								
+												<div class="prd_group">
+													<div class="basket_prd">
+														<div class="top_chkbox">
+															<input type="checkbox" title="상품선택">
+															<div class="right">
+																<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+																<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+															</div>
+														</div>
+														<a href="javascript:;">
+															<div class="basket_txt">
+																<div class="pic">
+																	<img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지">
+																	<div class="ico_soldout"><span>판매종료</span></div>
+																</div>
+																<span class="prodtit">슈펜</span>
+																<span class="prodname">[슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+																<span class="prodprice">77,200<span class="won">원</span></span>
+																<span class="soldout">상품이 <em>판매종료</em> 되었습니다.</span>
+															</div>
+														</a>
+													</div>
+								
+													<div class="basket_prd">
+														<div class="top_chkbox">
+															<input type="checkbox" title="상품선택">
+															<div class="right">
+																<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+																<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+															</div>
+														</div>
+														<a href="javascript:;">
+															<div class="basket_txt">
+																<div class="pic">
+																	<img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지">
+																	<div class="ico_soldout"><span>일시품절</span></div>
+																</div>
+																<span class="prodtit">슈펜</span>
+																<span class="prodname">[슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+																<span class="prodprice">77,200<span class="won">원</span></span>
+																<span class="prodopt">BK(89)/M / 1개</span>
+																<span class="soldout">선택 옵션이 <em>일시품절</em> 되었습니다.</span>
+															</div>
+														</a>
+														<div class="sel soldout">
+															<div class="opt w100"><span>옵션변경</span></div>
+														</div>
+														<!-- 옵션,수량 변경 -->
+													<div class="opt_open  newdiv">
+														<div class="dl_scroll">
+															<dl>
+																<dt class="ir"><label for="item_opt_nm1">색상</label></dt>
+																<dd>
+																	<div class="lyr_select">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상품을 선택해 주세요." name="item_opt_nm1" data-value="" id="item_opt_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">상품을 선택해 주세요.</span>
+																		</button>
+								
+																		<div class="lyr_options">
+																			<ul class="options" name="options_nm1" id="options_nm1" title="색상 선택" data-opt_nm="색상" data-index="1">
+																				<li data-value="10002" data-vir_vend_no="VV20018345" data-item_show_nm="네이비" data-sale_poss_qty="981">
+																					<span class="ancor">
+																						<span class="opt_name">네이비</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																				<li data-value="10001" data-vir_vend_no="VV20018345" data-item_show_nm="아이베이지" data-sale_poss_qty="974">
+																					<span class="ancor">
+																						<span class="opt_name">아이베이지</span>
+																						<span class="opt_info">
+																							<span class="opt_price"><em></em></span>
+																						</span>
+																					</span>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt class="ir"><label for="item_opt_nm2">사이즈</label></dt>
+																<dd>
+																	<div class="lyr_select disabled">
+																		<div class="chk_out"><input type="checkbox" id="chk_out1" class="chk_out1"><label for="chk_out1">품절제외</label></div>
+																		<button type="button" class="sel_btn">
+																			<span class="sel_txt" data-org-msg="상위 옵션을 먼저 선택해 주세요." data-value="" name="item_opt_nm2" id="item_opt_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">상위 옵션을 먼저 선택해 주세요.</span>
+																				<!-- <option value="" selected="selected">상위 옵션을 먼저 선택해 주세요.</option> -->
+																		</button>
+								
+																		<div class="lyr_options">
+																				<ul class="options" name="options_nm2" id="options_nm2" title="사이즈 선택" data-opt_nm="사이즈" data-index="2" data-last="Y">
+																				</ul>
+																		</div>
+																	</div>
+																</dd>
+																<dt>수량</dt>
+																<dd>
+																	<div class="numbox" id="qty_box" data-sale_poss_qty="981" data-max_qty="0" data-min_qty="1">
+																		<a href="javascript:void(0);" class="minus"><img src="images/mobile/sp_mobile/ord/bts_minus.png" alt="삭제"></a>
+																		<input type="text" class="inp_txt" name="ord_qty" id="ord_qty" value="1" title="수량">
+																		<a href="javascript:void(0);" class="plus"><img src="images/mobile/sp_mobile/ord/bts_plus.png" alt="추가"></a>
+																	</div>
+																</dd>
+															</dl>
+															<div class="btnbox"><a href="javascript:void(0);" id="item_layer_change_button" class="btn_line01 c02">변경완료</a></div>
+														</div>
+													</div>
+													<!-- //옵션,수량 변경 -->
+													</div>
+													<!-- 상품금액,배송비 합계 -->
+													<div class="prd_total">
+														<span class="price">307,200<em>원</em></span> + 
+														<span class="price">2,500<em>원(배송비)</em></span>
+													</div>
+													<!-- //상품금액,배송비 합계 -->
+												</div>
+								
+												<div class="prd_group">
+													<div class="basket_prd">
+														<div class="top_chkbox">
+															<input type="checkbox" title="상품선택">
+															<div class="right">
+																<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+																<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+															</div>
+														</div>
+														<a href="javascript:;">
+															<div class="basket_txt">
+																<div class="pic">
+																	<img src="images/mobile/sp_mobile/temp/cart_01.jpg" alt="상품 이미지">
+																	<div class="ico_soldout"><span>일시품절</span></div>
+																</div>
+																<span class="prodtit">슈펜</span>
+																<span class="prodname"> [슈펜키즈]타이포 X 어글리 팬츠 VKDM20</span>
+																<span class="prodprice">77,200<span class="won">원</span></span>
+																<span class="soldout">모든 옵션이 <em>일시품절</em> 되었습니다.</span>
+															</div>
+														</a>
+													</div>
+								
+													<!-- 상품금액,배송비 합계 -->
+													<div class="prd_total">
+														<span class="price">307,200<em>원</em></span> + 
+														<span class="price">2,500<em>원(배송비)</em></span>
+													</div>
+													<!-- //상품금액,배송비 합계 -->
+												</div>
+											</div>
+										</div>
+										<!-- //품절/판매종료 상품 -->
+								
+										<!-- 160712 일반 상품 전체 -->
+										<div class="basket_chk">
+											<span class="txt">일반 상품 전체 (<em>000</em>개)</span>
+											<div class="right">
+												<a href="javascript:;" class="btn_line01 c01">선택해제</a>
+												<a href="javascript:;" class="btn_line01 c02">선택삭제</a>
+											</div>
+										</div>
+										<!-- //160712 일반 상품 전체 -->
+									</div>
+									<!-- //160712 일반 상품 -->
+								
+									<!-- 이용안내 -->
+									<div class="basket_notice">
+										<h3>* 장바구니 이용안내</h3>
+										<ul>
+											<li>오랫동안 장바구니에 보관된 상품을 주문하실 경우, 가격이나 혜택이 변동 될 수 있습니다. </li>
+											<li>장바구니에 담긴 상품은 30일 동안만 보관할 수 있습니다. 더 오랫동안 보관하시려면 ‘찜’ 목록에 추가해 주세요.</li>
+											<li>구매하기 선택 시, 구매시점에 품절된 상품은 제외하고 주문이 진행됩니다.</li>
+										</ul>
+										<h3>* 매장 수령 유의사항</h3>
+										<ul>
+											<li>당일픽업을 희망하시는 고객님들은 비고란에 '당일수령'을 기입해주세요.</li>
+											<li>당일 수령이 불가할 경우, 주문제작 소요 기간을 안내드립니다.</li>
+											<li>주문을 희망하지 않을 경우, 안내문자를 받으신 후, 당일 취소 요청드립니다.</li>
+										</ul>
+									</div>
+								</div>
+								<!-- //basket_content -->
+								
+							</li>
+						</ul>
+					</div>
+					<!-- 총 결제금액 -->
+					<div class="basketwrap">
+						<div class="basketback_all">
+							<div class="basket_total">
+								<span class="price">총 결제 예정 금액<span class="num"><em>10,506,500</em>원</span></span>
+							</div>
+							<ul class="basketback_tb">
+								<li class="left">
+									<p>총 주문금액 : <span class="num">104,000</span>원</p>
+									<p>총 배송비 : <span class="num">2,500</span>원</p>
+								</li>
+								<li class="right alR">
+									<div class="btn_buy">
+										<a href="javascript:;" class="btn_bg02 c01"><strong>구매하기</strong></a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- //총 결제금액 -->
+				</div>
+
+
+				<div class="cart_cont fnLnkCont" name="cartTab" data-link-cont="2">
+					<div class="cate_swp">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<div class="wish_wrap">
+									<!-- 상품이 없는 경우  -->
+									<!-- <div class="no_list">
+										<span>찜한 상품이 없습니다.</span>
+									</div> -->
+									<!-- // 상품이 없는 경우 -->
+								
+									<!-- 비로그인 케이스 -->
+										<!-- <div class="login_req">
+											<span>찜한상품을 확인하려면 로그인해주세요.</span>
+											<button type="button" class="login_btn">로그인</button>
+										</div> -->
+									<!-- //비로그인 케이스 -->
+									<div class="goods_list" id="goods_list">
+										<ul class="glist square">
+											<li class="out">
+												<div class="g_wrap">
+													<a href="javascript:;" class="g_link">
+														<span class="g_img">
+															<span class="msg_out">일시품절</span>
+															<span class="img"><img src="images/mobile/sp_mobile/temp/best_prd_01.png" width="310" height="413" alt=""></span>
+														</span>
+														<span class="g_tit"><span class="g_brd">슈펜</span>[슈펜키즈]타이포 X 어글리 팬츠 VKDM20S04</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>
+													</a>
+													<button type="button" class="btn_del"><em class="ir">삭제</em></button>
+												</div>
+											</li>
+											<li class="out">
+												<div class="g_wrap">
+													<a href="javascript:;" class="g_link">
+														<span class="g_img">
+															<span class="msg_out">판매종료</span>
+															<span class="img"><img src="images/mobile/sp_mobile/temp/best_prd_02.png" width="310" height="413" alt=""></span>
+														</span>
+														<span class="g_tit"><span class="g_brd">슈펜</span>[슈펜키즈]타이포 X 어글리 팬츠 VKDM20S04</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>
+													</a>
+													<button type="button" class="btn_del"><em class="ir">삭제</em></button>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="javascript:;" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="images/mobile/sp_mobile/temp/best_prd_03.png" width="310" height="413" alt=""></span>
+														</span>
+														<span class="g_tit"><span class="g_brd">슈펜</span>[슈펜키즈]타이포 X 어글리 팬츠 VKDM20S04</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>
+													</a>
+													<button type="button" class="btn_del"><em class="ir">삭제</em></button>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="javascript:;" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="images/mobile/sp_mobile/temp/best_prd_04.png" width="310" height="413" alt=""></span>
+														</span>
+														<span class="g_tit"><span class="g_brd">슈펜</span>[슈펜키즈]타이포 X 어글리 팬츠 VKDM20S04</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>
+													</a>
+													<button type="button" class="btn_del"><em class="ir">삭제</em></button>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="javascript:;" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="images/mobile/sp_mobile/temp/best_prd_01.png" width="310" height="413" alt=""></span>
+														</span>
+														<span class="g_tit"><span class="g_brd">슈펜</span>[슈펜키즈]타이포 X 어글리 팬츠 VKDM20S04</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>
+													</a>
+													<button type="button" class="btn_del"><em class="ir">삭제</em></button>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="javascript:;" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="images/mobile/sp_mobile/temp/best_prd_02.png" width="310" height="413" alt=""></span>
+														</span>
+														<span class="g_tit"><span class="g_brd">슈펜</span>[슈펜키즈]타이포 X 어글리 팬츠 VKDM20S04</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>
+													</a>
+													<button type="button" class="btn_del"><em class="ir">삭제</em></button>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="javascript:;" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="images/mobile/sp_mobile/temp/best_prd_03.png" width="310" height="413" alt=""></span>
+														</span>
+														<span class="g_tit"><span class="g_brd">슈펜</span>[슈펜키즈]타이포 X 어글리 팬츠 VKDM20S04</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>
+													</a>
+													<button type="button" class="btn_del"><em class="ir">삭제</em></button>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="javascript:;" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="images/mobile/sp_mobile/temp/best_prd_04.png" width="310" height="413" alt=""></span>
+														</span>
+														<span class="g_tit"><span class="g_brd">슈펜</span>[슈펜키즈]타이포 X 어글리 팬츠 VKDM20S04</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>
+													</a>
+													<button type="button" class="btn_del"><em class="ir">삭제</em></button>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="javascript:;" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="images/mobile/sp_mobile/temp/best_prd_01.png" width="310" height="413" alt=""></span>
+														</span>
+														<span class="g_tit"><span class="g_brd">슈펜</span>[슈펜키즈]타이포 X 어글리 팬츠 VKDM20S04</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>
+													</a>
+													<button type="button" class="btn_del"><em class="ir">삭제</em></button>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<script>
+					var total = 1;
+					$('.cate_swp').each(function(){
+						var cateSld = $(this)[0];
+						cateSld.swp = new Swiper(cateSld,{
+							freeMode: true,
+							freeModeFluid: true,
+							slidesPerView: 'auto',
+							touchRatio: 0.8,
+							on :{
+								touchEnd : function() {
+									var matrix = $(cateSld).find(' .swiper-wrapper').css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+									var matrix_x = matrix[12] || matrix[4];
+									var s_width =$(cateSld).find(' .swiper-slide').width();
+									if(matrix_x > 0 + 50){ //first slide prev touch
+										doPrev();
+									}
+									if(matrix_x < -(s_width*(total-1)) - 50){ //last slide next touch
+										doNext();
+									}
+								}
+							}
+						});
+
+					});
+					function doNext(){
+						if($('.tab_menu li.on').next().length){
+							var _nextAncor = $('.tab_menu li.on').next().find('a');
+							_nextAncor.click();
+							return false;
+						}
+					}
+					function doPrev(){
+						if($('.tab_menu li.on').prev().length){
+							var _prevAncor = $('.tab_menu li.on').prev().find('a');
+							_prevAncor.click();
+							return false;
+						}
+					}
+					$('.cate_swp .swiper-wrapper .swiper-wrapper').on('touchstart', function(){
+						$('.cate_swp')[0].swp.allowTouchMove=false;
+					});
+					$('.cate_swp .swiper-wrapper .swiper-wrapper').on('touchend', function(){
+						$('.cate_swp')[0].swp.allowTouchMove=true;
+					})
+				</script>
+			</div>
+			<!-- //.cart_wrap -->
+		</div>
+		<!-- //.contents -->
+	</div>
+	<!-- //.container -->
+
+</div>
+<!-- // .wrapper -->
+
+
+
+
+<!-- 레이어 타입 confirm -->
+<div class="lyr_confirm" id="cartCnfm">
+	<strong class="chk_txt">선택한 상품을<br />삭제하시겠습니까?</strong>
+	<div class="btns">
+		<button class="cancel" onclick="commonUI.lyrCnfmC(cartCnfm)" keypress="this.onclick"><em>취소</em></button>
+		<button class="cnfm" onclick="commonUI.lyrCnfmC(cartCnfm)" keypress="this.onclick"><em>확인</em></button>
+	</div>
+</div>
+<!-- //레이어 타입 confirm -->
+
+<!-- layer_popup : 찜록록 -->
+<div class="layer_pop nodim pop_zzim">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<p class="ico"><em>찜 목록에</em></p>
+				<p>추가되었습니다.</p>
+				
+				<!-- <p><em>찜 목록에</em> 이미</p> 
+				<p>등록 되어있는 상품입니다.</p>  -->
+				
+				<p class="etc">장바구니 <em>'찜한상품'</em>에서 <br>확인 하실 수 있습니다.</p>
+			</div>
+		</div>   
+		<a href="javascript:;" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //layer_popup : 찜록록 -->
+
+
+<footer class="footer" id="footer">
+	<div class="ft_menu">
+	    <ul>
+	        <li><a href="javascript:;">로그아웃</a></li>
+	        <li><a href="javascript:;">마이페이지</a></li>
+	        <li><a href="javascript:;">장바구니</a></li>
+	        <li><a href="javascript:;">고객센터</a></li>
+	    </ul>
+	</div>
+    <div class="ft_info">
+    	<p><strong class="cop">(주)이랜드리테일</strong></p>
+        <p>고객센터 : <a href="tel:1899-9500">1899-9500</a></p>
+        <p>사업자등록번호 : 114-81-01855 <a href="javascript:;">사업자정보확인</a></p>
+        <p>통신판매업 신고번호 : 서초 제 09998호</p>
+        <p>서울시 서초구 잠원동 70-2</p>
+        <p>대표이사 : 김우섭/석창현</p>
+        <p>개인정보 보호책임자 : 이동규</p>
+        <p class="foot_link">
+        	<a href="https://m.oneclick.elandretail.com/terms/privacyTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개||개인정보처리방침">개인정보처리방침</a>
+        	<a href="https://m.oneclick.elandretail.com/terms/memberShipClubTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개|| 약관안내">약관안내</a>
+        	<a href="javascript:;">브랜드비전</a>
+        	<a href="javascript:;">대량구매/협업문의</a>
+        </p>
+    </div>
+    <div class="ft_copy">Copyright ⓒ ELANDRETAIL. All Rights Reserved</div>
+</footer>
+
+<nav class="in_cart">
+	<ul>
+		<li class="home on"><a href="javascript:;"><span>홈</span></a></li>
+		<li class="cura"><a href="javascript:;"><span>큐레이션</span></a></li>
+		<li class="coll"><a href="javascript:;"><span>카테고리</span></a></li>
+		<li class="cart"><a href="javascript:;"><em>99</em><span>장바구니</span></a></li>
+		<li class="mys"><a href="javascript:;"><span>마이슈펜</span></a></li>
+	</ul>
+</nav>
+
+</body>
+</html>

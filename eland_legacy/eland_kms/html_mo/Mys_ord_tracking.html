@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name=”format-detection” content=”no” />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>상품배송 현황</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>			
+	<div class="my_con">
+		<div class="mypage_content">
+			<div class="mypage_box">
+				<div class="dlv_tracking">
+					<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 클래스 및 ir 텍스트 - 진행전(없음), 진행중(inpro), 완료(fin) -->
+					<div class="dlv_process">
+						<ol>
+							<li class="pr1 fin"><span class="txt">상품발송</span><span class="ico"><em class="ir">진행중</em></span></li>
+							<li class="pr2 fin"><span class="txt">택배사전달</span><span class="ico"><em class="ir">진행전</em></span></li>
+							<li class="pr3 inpro"><span class="txt">상품배송중</span><span class="ico"><em class="ir">진행전</em></span></li>
+							<li class="pr4"><span class="txt">배송기사출발</span><span class="ico"><em class="ir">진행전</em></span></li>
+							<li class="pr5"><span class="txt">배송완료</span><span class="ico"><em class="ir">진행전</em></span></li>
+						</ol>
+					</div>
+					<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 업체 배송일 경우-->
+					<!-- <div class="dlv_process">
+						<div class="pr_drct">
+							<span class="txt">업체에서 <em>직접 배송하는 상품</em>입니다.</span><span class="ico"><em class="ir">업체 직접 배송중</em>
+						</div>
+					</div> -->
+					<div class="tit_order"><em>기본정보</em></div>
+					<div class="basic_info">
+						<table>
+							<caption>배송 기본정보 표이며, 받는분, 주소, 택배업체, 송장번호 순으로 표시 됩니다.</caption>
+							<colgroup>
+								<col style="width:72px;" />
+								<col />
+							</colgroup>
+							<tbody>
+							<tr>
+								<th scope="row">받는분</th>
+								<td>이랜드</td>
+							</tr>
+							<tr>
+								<th scope="row">주소</th>
+								<td>가산동 371-47 세진이노플렉스 806호</td>
+							</tr>
+							<tr>
+								<th scope="row">택배업체</th>
+								<td>우체국택배 <a href="tel:1588-1588" class="tel"><span class="ico"><em class="ir">전화번호:</em></span><em>1588-1588</em></a></td>
+							</tr>
+							<tr>
+								<th scope="row">송장번호</th>
+								<td><span class="trck_num">B6584587515</span></td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tit_order"><em>배송 상세현황</em></div>
+					<table class="tbl_address">
+						<colgroup>
+							<col style="width:20.8%;">
+							<col style="">
+							<col style="width:24.5%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">일자</th>
+								<th scope="col">위치/상세내역</th>
+								<th scope="col">전화번호</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2018-09-13 <span class="time">19:02</span></td>
+								<td><strong class="local">인천집화소</strong><br />상품이 택배사에 전달 되었습니다.</a></td>
+								<td>강태광광<br />032-9887-1415</td>
+							</tr>
+							<tr>
+								<td>2018-09-13 <span class="time">19:02</span></td>
+								<td><strong class="local">인천집화소</strong><br />상품이 이동중입니다.</a></td>
+								<td>김아무개<br />032-9887-1415</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 집화 이전 케이스 -->
+					<!-- <table class="tbl_address">
+						<colgroup>
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="only_msg">
+									<div class="fst_dlv">
+										<span class="tit_tx">판매자가 <em>상품을 발송</em>하였습니다.</span>
+										<span class="mst">택배사에서 상품을 접수하면, 현재 화면을 통해 상품 위치 확인이 가능합니다.</span>
+										* 하루가 지나 조회 하였는데도 동일한 상태일 경우,<br /> <a href="javascript:" class="go_counsel">1대1 친절상담</a> 을 통해 문의해주시면 빠르게 확인해 드리도록 하겠습니다.
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table> -->
+
+					<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 업체 배송 케이스 -->
+					<!-- <table class="tbl_address">
+						<colgroup>
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="only_msg">
+									<span class="drct_dlv">이랜드몰 등록 택배사를 통하지 않고,<br />판매업체(배송업체)가 직접 배송하는 상품은<br />이랜드몰 홈페이지를 통해<br />배송 추적서비스를 지원하지 않습니다. <br /><br />
+										상품의 배송상태 확인을 원하시는 경우 판매업체에 문의해 주시기 바랍니다.</span>
+								</td>
+							</tr>
+						</tbody>
+					</table> -->
+
+
+					<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 3개월 초과 케이스 -->
+					<!-- <table class="tbl_address">
+						<colgroup>
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="only_msg">개인정보 보호를 위해 3개월이 지난 배송정보는<br />제공하지 않습니다. </td>
+							</tr>
+						</tbody>
+					</table> -->
+				</div>
+			</div>
+		</div>
+		<!-- //mypage_content -->
+
+
+		<!-- 주문배송 안내문구 -->
+		<div class="my_noti">
+			<ul>
+				<li>상품의 배송위치 확인 및 관련 정보는 택배사에 직접 문의 하시면 보다 빠른 확인이 가능합니다.</li>
+				<li>기타 궁금하신 내용은 1:1상담이나 고객센터(1899-9500)로 문의주시기 바랍니다.</li>
+			</ul>
+		</div>
+		<!-- //주문배송 안내문구 -->
+	</div>
+	<!-- //my_con -->
+</div>
+<!-- //CONTENT -->
+
+<!-- layer_popup : 배송조회 160310 -->
+<div id="pop_deli" class="layer_fix pop_deli" style="display:none"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">배송조회</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="pop_deli">
+				<div class="deli_top2"><strong>기본정보</strong></div>
+				<dl class="deli_box">
+					<dt>보내는사람</dt>
+					<dd class="box_con">스*오</dd>
+					<dt>받는사람</dt>
+					<dd class="box_con">한*기</dd>
+					<dt>수량</dt>
+					<dd class="box_con">1</dd>
+				</dl>
+				<div class="deli_top2"><strong>상품 발송</strong></div>
+				<ul class="notice">
+					<li>이랜드몰 상품이 아닌 판매업체(배송업체)가 사용하는 발송 방법은 이랜드몰 홈페이지를 통해 배송 추적서비스를 지원하지 않습니다.</li>
+					<li>상품의 배송상태 확인을 원하시는 경우 판매업체에 문의해 주시기 바랍니다. (02-1234-5678)</li>
+				</ul>
+
+			</div>
+			<ul class="btn_list02 btn_deposit">
+				<li class="w100"><a href="#" class="btn_brd03 c04">확인</a></li>
+			</ul>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 배송조회 160310 -->
+
+
+
+<!-- layer_popup : 배송지 수정 -->
+<div id="addrModify" class="layer_fix ship">
+	<h3 class="pop_tit">배송지 수정</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="chk_basic">
+				<input type="checkbox" id="chk_bas2">
+				<label for="chk_bas2">기본배송지</label>
+				<a href="javascript:" onclick="fn_layer_open('addrList');return false;" onkeypress="this.onclick;" class="btn_brd02 c01 dlv_list">배송지 목록</a>
+			</div>
+			<div class="ord_box01">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">배송지명</div>
+							<div class="box_con"><input type="text" class="w100" title="배송지명" value="우리집"></div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con"><input type="text" class="w100" title="받으시는 분" value="홍길동"></div>
+						</li>
+						<li>
+							<div class="box_tit">전화번호</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>02</option>
+										</select>
+									</li>
+									<li><input type="text" title="전화번호 가운데자리" value="0000"></li>
+									<li><input type="text" title="전화번호 세번째자리" value="0000"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">휴대전화</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>010</option>
+										</select>
+									</li>
+									<li><input type="text" title="휴대전화 가운데자리" value="0000"></li>
+									<li><input type="text" title="휴대전화 세번째자리" value="0000"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송지 주소</div>
+							<div class="box_con">
+								<div class="addr">
+									<input type="text" class="w100" title="우편번호" value="08506">
+									<div class="absR">
+										<a href="#" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+									</div>
+								</div>
+								<div class="addr_etc">
+									서울 금천구 가산디지털1 로 151 신한이노플렉스 803호 (가산동)
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송메세지</div>
+							<div class="box_con">
+								<select class="sel_box w100">
+									<option>선택해 주세요</option>
+									<option>부재시 경비(관리)실에 맡겨주세요</option>
+									<option>빠른 배송 부탁드려요</option>
+									<option>부재시 문 앞에 놓아주세요</option>
+									<option>파손의 위험이 있는 상품이 있습니다.</option>
+									<option>배송전에 연락주세요</option>
+									<option>메시지 직접입력 (배송기사/매장 전달)</option>
+								</select>
+								<!-- 배송메세지 선택 -->
+								<div class="msg_selected">
+									<span>선택해 주세요</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<ul class="btn_list03 ship">
+				<li><a href="#" class="btn_brd03 c05">초기화</a></li>
+				<li><a href="#" class="btn_brd03 c01">닫기</a></li>
+				<li><a href="#" class="btn_bg06 c01"><strong>등록</strong></a></li>
+			</ul>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 배송지 수정 -->
+
+
+	<!-- layer_popup : 나의 배송지 목록 -->
+	<div id="addrList" class="layer_fix myaddr"><!-- 160315 타이틀,닫기 위치 수정 -->
+		<h3 class="pop_tit">나의 배송지 목록</h3>
+		<div class="pop_con">
+			<div class="pop_txt">
+
+				<table class="tbl_ship">
+					<caption>나의 배송지 목록의 전화번호, 휴대전화, 도로명주소를 표시합니다.</caption>
+					<colgroup>
+					<col style="width:45px;">
+					<col style="">
+					</colgroup>
+					<tr>
+						<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship01" title="배송지 선택" checked></th>
+						<td>
+							<a href="#">
+								<strong>우리집 / 홍길동 <em>(기본 배송지)</em></strong>
+								<span>02-3000-0000 | 010-0000-0000</span>
+								<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship02" title="배송지 선택"></th>
+						<td>
+							<a href="#">
+								<strong>우리집 / 홍길동</strong>
+								<span>02-3000-0000 | 010-0000-0000</span>
+								<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship03" title="배송지 선택"></th>
+						<td>
+							<a href="#">
+								<strong>우리집 / 홍길동</strong>
+								<span>02-3000-0000 | 010-0000-0000</span>
+								<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship04" title="배송지 선택"></th>
+						<td>
+							<a href="#">
+								<strong>우리집 / 홍길동</strong>
+								<span>02-3000-0000 | 010-0000-0000</span>
+								<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship05" title="배송지 선택"></th>
+						<td>
+							<a href="#">
+								<strong>우리집 / 홍길동</strong>
+								<span>02-3000-0000 | 010-0000-0000</span>
+								<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship06" title="배송지 선택"></th>
+						<td>
+							<a href="#">
+								<strong>우리집 / 홍길동</strong>
+								<span>02-3000-0000 | 010-0000-0000</span>
+								<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship07" title="배송지 선택"></th>
+						<td>
+							<a href="#">
+								<strong>우리집 / 홍길동</strong>
+								<span>02-3000-0000 | 010-0000-0000</span>
+								<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							</a>
+						</td>
+					</tr>
+				</table>
+				<!-- 배송 불가 상품 -->
+				<div class="nolist">
+					<div class="txt">입력하신 주소로 <br><strong>배송 불가한 상품</strong>이 존재 합니다.</div>
+					<div class="stxt">장바구니에서 배송불가 상품을 제외하고<br>주문을 다시 시도하시겠습니까?</div>
+				</div>
+				<!-- //배송 불가 상품 -->
+
+				<!-- 160325 위치수정 -->
+				<div class="btn_ship">
+					<ul class="btn_list02">
+						<li><a href="#" class="btn_brd03 c01">취소</a></li>
+						<li><a href="#" class="btn_bg06 c01">확인</a></li>
+					</ul>
+				</div>
+			</div>   
+		</div>
+		<a href="#close" class="btn_close multi"><span class="ir">팝업 닫기</span></a> <!-- 레이어에서 레이어를 띄우는 경우 클래스 multi 삽입, D : 개발에 적용 불필요시 삭제 -->
+	</div>
+	<!-- //layer_popup : 나의 배송지 목록 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

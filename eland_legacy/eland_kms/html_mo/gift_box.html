@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//옵션 수량
+    $(document).ready(function() {
+        $(".basket_prd .sel .opt").bind("click", function() {
+            $(this).toggleClass("on");
+            $(this).parent().parent().find(".opt_open").slideToggle(200);
+        });
+    });
+    //160712 추가 장바구니 탭
+	$(function(){
+		tabCart = $(".tab_cart li a");
+		tabCartCon = $(".basket_content .cart_con");
+
+		tabCart.click(function(){
+			exId = $(this).parent().index();
+			$(this).parent().parent().find("a").removeClass("on");
+			$(this).addClass("on");
+			tabCartCon.removeClass("on");
+			tabCartCon.hide();
+			tabCartCon.eq(exId).show();
+		});
+	});
+
+	//배송메세지
+	$(function(){
+		$(".sel_box").change(function(){ 
+			$(".sel_box option:selected").each(function(){
+				msg = $(this).text();
+				if(msg == "메시지 직접입력 (배송기사/매장 전달)"){
+					$(this).parent().parent().parent().find("select").hide();
+					$(this).parent().parent().parent().find(".msg_selected").hide();
+					$(this).parent().parent().append("<textarea cols='30' rows='2' class='w100'>배송 시 전달사항을 입력해주세요.</textarea>");
+				}else{
+					$(this).parent().parent().find(".msg_selected").show().find("span").text(msg);
+				}
+			});  
+		});
+	});
+</script>
+</head>
+<body class="renewal2">	
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER -->
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+<!-- //INC_HEADER -->
+<style>
+	.contents{padding-top:142px !important;}
+	.header_bn {display:none;}
+</style>
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>받은 선물함</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>
+		</h2>
+	</div>
+	<div class="order_content">
+		<!-- 배송정보 -->
+		<div class="my_menu gift">
+			<ul class="order">
+				<li>
+					<a href="#" class="order_stp_gft">
+						<span class="stit">선물수락</span>
+						<span class="num"><em>3</em> 건</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="order_stp3">
+						<span class="stit">상품준비중</span>
+						<span class="num"><em>5</em> 건</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="order_stp4">
+						<span class="stit">배송중</span>
+						<span class="num"><em>0</em> 건</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="order_stp5">
+						<span class="stit">배송완료</span>
+						<span class="num"><em>0</em> 건</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="step01 gift">
+			<div class="mypage_box">
+				<div class="tit_order">
+					<a href="#">
+						<em>2016.12.01</em>
+						<span>주문번호:M151116002268196</span>
+					</a>
+				</div>
+				<!-- 일반상품 : 배송완료 -->
+				<div class="prd_group">
+					<div class="basket_prd">
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+						<div class="sel ord">
+							<div class="progress">
+								<em class="ico">배송완료</em>
+							</div>
+							<div class="tracking">
+								<span class="company">경동택배</span>
+								<a href="javascript:;" onclick="fn_layer_open('addrList');return false;" onkeypress="this.onclick;" class="invoice_num">3134050700136</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //일반상품 : 배송완료 -->
+			</div>
+		</div>
+	</div>
+	<!-- //order_content -->
+</div>
+<!-- //CONTENT -->
+
+<!-- layer_popup : 나의 배송지 목록 -->
+<div id="addrList" class="layer_fix myaddr">
+	<h3 class="pop_tit">수령 매장 선택하기</h3>
+	<div class="pop_con gift">
+		<div class="gift_sch_bar">
+			<div class="left">
+				<select class="w100">
+					<option>지역검색(시/도)</option>
+				</select>
+			</div>
+			<div class="right">
+				<input type="text" class="w100" title="도로명주속" placeholder="매장명">
+				<button type-"button" class="btn_brd02 c05">검색</button>
+			</div>
+		</div>
+		<div class="gift_info_bar">
+			<ul>
+				<li>당일픽업을 희망하시는 고객님들은 비고란에 '당일수령'을 기입해주세요.</li>
+				<li>당일 수령이 불가할 경우, 주문제작 소요 기간을 안내드립니다.</li>
+				<li>주문을 희망하지 않을 경우, 안내문자를 받으신 후, 당일 취소 요청드립니다.</li>
+			</ul>
+		</div>
+		<div class="pop_txt">
+			<table class="tbl_ship">
+				<caption>나의 배송지 목록의 전화번호, 휴대전화, 도로명주소를 표시합니다.</caption>
+				<colgroup>
+				<col style="width:45px;">
+				<col style="">
+				</colgroup>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship01" title="배송지 선택" checked></th>
+					<td>
+						<a href="#">
+							<strong>NC동수원점</strong>
+							<span class="underline">02-3000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							<span class="stock"><em>[재고]</em>있음</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship02" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>NC동수원점</strong>
+							<span class="underline">02-3000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							<span class="stock"><em>[재고]</em>있음</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship03" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>NC동수원점</strong>
+							<span class="underline">02-3000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							<span class="stock"><em>[재고]</em>있음</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship04" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>NC동수원점</strong>
+							<span class="underline">02-3000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							<span class="stock"><em>[재고]</em>있음</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship05" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>NC동수원점</strong>
+							<span class="underline">02-3000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							<span class="stock"><em>[재고]</em>있음</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship06" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>NC동수원점</strong>
+							<span class="underline">02-3000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							<span class="stock"><em>[재고]</em>있음</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship07" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>NC동수원점</strong>
+							<span class="underline">02-3000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+							<span class="stock"><em>[재고]</em>있음</span>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>   
+		<div class="btn_set gift_bt abs">
+				<button class="ok"><em>매장선택</em></button>
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 나의 배송지 목록 -->
+
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+</body>
+</html>
+

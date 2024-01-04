@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper">
+		<div id="header">
+			<div class="header_gnb"></div>
+			<div class="header_cont"><img style="display:block; margin-top:-34px;" src="../../images/pcweb/temp/_sample_head.jpg" alt="샘플헤더" /></div>
+		</div>
+
+		<!-- container -->
+		<div id="container">
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li class="lct_txt"><span>마이페이지</span></li>
+					</ul>
+				</div>
+
+				<div class="mypage_wrap">
+					<!-- 마이페이지 top 정보 -->
+					<div class="mypage_top">
+						<div class="title">
+							<h2 class="tit_img high"><img src="../../images/pcweb/mypage/h2_mypage.gif" alt="마이페이지" /></h2> <!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : .high 추가 -->
+						</div>
+						<div class="set_my_info">
+							<div class="smi dv01">
+								<div class="s_cont">
+									<div class="box_info_grade">
+										<div class="l_scont">
+											<span class="ico_grd vip"><em class="ir">구매등급 아이콘  : VIP</em></span>
+											<!-- <span class="ico_grd gld"><em class="ir">구매등급 아이콘  : Gold</em></span>
+											<span class="ico_grd slv"><em class="ir">구매등급 아이콘  : Silver</em></span>
+											<span class="ico_grd brz"><em class="ir">구매등급 아이콘  : Bronze</em></span>
+											<span class="ico_grd"><em class="ir">구매등급 아이콘  :  Welcome</em></span> -->
+										</div>
+										<div class="r_scont">
+											<div class="grd_info">
+												<strong class="usr_name">한동기</strong> 님의 <br />1월 구매등급은 <span class="usr_grd vip">VVIP</span>입니다.<!-- vip, gld, slv, brz -->
+												<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+												<div class="set_tooltip">
+													<div class="tip_info">
+														<dl class="list_dot01">
+															<dt>VVIP 등급 혜택</dt>
+															<dd>APP 7%장바구니 (최대2만원)</dd>
+															<dd>APP 3천원 장바구니 (5만원 이상 구매시)</dd>
+															<dd>APP 3천원 배송비 (1만원 이상 구매시)</dd>
+														</dl>
+														<dl class="list_dot01 mt15">
+															<dt>VVIP 등급 유지를 위해서는 <a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade3.png" alt="구매 내역 확인" /></a></dt>
+															<dd>구매 건수는 <span class="txt_c01">3건</span>/구매 금액은 <span class="txt_c01">200,000원</span>이 필요합니다.<br />(산정기간 : 2018.02~2018.04)</dd>
+														</dl>
+
+														<p class="txt_s_info01 txt_c04 mt15"><em>*</em> 필요 구매 조건은 확인 시점에 따라 오차가 발생할 수 있습니다.</p>
+														<a href="#" class="tip_close">툴팁 닫기</a>
+													</div>
+												</div>
+											</div>
+											<a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade1.png" alt="등급혜택 받기" /></a> <!-- 버튼 추가 및 디자인 변경 -->
+											<a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade2.png" alt="등급산정 내역 확인" /></a> <!-- 버튼 추가 및 디자인 변경 -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- NGCPO-4890 [PC/MO] 포인트 UI개선 -->
+							<div class="smi dv03">
+								<div class="s_cont">
+									<div class="sum_point">
+										<dl>
+											<dt class="rep"><a href="javascript:">포인트</a></dt>
+											<dd class="rep"><a href="javascript:"><em>9,999,999</em>P</a></dd>
+											<dt>구매포인트</dt>
+											<dd><em>99,999</em>P</dd>
+											<dt>이벤트 포인트</dt>
+											<dd><em>99,999</em>P</dd>
+											<dt>당월 소멸예정 포인트</dt>
+											<dd><em>999,999</em>P</dd>
+										</dl>
+										<a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade4.png" alt="포인트 소멸안내" /></a>
+									</div>
+								</div>
+							</div>
+							<div class="smi dv04">
+								<div class="s_cont">
+									<div class="partic p02"> <!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : 2단 - .p02   3단 - .p03 -->
+										<dl>
+											<dt><a href="javascript:">예치금</a></dt>
+											<dd><a href="javascript:"><em>9,999,999</em>원</a></dd>
+										</dl>
+									</div>
+									<div class="partic p02">
+										<dl>
+											<dt><a href="javascript:">사용가능쿠폰</a></dt>
+											<dd><a href="javascript:"><em>99</em>장</a></dd>
+										</dl>
+									</div>
+
+									<!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : 3단 케이스
+									<div class="partic p03">
+										<dl>
+											<dt><a href="javascript:">복지포인티</a></dt>
+											<dd><a href="javascript:"><em>9,999,999</em>원</a></dd>
+										</dl>
+									</div>
+									<div class="partic p03">
+										<dl>
+											<dt><a href="javascript:">예치금</a></dt>
+											<dd><a href="javascript:"><em>9,999,999</em>원</a></dd>
+										</dl>
+									</div>
+									<div class="partic p03">
+										<dl>
+											<dt><a href="javascript:">사용가능쿠폰</a></dt>
+											<dd><a href="javascript:"><em>99</em>장</a></dd>
+										</dl>
+									</div> -->
+								</div>
+							</div>
+							<!-- //NGCPO-4890 [PC/MO] 포인트 UI개선 -->
+						</div>
+					</div>
+					<!-- //마이페이지 top 정보 -->
+
+					<div class="mypage_cont">
+						<!-- my_l_cont -->
+						<div class="my_l_cont">
+							<!-- lnb_mypage -->
+							<div class="lnb_mypage">
+								<ul>
+									<li><strong class="stit">나의 쇼핑정보</strong>
+										<div class="depth2">
+											<ul>
+												<li class="on"><a href="#">주문/배송 조회</a></li>
+												<li><a href="#">취소/교환/반품 내역</a></li>
+												<li><a href="#">항공원 예약확인</a></li>
+												<li><a href="#">증빙 서류 발급</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><strong class="stit">나의 쇼핑 통장</strong>
+										<div class="depth2">
+											<ul>
+												<li><a href="#">포인트 조회</a></li>
+												<li><a href="#">쿠폰 조회</a></li>
+												<li><a href="#">예치금 조회</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><strong class="stit">나의 서비스 정보</strong>
+										<div class="depth2">
+											<ul>
+												<li><a href="#">나의 상품평</a></li>
+												<li><a href="#">나의 문의/답변</a></li>
+												<li><a href="#">나의 Mix&amp;Match</a></li>
+												<li><a href="#">나의 찜 목록</a></li>
+												<li><a href="#">최근 본 상품</a></li>
+												<li><a href="#">이벤트 참여 현황</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><strong class="stit">회원 정보</strong>
+										<div class="depth2">
+											<ul>
+												<li><a href="#">배송지 관리</a></li>
+												<li><a href="#">환불 계좌 관리</a></li>
+												<li><a href="#">주문정보 수신 설정</a></li>
+												<li><a href="#">개인정보 수정</a></li>
+												<li><a href="#">비밀번호 변경</a></li>
+												<li><a href="#">온라인 회원 탈퇴</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- //lnb_mypage -->
+
+							<!-- 고객센터 바로가기 -->
+							<div class="btn_customer_center">
+								<a href="#">
+									<div class="cc_top"><strong>고객센터 바로가기</strong></div>
+									<div class="cc_cont">
+										<img class="img" src="../../images/pcweb/common/img_customer_center.gif" alt="" />
+										<strong class="tel">1899-9500</strong>
+										<span class="txt">오전9시~오후6시<br />(주말/공휴일 휴무)</span>
+									</div>
+								</a>
+							</div>
+							<!-- //고객센터 바로가기 -->
+						</div>
+						<!-- //my_l_cont -->
+
+						<!-- my_r_cont -->
+						<div class="my_r_cont">
+
+							<!-- 주문현황 -->
+							<div class="box_order_state">
+								<div class="list_order_state">
+									<ul>
+										<li>
+											<a href="#" class="cont">
+												<img class="img" src="../../images/pcweb/mypage/img_ord_state01.gif" alt="" />
+												<span class="txt01">입금확인중</span>
+												<span class="txt02"><strong class="tx_num txt_c05">0</strong>건</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="cont">
+												<img class="img" src="../../images/pcweb/mypage/img_ord_state02.gif" alt="" />
+												<span class="txt01">결제완료</span>
+												<span class="txt02"><strong class="tx_num txt_c05">0</strong>건</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="cont">
+												<img class="img" src="../../images/pcweb/mypage/img_ord_state03.gif" alt="" />
+												<span class="txt01">상품 준비중</span>
+												<span class="txt02"><strong class="tx_num txt_c05">0</strong>건</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="cont">
+												<img class="img" src="../../images/pcweb/mypage/img_ord_state04.gif" alt="" />
+												<span class="txt01">배송중</span>
+												<span class="txt02"><strong class="tx_num txt_c05">13</strong>건</span>
+											</a>
+										</li>
+										<li class="end">
+											<a href="#" class="cont">
+												<img class="img" src="../../images/pcweb/mypage/img_ord_state05.gif" alt="" />
+												<span class="txt01">배송완료</span>
+												<span class="txt02"><strong class="tx_num txt_c05">0</strong>건</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="list_order_state02">
+									<ul>
+										<li class="i01"><a href="#">취소<span class="txt_c05">15</span>건</a></li>
+										<li class="i02"><a href="#">교환<span class="txt_c05">15</span>건</a></li>
+										<li class="i03"><a href="#">반품<span class="txt_c05">15</span>건</a></li>
+									</ul>
+								</div>
+							</div>
+							<!-- //주문현황 -->
+
+							<!-- 2017.08.31 임시 공지사항 -->
+							<div class="noti_em">
+								<strogn class="tit">* 공지사항</strogn>
+								<span>임시 공지사항입니다. 텍스트는 자르거나 줄이지 않고 전체 노출합니다.임시 공지사항입니다. 텍스트는 자르거나 줄이지 않고 전체 노출합니다.</span>
+							</div>
+
+							<!-- 최근 주문내역 -->
+							<div class="title mt60">
+								<h3 class="tit_underline type03">최근 주문내역</h3>
+								<a href="#" class="btn_more01"><span>MORE</span></a>
+							</div>
+							<div class="board02 mtm1">
+								<table>
+									<caption>
+										최근 주문내역 표이며 상품정보, 배송정보, 진행상태, 진행현황 순으로 제공합니다.
+									</caption>
+									<colgroup>
+										<col />
+										<col style="width:14%" />
+										<col style="width:14%" />
+										<col style="width:14%" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">상품정보</th>
+											<th scope="col">배송정보</th>
+											<th scope="col">진행상태</th>
+											<th scope="col">진행현황</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="4">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( PC주문 )</span></a></li>
+													<li>주문일 : 2015-11-18</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+														<a href="#" class="btn_txt02"><span>변경하기</span></a>
+													</div>
+												</div>
+											</td>
+											<td>-</td>
+											<td><span class="txt_c02">입금확인중</span></td>
+											<td>
+												<div class="set_vbtn02">
+													<button type="button" class="btn05 full c01"><span><strong>주문취소</strong></span></button>
+													<button type="button" class="btn05 full c01"><span><strong>배송지 변경</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( Mobile주문 )</span></a></li>
+													<li>주문일 : 2015-11-18</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼_블루_100
+															</span>
+															<span class="goods_txt04">
+																[사은품] 딸기핸드폰케이스
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+														<a href="#" class="btn_txt02"><span>변경하기</span></a>
+													</div>
+												</div>
+											</td>
+											<td>-</td>
+											<td><span class="txt_c02">입금확인중</span></td>
+											<td>
+												<div class="set_vbtn02">
+													<button type="button" class="btn05 full c01"><span><strong>주문취소</strong></span></button>
+													<button type="button" class="btn05 full c01"><span><strong>배송지 변경</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( Mobile주문 )</span></a></li>
+													<li>주문일 : 2015-11-18</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03"> [NC 강서점]보솜이아기물티슈_50매</span>
+														</a>
+													</div>
+												</div>
+											</td>
+
+											<td><a class="btn_txt01 c02" href="#"><span>배송현황조회</span></a></td>
+											<td><span class="txt_c02">배송완료</span></td>
+											<td>
+												<div class="set_vbtn02">
+													<button type="button" class="btn05 full c01"><span><strong>교환/반품신청</strong></span></button>
+													<button type="button" class="btn05 full"><span><strong>상품평 작성</strong></span></button>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- 최근 1개월 주문 내역 없을 때 -->
+							<div class="no_data ordlist mtm1">
+								<p class="no_data_txt">최근 1개월 내 주문내역이 없습니다. <br /><strong class="txt_c05">이 상품은 어떤가요?</strong></p>
+							</div>
+							<!-- //최근 1개월 주문 내역 없을 때 -->
+							<!-- //최근 주문내역 -->
+
+							<!-- 인기 상품 -->
+							<div class="box_popular">
+								<div class="list_product06 size06 d_prd_over">
+									<ul class="list">
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<span class="dis_percent"><strong>15</strong>%</span>
+														<div class="cont_price">
+															<div class="price01">
+																<del class="prime">99,999,999</del>
+																<span class="cur_price">98,000</span>
+															</div>
+															<span class="c_price">
+																<span class="price_nm">쿠폰가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+
+													<!-- 평점 -->
+													<div class="box_grade">
+														<div class="set_grade01"><span style="width:20%">20점</span></div>
+														<strong class="set_conunt_review">(48)<span class="ir">개의 상품평</span></strong>
+													</div>
+													<!-- //평점 -->
+
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<div class="cont_price">
+															<div class="price01">
+																<del class="prime">99,999,999</del>
+															</div>
+															<span class="c_price">
+																<span class="price_nm">판매가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<span class="dis_percent"><strong>15</strong>%</span>
+														<div class="cont_price">
+															<div class="price01">
+																<del class="prime">99,999,999</del>
+															</div>
+															<span class="c_price">
+																<span class="price_nm">세일가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<div class="cont_price">
+															<span class="c_price">
+																<span class="price_nm">판매가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<span class="dis_percent"><strong>15</strong>%</span>
+														<div class="cont_price">
+															<div class="price01">
+																<del class="prime">99,999,999</del>
+																<span class="cur_price">98,000</span>
+															</div>
+															<span class="c_price">
+																<span class="price_nm">쿠폰가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+
+													<!-- 평점 -->
+													<div class="box_grade">
+														<div class="set_grade01"><span style="width:20%">20점</span></div>
+														<strong class="set_conunt_review">(48)<span class="ir">개의 상품평</span></strong>
+													</div>
+													<!-- //평점 -->
+
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<div class="cont_price">
+															<div class="price01">
+																<del class="prime">99,999,999</del>
+															</div>
+															<span class="c_price">
+																<span class="price_nm">판매가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<span class="dis_percent"><strong>15</strong>%</span>
+														<div class="cont_price">
+															<div class="price01">
+																<del class="prime">99,999,999</del>
+															</div>
+															<span class="c_price">
+																<span class="price_nm">세일가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<div class="cont_price">
+															<span class="c_price">
+																<span class="price_nm">판매가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>		
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<span class="dis_percent"><strong>15</strong>%</span>
+														<div class="cont_price">
+															<div class="price01">
+																<del class="prime">99,999,999</del>
+															</div>
+															<span class="c_price">
+																<span class="price_nm">세일가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>
+										<li>
+											<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg">
+												<div class="thumb"><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></div>
+												<div class="cont">
+													<span class="brand_nm">MODERN HOUSE</span>
+													<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+													<div class="box_price">
+														<div class="cont_price">
+															<span class="c_price">
+																<span class="price_nm">판매가</span>
+																<strong>99,999,999</strong>원
+															</span>
+														</div>
+													</div>
+													<div class="box_flag">
+														<span class="flag_icon c02">무료배송</span>
+														<span class="flag_icon c01">N+1</span>
+													</div>
+												</div>
+											</a>
+
+											<div class="box_opt_link">
+												<a class="opt_like" href="#"><span>찜하기</span></a>
+												<a class="opt01" href="#"><span>미리보기</span></a>
+												<a class="opt02" href="#"><span>새창열기</span></a>
+												<a class="opt03" href="#"><span>옵션보기</span></a>
+											</div>
+
+											<!-- 상품옵션 보기 레이어 -->
+											<div class="lay_lp_opt">
+												<div class="lay_lp_tit">상품옵션 보기</div>
+												<div class="lay_lp_cont">
+													<ul class="scroll">
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+														<li><span>GCASH607F046/00S</span></li>
+													</ul>
+												</div>
+											</div>
+											<!-- //상품옵션 보기 레이어 -->
+										</li>																			
+									</ul>
+								</div>
+							</div>
+							<!-- //인기 상품 -->
+
+							<!-- 찜한 상품 , 최근 본 상품 -->
+							<div class="list_wrap01 mt60">
+								<div class="l_scont">
+									<div class="title">
+										<h3 class="tit_underline type03">찜한 상품</h3>
+										<a href="#" class="btn_more01"><span>MORE</span></a>
+									</div>
+									<div class="list_thumb01">
+										<ul>
+											<li><a href="#"><img src="../../images/pcweb/temp/_sample_127x127.jpg" alt="찜한 상품1" /></a></li>
+											<li><a href="#"><img src="../../images/pcweb/temp/_sample_127x127.jpg" alt="찜한 상품2" /></a></li>
+											<li><a href="#"><img src="../../images/pcweb/temp/_sample_127x127.jpg" alt="찜한 상품3" /></a></li>
+										</ul>
+									</div>
+									<div class="no_data02">
+										<p class="no_data_txt">
+											<img class="img_no_data" src="../../images/pcweb/common/ico_no_data01.png" alt="" />
+											찜한 상품이 없습니다.<br />나만의 찜을 만들어 주세요.
+										</p>
+									</div>
+								</div>
+								<div class="section_more r_scont">
+									<div class="title">
+										<h3 class="tit_underline type03">최근 본 상품</h3>
+										<a href="#" class="btn_more01"><span>MORE</span></a>
+									</div>
+									<div class="list_thumb01">
+										<ul>
+											<li><a href="#"><img src="../../images/pcweb/temp/_sample_127x127.jpg" alt="최근 본 상품1" /></a></li>
+											<li><a href="#"><img src="../../images/pcweb/temp/_sample_127x127.jpg" alt="최근 본 상품2" /></a></li>
+											<li><a href="#"><img src="../../images/pcweb/temp/_sample_127x127.jpg" alt="최근 본 상품3" /></a></li>
+										</ul>
+									</div>
+
+									<div class="no_data02">
+										<p class="no_data_txt">
+											<img class="img_no_data" src="../../images/pcweb/common/ico_no_data01.png" alt="" />
+											최근 본 상품이 없습니다.
+										</p>
+									</div>
+								</div>
+							</div>
+							<!-- //찜한 상품 , 최근 본 상품 -->
+
+							<!-- 나의 상품평 , 나의 Q&amp;A -->
+							<div class="list_wrap01 type02 mt60">
+								<div class="l_scont">
+									<div class="title">
+										<h3 class="tit_underline type03">나의 상품평 <span class="tit_info01">( 미작성 상품평 <strong class="txt_c05">7</strong>건 )</span></h3>
+										<a href="#" class="btn_more01"><span>MORE</span></a>
+									</div>
+									<div class="list_thumb_txt02">
+										<ul>
+											<li>
+												<a class="td01" href="#">
+													<div class="thumb"><img src="../../images/pcweb/temp/_sample_60x60.jpg" alt="" /></div>
+													<div class="cont">
+														<span class="s_tit">[모던하우스](셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스</span>
+														<strong class="s_txt01 txt_c07">상품평을 작성해 주세요.</strong>
+													</div>
+												</a>
+												<div class="td02">
+													<button type="button" class="btn05 full"><span>상품평 작성</span></button>
+												</div>
+											</li>
+											<li>
+												<a class="td01" href="#">
+													<div class="thumb"><img src="../../images/pcweb/temp/_sample_60x60.jpg" alt="" /></div>
+													<div class="cont">
+														<span class="s_tit">[모던하우스](셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스</span>
+														<strong class="s_txt01">이 상품 대박인데요? 엄청 이쁘고이 상품 대박인데요? 엄청 이쁘고</strong>
+													</div>
+												</a>
+												<div class="td02">
+													<button type="button" class="btn05 c01 full"><span>상품평 수정</span></button>
+												</div>
+											</li>
+											<li>
+												<a class="td01" href="#">
+													<div class="thumb"><img src="../../images/pcweb/temp/_sample_60x60.jpg" alt="" /></div>
+													<div class="cont">
+														<span class="s_tit">[모던하우스](셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스</span>
+														<strong class="s_txt01">이 상품 대박인데요? 엄청 이쁘고이 상품 대박인데요? 엄청 이쁘고</strong>
+													</div>
+												</a>
+												<div class="td02">
+													<button type="button" class="btn05 c01 full"><span>상품평 수정</span></button>
+												</div>
+											</li>
+										</ul>
+									</div>
+
+									<div class="no_data02">
+										<p class="no_data_txt">
+											<img class="img_no_data" src="../../images/pcweb/common/ico_no_data01.png" alt="" />
+											상품평 내역이 없습니다.
+										</p>
+									</div>
+								</div>
+								<div class="r_scont">
+									<div class="title">
+										<h3 class="tit_underline type03">나의 Q&amp;A</h3>
+										<a href="#" class="btn_more01"><span>MORE</span></a>
+									</div>
+									<div class="list_thumb_txt02">
+										<ul>
+											<li>
+												<a class="td01" href="#">
+													<div class="thumb"><img src="../../images/pcweb/temp/_sample_60x60.jpg" alt="" /></div>
+													<div class="cont">
+														<span class="s_tit">[모던하우스](셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스</span>
+														<strong class="s_txt01">이 상품 대박인데요? 엄청 이쁘고이 상품 대박인데요? 엄청 이쁘고</strong>
+													</div>
+												</a>
+												<div class="td02">
+													<strong class="txt_answer_n">답변준비중</strong>
+												</div>
+											</li>
+											<li>
+												<a class="td01" href="#">
+													<div class="thumb"><img src="../../images/pcweb/temp/_sample_60x60.jpg" alt="" /></div>
+													<div class="cont">
+														<span class="s_tit">[모던하우스](셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스</span>
+														<strong class="s_txt01">이 상품 대박인데요? 엄청 이쁘고이 상품 대박인데요? 엄청 이쁘고</strong>
+													</div>
+												</a>
+												<div class="td02">
+													<strong class="txt_answer_y">답변완료</strong>
+												</div>
+											</li>
+											<li>
+												<a class="td01" href="#">
+													<div class="thumb"><img src="../../images/pcweb/temp/_sample_60x60.jpg" alt="" /></div>
+													<div class="cont">
+														<span class="s_tit">[모던하우스](셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스 (셀링포인트)R빅무드 플스</span>
+														<strong class="s_txt01">이 상품 대박인데요? 엄청 이쁘고이 상품 대박인데요? 엄청 이쁘고</strong>
+													</div>
+												</a>
+												<div class="td02">
+													<strong class="txt_answer_y">답변완료</strong>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="no_data02">
+										<p class="no_data_txt">
+											<img class="img_no_data" src="../../images/pcweb/common/ico_no_data01.png" alt="" />
+											나의 Q&amp;A 내역이 없습니다.
+										</p>
+									</div>
+								</div>
+							</div>
+							<!-- //나의 상품평 , 나의 Q&amp;A -->
+
+						</div>
+						<!-- //my_r_cont -->
+					</div>
+				</div>
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<!-- 푸터배너 -->
+			<div class="footer_bnr" style="background:#2b2c30">
+				<a href="#"><img src="../../images/pcweb/temp/_sample_1080x120.jpg" alt="SPEACIAL BRAND DAY 미리 준비하는 겨울 아이템" /></a>
+			</div>
+			<!-- //푸터배너 -->
+			<div class="footer_links">
+				<div class="cont"><img src="../../images/pcweb/temp/_sample_footer01.jpg" alt="샘플푸터"></div>
+			</div>
+			<div class="footer_info01"><img src="../../images/pcweb/temp/_sample_footer02.jpg" alt="샘플푸터" /></div>
+			<div class="footer_info02">
+				<div class="cont"><img src="../../images/pcweb/temp/_sample_footer03.jpg" alt="샘플푸터" /></div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+
+	<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 레이어 영역 -->
+	<div class="layer_pop inquiry">
+		<div class="lay_wrap">
+			<div class="lay_tit"><strong>상품배송현황</strong></div>
+			<div class="lay_cont">
+				<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 클래스 및 ir 텍스트 - 진행전(없음), 진행중(inpro), 완료(fin) -->
+				<div class="dlv_process">
+					<ol>
+						<li class="pr1 fin"><span class="txt">상품발송</span><span class="ico"><em class="ir">진행중</em></span></li>
+						<li class="pr2 fin"><span class="txt">택배사전달</span><span class="ico"><em class="ir">진행전</em></span></li>
+						<li class="pr3 inpro"><span class="txt">상품배송중</span><span class="ico"><em class="ir">진행전</em></span></li>
+						<li class="pr4"><span class="txt">배송기사출발</span><span class="ico"><em class="ir">진행전</em></span></li>
+						<li class="pr5"><span class="txt">배송완료</span><span class="ico"><em class="ir">진행전</em></span></li>
+					</ol>
+				</div>
+				<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 업체 배송일 경우-->
+				<!-- <div class="dlv_process">
+					<div class="pr_drct">
+						<span class="txt">업체에서 <em>직접 배송하는 상품</em>입니다.</span><span class="ico"><em class="ir">업체 직접 배송중</em>
+					</div>
+				</div> -->
+				<div class="title">
+					<strong class="dlv_tit">기본정보</strong>
+				</div>
+				<div class="data_table01">
+					<table>
+						<caption>배송 기본정보 표이며, 받는분, 주소, 택배업체, 송장번호 순으로 표시 됩니다.</caption>
+						<colgroup>
+							<col style="width:110px;" />
+							<col />
+						</colgroup>
+						<tbody>
+						<tr>
+							<th scope="row">받는분</th>
+							<td>이랜드</td>
+						</tr>
+						<tr>
+							<th scope="row">주소</th>
+							<td>가산동 371-47 세진이노플렉스 806호</td>
+						</tr>
+						<tr>
+							<th scope="row">택배업체</th>
+							<td>우체국택배 ( <span class="tel"><span class="ico"><em class="ir">전화번호:</em></span><em>1588-1588</em></span> )</td>
+						</tr>
+						<tr>
+							<th scope="row">송장번호</th>
+							<td><span class="trck_num">B6584587515</span></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="title">
+					<strong class="dlv_tit">배송 상세현황</strong>
+				</div>
+				<div class="board01">
+					<table>
+						<caption>배송 상세현화에 관한 표이며 일자, 위치, 상세내역, 전화번호 순으로 제공합니다.</caption>
+						<colgroup>
+							<col style="width:20.5%" /><col style="width:14.3%" /><col /><col style="width:23.5%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">일자</th>
+								<th scope="col">위치</th>
+								<th scope="col">상세내역</th>
+								<th scope="col">전화번호</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="alig_c">2018-09-13 19:02</td>
+								<td class="alig_c">인천집화소</td>
+								<td class="alig_c">상품이 택배사에 전달 되었습니다.</td>
+								<td>강태광광 032-9887-1415</td>
+							</tr>
+							<tr>
+								<td class="alig_c">2018-09-13 19:02</td>
+								<td class="alig_c">인천집화소</td>
+								<td class="alig_c">상품이 이동중입니다.</td>
+								<td>김아무개 032-9887-1415</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 집화 이전 케이스 -->
+				<!-- <div class="board01">
+					<table>
+						<caption>배송 기본정보 표이며, 받는분, 주소, 택배업체, 송장번호 순으로 표시 됩니다.</caption>
+						<colgroup>
+							<col />
+						</colgroup>
+						<tbody>
+						<tr>
+							<td class="only_msg">
+								<div class="fst_dlv">
+									<span class="tit_tx">판매자가 <em>상품을 발송</em>하였습니다.</span>
+									<span class="mst">택배사에서 상품을 접수하면, 현재 화면을 통해 상품 위치 확인이 가능합니다.</span>
+									* 하루가 지나 조회 하였는데도 동일한 상태일 경우,<br /> <a href="javascript:" class="go_counsel">
+									&lt;1대1 친절상담&gt;</a> 을 통해 문의해주시면 빠르게 확인해 드리도록 하겠습니다.
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div> -->
+				<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 업체 직접 배송 케이스 -->
+				<!-- <div class="board01">
+					<table>
+						<caption>배송 기본정보 표이며, 받는분, 주소, 택배업체, 송장번호 순으로 표시 됩니다.</caption>
+						<colgroup>
+							<col />
+						</colgroup>
+						<tbody>
+						<tr>
+							<td class="only_msg">
+								이랜드몰 등록 택배사를 통하지 않고, 판매업체(배송업체)가 직접 배송하는 상품은 이랜드몰 홈페이지를 통해 배송 추적서비스를 지원하지 않습니다. <br /><br />
+								상품의 배송상태 확인을 원하시는 경우 판매업체에 문의해 주시기 바랍니다.
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div> -->
+				<!-- NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 3개월 초과 케이스 -->
+				<!-- <div class="board01">
+					<table>
+						<caption>배송 기본정보 표이며, 받는분, 주소, 택배업체, 송장번호 순으로 표시 됩니다.</caption>
+						<colgroup>
+							<col />
+						</colgroup>
+						<tbody>
+						<tr>
+							<td class="only_msg">개인정보 보호를 위해 3개월이 지난 배송정보는<br />제공하지 않습니다. </td>
+						</tr>
+						</tbody>
+					</table>
+				</div> -->
+				<div class="list_dot02">
+					<ul>
+						<li>상품의 배송위치 확인 및 관련 정보는 택배사에 직접 문의하시면 보다 빠른 확인이 가능합니다.</li>
+						<li>기타 궁금하신 내용은 1대1 친절상담이나 고객센터(1899-9500)로 문의주시기 바랍니다.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="set_btn">
+				<button type="button" class="btn02"><span>확인</span></button>
+			</div>
+			<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+		</div>
+	</div>
+	<!-- // NGCPO-4830 FO/MO 배송추적 관련 화면 개발 : 레이어 영역 -->
+</body>
+</html>

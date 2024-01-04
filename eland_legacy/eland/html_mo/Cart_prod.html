@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//옵션 수량
+    $(document).ready(function() {
+        $(".basket_prd .sel .opt").bind("click", function() {
+            $(this).toggleClass("on");
+            $(this).parent().parent().find(".opt_open").slideToggle(200);
+        });
+    });
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+INC_HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>장바구니</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>				
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>		
+	</div>	
+	<div class="basket_content">
+		<!-- 장바구니 -->
+		<div class="basket_chk">
+			<span class="txt">장바구니 전체 (<em>5</em>개)</span>
+			<div class="right">
+				<a href="#" class="btn_line01 c01">선택해제</a>
+				<a href="#" class="btn_line01 c02">선택삭제</a>
+			</div>
+		</div>
+		<!-- //장바구니 -->
+		
+		<!-- 택배배송 -->
+		<div class="basket_box">
+			<div class="tit_delivery">
+				<strong>택배배송</strong> (<em class="num">3</em>개)
+			</div>
+
+			<!-- 160824 예약상품,업체직배송,배송지 선택가능,출고지 지정상품 case 추가 -->
+			<div class="prd_group">
+				<div class="basket_prd">
+					<div class="top_chkbox">
+						<input type="checkbox" title="상품선택">
+						<div class="right">
+							<a href="#" class="btn_wish"><span>찜하기</span></a>
+							<a href="#" class="btn_del"><span>삭제</span></a>
+						</div>
+					</div>
+					<a href="#">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodprice">77,200<span class="won">원</span></span>
+							<span class="prodopt">화이트 / 1개</span>
+							<span class="case01"><em>예약상품</em>발송예정일 2015.12.25 금요일</span>
+							<span class="case02"><em>업체직배송</em>배송예정일 별도안내</span>
+							<span class="case02"><em>배송일 선택가능</em>주문서에서 배송날짜 선택가능 상품</span>
+							<span class="case02"><em>출고지 지정상품</em>출고예정일 2015.12.25 금요일</span>
+						</div>
+					</a>
+					<div class="sel">
+						<div class="opt w100"><span>옵션/수량 변경</span></div>
+						<div class="absR"><a href="#" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+					</div>
+					<!-- 옵션,수량 변경 -->
+					<div class="opt_open" style="display:block">
+						<!-- 170529 배송형태가 등기배송이거나, 상품 유형이 지류 상품권인 경우 추가 -->
+						<div class="gd_card">
+							<p class="txt_c03">상품권은 취소 신청 후 배송이 진행 될수 있습니다. 신중한 구매 부탁 드립니다.</p>
+						</div>
+						<!-- //170529 배송형태가 등기배송이거나, 상품 유형이 지류 상품권인 경우 추가 -->
+						<dl>
+							<dt>색상</dt>
+							<dd>
+								<select class="w100">
+									<option>베이지브라운</option>
+								</select>
+							</dd>
+							<dt>사이즈</dt>
+							<dd>
+								<select class="w100">
+									<option>55</option>
+								</select>
+							</dd>
+							<dt>사은품</dt>
+							<dd>
+								<select class="w100">
+									<option>위스카스파우치 50g</option>
+								</select>
+							</dd>
+							<dt>수량</dt>
+							<dd>
+								<div class="numbox">
+									<span class="minus"><img src="../images/mobile/order/bts_minus_default.png" alt="삭제"></span>
+									<!--a href="#" class="minus"><img src="../images/mobile/order/bts_minus.png" alt="삭제" /></a-->
+									<input type="text" class="inp_txt" value="1" title="수량">
+									<!--span class="plus"><img src="../images/mobile/order/bts_plus_default.png" alt="추가" /></span-->
+									<a href="#" class="plus"><img src="../images/mobile/order/bts_plus.png" alt="추가"></a>
+								</div>
+							</dd>
+						</dl>
+						<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+					</div>
+					<!-- //옵션,수량 변경 -->
+				</div>
+				<!-- 상품금액,배송비 합계 -->
+				<div class="prd_total">
+					<span class="price">307,200<em>원</em></span> + 
+					<span class="price">2,500<em>원(배송비)</em></span>
+				</div>
+				<!-- //상품금액,배송비 합계 -->
+			</div>
+			<!-- //160824 예약상품,업체직배송,배송지 선택가능,출고지 지정상품 case 추가 -->
+
+			<!-- 선택옵션 일시품절 -->
+			<div class="prd_group">
+				<div class="basket_prd">
+					<div class="top_chkbox">
+						<input type="checkbox" title="상품선택">
+						<div class="right">
+							<a href="#" class="btn_wish"><span>찜하기</span></a>
+							<a href="#" class="btn_del"><span>삭제</span></a>
+						</div>
+					</div>
+					<a href="#">
+						<div class="basket_txt">
+							<div class="pic">
+								<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+								<div class="ico_soldout"><span>일시품절</span></div>
+							</div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodprice">77,200<span class="won">원</span></span>
+							<span class="prodopt">화이트 / 1개</span>
+							<span class="soldout">선택 옵션이 <em>일시품절</em> 되었습니다.</span>
+						</div>
+					</a>
+					<div class="sel soldout">
+						<div class="opt w100"><span>옵션/수량 변경</span></div>
+					</div>
+					<!-- 옵션,수량 변경 -->
+					<div class="opt_open">
+						<dl>
+							<dt>색상</dt>
+							<dd>
+								<select class="w100">
+									<option>베이지브라운</option>
+								</select>
+							</dd>
+							<dt>사이즈</dt>
+							<dd>
+								<select class="w100">
+									<option>55</option>
+								</select>
+							</dd>
+							<dt>사은품</dt>
+							<dd>
+								<select class="w100">
+									<option>위스카스파우치 50g</option>
+								</select>
+							</dd>
+							<dt>수량</dt>
+							<dd>
+								<div class="numbox">
+									<span class="minus"><img src="../images/mobile/order/bts_minus_default.png" alt="삭제"></span>
+									<!--a href="#" class="minus"><img src="../images/mobile/order/bts_minus.png" alt="삭제" /></a-->
+									<input type="text" class="inp_txt" value="1" title="수량">
+									<!--span class="plus"><img src="../images/mobile/order/bts_plus_default.png" alt="추가" /></span-->
+									<a href="#" class="plus"><img src="../images/mobile/order/bts_plus.png" alt="추가"></a>
+								</div>
+							</dd>
+						</dl>
+						<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+					</div>
+					<!-- //옵션,수량 변경 -->
+				</div>
+				<!-- 상품금액,배송비 합계 -->
+				<div class="prd_total">
+					<span class="price">307,200<em>원</em></span> + 
+					<span class="price">2,500<em>원(배송비)</em></span>
+				</div>
+				<!-- //상품금액,배송비 합계 -->
+			</div>
+			<!-- //선택옵션 일시품절 -->
+
+			<!-- 전체옵션 일시품절 -->
+			<div class="prd_group">
+				<div class="basket_prd">
+					<div class="top_chkbox">
+						<input type="checkbox" title="상품선택">
+						<div class="right">
+							<a href="#" class="btn_wish"><span>찜하기</span></a>
+							<a href="#" class="btn_del"><span>삭제</span></a>
+						</div>
+					</div>
+					<a href="#">
+						<div class="basket_txt">
+							<div class="pic">
+								<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+								<div class="ico_soldout"><span>일시품절</span></div>
+							</div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodprice">77,200<span class="won">원</span></span>
+							<span class="prodopt">화이트 / 1개</span>
+							<span class="soldout">모든 옵션이 <em>일시품절</em> 되었습니다.</span>
+						</div>
+					</a>
+				</div>
+				<!-- 상품금액,배송비 합계 -->
+				<div class="prd_total">
+					<span class="price">307,200<em>원</em></span> + 
+					<span class="price">2,500<em>원(배송비)</em></span>
+				</div>
+				<!-- //상품금액,배송비 합계 -->
+			</div>
+			<!-- //전체옵션 일시품절 -->
+
+			<!-- 판매종료 -->
+			<div class="prd_group">
+				<div class="basket_prd">
+					<div class="top_chkbox">
+						<input type="checkbox" title="상품선택">
+						<div class="right">
+							<a href="#" class="btn_wish"><span>찜하기</span></a>
+							<a href="#" class="btn_del"><span>삭제</span></a>
+						</div>
+					</div>
+					<a href="#">
+						<div class="basket_txt">
+							<div class="pic">
+								<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+								<div class="ico_soldout"><span>판매종료</span></div>
+							</div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodprice">77,200<span class="won">원</span></span>
+							<span class="prodopt">화이트 / 1개</span>
+							<span class="soldout">상품이 <em>판매종료</em> 되었습니다.</span>
+						</div>
+					</a>
+				</div>
+				<!-- 상품금액,배송비 합계 -->
+				<div class="prd_total">
+					<span class="price">307,200<em>원</em></span> + 
+					<span class="price">2,500<em>원(배송비)</em></span>
+				</div>
+				<!-- //상품금액,배송비 합계 -->
+			</div>
+			<!-- //판매종료 -->
+
+			<!-- 장바구니 담긴 상품 가격이 1%이상 인하되었을 경우 -->
+			<div class="prd_group">
+				<div class="basket_prd">
+					<div class="top_chkbox">
+						<input type="checkbox" title="상품선택">
+						<div class="right">
+							<a href="#" class="btn_wish"><span>찜하기</span></a>
+							<a href="#" class="btn_del"><span>삭제</span></a>
+						</div>
+					</div>
+					<a href="#">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodprice">77,200<span class="won">원</span></span>
+							<span class="prodopt">화이트 / 1개</span>
+							<span class="soldout">상품가격이 장바구니에 담으셨을 때 보다 <em>5.5% 인하</em>되었습니다.</span>
+						</div>
+					</a>
+					<div class="sel">
+						<div class="opt w100"><span>옵션/수량 변경</span></div>
+						<div class="absR"><a href="#" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+					</div>
+					<!-- 옵션,수량 변경 -->
+					<div class="opt_open">
+						<dl>
+							<dt>색상</dt>
+							<dd>
+								<select class="w100">
+									<option>베이지브라운</option>
+								</select>
+							</dd>
+							<dt>사이즈</dt>
+							<dd>
+								<select class="w100">
+									<option>55</option>
+								</select>
+							</dd>
+							<dt>사은품</dt>
+							<dd>
+								<select class="w100">
+									<option>위스카스파우치 50g</option>
+								</select>
+							</dd>
+							<dt>수량</dt>
+							<dd>
+								<div class="numbox">
+									<span class="minus"><img src="../images/mobile/order/bts_minus_default.png" alt="삭제"></span>
+									<!--a href="#" class="minus"><img src="../images/mobile/order/bts_minus.png" alt="삭제" /></a-->
+									<input type="text" class="inp_txt" value="1" title="수량">
+									<!--span class="plus"><img src="../images/mobile/order/bts_plus_default.png" alt="추가" /></span-->
+									<a href="#" class="plus"><img src="../images/mobile/order/bts_plus.png" alt="추가"></a>
+								</div>
+							</dd>
+						</dl>
+						<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+					</div>
+					<!-- //옵션,수량 변경 -->
+				</div>
+				<!-- 상품금액,배송비 합계 -->
+				<div class="prd_total">
+					<span class="price">307,200<em>원</em></span> + 
+					<span class="price">2,500<em>원(배송비)</em></span>
+				</div>
+				<!-- //상품금액,배송비 합계 -->
+			</div>
+			<!-- //장바구니 담긴 상품 가격이 1%이상 인하되었을 경우 -->
+
+			<!-- 장바구니 담긴 상품 가격이 1%이하 인하되었을 경우 -->
+			<div class="prd_group">
+				<div class="basket_prd">
+					<div class="top_chkbox">
+						<input type="checkbox" title="상품선택">
+						<div class="right">
+							<a href="#" class="btn_wish"><span>찜하기</span></a>
+							<a href="#" class="btn_del"><span>삭제</span></a>
+						</div>
+					</div>
+					<a href="#">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodprice">77,200<span class="won">원</span></span>
+							<span class="prodopt">화이트 / 1개</span>
+							<span class="soldout">상품가격이 장바구니에 담으셨을 때 보다 <em>인하</em>되었습니다.</span>
+						</div>
+					</a>
+					<div class="sel">
+						<div class="opt w100"><span>옵션/수량 변경</span></div>
+						<div class="absR"><a href="#" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+					</div>
+					<!-- 옵션,수량 변경 -->
+					<div class="opt_open">
+						<dl>
+							<dt>색상</dt>
+							<dd>
+								<select class="w100">
+									<option>베이지브라운</option>
+								</select>
+							</dd>
+							<dt>사이즈</dt>
+							<dd>
+								<select class="w100">
+									<option>55</option>
+								</select>
+							</dd>
+							<dt>사은품</dt>
+							<dd>
+								<select class="w100">
+									<option>위스카스파우치 50g</option>
+								</select>
+							</dd>
+							<dt>수량</dt>
+							<dd>
+								<div class="numbox">
+									<span class="minus"><img src="../images/mobile/order/bts_minus_default.png" alt="삭제"></span>
+									<!--a href="#" class="minus"><img src="../images/mobile/order/bts_minus.png" alt="삭제" /></a-->
+									<input type="text" class="inp_txt" value="1" title="수량">
+									<!--span class="plus"><img src="../images/mobile/order/bts_plus_default.png" alt="추가" /></span-->
+									<a href="#" class="plus"><img src="../images/mobile/order/bts_plus.png" alt="추가"></a>
+								</div>
+							</dd>
+						</dl>
+						<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+					</div>
+					<!-- //옵션,수량 변경 -->
+				</div>
+				<!-- 지점, 합계 -->
+				<div class="prd_total">
+					<div class="store">
+						<a href="#" onclick="fn_layer_open('pop_store');return false;" onkeypress="this.onclick;"><span>NC 평촌점</span></a>
+						<p>에서 매장수령 하실 상품입니다.</p>
+					</div>
+					<span class="price">307,200<em>원</em></span>
+				</div>
+				<!-- //지점, 합계 -->
+			</div>
+			<!-- //장바구니 담긴 상품 가격이 1%이하 인하되었을 경우 -->
+
+		</div>
+		<!-- //택배배송 -->
+
+		<!-- 장바구니 -->
+		<div class="basket_chk">
+			<span class="txt">장바구니 전체 (<em>5</em>개)</span>
+			<div class="right">
+				<a href="#" class="btn_line01 c01">선택해제</a>
+				<a href="#" class="btn_line01 c02">선택삭제</a>
+			</div>
+		</div>
+		<!-- //장바구니 -->
+	</div>
+	<!-- //basket_content -->
+</div>
+<!-- //CONTENT -->
+
+
+<!-- layer_popup : 매장 위치 보기 -->
+<div id="pop_store" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">매장 위치 보기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="store">
+				<h3 class="tit">NC 강서점</h3>
+				<ul>
+					<li><span>- 주소 : </span>서울특별시 송파구 충민로66번지 </li>
+					<li><span>- 대표번호 : </span>02-2157-5000</li>
+					<li><span>- 영업시간 : </span>AM10 : 30 ~ PM10 : 00</li>
+					<li><span>- 매장위치 : </span>지상 2층 /  SPAO</li>
+				</ul>
+				<div class="store_api">
+					<img src="../images/mobile/temp/temp_store.jpg" alt="">
+				</div>
+				<div class="btn_area alC">
+					<a href="#" class="btn_brd03 c01">닫기</a>
+				</div>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 매장 위치 보기 -->
+
+<!-- layer_popup : 찜록록 -->
+<div class="layer_pop nodim pop_zzim">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<p class="ico"><em>찜 목록에</em></p>
+				<p>추가되었습니다.</p>
+				<p class="etc">마이페이지 <em>나의 찜록록</em>에서 <br>확인 하실 수 있습니다.</p>
+			</div>
+		</div>   
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //layer_popup : 찜록록 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

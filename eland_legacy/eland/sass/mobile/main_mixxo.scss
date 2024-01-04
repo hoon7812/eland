@@ -1,0 +1,952 @@
+@charset "utf-8";
+@import "header";
+@include brandMallHdr("mixxo");
+
+// layout
+.m_cts .mixxo .goods_list {
+	border-top: 1px solid #e7e7e7;
+}
+
+// main big banner
+.mixxo {
+
+	.goods_list li .g_prc .sale b {margin-right:3px;}
+
+	&.renewal2_brand {
+		// 우선순위 점유
+		.layer_fix .sch_wrap {
+			background: #fff;
+
+			.sch_box {
+				background: #f3f3f3;
+				border-radius: 0;
+			}
+
+			.qr {
+				background-image: url(../../images/mobile/common/btn_bcd_mixxo.png);
+			}
+
+		}
+
+		.layer_fix .sch_btn {
+			background-image: url(../../images/mobile/category/btn_sch_form_mixxo.png);
+		}
+
+	}
+
+	&.renewal .contents {
+    background-color: #fff;
+	}
+
+	.main_bn_wrap {
+
+		&.mixxo_trend {
+			padding-bottom: 20px;
+			background: #fff;
+			border-bottom: none;
+			overflow: visible;
+			padding-top:0px;
+			margin-bottom:20px;
+			width:90%;
+
+			.pagination {
+				bottom: -10px;
+			}
+
+			.swiper-bn-left {
+				display: none;
+			}
+
+			.swiper-bn-right {
+				display: none;
+			}
+		}
+		
+		margin: 0 auto;
+		border-bottom: #ddd 1px solid;
+
+		.bt_opa_lyr {
+			background: url(../../images/mobile/main/btn_bn_all_folder.png) no-repeat 0 0;
+			background-size: 50px 26px;
+			-webkit-background-size: 50px 26px;
+		}
+
+		.swiper-bn-left {
+			width: 11px;
+			height: 21px;
+			left: 6px;
+			margin: -10px 0 0;
+			background: url(../../images/mobile/main/btn_arr_folder.png) no-repeat 0 0;
+			background-size: 22px 21px;
+			-webkit-background-size: 22px 21px;
+		}
+
+		.swiper-bn-right {
+			width: 11px;
+			height: 21px;
+			right: 6px;
+			margin: -10px 0 0;
+			background: url(../../images/mobile/main/btn_arr_folder.png) no-repeat -11px 0;
+			background-size: 22px 21px;
+			-webkit-background-size: 22px 21px;
+		}
+
+		.swiper-pagination-switch {
+			width: 9px;
+			height: 9px;
+			background: url(../../images/mobile/main/mixxo_swp_pg.png) no-repeat -9px 0;
+			background-size: 18px 9px;
+			-webkit-background-size: 18px 9px;
+		}
+
+		.swiper-active-switch {
+			background-position: 0 0;
+		}
+
+	}
+
+	.pagination.trend {
+		.swiper-pagination-switch {
+			width: 9px;
+			height: 9px;
+			background: url(../../images/mobile/main/mixxo_swp_pg2.png) no-repeat -9px 0;
+			background-size: 18px 9px;
+			-webkit-background-size: 18px 9px;
+		}
+
+		a.swiper-active-switch {
+    		background-position: 0 0;
+		}
+
+	}
+
+
+
+	.main_ctg_bn {
+		overflow: hidden;
+		margin: 10px 0;
+		border-bottom: #e6e6e6 1px solid;
+		background: #fff;
+		box-sizing: border-box;
+
+		dd {
+
+			/* float:left;width:25%;padding:0 5px 0 16px;box-sizing:border-box */
+			+ dd {
+
+				/* background:url(../../images/mobile/main/mixxo_ctg_bn_bg.png) no-repeat left center;background-size:13px 10px;-webkit-background-size:13px 10px */
+			}
+
+			a {
+				display: block;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+
+		}
+
+	}
+
+	.main_md_rec {
+		margin: 10px 0 0;
+		border-top: #e1e1e1 1px solid;
+		background: #fff;
+		box-sizing: border-box;
+		padding-top: 10px;
+
+		h3 {
+			display: block;
+			position: relative;
+			height: auto;
+			padding: 10px 0 15px;
+			line-height: 18px;
+			background: none;
+			text-align: center;
+
+			b {
+				font-size: 18px;
+				line-height: 18px;
+				color: #333;
+			}
+
+		}
+
+		.md_rec_sel {
+			padding: 0 12px;
+			margin: 0 0 12px;
+			border: none;
+
+			.select {
+				background: #f3f3f3 url(../../images/mobile/common/mixxo_select2.png) no-repeat right center;
+				background-size: 22px 6px;
+				-webkit-background-size: 22px 6px;
+			}
+
+			+ .goods_list {
+				border-top: 1px solid #e7e7e7;
+			}
+
+		}
+
+		.goods_list li {
+			.g_brd {
+				display: none;
+			}
+
+			.g_per {
+				color: #df3434;
+			}
+
+			.g_tit {
+				margin: 10px 0 6px;
+			}
+
+			.g_prc .org {
+				text-decoration: line-through;
+			}
+
+		}
+
+		.goods_list_more {
+			border: none;
+		}
+
+	}
+
+	&.main_rec_plan {
+		margin: 10px 0 0;
+		border-top: #e1e1e1 1px solid;
+		border-bottom: #e1e1e1 1px solid;
+		background: #fff;
+		box-sizing: border-box;
+
+		h3 {
+			display: block;
+			position: relative;
+			height: auto;
+			padding: 20px 0 15px;
+			line-height: 18px;
+			background: none;
+			text-align: center;
+
+			b {
+				font-size: 18px;
+				line-height: 18px;
+				color: #333;
+			}
+
+		}
+
+		.md_rec_sel {
+			padding: 0 12px;
+			margin: 0 0 12px;
+			border: none;
+
+			.select {
+				width: 100%;
+				border: none;
+				background: #f3f3f3 url(../../images/mobile/common/mixxo_select2.png) no-repeat right center;
+				background-size: 22px 6px;
+				-webkit-background-size: 22px 6px;
+			}
+
+		}
+
+		.goods_list {
+			&::before {
+				display: none;
+			}
+
+			ul {
+				margin: 0;
+			}
+
+			li {
+				border: none;
+
+				.g_img .per {
+					background: #df3434;
+				}
+
+				.g_brd {
+					display: none;
+				}
+
+				.g_prc {
+					.org {
+						text-decoration: line-through;
+					}
+
+					overflow: visible;
+
+					.sale {
+						margin: 2px 0 0;
+						line-height: 18px;
+					}
+
+				}
+
+				.g_tit {
+					height: 15px;
+					margin: 15px 0 6px;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+// instagram
+.insta_mixxo {
+	overflow: hidden;
+	padding: 0 8px 20px;
+	margin: 0;
+	border-top: #ededed 10px solid;
+	border-bottom: #e1e1e1 1px solid;
+	background: #fff;
+	box-sizing: border-box;
+
+	h3 {
+		display: block;
+		position: relative;
+		padding: 16px 0;
+		margin: 0 4px;
+		text-align: center;
+
+		img {
+			width: 34%;
+			max-width: 100px;
+			height: auto;
+		}
+
+	}
+
+	dl dd {
+		overflow: hidden;
+		float: left;
+		width: 33.3%;
+		padding: 0 4px;
+		box-sizing: border-box;
+
+		+ dd + dd + dd {
+			margin: 8px 0 0;
+		}
+
+		a {
+			overflow: hidden;
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+
+		img {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: auto;
+		}
+
+	}
+
+}
+
+// lnb
+.mixxo {
+	.lnb .lnb_hd .home {
+		width: 130px;
+		height: 46px;
+		background: url(../../images/mobile/common/m_lst_01.jpg) no-repeat 12px center;
+		background-size: 120px 23px;
+		-webkit-background-size: 120px 23px;
+	}
+
+	.lnb_dim {
+		background: #232323;
+	}
+
+	.lnb {
+		.lnb_log, .lnb_mall dt {
+			background: #232323;
+		}
+
+		.lnb_tnb {
+			border-top: 1px solid #dedede;
+			background: #fff;
+
+			li {
+				background: none;
+
+				a {
+					color: #232323;
+					height: 20px;
+					border-bottom: none;
+					border-left: 1px solid #dedede;
+				}
+
+				&:first-child a {
+					border-left: none;
+				}
+
+				&.myp a {
+					background-image: url(../../images/mobile/common/tab_lnb_myp_02.png);
+				}
+
+				&.drv a {
+					background-image: url(../../images/mobile/common/tab_lnb_drv_02.png);
+				}
+
+				&.wish a {
+					background-image: url(../../images/mobile/common/tab_lnb_wish_02.png);
+				}
+
+				&.cs a {
+					background-image: url(../../images/mobile/common/tab_lnb_cs_02.png);
+				}
+
+				&.cpn a {
+					background-image: url(../../images/mobile/common/tab_lnb_cpn_02.png);
+				}
+
+			}
+
+		}
+
+		.lnb_mn {
+			&.brd_btn {
+				top: 185px;
+			}
+
+			&.mall_btn {
+				top: 115px;
+			}
+
+		}
+
+	}
+
+}
+
+// search layer
+.layer_fix {
+	border-color: #df3434;
+
+	.sch_wrap {
+		background: #fff;
+	}
+
+	.sch_box {
+		height: 28px;
+		border: 1px solid #747474;
+	}
+
+	.sch_btn {
+		background: url(../../images/mobile/category/btn_sch_form.png) no-repeat 0 0;
+		background-size: 40px 38px;
+		-webkit-background-size: 40px 38px;
+	}
+
+	.sch_keyword .f_word dt button {
+		border-top: 1px solid #ccc;
+
+		&.on {
+			border-top: 1px solid #000;
+		}
+
+	}
+
+	.sch_cls {
+		background: url(../../images/mobile/common/pop_close01.png) center center no-repeat;
+		background-size: 17px 17px;
+		-webkit-background-size: 17px 17px;
+	}
+
+	// .sch_qr .sch_wrap .qr {
+	//	border: none;
+	//	background-color: #333;
+	//}
+
+	.sch_word .s_word {
+		li a b {
+			color: #df3434;
+		}
+
+	}
+
+}
+
+// good_info
+.goods_info .gd_prc dd {
+	&.prc .rt {
+		background: #df3434;
+	}
+
+	&.bnf .bp {
+		color: #df3434;
+	}
+
+}
+
+.goods_opt .gd_amt {
+	color: #df3434;
+}
+
+.goods_list li {
+	.g_per, .g_land .g_per {
+		color: #df3434;
+	}
+
+}
+
+.goods_ord .btns .buy {
+	background: #222;
+}
+
+.goods_opt {
+	.gd_btns .buy {
+		background: #222;
+
+		&[disabled="disabled"] {
+			background: #222;
+		}
+
+	}
+
+	.gd_cls button {
+		background: url(../../images/mobile/goods/btn_opt_cls_mixxo.png) no-repeat 50% 50%;
+		background-size: 77px 21px;
+		-webkit-background-size: 77px 21px;
+	}
+
+}
+
+.goods_list .tlist li .g_cart {
+	background: #222 url(../../images/mobile/category/btn_tlist_cart_br.png) no-repeat 0 0;
+	background-size: 38px 38px;
+	-webkit-background-size: 38px 38px;
+}
+
+
+
+// BRAND MAIN BANNER/HTML BANNER
+.mixxo {
+	.brand_best {
+		margin: 0;
+		border-bottom: none;
+	}
+
+	.brd_mainban {
+		margin: 0;
+		background: #fff;
+
+		ul li {
+			margin: 10px 0;
+		}
+
+		ul li:first-child {
+			margin: 0;
+		}		
+	}
+
+
+	//PROMOTION IMG BN
+	.promotion {
+
+	}
+
+	.main_top {
+		padding-left: 35px;
+
+		.eland {
+			position: absolute;
+			left: -35px;
+			top: 0;
+			width: 35px;
+			height: 37px;
+			background: rgba(255, 255, 255, 0.8) url(../../images/mobile/main/elandmall_black.png) center center no-repeat;
+			background-size: 24px 24px;
+			z-index: 10;
+
+			a {
+				display: block;
+				width: 100%;
+				height: 38px;
+				font-size: 0;
+				color: transparent;
+				text-indent: -9999px;
+			}
+
+		}
+
+	}
+
+}
+
+//option select layer
+.mixxo .lyr_select .sel_btn.selected .sel_txt {
+	color: #df3434;
+}
+
+//md pick
+.brand_best  {		
+	.goods_list li .g_img img {border-radius: 50%;}
+
+	.mixxoswipe {
+		padding: 20px 0 20px 10px;
+
+		.goods_list li .g_prc .sale {
+			font-size: 15px;
+		}
+
+		.g_img {
+			margin-bottom: 10px;
+		}
+
+		.dc_per {
+			display: block;
+			position: absolute;
+			top: 5px;
+			right: 0px;
+			width: 38px;
+			height: 38px;
+			font-size: 15px;
+			color: #fff;
+			background: #de3633;
+			text-align: center;
+			line-height: 38px;
+			border-radius: 50%;
+			font-weight: bold;
+
+			.percent {
+				font-size: 11px;
+				font-weight: normal;
+			}
+
+		}
+
+	}	
+}
+
+.mixxo {
+	//img btn
+	.btn_imglink {
+		width:100%;
+		margin:0 auto;
+		background:#fff;
+		text-align:center;
+
+		a img {
+			width:90%;
+			height:auto;
+			margin:0 auto 20px;
+		}
+	}
+
+}
+
+
+//what's new
+.new_best {
+	margin: 0;
+	padding:0;
+
+	.bnr {
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+
+	}
+
+	.cate_tab {
+			padding: 0 18px;
+			background: #fff;
+
+			ul {
+				display: table;
+				width: 100%;
+
+				li {
+					display: table-cell;
+					width: 25%;
+					height: 36px;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 13px;
+					font-weight: bold;
+					text-align: center;
+					color: #333;
+
+					&.on {
+						color: #c41e20;
+					}
+
+					a {
+						display: block;
+						height: 36px;
+						line-height: 36px;
+						color: inherit;
+						font-weight: inherit;
+						letter-spacing: -0.1em;
+					}
+
+				}
+
+			}
+
+	}
+
+	.tab_wrap {
+			display: none;
+			padding: 0 0 25px;
+			border-bottom: 1px solid #e7e7e7;
+			background: #fff;
+
+			&.on {
+				display: block;
+			}
+
+	}
+
+	.new_best_more {
+			clear: both;
+			background: #fff;
+			z-index: 1;
+
+			button {
+				display: block;
+				width: 284px;
+				height: 31px;
+				margin: 0 auto;
+				border: 2px solid #d7d7d7;
+				border-radius: 15px;
+				font-size: 13px;
+				color: #000;
+				letter-spacing: -0.005em;
+			}
+
+	}
+
+	.goods_list {
+			display: none;
+			padding: 18px 3px 0;
+			background: #fff;
+
+			&:first-child {
+				display: block;
+			}
+
+			+.goods_list {
+				padding-top: 0;
+				border-top: 0;
+			}
+
+            li{min-height:265px;border:none;background:none;}
+
+	}
+
+}	
+
+//Gropu tab
+.group_tab {
+	position: relative;
+	height: 89px;
+	background: #fff;
+	border-bottom: 10px solid #f1f1f1;
+
+	.depth1 {
+		display: table-cell;
+		width: 100vw;
+		margin: 0 18px;
+		text-align: center;
+		font-size: 0;
+
+		&:after {
+			display: block;
+			clear: both;
+			content: "";
+		}
+
+		>li {
+			display: inline-block;
+			width: 45px;
+			height: 47px;
+
+			+li {
+				margin: 0 0 0 calc((100vw - 261px) / 4);
+			}
+
+			> a {
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 47px;
+
+				img {
+					display: block;
+					width: 100%;
+					height: auto;
+				}
+
+				span {
+					position: absolute;
+					bottom: 0;
+					left: -15px;
+					width: calc(100% + 30px);
+					height: 47px;
+					line-height: 47px;
+					text-align: center;
+					font-size: 11px;
+					letter-spacing: -0.04em;
+					color: #444;
+				}
+
+			}
+
+			&.on {
+				> a {
+					span {
+						color: #000;
+						font-weight: bold;
+
+						&:after {
+							position: absolute;
+							bottom: 0;
+							left: 50%;
+							width: 30px;
+							height: 2px;
+							margin-left: -15px;
+							background: #000;
+							content: "";
+						}
+
+					}
+
+				}
+
+				.depth2 {
+					display: block;
+				}
+
+			}
+
+			&.new {
+				>a {
+					&:after {
+						position: absolute;
+						top: -4px;
+						right: 3px;
+						width: 16px;
+						height: 16px;
+						background: url("../../images/mobile/category/ico_new.png") no-repeat;
+						background-size: 16px 16px;
+						content: "";
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.depth2 {
+		display: none;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 20px;
+		padding: 10px 0;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		background: #f9f9f9;
+		overflow: hidden;
+
+		&:after {
+			display: block;
+			clear: both;
+			content: "";
+		}
+
+		.inner {
+			position: relative;
+			width: calc(90vw - 33px);
+			margin: 0 auto;
+			overflow: hidden;
+			z-index: 2;
+		}
+
+		ul {
+			&.swiper-wrapper {
+				height: 20px !important;
+			}
+
+			// swiper height error fix
+			li {
+				float: left;
+				width: 66px;
+				height: 20px;
+				line-height: 20px;
+				font-size: 11px;
+				text-align: center;
+				color: #333;
+
+				&.on {
+					color: #fff;
+					font-weight: bold;
+					background: #000;
+					border-radius: 10px;
+
+					a {
+						color: inherit;
+					}
+
+				}
+
+			}
+
+		}
+
+		.paging_btns {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 34px;
+			z-index: 1;
+
+			.left, .right {
+				position: absolute;
+				bottom: 10px;
+				width: 17px;
+				height: 20px;
+			}
+
+			.left {
+				left: 9px;
+				background: url("../../images/mobile/category/ico_arr_dbl.png") no-repeat right center;
+				background-size: 10px 6px;
+			}
+
+			.right {
+				right: 9px;
+				background: url("../../images/mobile/category/ico_arr_dbr.png") no-repeat left center;
+				background-size: 10px 6px;
+			}
+
+		}
+
+	}
+
+}

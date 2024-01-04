@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/app.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//로그인 탭
+	$(function(){
+		$(".tab_addr li").bind("click", function(){
+			addrId = $(this).index();
+			//160324 삭제 console.log(addrId);
+
+			$(this).parent().find("li").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().find(".con_addr > div").removeClass("on");
+			$(this).parent().parent().find(".con_addr > div").eq(addrId).addClass("on");
+		});
+	});
+
+	//한글자판 보기
+	$(function(){
+		$(".keyb .ico").bind("click", function(){
+			$(this).toggleClass("on");
+			$(this).parent().parent().find(".keyi").slideToggle(200);
+			if($(this).text() == '한글자판 보기'){
+				$(this).text('한글자판 닫기');
+			} else {
+				$(this).text('한글자판 보기');
+			}
+		});
+	});
+
+</script>
+</head>
+<body>	
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<div class="header_bn" id="header_bn" style="background-color: rgb(34, 34, 34);">
+	<a href="#"><img src="../images/mobile/temp/bn_head_100.jpg" alt="이벤트배너" style="height: 59px;"></a>
+	<a href="#" class="cls"><img src="../images/mobile/common/btn_bn_close.png" alt="닫기"></a>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open"><b class="ir">카테고리 전체메뉴 열기</b></button></div>
+		<h1><a href="Main.html"><b class="ir">E-LAND MALL 메인</b></a></h1>
+		<div class="hnb">
+			<ul>
+				<li class="sch"><button type="button"><b class="ir">검색 열기</b></button></li>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<!-- //HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>로그인</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>
+		</h2>
+	</div>
+
+	<div class="lg_area">
+		<div class="pop_addr">
+			<ul class="tab_addr">
+				<li class="on"><span>통합회원</span></li>
+				<li><span>비회원(주문조회)</span></li>
+			</ul>
+
+			<div class="con_addr">
+				<!-- 통합회원 -->
+				<div class="on">
+					<div class="lg_top">
+						<p class="txt_info">통합회원은 한 아이디로 이랜드몰닷컴 및 이랜드리테일에서 운영하는 모든 웹 사이트의 서비스를 이용하실 수 있습니다. <span class="stxt">아이디와 비밀번호는 대소문자를 구분합니다.</span></p>
+						<div class="keyb"><span class="ico">한글자판 보기</span></div>
+						<div class="keyi"><img src="../images/mobile/my/lg_keyimage.jpg" alt="한글자판 이미지"></div>
+					</div>
+
+					<div class="inp_lg">
+						<ul>
+							<li><label for="inp_lg1" class="ir">아이디</label><input type="text" id="inp_lg1" class="w100" placeholder="아이디"></li>
+							<li><label for="inp_lg2" class="ir">비밀번호</label><input type="password" id="inp_lg2" class="w100" placeholder="비밀번호"></li>
+							<li>
+								<span class="chk">
+									<input type="checkbox" id="chk_lg" checked="">
+									<label for="chk_lg">자동 로그인</label>
+								</span>
+								<span class="chk">
+									<input type="checkbox" id="chk_id" checked="">
+									<label for="chk_id">아이디 저장</label>
+								</span>
+							</li>
+							<li>
+								<a href="#" class="btn_bg06 c01"><strong>로그인</strong></a>
+							</li>
+						</ul>
+						<p class="noti">* 아이디를 입력해 주세요.</p>
+					</div>
+
+					<div class="lg_btm">
+						<ul>
+							<li class="ico1"><a href="#">회원가입</a></li>
+							<li class="ico2"><a href="#">아이디찾기</a></li>
+							<li class="ico3"><a href="#">비밀번호 찾기</a></li>
+						</ul>
+						<!-- 160811 추가
+						<ul class="ty02">
+							<li class="ico2"><a href="#">아이디찾기</a></li>
+							<li class="ico3"><a href="#">비밀번호 찾기</a></li>
+						</ul>
+						//160811 추가 -->
+					</div>
+
+					<!-- 170523 sns추가 : 시스템즈 요청사항 
+					<iframe src="" frameborder="0" width="100%" height="145px">
+						iframe size 100%x145px
+					</iframe>-->
+					<div class="box_sns">
+						<div class="tit">SNS계정으로 로그인 하기</div>
+						<ul class="list_sns">
+							<li><a href="#"><img src="../images/mobile/common/login_kakao.png" alt="카카오계정으로 로그인하기"></a></li>
+							<li><a href="#"><img src="../images/mobile/common/login_naver.png" alt="네이버계정으로 로그인하기"></a></li>
+							<li><a href="#"><img src="../images/mobile/common/login_facebook.png" alt="페이스북계정으로 로그인하기"></a></li>
+						</ul>
+					</div>
+					<!-- //170523 sns추가 : 시스템즈 요청사항 -->
+
+					<!-- 7650::로그인 광고배너 -->
+					<div class="ad_bn">
+						<a href="#"><img src="../images/mobile/renewal/login_ad_bn.png" alt="로그인광고배너"></a>
+					</div>
+					<!-- //7650::로그인 광고배너 -->
+
+					<!-- 비회원 구매 영역 -->
+					<div class="lg_nmember">
+						<span class="stxt"><strong>비회원 구매</strong></span>
+						<span class="stxt">비회원으로 구매 하시겠습니까?<br>비회원은 포인트 적립/사용이 불가능합니다.</span>
+						<div class="btn">
+							<a href="#" class="btn_brd02 c01">비회원구매</a>
+						</div>
+					</div>
+					<!-- //비회원 구매 영역 -->
+
+				</div>
+				<!-- 비회원(주문조회) -->
+				<div>
+					<div class="lg_top">
+						<p class="txt_info">비회원 구매 시 입력했던 정보로 로그인 해 주세요.<span class="stxt">이름/휴대폰번호/주문번호를 모두 입력하셔야 정상조회가 가능합니다. 주문 정보가 생각나지 않으시면 고객센터<a href="tel:1899-9500">(1899-9500)</a>로 문의주세요.</span></p>
+						<div class="keyb"><span class="ico">한글자판 보기</span></div>
+						<div class="keyi"><img src="../images/mobile/my/lg_keyimage.jpg" alt="한글자판 이미지"></div>
+					</div>
+
+					<div class="inp_lg">
+						<ul>
+							<li><label for="inp_name1" class="ir">구매자명</label><input type="text" id="inp_name1" class="w100" placeholder="구매자명"></li>
+							<li><label for="inp_name2" class="ir">휴대폰 번호</label><input type="tel" id="inp_name2" class="w100" placeholder="휴대폰 번호('-'없이 입력)"></li>
+							<li><label for="inp_name3" class="ir">주문번호</label><input type="text" id="inp_name3" class="w100" placeholder="주문번호"></li>
+							<li>
+								<a href="#" class="btn_bg06 c01"><strong>로그인</strong></a>
+							</li>
+						</ul>
+						<p class="noti">* 구매자명을 입력해 주세요.</p>
+					</div>
+
+					<div class="lg_btm">
+						<div class="non_member">
+							<span class="tit">이랜드몰 회원이 아니세요?</span>
+							<span class="txt">회원으로 가입하시고 푸짐한 헤택을 누리세요.</span>
+							<a href="#" class="btn_nm"><span class="ico1">회원가입</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- //lg_area -->
+</div>
+<!-- //CONTENT -->
+
+<!-- FOOTER PUBLISHING INCLUDE -->
+<!-- //FOOTER PUBLISHING INCLUDE -->
+
+<!-- layer_popup : 비밀번호 변경 알림 -->
+<div class="lg_pop">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="lg_pwd">
+				<span class="stxt1"><em>새로운 비밀번호</em>로<br>개인정보를 보호하세요.</span>
+				<span class="stxt2"><strong class="fc01">한동기</strong> 님께서는 <br>장기간 같은 비밀번호를 사용하고 계십니다.</span>
+				<ul class="list">
+					<li>&middot; 회원님의 개인정보를 안전하게 보호하고 개인정보도용으로 인한 피해를 예방하기 위해 90일 이상 비밀번호를 변경하지 않을 경우 비밀번호 변경 안내를 해드리고 있습니다.</li>
+					<li>&middot; 새로운 비밀번호로 변경하여 개인정보 피해를 예방하세요.</li>
+				</ul>
+			</div>
+			<ul class="btn_list02 alC">
+				<li><a href="#" class="btn_brd03 c01">나중에 하기</a></li>
+				<li><a href="#" class="btn_bg06 c01"><strong>비밀번호 변경</strong></a></li>
+			</ul>
+			<div class="btn_pop"><a href="#">닫기</a></div>
+		</div>
+	</div>
+</div>
+<!-- //layer_popup : 비밀번호 변경 알림 -->
+<div class="dimlay"></div>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<div class="ft_bn">
+		<a href="#"><img src="../images/mobile/temp/bn_foot_100.jpg" width="640" height="100" alt="이벤트배너" /></a>
+	</div>
+	<div class="ft_menu">
+		<ul>
+			<li><a href="#">로그아웃</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li><a href="#">장바구니</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div>
+	<div class="ft_info">
+		<p>주식회사 이랜드리테일  서울시 서초구 잠원동 70-2</p>
+		<p>대표이사 : 이광일/김연배</p>
+		<p>사업자등록번호 : 114-81-01855  <a href="#">사업자정보확인</a></p>
+		<p>통신판매업 신고번호 : 서초 제 09998호</p>
+		<p>고객센터 : <a href="tel:1899-9500">1899-9500</a></p>
+	</div>
+	<div class="ft_copy">COPYRICHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="ft_app">
+		<ul>
+			<li><a href="#">PC 버전보기</a></li>
+			<li><a href="#">APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.app.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<style type="text/css">
+@font-face {
+  font-family:'Nanum Gothic';
+  font-style:normal;
+  font-weight:400;
+  src:url(../../font/NanumGothic-Regular.eot);
+  src:url(../../font/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(../../font/NanumGothic-Regular.woff2) format('woff2'),
+       url(../../font/NanumGothic-Regular.woff) format('woff'),
+       url(../../font/NanumGothic-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family:'Nanum Gothic';
+  font-style:normal;
+  font-weight:800;
+  src:url(../../font/NanumGothic-Bold.eot);
+  src:url(../../font/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+       url(../../font/NanumGothic-Bold.woff2) format('woff2'),
+       url(../../font/NanumGothic-Bold.woff) format('woff'),
+       url(../../font/NanumGothic-Bold.ttf) format('truetype');
+}
+html,body{width:100%;height:100%}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,select,textarea,p,blockquote,th,td,legend,button{margin:0;padding:0;color:#666;font-family:'Nanum Gothic',sans-serif;font-size:13px;line-height:1.25em;-webkit-font-smoothing:antialiased;}
+body {-webkit-text-size-adjust:none;}
+ul,ol,li{list-style:none;}
+em{font-style:normal}
+input,select,button{vertical-align:middle}
+img{vertical-align:top}
+img,fieldset,iframe{border:0 none}
+a{text-decoration:none; color:#666; cursor:pointer;}
+li,p,dt,dd,div,span,td,th{word-break:break-all;}
+.ib{display:inline-block;}
+input , select {word-break:normal}
+button {-webkit-border-radius:0; background:none; cursor:pointer; background:#fff; border:none;}
+button::-moz-focus-inner {padding:0; border:0;} /* 파이어폭스 버튼 내부 여백 제거 */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {display:none;}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {-webkit-appearance:none; margin:0;}
+textarea {border:1px solid #999; padding:9px 8px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; -webkit-border-radius:0; -webkit-appearance:none; resize:none;}
+input::-ms-clear{display:none}
+table{border-collapse:collapse;border-spacing:0;table-layout:fixed;}
+caption {overflow:hidden; width:0; height:0; font-size:0; line-height:0;}
+.safari caption {display:none;}/* 사파리 rowspan버그 */
+strong{font-weight:800;}
+.chkbox {width:14px; height:14px; cursor:pointer;}
+.error_wrap{}
+.er_eland{overflow:hidden; height:80px;border-bottom:1px solid #dedede;background:#fff url('../../images/pcweb/common/er_eland.png') center center no-repeat; text-indent:-9999px;}/* [v2] :] 수정 */
+/*160308*/
+.er_brs_cont{text-align:center;}
+.er_brs_tit{width:1080px;margin:0 auto;height:38px;padding:50px 0 30px;background:url('../../images/pcweb/common/tit_er_brs.gif') center 50px no-repeat;text-indent:-9999px;border-bottom:1px solid #ddd;}
+.er_txt04{font-size:16px;margin:50px 0;}
+/*//160308*/
+.er_txt01{text-align:center;font-weight:bold;font-size:22px;color:#132347;}
+.er_txt02{text-align:center;margin-top:16px;font-size:22px;color:#132347;}
+.er_txt03{width:780px;margin:30px auto 0;padding-bottom:30px;text-align:center;font-size:14px;color:#999;border-bottom:1px solid #ddd;}
+.er_chks{margin:20px auto;width:780px;text-align:center;}
+.er_chks label{color:#333;}
+.error_wrap .set_btn{margin-top:60px;}
+.error_wrap .set_btn .c01 span{margin-right:20px;background:url('../../images/pcweb/common/ico_erbtn_01.png') right center no-repeat;}
+.error_wrap .set_btn .c02 span{margin-right:20px;background:url('../../images/pcweb/common/ico_erbtn_02.png') right center no-repeat;}
+.btn06 {display:inline-block; border:1px solid #333; background:#333; text-align:center; vertical-align:middle; box-sizing:border-box; -ms-box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+.btn06 span {display:block; width:260px; height:53px; color:#fff; font-size:18px; line-height:55px; font-weight:800;}
+.btn06.c01 {border:1px solid #999; background:#fff;}/* 160809 수정 */
+.btn06.c01 span {color:#000;}
+.btn06.c02 {border:1px solid #242424; background:#242424;}/* 160809 수정 */
+.btn06.c02 span {color:#fff;}
+.btn06.c03 {border:1px solid #ddd; background:#f3f3f3;}
+.btn06.c03 span {color:#666;}
+.btn06.c04 {border:1px solid #cca77d; background:#cca77d;}
+.btn06.c04 span {color:#fff;}
+.btn06.disabled.c01{border:1px solid #ddd;background:#fff;color:#999;}
+.btn06.disabled.c01 span{background:#fff;color:#999;}
+.btn06.disabled.c02{border:1px solid #999;background:#999;}
+.btn06.disabled.c02 span{color:#fff;}
+.set_btn a , .set_btn button { margin-left:7px;}
+.set_btn a:first-child , .set_btn button:first-child {margin-left:0;}
+.er_txt_br{width:780px;margin:50px auto;border:1px solid #ddd;}
+.er_txt_br dt{background:#f3f3f3;height:60px;text-align:center;font-size:16px;color:#333;font-weight:800;line-height:60px;vertical-align:middle;}
+.er_txt_br dt strong{font-family:Verdana;}
+.er_txt_br dd{position:relative;padding:28px 50px;border-top:1px solid #ddd;text-align:left;}
+.er_txt_br dd > span{font-size:16px;color:#333;line-height:45px;}
+.er_txt_br dd ul{position:absolute;right:0px;top:28px;}
+.er_txt_br dd ul li{float:left;margin-right:50px;}
+.er_txt_br dd ul li a{display:inline-block;padding:4px 0 4px 62px;}
+.er_txt_br dd ul li a .links{font-size:14px;color:#0000ff;padding-bottom:1px;font-family:Verdana;border-bottom:1px solid #7777ff;}
+.er_txt_br dd ul li a strong{display:block;margin-top:6px;font-size:16px;color:#000;}
+.brs1{background:url('../../images/pcweb/common/ico_brs01.png') 0 center no-repeat;}
+.brs2{background:url('../../images/pcweb/common/ico_brs02.png') 0 center no-repeat;}
+</style>
+</head>
+<body>
+	<div class="error_wrap">
+		<div class="er_eland">E·LAND MALL</div>
+<!-- 160308 -->
+		<div class="er_brs_cont">
+			<!-- 500 에러 -->
+			<div class="er_brs_tit">쇼핑몰 <strong>이용안내</strong></div>
+			<div class="er_txt04">
+				현재 고객님께서 사용하신 브라우저 버전이 저희 사이트에 최적화 되어 있지 않습니다.<br />
+				아래 중 선호하시는 브라우저를 선택하여 다운로드 하시기 바랍니다.<br />
+				감사합니다.
+			</div>
+			<div class="er_txt_br">
+				<dl>
+					<dt>현재 사용 중이신 브라우저 버전 : <strong>Internet Explorer 7</strong></dt>
+					<dd>
+						<span>당사 사이트에 사이트에 최적화된 버전 :</span>
+						<ul>
+							<li>
+								<a href="#" class="brs1" target="_blank" title="새창">
+									<span class="links">Internet Explorer</span>
+									<strong>버전 8 이상</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="brs2" target="_blank" title="새창">
+									<span class="links">Chrome</span>
+									<strong>버전 47 이상</strong>
+								</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<div class="set_btn">
+				<button type="button" class="btn06 c02"><span>현재 버전으로 사이트 이용</span></button>
+			</div>
+			<div class="er_txt03">최적화 버전 이외의 브라우저를 사용하시는 경우 ,<br />정상적인 기능의 미 제공 또는 기능의 오류가 발생할 수 있습니다.</div>
+			<div class="er_chks">
+				<label for="chk01"><input id="chk01" type="checkbox" class="chkbox" /> <strong>24시간 동안 다시 보지 않기</strong></label>
+			</div>
+		</div>
+<!-- //160308 -->
+	</div>
+</body>
+</html>

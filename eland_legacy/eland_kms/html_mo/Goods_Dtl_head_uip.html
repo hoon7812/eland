@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+</head>
+<body class="renewal2">	
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER -->
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+<!-- //INC_HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<!-- TITLE -->
+	<div class="cts_tit">
+		<h2>
+			<a href="#contents" class="ctg" id="ctab" onClick="fnToggleSlide('ctab', 'catg_nav');return false;" onKeyPress="this.onclick;" >상품상세<em class="ir">카테고리 열기</em></a>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>		
+			<a href="#" class="sns" onClick="fn_layer_open('sns_lyr');return false;" onKeyPress="this.onclick;"><em class="ir">공유 하기</em></a>	
+		</h2>
+	</div>
+	<!-- //TITLE -->
+
+	<!-- GOODS -->
+	<div class="goods_wrap">
+		<!-- NAV. -->
+		<div class="catg_nav" id="catg_nav" style="display:none">
+			<ul>
+				<li><a href="#">여성패션</a></li>
+				<li><a href="#">원피스</a></li>
+				<li>정장원피스</li>
+			</ul>
+		</div>	
+		<!-- //NAV. -->
+
+		<!-- lucky DEAL -->
+		<div class="goods_lucky lucky">
+			<dl id="h_clock">
+				<dt class="ir">럭키딜</dt>
+				<dd class="h_time"><b id="h_day">0</b>일 <b id="h_time">00:00:00</b></dd>
+				<dd class="h_cnt" ><b>145,564</b>개 판매</dd>
+			</dl>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#h_clock').countdown('2017/01/18 00:00:00', function (e) {
+				$('#h_day').html(e.strftime('%-D'));
+				$('#h_time').html(e.strftime('%H:%M:%S'));
+			});
+		});
+		</script>
+		<!-- //lucky DEAL -->
+
+		<!-- TIME SLAE 2016-10-17 -->
+		<div class="goods_time">
+			<dl id="t_clock">
+				<dt class="ir">타임세일</dt>
+				<dd class="t_time"><b id="t_day">0</b>일 <b id="t_time">00:00:00</b></dd>
+				<dd class="t_cnt" ><b>145,564</b>개 판매</dd>
+			</dl>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#t_clock').countdown('2017/01/18 12:30:30', function (e) {
+				$('#t_day').html(e.strftime('%-D'));
+				$('#t_time').html(e.strftime('%H:%M:%S'));
+			});
+		});
+		</script>
+		<!-- //TIME SLAE 2016-10-17 -->
+		<!-- GOODS IMAGES -->
+		</div>
+				</div>	
+				<!-- //CONTENT -->	
+			</div>              
+		</div>		
+		<a href="#close" class="btn_close"><span class="ir">상품상세 레이어 팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //LAYER ZOOM -->
+
+
+<!-- LAYER SIZE -->
+<div id="lyr_gd_size" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">이전 구매한 상품과 사이즈 비교하기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="gd_cmp">
+				<div class="txt">
+					<div class="dt"><b>이전에 구매하신</b> 상품의 실측사이즈</div>
+					<div class="dd">최근 1년간 비교하실 상품과 같은 <b>티셔츠</b>에서 구매하신 상품  입니다. (실측사이즈 보유 상품만 제공)</div>
+				</div>
+
+				<div class="cmp">
+					<ul>
+						<li>
+							<dl>
+								<dt>2015.11.30</dt>
+								<dd>	
+									<div class="g_wrap">
+										<a href="#" class="g_cls" onClick="layer_fix_close('lyr_gd_size')" onKeyPress="this.onclick;">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+											</span>
+											<span class="g_brd">POLHAM</span>
+											<span class="g_tit">POLHAM (남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1 (남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+											<span class="g_opt">BK(89) / M / 1개</span>
+										</a>
+									</div>
+									<div class="g_tbl">
+										<table>
+											<caption>상품 사이즈 | 구매하신 사이즈, 사이즈 평가, 실측 사이즈 (cm) 제공하는 표</caption>
+											<colgroup>
+												<col style="width:33%">
+												<col style="width:30%">
+												<col style="width:37%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">구매하신 사이즈</th>
+													<th scope="col">사이즈 평가</th>
+													<th scope="col">실측 사이즈 (cm)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>55</td>
+													<td><em class="on">작아요</em></td>
+													<td class="sz">
+														어깨넓이 : 80<br/> 
+														팔길이 : 85<br/>  
+														가슴둘레 : 90<br/>  
+														허리둘레 : 95<br/> 
+														전체길이 : 100
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</dd>
+							</dl>
+						</li>
+
+						<li>
+							<dl>
+								<dt>2015.11.30</dt>
+								<dd>	
+									<div class="g_wrap">
+										<a href="#" class="g_cls" onClick="layer_fix_close('lyr_gd_size')" onKeyPress="this.onclick;">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+											</span>
+											<span class="g_brd">POLHAM</span>
+											<span class="g_tit">POLHAM 배색 스웨이드 후드 탈부 배색 스웨이드 후드 탈부착 후드 탈부착</span>
+											<span class="g_opt"><em>세트상품1</em> : 선택1) 폼폼이케이스 / 아이폰6S / RED</span>
+											<span class="g_opt"><em>세트상품2</em> : 선택2) 폼폼이케이스 / 아이폰6PLUS S / BLUE / 1개</span>
+										</a>
+									</div>
+									<div class="g_tbl">
+										<table>
+											<caption>상품 사이즈 | 구매하신 사이즈, 사이즈 평가, 실측 사이즈 (cm) 제공하는 표</caption>
+											<colgroup>
+												<col style="width:33%">
+												<col style="width:30%">
+												<col style="width:37%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">구매하신 사이즈</th>
+													<th scope="col">사이즈 평가</th>
+													<th scope="col">실측 사이즈 (cm)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>세트상품1<br/> S</td>
+													<td rowspan="2"><em>작성된 상품평이 없습니다</em></td>
+													<td class="sz">
+														어깨넓이 : 80<br/> 
+														팔길이 : 85<br/>  
+														가슴둘레 : 90<br/>  
+														허리둘레 : 95<br/> 
+														전체길이 : 100
+													</td>
+												</tr>
+												<tr>
+													<td>세트상품2<br/> S</td>
+													<td class="sz">
+														어깨넓이 : 80<br/> 
+														팔길이 : 85<br/>  
+														가슴둘레 : 90<br/>  
+														허리둘레 : 95
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+			<div class="gd_size">
+				<div class="g_tit"><b>비교하실</b> 상품의 실측사이즈</div>
+				<div class="g_tbl">
+					<table>
+						<caption>상품 실측 사이즈 | 표준사이즈, 브랜드사이즈, 허리둘레(CM), 밑위길이(CM), 엉덩이둘레(CM) 제공하는 표</caption>
+						<colgroup>
+							<col style="width:32%">
+							<col style="width:17%">
+							<col style="width:17%">
+							<col style="width:17%">
+							<col style="width:17%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="th">표준사이즈</th>
+								<th scope="col">90</th>
+								<th scope="col">95</th>
+								<th scope="col">100</th>
+								<th scope="col">105</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 160411 수정 -->
+							<tr class="b_size">
+								<th scope="row"><b>브랜드사이즈</b></th>
+								<td>90</td>
+								<td>95</td>
+								<td>100</td>
+								<td>105</td>
+							</tr>
+							<!-- //160411 수정 -->
+							<tr>
+								<th scope="row">허리둘레(CM)</th>
+								<td>30</td>
+								<td>31</td>
+								<td>32</td>
+								<td>33</td>
+							</tr>
+							<tr>
+								<th scope="row">밑위길이(CM)</th>
+								<td>30</td>
+								<td>31</td>
+								<td>32</td>
+								<td>33</td>
+							</tr>
+							<tr>
+								<th scope="row">엉덩이둘레(CM)</th>
+								<td>30</td>
+								<td>31</td>
+								<td>32</td>
+								<td>33</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table>
+						<caption>상품 실측 사이즈 | 표준사이즈, 브랜드사이즈, 허리둘레(CM), 밑위길이(CM), 엉덩이둘레(CM) 제공하는 표</caption>
+						<colgroup>
+							<col style="width:32%">
+							<col style="width:17%">
+							<col style="width:17%">
+							<col style="width:17%">
+							<col style="width:17%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="th">표준사이즈</th>
+								<th scope="col">110</th>
+								<th scope="col">115</th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 160411 수정 -->
+							<tr class="b_size">
+								<th scope="row"><b>브랜드사이즈</b></th>
+								<td>110</td>
+								<td>115</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<!-- 160411 수정 -->
+							<tr>
+								<th scope="row">허리둘레(CM)</th>
+								<td>34</td>
+								<td>35</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">밑위길이(CM)</th>
+								<td>34</td>
+								<td>35</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">엉덩이둘레(CM)</th>
+								<td>34</td>
+								<td>35</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="g_img"><img src="../images/mobile/temp/img_gd_size.jpg" width="590" height="58" alt="상품 실측 사이즈" /></div>
+			</div>
+			<!-- 160318 추가 -->
+			<ul class="btn_fix_box">
+				<li class="w100"><a href="#" class="btn_fix">닫기</a></li>
+			</ul>
+			<!-- //160318 추가 -->
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //LAYER INQUIRY -->
+
+
+<!-- LAYER SNS -->
+<div id="sns_lyr" class="layer_con" style="display:none">
+	<div class="pop_con">
+		<h3 class="pop_tit">SNS 공유하기</h3>
+		<div class="pop_con">
+			<div class="sns">
+				<ul>
+					<li><a href="#" class="fb">페이스북</a></li>
+					<li><a href="#" class="ks">카카오<br/>스토리</a></li>
+					<li><a href="#" class="nb">네이버<br/>블로그</a></li>
+					<li><a href="#" class="ln">라인</a></li>
+					<li><a href="#" class="kt">카카오톡</a></li>
+					<li><a href="#" class="is">인스타그램</a></li>
+					<li><a href="#" class="ur">URL복사</a></li>
+				</ul>
+			</div>
+		</div>
+		<a href="#close" class="btn_close">닫기</a>
+	</div>
+	<!-- 160325 url 추가 -->
+	<div class="pop_con" style="display:none"> <!-- URL복사 터치시 보여주세요 -->
+		<div class="pop_con">
+			<div class="sns">
+				<div class="sns_ur">
+					<div class="info">아래의 url을 전체 선택하여 복사하세요.</div>
+					<div class="urbox"><textarea onfocus = "this.select()">http://m.elandmall.com/Shop/Product_Detail.aspx?PC=A250967100203#none</textarea></div>
+				</div>
+			</div>
+		</div>
+		<a href="#close" class="btn_close">닫기</a>
+	</div>
+	<script type="text/javascript">
+		$(".layer_con .sns .ur").click(function(){
+			$(this).parents(".pop_con").hide().next().show();
+		});
+	</script>
+	<!-- //160325 url 추가 -->
+</div>
+<!-- //LAYER SNS -->
+
+<!-- LAYER BRANCH -->
+<div id="branch_lyr" class="layer_con lyr_opc">
+	<div class="pop_con">
+		<h3 class="pop_tit">다른지점 가격 및 혜택</h3>
+		<div class="pop_txt">
+			<div class="branch">
+				<div class="tit">원하시는 지점을 선택해 주세요.</div>
+				<ul>
+					<li>
+						<a href="#">
+							<span class="dt">NC 평촌점</span>
+							<span class="dd">12,000원 [매장수령 가능]</span> 
+						</a>
+					</li>
+					<li class="on">
+						<a href="#">
+							<span class="dt">NC 강서점</span>
+							<span class="dd">10,000원 [매장수령 가능] (즉시할인쿠폰 10%~11.3) (사은품: 메트로시티 캐시미어 목도리, 장갑)</span> 
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="dt">NC 불광점</span>
+							<span class="dd">10,000원(즉시할인쿠폰 10% ~11.3) (사은품 : 선물포장)</span> 
+						</a>
+					</li> 
+					<li>
+						<a href="#">
+							<span class="dt">NC 부평점</span>
+							<span class="dd">10,000원 [매장수령 가능]</span> 
+						</a>
+					</li> 
+				</ul>
+			</div>
+		</div>
+		<a href="#close" class="btn_close">닫기</a>
+	</div>
+</div>
+<!-- //LAYER BRANCH -->
+
+<!-- LAYER INQUIRY -->
+<div id="lyr_inquiry" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">상품문의</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="inq_txt">
+				고객님의 개인정보 노출을 막기 위하여<br/>
+				게시글에 이메일, 휴대폰번호, 주민번호와 같은<br/>
+				<em>개인정보는 기록하지 않도록 주의</em>하여 주십시오.
+			</div>
+			<dl class="inq_form">		
+				<dt class="ir"><label for="inq_type">문의유형</label></dt>
+				<dd>
+					<select id="inq_type">
+						<option selected="selected">문의유형을 선택해 주세요.</option>
+						<option>문의유형1</option>
+					</select>
+				</dd>
+				<dt class="ir"><label for="inq_tit">제목</label></dt>
+				<dd><input type="text" class="input" name="inq_tit" id="inq_tit" onKeyUp="limitText('inq_tit', 100);" onMouseUp="this.onkeyup;" placeholder="제목을 입력해 주세요. (최대 50자까지 입력 가능)" /></dd>
+				<dt class="ir"><label for="inq_cont">내용</label></dt>
+				<dd>
+					<textarea  name="inq_cont" id="inq_cont" rows="8" cols="50" onKeyUp="limitText('inq_cont', 2000);" onMouseUp="this.onkeyup;" placeholder="상품관련 이외의 배송,결제, 교환/반품에 관한 문의는\n고객센터 1:1 문의 게시판에 문의해 주세요."></textarea>
+					<div class="txt">최대 1000자까지 입력 가능 합니다.</div>
+				</dd>
+			</dl>
+			<div class="inq_noti">상품과 관련 없는 내용, 미풍양속을 해치는 글, 특정 성분의 효능을 언급하는 글, 지나치게 주관적인 글은 통보 없이 삭제될 수 있습니다.</div>
+			<div class="inq_btn">
+				<button type="button">취소</button>
+				<button type="button">문의하기</button>
+			</div>
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //LAYER INQUIRY -->
+
+<!-- layer_popup : 카드혜택 -->
+<div id="pop_card" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">카드혜택</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+
+			<div class="card_tit"><strong>무이자할부 안내</strong></div>
+			<table class="tbl_address mt10">
+				<caption>무이자할부 안내 테이블 이며 카드사, 적용금액, 할부개월 ,기간순으로 제공합니다.</caption>
+				<colgroup>
+					<col style="width:25%;">
+					<col >
+				</colgroup>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-01.gif" alt="비씨카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-02.gif" alt="KB국민카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-03.gif" alt="외환카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-04.gif" alt="삼성카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-05.gif" alt="신한카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-08.gif" alt="현대카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+			</table>
+
+			<div class="card_tit mt20"><strong>부분 무이자할부 안내</strong></div>
+			<table class="tbl_address mt10">
+				<caption>부분 무이자할부 안내 테이블 이며 카드사, 적용금액, 할부개월, 고객 부담 수수료순으로 제공합니다.</caption>
+				<colgroup>
+					<col style="width:25%;">
+					<col >
+				</colgroup>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-09.gif" alt="롯데카드"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-11.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-12.gif" alt="수협"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-14.gif" alt="우리카드"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-15.gif" alt="NH농협카드"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-16.gif" alt="제주은행"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+			</table>
+
+			<div class="card_tit mt20"><strong>청구할인 프로모션</strong></div>
+			<table class="tbl_address mt10">
+				<caption>청구할인 프로모션 테이블 이며 카드사, 적용금액, 할인내역 ,기간순으로 제공합니다.</caption>
+				<colgroup>
+					<col style="width:25%;">
+					<col >
+				</colgroup>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-17.gif" alt="광주은행"></span></td>
+					<td>
+						3만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-18.gif" alt="전북은행"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-24.gif" alt="하나카드"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+			</table>
+
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 카드혜택 -->
+
+<!--재입고 알림 레이어 -->
+<div id="reware_layer" class="layer_fix ship">
+	<h3 class="pop_tit">재입고 알림</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="relyr">
+				<div class="prd_group">
+					<div class="reware">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+						</div>
+						<!-- 옵션 선택 -->
+						<div class="opt_open">
+							<dl>
+								<dt>색상</dt>
+								<dd>
+									<select class="w100">
+										<option>베이지브라운</option>
+									</select>
+								</dd>
+								<dt>사이즈</dt>
+								<dd>
+									<select class="w100">
+										<option>55</option>
+									</select>
+								</dd>
+							</dl>
+						</div>
+						<!-- //옵션 선택 -->
+					</div>
+				</div>
+				<div class="reg_num">휴대폰 번호 <em>010-****-1123</em></div>
+				<div class="my_noti">
+					<ul>
+						<li>재입고알림 신청 상품을 삭제하시면 신청이 취소됩니다.</li>
+						<li>알림 신청 당시의 상품구성, 가격은 재입고시 변경될 수  있습니다.</li>
+						<li> 재입고알림 신청목록은 최대 30개 이며, 보관일은 30일 입니다.</li>
+						<li>한 상품에서 재입고 알림은 최대 3번까지 진행됩니다.  (단, 재입고알림 내역에서 삭제 후 추가시 알림이 다시 진행됩니다.)</li>
+					</ul>
+				</div>
+				<button class="btn_bg06 c01"><strong>재입고 알림 신청</strong></button>
+			</div>
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!--//재입고 알림 레이어 -->
+
+<!-- LAYER REVIEW : 포토리뷰레이어 170421 -->
+<div id="lyr_review" class="layer_fix">
+	<h3 class="pop_tit">포토리뷰 상세보기</h3>
+	<div class="pop_con">
+		<div class="review_wrap">
+			<div class="rv_list">
+				<div class="r_ico">
+					<span class="ico">BEST</span>
+					<span class="scr s45"><em class="ir">90</em></span>
+				</div>
+				<div class="r_usr">
+					<span class="id">USERID****</span>
+					<span class="date">2015.10.10</span>
+				</div>
+
+				<div class="review_lyr_bn" id="review_lyr_bn">
+					<div class="swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide"><span><img src="../images/pcweb/temp/bahus_review_662x350.jpg" alt="옷걸이" /></span></li>
+							<li class="swiper-slide"><span><img src="../images/pcweb/temp/bahus_review_1000x1333.jpg" alt="옷걸이2" /></span></li>
+							<li class="swiper-slide"><span><img src="../images/pcweb/temp/bahus_review_1200x675.jpg" alt="식탁" /></span></li>
+						</ul>
+					</div>
+					<div class="pagination">
+						<a href="#none" class="swiper-pagination-switch"><b class="ir">1번 이미지 보기</b></a>
+						<a href="#none" class="swiper-pagination-switch"><b class="ir">2번 이미지 보기</b></a>
+						<a href="#none" class="swiper-pagination-switch"><b class="ir">3번 이미지 보기</b></a>
+					</div>
+				</div>
+				<script type="text/javascript">
+
+					function set_review_lyr_bn(){
+						var wrap = $('#lyr_review .review_wrap');
+						var rv_bn = '#review_lyr_bn';
+						wrap.append('<div class="bahus_nav_gd"><a href="#" class="prev"><b class="ir">이전</b></a><a href="#" class="next"><b class="ir">다음</b></a></div>');
+						if($('#main_top').length>0){$('#main_top').hide()}
+						$('#lyr_review .bahus_btn_close, #lyr_review .bt_close').on('click', function(){
+							if($('#main_top').length>0){$('#main_top').show()}
+							wrap.find('.bahus_nav_gd').remove();
+							if (typeof review_lyr_bn != 'undefined') {
+								review_lyr_bn.destroy();
+								review_lyr_bn = undefined;
+							}
+						})
+						if($(rv_bn).length>0 ){
+							h_review_lyr_bn();
+							var total = $(rv_bn+' .swiper-slide').length;
+							var review_lyr_bn = new Swiper(rv_bn+' .swiper-container',{
+								createPagination: false,
+								initialSlide:0,
+								calculateHeight:true,
+								simulateTouch: true,
+								pagination: rv_bn+' .pagination',
+								loop: false,
+								paginationClickable: true,
+								onTouchEnd : function() {
+									var matrix = $(rv_bn+' .swiper-wrapper').css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+									var matrix_x = matrix[12] || matrix[4];
+									var s_width = $(rv_bn+' .swiper-slide').width();
+									if(matrix_x >= (0+20)){ //first slide prev touch
+										alert('PREV REVIEW')
+										return false;
+									}
+									if(matrix_x <= (-(s_width*(total-1)-20))){ //last slide next touch
+										alert('NEXT REVIEW')
+										return false;
+									}
+								}
+							});
+							review_lyr_bn.swipeTo(0, 0 , 0 );
+							wrap.find('.bahus_nav_gd .prev').on('click', function(e){
+								if($(rv_bn+' .swiper-slide-active').index() == 0){ //first slide prev click
+									alert('PREV REVIEW')
+								}else{
+									e.preventDefault();review_lyr_bn.swipePrev();
+								}
+							})
+							wrap.find('.bahus_nav_gd .next').on('click', function(e){
+								if($(rv_bn+' .swiper-slide-active').index() == total - 1){ //last slide next click
+									alert('NEXT REVIEW')
+								}else{
+									e.preventDefault();review_lyr_bn.swipeNext();
+								}
+							})
+							review_lyr_bn.reInit()
+							$(window).resize(function(){	h_review_lyr_bn()})
+						}else{ 
+							//only text review
+							wrap.find('.bahus_nav_gd .prev').on('click', function(e){alert('PREV REVIEW')})
+							wrap.find('.bahus_nav_gd .next').on('click', function(e){alert('NEXT REVIEW')});
+						}
+					}
+					function h_review_lyr_bn(){ //슬라이더 내부 이미지정렬
+						var h = $(window).width()-24;
+						$('#review_lyr_bn .swiper-container, #review_lyr_bn .swiper-slide').css('height', h + 'px');
+						$('#review_lyr_bn .swiper-slide span').css({'height':h + 'px','width':h + 'px'})
+						rectangle_lineup('.review_lyr_bn .swiper-slide'); 
+					}
+				</script>
+
+				<div class="r_gd">
+					<div class="info">
+						<div class="r_rec">고객추천</div>
+						<ul>
+							<li><span class="dt">품질</span><span class="scr s45"><em class="ir">95</em></span></li>
+							<li><span class="dt">배송</span><span class="scr s40"><em class="ir">80</em></span></li>
+							<li><span class="dt">연령</span><span class="dd">26~30세</span></li>
+							<li><span class="dt">사이즈</span><span class="dd">화면과 같아요</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="r_opt">선택04)CHARA [예약판매] 오크테이블CHARA [예약판매] 오크테이블</div>
+				<div class="rv_text">
+					세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요.<br />
+					옆쪽에 본드가 좀 뭍은것이 왔지만 잘보이지 않는 곳이라 다행이네요. 신발은 따뜻하고 편해요. 버클이 좀 없어보 이긴 하지만. 세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔 주셨네요. 옆쪽에 본드가 좀 뭍은것이 왔지만 잘보이지 않는 곳이라 다행이네요. 신발은 따뜻하고 편해요. 버클이 좀 없어보이긴 하지만 세무재질에본드가 뭍어 교환요청했는데 바로 바꿔주셨네요.
+				</div>
+				<div class="rv_btn">
+					<span>이 상품평이 도움이 되셨나요?</span>
+					<button type="button"><em>네, 도움이 되었습니다.</em></button>
+					<button type="button" class="on"><em>네, 도움이 되었습니다.</em></button><!-- 170210 버튼 선택시 추가 -->
+				</div>
+				<div class="rv_rst">“999명이 이 상품평이 도움이 된다고 선택하셨습니다.”</div>
+			</div>
+			<!-- <div class="bahus_nav_gd">
+				<a href="#" class="prev"><b class="ir">이전</b></a>
+				<a href="#" class="next"><b class="ir">다음</b></a>
+			</div> -->
+			<div class="btn_gd_rv">
+				<button type="button" class="bt_close" onClick="fn_layer_close('lyr_review');return false">닫기<span class="ir">포토리뷰 상세보기 레이어 팝업 닫기</span></button>
+			</div>
+		</div>		
+	</div>
+	<a href="#close" class="bahus_btn_close" onClick="fn_layer_close('lyr_review');return false"><span class="ir">포토리뷰 상세보기 레이어 팝업 닫기</span></a>
+</div>
+<!--// LAYER REVIEW : 포토리뷰레이어 170421 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+<!-- [v2] : 추가 -->
+<script type="text/javascript" src="../common/js/common.ui.video.js"></script>
+<!-- //[v2] : 추가 -->
+<script>
+	/* [v2] : 유투브 동영상 플레이 */
+	var playerArr = [];
+	var vdoCurrentIDX; //현재 선택된 동영상 index
+	var playerState;//플레이 상태 
+	var youtubeVdoArray = [
+		{
+			yId : 'vdo_iframe1', 
+			yOpt : {width: '100%', height: '100%', videoId: 'aiHSVQy9xN8'}
+		}
+	];
+	var vdosLeng = youtubeVdoArray.length;
+	$('html').find('script').filter(function(){
+	    return $(this).attr('src') === 'https://s.ytimg.com/yts/jsbin/www-widgetapi-vfllLD3qZ/www-widgetapi.js'
+	}).remove();
+	commonUI.loadJs("https://s.ytimg.com/yts/jsbin/www-widgetapi-vfllLD3qZ/www-widgetapi.js");
+	/* //[v2] : 유투브 동영상 플레이 */
+</script>
+</body>
+</html>

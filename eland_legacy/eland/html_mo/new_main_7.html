@@ -1,0 +1,635 @@
+		<!-- SWIPER 7 : 이벤트 -->
+		<div class="slide_cont" data-index="4">
+			<!-- EVENT_BN -->
+			<div class="sub_bn_wrap" id="evt_bn_wrap">
+				<div class="evt_bn swiper-container" id="evt_bn">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/bn_evt_01.jpg" alt="이벤트배너1" /></a></li>
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/bn_evt_01.jpg" alt="이벤트배너2" /></a></li>
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/bn_evt_01.jpg" alt="이벤트배너3" /></a></li>
+					</ul>
+				</div>
+				<!-- 160401 버튼추가 -->
+				<a href="#" class="swiper-bn-left"><b class="ir">이전 배너 보기</b></a>
+				<a href="#" class="swiper-bn-right"><b class="ir">다음 배너 보기</b></a>
+				<!-- //160401 버튼추가 -->
+				<div class="pagination">
+					<a href="#" class="swiper-pagination-switch"><b class="ir">1번 이미지 보기</b></a>
+					<a href="#" class="swiper-pagination-switch"><b class="ir">2번 이미지 보기</b></a>
+					<a href="#" class="swiper-pagination-switch"><b class="ir">3번 이미지 보기</b></a>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					var myTop_bn = new Swiper('#evt_bn',{
+						createPagination: false,
+						simulateTouch: true,
+						calculateHeight: true,
+						pagination: '#evt_bn_wrap .pagination',
+						loop: true,
+						paginationClickable: true
+					});
+					$('#evt_bn_wrap').find('.swiper-bn-left').on('click', function(e){
+						e.preventDefault();myTop_bn.swipePrev();
+					})
+					$('#evt_bn_wrap').find('.swiper-bn-right').on('click', function(e){
+						e.preventDefault();myTop_bn.swipeNext();
+					});
+					$(window).resize(function(){	
+						myTop_bn.reInit();
+					});
+				});
+			</script>
+			<!--// EVENT_BN -->
+
+			<div class="info_grade vip">
+				<span class="tit"><em class="name">이랜드</em>님의<br />1월 구매등급은 <em class="grade">VIP</em> 입니다.</span>
+				<p class="grd_info">
+						<a href="#none" class="chk_btn"  onclick="fn_layer_open('pop_grade');return false;" onkeypress="this.onclick;" ><span>등급산정 내역 확인</span></a>
+				</p>
+				<p class="nxt_info">
+					<em class="nxt_grd">2월 VIP</em> 등급으로 상승하기 위해서는<br />
+					구매건수 <em class="num">9</em>건 / 구매금액은 <em class="num"> 99,999</em>원 이 필요합니다.
+					<span class="exp">(선정기간 : 2017.12~2018.03)</span>
+					<span class="caution">※ 취소/환불건 발생시 등급 산정에 반영됩니다.</span>
+					<span class="caution">※ 필요 구매 조건은 확인 시점에 따라 오차가 발생할 수 있습니다.</span>
+					<a href="#none" class="chk_btn"   onclick="fn_layer_open('pop_grade_ord');return false;" onkeypress="this.onclick;"><span>구매내역 확인</span></a>
+				</p>
+			</div>
+			<div class="info_grade no_login">
+				<span class="tit"><em class="name">로그인</em> 하시면 고객님의<br />구매등급/쿠폰을 확인하실 수 있습니다.</span>
+				<p class="nxt_info">
+					<a href="#none" class="chk_btn"><span>로그인</span></a>
+				</p>
+			</div>
+
+			<div class="bnft_tab">
+				<ul>
+					<li class="on"><a href="#none" class="bt1">등급별 혜택</a></li><!-- 170323 추가 -->
+					<li><a href="#none" class="bt2">쿠폰</a></li>
+					<li><a href="#none" class="bt3">출석체크</a></li>
+					<li><a href="#none" class="bt4">이벤트</a></li>
+				</ul>
+				<script type="text/javascript">
+					$(".bnft_tab a").click(function() {
+						$("body , html").animate({"scrollTop":($(".bnft_tab").offset().top)},500);
+						$(this).parent().addClass("on").siblings().removeClass('on');
+						$('.tab_cont').removeClass('on');
+						$('#'+$(this).attr('class')).addClass('on');
+					});
+				</script>
+			</div>
+
+			<div class="tab_cont on" id="bt1">
+				<div class="grade_warp off vip"> <!-- 현재 등급 class : vip,gld,slv,brz -->
+					<div class="grade_set vip">
+						<span class="grade_txt">
+							<span class="ico_grd"><em class="ir">구매등급 아이콘  : VIP</em></span>
+							<strong class="grd"><em>VIP</em> 혜택</strong>
+							최근 3개월 6건이상/<em class="req">50만원이상</em> 구매
+						</span>
+						<div class="new_cpn">
+							<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+							<span class="cp_tit">장바구니쿠폰</span>
+							<span class="cp_con">7%</span>
+							<span class="req">최대 2만원</span>
+						</div>
+						<div class="new_cpn">
+							<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+							<span class="cp_tit">장바구니쿠폰</span>
+							<span class="cp_con">3,000</span>
+							<span class="req">5만원 이상 구매</span>
+						</div>
+						<div class="new_cpn">
+							<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+							<span class="cp_tit">배송비 쿠폰</span>
+							<span class="cp_con">3,000</span>
+							<span class="req">1만원 이상 구매</span>
+						</div>
+						<button type="button" class="cpn_btn"><em>전체쿠폰 다운로드</em></button>
+					</div>
+
+					<div class="grade_set gld">
+						<span class="grade_txt">
+							<span class="ico_grd"><em class="ir">구매등급 아이콘  : Gold</em></span>
+							<strong class="grd"><em>Gold</em> 혜택</strong>
+							최근 3개월 4건이상/<em class="req">30만원이상</em> 구매
+						</span>
+						<div class="new_cpn">
+							<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+							<span class="cp_tit">장바구니쿠폰</span>
+							<span class="cp_con">7%</span>
+							<span class="req">최대 1만원</span>
+						</div>
+						<div class="new_cpn">
+							<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+							<span class="cp_tit">장바구니쿠폰</span>
+							<span class="cp_con">3,000</span>
+							<span class="req">5만원 이상 구매</span>
+						</div>
+						<button type="button" class="cpn_btn"><em>전체쿠폰 다운로드</em></button>
+					</div>
+
+					<div class="grade_set slv">
+						<span class="grade_txt">
+							<span class="ico_grd"><em class="ir">구매등급 아이콘  : Silver</em></span>
+							<strong class="grd"><em>Silver</em> 혜택</strong>
+							최근 3개월 2건이상/<em class="req">10만원이상</em> 구매
+						</span>
+						<div class="new_cpn">
+							<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+							<span class="cp_tit">장바구니쿠폰</span>
+							<span class="cp_con">5%</span>
+							<span class="req">최대 1만원</span>
+						</div>
+						<button type="button" class="cpn_btn"><em>전체쿠폰 다운로드</em></button>
+					</div>
+
+					<div class="grade_set brz">
+						<span class="grade_txt">
+							<span class="ico_grd"><em class="ir">구매등급 아이콘  : Bronze</em></span>
+							<strong class="grd"><em>Bronze</em> 혜택</strong>
+							최근 3개월 1이상/<em class="req">50만원이상</em> 구매
+						</span>
+						<div class="new_cpn">
+							<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+							<span class="cp_tit">장바구니쿠폰</span>
+							<span class="cp_con">3,000</span>
+							<span class="req">5만원 이상 구매</span>
+						</div>
+						<button type="button" class="cpn_btn fin"><em>쿠폰받기 완료</em></button>
+					</div>
+				</div>
+				<button class="bnf_tog close off">전체등급 혜택 닫기</button>
+				<button class="bnf_tog open">전체등급 혜택 보기</button>
+				<script>
+					$(".bnf_tog").click(function(){
+						$(".bnf_tog").toggleClass('off');
+						$(".grade_warp").toggleClass('off');
+						$("body , html").animate({"scrollTop":($(".grade_warp").offset().top)},500);
+					});
+				</script>
+				<div class="info_i">
+					<dl class="dashed">
+						<dt>꼭 읽어주세요.</dt>
+						<dd class="app_cpn_info"><span class="ico">APP</span>전용 쿠폰은 APP으로 이용하실때  사용할 수 있습니다.</dd>
+						<dd class="app_cpn_info"><span class="ico">APP</span>버튼을 클릭하면 이랜드몰 APP으로 이용하실 수 있습니다.</dd>
+						<dd>구매등급은 매월 1일 오전 9시에 최근 3개월 기준 구매실적으로 반영됩니다.</dd>
+						<dd>구매 건수/구매 금액은 실결제 금액 기준이며 쿠폰, 포인트, 복지포인트 적용금액은 제외됩니다</dd>
+						<dd>등급 산정기간 내에 취소/교환/반품 금액은 바로 반영되며,등급 산정 이후 취소건은 취소 당월에 반영됩니다. </dd>
+						<dd>등급별 쿠폰은 매월 ID당 쿠폰별로 1회 한정 발급되며 발급 당월 말일까지 사용 가능합니다.</dd>
+						<!-- 2018.03.14 삭제<dd>APP 전용 쿠폰으로 APP으로 구매 할 때 사용 가능합니다. </dd> -->
+						<dd>쿠폰 공통적용제외
+							<ul class="circle">
+								<li><span class="bullet">①</span> 가전/디지털/숙박/외식/e티켓 카테고리 상품</li>
+								<li><span class="bullet">②</span> 뉴발란스/뉴발란스키즈/모던하우스/버터/펫본/페스페스/스웰/바후스 상품</li>
+								<li><span class="bullet">③</span> 이벤트/예약/묶음/세트/일부 할인상품</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+
+			<div class="tab_cont" id="bt2">
+				<div class="evt_coupon">
+					<div class="tit">스페셜 쿠폰</div>
+
+					<div class="tabmenu">
+						<ul class="coupon_list">
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+										<span class="txt">즉시할인쿠폰즉시할인쿠폰즉시할인쿠폰즉시할인쿠폰즉시할인쿠폰</span>
+										<span class="pri"><em>5,000</em>원</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.01 - 2017.03.31</p>
+									<p class="txt">싸게삼 가전/디지털 상품 5% 할인쿠폰</p><p class="company">구매금액 제한 없음 (단, 일부상품 제외) 최대 3만원 할인</p>
+								</div>
+								<div class="down">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+							<li class="complete"> <!-- 다운로드 완료한 쿠폰 -->
+								<!-- <div class="fin_down">
+									<span>쿠폰받기<br />완료</span>
+								</div> -->
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>10</em>%</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.01 - 2017.03.31</p>
+									<p class="txt">싸게삼 주방생활수납 상품  10% 할인쿠폰</p><p class="company">구매금액 제한 없음<br>(단, 일부상품 제외)</p><p class="company">최대 5,000원 할인</p>
+								</div>
+								<div class="down">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>20</em>%</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.20 - 2017.03.27</p>
+									<p class="txt">슈퍼위크 주방/생활/수납 10% 할인쿠폰 [MD]</p><p class="company">구매금액 제한 없음<br>(단, 일부상품 제외)</p><p class="company">최대 5,000원 할인</p>
+								</div>
+								<div class="down ok">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">장바구니 쿠폰</span>
+										<span class="pri"><em>3</em>만원</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.20 - 2017.03.26</p>
+									<p class="txt">오늘의 럭키딜 15% 상품쿠폰</p><p class="company">구매금액 제한 없음<br>(단, 일부상품 제외)</p>
+								</div>
+								<div class="down">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>20</em>%</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.13 - 2017.03.26</p>
+									<p class="txt">[KB카드]가전/디지털 해외직구상품/웨딩페어 7% 할인</p><p class="company">구매금액 제한 없음<br>(단, 일부상품 제외)</p><p class="company">최대 5만원 할인</p>
+								</div>
+								<div class="down">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="evt_coupon">
+					<div class="tit">기획전 쿠폰</div>
+
+					<div class="tabmenu">
+						<ul class="coupon_list">
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+										<span class="txt">즉시할인쿠폰즉시할인쿠폰즉시할인쿠폰즉시할인쿠폰즉시할인쿠폰</span>
+										<span class="pri"><em>5,000</em>원</span>
+									</div>
+									<a href="#none" class="rel_gds"><em class="ir">상품보러가기</em></a>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.01 - 2017.03.31</p>
+									<p class="txt">싸게삼 가전/디지털 상품 5% 할인쿠폰</p><p class="company">구매금액 제한 없음 (단, 일부상품 제외) 최대 3만원 할인</p>
+								</div>
+								<div class="down">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+							<li class="complete"> <!-- 다운로드 완료한 쿠폰 -->
+								<!-- <div class="fin_down">
+									<span>쿠폰받기<br />완료</span>
+								</div> -->
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>10</em>%</span>
+									</div>
+									<a href="#none" class="rel_gds"><em class="ir">상품보러가기</em></a>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.01 - 2017.03.31</p>
+									<p class="txt">싸게삼 주방생활수납 상품  10% 할인쿠폰</p><p class="company">구매금액 제한 없음<br>(단, 일부상품 제외)</p><p class="company">최대 5,000원 할인</p>
+								</div>
+								<div class="down">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>20</em>%</span>
+									</div>
+									<a href="#none" class="rel_gds"><em class="ir">상품보러가기</em></a>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.20 - 2017.03.27</p>
+									<p class="txt">슈퍼위크 주방/생활/수납 10% 할인쿠폰 [MD]</p><p class="company">구매금액 제한 없음<br>(단, 일부상품 제외)</p><p class="company">최대 5,000원 할인</p>
+								</div>
+								<div class="down ok">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">장바구니 쿠폰</span>
+										<span class="pri"><em>3</em>만원</span>
+									</div>
+									<a href="#none" class="rel_gds"><em class="ir">상품보러가기</em></a>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.20 - 2017.03.26</p>
+									<p class="txt">오늘의 럭키딜 15% 상품쿠폰</p><p class="company">구매금액 제한 없음<br>(단, 일부상품 제외)</p>
+								</div>
+								<div class="down">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>20</em>%</span>
+									</div>
+									<a href="#none" class="rel_gds"><em class="ir">상품보러가기</em></a>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2017.03.13 - 2017.03.26</p>
+									<p class="txt">[KB카드]가전/디지털 해외직구상품/웨딩페어 7% 할인</p><p class="company">구매금액 제한 없음<br>(단, 일부상품 제외)</p><p class="company">최대 5만원 할인</p>
+								</div>
+								<div class="down">
+									<a href="#"><span>쿠폰<br>다운로드</span></a>
+								</div>
+							</li>
+						</ul>
+						<div class="info">쿠폰을 다운로드 하시고 "마이페이지 > 쿠폰조회" 에서 다운로드 쿠폰을 확인하세요.</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab_cont" id="bt4">
+				<div class="evt_bnts">
+					<button type="button" class="evt_btn card"  onclick="OpacityLyrOpen('pop_card');return false" onkeypress="this.onclick;"><span>카드 무이자 할부 혜택</span></button>
+					<a href="#none" class="evt_btn"><span>이벤트 당첨자 확인</span></a>
+				</div>
+				<!-- <div class="evt_normal">
+					<div class="tit">진행중 이벤트</div>
+					<div class="nor_wrap">
+						<ul>
+							<li><a href="#"><img src="../images/mobile/my/evtban_208x302_06.jpg" alt="이득데이"></a></li>
+							<li><a href="#"><img src="../images/mobile/my/evtban_208x302_07.jpg" alt="E-아울렛"></a></li>
+							<li><a href="#"><img src="../images/mobile/my/evtban_208x302_03.jpg" alt="공동구매"></a></li>
+							<li><a href="#"><img src="../images/mobile/my/evtban_208x302_05.jpg" alt="포토샹품평"></a></li>
+						</ul>
+					</div>
+				</div> -->
+				<div class="evt_list">
+					<div class="tit">진행중 이벤트</div>
+					<ul>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/img_evt1.jpg" alt="이벤트 이미지1">
+								<span class="tbox">
+									<em>E-LAND MALL 첫 결제시E-LAND MALL 첫 결제시E-LAND MALL 첫 결제시E-LAND MALL 첫 결제시E-LAND MALL 첫 결제시E-LAND MALL 첫 결제시E-LAND MALL 첫 결제시</em>
+									<b class="day">2016.02.01 - 2016.03.16</b>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/img_evt2.jpg" alt="이벤트 이미지2">
+								<span class="tbox">
+									<em>E-LAND MALL 첫 결제시</em>
+									<b class="day">2016.02.01 - 2016.03.16</b>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/img_evt3.jpg" alt="이벤트 이미지3">
+								<span class="tbox">
+									<em>E-LAND MALL 첫 결제시</em>
+									<b class="day">2016.02.01 - 2016.03.16</b>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- layer_popup : 카드혜택 -->
+			<div id="pop_card" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+				<h3 class="pop_tit">카드혜택</h3>
+				<div class="pop_con">
+					<div class="pop_txt">
+
+						<div class="card_tit"><strong>무이자할부 안내</strong></div>
+						<div class="div_ntx"><em>* </em>법인카드와 선불카드는 무이자(부분) 할부혜택이 제외됩니다.</div><!-- 2017-01-23 -->
+						<table class="tbl_address mt10">
+							<caption>무이자할부 안내 테이블 이며 카드사, 적용금액, 할부개월 ,기간순으로 제공합니다.</caption>
+							<colgroup>
+								<col style="width:25%;">
+								<col >
+							</colgroup>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-01.gif" alt="비씨카드"></span></td>
+								<td>
+									5만원 이상 (2,3,4,5 개월)
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-02.gif" alt="KB국민카드"></span></td>
+								<td>
+									5만원 이상 (2,3,4,5 개월)
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-03.gif" alt="외환카드"></span></td>
+								<td>
+									5만원 이상 (2,3,4,5 개월)
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-04.gif" alt="삼성카드"></span></td>
+								<td>
+									5만원 이상 (2,3,4,5 개월)
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-05.gif" alt="신한카드"></span></td>
+								<td>
+									5만원 이상 (2,3,4,5 개월)
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-08.gif" alt="현대카드"></span></td>
+								<td>
+									5만원 이상 (2,3,4,5 개월)
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+						</table>
+
+						<div class="card_tit mt20"><strong>부분 무이자할부 안내</strong></div>
+						<table class="tbl_address mt10">
+							<caption>부분 무이자할부 안내 테이블 이며 카드사, 적용금액, 할부개월, 고객 부담 수수료순으로 제공합니다.</caption>
+							<colgroup>
+								<col style="width:25%;">
+								<col >
+							</colgroup>
+							<tr>
+								<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-09.gif" alt="롯데카드"></span></td>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-11.gif" alt="씨티뱅크"></span></td>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-12.gif" alt="수협"></span></td>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-14.gif" alt="우리카드"></span></td>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-15.gif" alt="NH농협카드"></span></td>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-16.gif" alt="제주은행"></span></td>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									5만원 이상 (6개월)
+									<p class="fc02">1회차 수수료 고객 부담</p>
+								</td>
+							</tr>
+						</table>
+
+						<div class="card_tit mt20"><strong>청구할인 프로모션</strong></div>
+						<table class="tbl_address mt10">
+							<caption>청구할인 프로모션 테이블 이며 카드사, 적용금액, 할인내역 ,기간순으로 제공합니다.</caption>
+							<colgroup>
+								<col style="width:25%;">
+								<col >
+							</colgroup>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-17.gif" alt="광주은행"></span></td>
+								<td>
+									3만원 이상
+									<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-18.gif" alt="전북은행"></span></td>
+								<td>
+									5만원 이상
+									<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-24.gif" alt="하나카드"></span></td>
+								<td>
+									5만원 이상
+									<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+								<td>
+									5만원 이상
+									<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+								<td>
+									5만원 이상
+									<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+								<td>
+									5만원 이상
+									<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+									<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+								</td>
+							</tr>
+						</table>
+
+					</div>   
+				</div>
+				<a href="#close" class="btn_close" onclick="OpacityLyrCls('pop_card');return false;" onkeypress="this.onclick;"><span class="ir">팝업 닫기</span></a>
+			</div>
+			<!-- //layer_popup : 카드혜택 -->
+
+		</div>
+		<!-- //SWIPER 7 : 이벤트 -->

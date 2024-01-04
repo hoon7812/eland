@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no">
+
+    <title>Shoopen - Mobile Web</title>
+	<link rel="shortcut icon" href="../images/icon/favicon.ico" type="image/x-icon">
+
+    <style>
+        body {margin:0;padding:0;color:#000;font-family:'Droid Sans','Malgun Gothic','Apple-Gothic','애플고딕','Tahoma',dotum,'돋움',gulim,'굴림',sans-serif;font-size:12px;font-weight:normal;letter-spacing:-1px;-webkit-text-size-adjust:none;}
+        div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,select,textarea,p,blockquote,th,td,legend{margin:0;padding:0;}
+        form,fieldset,img{border:0;}
+        table{border-spacing:0;border-collapse:collapse;}
+        hr,legend,caption{display:none;}
+        img,fieldset{border:0 none;}
+        ul,ol,li{list-style:none outside;}
+        img,input,select,textarea{vertical-align:middle;}
+        a{display:inline-block;text-decoration:none;color:#3b3b3b;}
+        a:link,a:hover,a:active{text-decoration:none;}
+        li,p,dt,dd,div,span,em{font-style:normal;font-weight:normal;word-break:break-all;}
+        header {display:block;min-width:320px;}
+        h1 a{display:block;min-width:320px;padding:5px;color:#fff;font-size:14px;font-weight:bold;line-height:32px;text-align:center;font-family:'Tahoma';background:#000;letter-spacing:1px;}
+        .codinglist{min-width:320px;border-bottom:1px solid #ccc;}
+        .codinglist li{overflow:hidden;width:100%;border-top:1px solid #ccc;font-size:14px;line-height:1.8;letter-spacing:0;}
+        .codinglist li a{display:block;position:relative;padding:10px 70px 10px 16px;color:#333;}
+        .codinglist li a[href^='#tg_']{padding-left:32px;font-weight:bold;color:#000;}
+        .codinglist li a[href^='#tg_']:before{content:'';position:absolute;top:50%;width:0;height:0;margin-top:-5px;margin-left:-16px;border-top:8px solid #aaa;border-left:4px solid transparent;border-right:4px solid transparent;-webkit-transition:0.5s;transition:0.5s;}
+        .codinglist ul{display:none;}
+        .codinglist ul{background:#f5f5f5}
+        .codinglist ul ul{background:#e8e8e8}
+        .codinglist ul ul ul{background:#dcdcdc}
+        .codinglist li li a{position:relative;padding-left:32px;font-size:14px;color:#000;}
+		.codinglist li li a span{display:block;position:absolute;right:16px;top:10px;line-height:12px;text-align:right;}
+		.codinglist li li a .date{display:block;font-size:11px;color:#888;}
+		.codinglist li li a .name{display:block;margin-top:3px;font-size:12px;color:#666;}
+		.codinglist li li .lyr{position:relative;right:0;top:0;margin:0 0 0 8px;text-align:left;}
+		.codinglist li li .lyr em{display:block;position:relative;margin-top:4px;padding-left:4px;font-size:11px;color:#888;}
+		.codinglist li li .lyr em:before{content:'';display:block;position:absolute;left:0;top:6px;width:2px;height:2px;background:#888;}
+        .codinglist li li a[href^='#tg_']{padding-left:48px;}
+        .codinglist li li li a{padding-left:48px;}
+        .codinglist li li li a[href^='#tg_']{padding-left:68px;}
+        .codinglist li li li li a{padding-left:68px;}
+        .codinglist .selected[href^='#tg_']:before{border-top-color:#333;-webkit-transform:scaleY(-1);transform:scaleY(-1);}
+        .codinglist > li > a.selected{color:#d10011;}
+        .codinglist > li > a.selected[href^='#tg_']:before{border-top-color:#d10011;}
+        .codinglist li a.v{background-color:#fdffef;}
+        .cGuide {background:#eee;text-align:right;}
+        .cGuide a{display:block;padding:10px;color:#333;letter-spacing:0;}
+		.cUrl{margin-top:10px;font-size:12px;line-height:16px;color:#888;text-align:center;letter-spacing:0;}
+        li.del a, li.del a *{color:#999 !important;}
+        li.del a > div:before{content:'DEL ';color:#d58787;font-size:0.7em;letter-spacing:0;vertical-align:top;}
+        .new {color:#133db4 !important;}
+    </style>
+    <script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+<body>
+<header>
+    <h1><a href="index.html">Shoopen - Mobile Web</a></h1>
+</header>
+<section>
+    <ul class="codinglist">
+		<!-- 메인 -->
+        <li id="tg_main"><a href="#tg_main">메인</a>
+            <ul class="sub">
+            	<li>
+        			<a href="main/main.html" target="_blank">홈</a>
+                </li>
+            </ul>
+        </li>
+		<!--// 메인 -->
+
+		<!-- 큐레이션 -->
+        <li id="tg_cura"><a href="#tg_cura">큐레이션</a>
+            <ul>
+            	<li>
+					<a href="common/collect.html" target="_blank">모아보기</a>
+				</li>
+                <li>
+					<a href="cura/curation.html" target="_blank">큐레이션 메인
+						<span class="lyr">
+							<em>기획전</em>
+							<em>랭킹</em>
+							<em>룩북</em>
+							<em>매거진</em>
+							<em>이벤트</em>
+						</span>
+					</a>
+				</li>
+				<li><a href="cura/curation_plan_dtl.html" target="_blank">기획전 상세</a></li>
+				<li><a href="cura/curation_raffle_dtl.html" target="_blank">래플 상세</a></li>
+				<li>
+					<a href="cura/curation_exp_dtl.html" target="_blank">체험단 상세</a>
+				</li>
+            </ul>
+        </li>
+		<!--// 큐레이션 -->
+
+		<!-- 전시 -->
+         <li id="tg_disp"><a href="#tg_disp">전시</a>
+            <ul>
+				<li id="tg_disp_ctg"><a href="#tg_disp_ctg">카테고리</a>
+					<ul>
+						<li>
+							<a href="disp/disp_atypical.html" target="_blank">비정형 - 아이콘 타입(신발의 기준 슈텐다드)</a>
+						</li>
+						<li>
+							<a href="disp/disp_atypical_noico.html" target="_blank">비정형 - 콜라보레이션</a>
+						</li>
+						<li>
+							<a href="disp/category_ms.html" target="_blank">대중소분류
+								<span class="lyr">
+									<em>상세 검색 필터</em>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="disp/best.html" target="_blank">매장 - BEST</a>
+						</li>
+						<li>
+							<a href="disp/new.html" target="_blank">매장 - NEW</a>
+						</li>
+						<li>
+							<a href="disp/sale.html" target="_blank">매장 - SALE</a>
+						</li>
+					</ul>
+				</li>
+				<li id="tg_disp_sch"><a href="#tg_disp_sch">검색</a>
+					<ul>
+						<li>
+							<a href="sch/search_layer.html" target="_blank">검색 레이어</a>
+						</li>
+						<li>
+							<a href="sch/search_result.html" target="_blank">검색 결과</a>
+						</li>
+						<li>
+							<a href="sch/search_result_none.html" target="_blank">검색 결과 없음</a>
+						</li>
+					</ul>
+				</li>
+            </ul>
+        </li>
+		<!--// 전시 -->
+
+		<!-- 상품상세 -->
+        <li id="tg_goods"><a href="#tg_goods">상품상세</a>
+            <ul>
+                <li>
+					<a href="gds/details.html" target="_blank">상품상세
+						<span class="lyr">
+							<em>SNS 공유하기</em>
+							<em>상품 동영상 보기</em>
+							<em>상세설명</em>
+							<em>상품후기 보기</em>
+							<em>포토리뷰 상세보기</em>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="gds/details_set.html" target="_blank">상품상세_세트상품
+						<span class="lyr">
+							<em>상품 옵션 상세</em>
+						</span>
+					</a>
+				</li>
+            </ul>
+        </li>
+		<!--// 상품상세 -->
+
+		<!-- 장바구니 -->
+        <li id="tg_order"><a href="#tg_order">장바구니</a>
+            <ul>
+                <li>
+        			<a href="ord/cart.html" target="_blank">장바구니 / 찜한 상품
+        			</a>
+                </li>
+                <li>
+        			<a href="ord/cart_nolist.html" target="_blank">장바구니 상품 없는 케이스 / 찜한 상품
+        			</a>
+                </li>
+            </ul>
+        </li>
+		<!--// 장바구니/주문서 -->
+
+
+		<!-- 마이페이지 -->
+		<li id="tg_mys"><a href="#tg_mys">마이페이지</a>
+		    <ul class="sub">
+		        <li><a href="mys/mys_main.html" target="_blank">마이페이지 메인</a></li>
+				<li id="tg_mys_A"><a href="#tg_mys_A">주문/배송조회</a>
+					<ul>
+						<li><a href="mys/mys_ord_delivery.html" target="_blank">목록</a></li>
+					</ul>
+				</li>
+				<li id="tg_mys_coupons"><a href="#tg_mys_coupons">쿠폰</a>
+					<ul>
+						<li><a href="mys/mys_cupons.html" target="_blank">쿠폰</a></li>
+						<li><a href="mys/mys_cupons_add.html" target="_blank">추가쿠폰</a></li>
+					</ul>
+				</li>
+				<li><a href="mys/mys_evt.html" target="_blank">이벤트 응모내역</a></li>
+				<li><a href="mys/mys_stores.html" target="_blank">전국 매장안내</a></li>
+				 <li><a href="mys/mys_map.html" target="_blank">매장 안내(지도)</a></li>
+				 <li><a href="mys/mys_notice.html" target="_blank">공지사항</a></li>
+				 <li><a href="mys/mys_review.html" target="_blank">리뷰/댓글</a></li>
+			</ul>
+		<!--// 마이페이지 -->
+
+    </ul>
+    <!-- <div class="cGuide"><a href="#">Guide</a></div> -->
+	<div class="cUrl">Shoopen</div>
+
+    <script>
+        (function($) {
+
+            var toggleList = (function() {
+                var depth = $('.codinglist a');
+
+                depth.each(function () {
+                    var self = $(this);
+
+                    self.on('click', function(e) {
+                        if(self.hasClass('selected') !== true){
+                            listOpen(self);
+                        } else {
+                            e.preventDefault();
+                            listClose(self);
+                        }
+                    });
+                });
+
+                var listOpen = function(item){
+                    var content = item.next();
+
+                    item.addClass('selected');
+                    content.slideDown(300);
+                }
+                var listClose = function(item){
+                    var content = item.next();
+
+                    item.removeClass('selected');
+                    content.slideUp(300);
+                    content.find('ul').hide();
+                    content.find('ul').prev().removeClass('selected');
+                }
+
+                var uiUrl = location.href,
+                    uiType = uiUrl.split('#')[1],
+                    firstItem,
+                    parentsItem;
+
+                if(uiType !== undefined){
+                    firstItem = $('#' + uiType).find('a:first');
+                    listOpen(firstItem);
+
+                    parentsItem = $('#' + uiType).parents('ul:not(.codinglist)');
+                    listOpen(parentsItem.prev());
+                }
+
+            }());
+		}(jQuery));
+
+    </script>
+</body>
+</html>

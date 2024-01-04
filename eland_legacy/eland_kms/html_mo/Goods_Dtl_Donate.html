@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="renewal2">	
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER -->
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+<!-- //INC_HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<!-- TITLE -->
+	<div class="cts_tit">
+		<h2>
+			<a href="#contents" class="ctg" id="ctab" onclick="fnToggleSlide('ctab', 'catg_nav')" onkeypress="this.onclick;" >상품상세<em class="ir">카테고리 열기</em></a>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>		
+			<a href="#sns_lyr" class="open_layer sns"><em class="ir">공유 하기</em></a>	
+		</h2>
+	</div>
+	<!-- //TITLE -->
+
+	<!-- GOODS -->
+	<div class="goods_wrap">
+		<!-- NAV. -->
+		<div class="catg_nav" id="catg_nav" style="display:none">
+			<ul>
+				<li><a href="#">여성패션</a></li>
+				<li><a href="#">원피스</a></li>
+				<li>정장원피스</li>
+			</ul>
+		</div>	
+		<!-- //NAV. -->
+
+		<!-- GOODS IMAGES -->
+		<div class="goods_img" id="goods_img">
+			<div class="gd_img swiper-container" id="gd_img">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="알토 포트메리온 상품 앞면 사진" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="알토 포트메리온 상품 좌측면 사진" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="알토 포트메리온 상품 우측면 사진" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="알토 포트메리온 상품 후면 사진" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="알토 포트메리온 상품 웟면 사진" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="알토 포트메리온 상품 정면확대 사진1" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="알토 포트메리온 상품 정면확대 사진2" /></li>
+				</ul>
+			</div>
+			<div class="counter"><b class="num_active">1</b>/<span class="num_total">1</span></div>
+			<div class="pagination"></div>
+		</div>
+		<div class="goods_img_clr">
+			<ul>     
+				<li><a href="#" data-clr="0" class="clr"><em><img src="../images/mobile/temp/img_color_1.png" width="54" height="54" alt="파랑" /></em></a></li>
+				<li><a href="#" data-clr="1" class="clr"><em><img src="../images/mobile/temp/img_color_2.png" width="54" height="54" alt="분홍" /></em></a></li>
+				<li><a href="#" data-clr="2" class="clr"><em><img src="../images/mobile/temp/img_color_3.png" width="54" height="54" alt="소라" /></em></a></li>
+				<li><a href="#" data-clr="3" class="clr"><em><img src="../images/mobile/temp/img_color_4.png" width="54" height="54" alt="고동" /></em></a></li>
+				<li><a href="#" data-clr="4" class="clr"><em><img src="../images/mobile/temp/img_color_5.png" width="54" height="54" alt="검정" /></em></a></li>
+				<li><a href="#" data-clr="5" class="clr"><em><img src="../images/mobile/temp/img_color_6.png" width="54" height="54" alt="그레이"/></em></a></li>
+				<li><span class="clr"><em><img src="../images/mobile/temp/img_color_8.png" width="54" height="54" alt="노랑" /></em></span></li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var myGoodsImg = new Swiper('#gd_img',{
+				createPagination: true,
+				simulateTouch: true,
+				loop: true,
+				calculateHeight: true,
+				pagination: '.goods_img .pagination', 
+				onSlideChangeStart : function() {
+					pageIndex();
+				}
+			});
+			
+			pageIndex();			
+			var GoodsImgClr;
+
+			function pageIndex() {
+				var idx = Math.ceil(myGoodsImg.activeLoopIndex)  + 1;
+				var total = Math.ceil( $(".goods_img .pagination span").length);
+				$('.goods_img .num_active').text(idx);
+				$('.goods_img .num_total').text(total);
+				
+				GoodsImgClr = $(".goods_img_clr").find('a');
+				GoodsImgClr.each(function(){
+					if($(this).attr('data-clr') == myGoodsImg.activeLoopIndex){
+						$(this).addClass("on");
+					}else{
+						$(this).removeClass("on");
+					}
+				});
+			}
+			
+			GoodsImgClr.on('click', function(){
+				var ImgNo = $(this).attr('data-clr');
+				myGoodsImg.swipeTo(ImgNo, 200);
+			});
+		});
+		</script>
+		<!-- //GOODS IMAGES -->
+
+		<!-- GOODS TITLE -->
+		<div class="goods_tit">
+			<div class="gd_brand">알토<a href="#">브랜드 바로가기</a></div>
+			<h3 class="gd_name">라보떼 센스 갤러리 2400 싱글장 세트 라보떼 센스 갤러리 2400 싱글장 세트</h3>
+		</div>
+		<!-- //GOODS TITLE -->
+
+		<!-- GOODS INFO. -->
+		<div class="goods_info">
+			
+			<div class="goods_dnt">이랜드인의 사랑을 보여주세요.</div>
+
+			<div class="goods_cont">
+				<div class="gd_md_htm">
+					<img src="../images/mobile/temp/img_mb_area.jpg" width="592" height="245" alt="MD 영역" />
+				</div>
+				<div class="gd_md_htm">
+					<img src="../images/mobile/temp/img_html_area.jpg" width="592" height="549" alt="HTML 영역" />
+				</div>
+				<div class="gd_img_htm">
+					<div class="g_tit">대표이미지</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_htm_txt.jpg" width="592" height="594" alt="대표이미지" /></div>
+					<div class="g_txt">멜란지 컬러감의 컬럭 블록 디테일이 적용되어 감각적인 외관을 연출하는 긴팔 원피스입니다. 피터팬 카라와 프린세스 절개라인이 여성스러운 감성을 보여줍니다.</div>
+				</div>
+				<div class="gd_img_htm">
+					<div class="g_tit">상세이미지</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_htm_txt.jpg" width="592" height="594" alt="상세이미지" /></div>
+					<div class="g_txt">멜란지 컬러감의 컬럭 블록 디테일이 적용되어 감각적인  외관을 연출하는 긴팔 원피스입니다.</div>
+				</div>
+				<div class="gd_img_htm">
+					<div class="g_tit">라벨 및 재질</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_htm_txt.jpg" width="592" height="594" alt="라벨 및 재질" /></div>
+					<div class="g_txt">부드러운 캐시미어 소재 입니다.</div>
+				</div>
+				<div class="gd_md_htm">
+					<img src="../images/mobile/temp/sample_html.jpg" width="592" height="702" alt="HTML 영역" />
+				</div>
+			</div>
+	
+		</div>
+		<!-- GOODS INFO. -->
+
+	</div>
+	<!-- //GOODS -->
+</div>
+<!-- //CONTENT -->
+
+<!-- GOODS ORDER BTN. -->
+<div class="goods_ord" id="goods_ord">
+	<div class="btns one"><!-- //20160322 -->	
+		<!-- <button type="button" data-lyr="#msg_lyr_zzim" class="zim open_layer"><em class="ir">찜하기</em></button> -->	
+		<button type="button" class="buy" >기부하기</button>	
+	</div>  
+</div>
+<!-- //GOODS ORDER BTN. -->
+
+<!-- GOODS OPTION LAYER - SELECT, DELETE CALL: function fnGoodsOptRefresh() -->
+<div id="goods_opt" class="goods_opt" style="display:none;">
+	<div class="gd_opt_wrap">
+		<div class="gd_opt_scroll">
+			<div class="gd_opt">
+				<div class="g_pnt">
+					<dl class="pnt">
+						<dt>보유하신 복지몰 포인트</dt>
+						<dd class="amt"><b>220,000</b>원</dd>
+						<dd class="tx">자기개발 120,000원 + 자율 10,000원</dd>
+					</dl>
+					<div class="use">
+						<label class="ir" for="point_dnt">검색하기</label>
+						<input type="text" class="input" name="point_dnt" id="point_dnt" placeholder="기부하실 포인트를 입력해 주세요." />
+					</div>
+					<div class="txt">기부하실 복지몰 포인트를 100원 단위로 입력해 주세요.</div>
+				</div>
+			</div>
+		</div>
+		<div class="gd_btns">
+			<button type="button" class="btn" disabled="disabled">기부하기</button>
+		</div>
+		<div class="gd_cls">
+			<button type="button"><em class="ir">닫기</em></button>
+		</div>
+	</div>
+</div>
+<!-- //GOODS OPTION LAYER -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>

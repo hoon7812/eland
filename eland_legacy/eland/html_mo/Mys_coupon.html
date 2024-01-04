@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//조회기간 선택
+	$(function(){
+		$(".sch_order li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+	//쿠폰 조회 탭
+	$(function(){
+		var tabAddr = $(".tabmenu .tab_tit > li");
+		var conAddr = $(".tabmenu .tab_con > div");
+
+		tabAddr.bind("click", function(){
+			addrId = $(this).index();
+
+			tabAddr.removeClass("on");
+			tabAddr.eq(addrId).addClass("on");
+			conAddr.removeClass("on");
+			conAddr.eq(addrId).addClass("on");
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>쿠폰 조회</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="my_coupon">
+		<div class="top_point">
+			<ul class="all">
+				<li>
+					<div class="txt">
+						<em>김이랜드</em>님 보유 쿠폰  <!-- 2018.01.30 한줄로 변경 되었습니다. -->
+					</div>
+					<div class="pit all"><em>99</em>장<a href="#" class="btn_coupon">쿠폰등록</a></div><!-- 160928 쿠폰등록 버튼 추가 -->
+				</li>
+			</ul>
+		</div>
+
+		<div class="coupon_box">
+			<div class="sch_order">
+				<ul>
+					<li><a href="#" class="on">1주일</a></li>
+					<li><a href="#">1개월</a></li>
+					<li><a href="#">3개월</a></li>
+					<li><a href="#">6개월</a></li>
+					<li><a href="#" class="set">기간설정</a></li>
+				</ul>
+				<div class="sch_period">
+					<div class="inp_box">
+						<input type="text" title="시작날짜" placeholder="예시)20160101">
+						<span class="dash">~</span>
+						<input type="text" title="종료날짜" placeholder="예시)20160101">
+					</div>
+					<div class="btn">
+						<a href="#">조회</a>
+					</div>
+					<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+				</div>
+			</div>
+
+			<div class="tabmenu">
+				<ul class="tab_tit">
+					<li class="on"><span>사용 가능쿠폰<em>(20장)</em></span></li>
+					<li><span>전체 발급쿠폰<em>(99장)</em></span></li>
+				</ul>
+				<span class="app_cpn_info"><span class="ico">APP</span>버튼을 클릭하면 이랜드몰 APP으로 이용하실 수 있습니다. </span>
+				<div class="tab_con">
+					<!-- 사용 가능쿠폰 -->
+					<div class="on">
+						<div class="tit">스페셜 쿠폰</div>
+						<div class="my_nolist">
+							<div class="txt">최근 1개월 내<br>사용 가능쿠폰이 <strong>없습니다.</strong></div>
+						</div>
+						<ul class="coupon_list">
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>5,000</em>원</span>
+									</div>
+									<button class="dtl_btn"  onclick="fn_layer_open('lyr_cpn_dtl1');return false;" onkeypress="this.onclick;"><em>상세내용보기</em></button>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>10</em>%</span>
+									</div>
+									<button class="dtl_btn"  onclick="fn_layer_open('lyr_cpn_dtl1');return false;" onkeypress="this.onclick;"><em>상세내용보기</em></button>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>20</em>%</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">장바구니 쿠폰</span>
+										<span class="pri"><em>3</em>만원</span>
+									</div>
+									<button class="dtl_btn"  onclick="fn_layer_open('lyr_cpn_dtl1');return false;" onkeypress="this.onclick;"><em>상세내용보기</em></button>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>10</em>%</span>
+									</div>
+									<button class="dtl_btn"  onclick="fn_layer_open('lyr_cpn_dtl1');return false;" onkeypress="this.onclick;"><em>상세내용보기</em></button>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<!-- 더보기 버튼 -->
+							<li class="last">
+								<div class="btn_more">
+									<a href="#"><span class="ico">더보기 (20/1000)</span></a>
+								</div>
+							</li>
+						</ul>
+
+						<div class="tit">기획전 쿠폰</div>
+						<div class="my_nolist">
+							<div class="txt">최근 1개월 내<br>사용 가능쿠폰이 <strong>없습니다.</strong></div>
+						</div>
+						<ul class="coupon_list">
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>5,000</em>원</span>
+									</div>
+									<button class="dtl_btn"  onclick="fn_layer_open('lyr_cpn_dtl1');return false;" onkeypress="this.onclick;"><em>상세내용보기</em></button>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+									<a href="#none" class="rel_gds"><span>상품보러가기</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<button class="for_app"><em class="ir">APP 전용 쿠폰</em></button>
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>10</em>%</span>
+									</div>
+									<button class="dtl_btn"  onclick="fn_layer_open('lyr_cpn_dtl1');return false;" onkeypress="this.onclick;"><em>상세내용보기</em></button>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+									<a href="#none" class="rel_gds"><span>상품보러가기</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>20</em>%</span>
+									</div>
+									<button class="dtl_btn"  onclick="fn_layer_open('lyr_cpn_dtl1');return false;" onkeypress="this.onclick;"><em>상세내용보기</em></button>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+									<a href="#none" class="rel_gds"><span>상품보러가기</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">장바구니 쿠폰</span>
+										<span class="pri"><em>3</em>만원</span>
+									</div>
+									<button class="dtl_btn"  onclick="fn_layer_open('lyr_cpn_dtl1');return false;" onkeypress="this.onclick;"><em>상세내용보기</em></button>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+									<a href="#none" class="rel_gds"><span>상품보러가기</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>10</em>%</span>
+									</div>
+									<button class="dtl_btn"  onclick="fn_layer_open('lyr_cpn_dtl1');return false;" onkeypress="this.onclick;"><em>상세내용보기</em></button>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+									<a href="#none" class="rel_gds"><span>상품보러가기</span></a>
+								</div>
+							</li>
+							<!-- 더보기 버튼 -->
+							<li class="last">
+								<div class="btn_more">
+									<a href="#"><span class="ico">더보기 (20/1000)</span></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+					<!-- 전체 발급쿠폰 -->
+					<div>
+						<div class="my_nolist">
+							<div class="txt">최근 1개월 내<br>발급받은 쿠폰이 <strong>없습니다.</strong></div>
+						</div>
+						<ul class="coupon_list">
+							<li class="complete">
+								<div class="fin_down"> <!-- NGCPO-4811 [MO] 이벤트 -> 기획전 쿠폰 -> 쿠폰받기완료 수정 : 추가-->
+									<span class="fin_txt">쿠폰받기완료</span>
+									<a href="#none" class="rel_gds_fin">상품보러 가기</a>
+								</div>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>5,000</em>원</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>10</em>%</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<li>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>20</em>%</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<li>
+								<!-- 기간만료 -->
+								<div class="cou_dim"><span class="txt">기간만료</span></div>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">장바구니 쿠폰</span>
+										<span class="pri"><em>3</em>만원</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<li>
+								<!-- 기간만료 -->
+								<div class="cou_dim"><span class="txt">기간만료</span></div>
+								<div class="cou_img">
+									<div class="cou_bx">
+										<span class="txt">즉시할인쿠폰</span>
+										<span class="pri"><em>10</em>%</span>
+									</div>
+								</div>
+								<div class="cou_txt">
+									<p class="day">2016.01.28 - 2016.01.31</p>
+									<p class="txt">즉시할인쿠폰 (A123456789)</p>
+									<p class="company">30,000원 이상 구매시 사용</p><!-- 160909 쿠폰명,금액 분리 -->
+									<!-- 160909 발행업체 삭제 <p class="company">(주)이랜드리테일</p> -->
+								</div>
+							</li>
+							<!-- 더보기 버튼 -->
+							<li class="last">
+								<div class="btn_more">
+									<a href="#"><span class="ico">더보기 (20/1000)</span></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="my_noti">
+				<!-- 160909 쿠폰사용 TIP 수정 -->
+				<ul>
+					<li class="app_cpn_info"><span class="ico">APP</span>전용 쿠폰은 APP으로 이용하실때  사용할 수 있습니다.</li>
+					<li class="app_cpn_info"><span class="ico">APP</span>버튼을 클릭하면 이랜드몰 APP으로 이용하실 수 있습니다.</li>
+					<li> 기획전 쿠폰은 <b>"상품보러가기"</b> 를 통해 쿠폰이 적용되는 상품을 확인하실 수 있습니다. </li>
+					<li>숙박/e티켓/외식/마트/가전/디지털/뉴발란스/뉴발란스키즈 카테고리를 포함한 일부 상품은 쿠폰적용이 제외될 수 있습니다.</li>
+					<li>더블쿠폰: 상품쿠폰과 중복으로 할인적용이 가능하고, 단품 구매시 사용 가능합니다.<br />(단, 일부 조건에서 사용이 제한 될 수 있습니다.)</li>
+					<li>장바구니쿠폰: 장바구니 주문금액에 대한 할인이 적용되며, 일부 조건에서 사용이 제한될 수 있습니다.</li>
+					<li>배송비쿠폰: 배송비를 절약할 수 있는 용도로 사용 가능합니다.</li>
+					<li>쿠폰을 사용한 주문을 취소한 경우에는 사용하신 쿠폰이 다시 발행됩니다.<br />(단, 사용기간이 남아있는 경우에 한하여 재 발행됩니다.)</li>
+					<li>상품에 적용되는 즉시 할인 쿠폰, 더블쿠폰, 장바구니쿠폰은 중복 사용이 가능 합니다.</li>
+				</ul>
+				<!-- //160909 쿠폰사용 TIP 수정 -->
+			</div>
+		</div>
+	</div>
+	<!-- //my_coupon -->
+
+
+</div>
+<!-- //CONTENT -->
+
+
+<!-- layer_popup : 알림 메시지 -->
+<div class="layer_pop nodim pop_zzim" id="counpon_end" style="display:none">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box dday">
+				<h4>쿠폰 만료예정</h4><!-- 2016-11-21 -->
+				<p>홍길동님!</p>
+				<p><em>곧 만료예정</em>인</p>
+				<p><em>쿠폰</em>이 있습니다.</p>
+			</div>
+		</div>   
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //layer_popup : 알림 메시지 -->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		fn_layer_open('counpon_end')
+	});
+</script>
+
+<!-- LAYER COUPON DETAIL -->
+<div id="lyr_cpn_dtl1" class="layer_fix"><!-- 20171101 추가 -->
+	<h3 class="pop_tit">쿠폰상세내용</h3>
+	<div class="pop_con cpn_dtl">
+		<div class="pop_txt">
+			<p class="cpn_desc">
+				다른 장바구니쿠폰과 중복적용 불가<br />
+				숙박/e티켓/외식/가전/디지털 상품 적용 제외<br />
+				다른 장바구니쿠폰과 중복적용 불가<br />
+				숙박/e티켓/외식/가전/디지털 상품 적용 제외<br />
+				다른 장바구니쿠폰과 중복적용 불가<br />
+				숙박/e티켓/외식/가전/디지털 상품 적용 제외<br />
+				다른 장바구니쿠폰과 중복적용 불가<br />
+				숙박/e티켓/외식/가전/디지털 상품 적용 제외<br />
+				다른 장바구니쿠폰과 중복적용 불가<br />
+				숙박/e티켓/외식/가전/디지털 상품 적용 제외<br />
+				다른 장바구니쿠폰과 중복적용 불가<br />
+				숙박/e티켓/외식/가전/디지털 상품 적용 제외<br />
+				다른 장바구니쿠폰과 중복적용 불가<br />
+				숙박/e티켓/외식/가전/디지털 상품 적용 제외<br />
+				다른 장바구니쿠폰과 중복적용 불가<br />
+				숙박/e티켓/외식/가전/디지털 상품 적용 제외<br />
+				다른 장바구니쿠폰과 중복적용 불가<br />
+				숙박/e티켓/외식/가전/디지털 상품 적용 제외<br />
+			</p>
+		</div>
+		<div class="single_btn">
+			<button type="button" class="btn_line01 c02"><em>확인</em></button>
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //LAYER COUPON DETAIL -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

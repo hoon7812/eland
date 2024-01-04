@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>KIM'S CLUB</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_kims.css" type="text/css"><!-- kims add css -->
+
+<link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/kims_200.jpg">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/kims_200.jpg">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/kims_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/kims_160.png">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+
+</head>
+<body class="kims renewal renewal2_brand"><!-- 메인 리뉴얼 .renewal 클래스 추가 -->
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" onClick="left_lnb_open()"><b class="ir">카테고리 전체메뉴 열기</b></button></div>
+		<h1><a href="kims_Main.html"><b class="ir">킴스클럽 메인</b></a></h1>
+		<div class="hnb">
+			<ul>
+				<li class="sch"><button type="button"><b>검색어 입력검색어 입력검색어 입력검색어 입력</b></button></li><!-- 170315 검색텍스트 수정 -->
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+		
+	</div>
+</header>
+<!-- //HEADER -->
+
+<!-- LEFT MENU -->
+<div id="lnb" class="lnb_wrap">
+	<div class="lnb">
+		<div class="lnb_hd">
+			<div class="hd">
+				<a class="home" href="Main.html"><b class="ir">메인 바로가기</b></a>
+				<a class="login" href="#">로그인</a> 
+				<!-- <a class="logout" href="#">로그아웃</a> -->
+			</div>
+		</div>
+		
+		<!-- LEFT CATG. -->
+		<div class="lnb_mn ctg_btn"><a href="#" class="on"><b class="ir">카테고리 열기</b></a></div>
+		<div class="lnb_cont">
+			<!-- <div class="lnb_log"><b>홍길동 님</b>
+				<em class="m0000005">Family</em>
+				<em class="m0000004">Bronze</em>
+				<em class="m0000003">Silver</em>
+				<em class="m0000002">Gold</em>
+				<em class="m0000001">Platinum</em>
+			</div> -->
+			<div class="lnb_tnb">
+				<ul>
+					<li class="myp"><a href="#"><b>마이페이지</b></a></li>
+					<li class="drv"><a href="#"><b>주문배송조회</b></a></li>
+					<li class="wish"><a href="#"><b>나의 찜목록</b></a></li>
+					<li class="cs"><a href="#"><b>고객센터</b></a></li>
+					<!-- <li class="cpn"><a href="#"><b>쿠폰 12장</b></a></li> -->
+				</ul>
+			</div>
+			<div  id="lnb_ctg" class="lnb_ctg scroller">
+				<div  class="">
+					<!-- 170224 renewal -->
+					<div class="lnb_mtab">
+						<ul>
+							<li class="m_eland"><a href="#"><em>이랜드몰</em></a></li>
+							<li class="m_modern"><a href="#"><em>모던하우스</em></a></li>
+							<li class="m_kims"><a href="#"><em>킴스클럽</em></a></li>
+						</ul>
+					</div>
+					<div class="new_menu">
+						<div class="lnb_tit">카테고리</div>
+						<!-- 170329 삭제 킴스클럽 카테고리탭메뉴 추가
+						<div class="kims_tabmenu">
+							<div class="t_food selected"><span>FOOD</span></div>탭메뉴 선택시 .selected
+							<div class="t_life"><span>LIFE</span></div>
+							<script>
+								$(document).ready(function() {
+									var kTab = $(".lnb .new_menu .kims_tabmenu > div");
+									var kLst = $(".lnb .new_menu ul");
+						
+									kTab.click(function(){
+										tId = $(this).index();
+										kTab.removeClass("selected");
+										kTab.eq(tId).addClass("selected");
+										kLst.hide();
+										kLst.eq(tId).show();
+									});
+								});
+							</script>
+						</div>
+						킴스클럽 카테고리탭메뉴 추가 -->
+						<!-- 170329 수정 킴스클럽 카테고리탭메뉴 추가 -->
+						<div class="kims_tabmenu size03">
+							<div class="t_menu selected"><span>FOOD</span></div><!-- 탭메뉴 선택시 .selected -->
+							<div class="t_menu"><span>LIFE</span></div>
+							<div class="t_menu"><span>FRESH</span></div>
+						</div>
+						<!-- 탭메뉴 3개일때 <div class="kims_tabmenu size03">
+							<div class="t_menu selected"><span>FOOD</span></div>탭메뉴 선택시 .selected
+							<div class="t_menu"><span>LIFE</span></div>
+							<div class="t_menu"><span>FRESH</span></div>
+						</div> -->
+						<script>
+							$(document).ready(function() {
+								var kTab = $(".lnb .new_menu .kims_tabmenu .t_menu");
+								var kLst = $(".lnb .new_menu ul");
+
+								kTab.click(function(){
+									tId = $(this).index();
+									kTab.removeClass("selected");
+									kTab.eq(tId).addClass("selected");
+									kLst.hide();
+									kLst.eq(tId).show();
+									setTimeout(function(){LnbCtgScroll.refresh()}, 200); //170403 추가
+								});
+							});
+						</script>
+						<!-- 킴스클럽 카테고리탭메뉴 추가 -->
+						<!-- FOOD 카테고리 리스트 -->
+						<ul>
+							<!-- 이미지없는 경우 -->
+							<li>
+								<a href="#">
+									<span class="noimg">산지직송</span>
+								</a>
+							</li>
+							<!-- //이미지없는 경우 -->
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f01.png" alt="산지직송">
+									<span>산지직송</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f02.png" alt="청과">
+									<span>청과</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f03.png" alt="채소">
+									<span>채소</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f04.png" alt="쌀/잡곡">
+									<span>쌀/잡곡</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f05.png" alt="수산">
+									<span>수산</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f06.png" alt="건식/견과">
+									<span>건식/견과</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f07.png" alt="정육">
+									<span>정육</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f08.png" alt="생수/음료">
+									<span>생수/음료</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f09.png" alt="커피/차">
+									<span>커피/차</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f10.png" alt="과자/간식">
+									<span>과자/간식</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f11.png" alt="면/통조림/즉석식품">
+									<span>면/통조림/즉석식품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f12.png" alt="조미료/장류">
+									<span>조미료/장류</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f13.png" alt="유제품/아이스크림">
+									<span>유제품/아이스크림</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f14.png" alt="냉장/냉동/반찬">
+									<span>냉장/냉동/반찬</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f15.png" alt="건강식품">
+									<span>건강식품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f16.png" alt="유아식품">
+									<span>유아식품</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //FOOD 카테고리 리스트 -->
+						<!-- LIFE 카테고리 리스트 -->
+						<ul style="display:none;">
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f17.png" alt="제지류/위생용품">
+									<span>제지류/위생용품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f18.png" alt="구강용품/면도/의약외품">
+									<span>구강용품/면도/의약외품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f19.png" alt="헤어/바디/화장품">
+									<span>헤어/바디/화장품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f20.png" alt="세제/세탁/청소/욕실용품">
+									<span>세제/세탁/청소/욕실용품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f21.png" alt="주방/일회용품">
+									<span>주방/일회용품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f22.png" alt="침구/가구/인테리어">
+									<span>침구/가구/인테리어</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f23.png" alt="유아동/출산용품">
+									<span>유아동/출산용품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f24.png" alt="반려동물용품">
+									<span>반려동물용품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f25.png" alt="문구/완구/가전">
+									<span>문구/완구/가전</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f26.png" alt="스포츠/자동차/레저">
+									<span>스포츠/자동차/레저</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f27.png" alt="잡화">
+									<span>잡화</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //LIFE 카테고리 리스트 -->
+						<!-- FRESH 카테고리 리스트 -->
+						<ul style="display:none;">
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f17.png" alt="제지류/위생용품">
+									<span>제지류/위생용품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f18.png" alt="구강용품/면도/의약외품">
+									<span>구강용품/면도/의약외품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/kims_menu_f19.png" alt="헤어/바디/화장품">
+									<span>헤어/바디/화장품</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //FRESH 카테고리 리스트 -->
+					</div>
+			
+					<div class="lnb_cn">
+						<div class="lnb_tit">서비스메뉴</div>
+						<ul>
+							<li><a href="#" class="df">산지직송</a></li><!-- 킴스클럽 추가 -->
+							<li><a href="#" class="bs">베스트</a></li>
+							<li><a href="#" class="sp">기획전</a></li>
+							<li><a href="#" class="ev">이벤트</a></li>
+						</ul>
+					</div>
+
+					<div class="new_brand">
+						<div class="lnb_tit">공식 브랜드 몰</div>
+						<!-- 170302 수정 -->
+						<ul>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_01.png" alt="스파오"></figure><!-- 이미지사이즈 140x100px -->
+									<span>스파오스파오스파오스파오스파오스파오</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_02.png" alt="로엠"></figure>
+									<span>로엠</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_03.png" alt="에블린"></figure>
+									<span>에블린</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_04.png" alt="후아유"></figure>
+									<span>후아유</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_05.png" alt="뉴발란스"></figure>
+									<span>뉴발란스</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_06.png" alt="미쏘"></figure>
+									<span>미쏘</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_07.png" alt="폴더"></figure>
+									<span>폴더</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_08.png" alt="투미"></figure>
+									<span>투미</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_09.png" alt="모던하우스"></figure>
+									<span>모던하우스</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_10.png" alt="킴스클럽"></figure>
+									<span>킴스클럽</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_11.png" alt="투어몰"></figure>
+									<span>투어몰</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_12.png" alt="두닷"></figure>
+									<span>두닷</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_13.png" alt="코오롱스포츠"></figure>
+									<span>코오롱스포츠</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_14.png" alt="다이슨"></figure>
+									<span>다이슨</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_15.png" alt="슈펜"></figure>
+									<span>슈펜</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //170302 수정 -->
+					</div>
+					<!-- //170224 renewal -->
+				</div>
+			</div>
+		</div>
+		<!-- //LEFT CATG. -->
+		
+		<div class="lnb_cls"><button type="button" id="left_cls" class="left_cls"><b class="ir">카테고리 전체메뉴 닫기</b></button></div>
+	</div>
+</div>
+<div class="lnb_dim"></div>
+<!-- //LEFT MENU -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">				   
+	<div class="main_top" id="main_top">
+		<div class="gnb_wrap">
+			<div class="eland"><a href="#">E LAND</a></div> <!-- 170515 E LAND 바로가기 추가 -->
+			<div class="gnb" id="gnb">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide on"><span>홈</span></li>
+					<li class="swiper-slide"><span>산지직송</span></li>
+					<li class="swiper-slide"><span>베스트</span></li>
+					<li class="swiper-slide"><span>오프라이스</span></li>
+					<li class="swiper-slide"><span>기획전</span></li>
+					<li class="swiper-slide"><span>이벤트</span></li>
+					<li class="swiper-slide"><span>ELAND MALL</span></li>
+					<li class="swiper-slide"><span>오늘직송</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- HEADER BN -->
+	<div class="header_bn" id="header_bn">
+		<a href="#"><img src="../images/mobile/temp/bn_head_100_kims.jpg" alt="이벤트배너" /></a>
+		<a href="#" class="cls"><img src="../images/mobile/common/btn_bn_close.png" alt="닫기" /></a>
+	</div>
+	<!-- //HEADER BN -->
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var GNB_SCROLL;
+		var LOADING_HTML = '<div class="loading"><span>로딩중</span></div>';
+		
+		$(document).ready(function() {
+			GNB_SCROLL = new Swiper('#gnb',{
+				createPagination: false,
+				freeMode: true,
+				freeModeFluid: true,
+				slidesPerView: 'auto',
+				roundLengths: true,
+				onSlideClick: function(){
+					$(".gnb li").removeClass("on");
+					$('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);			
+					GNB_SCROLL.swipeTo(GNB_SCROLL.clickedSlideIndex);
+					call_slide(GNB_SCROLL.clickedSlideIndex);
+				}
+			});
+
+			$(window).resize(function(){	
+				GNB_SCROLL.reInit();
+			});
+		});
+		
+		
+		$(window).load(function() {	
+			mainCate.prependSlide(LOADING_HTML, 'swiper-slide','li');					
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active').html(LOADING_HTML);			
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			mainCate.swipeTo(1, 0, true);
+			call_slide(7);
+		});
+		
+		function change_slide(idx) {
+			$('#m_cts').find('li:not(.swiper-slide-active)').remove();
+			mainCate.prependSlide( LOADING_HTML, 'swiper-slide','li');
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			$('#m_cts').find('.swiper-slide').removeClass('swiper-slide-active');
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active');			
+			if(	$('#m_cts').find('.swiper-slide').eq(1).hasClass('swiper-slide-active')){
+				$('#m_cts').find('.slide_cont').remove();
+				window.scrollTo(0, 0);
+				call_slide(idx);
+			}
+		}
+
+		function call_slide(idx){ 
+			$.ajax({
+				type : 'get', // 퍼블리싱 확인용 . 개발측은 post
+				isLocal: true,
+				headers: { "cache-control": "no-cache" },
+				url : 'kims_main_'+ idx +'.html',
+				dataType : 'html',
+				success: function(data){	
+					setTimeout(function() { 
+						$('#m_cts').find('.swiper-slide').eq(1).html(data);						
+						mainCate.reInit();
+						setSlideHeight();
+					}, 100);
+					$('.gnb li').removeClass('on');
+					$('.gnb').find('li').eq(idx).addClass('on');	
+					mainCate.swipeTo(1, 0, true);
+				},
+				error: function(){
+					setTimeout(function() { call_slide(0) }, 100);
+					GNB_SCROLL.swipeTo(idx, 200);
+				}
+			});
+		}
+			
+		var mainCate = new Swiper('#m_cts',{
+			loop: false,
+			touchRatio: 0.3,  //2016-10-31
+			simulateTouch : true,
+			calculateHeight:true,
+			onSlideNext : function() {
+				var index = parseInt($('.gnb').find('li.on').index()) + 1;
+				var max_gnb = $('.gnb li').length;
+				if(index == max_gnb ){	
+					var idx = 0;
+					GNB_SCROLL.swipeTo(0, 200); 
+				}else{
+					var idx = index;
+					var w_width = $(window).width();
+					var	active_li = $('.gnb').find('li.on').next('li');
+					var active_left = active_li.offset().left + active_li.outerWidth();
+					if(active_left > w_width){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}
+				}
+				change_slide(idx);
+			},
+			onSlidePrev : function() {
+				var index = parseInt($('#m_cts' ).find('.slide_cont').attr('data-index'));
+				if(index == 0 ){	
+					var idx = $('.gnb li').length -1;
+						GNB_SCROLL.swipeTo(idx, 200);
+				}else{
+					var idx = index - 1;
+					var active_li = $('.gnb').find('li.on').prev('li');
+					var active_left = active_li.offset().left;
+					if(active_left <= 0){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}	
+				}	
+				change_slide(idx);
+			}
+		});
+		
+		$(window).resize(function(){
+			mainCate.reInit();
+			setSlideHeight();
+		});
+	</script>
+</div>
+<!-- //CONTENT -->
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<div class="ft_bn" style="background-color:#ddd2f0">
+		<a href="#"><img src="../images/mobile/temp/bn_foot_100.jpg" width="640" height="100" alt="이벤트배너" /></a>
+	</div>
+	<div class="ft_menu">
+		<ul>
+			<li><a href="#">로그아웃</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li><a href="#">장바구니</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div>
+	<!-- D: 푸터 정보 변경 -->
+	<div class="ft_info">
+		<dl>
+			<dt>주식회사 킴스클럽</dt>
+			<dd>고객센터 : <a href="tel:1899-9500">1899-4222</a></dd>
+			<dd>대표이사 : 김우섭<span class="part">|</span>사업자등록번호 : 114-81-01855  <a href="javascript:void(0);">사업자정보확인</a></dd>
+			<dd>통신판매업 신고번호 : 서초 제 09998호</dd>
+			<dd>주식회사 이랜드리테일  서울시 서초구 잠원동 70-2</dd>
+			<dd>호스팅 서비스 제공자 : (주)이랜드리테일</dd>
+			<dd>개인정보 보호책임자 : 이동규</dd>
+			<dd class="ft_arg">
+				<a href="https://m.oneclick.elandretail.com/terms/privacyTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개||개인정보처리방침">개인정보처리방침</a><span class="part">|</span><a href="https://m.oneclick.elandretail.com/terms/memberShipClubTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개|| 약관안내">약관안내</a>
+			</dd>
+		</dl>
+		<div class="ft_sns">
+			<ul>
+				<li><a href="#" class="is"><em class="ir">인스타그램</em></a></li>
+				<li><a href="#" class="ks"><em class="ir">카카오스토리</em></a></li>
+				<li><a href="#" class="bl"><em class="ir">블로그</em></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="foot_caution">Elandmall 내 판매 상품 중 일부는 개별 판매자의 상품이 포함되어있고, 이 경우 이랜드리테일은 통신판매의 당사자가 아니므로 해당 상품, 거래정보 및 거래에 대하여는 개별 판매자에 책임이 있습니다.</div>
+	<div class="ft_app">
+		<ul>
+			<li><a href="#">킴스클럽 APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+
+<!-- layer_popup : 배송지 관리 -->
+<div id="qckTimeList" class="layer_fix">
+	<h3 class="pop_tit">배송시간표</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="qck_times">
+				<span class="top_info"><strong>NC구로점</strong>의 배송현황 입니다.</span>
+				<table summary="방문시간과 날짜로 이우러진 배송 현황 테이블 입니다.">
+					<caption>배송시간표</caption>
+					<colgroup>
+						<col width="26%" />
+						<col />
+						<col />
+						<col />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">방문시간</th>
+							<th scope="col">9/16(수)</th>
+							<th scope="col">9/17(목)</th>
+							<th scope="col">9/18(금)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">10:00~13:00</th>
+							<td><span class="end">예약마감</span></td>
+							<td><span>예약가능</span></td>
+							<td><span>예약가능</span></td>
+						</tr>
+						<tr>
+							<th scope="row">12:00~15:00</th>
+							<td><span class="end">예약마감</span></td>
+							<td><span>예약가능</span></td>
+							<td><span>예약가능</span></td>
+						</tr>
+						<tr>
+							<th scope="row">14:00~17:00</th>
+							<td><span>예약가능</span></td>
+							<td><span>예약가능</span></td>
+							<td><span class="end">예약마감</span></td>
+						</tr>
+						<tr>
+							<th scope="row">16:00~19:00</th>
+							<td><span class="end">예약마감</span></td>
+							<td><span>예약가능</span></td>
+							<td><span class="end">예약마감</span></td>
+						</tr>
+						<tr>
+							<th scope="row">18:00~20:00</th>
+							<td><span class="end">예약마감</span></td>
+							<td><span>예약가능</span></td>
+							<td><span>예약가능</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="btn_time">
+				<ul class="btn_list01">
+					<li><a href="javascript:;" class="btn_brd03 c01">확인</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:;" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 배송지 관리 -->
+
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+
+
+

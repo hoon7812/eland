@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>BAHUS</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_bahus.css" type="text/css"><!-- bahus add css -->
+
+<link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/bahus_200.jpg">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/bahus_200.jpg">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/bahus_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/bahus_160.png">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="bahus renewal"><!-- brand bahus : CALSS -->
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" onClick="left_lnb_open()"><b class="ir">카테고리 전체메뉴 열기</b></button></div>
+		<h1><a href="bahus_Main.html"><b class="ir">BAHUS 메인</b></a></h1>
+		<div class="hnb">
+			<ul>
+				<li class="sch"><button type="button"><b class="">검색 열기</b></button></li>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<!-- //HEADER -->
+
+<!-- LEFT MENU -->
+<div id="lnb" class="lnb_wrap">
+	<div class="lnb">
+		<div class="lnb_hd">
+			<div class="hd">
+				<a class="home" href="Md_Main.html"><b class="ir">메인 바로가기</b></a>
+				<!-- <a class="login" href="#">로그인</a> --> 
+				<a class="logout" href="#">로그아웃</a>
+			</div>
+		</div>
+		
+		<!-- LEFT CATG. -->
+		<div class="lnb_mn ctg_btn"><a href="#" class="on"><b class="ir">카테고리 열기</b></a></div>
+		<div class="lnb_cont">
+			<!-- <div class="lnb_log"><b>홍길동 님</b>
+				<em class="m0000005">Family</em>
+				<em class="m0000004">Bronze</em>
+				<em class="m0000003">Silver</em>
+				<em class="m0000002">Gold</em>
+				<em class="m0000001">Platinum</em>
+			</div> -->
+			<div class="lnb_tnb">
+				<ul>
+					<li class="myp"><a href="#"><b>마이페이지</b></a></li>
+					<li class="drv"><a href="#"><b>주문배송조회</b></a></li>
+					<li class="wish"><a href="#"><b>나의 찜목록</b></a></li>
+					<li class="cs"><a href="#"><b>고객센터</b></a></li>
+					<!-- <li class="cpn"><a href="#"><b>쿠폰 12장</b></a></li> -->
+				</ul>
+			</div>
+			<div  id="lnb_ctg" class="lnb_ctg scroller">
+				<div  class="">
+					<!-- 170224 renewal -->
+					<div class="lnb_mtab">
+						<ul>
+							<li class="m_eland"><a href="#"><em>이랜드몰</em></a></li>
+							<li class="m_modern"><a href="#"><em>모던하우스</em></a></li>
+							<li class="m_kims"><a href="#"><em>킴스클럽</em></a></li>
+						</ul>
+					</div>
+					<div class="new_menu">
+						<div class="lnb_tit">카테고리</div>
+						<!-- 바후스 추가 170526 -->
+						<div class="lnb_col">
+							<div class="tit_col">
+								<span class="tit">COLLECTION</span>
+								<a href="#" class="go"><em class="ir">가구 이동</em></a>
+							</div>
+							<ul class="list_col">
+								<li>
+									<a href="#">
+										<img src="../images/mobile/renewal/bahus_lnb_01.png" alt="">
+										<span>CHARA</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="../images/mobile/renewal/bahus_lnb_02.png" alt="">
+										<span>CHARA</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="../images/mobile/renewal/bahus_lnb_03.png" alt="">
+										<span>CHARA</span>
+									</a>
+								</li>
+							</ul>
+							<script>
+								$(document).ready(function() {
+									var bTit = $(".new_menu .lnb_col .tit_col");
+									var bList = $(".new_menu .lnb_col .list_col");
+
+									bList.hide();
+									bTit.click(function(){
+										$(this).toggleClass("selected");
+										bList.toggle();
+										setTimeout(function(){LnbCtgScroll.refresh()}, 200);
+									});
+								});
+							</script>
+						</div>
+						<!-- //바후스 추가 170526 -->
+						<ul>
+							<!-- 이미지없는 경우 -->
+							<li>
+								<a href="#">
+									<span class="noimg">숙박/외식티켓</span>
+								</a>
+							</li>
+							<!-- //이미지없는 경우 -->
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu01.png" alt="의류">
+									<span>의류</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu02.png" alt="잡화/뷰티">
+									<span>잡화/뷰티</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu03.png" alt="가구/인테리어">
+									<span>가구/인테리어</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu04.png" alt="출산/유아동">
+									<span>출산/유아동</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu05.png" alt="가전/디지털">
+									<span>가전/디지털</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu06.png" alt="주방/생활수납">
+									<span>주방/생활수납</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu07.png" alt="팻용품/팬시">
+									<span>팻용품/팬시</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu08.png" alt="레저/스포츠">
+									<span>레저/스포츠</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu09.png" alt="해외/명품">
+									<span>해외/명품</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/renewal/new_menu10.png" alt="숙박/외식티켓">
+									<span>숙박/외식티켓</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+			
+					<div class="lnb_cn">
+						<div class="lnb_tit">서비스메뉴</div>
+						<ul>
+							<li><a href="#" class="sp">쇼핑 기획전</a></li>
+							<li><a href="#" class="ev">이벤트&amp;혜택</a></li>
+							<li><a href="#" class="hp">럭키딜</a></li>
+							<li><a href="#" class="bs">베스트100</a></li>
+							<li><a href="#" class="rt">상설샵</a></li>
+							<li><a href="#" class="tg">공동구매</a></li>
+							<li><a href="#" class="dl">0원찬스</a></li>
+							<li><a href="#" class="mm">셀프 스타일링</a></li>
+							<li><a href="#" class="rm">라이벌매치</a></li>
+							<li><a href="#" class="at">앳라이프</a></li>
+							<li><a href="#" class="re">예약구매</a></li><!-- 170314 추가 -->
+							<li><a href="#" class="nc">지점관</a></li><!-- 170323 추가 -->
+						</ul>
+					</div>
+
+					<div class="new_brand">
+						<div class="lnb_tit">공식 브랜드 몰</div>
+						<!-- 170302 수정 -->
+						<ul>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_01.png" alt="스파오"></figure><!-- 이미지사이즈 140x100px -->
+									<span>스파오스파오스파오스파오스파오스파오</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_02.png" alt="로엠"></figure>
+									<span>로엠</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_03.png" alt="에블린"></figure>
+									<span>에블린</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_04.png" alt="후아유"></figure>
+									<span>후아유</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_05.png" alt="뉴발란스"></figure>
+									<span>뉴발란스</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_06.png" alt="미쏘"></figure>
+									<span>미쏘</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_07.png" alt="폴더"></figure>
+									<span>폴더</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_08.png" alt="투미"></figure>
+									<span>투미</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_09.png" alt="모던하우스"></figure>
+									<span>모던하우스</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_10.png" alt="킴스클럽"></figure>
+									<span>킴스클럽</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_11.png" alt="투어몰"></figure>
+									<span>투어몰</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_12.png" alt="두닷"></figure>
+									<span>두닷</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_13.png" alt="코오롱스포츠"></figure>
+									<span>코오롱스포츠</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_14.png" alt="다이슨"></figure>
+									<span>다이슨</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure><img src="../images/mobile/renewal/brd_15.png" alt="슈펜"></figure>
+									<span>슈펜</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //170302 수정 -->
+					</div>
+					<!-- //170224 renewal -->
+				</div>
+			</div>
+		</div>
+		<!-- //LEFT CATG. -->
+		
+		<!-- LEFT MALL -->
+		<div class="lnb_mn brd_btn"><a href="#"><b class="ir">브랜드 열기</b></a></div>
+		<div class="lnb_cont">
+			<div class="lnb_brd">
+				<div class="brd_tit">브랜드</div>
+				<div id="lnb_brd" class="brd_cont scroller">
+					<div class="brd_scroll">
+						<div class="brd_word" id="brand">
+							<dl>
+								<dt class="tab1 on"><button type="button">ㄱㄴㄷ</button></dt>
+								<dd class="kor on">
+									<ul>
+										<li><button type="button" class="on">ㄱ</button></li>
+										<li><button type="button">ㄴ</button></li>
+										<li><button type="button">ㄷ</button></li>
+										<li><button type="button">ㄹ</button></li>
+										<li><button type="button">ㅁ</button></li>
+										<li><button type="button">ㅂ</button></li>
+										<li><button type="button">ㅅ</button></li>
+										<li><button type="button">ㅇ</button></li>
+										<li><button type="button" disabled="disabled">ㅈ</button></li>
+										<li><button type="button">ㅊ</button></li>
+										<li><button type="button">ㅋ</button></li>
+										<li><button type="button">ㅌ</button></li>
+										<li><button type="button">ㅍ</button></li>
+										<li><button type="button">ㅎ</button></li>
+										<li><button type="button">기타</button></li>
+									</ul>
+								</dd>
+								<dt class="tab2"><button type="button">ABC</button></dt>
+								<dd>
+									<ul>
+										<li><button type="button" class="on">A</button></li>
+										<li><button type="button">B</button></li>
+										<li><button type="button">C</button></li>
+										<li><button type="button">D</button></li>
+										<li><button type="button">E</button></li>
+										<li><button type="button">F</button></li>
+										<li><button type="button">G</button></li>
+										<li><button type="button">H</button></li>
+										<li><button type="button">I</button></li>
+										<li><button type="button">J</button></li>
+										<li><button type="button">K</button></li>
+										<li><button type="button">L</button></li>
+										<li><button type="button">M</button></li>
+										<li><button type="button">N</button></li>
+										<li><button type="button">O</button></li>
+										<li><button type="button">p</button></li>
+										<li><button type="button">Q</button></li>
+										<li><button type="button">R</button></li>
+										<li><button type="button">S</button></li>
+										<li><button type="button">T</button></li>
+										<li><button type="button">U</button></li>
+										<li><button type="button">V</button></li>
+										<li><button type="button">W</button></li>
+										<li><button type="button" disabled="disabled">X</button></li>
+										<li><button type="button" disabled="disabled">Y</button></li>
+										<li><button type="button" disabled="disabled">Z</button></li>
+										<li><button type="button">기타</button></li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+						<div class="brd_sch">
+							<div class="ir">브랜드 검색결과</div>
+							<!-- 160811 브랜드 검색 수정 -->
+							<dl>
+								<dt>ㄱ</dt>
+								<dd><a href="#" class="new">가고시마</a></dd>
+								<dd><a href="#">갤럭시라이프스타일</a></dd>
+								<dd><a href="#">게스</a></dd>
+								<dd><a href="#">게스슈즈</a></dd>
+								<dd><a href="#">고세</a></dd>
+								<dd><a href="#">가꾸이다</a></dd>
+								<dd><a href="#">갤럭시</a></dd>
+								<dd><a href="#" class="new">게스슈즈</a></dd>
+								<dd><a href="#">고세골든벨</a></dd>
+								<dd><a href="#">갤럭시 게스</a></dd>
+							</dl>
+							<dl>
+								<dt>ㄴ</dt>
+								<dd><a href="#">나이키</a></dd>
+								<dd><a href="#">나이스 클럽</a></dd>
+								<dd><a href="#" class="new">니나리찌</a></dd>
+								<dd><a href="#">니코보코</a></dd>
+							</dl>
+							<dl>
+								<dt>ㄷ</dt>
+								<dd><a href="#">나이키</a></dd>
+								<dd><a href="#">나이스 클럽</a></dd>
+								<dd><a href="#" class="new">니나리찌</a></dd>
+								<dd><a href="#">니코보코</a></dd>
+							</dl>
+							<dl>
+								<dt>ㄹ</dt>
+								<dd><a href="#">나이키</a></dd>
+								<dd><a href="#">나이스 클럽</a></dd>
+								<dd><a href="#" class="new">니나리찌</a></dd>
+								<dd><a href="#">니코보코</a></dd>
+							</dl>
+							<dl>
+								<dt>ㅁ</dt>
+								<dd><a href="#">나이키</a></dd>
+								<dd><a href="#">나이스 클럽</a></dd>
+								<dd><a href="#" class="new">니나리찌</a></dd>
+								<dd><a href="#">니코보코</a></dd>
+							</dl>
+							<!-- 160811 브랜드 검색 수정 -->
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //LEFT MALL -->
+		<div class="lnb_cls"><button type="button" id="left_cls" class="left_cls"><b class="ir">카테고리 전체메뉴 닫기</b></button></div>
+	</div>
+</div>
+<div class="lnb_dim"></div>
+<!-- //LEFT MENU -->                         
+
+<!-- CONTENT -->
+<div class="contents" id="contents">				   
+	<div class="main_top" id="main_top">
+		<div class="gnb_wrap">
+			<div class="eland"><a href="#">E LAND</a></div> <!-- 170515 E LAND 바로가기 추가 -->
+			<div class="gnb" id="gnb">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><span>HOME</span></li>
+					<li class="swiper-slide"><span>BEST</span></li>
+					<li class="swiper-slide"><span>NEW</span></li>
+					<li class="swiper-slide"><span>PROMOTION</span></li>
+					<li class="swiper-slide"><span>COMMUNITY</span></li>
+					<li class="swiper-slide"><span>EVENT</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide">
+
+				<!-- SWIPER 0 -->
+				<div class="slide_cont" data-index="0">
+					<!-- TOP_BN -->
+					<div class="main_bn_wrap" id="main_bn_wrap">
+						<div class="main_bn swiper-container" id="main_bn">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/bahus_bn_main_01.jpg" width="640" height="510" alt="NEW TREND. LIVING ROOM. 대화와 휴식이 있는 행복한 가족공간" /></a></li>
+								<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/bahus_bn_main_02.jpg" width="640" height="510" alt="NEW TREND. LIVING ROOM. 대화와 휴식이 있는 행복한 가족공간" /></a></li>
+								<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/bahus_bn_main_03.jpg" width="640" height="510" alt="NEW TREND. LIVING ROOM. 대화와 휴식이 있는 행복한 가족공간" /></a></li>
+							</ul>
+						</div>
+						<a href="#" class="swiper-bn-left"><b class="ir">이전 배너 보기</b></a>
+						<a href="#" class="swiper-bn-right"><b class="ir">다음 배너 보기</b></a>
+						<div class="pagination">
+							<a href="#none" class="swiper-pagination-switch"><b class="ir">1번 이미지 보기</b></a>
+							<a href="#none" class="swiper-pagination-switch"><b class="ir">2번 이미지 보기</b></a>
+							<a href="#none" class="swiper-pagination-switch"><b class="ir">3번 이미지 보기</b></a>
+						</div>
+						<a href="#" class="bt_opa_lyr" onclick="OpacityLyrOpen('layer_main_bn');return false;" onkeypress="this.onclick;"><b class="ir">배너 전체 보기</b></a>
+					</div>
+					<script type="text/javascript">
+					$(document).ready(function() {
+						$('#main_bn_wrap .swiper-slide').show();
+						var myTop_bn = new Swiper('#main_bn',{
+							createPagination: false,
+							simulateTouch: true,
+							calculateHeight: true,
+							pagination: '#main_bn_wrap .pagination',
+							loop: true,
+							paginationClickable: true
+						});
+						$('#main_bn_wrap').find('.swiper-bn-left').on('click', function(e){
+							e.preventDefault();myTop_bn.swipePrev();
+						})
+						$('#main_bn_wrap').find('.swiper-bn-right').on('click', function(e){
+							e.preventDefault();myTop_bn.swipeNext();
+						});
+							
+						$(window).resize(function(){	
+							myTop_bn.reInit();
+						});
+					});
+					</script>
+					<!--// TOP_BN -->
+
+					<!-- EVENT ALL LAYER -->
+					<div id="layer_main_bn" class="layer_opacity">
+						<h3 class="pop_tit">이벤트 전체</h3>
+						<div class="pop_con">
+							<div class="main_bn_lyr">
+								<ul>
+									<li><a href="#"><img src="../images/mobile/temp/bahus_bn_main_01.jpg" width="640" height="507" alt="NEW TREND. LIVING ROOM. 대화와 휴식이 있는 행복한 가족공간" /></a></li>
+									<li><a href="#"><img src="../images/mobile/temp/bahus_bn_main_02.jpg" width="640" height="507" alt="NEW TREND. LIVING ROOM. 대화와 휴식이 있는 행복한 가족공간" /></a></li>
+									<li><a href="#"><img src="../images/mobile/temp/bahus_bn_main_03.jpg" width="640" height="507" alt="NEW TREND. LIVING ROOM. 대화와 휴식이 있는 행복한 가족공간" /></a></li>
+								</ul>
+							</div>
+						</div>
+						<a href="#" class="btn_close" onclick="OpacityLyrCls('layer_main_bn');return false;" onkeypress="this.onclick;"><span class="ir">팝업 닫기</span></a>
+					</div>
+					<!-- //EVENT ALL LAYER -->
+
+					<!-- MAIN PLAN  메인 템플릿 서브배너 삭제
+					<section class="main_rec_plan bahus"><!-- bahus 브랜드명 클래스 추가 
+						<h3 class="ir"><b>서브 프로모션 배너</b></h3>
+						<div class="rec_plan_bn">
+							<ul>
+								<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_01.jpg" alt="BEDROOM. VIEW ALL" /></a></li>
+								<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_02.jpg" alt="LIVING ROOM. VIEW ALL" /></a></li>
+								<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_03.jpg" alt="DINNING ROOM. VIEW ALL" /></a></li>
+								<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_04.jpg" alt="WORKSPACE. VIEW ALL" /></a></li>
+							</ul>
+						</div>
+					</section>
+					<!-- //MAIN PLAN -->
+
+					<!-- BRAND MAIN BANNER/HTML BANNER 170510 -->
+					<div class="brd_mainban">
+						<!-- 이미지 배너 등록 시 (최대15개 노출) -->
+						<ul>
+							<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_01.jpg" alt="BEDROOM. VIEW ALL" /></a></li>
+							<li>
+								<!-- HTML 등록 시 -->
+								<div class="bnr_html">
+									HTML 배너등록 영역입니다.<br>
+									<div style="text-align:center">
+										<iframe width="100%" src="https://www.youtube.com/embed/dISNgvVpWlo" frameborder="0" allowfullscreen=""></iframe>
+									</div>
+								</div>
+							</li>
+							<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_02.jpg" alt="LIVING ROOM. VIEW ALL" /></a></li>
+							<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_03.jpg" alt="DINNING ROOM. VIEW ALL" /></a></li>
+							<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_04.jpg" alt="WORKSPACE. VIEW ALL" /></a></li>
+						</ul>
+					</div>
+					<!-- //BRAND MAIN BANNER/HTML BANNER 170510 -->
+
+					<!-- BEST SELLERS -->
+					<section class="main_md_rec bahus"><!-- bahus 브랜드명 클래스 추가 -->
+						<h3><b>BEST SELLERS</b></h3>
+						<div class="md_rec_sel">
+							<label for="ctg_slt_01" class="ir">카테고리 선택</label>
+							<select class="select" id="ctg_slt_01">
+								<option selected="selected">전체</option>
+								<option>BAG</option>
+								<option>HEADWEAR</option>
+								<option>ACCERRORY</option>
+							</select>
+						</div>
+						<div class="goods_list">
+							<h4 class="ir">카테고리 상품리스트</h4>
+							<ul class="glist">
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_01.jpg" alt="블랙다리 원목테이블 150X200(cm)" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">블랙다리 원목테이블 150X200(cm)</span>
+											<span class="g_land"> 
+												<span class="g_per">이랜드가</span> 
+												<span class="g_prc">
+													<span class="sale"><b>1,236,000</b>원</span>
+												</span>
+											</span>	
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_02.jpg" alt="블랙다리 원목테이브" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">블랙다리 원목테이브</span>
+											<span class="g_land"> 
+												<span class="g_per">이랜드가</span> 
+												<span class="g_prc">
+													<span class="sale"><b>1,236,000</b>원</span>
+												</span>
+											</span>	
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_03.jpg" alt="원목 삼단 서랍장" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">원목 삼단 서랍장</span>
+											<span class="g_nor"> 
+												<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+												<span class="g_prc">
+													<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+													<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+												</span>
+											</span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_04.jpg" alt="블랙다리 원목테이블" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">블랙다리 원목테이블</span>
+											<span class="g_land"> 
+												<span class="g_prc">
+													<span class="sale"><b>1,236,000</b>원</span>
+												</span>
+											</span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_03.jpg" alt="위든 식탁의자" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">위든 식탁의자</span>
+											<span class="g_nor"> 
+												<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+												<span class="g_prc">
+													<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+													<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+												</span>
+											</span>	
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_04.jpg" alt="블랙다리 원목테이블" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">블랙다리 원목테이블</span>
+											<span class="g_land"> 
+												<span class="g_prc">
+													<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+													<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+												</span>
+											</span>	
+										</a>
+									</div>
+								</li>
+							</ul>			
+							<div class="goods_list_more main"><!-- more -->
+								<button title="리스트 더보기" type="button"><em>더보기 (<b>20</b>/27)</em></button>
+							</div>
+						</div>
+					</section>
+					<!--// BEST SELLERS -->
+
+					<!-- NEW ARRIVALS -->
+					<section class="main_md_rec bahus"><!-- bahus 브랜드명 클래스 추가 -->
+						<h3><b>NEW ARRIVALS</b></h3>
+						<div class="md_rec_sel">
+							<label for="ctg_slt_02" class="ir">카테고리 선택</label>
+							<select class="select" id="ctg_slt_02">
+								<option selected="selected">전체</option>
+								<option>BAG</option>
+								<option>HEADWEAR</option>
+								<option>ACCERRORY</option>
+							</select>
+						</div>
+						<div class="goods_list">
+							<h4 class="ir">카테고리 상품리스트</h4>
+							<ul class="glist">
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_01.jpg" alt="블랙다리 원목테이블 150X200(cm)" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">블랙다리 원목테이블 150X200(cm)</span>
+											<span class="g_land"> 
+												<span class="g_per">이랜드가</span> 
+												<span class="g_prc">
+													<span class="sale"><b>1,236,000</b>원</span>
+												</span>
+											</span>	
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_02.jpg" alt="블랙다리 원목테이브" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">블랙다리 원목테이브</span>
+											<span class="g_land"> 
+												<span class="g_per">이랜드가</span> 
+												<span class="g_prc">
+													<span class="sale"><b>1,236,000</b>원</span>
+												</span>
+											</span>	
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_03.jpg" alt="원목 삼단 서랍장" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">원목 삼단 서랍장</span>
+											<span class="g_nor"> 
+												<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+												<span class="g_prc">
+													<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+													<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+												</span>
+											</span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_04.jpg" alt="블랙다리 원목테이블" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">블랙다리 원목테이블</span>
+											<span class="g_land"> 
+												<span class="g_prc">
+													<span class="sale"><b>1,236,000</b>원</span>
+												</span>
+											</span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_03.jpg" alt="위든 식탁의자" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">위든 식탁의자</span>
+											<span class="g_nor"> 
+												<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+												<span class="g_prc">
+													<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+													<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+												</span>
+											</span>	
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="g_wrap">
+										<a href="#" class="g_link">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/bahus_270_04.jpg" alt="블랙다리 원목테이블" /></span>
+											</span>
+											<span class="g_brd">BAHUS</span>
+											<span class="g_tit">블랙다리 원목테이블</span>
+											<span class="g_land"> 
+												<span class="g_prc">
+													<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+													<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+												</span>
+											</span>	
+										</a>
+									</div>
+								</li>
+							</ul>			
+							<div class="goods_list_more main"><!-- more -->
+								<button title="리스트 더보기" type="button"><em>더보기 (<b>20</b>/27)</em></button>
+							</div>
+						</div>
+					</section>
+					<!--// NEW ARRIVALS -->
+
+					<!-- EVENT BANNER -->
+					<div class="main_evt_bn bahus"><!-- bahus 브랜드명 클래스 추가 -->
+						<a href="#" style="background-color:#878384"><img src="../images/mobile/temp/bahus_main_640x120.jpg" alt="매거진에서 전하는 STYLING GUIDE" /></a>
+					</div>
+					<!-- //EVENT BANNER -->
+
+					<!-- RECOMMENDATION -->
+					<section class="recom">
+						<h3><b>RECOMMENDATION</b></h3>
+						<div class="swiper-container" id="recom_bn">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<!-- 상품리스트 -->
+									<div class="goods_list RecGroup" id="RecGroup_01">
+										<h4 class="ir">상품리스트</h4>
+										<ul class="glist">
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<img src="../images/mobile/temp/bahus_recom_01.jpg" alt="">
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_01.jpg" width="480" height="480" alt="하프서클 체인백" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">하프서클 체인백</span>
+														<span class="g_land"> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_02.jpg" width="480" height="480" alt="UNI 리드미컬 보스턴 반팔티" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">UNI 리드미컬 보스턴 반팔티</span>
+														<span class="g_land">  
+															<span class="g_prc">
+																<span class="sale"><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_03.jpg" width="480" height="480" alt="쿨론 스트라이프 미키반팔티" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">쿨론 스트라이프 미키반팔티</span>
+														<span class="g_nor"> 
+															<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_04.jpg" width="480" height="480" alt="W 레깅스내장 보드숏" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">W 레깅스내장 보드숏</span>
+														<span class="g_nor"> 
+															<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_05.jpg" width="480" height="480" alt="남아 냉감 나시 세트" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">남아 냉감 나시 세트</span>
+														<span class="g_land"> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- //상품리스트 -->
+								</li>
+								<li class="swiper-slide">
+									<!-- 상품리스트 -->
+									<div class="goods_list RecGroup" id="RecGroup_02">
+										<h4 class="ir">상품리스트</h4>
+										<ul class="glist">
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_06.jpg" width="480" height="480" alt="쿨론 스트라이프 미키반팔티" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">쿨론 스트라이프 미키반팔티</span>
+														<span class="g_nor"> 
+															<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_01.jpg" width="480" height="480" alt="하프서클 체인백" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">하프서클 체인백</span>
+														<span class="g_land"> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_03.jpg" width="480" height="480" alt="UNI 리드미컬 보스턴 반팔티" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">UNI 리드미컬 보스턴 반팔티</span>
+														<span class="g_land">  
+															<span class="g_prc">
+																<span class="sale"><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_05.jpg" width="480" height="480" alt="쿨론 스트라이프 미키반팔티" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">쿨론 스트라이프 미키반팔티</span>
+														<span class="g_nor"> 
+															<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_02.jpg" width="480" height="480" alt="W 레깅스내장 보드숏" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">W 레깅스내장 보드숏</span>
+														<span class="g_nor"> 
+															<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="http://www.google.com" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/bahus_270_04.jpg" width="480" height="480" alt="남아 냉감 나시 세트" /></span>
+														</span>
+														<span class="g_brd">브랜드</span>
+														<span class="g_tit">남아 냉감 나시 세트</span>
+														<span class="g_land"> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- //상품리스트 -->
+								</li>
+							</ul>
+						</div>
+						<div class="pagination">
+							<a href="#none" class="swiper-pagination-switch"><b class="ir">첫번째 상품리스트 보기</b></a>
+							<a href="#none" class="swiper-pagination-switch"><b class="ir">두번째 상품리스트 보기</b></a>
+						</div>
+					</section>
+					<script type="text/javascript">
+						$(document).ready(function() {
+							fnRecgroup();
+							var myShopGoods = new Swiper('#recom_bn',{
+								createPagination: false,
+								calculateHeight: true,
+								loop: true,
+								pagination: '.recom .pagination',
+								paginationClickable: true
+							});
+							$(window).resize(function(){
+								myShopGoods.reInit();
+								fnRecgroup();
+							})
+						});
+						function fnRecgroup(){
+							$('.RecGroup').each(function(){
+								var group = $(this);
+								group.find('.glist').width($(window).width()-22)
+								var first_h = ($(window).width()/3) + 30;
+								group.find('li:first-child()').addClass('big')
+								group.find('li:not(.big)').each(function() { $(this).height(first_h) })
+								group.find('.big').each(function() { $(this).height((first_h*2)-1) })
+								group.find('.big .g_wrap').each(function() { $(this).height((first_h*2)) })
+							})
+						}
+					</script>
+
+					<!-- //RECOMMENDATION -->
+
+					<!-- MEDIA AND PRESS -->
+					<section class="mnp">
+						<h3><b>MEDIA &amp; PRESS</b></h3>
+						<div class="mnp_bn" id="mnp_bn">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<a href="#">
+										<dl>
+											<dt>
+												<strong>TBN</strong>
+												<span>쓸쓸하고 찬란한神 도깨비</span>
+											</dt>
+											<dd><img src="../images/mobile/temp/bahus_mnp_01.jpg" alt="쓸쓸하고 찬란한神 도깨비" /></dd>
+										</dl>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#">
+										<dl>
+											<dt>
+												<strong>TBNTBNTBNTBNTBNTBNTBNTBNTBNTBNTBNTBNTBNTBNTBNTBNTBNTBN</strong>
+												<span>쓸쓸하고 찬란한神 도깨비쓸쓸하고 찬란한神 도깨비쓸쓸하고 찬란한神 도깨비쓸쓸하고 찬란한神 도깨비쓸쓸하고 찬란한神 도깨비쓸쓸하고 찬란한神 도깨비쓸쓸하고 찬란한神 도깨비</span>
+											</dt>
+											<dd><img src="../images/mobile/temp/bahus_mnp_01.jpg" alt="쓸쓸하고 찬란한神 도깨비" /></dd>
+										</dl>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#">
+										<dl>
+											<dt>
+												<strong>TBN</strong>
+												<span>쓸쓸하고 찬란한神 도깨비</span>
+											</dt>
+											<dd><img src="../images/mobile/temp/bahus_mnp_01.jpg" alt="쓸쓸하고 찬란한神 도깨비" /></dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<script type="text/javascript">
+						$(document).ready(function() {
+							var pickBn = new Swiper('#mnp_bn',{
+								loop: false,
+								freeMode: true,
+								slidesPerView: 1.5,
+								calculateHeight: true,
+								createPagination : false,
+								simulateTouch : true,
+								momentumRatio:0.3
+							});
+						});
+					</script>
+					<!--// MEDIA AND PRESS -->
+
+					<!-- E-CATALOG -->
+					<section class="ecat">
+						<ul>
+							<li><a href="#"><img src="../images/mobile/temp/bahus_ecat_01.png" alt="E-CATALOG"></a></li>
+							<li><a href="#"><img src="../images/mobile/temp/bahus_ecat_02.png" alt="STORE"></a></li>
+							<li><a href="#"><img src="../images/mobile/temp/bahus_ecat_03.png" alt="ABOUT BAHUS"></a></li>
+						</ul>
+					</section>
+					<!-- //E-CATALOG -->
+
+					<!-- INSTAGRAM -->
+					<section class="insta_bahus">
+						<h3><img src="../images/mobile/main/insta_tit.png" width="100" height="23" alt="인스타그램" /></h3>
+						<dl>
+							<dt class="ir">인스타그램 사진리스트</dt>
+							<dd><a href="#"><img src="../images/mobile/temp/bahus_insta_01.jpg" alt="" /></a></dd>
+							<dd><a href="#"><img src="../images/mobile/temp/bahus_insta_02.jpg" alt="" /></a></dd>
+							<dd><a href="#"><img src="../images/mobile/temp/bahus_insta_03.jpg" alt="" /></a></dd>
+							<dd><a href="#"><img src="../images/mobile/temp/bahus_insta_04.jpg" alt="" /></a></dd>
+							<dd><a href="#"><img src="../images/mobile/temp/bahus_insta_05.jpg" alt="" /></a></dd>
+							<dd><a href="#"><img src="../images/mobile/temp/bahus_insta_06.jpg" alt="" /></a></dd>
+							<dd><a href="#"><img src="../images/mobile/temp/bahus_insta_07.jpg" alt="" /></a></dd>
+							<dd><a href="#"><img src="../images/mobile/temp/bahus_insta_08.jpg" alt="" /></a></dd>
+							<dd><a href="#"><img src="../images/mobile/temp/bahus_insta_09.jpg" alt="" /></a></dd>
+						</dl>
+					</section>
+					<script type="text/javascript">
+					$(document).ready(function(){ insta_lineup();})
+					$(window).resize(function(){insta_lineup();});
+					</script>
+					<!--// INSTAGRAM -->
+				</div>
+				<!-- //SWIPER 0 -->
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var GNB_SCROLL;
+		var LOADING_HTML = '<div class="loading"><span>로딩중</span></div>';
+		
+		$(document).ready(function() {
+			GNB_SCROLL = new Swiper('#gnb',{
+				createPagination: false,
+				freeMode: true,
+				freeModeFluid: true,
+				slidesPerView: 'auto',
+				roundLengths: true,
+				onSlideClick: function(){
+					$(".gnb li").removeClass("on");
+					$('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);			
+					GNB_SCROLL.swipeTo(GNB_SCROLL.clickedSlideIndex);
+					call_slide(GNB_SCROLL.clickedSlideIndex);
+				}
+			});
+
+			$(window).resize(function(){	
+				GNB_SCROLL.reInit();
+			});
+		});
+		
+		$(window).load(function() { //2016-11-23
+			var START = 0;
+			mainCate.prependSlide(LOADING_HTML, 'swiper-slide','li');
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active');
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			mainCate.swipeTo(1, 0, true);
+			if($('#m_cts').find('div').hasClass('slide_cont') && START == 0 ){
+				$('.gnb li').removeClass('on');
+				$('.gnb').find('li').eq(START).addClass('on');	
+				mainCate.swipeTo(1, 0, true);
+			}else{
+				$('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);
+				call_slide(START);
+			}
+		});
+		
+		function change_slide(idx) {
+			$('#m_cts').find('li:not(.swiper-slide-active)').remove();
+			mainCate.prependSlide( LOADING_HTML, 'swiper-slide','li');
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			$('#m_cts').find('.swiper-slide').removeClass('swiper-slide-active');
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active');			
+			if(	$('#m_cts').find('.swiper-slide').eq(1).hasClass('swiper-slide-active')){
+				$('#m_cts').find('.slide_cont').remove();
+				window.scrollTo(0, 0);
+				call_slide(idx);
+			}
+		}
+
+		function call_slide(idx){ 
+			$.ajax({
+				type : 'get', // 퍼블리싱 확인용 . 개발측은 post
+				isLocal: true,
+				headers: { "cache-control": "no-cache" },
+				url : 'bahus_main_'+ idx +'.html',
+				dataType : 'html',
+				success: function(data){	
+					setTimeout(function() { 
+						$('#m_cts').find('.swiper-slide').eq(1).html(data);						
+						mainCate.reInit();
+						setSlideHeight();
+					}, 100);
+					$('.gnb li').removeClass('on');
+					$('.gnb').find('li').eq(idx).addClass('on');	
+					mainCate.swipeTo(1, 0, true);
+				},
+				error: function(){
+					setTimeout(function() { call_slide(0) }, 100);
+					GNB_SCROLL.swipeTo(idx, 200);
+				}
+			});
+		}
+			
+		var mainCate = new Swiper('#m_cts',{
+			loop: false,
+			simulateTouch : true,
+			calculateHeight:true,
+			onSlideNext : function() {
+				var index = parseInt($('.gnb').find('li.on').index()) + 1;
+				var max_gnb = $('.gnb li').length;
+				if(index == max_gnb ){	
+					var idx = 0;
+					GNB_SCROLL.swipeTo(0, 200); 
+				}else{
+					var idx = index;
+					var w_width = $(window).width();
+					var	active_li = $('.gnb').find('li.on').next('li');
+					var active_left = active_li.offset().left + active_li.outerWidth();
+					if(active_left > w_width){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}
+				}
+				change_slide(idx);
+			},
+			onSlidePrev : function() {
+				var index = parseInt($('#m_cts' ).find('.slide_cont').attr('data-index'));
+				if(index == 0 ){	
+					var idx = $('.gnb li').length -1;
+						GNB_SCROLL.swipeTo(idx, 200);
+				}else{
+					var idx = index - 1;
+					var active_li = $('.gnb').find('li.on').prev('li');
+					var active_left = active_li.offset().left;
+					if(active_left <= 0){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}	
+				}	
+				change_slide(idx);
+			}
+		});
+		
+		$(window).resize(function(){
+			mainCate.reInit();
+			setSlideHeight();
+		});
+	</script>
+</div>
+<!-- //CONTENT -->
+
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<div class="ft_bn" style="background-color:#878384">
+		<a href="#"><img src="../images/mobile/temp/bahus_foot_100_01.jpg" width="640" height="100" alt="2016 WINTER NEW ARRIVAL" /></a>
+	</div>
+	<div class="ft_menu">
+		<ul>
+			<li><a href="#">로그아웃</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li><a href="#">장바구니</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드리테일</dt>
+		<dd>고객센터 : <a href="tel:1899-9500">1899-9500</a></dd>
+		<dd>사업자등록번호 : 114-81-01855  <a href="#">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 제 2007-서울서초-09998호</dd>
+		<dd>서울시 서초구 잠원동 70-2 대표이사 : 이광일/김연배</dd>
+		<dd>개인정보 보호책임자 : 대표이사 김연배</dd>
+		<dd>
+			<a href="#" target="_blank" title="새창"><strong>개인정보처리방침</strong></a> | <a href="#" target="_blank" title="새창">약관안내</a>
+		</dd>
+	</dl>
+	<div class="ft_sns">
+		<ul>
+			<li><a href="#" class="fb"><em class="ir">페이스북</em></a></li>
+			<li><a href="#" class="is"><em class="ir">인스타그램</em></a></li>
+			<li><a href="#" class="bl"><em class="ir">블로그</em></a></li>
+		</ul>
+	</div>
+	<div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="ft_app">
+		<ul>
+			<li><a href="#">BAHUS APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- LAYER REVIEW : 포토리뷰레이어 -->
+<div id="lyr_review" class="layer_fix">
+	<h3 class="pop_tit">[셀링포인트]상품명상품명 상품명상품명 상품명상품명 상품명상품명 상품명상품명 상품명상품명 상품명상품명</h3><!-- 170216 상품명으로 변경 -->
+	<div class="pop_con">
+		<div class="review_wrap">
+			<div class="rv_list">
+				<div class="r_ico">
+					<span class="ico">BEST</span>
+					<span class="scr s45"><em class="ir">90</em></span>
+				</div>
+				<div class="r_usr">
+					<span class="id">USERID****</span>
+					<span class="date">2015.10.10</span>
+				</div>
+
+				<div class="review_lyr_bn" id="review_lyr_bn">
+					<div class="swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide"><span><img src="../images/pcweb/temp/bahus_review_662x350.jpg" alt="옷걸이" /></span></li>
+							<li class="swiper-slide"><span><img src="../images/pcweb/temp/bahus_review_1000x1333.jpg" alt="옷걸이2" /></span></li>
+							<li class="swiper-slide"><span><img src="../images/pcweb/temp/bahus_review_1200x675.jpg" alt="식탁" /></span></li>
+						</ul>
+					</div>
+					<div class="pagination">
+						<a href="#none" class="swiper-pagination-switch"><b class="ir">1번 이미지 보기</b></a>
+						<a href="#none" class="swiper-pagination-switch"><b class="ir">2번 이미지 보기</b></a>
+						<a href="#none" class="swiper-pagination-switch"><b class="ir">3번 이미지 보기</b></a>
+					</div>
+				</div>
+				<script type="text/javascript">
+
+					function set_review_lyr_bn(){
+						var wrap = $('#lyr_review .review_wrap');
+						var rv_bn = '#review_lyr_bn';
+						wrap.append('<div class="bahus_nav_gd"><a href="#" class="prev"><b class="ir">이전</b></a><a href="#" class="next"><b class="ir">다음</b></a></div>');
+						if($('#main_top').length>0){$('#main_top').hide()}
+						$('#lyr_review .bahus_btn_close, #lyr_review .bt_close').on('click', function(){
+							if($('#main_top').length>0){$('#main_top').show()}
+							wrap.find('.bahus_nav_gd').remove();
+							if (typeof review_lyr_bn != 'undefined') {
+								review_lyr_bn.destroy();
+								review_lyr_bn = undefined;
+							}
+						})
+						if($(rv_bn).length>0 ){
+							h_review_lyr_bn();
+							var total = $(rv_bn+' .swiper-slide').length;
+							var review_lyr_bn = new Swiper(rv_bn+' .swiper-container',{
+								createPagination: false,
+								initialSlide:0,
+								calculateHeight:true,
+								simulateTouch: true,
+								pagination: rv_bn+' .pagination',
+								loop: false,
+								paginationClickable: true,
+								onTouchEnd : function() {
+									var matrix = $(rv_bn+' .swiper-wrapper').css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+									var matrix_x = matrix[12] || matrix[4];
+									var s_width = $(rv_bn+' .swiper-slide').width();
+									if(matrix_x >= 0){ //first slide prev touch
+										alert('PREV REVIEW')
+										return false;
+									}
+									if(matrix_x <= -(s_width*(total-1))){ //last slide next touch
+										alert('NEXT REVIEW')
+										return false;
+									}
+								}
+							});
+							review_lyr_bn.swipeTo(0, 0 , 0 );
+							wrap.find('.bahus_nav_gd .prev').on('click', function(e){
+								if($(rv_bn+' .swiper-slide-active').index() == 0){ //first slide prev click
+									alert('PREV REVIEW')
+								}else{
+									e.preventDefault();review_lyr_bn.swipePrev();
+								}
+							})
+							wrap.find('.bahus_nav_gd .next').on('click', function(e){
+								if($(rv_bn+' .swiper-slide-active').index() == total - 1){ //last slide next click
+									alert('NEXT REVIEW')
+								}else{
+									e.preventDefault();review_lyr_bn.swipeNext();
+								}
+							})
+							review_lyr_bn.reInit()
+							$(window).resize(function(){	h_review_lyr_bn()})
+						}else{ 
+							//only text review
+							wrap.find('.bahus_nav_gd .prev').on('click', function(e){alert('PREV REVIEW')})
+							wrap.find('.bahus_nav_gd .next').on('click', function(e){alert('NEXT REVIEW')});
+						}
+					}
+					function h_review_lyr_bn(){ //슬라이더 내부 이미지정렬
+						var h = $(window).width()-24;
+						$('#review_lyr_bn .swiper-container, #review_lyr_bn .swiper-slide').css('height', h + 'px');
+						$('#review_lyr_bn .swiper-slide span').css({'height':h + 'px','width':h + 'px'})
+						rectangle_lineup('.review_lyr_bn .swiper-slide'); 
+					}
+				</script>
+
+				<div class="r_gd">
+					<div class="info">
+						<div class="r_rec">고객추천</div>
+						<ul>
+							<li><span class="dt">품질</span><span class="scr s45"><em class="ir">95</em></span></li>
+							<li><span class="dt">배송</span><span class="scr s40"><em class="ir">80</em></span></li>
+							<li><span class="dt">연령</span><span class="dd">26~30세</span></li>
+							<li><span class="dt">사이즈</span><span class="dd">화면과 같아요</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="r_opt">선택04)CHARA [예약판매] 오크테이블CHARA [예약판매] 오크테이블</div>
+				<div class="rv_text">
+					세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요.<br />
+					옆쪽에 본드가 좀 뭍은것이 왔지만 잘보이지 않는 곳이라 다행이네요. 신발은 따뜻하고 편해요. 버클이 좀 없어보 이긴 하지만. 세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔 주셨네요. 옆쪽에 본드가 좀 뭍은것이 왔지만 잘보이지 않는 곳이라 다행이네요. 신발은 따뜻하고 편해요. 버클이 좀 없어보이긴 하지만 세무재질에본드가 뭍어 교환요청했는데 바로 바꿔주셨네요.
+				</div>
+				<div class="rv_btn">
+					<span>이 상품평이 도움이 되셨나요?</span>
+					<button type="button"><em>네, 도움이 되었습니다.</em></button>
+					<button type="button" class="on"><em>네, 도움이 되었습니다.</em></button><!-- 170210 버튼 선택시 추가 -->
+				</div>
+				<div class="rv_rst">“999명이 이 상품평이 도움이 된다고 선택하셨습니다.”</div>
+			</div>
+			<!-- <div class="bahus_nav_gd">
+				<a href="#" class="prev"><b class="ir">이전</b></a>
+				<a href="#" class="next"><b class="ir">다음</b></a>
+			</div> -->
+			<div class="btn_gd_rv">
+				<a href="#" class="go_dtl"><span>상품상세보기</span></a>
+			</div>
+		</div>		
+	</div>
+	<a href="#close" class="bahus_btn_close" onClick="fn_layer_close('lyr_review');return false"><span class="ir">포토리뷰 상세보기 레이어 팝업 닫기</span></a>
+</div>
+<!--// LAYER REVIEW : 포토리뷰레이어 -->
+
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

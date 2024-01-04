@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<style type="text/css">
+html,body{width:100%;height:100%}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,select,textarea,p,blockquote,th,td,legend,button{margin:0;padding:0;color:#666;font-family:dotum,sans-serif;font-size:13px;line-height:1.25em;-webkit-font-smoothing:antialiased;}
+body {-webkit-text-size-adjust:none;}
+ul,ol,li{list-style:none;}
+em{font-style:normal}
+input,select,button{vertical-align:middle}
+img{vertical-align:top}
+img,fieldset,iframe{border:0 none}
+a{text-decoration:none; color:#666; cursor:pointer;}
+li,p,dt,dd,div,span,td,th{word-break:break-all;}	
+table{border-collapse:collapse;border-spacing:0;table-layout:fixed;}
+caption {overflow:hidden; width:0; height:0; font-size:0; line-height:0;}
+.goods_wrap{width:1080px; margin:0 auto; position:relative;}
+.goods_container{margin-top:60px;}
+.detail_md_msg {width:1080px; margin:0 auto;}
+.detail_part{margin-top:40px;}
+.detail_imgs{text-align:center;}
+.detail_html {text-align:center;}
+.detail_viewer{width:730px;margin:60px auto 0;}
+.detail_viewer .dt_ve_title{display:block;padding-left:10px;padding-bottom:12px;font-size:18px;color:#333;font-weight:800;}
+.detail_viewer .dt_ve_contents{padding:65px 0 0;background:#f3f3f3;}
+.dt_ve_wideview{position:relative;}
+.dt_ve_wideview .dt_ve_ct_img{display:block;margin:0 auto;width:600px;height:600px; margin-bottom:30px; border:1px solid #ddd;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}
+.dt_ve_thumnail{overflow:hidden;position:relative;margin:30px auto 0;width:600px;/*height:74px;*/}
+.dt_ct_text{border-top:1px solid #ddd;width:600px;margin:0 auto;}
+.dt_ct_text p{padding:30px 10px;line-height:19px;}
+.txt_h3{display:block;margin:48px 0 12px;padding-left:8px;padding-bottom:2px;font-size:18px;line-height:1.3em;font-weight:800;color:#333;}
+.goods_auth{display:table;width:918px;padding:20px 0 20px 158px;border:2px solid #ddd;}
+.goods_auth .name{color:#333;font-size:16px;font-weight:bold;}
+.goods_auth .name span{color:#666;font-size:13px;font-weight:lighter;}
+.goods_auth .name a{margin-left:18px;padding-right:7px;color:#666;font-size:13px;font-weight:lighter;text-decoration:underline;background:url(../../images/pcweb/goods/ico_auth.gif) right center no-repeat;}
+.goods_auth .txt{color:#666;margin-top:18px;font-size:14px;}
+.goods_auth .ico_auth01{display:table-cell;height:86px;padding:7px 0 0 105px;vertical-align:middle;background:url('../../images/pcweb/goods/bg_auth01.gif') 0 center no-repeat;}
+.goods_auth .ico_auth02{display:table-cell;height:66px;padding:7px 0 0 105px;vertical-align:middle;background:url('../../images/pcweb/goods/bg_auth02.gif') 0 center no-repeat;color:#666;text-align:left;font-size:14px;}
+.txt_h3.ico_chk02{padding-left:32px;font-family:Verdana;background:url('../../images/pcweb/common/ico_chk02.gif') 12px center no-repeat;}
+.goods_attr{padding:30px 0;border-top:1px solid #adadad;border-bottom:1px solid #ddd;*zoom:1;}
+.goods_attr:after{display:block;clear:both;content:"";}
+.goods_attr > li{float:left;width:427px;margin:10px 0;padding-left:113px;}
+.goods_attr > li .same_th{display:block;float:left;width:93px;margin-left:-113px;padding-left:20px;line-height:28px;font-weight:800;}
+.attr_grade{*zoom:1;}
+.attr_grade:after{display:block;clear:both;content:"";}
+.attr_grade > li{position:relative;line-height:28px;float:left;width:120px;margin:0 -1px 0 0;color:#666;text-align:center;border:1px solid #ddd;z-index:29;}
+.attr_grade > li.on{background:#242424;color:#fff;border:1px solid #242424;font-weight:800;z-index:30;} /* 160808 수정 */
+.goods_realsize{padding:44px 50px 50px;border-top:1px solid #adadad;border-bottom:1px solid #ddd;}
+.goods_realsize .realsize_info{}
+.realsize_info{width:100%;margin:0 0 40px;text-align:center;vertical-align:middle;}
+.realsize_info .size_imgs{max-width:100%;}
+.realsize_table{margin:20px 0 0;}
+.data_size_table {margin-top:20px;}
+.data_size_table table {width:100%; border-top:1px solid #adadad;}
+.data_size_table thead th {padding:10px 10px; border-bottom:1px solid #adadad; border-left:1px solid #adadad; background:#e2e2e2; color:#333;}
+.data_size_table thead th:first-child {border-left:none;}
+.data_size_table tbody th {padding-left:28px; border-bottom:1px solid #ddd; background:#f3f3f3; color:#333; text-align:left;}
+.data_size_table th.th02 {padding-left:28px; color:#333; text-align:left;}
+.data_size_table .tr_typ02 th:first-child {border-left:none;}
+.data_size_table .tr_typ02 td {border-bottom:1px solid #adadad; border-left:1px solid #adadad; background:#e2e2e2; color:#333; font-weight:400;}
+.data_size_table .tr_typ02 th.th02 {border-bottom:1px solid #adadad; background:#e2e2e2; color:#333; font-weight:800;}
+.data_size_table td {padding:10px 20px; border-bottom:1px solid #ddd; border-left:1px solid #ddd; vertical-align:middle; text-align:center;}
+	</style>
+</head>
+<body>
+
+
+<div class="goods_wrap">
+
+	<div class="goods_container">
+
+		<div class="detail_part">
+			<div class="detail_md_msg">
+				MD 공지 영역
+			</div>
+			
+			<div class="detail_imgs">
+				<img src="../../images/pcweb/temp/_sample_700x1000.jpg" alt="" />
+			</div>
+			
+			<div class="detail_html">
+				하드코딩영역
+			</div>
+			
+			<!-- 제품 안전인증정보 160802 수정 -->
+			<div class="title">
+				<strong class="txt_h3">제품 안전인증정보</strong>
+			</div>
+			<!-- case1 -->
+			<div class="goods_auth">
+				<div class="ico_auth01">
+					<div class="name">공산품 안전인증 - 인증기관 - 인증모델명 <span>(구매전 인증번호를 꼭 확인하세요)</span></div>
+					<div class="name">안전인증번호 : AA000000000 <a href="#">인증번호확인</a></div>
+					<div class="txt">※해당 인증정보는 판매자가 등록한 것으로 등록 정보에 대한 일체의 책임은 판매자 에게 있습니다.</div>
+				</div>
+			</div>
+			<div class="goods_auth">
+				<div class="ico_auth01">
+					<div class="name">공산품 자율안전 확인 신고 - 인증기관 - 인증모델명 <span>(구매전 인증번호를 꼭 확인하세요)</span></div>
+					<div class="name">안전신고번호 : AA000000000 <a href="#">인증번호확인</a></div>
+					<div class="txt">※해당 인증정보는 판매자가 등록한 것으로 등록 정보에 대한 일체의 책임은 판매자 에게 있습니다.</div>
+				</div>
+			</div>
+			<div class="goods_auth">
+				<div class="ico_auth01">
+					<div class="name">전기용품 안전인증 - 인증기관 - 인증모델명 <span>(구매전 인증번호를 꼭 확인하세요)</span></div>
+					<div class="name">안전인증번호 : AA000000000 <a href="#">인증번호확인</a></div>
+					<div class="txt">※해당 인증정보는 판매자가 등록한 것으로 등록 정보에 대한 일체의 책임은 판매자 에게 있습니다.</div>
+				</div>
+			</div>
+			<div class="goods_auth">
+				<div class="ico_auth01">
+					<div class="name">전기용품 자율안전 확인 신고 - 인증기관 - 인증모델명 <span>(구매전 인증번호를 꼭 확인하세요)</span></div>
+					<div class="name">안전신고번호 : AA000000000 <a href="#">인증번호확인</a></div>
+					<div class="txt">※해당 인증정보는 판매자가 등록한 것으로 등록 정보에 대한 일체의 책임은 판매자 에게 있습니다.</div>
+				</div>
+			</div>
+			<div class="goods_auth">
+				<div class="ico_auth01">
+					<div class="name">어린이제품 안전인증 - 인증기관 - 인증모델명 <span>(구매전 인증번호를 꼭 확인하세요)</span></div>
+					<div class="name">안전신고번호 : AA000000000 <a href="#">인증번호확인</a></div>
+					<div class="txt">※해당 인증정보는 판매자가 등록한 것으로 등록 정보에 대한 일체의 책임은 판매자 에게 있습니다.</div>
+				</div>
+			</div>
+			<div class="goods_auth">
+				<div class="ico_auth01">
+					<div class="name">어린이제품 안전확인 - 인증기관 - 인증모델명 <span>(구매전 인증번호를 꼭 확인하세요)</span></div>
+					<div class="name">안전인증번호 : AA000000000 <a href="#">인증번호확인</a></div>
+					<div class="txt">※해당 인증정보는 판매자가 등록한 것으로 등록 정보에 대한 일체의 책임은 판매자 에게 있습니다.</div>
+				</div>
+			</div>
+			<div class="goods_auth">
+				<div class="ico_auth01">
+					<div class="name">어린이제품 공급자적합성확인 - 인증기관 - 인증모델명 <span>(구매전 인증번호를 꼭 확인하세요)</span></div>
+					<div class="name">안전신고번호 : AA000000000 <a href="#">인증번호확인</a></div>
+					<div class="txt">※해당 인증정보는 판매자가 등록한 것으로 등록 정보에 대한 일체의 책임은 판매자 에게 있습니다.</div>
+				</div>
+			</div>
+			<!-- //case1 -->
+			<!-- case2 -->
+			<div class="goods_auth">
+				<div class="ico_auth01">
+					<div class="name">본 제품은 KC 인증을 필함 <a href="#">인증번호확인</a></div>
+					<div class="txt">※해당 인증정보는 판매자가 등록한 것으로 등록 정보에 대한 일체의 책임은 판매자 에게 있습니다.</div>
+				</div>
+			</div>
+			<!-- //case2 -->
+			<!-- case3 -->
+			<div class="goods_auth">
+				<div class="ico_auth02">
+					<div class="name">본 제품은 국가통합인증(KS마크)대상 품목으로 아래의 국가통합인증(KS마크)을(를) 필 하였습니다.</div>
+					<div class="name">인증번호 : 0000 </div>
+					<div class="txt">※해당 인증정보는 판매자가 등록한 것으로 등록 정보에 대한 일체의 책임은 판매자 에게 있습니다.</div>
+				</div>
+			</div>
+			<!-- //case3 -->
+			<!-- //제품 안전인증정보 160802 수정 -->
+
+<!-- CHECK POINT -->
+			<div class="title">
+				<strong class="txt_h3 ico_chk02">CHECK POINT</strong>
+			</div>
+			<ul class="goods_attr">
+				<li>
+					<div class="same_th">사이즈</div>
+					<ul class="attr_grade"><li class="on">정사이즈보다 작다</li><li>정사이즈와 같다</li><li>정사이즈보다 크다</li></ul>
+				</li>
+				<li>
+					<div class="same_th">광택여부</div>
+					<ul class="attr_grade"><li>많음</li><li class="on">중간</li><li>없음</li></ul>
+				</li>
+				<li>
+					<div class="same_th">핏정보</div>
+					<ul class="attr_grade"><li>슬림핏</li><li>레귤러</li><li class="on">루즈핏</li></ul>
+				</li>
+				<li>
+					<div class="same_th">구김성</div>
+					<ul class="attr_grade"><li class="on">있음</li><li>약간 있음</li><li>있음</li></ul>
+				</li>
+				<li>
+					<div class="same_th">신축성</div>
+					<ul class="attr_grade"><li>좋음</li><li class="on">약간 있음</li><li>없음</li></ul>
+				</li>
+				<li>
+					<div class="same_th">비침</div>
+					<ul class="attr_grade"><li>있음</li><li>중간</li><li class="on">없음</li></ul>
+				</li>
+			</ul>
+<!-- //CHECK POINT -->
+
+<!-- 상품 실측 사이즈 -->
+			<div class="title">
+				<strong class="txt_h3">상품 실측 사이즈</strong>
+			</div>
+			<div class="goods_realsize">
+				<div class="realsize_info">
+					<img class="size_imgs" src="../../images/pcweb/temp/_sample_size01.jpg" alt="" />
+					<!-- <div class="size_imgs">
+						<img src="../../images/pcweb/temp/_sample_286x185.jpg" alt="" />
+					</div>
+					<div class="size_txt">
+						<dl>
+							<dt>사이즈 측정 방법</dt>
+							<dd><span class="numbers">1</span> 가슴둘레 : 겨드랑이 안쪽을 기준으로 가슴의 둘레를 잰 길이</dd>
+							<dd><span class="numbers">2</span> 허리둘레 : 허리의 가장 가는 부분의 둘레를 잰 길이</dd>
+						</dl>
+					</div> -->
+				</div>
+
+				<div class="realsize_table">
+					<!-- 사이즈 표 이미지 -->
+					<img src="../../images/pcweb/temp/_sample_size_table01.jpg" alt="" />
+					<!-- //사이즈 표 이미지 -->
+<!-- 160411_수정 -->
+					<div class="data_size_table">
+						<table>
+							<caption>표준사이즈 표이며 브랜드사이즈 , 허리둘레, 밑위길이, 엉덩이 둘레 순으로 제공합니다.</caption>
+							<colgroup><col style="width:18%" /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /></colgroup>
+							<thead>
+							<tr>
+								<th scope="col" class="th02">표준사이즈</th>
+								<th scope="col">30</th><th scope="col">31</th><th scope="col">32</th><th scope="col">33</th><th scope="col">34</th><th scope="col">35</th><th scope="col">36</th><th scope="col">37</th><th scope="col">38</th><th scope="col">39</th><th scope="col">40</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr class="tr_typ02">
+								<th scope="row" class="th02">브랜드 사이즈</th><td>30</td><td>31</td><td>32</td><td>33</td><td>34</td><td>35</td><td>36</td><td>37</td><td>38</td><td>39</td><td>40</td>
+							</tr>
+							<tr><th scope="row" class="th02">허리둘레(cm)</th><td>30.5</td><td>31.5</td><td>32.5</td><td>33.5</td><td>34.5</td><td>35.5</td><td>36.5</td><td>37.5</td><td>38.5</td><td>39.5</td><td>40.5</td></tr>
+							<tr><th scope="row" class="th02">밑위길이</th><td>30</td><td>31</td><td>32</td><td>33</td><td>34</td><td>35</td><td>36</td><td>37</td><td>38</td><td>39</td><td>40</td></tr>
+							<tr><th scope="row" class="th02">엉덩이 둘레</th><td>30</td><td>31</td><td>32</td><td>33</td><td>34</td><td>35</td><td>36</td><td>37</td><td>38</td><td>39</td><td>40</td></tr>
+							</tbody>
+						</table>
+					</div>
+<!-- //160411_수정 -->
+				</div>
+<!-- //160106 -->
+			</div>
+<!-- //상품 실측 사이즈 -->
+			
+			<div class="detail_viewer">
+				<strong class="dt_ve_title">대표 이미지</strong>
+				<div class="dt_ve_contents">
+					<div class="dt_ve_wideview">
+						<img class="dt_ve_ct_img" src="../../images/pcweb/temp/_sample_600x600.jpg" alt="" />
+						<img class="dt_ve_ct_img" src="../../images/pcweb/temp/_sample_600x600.jpg" alt="" />
+						<img class="dt_ve_ct_img" src="../../images/pcweb/temp/_sample_600x600.jpg" alt="" />
+						<img class="dt_ve_ct_img" src="../../images/pcweb/temp/_sample_600x600.jpg" alt="" />
+					</div>
+					
+					<div class="dt_ct_text"><p>
+						멜란지 컬러감의 컬럭 블록 디테일이 적용되어 감각적인 외관을 연출하는 긴팔 원피스입니다. <br />
+						피터팬 카라와 프린세스 절개라인이 여성스러운 감성을 보여주며 내부에 안감이 매치되어 섬세한 마무리를 보여줍니다. <br />
+						벨트가 추가 구성되어 사이즈 조절이 용이하며 단품만으로 걸리시한 스타일링이 가능합니다.
+					</p></div>
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+</div>
+
+</body>
+</html>

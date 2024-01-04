@@ -1,0 +1,3252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+</head>
+<body class="renewal2">	
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER -->
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+<!-- //INC_HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<!-- TITLE -->
+	<div class="cts_tit">
+		<h2>
+			<a href="#contents" class="ctg" id="ctab" onClick="fnToggleSlide('ctab', 'catg_nav');return false;" onKeyPress="this.onclick;" >상품상세<em class="ir">카테고리 열기</em></a>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>		
+			<a href="#" class="sns" onClick="fn_layer_open('sns_lyr');return false;" onKeyPress="this.onclick;"><em class="ir">공유 하기</em></a>	
+		</h2>
+	</div>
+	<!-- //TITLE -->
+
+	<!-- GOODS -->
+	<div class="goods_wrap">
+		<!-- NAV. -->
+		<div class="catg_nav" id="catg_nav" style="display:none">
+			<ul>
+				<li><a href="#">여성패션</a></li>
+				<li><a href="#">원피스</a></li>
+				<li>정장원피스</li>
+			</ul>
+		</div>	
+		<!-- //NAV. -->
+
+		<!-- lucky DEAL -->
+		<div class="goods_lucky lucky">
+			<dl id="h_clock">
+				<dt class="ir">럭키딜</dt>
+				<dd class="h_time"><b id="h_day">0</b>일 <b id="h_time">00:00:00</b></dd>
+				<dd class="h_cnt" ><b>145,564</b>개 판매</dd>
+			</dl>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#h_clock').countdown('2017/01/18 00:00:00', function (e) {
+				$('#h_day').html(e.strftime('%-D'));
+				$('#h_time').html(e.strftime('%H:%M:%S'));
+			});
+		});
+		</script>
+		<!-- //lucky DEAL -->
+
+		<!-- TIME SLAE 2016-10-17 -->
+		<div class="goods_time">
+			<dl id="t_clock">
+				<dt class="ir">타임세일</dt>
+				<dd class="t_time"><b id="t_day">0</b>일 <b id="t_time">00:00:00</b></dd>
+				<dd class="t_cnt" ><b>145,564</b>개 판매</dd>
+			</dl>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#t_clock').countdown('2017/01/18 12:30:30', function (e) {
+				$('#t_day').html(e.strftime('%-D'));
+				$('#t_time').html(e.strftime('%H:%M:%S'));
+			});
+		});
+		</script>
+		<!-- //TIME SLAE 2016-10-17 -->
+		<!-- GOODS IMAGES -->
+		<div class="goods_img" id="goods_img">
+			<span class="overseas"><em class="ir">해외배송상품</em></span>
+			<div class="gd_img swiper-container" id="gd_img">
+				<ul class="swiper-wrapper">	
+					<li class="swiper-slide">
+						<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="알토 포트메리온 상품 앞면 사진" />
+<!-- [v2] : 추가 -->						
+						<div class="set_vdo">
+							<button class="btn_vdo_play" type="button" onclick="layer_open('#layerVdo'); dim_on(); scroll_on();return false;"><span class="ir">Play</span></button>
+						</div>
+<!-- [v2] : 추가 -->						
+					</li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="알토 포트메리온 상품 좌측면 사진" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="알토 포트메리온 상품 우측면 사진" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="알토 포트메리온 상품 후면 사진" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="알토 포트메리온 상품 웟면 사진" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="알토 포트메리온 상품 정면확대 사진1" /></li>
+					<li class="swiper-slide"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="알토 포트메리온 상품 정면확대 사진2" /></li>
+				</ul>
+			</div>
+			<div class="counter"><b class="num_active">1</b>/<span class="num_total">1</span></div>
+			<div class="pagination"></div>
+			<div id="layerVdo" class="layer_vdo layer_pop">
+				<div class="g_vdo">
+					<div class="set_vdo">
+						<button class="btn_vdo_play" type="button" onclick="playYoutube(0);"><span class="ir">Play</span></button>
+						<button class="btn_vdo_pause" type="button" onclick="pauseYoutube(0);"><span class="ir">Pause</span></button>
+						<div id="vdo_iframe1"></div>
+					</div>
+				</div>
+				<a class="btn_cmn_x" href="#" onclick="layer_close('#layerVdo'); dim_out(); stopYoutube(0); return false;"><span class="ir">동영상 닫기</span></a>
+			</div>
+		</div>
+		<div class="goods_img_clr">
+			<ul>     
+				<li><a href="#" onClick="ToolLyrOpenTop('tooltip11', this);return false;" onKeyPress="this.onclick;" class="clr"><em><img src="../images/mobile/temp/img_color_1.png" width="54" height="54" alt="파랑" /></em></a>
+					<!-- TIP -->
+					<div id="tooltip11" class="tooltip clrtip">
+						<div class="tip_info">
+							<div class="tip_txt">등록된 이미지가 없습니다.</div>
+							<a class="tip_close" href="#" onClick="ToolLyrCls();return false;" onKeyPress="this.onclick;"><em class="ir">툴팁 닫기</em></a>
+						</div>
+					</div>
+					<!-- //TIP -->
+				</li>
+				<li><a href="#" data-clr="1" class="clr"><em><img src="../images/mobile/temp/img_color_2.png" width="54" height="54" alt="분홍" /></em></a></li>
+				<li><a href="#" data-clr="2" class="clr"><em><img src="../images/mobile/temp/img_color_3.png" width="54" height="54" alt="소라" /></em></a></li>
+				<li><a href="#" data-clr="3" class="clr"><em><img src="../images/mobile/temp/img_color_4.png" width="54" height="54" alt="고동" /></em></a></li>
+				<li><a href="#" data-clr="4" class="clr"><em><img src="../images/mobile/temp/img_color_5.png" width="54" height="54" alt="검정" /></em></a></li>
+				<li><a href="#" data-clr="5" class="clr"><em><img src="../images/mobile/temp/img_color_6.png" width="54" height="54" alt="그레이"/></em></a></li>
+				<li><a href="#" onClick="ToolLyrOpenTop('tooltip12', this);return false;" onKeyPress="this.onclick;" class="clr out"><em><img src="../images/mobile/temp/img_color_8.png" width="54" height="54" alt="노랑" /></em></a><!-- //20160218 class:out -->
+					<!-- TIP -->
+					<div id="tooltip12" class="tooltip clrtip">
+						<div class="tip_info">
+							<div class="tip_txt">해당 색상은 <em>품절</em>되었습니다.</div>
+							<a class="tip_close" href="#" onClick="ToolLyrCls();return false;" onKeyPress="this.onclick;"><em class="ir">툴팁 닫기</em></a>
+						</div>
+					</div>
+					<!-- //TIP -->
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var myGoodsImg = new Swiper('#gd_img',{
+				createPagination: true,
+				simulateTouch: true,
+				loop: false,//[v2] : loop 안되게 막음 *loop시 video 영역도 복사되서 id값이 중복처리 되어 오류 일으킴*
+				//calculateHeight: true,
+				autoResize: true,
+				pagination: '.goods_img .pagination', 
+				onSlideChangeStart : function() {
+					pageIndex();
+				},
+				onSlideChangeEnd : function() {
+					if(vdosLeng>0) {//[v2] : 영상 정지
+						stopYoutube(0);
+					}
+				}
+			});
+			pageIndex();			
+			var GoodsImgClr;
+
+			function pageIndex() {
+				var idx = Math.ceil(myGoodsImg.activeLoopIndex)  + 1;
+				var total = Math.ceil( $(".goods_img .pagination span").length);
+				$('.goods_img .num_active').text(idx);
+				$('.goods_img .num_total').text(total);
+				
+				GoodsImgClr = $(".goods_img_clr").find('a');
+				GoodsImgClr.each(function(){
+					if($(this).attr('data-clr') == myGoodsImg.activeLoopIndex){
+						$(this).addClass("on");
+					}else{
+						$(this).removeClass("on");
+					}
+				});
+			}
+			
+			GoodsImgClr.on('click', function(){
+				var ImgNo = $(this).attr('data-clr');
+				if(ImgNo){myGoodsImg.swipeTo(ImgNo, 200)}
+			});
+		});
+		</script>
+		<!-- //GOODS IMAGES -->
+
+		<!-- GOODS TITLE -->
+		<div class="goods_tit">
+			<div class="gd_brand">알토<a href="#">브랜드 바로가기</a></div><!-- 2016-11-15 -->
+			<h3 class="gd_name">라보떼 센스 갤러리 2400 싱글장 세트 라보떼 센스 갤러리 2400 싱글장 세트</h3>
+		</div>
+		<!-- //GOODS TITLE -->
+		
+		<!-- GOODS BRANCH -->
+		<div class="goods_brc">
+			<b>NC 평촌점</b>기준의 가격 및 혜택 입니다.
+			<a href="#" class="btn" onClick="fn_layer_open('branch_lyr');return false;" onKeyPress="this.onclick;" title="다른지점선택 열기">다른지점보기</a>
+		</div>
+		<!-- //GOODS BRANCH -->
+
+		<!-- GOODS INFO. -->
+		<div class="goods_info" id="goods_info">
+			<div class="gd_prc">
+				<dl>
+					<dt>판매가</dt>
+					<dd class="prc">
+						<span class="op"><em class="ir">정상가</em><em>1,100,000</em></span>
+						<span class="sp"><b>1,000,000</b>원</span>
+						<!-- <span class="rt"><b>50</b>%</span> -->
+						<span class="rt full_p"><b>100</b>%</span> <!-- 할인율 100% 케이스 -->
+					</dd>
+					<dt class="cpn">쿠폰가<button type="button" onClick="ToolLyrOpen('tooltip1', this);return false;" onKeyPress="this.onclick;"><em class="ir">할인내역 정보 열기</em></button>
+						<!-- TIP -->
+						<div id="tooltip1" class="tooltip">
+							<div class="tip_info">
+								<div class="tip_title"><strong>할인내역 정보</strong></div>
+								<div class="tip_txt">
+									즉시할인 쿠폰 <em>80%</em> 적용(~11.30) : 38,000원<br/>
+									<b>총 할인 금액 : 38,000원</b>
+								</div>
+								<a class="tip_close" href="#" onClick="ToolLyrCls();return false;" onKeyPress="this.onclick;"><em class="ir">툴팁 닫기</em></a>
+							</div>
+						</div>
+						<!-- //TIP -->
+					</dt>
+					<dd class="cpn">
+						<span class="cp"><b>400,000</b>원</span>
+						<a href="#" class="dw">할인쿠폰<em>10,000원</em></a>
+						<span class="ds">(즉시할인 <em>20%</em>)</span>						
+					</dd>
+					<dt class="bnf">최대혜택가<button type="button" onClick="ToolLyrOpen('tooltip2', this);return false;" onKeyPress="this.onclick;"><em class="ir">혜택내역 정보 열기</em></button>
+						<!-- TIP -->
+						<div id="tooltip2" class="tooltip">
+							<div class="tip_info">
+								<div class="tip_title"><strong>할인내역 정보</strong></div>
+								<div class="tip_txt">
+									즉시할인 쿠폰 <em>20%</em> 적용(~11.15) : 10,000원<br/>
+									네이버 가격비교 <em>50%</em> 쿠폰 적용(~11.30)  : 4,000원<br/>
+									<b>총 할인 금액 : 14,000원</b>
+								</div>
+								<a class="tip_close" href="#" onClick="ToolLyrCls();return false;" onKeyPress="this.onclick;"><em class="ir">툴팁 닫기</em></a>
+							</div>
+						</div>
+						<!-- //TIP -->
+					</dt>
+					<dd class="bnf">
+						<span class="bp"><b>1,400,000</b>원</span>
+						<a href="#" class="dw">할인쿠폰<em>15%</em></a>
+					</dd> 
+				</dl>
+			</div>
+
+			<div class="gd_sale">
+				<dl>
+					<dt>임직원가</dt>
+					<dd>
+						<span class="sp"><b>750,000</b>원</span>
+						<span class="ds">(직원할인 <em>20%</em>)</span>
+					</dd>
+					<dt>카드청구<br/>할인가</dt>
+					<dd>
+						<span class="sp"><b>750,000</b>원</span>
+						<span class="cd">BC카드 (10%청구할인/최대2만원)</span>
+						<span class="sp"><b>750,000</b>원</span>
+						<span class="cd">우리카드 (10%청구할인/최대2만원)</span>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="gd_drv">
+				<dl>
+					<dt>배송비</dt>
+					<dd>
+						<span class="sp"><b>2,500</b>원</span>
+						<span class="ds">(30,000원 이상 무료배송)</span>
+						<span class="sub_info">테스트 문구 : 문구가 길어지면, 자르거나 줄이지않고 모두 보이도록 작업하였습니다.</span>
+					</dd>
+					<!-- 2016-12-15 -->
+					<dt>배송가능지역</dt>
+					<dd>
+						<span class="ds">전국</span>
+					</dd>
+					<!--// 2016-12-15 -->
+
+					<!-- NGCPO-4914 명품CD 구매대행 상품/주문처리 기능 추가 -->
+					<dt>발송예정일 <button type="button" onclick="ToolLyrOpen('tooltip5', this);return false;" onkeypress="this.onclick;"><em class="ir">발송예정일 정보 열기</em></button>
+						<!-- TIP -->
+						<div id="tooltip5" class="tooltip">
+							<div class="tip_info">
+								<div class="tip_title"><strong>해외배송안내</strong></div>
+								<div class="tip_txt">
+									<span>해당상품은 해외배송 상품입니다.</span>
+								</div>
+								<a class="tip_close" href="#" onclick="ToolLyrCls();return false;" onkeypress="this.onclick;"><em class="ir">툴팁 닫기</em></a>
+							</div>
+						</div>
+						<!-- //TIP -->
+					</dt>
+					<dd>
+						<span class="ds">오늘 <em class="point">오후 4시까지</em> 주문시 오늘발송</span>
+					</dd>
+					<!-- //NGCPO-4914 명품CD 구매대행 상품/주문처리 기능 추가 -->
+					<dt class="cd">카드혜택</dt>
+					<dd><a href="#" class="bnf" onClick="fn_layer_open('pop_card');return false" onKeyPress="this.onclick;"><b>카드혜택 보기</b></a></dd>
+					<dt class="culture">문화비 소득공제<button type="button" onClick="ToolLyrOpen('tooltip3', this);return false;" onKeyPress="this.onclick;"><em class="ir">문화비 소득공제 정보 열기</em></button>
+						<!-- TIP -->
+						<div id="tooltip3" class="tooltip culture">
+							<div class="tip_info">
+								<div class="tip_title"><strong>문화비 소득공제</strong></div>
+								<div class="tip_txt">
+									연말정산시 문화비(도서/공연)에 대한 소득공제를 받을 수 있습니다.
+									<strong>1. 적용대상</strong>
+									총 급여 7,000만원 이하 근로소득자 중 신용카드, 직불카드 등 사용액이 총 급여의 25%가 넘는 사람에게 적용
+									<strong>2. 공제대상</strong>
+									신용카드 등으로 도서 구입 및 공연을 관람하기 위해 사용한 금액의 추가공제(100만원까지 추가한도 인정 되며, 공제율은 30%로 적용)
+									<strong>3. 유의사항</strong>
+									신용카드, 실시간 계좌이체, 무통장 입금만 가능<br />(휴대폰소액결제, 간편결제 불가)
+								</div>
+								<a class="tip_close" href="#" onClick="ToolLyrCls();return false;" onKeyPress="this.onclick;"><em class="ir">툴팁 닫기</em></a>
+							</div>
+						</div>
+						<!-- //TIP -->
+					</dt>
+					<dd class="ir">문화비 소득공제 대상입니다. 위 내용 참조</dd>
+				</dl>
+			</div>
+
+			<div class="gd_drv">
+				<dl>
+					<dt>사은품</dt>
+					<dd>
+						핸드폰 걸이 손거울 외 2종 택1<br/>
+						(2015.10.30~2015.12.10)  						
+					</dd>
+				</dl>
+			</div>
+
+			<!-- 170529 배송형태가 등기배송이거나, 상품 유형이 지류 상품권인 경우 추가 -->
+			<div class="gd_card">
+				<p class="txt_c03">상품권은 취소 신청 후 배송이 진행 될수 있습니다. 신중한 구매 부탁 드립니다.</p>
+			</div>
+			<!-- //170529 배송형태가 등기배송이거나, 상품 유형이 지류 상품권인 경우 추가 -->
+
+			<div class="gd_bnf">
+				<span class="bnf2">무료배송</span>
+				<span class="bnf12">오늘출발</span>
+				<span class="bnf13">오늘도착</span>
+			</div>
+		</div>
+		<!-- GOODS INFO. -->
+		
+		<!-- GOODS RSV. -->
+		<div class="goods_rsv">
+			<dl>
+				<dt>예약배송 안내</dt>
+				<dd>
+					<span class="tt">예약상품 발송 예정일  2015.12.25</span>
+					<span class="tx">본 상품은 예약상품으로 발송 예정일  이후에 개별로 배송 되오니 발송예정일 을 꼭 확인하시기 바랍니다.</span>
+				</dd>
+			</dl>
+		</div>
+		<!-- //GOODS RSV -->
+
+		<!-- 출고일 지정 상품 추가 160624 -->
+		<div class="goods_rsv">
+			<dl>
+				<dt>출고 예정일</dt>
+				<dd>
+					<span class="da">2016.05.31</span>
+					<span class="tx">본 상품은 공지 일자에 일괄 출고되는 상품입니다. 출고 예정일을 꼭 확인하시기 바랍니다.</span>
+				</dd>
+			</dl>
+		</div>
+		<!-- //출고일 지정 상품 추가 160624 -->
+
+		<!-- GOODS TIP -->
+		<div class="goods_tip">
+			<dl class="rv">
+				<dt>고객평점</dt>
+				<dd><span class="scr s40"><b>80</b>점</span></dd>
+			</dl>
+			<dl class="tip">
+				<dt>구매팁</dt>
+				<dd>기존 밍크 머플러가 무겁게 느껴지시는 분은 쁘디머플러를 추천 해 드릴께요. 폭이 좁고 긴 기장이 특징인 아이라 귀엽게 매치해 보시기 좋아요.</dd> 
+			</dl>
+		</div>
+		<!-- //GOODS TIP -->
+		
+		<!-- GOODS TAB -->
+		<div class="goods_tab" id="goods_tab">
+			<ul>
+				<li class="t1"><a href="#goods_tab" class="on" id="gtab0" onClick="fnTab(4, 'gtab', 0, 'gcont');return false;" onKeyPress="this.onclick;"><b>상세설명</b></a></li>
+				<li class="t2"><a href="#goods_tab" class="off" id="gtab1" onClick="fnTab(4, 'gtab', 1, 'gcont');return false;" onKeyPress="this.onclick;"><b>상품평</b><em>(9,999)</em></a></li>
+				<li class="t3"><a href="#goods_tab" class="off" id="gtab2" onClick="fnTab(4, 'gtab', 2, 'gcont');return false;" onKeyPress="this.onclick;"><b>Q&amp;A</b><em>(9,999)</em></a></li>
+				<li class="t4"><a href="#goods_tab" class="off" id="gtab3" onClick="fnTab(4, 'gtab', 3, 'gcont');return false;" onKeyPress="this.onclick;" ><b>구매정보</b></a></li>
+			</ul>
+		</div>
+		<!-- //GOODS TAB -->
+		
+		<!-- GOODS CONT1 -->
+		<div id="gcont0">
+			<!-- 상품확대보기 추가 -->
+			<!-- <div class="pinch-box">
+				<div class="pinch-zoom" style="background:pink;">
+				            <div class="description">
+				                <h1>Pinchzoom.js</h1>
+				                <p>
+				                    Multi-touch zoom in Javascript
+				                </p>
+				            </div>
+				            <img src="../images/mobile/temp/bahus_640x400_02.jpg">
+				            <img src="../images/mobile/temp/bahus_640x512.jpg">
+				            <img src="../images/mobile/temp/bahus_bn_main_02.jpg">
+				            <img src="../images/mobile/temp/bahus_bn_main_02.jpg">
+				            <img src="../images/mobile/temp/bahus_bn_main_02.jpg">
+				            <img src="../images/mobile/temp/bahus_bn_main_02.jpg">
+				            <img src="../images/mobile/temp/bahus_bn_main_02.jpg">
+				            <img src="../images/mobile/temp/bahus_bn_main_02.jpg">
+				            <a class="image" href="http://www.flickr.com/photos/59446027@N00/5258583198" target="_blank">by Peter Nijenhuis on Flickr; Some rights reserved</a>
+				        </div>
+			        </div>
+					<style type="text/css">
+			        div.pinch-zoom,
+			        div.pinch-zoom img{display:block;width:100%;height:auto !important;-webkit-user-drag:none;}
+			
+			    </style>
+			    <script type="text/javascript" src="../mobile/js/pinchzoom.js"></script>
+			    <script type="text/javascript">
+			        $(function () {
+			            $('.pinch-zoom').each(function () {
+			                new RTP.PinchZoom($(this), {});
+			            });
+			        })
+			    </script>
+			 -->
+			<!-- //상품확대보기 추가 -->
+			<div class="goods_cont">
+				<div class="gd_noti">
+					<ul>
+						<li>상품코드 : <em>RNM35YRNM35Y5</em></li>
+					</ul>
+				</div>
+				<div class="gd_org">
+					<!--  2017.08.29 삭제 <div class="btn"><a href="#goods_detail" id="goods_zoom"><b>상품상세 원본보기</b><em class="ir">열기</em></a></div> -->
+					<div class="txt">아래 이미지는 실제 정보와 상이 할 수 있습니다.<br/>자세한 내용은 상품상세 원본보기에서 확인 해 주세요.</div>
+				</div>
+
+				<div class="gd_md_htm">
+					<img src="../images/mobile/temp/img_mb_area.jpg" width="592" height="245" alt="MD 영역" />
+				</div>
+				<div class="gd_md_htm">
+					<img src="../images/mobile/temp/img_html_area.jpg" width="592" height="549" alt="HTML 영역" />
+				</div>
+				<div class="gd_img_htm">
+					<div class="g_tit">대표이미지</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_htm_txt.jpg" width="592" height="594" alt="대표이미지" /></div>
+					<div class="g_txt">멜란지 컬러감의 컬럭 블록 디테일이 적용되어 감각적인 외관을 연출하는 긴팔 원피스입니다. 피터팬 카라와 프린세스 절개라인이 여성스러운 감성을 보여줍니다.</div>
+				</div>
+				<div class="gd_img_htm">
+					<div class="g_tit">상세이미지</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_htm_txt.jpg" width="592" height="594" alt="상세이미지" /></div>
+					<div class="g_txt">멜란지 컬러감의 컬럭 블록 디테일이 적용되어 감각적인  외관을 연출하는 긴팔 원피스입니다.</div>
+				</div>
+				<div class="gd_img_htm">
+					<div class="g_tit">라벨 및 재질</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_htm_txt.jpg" width="592" height="594" alt="라벨 및 재질" /></div>
+					<div class="g_txt">부드러운 캐시미어 소재 입니다.</div>
+				</div>
+				<div class="gd_md_htm">
+					<img src="../images/mobile/temp/sample_html.jpg" width="592" height="702" alt="HTML 영역" />
+				</div>
+				<!-- 160802 수정 -->
+				<div class="gd_kcm">
+					<div class="g_tit">제품 안전인증정보</div>
+					<!-- case1 -->
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_kc_mark.png" width="110" height="110" alt="KC" /></span>
+						<span class="tx"><em>공산품 안전인증</em>- 인증기관 - 인증모델명</span>		
+						<span class="tx"><em>안전인증번호 : AA000000000</em></span>
+						<span class="no">해당 인증정보는 판매자가 등록한 것으로 등록정보에 대한 일체의 책임은 판매자에게 있습니다.</span>
+					</div>
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_kc_mark.png" width="110" height="110" alt="KC" /></span>
+						<span class="tx"><em>공산품 자율안전 확인 신고</em>- 인증기관 - 인증모델명</span>		
+						<span class="tx"><em>안전신고번호 : AA000000000</em></span>
+						<span class="no">해당 인증정보는 판매자가 등록한 것으로 등록정보에 대한 일체의 책임은 판매자에게 있습니다.</span>
+					</div>
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_kc_mark.png" width="110" height="110" alt="KC" /></span>
+						<span class="tx"><em>전기용품 안전인증</em>- 인증기관 - 인증모델명</span>		
+						<span class="tx"><em>안전인증번호 : AA000000000</em></span>
+						<span class="no">해당 인증정보는 판매자가 등록한 것으로 등록정보에 대한 일체의 책임은 판매자에게 있습니다.</span>
+					</div>
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_kc_mark.png" width="110" height="110" alt="KC" /></span>
+						<span class="tx"><em>전기용품 자율안전 확인 신고</em>- 인증기관 - 인증모델명</span>		
+						<span class="tx"><em>안전신고번호 : AA000000000</em></span>
+						<span class="no">해당 인증정보는 판매자가 등록한 것으로 등록정보에 대한 일체의 책임은 판매자에게 있습니다.</span>
+					</div>
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_kc_mark.png" width="110" height="110" alt="KC" /></span>
+						<span class="tx"><em>어린이제품 안전인증</em>- 인증기관 - 인증모델명</span>		
+						<span class="tx"><em>안전신고번호 : AA000000000</em></span>
+						<span class="no">해당 인증정보는 판매자가 등록한 것으로 등록정보에 대한 일체의 책임은 판매자에게 있습니다.</span>
+					</div>
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_kc_mark.png" width="110" height="110" alt="KC" /></span>
+						<span class="tx"><em>어린이제품 안전확인</em>- 인증기관 - 인증모델명</span>		
+						<span class="tx"><em>안전인증번호 : AA000000000</em></span>
+						<span class="no">해당 인증정보는 판매자가 등록한 것으로 등록정보에 대한 일체의 책임은 판매자에게 있습니다.</span>
+					</div>
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_kc_mark.png" width="110" height="110" alt="KC" /></span>
+						<span class="tx"><em>어린이제품 공급자적합성확인</em>- 인증기관 - 인증모델명</span>		
+						<span class="tx"><em>안전신고번호 : AA000000000</em></span>
+						<span class="no">해당 인증정보는 판매자가 등록한 것으로 등록정보에 대한 일체의 책임은 판매자에게 있습니다.</span>
+					</div>
+					<!-- //case1 -->
+					<!-- case2 -->
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_kc_mark.png" width="110" height="110" alt="KC" /></span>
+						<span class="tx"><em>본 제품은 KC인증을 필함</em></span>		
+						<span class="no">해당 인증정보는 판매자가 등록한 것으로 등록정보에 대한 일체의 책임은 판매자에게 있습니다.</span>
+					</div>
+					<!-- //case2 -->
+					<!-- case3 -->
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_ks_mark.png" alt="KS" /></span>
+						<span class="tx"><em>본 제품은 국가통합인증(KS마크)대상 품목으로 아래의 국가통합인증(KS마크)을(를) 필 하였습니다.</em></span>
+						<span class="tx"><em>인증번호 : 0000</em></span>
+						<span class="no">해당 인증정보는 판매자가 등록한 것으로 등록정보에 대한 일체의 책임은 판매자에게 있습니다.</span>
+					</div>
+					<!-- //case3 -->
+				</div>
+				<!-- 160802 수정 -->
+				
+				<div class="gd_chk">
+					<div class="g_tit">CHECK PIONT</div>
+					<div class="g_chk">
+						<dl>
+							<dt>사이즈</dt>
+							<dd class="d1"><span><em>정사이즈보다 작다</em></span></dd>
+							<dd class="d2 on"><span><em>정사이즈와 같다</em></span></dd>
+							<dd class="d3"><span><em>정사이즈보다 크다</em></span></dd>
+						</dl>
+						<dl>
+							<dt>핏정보</dt>
+							<dd class="d1 on"><span><em>슬림핏</em></span></dd>
+							<dd class="d2"><span ><em>레귤러</em></span></dd>
+							<dd class="d3"><span><em>루즈핏</em></span></dd>
+						</dl>
+						<dl>
+							<dt>신축성</dt>
+							<dd class="d1"><span><em>좋음</em></span></dd>
+							<dd class="d2"><span ><em>약간 있음</em></span></dd>
+							<dd class="d3 on"><span><em>없음</em></span></dd>
+						</dl>
+						<dl>
+							<dt>광택여부</dt>
+							<dd class="d1 on"><span><em>많음</em></span></dd>
+							<dd class="d2"><span ><em>중간</em></span></dd>
+							<dd class="d3"><span><em>없음</em></span></dd>
+						</dl>
+						<dl>
+							<dt>신축성</dt>
+							<dd class="d1"><span><em>있음</em></span></dd>
+							<dd class="d2"><span ><em>약간 있음</em></span></dd>
+							<dd class="d3 on"><span><em>없음</em></span></dd>
+						</dl>
+						<dl>
+							<dt>비침</dt>
+							<dd class="d1 on"><span><em>없음</em></span></dd>
+							<dd class="d2"><span ><em>중간</em></span></dd>
+							<dd class="d3"><span><em>있음</em></span></dd>
+						</dl>
+					</div>
+				</div>
+
+				<div class="gd_size">
+					<div class="g_tit">상품 실측 사이즈</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_gd_size.jpg" width="590" height="58" alt="상품 실측 사이즈" /></div>
+					<div class="g_tbl">
+						<table>
+							<caption>상품 실측 사이즈 | 표준사이즈, 브랜드사이즈, 허리둘레(CM), 밑위길이(CM), 엉덩이둘레(CM) 제공하는 표</caption>
+							<colgroup>
+								<col style="width:32%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="th">표준사이즈</th>
+									<th scope="col">90</th>
+									<th scope="col">95</th>
+									<th scope="col">100</th>
+									<th scope="col">105</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- 160411 수정 -->
+								<tr class="b_size">
+									<th scope="row"><b>브랜드사이즈</b></th>
+									<td>90</td>
+									<td>95</td>
+									<td>100</td>
+									<td>105</td>
+								</tr>
+								<!-- //160411 수정 -->
+								<tr>
+									<th scope="row">허리둘레(CM)</th>
+									<td>30</td>
+									<td>31</td>
+									<td>32</td>
+									<td>33</td>
+								</tr>
+								<tr>
+									<th scope="row">밑위길이(CM)</th>
+									<td>30</td>
+									<td>31</td>
+									<td>32</td>
+									<td>33</td>
+								</tr>
+								<tr>
+									<th scope="row">엉덩이둘레(CM)</th>
+									<td>30</td>
+									<td>31</td>
+									<td>32</td>
+									<td>33</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table>
+							<caption>상품 실측 사이즈 | 표준사이즈, 브랜드사이즈, 허리둘레(CM), 밑위길이(CM), 엉덩이둘레(CM) 제공하는 표</caption>
+							<colgroup>
+								<col style="width:32%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="th">표준사이즈</th>
+									<th scope="col">110</th>
+									<th scope="col">115</th>
+									<th scope="col"></th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- 160411 수정 -->
+								<tr class="b_size">
+									<th scope="row"><b>브랜드사이즈</b></th>
+									<td>110</td>
+									<td>115</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- //160411 수정 -->
+								<tr>
+									<th scope="row">허리둘레(CM)</th>
+									<td>34</td>
+									<td>35</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">밑위길이(CM)</th>
+									<td>34</td>
+									<td>35</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">엉덩이둘레(CM)</th>
+									<td>34</td>
+									<td>35</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="g_btn"><a href="#" onClick="fn_layer_open('lyr_gd_size');return false" onKeyPress="this.onclick;"><b>이전 구매한 상품과 사이즈 비교하기</b><em class="ir">열기</em></a></div>
+				</div>
+			</div>
+
+		</div>
+		<!-- //GOODS CONT1 -->	
+		
+		
+		<!-- GOODS CONT2 -->
+		<div id="gcont1" style="display:none">
+			<div class="rv_top_info">
+				<div class="top">
+					<span class="re_ea">상품평<em>(23)</em></span>
+					<button class="reg_rv" type="button"><em>상품평 작성</em></button>
+				</div>
+				<button class="bnf_info" type="button">
+					<strong>상품평 등록 및 혜택 안내</strong>
+					<span>일반상품평 100p, 포토상품평 500p 가 지급됩니다.</span>
+				</button>
+			</div>
+
+			<!-- REVIEW NONE -->
+			<div class="goods_lst_none">
+				조건에 해당하는 상품이 <b>없습니다.</b>
+			</div>
+			<!-- REVIEW NONE -->
+
+			<!-- REVIEW NONE -->
+			<div class="goods_lst_none">
+				등록된 상품평이 <b>없습니다.</b>
+			</div>
+			<!-- REVIEW NONE -->
+
+			<div class="goods_score">
+				<div class="g_scr">
+					<strong class="tit">평점</strong>
+					<span class="scr s45"><b>4.8</b>/5.0</span>
+				</div>
+				<div class="g_tbl"> <!-- 평가 항목 비 노출 시 전체 태그 날리기 -->
+					<table>
+						<caption>상품 평가 | 연령별 구매율, 사이즈 평가, 색상 평가 제공하는 표</caption>
+						<colgroup>
+							<col /> <!-- 노출 개수와 맞춰 함께 삭제 필수 -->
+							<col />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">사이즈 평가</th>
+								<th scope="col">색상 평가</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<b>딱 맞아요</b>
+									평가가<br/>많았습니다.
+								</td>
+								<td>
+									<b>화면과 같아요</b>
+									평가가<br/>많았습니다.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 160418 연령별 구매율~평가 DATA 없을 경우 -->
+				<!-- <div class="g_tbl">
+					<table>
+						<caption>상품 평가 | 연령별 구매율, 사이즈 평가, 색상 평가 제공하는 표</caption>
+						<colgroup>
+							<col style="width:34%">
+							<col style="width:33%">
+							<col style="width:33%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">연령별 구매율</th>
+								<th scope="col">사이즈 평가</th>
+								<th scope="col">색상 평가</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									데이터<br /> 수집 중 입니다.
+								</td>
+								<td>
+									데이터<br />수집 중 입니다.
+								</td>
+								<td>
+									데이터<br />수집 중 입니다.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> -->
+				<!-- //160418 연령별 구매율~평가 DATA 없을 경우 -->
+			</div>
+
+			<div class="sort_flt">
+				<strong class="tit">상품평 필터</strong>
+				<div class="filters">
+					<button type="button" onclick="fn_layer_open('sch_detail');return false;" onkeypress="this.onclick;"><em>키</em></button>
+					<button type="button" onclick="fn_layer_open('sch_detail');return false;" onkeypress="this.onclick;"><em>몸무게</em></button>
+					<button type="button" onclick="fn_layer_open('sch_detail');return false;" onkeypress="this.onclick;"><em>평소사이즈</em></button>
+				</div>
+			</div>
+
+
+			<div class="goods_rv" id="goods_rv">
+				<div class="gd_tabs rv">
+					<ul class="col3"><!-- class: col3, col2 -->
+						<li class="on" id="rtab0"><a href="#goods_rv" onClick="fnTab(3, 'rtab', 0, 'rcont');return false" onKeyPress="this.onclick;"><b>전체</b></a></li>
+						<li class="off" id="rtab1"><a href="#goods_rv" onClick="fnTab(3, 'rtab', 1, 'rcont');return false" onKeyPress="this.onclick;"><b>BEST</b></a></li>
+						<li class="off" id="rtab2"><a href="#goods_rv" onClick="fnTab(3, 'rtab', 2, 'rcont');return false" onKeyPress="this.onclick;"><b>포토상품평</b></a></li>
+					</ul>
+				</div>
+
+				<div class="opt_sort">
+					<ul>
+						<li class="on"><a href="javascript:;">최신순</a></li>
+						<li><a href="javascript:;">평점높은순</a></li>
+						<li><a href="javascript:;">평점낮은순</a></li>
+						<li><a href="javascript:;">도움평순</a></li>
+					</ul>
+				</div>
+
+				<!-- CONT1 -->
+				<div class="normal_rv_wrap" id="rcont0">
+					<div class="rv_list">
+						<h4 class="ir">상품평목록</h4>
+						<ul>
+							<li>
+								<a href="#" onClick="fnToggleRv(this);return false" onKeyPress="this.onclick;">
+									<div class="r_ico">
+										<span class="scr s45"><em class="ir">90</em></span>
+									</div>
+									<div class="r_usr">
+										<span class="id">test_id</span>
+										<span class="date">2015.10.10</span>
+									</div>
+									<!-- 170207 상품평 모아보기 수정 -->
+									<div class="r_opt">
+										<span class="name">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1 스마트터치용 장갑 3종</span>
+										<span class="opt">ELQ430006DELQ430006D ELQ430006D</span>
+									</div>
+									<!-- //170207 상품평 모아보기 수정 -->
+									<div class="user_sum">
+										<ul>
+											<li>키<em>160~164cm</em></li>
+											<li>몸무게<em>50~54kg</em></li>
+											<li>평소사이즈<em>M</em></li>
+										</ul>
+									</div>
+									<div class="r_gd">
+										<div class="tit">
+											이번 시즌은 완전히 쏘울로 쇼핑하게 되네요^^ 사실 바지 는 직접 입어보지 않아서 구입을 망설이게 되는데, 소재나 길이감이 좋은 가디건이에요. 두께도 있고 사이 즈도 잘맞아요~ 자주입고 다닐것 같아요. 워낙 상품평이 좋아요.
+										</div>
+										<div class="img"><img src="../images/mobile/temp/img_htm_txt.jpg" alt="이미지" /></div>
+										<div class="img"><img src="../images/mobile/temp/img_htm_txt.jpg" alt="이미지" class="img_rota90" /></div> <!-- 이미지 회전 90도 -->
+										<div class="img"><img src="../images/mobile/temp/img_htm_txt.jpg" alt="이미지" class="img_rota180" /></div> <!-- 이미지 회전 180도 -->
+										<div class="img"><img src="../images/mobile/temp/img_htm_txt.jpg" alt="이미지" class="img_rota270"/></div> <!-- 이미지 회전 270도 -->
+									</div>
+									<div class="rv_thumb">
+										<ul>
+											<li><img src="../images/mobile/temp/rv_sample_1.jpg" alt=""></li>
+											<li><img src="../images/mobile/temp/rv_sample_2.jpg" alt=""></li>
+											<li><img src="../images/mobile/temp/sample_188x188_03.png" alt=""></li>
+										</ul>
+									</div>	
+									<div class="r_btn"><span><em class="ir">더보기/닫기</em></span></div>								
+								</a>
+								<div class="rvw_recom">
+									<span class="rec_text"><em>23</em>명이 이 상품을 추천하였습니다.</span>
+									<span class="squ_anc togglBtn">
+										<a href="javascript:;" class="on">추천<em class="heart"><span class="ir">하트</span></em></a>
+									</span>									
+								</div>
+							</li>
+							<li class="on">
+								<a href="#" onClick="fnToggleRv(this);return false" onKeyPress="this.onclick;"> 
+									<div class="r_ico">
+										<span class="scr s45"><em class="ir">90</em></span>
+										<span class="ico">BEST</span>
+									</div>
+									<div class="r_usr">
+										<span class="id">USERID****</span>
+										<span class="date">2015.10.10</span>
+									</div>
+									<!-- 170207 상품평 모아보기 수정 -->
+									<div class="r_opt">
+										<span class="name">(남녀공동) N/P패딩자켓</span>
+										<span class="opt">Q430006D</span>
+									</div>
+									<!-- //170207 상품평 모아보기 수정 -->
+
+									<div class="user_sum">
+										<ul>
+											<li>키<em>160~164cm</em></li>
+											<li>몸무게<em>50~54kg</em></li>
+										</ul>
+									</div>
+
+									<div class="r_gd">
+										<div class="tit">
+											이번 시즌은 완전히 쏘울로 쇼핑하게 되네요
+										</div>
+										<div class="img"><img src="../images/mobile/temp/img_htm_txt.jpg" alt="이미지" /></div>
+									</div>			
+									<div class="r_btn"><span><em class="ir">더보기/닫기</em></span></div>						
+								</a>
+								<div class="rvw_recom">
+									<span class="rec_text"><em>0</em>명이 이 상품을 추천하였습니다.</span>
+									<span class="squ_anc togglBtn">
+										<a href="javascript:;">추천<em class="heart"><span class="ir">하트</span></em></a>
+									</span>									
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--//포토상품평 가로세로 이미지 깨짐으로 삭제 css로 처리 20200224
+					<script>
+						$(document).ready(function() {
+							rectangle_lineup('.rv_thumb ul li')
+						});
+					</script>
+					-->
+					<!-- MORE BUTTON -->
+					<div class="goods_list_more">
+						<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+					</div>
+					<!-- /MORE BUTTON -->
+				</div>
+				<!-- //CONT1 -->
+
+				<!-- CONT2 -->
+				<div id="rcont1" style="display:none"></div>
+				<!-- //CONT2 -->
+
+				<!-- CONT3 -->
+				<div id="rcont2" style="display:none">
+					<div class="rv_photo_no">
+						<strong>등록된 포토상품평이 <em>없습니다.</em></strong>
+						<span>포토상품평 등록하고 <em>500P</em> 받아가세요!<br />(일반 상품평 <em>100P</em>/ 포토상품평 <em>500P</em>)</span>
+					</div>
+					<div class="rv_photo">
+						<ul>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../images/mobile/temp/rv_sample_1.jpg" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../images/mobile/temp/rv_sample_2.jpg" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../images/pcweb/temp/bahus_review_1200x675.jpg" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../images/mobile/temp/sample_272x272_02.png" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../images/mobile/temp/sample_272x272_01.png" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../images/mobile/temp/sample_272x272_02.png" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../images/mobile/temp/sample_272x272_01.png" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../../images/mobile/temp/sample_272x272_02.png" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../../images/mobile/temp/sample_272x272_01.png" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" onclick="fn_layer_open('lyr_review');set_review_lyr_bn();return false" onkeypress="this.onclick;">
+									<span class="thumb"><img src="../../images/mobile/temp/sample_272x272_02.png" alt="" /></span>
+									<span class="opt_sta">
+										<span class="opt">RED55</span>
+										<span class="star">
+											<span class="ico"><em class="ir">별점</em></span>4.9
+										</span>
+									</span>
+									<span class="title">세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요. 옆쪽에 본드가 좀 뭍은것 같은</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!--//포토상품평 가로세로 이미지 깨짐으로 삭제 css로 처리 20200224
+					<script type="text/javascript">
+						var photoW;
+						$(document).ready(function(){
+							// 이미지 사이지 초과 시  틀에 맞추기
+							photoW = ($(window).width() - 48) /2;
+							$('.rv_photo li .thumb img').each(function(){
+								var $el= $(this)[0]
+								var w = $el.naturalWidth;
+								var h = $el.naturalHeight;
+								w>=h ? autoAttP($(this), 'height') : autoAttP($(this), 'width');
+							});
+						})
+						function autoAttP($el, attr){$el.css(attr, photoW+'px');}
+
+						$(window).resize(function() {
+							photoW = ($(window).width() - 48) /2;
+							$('.rv_photo li .thumb img').each(function(){
+								var $el= $(this)[0]
+								var w = $el.naturalWidth;
+								var h = $el.naturalHeight;
+								w>=h ? autoAttP($(this), 'height') : autoAttP($(this), 'width');
+							});
+							// function autoAttP($el, attr){$el.css(attr, photoW+'px');}
+						});
+					</script>
+					-->
+				</div>
+				<!-- //CONT3 -->
+
+				<!-- CONT4 -->
+				<div id="rcont3" style="display:none">
+					<div class="rv_hope">
+						<div class="hope">
+							<dl>
+								<dt>0원딜 기대평 이벤트</dt>
+								<dd>갖고 싶은 상품을 0원에 만나볼 수 있는 칭찬 릴레이 이벤트</dd>
+							</dl>
+						</div>
+						<h4 class="ir">기대평목록</h4>
+						<ul>
+							<li>
+								<div class="r_usr">
+									<span class="id">USERID****</span>
+									<span class="date">2015.10.10</span>
+								</div>
+								<div class="r_tit">
+									사계절 내내 쾌적하게 사용 가능하면 좋을 거 같아요. 그 레이가 완전 제 스탈이예용~♡.♡이벤트 당첨되길 희망 할게요.
+								</div>
+								<div class="r_del"><button type="button"><em class="ir">기대평 삭제</em></button></div>
+							</li>
+							<li>
+								<div class="r_usr">
+									<span class="id">USERID****</span>
+									<span class="date">2015.10.10</span>
+								</div>
+								<div class="r_tit">
+									이번 시즌은 완전히 쏘울로 쇼핑하게 되네요^^ 사실 바지 는 직접 입어보지 않아서 구입을 망설이게 되는데, 소재나 길이감이 좋은 가디건이에요. 두께도 있고 사이 즈도 잘맞아요~ 자주입고 다닐것 같아요. 워낙 상품평이 좋아요.
+								</div>
+								<div class="r_del"><button type="button"><em class="ir">기대평 삭제</em></button></div>
+							</li>
+						</ul>	
+					</div>
+					<!-- MORE BUTTON -->
+					<div class="goods_list_more">
+						<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+					</div>
+					<!-- /MORE BUTTON -->
+				</div>
+				<!-- //CONT4 -->
+
+			</div>
+		</div>	
+		<!-- //GOODS CONT2 -->
+
+		<!-- GOODS CONT3 -->
+		<div id="gcont2" style="display:none">
+
+			<div class="qna_btn">
+				<button type="button" onClick="fn_layer_open('lyr_inquiry');return false" onKeyPress="this.onclick;">문의하기<em class="ir">열기</em></button>
+			</div>
+			<!-- QNA NONE 
+			<div class="goods_lst_none">
+				등록된 Q&amp;A가 <b>없습니다.</b>
+			</div>
+			QNA NONE -->
+
+			<div class="goods_qna" id="goods_qna">
+				<div class="gd_tabs">
+					<ul class="col2">
+						<li class="on" id="qtab0"><a href="#goods_qna" onClick="fnTab(2, 'qtab', 0, 'qcont');return false" onKeyPress="this.onclick;"><b>전체</b><em>(9,999)</em></a></li>
+						<li class="off" id="qtab1"><a href="#goods_qna" onClick="fnTab(2, 'qtab', 1, 'qcont');return false" onKeyPress="this.onclick;"><b>답변완료</b><em>(999)</em></a></li>
+					</ul>
+				</div>
+				
+				<!-- CONT1 -->
+				<div id="qcont0">
+					<div class="qna_list">
+						<h4 class="ir">Q&amp;A목록</h4>
+						<ul>
+							<li>
+								<a href="#" onClick="fnToggleQna(this);return false" onKeyPress="this.onclick;">
+									<div class="q_ico">답변대기</div>
+									<div class="q_usr">
+										<span class="id">USERID****</span>
+										<span class="date">2015.10.10</span>
+									</div>
+									<dl class="q_qst">
+										<dt class="ir">질문</dt>
+										<dd>
+											<div class="tit">[사이즈] 네이비 220 재입고 언제 되나요??</div>
+											<div class="txt">
+												네이비가 품절이네요.<br/>
+												네이비 220 재입고 언제 되는지 알려주세요. 
+											</div>
+										</dd>
+									</dl>
+								</a>
+								<div class="q_btn">
+<!-- 1605_추가 -->
+	                                <button type="button">수정</button>
+<!-- //1605_추가 -->                                    
+									<button type="button">삭제</button>
+									<button type="button" onClick="fnToggleQna(this);return false" onKeyPress="this.onclick;">닫기</button>
+								</div>	
+							</li>
+							<li>
+								<a href="#" onClick="fnToggleQna(this);return false" onKeyPress="this.onclick;">
+									<div class="q_ico on">답변완료</div>
+									<div class="q_usr">
+										<span class="id">USERID****</span>
+										<span class="date">2015.10.10</span>
+									</div>
+									<dl class="q_qst">
+										<dt class="ir">질문</dt>
+										<dd>
+											<div class="tit">[사이즈] 네이비 220 재입고 언제 되나요??</div>
+											<div class="txt">
+												네이비가 품절이네요.<br/>
+												네이비 220 재입고 언제 되는지 알려주세요. 
+											</div>
+										</dd>
+									</dl>
+									<dl class="q_asw">
+										<dt class="ir">답변</dt>
+										<dd>
+											<div class="txt">
+												[상품담당자] 안녕하세요. 상품 담당자입니다.<br/>
+												우선 관심을 가져주셔서 감사 드리며, 고객님께서 문의하신 사항에 대해 답변드리겠습니다.<br/>
+												네, 고객님 죄송하게도 재입고 예정은 없습니다.
+											</div>
+											<!-- 160322 추가 -->
+											<div class="asw_date">
+												<span>2015.10.10 15:20</span>
+											</div>
+											<!-- //160322 추가 -->
+										</dd>
+									</dl>
+								</a>
+								<div class="q_btn">
+									<button type="button">삭제</button>
+									<button type="button" onClick="fnToggleQna(this);return false" onKeyPress="this.onclick;">닫기</button>
+								</div>
+							</li>
+							<li>
+								<a href="#" onClick="fnToggleQna(this);return false" onKeyPress="this.onclick;">
+									<div class="q_ico on">답변완료</div>
+									<div class="q_usr">
+										<span class="id">USERID****</span>
+										<span class="date">2015.10.10</span>
+									</div>
+									<dl class="q_qst">
+										<dt class="ir">질문</dt>
+										<dd>
+											<div class="tit">[사이즈] 네이비 220 재입고 언제 되나요??</div>
+											<div class="txt">
+												네이비가 품절이네요.<br/>
+												네이비 220 재입고 언제 되는지 알려주세요. 
+											</div>
+										</dd>
+									</dl>
+									<dl class="q_asw">
+										<dt class="ir">답변</dt>
+										<dd>
+											<div class="txt">
+												[상품담당자] 안녕하세요. 상품 담당자입니다.<br/>
+												우선 관심을 가져주셔서 감사 드리며, 고객님께서 문의하신 사항에 대해 답변드리겠습니다.<br/>
+												네, 고객님 죄송하게도 재입고 예정은 없습니다.
+											</div>
+											<!-- 160322 추가 -->
+											<div class="asw_date">
+												<span>2015.10.10 15:20</span>
+											</div>
+											<!-- //160322 추가 -->
+										</dd>
+									</dl>
+								</a>
+								<div class="q_btn">
+									<button type="button">삭제</button>
+									<button type="button" onClick="fnToggleQna(this);return false" onKeyPress="this.onclick;">닫기</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- MORE BUTTON -->
+					<div class="goods_list_more">
+						<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+					</div>
+					<!-- /MORE BUTTON -->
+				</div>
+				<!-- //CONT1 -->
+
+				<!-- CONT2 -->
+				<div id="qcont1" style="display:none">
+					<div class="qna_list">
+						<h4 class="ir">Q&amp;A목록</h4>
+						<ul>
+							<li>
+								<a href="#" onClick="fnToggleQna(this);return false" onKeyPress="this.onclick;">
+									<div class="q_ico on">답변완료</div>
+									<div class="q_usr">
+										<span class="id">USERID****</span>
+										<span class="date">2015.10.10</span>
+									</div>
+									<dl class="q_qst">
+										<dt class="ir">질문</dt>
+										<dd>
+											<div class="tit">[사이즈] 네이비 220 재입고 언제 되나요??</div>
+											<div class="txt">
+												네이비가 품절이네요.<br/>
+												네이비 220 재입고 언제 되는지 알려주세요. 
+											</div>
+										</dd>
+									</dl>
+									<dl class="q_asw">
+										<dt class="ir">답변</dt>
+										<dd>
+											<div class="txt">
+												[상품담당자] 안녕하세요. 상품 담당자입니다.<br/>
+												우선 관심을 가져주셔서 감사 드리며, 고객님께서 문의하신 사항에 대해 답변드리겠습니다.<br/>
+												네, 고객님 죄송하게도 재입고 예정은 없습니다.
+											</div>
+											<!-- 160322 추가 -->
+											<div class="asw_date">
+												<span>2015.10.10 15:20</span>
+											</div>
+											<!-- //160322 추가 -->
+										</dd>
+									</dl>
+								</a>
+								<div class="q_btn">
+									<button type="button">삭제</button>
+									<button type="button" onClick="fnToggleQna(this);return false" onKeyPress="this.onclick;">닫기</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- MORE BUTTON -->
+					<div class="goods_list_more">
+						<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+					</div>
+					<!-- /MORE BUTTON -->
+				</div>
+				<!-- //CONT2 -->
+			</div>
+
+		
+		</div>	
+		<!-- //GOODS CONT3 -->
+
+		<!-- GOODS CONT4 -->
+		<div id="gcont3" style="display:none">
+			<div class="goods_exp">
+				<div class="gd_noti">
+					<ul>
+						<li>상품코드 <em>RNM35YRNM35Y5</em></li>
+						<li>맴버십 포인트 <em>360원 적립</em></li>
+					</ul>
+				</div>
+				
+			</div>
+
+			<div class="goods_data">
+				<div class="gd_drv">
+					<h4 class="ir">배송정보</h4>
+					<div class="g_tbl">
+						<table>
+							<caption>배송정보 | 공급업체, 배송비, 배송정보를 제공하는 표</caption>
+							<colgroup>
+								<col style="width:100px"><!-- 2016-10-20 -->
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">공급업체</th>
+									<td>모던하우스</td>
+								</tr>
+								<tr>
+									<th scope="row">배송비</th>
+									<td>
+										2,500원 (30,000원 이상 무료)<br/>
+										제주도 및 도서산간 추가비용 발생.<br/> 
+										상세설명 참고<br/> 
+										도서/산간 배송불가 
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">배송정보</th>
+									<td>평균 1일이내 발송(3일이내 발송 98.8%/토,일,공휴일제외)</td>
+								</tr>
+								<!-- 출고일 지정 상품 추가 160624 -->
+								<tr>
+									<th scope="row">배송정보</th>
+									<td>
+										<span class="tx">출고일 지정 상품</span>
+										2016.05.20~2016.05.30 간 주문 하신 상품은 <b>2016.05.31</b>에 일괄적으로 출고 됩니다.
+									</td>
+								</tr>
+								<!-- //출고일 지정 상품 추가 160624 -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<dl>
+					<dt>상품정보제공고시 <button type="button" class="on"><em class="ir">열기</em></button></dt>
+					<dd>
+						<div class="g_tbl">
+							<table>
+								<caption>상품정보제공고시 | 제품 소재, 색상, 치수, 수입여부, 제조국, 세탁방법 및 취급시 주의사항, 제조년월, 품질보증기준, A/S 책임자와 전화번호, 안전인증 또는 안전확인 대상여부를 제공하는 표</caption>
+								<colgroup>
+									<col style="width:113px"><!-- 2016-10-20 -->
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">제품 소재</th>
+										<td>겉감 : 폴리에스터 69.5%, 나일론 30.5%  몸판안감 : 폴리에스터 80%, 면 20%</td>
+									</tr>
+									<tr>
+										<th scope="row">색상</th>
+										<td>블랙, 네이비, 베이지</td>
+									</tr>
+									<tr>
+										<th scope="row">치수</th>
+										<td>M, L, XL</td>
+									</tr>
+									<tr>
+										<th scope="row">수입여부</th>
+										<td>(월드)이랜드월드 패션사업부</td>
+									</tr>
+									<tr>
+										<th scope="row">제조국</th>
+										<td>베트남</td>
+									</tr>
+									<tr>
+										<th scope="row">세탁방법 및<br/>취급시<br/>주의사항</th>
+										<td>드라이크리닝</td>
+									</tr>
+
+									<tr>
+										<th scope="row">제조년월</th>
+										<td>201410</td>
+									</tr>
+									<tr>
+										<th scope="row">품질보증기준</th>
+										<td>관련법률 및 공정거래위원회 고시 내  소비자 분쟁해결기준에 따름.</td>
+									</tr>
+									<tr>
+										<th scope="row">A/S 책임자와<br/>전화번호</th>
+										<td>(주)이랜드리테일<br/>1899-6500</td>
+									</tr>
+									<tr>
+										<th scope="row">안전인증 또는<br/>안전확인<br/>대상여부</th>
+										<td>대상 아님</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</dd>
+					<dt>주문 취소 안내 <button type="button" class="on"><em class="ir">열기</em></button></dt>
+					<dd>
+						<div class="g_lst">
+							<ul>
+								<li>주문취소는 입금대기/입금완료/상품준비 중(일부상품)에서 가능합니다.</li> 
+								<li>가구 등 주문제작상품의 경우에는 상품준비중 단계부터 불가능하며 상품 수령 후, 반품 신청을 하실 수 있습니다.</li>
+							</ul>
+						</div>
+					</dd>
+					<dt>반품/교환 배송비 안내 <button type="button" class="on"><em class="ir">열기</em></button></dt>
+					<dd>
+						<div class="g_lst">
+							<ul>
+								<li>0,000원 예상(편도기준)</li>
+								<li>무료예상(편도기준)</li> <!-- 무료일 경우 -->
+								<li>반품/교환 배송비는 고객 변심의 경우에만 발생됩니다.</li>
+								<li>구매 후 반품/교환 시 예상금액과 차이가 있을 수 있습니다.</li>
+							</ul>
+						</div>
+					</dd>
+					<dt>반품/교환 안내 <button type="button" class="on"><em class="ir">열기</em></button></dt>
+					<dd>
+						<div class="g_lst">
+							<ul>	
+								<li>반품/교환은 상품 수령일 7일 이내에 신청해주셔야 하며 단순 고객변심으로 인한 배송비는 고객님께서 부담하셔야 합니다.</li> 
+								<li>반품/교환 시 제품 원형 그대로 보내 주셔야 가능 합니다.</li> 
+								<li>반품/교환은 꼭 승인과정을 거쳐서 진행해주세요.</li> 
+								<li>신청/승인 과정 없이 고객님께서 직접 제품을 보내실 경우 택배사에서 추가 배송비를 요구할 수 있습니다</li> 
+								<li>정해진 반품장소가 아닌 곳으로 보내질 경우 수취거부로 인해 왕복 배송비가 부과될 수 있습니다.</li> 
+							</ul>
+						</div>
+					</dd>
+					<dt>반품/교환 불가 안내 <button type="button" class="on"><em class="ir">열기</em></button></dt>
+					<dd>
+						<div class="g_lst">
+							<ul>	
+								<li>고객님이 상품 포장을 개봉하여 사용 또는 설치 완료되어 상품의 가치가 훼손된 경우 (단, 내용 확인을 위한 포장 개봉의 경우는 예외)</li>
+								<li>고객님의 단순변심으로 인한 교환/반품 신청이 상품 수령 한 날로부터 7일이 경과한 경우</li>
+								<li>고객님의 사용 또는 일부 소비에 의해 상품의 가치가 훼손된 경우</li>
+								<li>시간 경과에 따라 재판매가 어려운 상품 등의 가치가 현저히 감소한 경우 (신선식품의 경우 선도저하 및 상품불량일 경우 수령일로부터 1~2일 내 교환/반품 신청)</li>
+								<li>복제가 가능한 재화 등의 포장을 훼손한 경우(포장인증된 전자제품, DVD,CD 도서 등 복제 가능한 상품)</li>
+								<li>배송된 상품이 하자 없음을 확인한 후 설치가 완료된 상품의 경우(가전,가구,헬스기구 등)</li>
+								<li>고객님의 요청에 따라 개별적으로 주문제작되는 상품의 경우(수제화, 귀금속 등)</li>
+								<li>구매한 상품의 구성품이 누락된 경우(화장품 세트, 의류부착 악세서리, 가전제품 부속품,사은품 등)</li>
+								<li>기타, 상품의 교환, 환불 및 상품 결함 등의 보상은 재정경제부고시,소비자피해보상규정에 의함</li>
+							</ul>
+						</div>
+					</dd>
+					<dt>카드결제 환불 안내 <button type="button" class="on"><em class="ir">열기</em></button></dt>
+					<dd>
+						<div class="g_lst">
+							<ul>	
+								<li>결제 당일 취소는 카드사 홈페이지에서 당일 취소확인이 가능합니다.</li> 
+								<li>익일 취소일 경우 카드사 사정에 따라 3-7일 후 해당 카드사 홈페이지에서 취소 내역을 확인하실 수 있습니다.</li> 
+							</ul>
+						</div>
+					</dd>
+					<dt>현금결제(실시간 계좌이체/무통장 입금)환불 안내 <button type="button" class="on"><em class="ir">열기</em></button></dt>
+					<dd>
+						<div class="g_lst">
+							<ul>	
+								<li>취소/반품 신청 시, 환불계좌를 등록하시면 물류 센터에서 반품제품을 확인한 뒤 영업일 3일 이내에 환불처리됩니다.</li> 
+								<li>고객 단순변심에 의한 교환/반품의 경우, 왕복 배송비는 고객님께서 부담하시게 됩니다.</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+		</div>	
+		<!-- //GOODS CONT4 -->	
+
+
+		<!-- GOODS BEST1 -->	
+		<div class="goods_best">
+			<h3>연관 추천상품</h3>
+			<div class="goods_list swiper-container" id="goods_best1">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var myGoodsBest1 = new Swiper('#goods_best1',{
+				slidesPerView : 'auto',
+				createPagination: false,
+				calculateHeight: true,
+				loop: false,
+				freeMode : true,
+				freeModeFluid : true
+			});
+
+			$(window).resize(function(){
+				myGoodsBest1.reInit();
+			})
+		});
+		</script>
+		<!-- //GOODS BEST1 -->
+
+
+		<!-- GOODS BEST2 -->
+		<div class="goods_best">
+			<h3>카테고리 BEST</h3>
+			<div class="goods_list swiper-container" id="goods_best2">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var myGoodsBest2 = new Swiper('#goods_best2',{
+				slidesPerView : 'auto',
+				createPagination: false,
+				calculateHeight: true,
+				loop: false,
+				freeMode : true,
+				freeModeFluid : true
+			});
+
+			$(window).resize(function(){
+				myGoodsBest2.reInit();
+			})
+		});
+		</script>
+		<!-- //GOODS BEST2 -->
+
+		<!-- GOODS BEST3 -->
+		<div class="goods_best">
+			<h3>브랜드 BEST</h3>
+			<div class="goods_list swiper-container" id="goods_best3">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<span class="g_sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var myGoodsBest3 = new Swiper('#goods_best3',{
+				slidesPerView : 'auto',
+				createPagination: false,
+				calculateHeight: true,
+				loop: false,
+				freeMode : true,
+				freeModeFluid : true
+			});
+
+			$(window).resize(function(){
+				myGoodsBest3.reInit();
+			})
+		});
+		</script>
+		<!-- //GOODS BEST3 -->
+	
+		<!-- GOODS PLAN -->
+		<div class="goods_plan">
+			<h3>추천 기획전</h3>
+			<div class="plan">
+				<ul>
+					<li><a href="#">[기획전 Title] 기획전 Sub Title</a></li>
+					<li><a href="#">[WINTER Bucket List] MD 추천! 점퍼/니트/기모팬츠</a></li>
+					<li><a href="#">[WINTER Bucket List] MD 추천! 점퍼/니트/기모팬츠</a></li>
+				</ul>
+			</div>
+		</div>	
+		<!-- //GOODS PLAN -->	
+
+	</div>
+	<!-- //GOODS -->
+</div>
+<!-- //CONTENT -->
+
+<!-- GOODS ORDER BTN. -->
+<div class="goods_ord" id="goods_ord">
+	<div class="btns">
+		<button type="button" class="zim" onclick="commonUI.wishTogDev($(this));fn_layer_open('msg_lyr_zzim');return false;" onkeypress="this.onclick;"><em class="ir">찜하기</em></button>	
+		<button type="button" class="buy">구매하기</button>
+	</div>
+</div>
+<script>
+	$('.goods_ord').find('button.buy').on("click", function(){
+		$('.goods_opt').show();
+		$('.goods_opt').animate({bottom : 0 }, 250);
+		fnGoodsOpt();
+		setTimeout(function(){OrderScorller()}, 100);
+		$('#btn_top, #btn_back').css('z-index',0);
+		if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent)) { //IOS8 BELOW
+			if (/OS [1-8](.*) like Mac OS X/i.test(navigator.userAgent)) {scroll_out()}
+		}
+		scrpos = $(window).scrollTop();	//20160414
+	});
+</script>
+<!-- //GOODS ORDER BTN. -->
+
+<!-- GOODS OPTION LAYER - SELECT, DELETE CALL: function		 -->
+<div id="goods_opt" class="goods_opt" style="display:none;">
+	<div class="gd_opt_wrap">
+		<div class="gd_opt_scroll">
+			<div class="gd_opt">
+				<div class="g_opt">
+					<div class="brc">현재 선택된 지점은 <b>NC 평촌점</b> 입니다. </div>
+					<dl>
+						<dt class="ir"><label for="opt1">색상</label></dt>
+						<dd>
+							<div class="lyr_select">
+								<div class="chk_out"><input type="checkbox" id="chk_out1" /><label for="chk_out1">품절제외</label></div>
+								<button type="button"  class="sel_btn">
+									<span class="sel_txt">상품을 선택해 주세요.</span>
+								</button>
+								<div class="lyr_options">
+									<ul class="options">
+										<li>
+											<span class="ancor">
+												<span class="opt_name">선택01)봄봄한 로지</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+										<li class="sld_out">
+											<span class="ancor">
+												<span class="opt_name">(품절) 선택02)여름여름한 민트</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<a href="javascript:" onclick="fn_layer_open('reware_layer');return false;" onkeypress="this.onclick;" class="opt_stock">입고알림신청</a>
+												</span>
+											</span>
+										</li>
+										<li>
+											<span class="ancor">
+												<span class="opt_name">선택03)가을가을한 브라운</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+										<li>
+											<span class="ancor">
+												<span class="opt_name">선택04)겨울겨울한 화이트</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+										<li>
+											<span class="ancor">
+												<span class="opt_name">선택05)두줄 정도의 상품이름을 넣어보자 두줄 정도의 상품이름을 넣어보자 </span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+										<li>
+											<span class="ancor">
+												<span class="opt_name">선택05)무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+										<li>
+											<span class="ancor">
+												<span class="opt_name">선택05)무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자 무작정 긴 이름을 넣어 보자</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</dd>
+						<dt class="ir"><label for="opt2">사이즈</label></dt>
+						<!-- 160418 disabled 추가 -->
+						<dd>
+							<div class="lyr_select disabled">
+								<div class="chk_out"><input type="checkbox" id="chk_out3" /><label for="chk_out3">품절제외</label></div>
+								<button type="button"  class="sel_btn">
+									<span class="sel_txt">상위옵션을 먼저 선택해 주세요.</span>
+								</button>
+								<div class="lyr_options">
+									<ul class="options">
+										<li>
+											<span class="ancor">
+												<span class="opt_name">44</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+										<li class="sld_out">
+											<span class="ancor">
+												<span class="opt_name">(품절)55</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<a href="javascript:" onclick="fn_layer_open('reware_layer');return false;" onkeypress="this.onclick;" class="opt_stock">입고알림신청</a>
+												</span>
+											</span>
+										</li>
+										<li>
+											<span class="ancor">
+												<span class="opt_name">66</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</dd>
+						<!-- //160418 disabled 추가 -->
+						<dd>
+							<div class="lyr_select">
+								<div class="chk_out"><input type="checkbox" id="chk_out2" /><label for="chk_out2">품절제외</label></div>
+								<button type="button"  class="sel_btn">
+									<span class="sel_txt">사이즈를 선택해 주세요.</span>
+								</button>
+								<div class="lyr_options">
+									<ul class="options">
+										<li>
+											<span class="ancor">
+												<span class="opt_name">44</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+										<li class="sld_out">
+											<span class="ancor">
+												<span class="opt_name">(품절)55</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<a href="javascript:" onclick="fn_layer_open('reware_layer');return false;" onkeypress="this.onclick;" class="opt_stock">입고알림신청</a>
+												</span>
+											</span>
+										</li>
+										<li>
+											<span class="ancor">
+												<span class="opt_name">66</span>
+												<span class="opt_info">
+													<span class="opt_price"><em>99,999,999</em>원</span>
+													<span class="opt_stock">재고 <em>99,999,999</em>개</span>
+												</span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</dd>
+						<!-- NGCPO-4881 [FO][MO] 슈펜 브랜드몰의 상세페이지에 슈픽 신발사이즈 추천 버튼 기획 : 초기화면 -->
+						<dd>
+							<div class="lyr_select">
+								<div class="chk_out"><input type="checkbox" id="chk_out2" /><label for="chk_out2">품절제외</label></div>
+								<button type="button"  class="sel_btn">
+									<span class="sel_txt">수령방법을 선택해 주세요.</span>
+								</button>
+								<div class="lyr_options">
+									<ul class="options">
+										<li>
+											<span class="ancor">
+												<span class="opt_name">택배배송</span>
+											</span>
+										</li>
+										<li>
+											<span class="ancor">
+												<span class="opt_name">매장수령</span>
+											</span>
+										</li>
+										<li>
+											<span class="ancor">
+												<span class="opt_name">선물하기</span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</dd>
+						<dt class="ir">속각인입력</dt>
+						<dd>
+							<label for="anno" class="ir">각인</label>
+							<input type="text" placeholder="속각인을 입력해주세요." class="anno" id="anno" />
+						</dd>
+						<dt class="ir">겉각인입력</dt>
+						<dd>
+							<label for="anno" class="ir">각인</label>
+							<input type="text" placeholder="겉각인을 입력해주세요." class="anno" id="anno" />
+						</dd>
+						<dt class="ir">각인 포함 가격 확인</dt>
+						<dd><button type="button" class="anno_btn"><em>가격조회</em></button></dd>
+						<dd><div class="fin_price"><strong class="tit">옵션가</strong><b>12,500</b>원<button type="button" class="anno_btn fin"><em>선택</em></button></div>
+						</dd>
+						<dt class="ir">슈픽으로 사이즈 확인</dt>
+						<dd>
+							<div class="shoepik">
+								<span class="info_txt">사이즈가 고민되면 오른쪽 버튼을 눌러주세요</span>
+								<button>
+									<span><em class="ir">SHOEPiK으로 사이즈 확인하기</em></span>
+								</button>
+							</div>
+						</dd>
+						<!-- NGCPO-4881 [FO][MO] 슈펜 브랜드몰의 상세페이지에 슈픽 신발사이즈 추천 버튼 기획 : 사이즈 찾기 완료후 화면 -->
+						<dt class="ir">슈픽으로 사이즈 확인</dt>
+						<dd>
+							<div class="shoepik">
+								<button class="after">
+									<strong>265</strong><em>사이즈를 추천드려요!</em>
+								</button>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="g_lst">
+					<ul>
+						<li>
+							<div class="opt"><em>[NC평촌점][매장수령]</em> 네이비블루 / S</div>
+							<div class="qty">
+								<input type="text" name="qty0" id="qty0" value="1" title="옵션수량입력" />
+								<button type="button" class="minus" onClick="setMinus('qty0');return false;" onKeyPress="this.onclick;"><em class="ir">수량감소</em></button>
+								<button type="button" class="plus" onClick="setPlus('qty0');return false;" onKeyPress="this.onclick;"><em class="ir">수량증가</em></button>
+							</div>
+							<div class="prc"><b>307,200</b>원</div>
+							<button type="button" class="del"><em class="ir">옵션 삭제</em></button>
+						</li>
+						<li>
+							<div class="opt">스마트터치용 장갑 3종 택1 ELQ430006LD E마트터치용 ELQ430006D</div>
+							<div class="qty">
+								<input type="text" name="qty1" id="qty1" value="1" title="옵션수량입력" />
+								<button type="button" class="minus" onClick="setMinus('qty1');return false;" onKeyPress="this.onclick;"><em class="ir">수량감소</em></button>
+								<button type="button" class="plus" onClick="setPlus('qty1');return false;" onKeyPress="this.onclick;"><em class="ir">수량증가</em></button>
+							</div>
+							<div class="prc"><b>307,200</b>원</div>
+							<button type="button" class="del"><em class="ir">옵션 삭제</em></button>
+						</li>
+						<li>
+							<div class="qty">
+								<input type="text" name="qty2" id="qty2" value="1" title="옵션수량입력" />
+								<button type="button" class="minus" onClick="setMinus('qty2');return false;" onKeyPress="this.onclick;"><em class="ir">수량감소</em></button>
+								<button type="button" class="plus" onClick="setPlus('qty2');return false;" onKeyPress="this.onclick;"><em class="ir">수량증가</em></button>
+							</div>
+							<div class="prc"><b>307,200</b>원</div>
+							<button type="button" class="del"><em class="ir">옵션 삭제</em></button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="gd_amt"><em>합계</em> <b>2,416,000</b>원</div>
+		<div class="gd_btns">
+			<button type="button" disabled="disabled" class="cart" onClick="fn_layer_open('msg_lyr_cart');return false;" onKeyPress="this.onclick;">장바구니</button>
+			<button type="button" disabled="disabled" class="buy">구매하기</button>
+		</div>
+		<div class="gd_cls">
+			<button type="button"><em class="ir">닫기</em></button>
+		</div>
+	</div>
+</div>
+<!-- //GOODS OPTION LAYER -->
+
+
+
+
+<!-- LAYER MSG. -->
+<div id="msg_lyr_cart" class="layer_pop nodim">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<p><b>선택한 상품이</b><br/>장바구니에 담겼습니다. </p>
+				<p class="cbtn"><a href="#">장바구니 가기</a></p>
+			</div>  
+		</div>
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //LAYER MSG. -->
+
+<!-- LAYER MSG. -->
+<div id="msg_lyr_zzim" class="layer_pop nodim timeout">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<p class="ico"><em>찜 목록에</em></p>
+				<p>추가되었습니다.</p>
+				<!--
+				<p class="ico"><em>찜 목록에</em> 이미</p> 
+				<p>등록 되어있는 상품입니다.</p> 
+				-->
+				<p class="etc">마이페이지 <em>나의 찜록록</em>에서 <br>확인 하실 수 있습니다.</p>
+			</div>  
+		</div>
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //LAYER MSG. -->
+
+<!-- LAYER ZOOM -->
+<div id="goods_detail" class="layer_zoom">
+	<div class="pop_con">
+		<h3 class="pop_tit">상품상세 기술서</h3>
+		<div class="gd_zoom" id="goods_content">
+			<div id="scroller">
+				<!-- CONTENT -->
+				<div class="gd_md_htm">
+					<img src="../images/mobile/temp/img_mb_area.jpg" width="592" height="245" alt="MD 영역" />
+				</div>
+				<div class="gd_md_htm">
+					<img src="../images/mobile/temp/img_html_area.jpg" width="592" height="549" alt="HTML 영역" />
+				</div>
+				<div class="gd_img_htm">
+					<div class="g_tit">대표이미지</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_htm_txt.jpg" width="592" height="594" alt="대표이미지" /></div>
+					<div class="g_txt">멜란지 컬러감의 컬럭 블록 디테일이 적용되어 감각적인 외관을 연출하는 긴팔 원피스입니다. 피터팬 카라와 프린세스 절개라인이 여성스러운 감성을 보여줍니다.</div>
+				</div>
+				<div class="gd_img_htm">
+					<div class="g_tit">상세이미지</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_htm_txt.jpg" width="592" height="594" alt="상세이미지" /></div>
+					<div class="g_txt">멜란지 컬러감의 컬럭 블록 디테일이 적용되어 감각적인  외관을 연출하는 긴팔 원피스입니다.</div>
+				</div>
+				<div class="gd_img_htm">
+					<div class="g_tit">라벨 및 재질</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_htm_txt.jpg" width="592" height="594" alt="라벨 및 재질" /></div>
+					<div class="g_txt">부드러운 캐시미어 소재 입니다.</div>
+				</div>
+				<div class="gd_kcm">
+					<div class="g_tit">제품 안전인증정보</div>
+					<div class="g_mk">
+						<span class="mk"><img src="../images/mobile/goods/img_kc_mark.png" width="110" height="110" alt="KC" /></span>
+						<span class="tx">본 상품은 국가 통합인증(KC마크) 대상 품목으로 아래의 국가통합인증(KC마크)을(를) 필 하였습니다.</span>				
+						<span class="no">안전인증번호 : AA000000000</span>
+					</div>
+				</div>
+				
+				<div class="gd_chk">
+					<div class="g_tit">CHECK PIONT</div>
+					<div class="g_chk">
+						<dl>
+							<dt>사이즈</dt>
+							<dd class="d1"><span><em>정사이즈보다 작다</em></span></dd>
+							<dd class="d2 on"><span><em>정사이즈와 같다</em></span></dd>
+							<dd class="d3"><span><em>정사이즈보다 크다</em></span></dd>
+						</dl>
+						<dl>
+							<dt>핏정보</dt>
+							<dd class="d1 on"><span><em>슬림핏</em></span></dd>
+							<dd class="d2"><span ><em>레귤러</em></span></dd>
+							<dd class="d3"><span><em>루즈핏</em></span></dd>
+						</dl>
+						<dl>
+							<dt>신축성</dt>
+							<dd class="d1"><span><em>좋음</em></span></dd>
+							<dd class="d2"><span ><em>약간 있음</em></span></dd>
+							<dd class="d3 on"><span><em>없음</em></span></dd>
+						</dl>
+						<dl>
+							<dt>광택여부</dt>
+							<dd class="d1 on"><span><em>많음</em></span></dd>
+							<dd class="d2"><span ><em>중간</em></span></dd>
+							<dd class="d3"><span><em>없음</em></span></dd>
+						</dl>
+						<dl>
+							<dt>신축성</dt>
+							<dd class="d1"><span><em>있음</em></span></dd>
+							<dd class="d2"><span ><em>약간 있음</em></span></dd>
+							<dd class="d3 on"><span><em>없음</em></span></dd>
+						</dl>
+						<dl>
+							<dt>비침</dt>
+							<dd class="d1 on"><span><em>없음</em></span></dd>
+							<dd class="d2"><span ><em>중간</em></span></dd>
+							<dd class="d3"><span><em>있음</em></span></dd>
+						</dl>
+					</div>
+				</div>
+
+				<div class="gd_size">
+					<div class="g_tit">상품 실측 사이즈</div>
+					<div class="g_img"><img src="../images/mobile/temp/img_gd_size.jpg" width="590" height="58" alt="상품 실측 사이즈" /></div>
+					<div class="g_tbl">
+						<table>
+							<caption>상품 실측 사이즈 | 표준사이즈, 브랜드사이즈, 허리둘레(CM), 밑위길이(CM), 엉덩이둘레(CM) 제공하는 표</caption>
+							<colgroup>
+								<col style="width:32%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="th">표준사이즈</th>
+									<th scope="col">90</th>
+									<th scope="col">95</th>
+									<th scope="col">100</th>
+									<th scope="col">105</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- 160411 수정 -->
+								<tr class="b_size">
+									<th scope="row"><b>브랜드사이즈</b></th>
+									<td>90</td>
+									<td>95</td>
+									<td>100</td>
+									<td>105</td>
+								</tr>
+								<!-- //160411 수정 -->
+								<tr>
+									<th scope="row">허리둘레(CM)</th>
+									<td>30</td>
+									<td>31</td>
+									<td>32</td>
+									<td>33</td>
+								</tr>
+								<tr>
+									<th scope="row">밑위길이(CM)</th>
+									<td>30</td>
+									<td>31</td>
+									<td>32</td>
+									<td>33</td>
+								</tr>
+								<tr>
+									<th scope="row">엉덩이둘레(CM)</th>
+									<td>30</td>
+									<td>31</td>
+									<td>32</td>
+									<td>33</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table>
+							<caption>상품 실측 사이즈 | 표준사이즈, 브랜드사이즈, 허리둘레(CM), 밑위길이(CM), 엉덩이둘레(CM) 제공하는 표</caption>
+							<colgroup>
+								<col style="width:32%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="th">표준사이즈</th>
+									<th scope="col">110</th>
+									<th scope="col">115</th>
+									<th scope="col"></th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- 160411 수정 -->
+								<tr class="b_size">
+									<th scope="row"><b>브랜드사이즈</b></th>
+									<td>110</td>
+									<td>115</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- //160411 수정 -->
+								<tr>
+									<th scope="row">허리둘레(CM)</th>
+									<td>34</td>
+									<td>35</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">밑위길이(CM)</th>
+									<td>34</td>
+									<td>35</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">엉덩이둘레(CM)</th>
+									<td>34</td>
+									<td>35</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>	
+				<!-- //CONTENT -->	
+			</div>              
+		</div>		
+		<a href="#close" class="btn_close"><span class="ir">상품상세 레이어 팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //LAYER ZOOM -->
+
+
+<!-- LAYER SIZE -->
+<div id="lyr_gd_size" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">이전 구매한 상품과 사이즈 비교하기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="gd_cmp">
+				<div class="txt">
+					<div class="dt"><b>이전에 구매하신</b> 상품의 실측사이즈</div>
+					<div class="dd">최근 1년간 비교하실 상품과 같은 <b>티셔츠</b>에서 구매하신 상품  입니다. (실측사이즈 보유 상품만 제공)</div>
+				</div>
+
+				<div class="cmp">
+					<ul>
+						<li>
+							<dl>
+								<dt>2015.11.30</dt>
+								<dd>	
+									<div class="g_wrap">
+										<a href="#" class="g_cls" onClick="layer_fix_close('lyr_gd_size')" onKeyPress="this.onclick;">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+											</span>
+											<span class="g_brd">POLHAM</span>
+											<span class="g_tit">POLHAM (남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1 (남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+											<span class="g_opt">BK(89) / M / 1개</span>
+										</a>
+									</div>
+									<div class="g_tbl">
+										<table>
+											<caption>상품 사이즈 | 구매하신 사이즈, 사이즈 평가, 실측 사이즈 (cm) 제공하는 표</caption>
+											<colgroup>
+												<col style="width:33%">
+												<col style="width:30%">
+												<col style="width:37%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">구매하신 사이즈</th>
+													<th scope="col">사이즈 평가</th>
+													<th scope="col">실측 사이즈 (cm)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>55</td>
+													<td><em class="on">작아요</em></td>
+													<td class="sz">
+														어깨넓이 : 80<br/> 
+														팔길이 : 85<br/>  
+														가슴둘레 : 90<br/>  
+														허리둘레 : 95<br/> 
+														전체길이 : 100
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</dd>
+							</dl>
+						</li>
+
+						<li>
+							<dl>
+								<dt>2015.11.30</dt>
+								<dd>	
+									<div class="g_wrap">
+										<a href="#" class="g_cls" onClick="layer_fix_close('lyr_gd_size')" onKeyPress="this.onclick;">
+											<span class="g_img">
+												<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+											</span>
+											<span class="g_brd">POLHAM</span>
+											<span class="g_tit">POLHAM 배색 스웨이드 후드 탈부 배색 스웨이드 후드 탈부착 후드 탈부착</span>
+											<span class="g_opt"><em>세트상품1</em> : 선택1) 폼폼이케이스 / 아이폰6S / RED</span>
+											<span class="g_opt"><em>세트상품2</em> : 선택2) 폼폼이케이스 / 아이폰6PLUS S / BLUE / 1개</span>
+										</a>
+									</div>
+									<div class="g_tbl">
+										<table>
+											<caption>상품 사이즈 | 구매하신 사이즈, 사이즈 평가, 실측 사이즈 (cm) 제공하는 표</caption>
+											<colgroup>
+												<col style="width:33%">
+												<col style="width:30%">
+												<col style="width:37%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">구매하신 사이즈</th>
+													<th scope="col">사이즈 평가</th>
+													<th scope="col">실측 사이즈 (cm)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>세트상품1<br/> S</td>
+													<td rowspan="2"><em>작성된 상품평이 없습니다</em></td>
+													<td class="sz">
+														어깨넓이 : 80<br/> 
+														팔길이 : 85<br/>  
+														가슴둘레 : 90<br/>  
+														허리둘레 : 95<br/> 
+														전체길이 : 100
+													</td>
+												</tr>
+												<tr>
+													<td>세트상품2<br/> S</td>
+													<td class="sz">
+														어깨넓이 : 80<br/> 
+														팔길이 : 85<br/>  
+														가슴둘레 : 90<br/>  
+														허리둘레 : 95
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+			<div class="gd_size">
+				<div class="g_tit"><b>비교하실</b> 상품의 실측사이즈</div>
+				<div class="g_tbl">
+					<table>
+						<caption>상품 실측 사이즈 | 표준사이즈, 브랜드사이즈, 허리둘레(CM), 밑위길이(CM), 엉덩이둘레(CM) 제공하는 표</caption>
+						<colgroup>
+							<col style="width:32%">
+							<col style="width:17%">
+							<col style="width:17%">
+							<col style="width:17%">
+							<col style="width:17%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="th">표준사이즈</th>
+								<th scope="col">90</th>
+								<th scope="col">95</th>
+								<th scope="col">100</th>
+								<th scope="col">105</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 160411 수정 -->
+							<tr class="b_size">
+								<th scope="row"><b>브랜드사이즈</b></th>
+								<td>90</td>
+								<td>95</td>
+								<td>100</td>
+								<td>105</td>
+							</tr>
+							<!-- //160411 수정 -->
+							<tr>
+								<th scope="row">허리둘레(CM)</th>
+								<td>30</td>
+								<td>31</td>
+								<td>32</td>
+								<td>33</td>
+							</tr>
+							<tr>
+								<th scope="row">밑위길이(CM)</th>
+								<td>30</td>
+								<td>31</td>
+								<td>32</td>
+								<td>33</td>
+							</tr>
+							<tr>
+								<th scope="row">엉덩이둘레(CM)</th>
+								<td>30</td>
+								<td>31</td>
+								<td>32</td>
+								<td>33</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table>
+						<caption>상품 실측 사이즈 | 표준사이즈, 브랜드사이즈, 허리둘레(CM), 밑위길이(CM), 엉덩이둘레(CM) 제공하는 표</caption>
+						<colgroup>
+							<col style="width:32%">
+							<col style="width:17%">
+							<col style="width:17%">
+							<col style="width:17%">
+							<col style="width:17%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="th">표준사이즈</th>
+								<th scope="col">110</th>
+								<th scope="col">115</th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- 160411 수정 -->
+							<tr class="b_size">
+								<th scope="row"><b>브랜드사이즈</b></th>
+								<td>110</td>
+								<td>115</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<!-- 160411 수정 -->
+							<tr>
+								<th scope="row">허리둘레(CM)</th>
+								<td>34</td>
+								<td>35</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">밑위길이(CM)</th>
+								<td>34</td>
+								<td>35</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">엉덩이둘레(CM)</th>
+								<td>34</td>
+								<td>35</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="g_img"><img src="../images/mobile/temp/img_gd_size.jpg" width="590" height="58" alt="상품 실측 사이즈" /></div>
+			</div>
+			<!-- 160318 추가 -->
+			<ul class="btn_fix_box">
+				<li class="w100"><a href="#" class="btn_fix">닫기</a></li>
+			</ul>
+			<!-- //160318 추가 -->
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //LAYER INQUIRY -->
+
+
+<!-- LAYER SNS -->
+<div id="sns_lyr" class="layer_con" style="display:none">
+	<div class="pop_con">
+		<h3 class="pop_tit">SNS 공유하기</h3>
+		<div class="pop_con">
+			<div class="sns">
+				<ul>
+					<li><a href="#" class="fb">페이스북</a></li>
+					<li><a href="#" class="ks">카카오<br/>스토리</a></li>
+					<li><a href="#" class="nb">네이버<br/>블로그</a></li>
+					<li><a href="#" class="ln">라인</a></li>
+					<li><a href="#" class="kt">카카오톡</a></li>
+					<li><a href="#" class="is">인스타그램</a></li>
+					<li><a href="#" class="ur">URL복사</a></li>
+				</ul>
+			</div>
+		</div>
+		<a href="#close" class="btn_close">닫기</a>
+	</div>
+	<!-- 160325 url 추가 -->
+	<div class="pop_con" style="display:none"> <!-- URL복사 터치시 보여주세요 -->
+		<div class="pop_con">
+			<div class="sns">
+				<div class="sns_ur">
+					<div class="info">아래의 url을 전체 선택하여 복사하세요.</div>
+					<div class="urbox"><textarea onfocus = "this.select()">http://m.elandmall.com/Shop/Product_Detail.aspx?PC=A250967100203#none</textarea></div>
+				</div>
+			</div>
+		</div>
+		<a href="#close" class="btn_close">닫기</a>
+	</div>
+	<script type="text/javascript">
+		$(".layer_con .sns .ur").click(function(){
+			$(this).parents(".pop_con").hide().next().show();
+		});
+	</script>
+	<!-- //160325 url 추가 -->
+</div>
+<!-- //LAYER SNS -->
+
+<!-- LAYER BRANCH -->
+<div id="branch_lyr" class="layer_con lyr_opc">
+	<div class="pop_con">
+		<h3 class="pop_tit">다른지점 가격 및 혜택</h3>
+		<div class="pop_txt">
+			<div class="branch">
+				<div class="tit">원하시는 지점을 선택해 주세요.</div>
+				<ul>
+					<li>
+						<a href="#">
+							<span class="dt">NC 평촌점</span>
+							<span class="dd">12,000원 [매장수령 가능]</span> 
+						</a>
+					</li>
+					<li class="on">
+						<a href="#">
+							<span class="dt">NC 강서점</span>
+							<span class="dd">10,000원 [매장수령 가능] (즉시할인쿠폰 10%~11.3) (사은품: 메트로시티 캐시미어 목도리, 장갑)</span> 
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="dt">NC 불광점</span>
+							<span class="dd">10,000원(즉시할인쿠폰 10% ~11.3) (사은품 : 선물포장)</span> 
+						</a>
+					</li> 
+					<li>
+						<a href="#">
+							<span class="dt">NC 부평점</span>
+							<span class="dd">10,000원 [매장수령 가능]</span> 
+						</a>
+					</li> 
+				</ul>
+			</div>
+		</div>
+		<a href="#close" class="btn_close">닫기</a>
+	</div>
+</div>
+<!-- //LAYER BRANCH -->
+
+<!-- LAYER INQUIRY -->
+<div id="lyr_inquiry" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">상품문의</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="inq_txt">
+				고객님의 개인정보 노출을 막기 위하여<br/>
+				게시글에 이메일, 휴대폰번호, 주민번호와 같은<br/>
+				<em>개인정보는 기록하지 않도록 주의</em>하여 주십시오.
+			</div>
+			<dl class="inq_form">		
+				<dt class="ir"><label for="inq_type">문의유형</label></dt>
+				<dd>
+					<select id="inq_type">
+						<option selected="selected">문의유형을 선택해 주세요.</option>
+						<option>문의유형1</option>
+					</select>
+				</dd>
+				<dt class="ir"><label for="inq_tit">제목</label></dt>
+				<dd><input type="text" class="input" name="inq_tit" id="inq_tit" onKeyUp="limitText('inq_tit', 100);" onMouseUp="this.onkeyup;" placeholder="제목을 입력해 주세요. (최대 50자까지 입력 가능)" /></dd>
+				<dt class="ir"><label for="inq_cont">내용</label></dt>
+				<dd>
+					<textarea  name="inq_cont" id="inq_cont" rows="8" cols="50" onKeyUp="limitText('inq_cont', 2000);" onMouseUp="this.onkeyup;" placeholder="상품관련 이외의 배송,결제, 교환/반품에 관한 문의는\n고객센터 1:1 문의 게시판에 문의해 주세요."></textarea>
+					<div class="txt">최대 1000자까지 입력 가능 합니다.</div>
+				</dd>
+			</dl>
+			<div class="inq_noti">상품과 관련 없는 내용, 미풍양속을 해치는 글, 특정 성분의 효능을 언급하는 글, 지나치게 주관적인 글은 통보 없이 삭제될 수 있습니다.</div>
+			<div class="inq_btn">
+				<button type="button">취소</button>
+				<button type="button">문의하기</button>
+			</div>
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //LAYER INQUIRY -->
+
+<!-- layer_popup : 카드혜택 -->
+<div id="pop_card" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">카드혜택</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+
+			<div class="card_tit"><strong>무이자할부 안내</strong></div>
+			<table class="tbl_address mt10">
+				<caption>무이자할부 안내 테이블 이며 카드사, 적용금액, 할부개월 ,기간순으로 제공합니다.</caption>
+				<colgroup>
+					<col style="width:25%;">
+					<col >
+				</colgroup>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-01.gif" alt="비씨카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-02.gif" alt="KB국민카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-03.gif" alt="외환카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-04.gif" alt="삼성카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-05.gif" alt="신한카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-08.gif" alt="현대카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+			</table>
+
+			<div class="card_tit mt20"><strong>부분 무이자할부 안내</strong></div>
+			<table class="tbl_address mt10">
+				<caption>부분 무이자할부 안내 테이블 이며 카드사, 적용금액, 할부개월, 고객 부담 수수료순으로 제공합니다.</caption>
+				<colgroup>
+					<col style="width:25%;">
+					<col >
+				</colgroup>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-09.gif" alt="롯데카드"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-11.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-12.gif" alt="수협"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-14.gif" alt="우리카드"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-15.gif" alt="NH농협카드"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-16.gif" alt="제주은행"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+			</table>
+
+			<div class="card_tit mt20"><strong>청구할인 프로모션</strong></div>
+			<table class="tbl_address mt10">
+				<caption>청구할인 프로모션 테이블 이며 카드사, 적용금액, 할인내역 ,기간순으로 제공합니다.</caption>
+				<colgroup>
+					<col style="width:25%;">
+					<col >
+				</colgroup>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-17.gif" alt="광주은행"></span></td>
+					<td>
+						3만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-18.gif" alt="전북은행"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-24.gif" alt="하나카드"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+			</table>
+
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 카드혜택 -->
+
+<!--재입고 알림 레이어 -->
+<div id="reware_layer" class="layer_fix ship">
+	<h3 class="pop_tit">재입고 알림</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="relyr">
+				<div class="prd_group">
+					<div class="reware">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+						</div>
+						<!-- 옵션 선택 -->
+						<div class="opt_open">
+							<dl>
+								<dt>색상</dt>
+								<dd>
+									<select class="w100">
+										<option>베이지브라운</option>
+									</select>
+								</dd>
+								<dt>사이즈</dt>
+								<dd>
+									<select class="w100">
+										<option>55</option>
+									</select>
+								</dd>
+							</dl>
+						</div>
+						<!-- //옵션 선택 -->
+					</div>
+				</div>
+				<div class="reg_num">휴대폰 번호 <em>010-****-1123</em></div>
+				<div class="my_noti">
+					<ul>
+						<li>재입고알림 신청 상품을 삭제하시면 신청이 취소됩니다.</li>
+						<li>알림 신청 당시의 상품구성, 가격은 재입고시 변경될 수  있습니다.</li>
+						<li> 재입고알림 신청목록은 최대 30개 이며, 보관일은 30일 입니다.</li>
+						<li>한 상품에서 재입고 알림은 최대 3번까지 진행됩니다.  (단, 재입고알림 내역에서 삭제 후 추가시 알림이 다시 진행됩니다.)</li>
+					</ul>
+				</div>
+				<button class="btn_bg06 c01"><strong>재입고 알림 신청</strong></button>
+			</div>
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!--//재입고 알림 레이어 -->
+
+<!-- LAYER REVIEW -->
+<div id="lyr_review" class="layer_fix">
+	<h3 class="pop_tit">포토리뷰 상세보기</h3>
+	<div class="pop_con">
+		<div class="review_wrap">
+			<div class="rv_list">
+				<div class="r_usr">
+					<span class="id">USERID****</span>
+					<span class="date">2015.10.10</span>
+				</div>
+
+				<div class="review_lyr_bn" id="review_lyr_bn">
+					<div class="swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide"><span><img src="../images/mobile/temp/rv_sample_1.jpg" alt="옷걸이" /></span></li>
+							<li class="swiper-slide"><span><img src="../images/mobile/temp/rv_sample_2.jpg" alt="옷걸이2" /></span></li>
+							<li class="swiper-slide"><span><img src="../images/pcweb/temp/bahus_review_1200x675.jpg" alt="식탁" /></span></li>
+						</ul>
+					</div>
+					<div class="pagination">
+						<span class="pg">
+							<a href="#none" class="swiper-pagination-switch"><b class="ir">1번 이미지 보기</b></a>
+							<a href="#none" class="swiper-pagination-switch"><b class="ir">2번 이미지 보기</b></a>
+							<a href="#none" class="swiper-pagination-switch"><b class="ir">3번 이미지 보기</b></a>
+						</span>
+					</div>
+				</div>
+
+				<script type="text/javascript">
+					$(document).ready(function(){
+
+						$("#review_layer").find(".togglBtn").each(function(){
+							var $this = $(this);
+							var $links = $this.find("a");
+							$links.on("click",function(e){
+								$links.toggleClass("on");
+								e.preventDefault();
+							})
+						});
+					});
+					function set_review_lyr_bn(){
+						var maxIdx = $("#photo_total_count").val() -1;
+						var wrap = $('#lyr_photo_review .review_wrap');
+						var rv_bn = '#review_lyr_bn';
+						//wrap.append('<div class="bahus_nav_gd"><a href="#" class="prev"><b class="ir">이전</b></a><a href="#" class="next"><b class="ir">다음</b></a></div>');
+						if($('#main_top').length>0){$('#main_top').hide()}
+						$('#lyr_photo_review .bahus_btn_close, #lyr_photo_review .bt_close').on('click', function(){
+							if($('#main_top').length>0){$('#main_top').show()}
+							wrap.find('.bahus_nav_gd').remove();
+							if (typeof review_lyr_bn != 'undefined') {
+								review_lyr_bn.destroy();
+								review_lyr_bn = undefined;
+							}
+						})
+						
+						if($(rv_bn).length>0 ){
+							h_review_lyr_bn();
+							var total = $(rv_bn+' .swiper-slide').length;
+							
+							var cEvalNo = $("#cEvalNo").val();
+							var evalData = $('.rv_photo ul li');
+							var prevIdx = null;
+							var prevEvalNo = "";
+							var nextIdx = null;
+							var nextEvalNo = "";
+							$.each(evalData, function() {
+								if( $(this).attr("data-eval-no") == cEvalNo ){
+									prevIdx = parseInt($(this).attr("data-index")) - 1;
+									nextIdx = parseInt($(this).attr("data-index")) + 1;
+								}
+								if( $(this).attr("data-index") == nextIdx ){
+									nextEvalNo = $(this).attr("data-eval-no");
+								}
+							});
+							$.each(evalData, function() {
+								if( $(this).attr("data-index") == prevIdx ){
+									prevEvalNo = $(this).attr("data-eval-no");
+								}
+							});
+
+							review_lyr_bn = new Swiper(rv_bn+' .swiper-container',{
+								createPagination: false,
+								initialSlide:0,
+								calculateHeight:true,
+								simulateTouch: true,
+								pagination: rv_bn+' .pagination .pg',
+								paginationElement : "a",
+								paginationClickable : true,
+								loop: false,
+								onTouchEnd : function() {
+									var matrix = $(rv_bn+' .swiper-wrapper').css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+									var matrix_x = matrix[12] || matrix[4];
+									var s_width = $(rv_bn+' .swiper-slide').width();
+									if(matrix_x >= (0+20)){ //first slide prev touch
+										if(prevIdx < 0){
+											return false;
+										} else {
+											elandmall.goodsDetailTab.fnEval.fnPhotoEvalDtl(prevEvalNo, "dtl");
+										}
+									}
+									if(matrix_x <= (-(s_width*(total-1))-20)){ //last slide next touch
+										if(nextIdx > maxIdx){
+											return false;
+										} else {
+											
+											if(nextEvalNo == "") {
+												//elandmall.goodsDetailTab.fnEval.photoLayerClose('lyr_photo_review');
+										
+											}else{
+												elandmall.goodsDetailTab.fnEval.fnPhotoEvalDtl(nextEvalNo, "dtl");
+												
+											}
+											
+										}
+									}
+								}
+							});
+
+							review_lyr_bn.swipeTo(0, 0 , 0 );
+							review_lyr_bn.reInit()
+							$(window).resize(function(){	h_review_lyr_bn()})
+						}else{ 
+							//only text review
+						}
+					}
+					 function h_review_lyr_bn(){ //슬라이더 내부 이미지정렬
+					 	var h = $(window).width()-24;
+					 	$('#review_lyr_bn .swiper-container, #review_lyr_bn .swiper-slide').css('max-height', h + 'px');
+					 	$('#review_lyr_bn .swiper-slide span').css({'height':h + 'px','width':h + 'px'})
+					 	$('#review_lyr_bn .swiper-slide span img').css({'width':'auto','height':100 + '%','min-width':100 + '%'});
+						// 	rectangle_lineup('.review_lyr_bn .swiper-slide'); 
+					 }					
+				</script>
+
+				<span class="opt_sta">
+					<span class="opt">RED55</span>
+					<span class="star">
+						<span class="ico"><em class="ir">별점</em></span>4.9
+					</span>
+				</span>
+
+				<div class="user_sum">
+					<ul>
+						<li>키<em>160~164cm</em></li>
+						<li>몸무게<em>50~54kg</em></li>
+						<li>평소사이즈<em>M</em></li>
+					</ul>
+				</div>
+				<div class="rv_text">
+					세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔주셨네요.<br />
+					옆쪽에 본드가 좀 뭍은것이 왔지만 잘보이지 않는 곳이라 다행이네요. 신발은 따뜻하고 편해요. 버클이 좀 없어보 이긴 하지만. 세무재질에 본드가 뭍어 교환요청했는데 바로 바꿔 주셨네요. 옆쪽에 본드가 좀 뭍은것이 왔지만 잘보이지 않는 곳이라 다행이네요. 신발은 따뜻하고 편해요. 버클이 좀 없어보이긴 하지만 세무재질에본드가 뭍어 교환요청했는데 바로 바꿔주셨네요.
+				</div>
+				<div class="rvw_recom">
+					<span class="rec_text"><em>23</em>명이 이 상품을 추천하였습니다.</span>
+					<span class="squ_anc togglBtn">
+						<a href="javascript:;">추천<em class="heart"><span class="ir">하트</span></em></a>
+					</span>
+				</div>
+			</div>
+			<!-- <div class="bahus_nav_gd">
+				<a href="#" class="prev"><b class="ir">이전</b></a>
+				<a href="#" class="next"><b class="ir">다음</b></a>
+			</div> -->
+			<div class="btn_gd_rv">
+				<button type="button" class="bt_close" onClick="fn_layer_close('lyr_review');return false">닫기<span class="ir">포토리뷰 상세보기 레이어 팝업 닫기</span></button>
+			</div>
+		</div>		
+	</div>
+	<a href="#close" class="bahus_btn_close" onClick="fn_layer_close('lyr_review');return false"><span class="ir">포토리뷰 상세보기 레이어 팝업 닫기</span></a>
+</div>
+<!--// LAYER REVIEW -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- 상세 검색 레이어 -->
+<div id="sch_detail" class="layer_fix" style="display: none; top: 0px;">
+	<h3 class="pop_tit">상세검색</h3>
+	<div class="pop_con">
+
+		<div class="pop_sch_dtl">
+			<dl class="active">
+				<dt><button type="button"><b>키</b></button></dt>
+				<dd class="n2 hght" style="display: block;">
+					<ul>
+						<li>
+							<input type="checkbox" id="hgh01" class="ir">
+							<label for="hgh01"><span>175~179 cm</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="hgh02" class="ir">
+							<label for="hgh02"><span>175~179 cm</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="hgh03" class="ir">
+							<label for="hgh03"><span>175~179 cm</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="hgh04" class="ir">
+							<label for="hgh04"><span>175~179 cm</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>사이즈</b></button></dt>
+				<dd class="n2 size">
+					<ul> 
+						<li>
+							<input type="checkbox" id="size01" class="ir">
+							<label for="size01"><span>XS</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="size02" class="ir">
+							<label for="size02"><span>S</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="size03" class="ir">
+							<label for="size03"><span>M</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="size04" class="ir">
+							<label for="size04"><span>L</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<div class="sch_dtl_btn">
+			<button type="button" class="re"><em>선택초기화</em></button>
+			<button type="button" class="ok"><em>선택 결과보기</em></button>
+		</div>
+		<!-- 레이어 팝업 닫기 추가 -->
+		<div class="btn_layertop">
+			<a href="#close"><span class="ir">레이어 팝업 닫기</span></a>
+		</div>
+		<!-- //레이어 팝업 닫기 추가 -->
+	</div>
+	<a href="#close" class="btn_close" id="btn_close"><span class="ir">레이어 팝업 닫기</span></a>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		/* 모바일 메인에서만 사용함 
+		var btnPermanent = $(".btn_permanent").clone();
+		var sch_detail = $("#sch_detail").clone();
+		$(".btn_permanent").remove();
+		$("#sch_detail").remove();
+		$("body").append(btnPermanent);
+		$("body").append(sch_detail);
+		
+		//Layer Close      
+		$('#sch_detail #btn_close').click(function () {
+		    var this_name = '#' + $(this).parent().attr('id');
+			$('#header').css('z-index', '');
+			$('#contents').unbind('touchmove');
+
+			$('#contents').css({ 'position': '', 'z-index': ''});
+			$("html,body").scrollTop(scrpos);
+
+		    layer_close(this_name);
+		    scroll_on();
+		});
+
+		// Layer Close_OK
+		$('#btn_ok').click(function(){
+	        var this_name = '#' + $(this).parent().parent().parent().attr('id');
+			$('#header').css('z-index', '');
+			$('#contents').unbind('touchmove');
+
+			$('#contents').css({ 'position': '', 'z-index': ''});
+			$("html,body").scrollTop(scrpos);
+		
+	        layer_close(this_name);
+	        scroll_on();
+		});
+								
+		$('.pop_sch_dtl').find('dl').each(function(){
+			var bx = $(this);
+			var opt = bx.find('dd');
+			bx.find('dt button').unbind("click");
+			bx.find('dt button').click(function(){
+				if(bx.hasClass('active')){
+					$('.pop_sch_dtl dl').removeClass('active');
+					opt.slideUp(150);
+				}else{
+					$('.pop_sch_dtl dl').removeClass('active');
+					$('.pop_sch_dtl dl dd').slideUp(100);
+					bx.addClass('active');
+					opt.slideDown(150);
+				}
+			})
+		});
+
+		$(document).ready(function(){
+			if($('div').hasClass('goods_img') || $('div').hasClass('main_bn_wrap')){
+				$('.goods_img, .main_bn_wrap').addClass('ready');
+			}
+		}); */						
+		var popCtgTit = $(".pop_sch_dtl .ctg_list .tit");
+		var popCtgMore = $(".pop_sch_dtl .ctg_list_more .more");
+
+		popCtgTit.click(function(e){
+			e.preventDefault();
+			$(this).toggleClass("selected");
+		});
+		popCtgMore.click(function(){
+			$(this).toggleClass("selected");
+			$(this).next().toggle();
+		});
+
+		$("#sch_detail .btn_layertop").click(function(e){
+			e.preventDefault();
+			 var this_name = '#' + $(this).parent().parent().attr('id');
+			$("#sch_detail").hide();
+			$('#header').css('z-index', '');
+			$('#contents').unbind('touchmove');
+			$('#contents').css({ 'position': '', 'z-index': ''});
+			$("html,body").scrollTop(scrpos);
+	        layer_close(this_name);
+	        scroll_on();
+		});
+	});
+</script>
+<!-- //상세 검색 레이어 -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+<!-- [v2] : 추가 -->
+<script type="text/javascript" src="../common/js/common.ui.video.js"></script>
+<!-- //[v2] : 추가 -->
+<script>
+	/* [v2] : 유투브 동영상 플레이 */
+	var playerArr = [];
+	var vdoCurrentIDX; //현재 선택된 동영상 index
+	var playerState;//플레이 상태 
+	var youtubeVdoArray = [
+		{
+			yId : 'vdo_iframe1', 
+			yOpt : {width: '100%', height: '100%', videoId: 'aiHSVQy9xN8'}
+		}
+	];
+	var vdosLeng = youtubeVdoArray.length;
+	$('html').find('script').filter(function(){
+	    return $(this).attr('src') === 'https://s.ytimg.com/yts/jsbin/www-widgetapi-vfllLD3qZ/www-widgetapi.js'
+	}).remove();
+	commonUI.loadJs("https://s.ytimg.com/yts/jsbin/www-widgetapi-vfllLD3qZ/www-widgetapi.js");
+	/* //[v2] : 유투브 동영상 플레이 */
+</script>
+</body>
+</html>

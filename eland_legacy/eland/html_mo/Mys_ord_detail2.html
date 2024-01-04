@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_bahus.css" type="text/css"> <!-- 브랜드몰 bahus -->
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//옵션 수량
+    $(document).ready(function() {
+        $(".basket_prd .sel .opt").bind("click", function() {
+            $(this).toggleClass("on");
+            $(this).parent().parent().find(".opt_open").toggle();
+        });
+    });
+	//주소찾기
+	$(function(){
+		var tabAddr = $(".pop_addr .tab_addr > li");
+		var conAddr = $(".pop_addr .con_addr > div");
+
+		tabAddr.bind("click", function(){
+			addrId = $(this).index();
+
+			tabAddr.removeClass("on");
+			tabAddr.eq(addrId).addClass("on");
+			conAddr.removeClass("on");
+			conAddr.eq(addrId).addClass("on");
+		});
+	});
+
+	//배송메세지 160307
+	$(function(){
+		$(".sel_box").change(function(){ 
+		    $(".sel_box option:selected").each(function(){
+			    msg = $(this).text();
+		        if(msg == "메시지 직접입력 (배송기사/매장 전달)"){
+		        	$(this).parent().parent().parent().find("select").hide();
+		        	$(this).parent().parent().parent().find(".msg_selected").hide();
+		        	$(this).parent().parent().append("<textarea cols='30' rows='2' class='w100'>배송 시 전달사항을 입력해주세요.</textarea>");
+		        }else{
+			        $(this).parent().parent().find(".msg_selected").show().find("span").text(msg);
+		        }
+		    });  
+		});
+	});
+
+	//조회기간 선택
+	$(function(){
+		$(".sch_order li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+
+	//진행상태 및 배송정보
+	$(function(){
+		$(".progress").bind("click", function(){
+			$(".mypage_box .basket_prd .sel .opt").removeClass("on");
+			$(".opt_open").slideUp();
+			$(this).find(".ico").toggleClass("on");
+			$(this).parent().parent().find(".prd_total03").slideToggle(200);
+		});
+		$(".mypage_box .basket_prd .sel .opt").bind("click", function(){
+			$(".progress .ico").removeClass("on");
+			$(".prd_total03").slideUp();
+		});
+	});
+
+	//총 결제금액
+	$(function(){
+		$(".my_pay .pay_all .btn_total a").bind("click", function(e){
+			e.preventDefault();
+			$(this).toggleClass("on");
+			$(this).parents().find(".pay_list").slideToggle(200);
+			if($(this).children("span").text() == '닫기'){
+				$(this).children("span").text('자세히');
+			} else {
+				$(this).children("span").text('닫기');
+			}
+		});
+	});
+
+	//bahus add 벽 고정 설치
+	$(function(){
+		$(".tab_con .btn_ev").click(function(){
+			evId = $(this).index();
+			$(this).parent().find("button").removeClass("selected");
+			$(this).parent().find("button").eq(evId).addClass("selected");
+			$(".btn_ev.fixo").click(function(){
+				$(".fixwall").show();
+			});
+			$(".btn_ev.fixx").click(function(){
+				$(".fixwall").hide();
+			});
+		});
+	});
+
+	//bahus add 약관 동의 추가해주세요
+	$(function(){
+
+	    var ordTit = $(".my_con .ico_open");
+
+	    ordTit.bind("click", function(e){
+	        e.preventDefault();
+	        $(this).parent().find(".ico_open").toggleClass("selected");
+	        $(this).parent().find(".txt_order").toggleClass("on");
+	        $(this).parent().next().slideToggle(200);
+	        $(this).parent().find(".pay_noti").toggle();
+	    });
+		$(".tab_list02 li").bind("click", function(e){
+			e.preventDefault();
+			tabId = $(this).index();
+
+			$(this).parent().parent().parent().find(".tab_list02 li").removeClass("selected");
+			$(this).addClass("selected");
+			$(this).parent().parent().parent().find(".tab_con > div").hide();
+			$(this).parent().parent().parent().find(".tab_con > div").eq(tabId).show();
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>상세주문내역</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>		
+	<div class="my_con">
+		<div class="my_title">
+			<h3>주문 상품</h3>
+		</div>
+		<div class="mypage_content">
+			<div class="mypage_box">
+				<div class="tit_order">
+					<a href="#">
+						<em>2016.12.01</em>
+						<span>(주문번호:M151116002268196)</span>
+					</a>
+				</div>
+
+				<!-- 1번 배송지 -->
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="top_deli"><em class="ico">1번</em> 배송지</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+						<div class="sel ord">
+							<div class="progress">
+								<em class="ico">입금확인중</em>
+								<span>(입금기한 2015-12-10)</span>
+							</div>
+							<div class="opt"><span>옵션 변경</span></div>
+						</div>
+						<!-- 옵션 변경 -->
+						<div class="opt_open">
+							<dl>
+								<dt>옵션명</dt>
+								<dd>
+									<select class="w100">
+										<option>옵션명</option>
+									</select>
+								</dd>
+							</dl>
+							<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+						</div>
+						<!-- //옵션 변경 -->
+						<!-- 진행현황 버튼 -->
+						<div class="prd_total03">
+							<ul class="btn">
+								<li><a href="#" class="gray">주문취소</a></li>
+								<li><a href="#" class="dark">배송지 변경</a></li>
+							</ul>
+						</div>
+						<!-- 진행현황 버튼 -->
+					</div>
+				</div>
+				<!-- //1번 배송지 -->
+
+				<!-- 2번 배송지 -->
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="top_deli"><em class="ico">2번</em> 배송지</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+						<div class="sel ord">
+							<div class="progress">
+								<em class="ico">결제완료</em>
+							</div>
+							<div class="opt"><span>옵션 변경</span></div>
+						</div>
+						<!-- 옵션 변경 -->
+						<div class="opt_open">
+							<dl>
+								<dt>옵션명</dt>
+								<dd>
+									<select class="w100">
+										<option>옵션명</option>
+									</select>
+								</dd>
+							</dl>
+							<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+						</div>
+						<!-- //옵션 변경 -->
+						<!-- 진행현황 버튼 -->
+						<div class="prd_total03">
+							<ul class="btn">
+								<li><a href="#" class="gray">주문취소</a></li>
+								<li><a href="#" class="dark">배송지 변경</a></li>
+							</ul>
+						</div>
+						<!-- //진행현황 버튼 -->
+					</div>
+					<!-- 희망배송일 추가 -->
+					<div class="prd_total">
+						<div class="store line01">
+							<span class="stxt">희망배송일</span>
+						</div>
+						<span class="day">2016-08-12(금요일,오후)</span><!-- bahus add -->
+					</div>
+					<!-- //희망배송일 추가 -->
+				</div>
+				<!-- //2번 배송지 -->
+			</div>
+		</div>
+
+		<div class="my_title">
+			<h3>배송 정보</h3>
+		</div>
+		<div class="mypage_delivery">
+			<!-- 배송지가 복수일 경우 -->
+			<div class="sbox_delivery">
+				<select>
+					<option>1번 배송지</option>
+					<option>2번 배송지</option>
+					<option>3번 배송지</option>
+				</select>
+			</div>
+			<!-- //배송지가 복수일 경우 -->
+			<div class="ord_box01">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">주문자명</div>
+							<div class="box_con">홍길동</div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con">
+								<div class="inp_txt"><input type="text" title="받으시는 분" value="홍길동"></div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">전화번호</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>02</option>
+										</select>
+									</li>
+									<li><input type="text" title="전화번호 가운데자리" value="0000"></li>
+									<li><input type="text" title="전화번호 세번째자리" value="0000"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">휴대전화</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>010</option>
+										</select>
+									</li>
+									<li><input type="text" title="휴대전화 가운데자리" value="0000"></li>
+									<li><input type="text" title="휴대전화 세번째자리" value="0000"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">주소</div>
+							<div class="box_con">
+								<div class="addr">
+									<input type="text" class="w100" title="우편번호" value="08506">
+									<div class="absR">
+										<a href="#" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+									</div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="도로명주소" value="서울 금천구 가산디지털1로 151"></div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="주소 상세보기" value="신한이노플렉스 803호 (가산동)"></div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송메세지</div>
+							<div class="box_con">
+								<select class="sel_box w100">
+									<option>선택해 주세요</option>
+									<option>부재시 경비(관리)실에 맡겨주세요</option>
+									<option>빠른 배송 부탁드려요</option>
+									<option>부재시 문 앞에 놓아주세요</option>
+									<option>파손의 위험이 있는 상품이 있습니다.</option>
+									<option>배송전에 연락주세요</option>
+									<option>메시지 직접입력 (배송기사/매장 전달)</option>
+								</select>
+								<!-- 배송메세지 선택 -->
+								<div class="msg_selected">
+									<span>선택해 주세요</span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송비</div>
+							<div class="box_con"><strong>2500</strong> 원</div>
+						</li>
+						<!-- bahus add -->
+						<li>
+							<div class="bh_agree">
+								<div class="ord_tit">
+									<div class="tit_order">
+										<input type="checkbox" id="chk_agree04"> <label for="chk_agree04">(필수)사다리차 이용약관 동의</label>
+									</div>
+									<a href="#" class="ico_open"><span>열기</span></a>
+								</div>
+								<div class="ord_con">
+									<p class="txt_agree">2층 이상의 주택 구조상 엘리베이터를 통한 가구운반 불가 시 사다리차 사용비용은 고객님이 부담해야 합니다. 사다리차 사용 거부 시 반품 처리되며, 판매가의 10%의 반품비가 발생합니다.<br>이에 동의 하십니까?</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">엘레베이터 유무</div>
+							<div class="box_con">
+								<button type="button" class="btn_ev selected">있음</button> <!-- 선택시 .selected -->
+								<button type="button" class="btn_ev">없음</button>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">벽 고정 설치</div>
+							<div class="box_con">
+								<button type="button" class="btn_ev fixo">고정 필요</button>
+								<button type="button" class="btn_ev fixx selected">필요 없음</button> <!-- 선택시 .selected -->
+								<div class="fixwall">
+									<div class="ord_tit">
+										<div class="tit_order">
+											<input type="checkbox" id="chk_fix01"> <label for="chk_fix01">(필수)벽 고정 설치 약관 동의</label>
+										</div>
+										<a href="#" class="ico_open"><span>열기</span></a>
+									</div>
+									<div class="ord_con">
+										<p class="txt_agree">앞 쏠림 위험이 있는 가구(3단이상 서랍장, 철제책장, 드레스룸 등)에 대해서는 반드시 벽 타공을 통해 진행되는 벽 고정 장치 시공을 해야 하며, 구매 고객님께서는 안전을 위해 이에 협조해주셔야 합니다. <br>부득이한 경우 고객님 요청에 의해 동의서 작성 후 벽 고정 시공을 생략할 수 있으나, 이 경우 앞 쏠림 현상으로 인한 제반 사유에 대해 이랜드리테일 모던하우스는 일체 책임을 지지 않습니다.<br>이에 동의 하십니까?</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="bh_agree">
+								<div class="ord_tit">
+									<div class="tit_order">
+										<input type="checkbox" id="chk_fix02"> <label for="chk_fix02">(필수)가구 배송약관에 대한 동의</label>
+									</div>
+									<a href="#" class="ico_open"><span>열기</span></a>
+								</div>
+								<div class="ord_con">
+									<p class="txt_agree">1. 가구 설치 전 사전 설치할 공간 마련의 의무는 고객님에게 있습니다. 배송기사가 고객님이 구입한 가구를 설치 할 수 있게 고객님이 사전 공간준비를 하셔야 합니다.<br><br>
+									2. 상기 1항에 대해 고객님이 공간 마련 없이 설치할 배송기사에게 갑작스런 폐 가구(또는 타 집기) 이동요청은 할 수 없으며, 부득이 이동 요청해야 할 경우 가구 구입 시 판매점 통해서만 의사소통 되어야 하며 이동비용은 고객님이 부담하셔야 합니다.<br><br>
+									3. 설치된 상품의 경우 고객님의 요구에 의해 재 이동 설치 시 추가비용을 청구할 수 있습니다.  설치 전 반드시 설치위치를 지정해 주시길 바랍니다.<br><br>
+									4. 조립 상품일 경우 최대 3시간 소요될 수 있습니다.(개당)<br><br>
+									5. 천재지변, 노사분규, 수입통관의 지연 기타 특수한 사정으로 상품의 제조 및 납품이 지연되는 경우 즉시 고객님에게 통보하고 당해 사유의 종료 시까지 납품기한을 연장할 수 있습니다.<br><br>
+									6. 고객님은 배송 및 설치 완료 후에는 배송된 상품의 이상 유무와 바닥재, 벽지 기타 등 부주의에 의한 피해는 없는지 확인 후, 배송확인서에 서명하시길 바랍니다. 이와 관련된 어떤 사항이라도 배송 확인서 서명 완료 후 피해보상 요구에 대하여 당사는 책임을 지지 않습니다.
+									이에 동의 하십니까?</p>
+								</div>
+							</div>
+						</li>
+						<!-- //bahus add -->
+					</ul>
+					<div class="btn_modify">
+						<div class="btn">
+							<a href="#" class="btn_brd03 c03">변경완료</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ord_box01">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">주문자명</div>
+							<div class="box_con"><div class="stxt">홍길동</div></div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con">
+								<div class="stxt">
+									홍길동<br>
+									전화번호 : 02-1234-****<br>
+									휴대전화 : 010-1234-****
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">주소</div>
+							<div class="box_con">
+								<div class="stxt">
+									[08506]<br>
+									서울 금천구 가산디지털1 로 151<br>
+									신한이노플렉스 803호 (가산동)
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송메세지</div>
+							<div class="box_con">
+								<div class="stxt">
+									아기가 자고 있으니, 초인종 누르지 말아요.
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송비</div>
+							<div class="box_con"><strong>2500</strong> 원</div>
+						</li>
+						<!-- bahus add -->
+						<li>
+							<div class="box_tit">가구배송<br>추가정보</div>
+							<div class="box_con">
+								사다리차 이용약관 동의/엘리베이터 있음/ 벽 고정 설치약관 동의 / 가구 배송약관 동의
+								<div class="btn_fdelivery"><a href="#" onclick="fn_layer_open('pop_fdelivery');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">약관보기</a></div>
+							</div>
+						</li>
+						<!-- //bahus add -->
+					</ul>
+				</div>
+			</div>
+			<!-- 회수지 정보 -->
+			<div class="my_tit">
+				<h4>회수지 정보</h4>
+			</div>
+			<div class="ord_box01">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">주문자명</div>
+							<div class="box_con"><div class="stxt">홍길동</div></div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con">
+								<div class="stxt">
+									홍길동<br>
+									전화번호 : 02-1234-****<br>
+									휴대전화 : 010-1234-****
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송주소</div>
+							<div class="box_con">
+								<div class="stxt">
+									[08506]<br>
+									서울 금천구 가산디지털1 로 151<br>
+									신한이노플렉스 803호 (가산동)
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송메세지</div>
+							<div class="box_con">
+								<div class="stxt">
+									아기가 자고 있으니, 초인종 누르지 말아요.
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">교환 배송비</div>
+							<div class="box_con"><strong>2500</strong> 원</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //회수지 정보 -->
+			<!-- 지점 픽업 장소 -->
+			<div class="ord_box01">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">주문자명</div>
+							<div class="box_con"><div class="stxt">홍길동</div></div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con">
+								<div class="stxt">
+									홍길동<br>
+									전화번호 : 02-1234-****<br>
+									휴대전화 : 010-1234-****
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">픽업장소</div>
+							<div class="box_con">
+								<div class="stxt">
+									<span class="pick">NC백화점 강서점 4층 SPAO매장</span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">대표번호</div>
+							<div class="box_con">
+								<strong>02-2667-9214</strong>
+								<div class="btn_addr"><a href="#" onclick="fn_layer_open('pop_store');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">위치보기</a></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //지점 픽업 장소 -->
+		</div>
+
+		<!-- 디지털 상품권,입장권 상품 160624 -->
+		<div class="my_title">
+			<h3>발송 정보</h3>
+		</div>
+		<div class="mypage_delivery">
+			<div class="sbox_delivery">
+				<select>
+					<option>1번 배송지</option>
+					<option>2번 배송지</option>
+					<option>3번 배송지</option>
+				</select>
+			</div>
+			<div class="ord_box01">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">주문자명</div>
+							<div class="box_con"><div class="stxt">홍길동</div></div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con">
+								<div class="stxt">
+									홍길동<br><br>
+									휴대전화 : 010-1234-****
+								</div>
+								<div class="btn_addr"><a href="#" class="btn_brd02 c01">재 발송</a></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //디지털 상품권,입장권 상품 160624 -->
+
+		<div class="my_title">
+			<h3>결제정보</h3>
+		</div>
+		<div class="my_pay">
+			<div class="pay_all">
+				<ul class="left">
+					<li>
+						<span class="txt">상품금액</span>
+						<span class="pri"><em>9,999,000</em>원</span>
+					</li>
+					<li>
+						<span class="txt">총 할인금액</span>
+						<span class="pri dis"><em>-2,500</em>원</span>
+					</li>
+					<li>
+						<span class="txt">총 배송비</span>
+						<span class="pri"><em>0</em>원</span>
+					</li>
+				</ul>
+				<div class="right">
+					<span class="txt">총 결제금액</span>
+					<span class="pri"><em>999,999</em>원</span>
+					<div class="btn_total">
+						<a href="#" class="btn_close"><span class="ico">자세히</span></a>
+					</div>
+				</div>
+			</div>
+			<dl class="pay_list">
+				<dt>상품 할인쿠폰</dt>
+				<dd><span class="pit">-1,075원</span></dd>
+				<dt>장바구니 할인쿠폰</dt>
+				<dd><span class="pit">-1,000원</span></dd>
+				<dt>카드 할인</dt>
+				<dd><span class="pit">-1,075원</span></dd>
+				<dt>포인트</dt>
+				<dd><span class="pit">-150원</span></dd>
+				<dt>배송비 쿠폰</dt>
+				<dd><span class="pit">-0원</span></dd>
+				<dt>예치금</dt>
+				<dd><span class="pit">-67,175원</span></dd>
+				<dt>복지 포인트</dt>
+				<dd><span class="pit">-67,175P</span></dd>
+				<dt>직원 자기계발 포인트</dt>
+				<dd><span class="pit">0P</span></dd>
+			</dl>
+			<!-- 무통장 입금 결제 -->
+			<dl class="pay_tool">
+				<dt>무통장 입금</dt>
+				<dd>
+					<em>999,999원</em><br>
+					<span>우리은행[11604807018069]</span><br>
+					<span>예금주 : 이랜드몰닷컴(~2015.11.20까지</span>
+				</dd>
+			</dl>
+			<!-- //무통장 입금 결제 -->
+		</div>
+
+		<div class="my_noti">
+			<p class="stxt">* 증빙서류 발급은 PC 웹 화면을 이용해 주시기 바랍니다.</p>
+			<div class="btn_list">
+				<a href="#">목록으로</a>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+<!-- //CONTENT -->
+
+
+<!-- layer_popup : 가구배송 약관보기 -->
+<div id="pop_fdelivery" class="layer_fix">
+	<h3 class="pop_tit">가구배송 약관보기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="terms">
+				<span class="fc01">[사다리차 이용약관]<br></span>
+				2층 이상의 주택 구조상 엘리베이터를 통한 가구운반 불가 시 사다리차 사용비용은 고객님이 부담해야 합니다.<br>사다리차 사용 거부 시 반품 처리되며, 판매가의 10%의 반품비가 발생합니다.<br><br>
+				<span class="fc01">[벽고정 설치 약관]<br></span>
+				앞 쏠림 위험이 있는 가구(3단이상 서랍장, 철제책장, 드레스룸 등)에 대해서는 반드시 벽 타공을 통해 진행되는 벽 고정 장치 시공을 해야 하며, 구매 고객님께서는 안전을 위해 이에 협조해주셔야 합니다. <br>부득이한 경우 고객님 요청에 의해 동의서 작성 후 벽 고정 시공을 생략할 수 있으나, 이 경우 앞 쏠림 현상으로 인한 제반 사유에 대해 이랜드리테일 모던하우스는 일체 책임을 지지 않습니다.<br><br>
+				<span class="fc01">[가구배송약관]<br></span>
+				① 가구 설치 전 사전 설치할 공간 마련의 의무는 고객님에게 있습니다. 배송기사가 고객님이 구입한 가구를 설치 할 수 있게 고객님이 사전 공간준비를 하셔야 합니다.<br>
+				② 상기 1항에 대해 고객님이 공간 마련 없이 설치할 배송기사에게 갑작스런 폐 가구(또는 타 집기) 이동요청은 할 수 없으며, 부득이 이동 요청해야 할 경우 가구 구입 시 판매점 통해서만 의사소통 되어야 하며 이동비용은 고객님이 부담하셔야 합니다.<br>
+				③ 설치된 상품의 경우 고객님의 요구에 의해 재 이동 설치 시 추가비용을 청구할 수 있습니다.  설치 전 반드시 설치위치를 지정해 주시길 바랍니다.<br>
+				④ 조립 상품일 경우 최대 3시간 소요될 수 있습니다.(개당)<br>
+				⑤ 천재지변, 노사분규, 수입통관의 지연 기타 특수한 사정으로 상품의 제조 및 납품이 지연되는 경우 즉시 고객님에게 통보하고 당해 사유의 종료 시까지 납품기한을 연장할 수 있습니다.<br>
+				⑥ 고객님은 배송 및 설치 완료 후에는 배송된 상품의 이상 유무와 바닥재, 벽지 기타 등 부주의에 의한 피해는 없는지 확인 후, 배송확인서에 서명하시길 바랍니다. <br>이와 관련된 어떤 사항이라도 배송 확인서 서명 완료 후 피해보상 요구에 대하여 당사는 책임을 지지 않습니다.<br><br>
+			</div>
+			<div class="btn_area alC">
+				<a href="#" class="btn_line01 c02">닫기</a>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 가구배송 약관보기 -->
+
+<!-- layer_popup : 매장 위치 보기 -->
+<div id="pop_store" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">매장 위치 보기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="store">
+				<h3 class="tit">NC 강서점</h3>
+				<ul>
+					<li><span>- 주소 : </span>서울특별시 송파구 충민로66번지 </li>
+					<li><span>- 대표번호 : </span>02-2157-5000</li>
+					<li><span>- 영업시간 : </span>AM10 : 30 ~ PM10 : 00</li>
+					<li><span>- 매장위치 : </span>지상 2층 /  SPAO</li>
+				</ul>
+				<div class="store_api">
+					<img src="../images/mobile/temp/temp_store.jpg" alt="">
+				</div>
+				<div class="btn_area alC">
+					<a href="#" class="btn_line01 c02">닫기</a>
+				</div>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 매장 위치 보기 -->
+
+<!-- layer_popup : 주소찾기 -->
+<div id="addrFind" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">주소찾기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="pop_addr">
+				<ul class="tab_addr">
+					<li class="on"><span>도로명으로 찾기</span></li>
+					<li><span>지번으로 찾기</span></li>
+				</ul>
+
+				<div class="con_addr">
+					<!-- 도로명으로 찾기 -->
+					<div class="on">
+						<div class="sch_box">
+							<div class="addr_info">
+								<p>찾고 싶으신 도로명 또는 건물번호를 입력해 주세요.</p>
+								<p>도로명과 건물번호를 함께 입력하면 보다 빠르게</p>
+								<p>결과를 확인할 수 있습니다.</p>
+								<p class="stxt">예) 반포대로 1, 세종대로 23, 수지로 11</p>
+							</div>
+							<ul class="sch01">
+								<li>
+									<select class="w100">
+										<option>시/도</option>
+									</select>
+								<li>
+								<li>
+									<select class="w100">
+										<option>시/군/구</option>
+									</select>
+								</li>
+							</ul>
+							<div class="sch02">
+								<input type="text" class="w100" title="도로명검색" placeholder="가산디지털1로">
+								<a href="#" class="btn_brd02 c05">검색</a>
+							</div>
+						</div>
+
+						<!-- 검색결과 -->
+						<div class="sch_result">
+							<p>* 검색결과 중 해당 주소를 클릭하시면 자동 입력됩니다.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 도로명 주소 검색결과의 우편번호, 주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>우편번호</th>
+										<th>주소</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="alC">08593</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08592</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08591</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //검색결과 -->
+
+						<!-- 검색결과 없음 -->
+						<div class="txt_nodata">
+							<em>"본마을1길"</em> 에 대한 검색결과가 없습니다.<br>
+							도로명을 다시 입력해 주세요.
+						</div>
+						<!-- //검색결과 없음 -->
+
+						<!-- 상세주소 입력 -->
+						<div class="sch_result">
+							<p>나머지 상세 주소를 입력하신 후<br>주소입력 버튼을 눌러 주세요.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 상세주소 입력의 우편번호, 기본주소, 상세주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="col"><span class="fc02">우편번호</span></th>
+										<td>08593</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">기본주소</span></th>
+										<td>서울특별시 금천구 가산디지털2로 11 지식산업센타</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">상세주소</span></th>
+										<td>
+											<div class="addr_detail">
+												<input type="text" class="w100" title="상세주소" placeholder="상세주소를 입력해 주세요">
+												<a href="#" class="btn_brd02 c05">입력완료</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="addr_result">
+
+								<div class="txt_info">자동 변환된 도로명 주소 입니다. 변환된 주소 정보를 확인해 주세요.</div>
+								<div class="result_box">
+									<dl>
+										<dt>도로명주소</dt>
+										<dd>[08593] 서울 금천구 가산디지털2로 11, 지식산업센터 302호 (가산동)</dd>
+									</dl>
+									<dl>
+										<dt>지번주소</dt>
+										<dd>[08593] 서울 금천구 가산동 343-8번지 지식산업센터 302호</dd>
+									</dl>
+									<!-- 지번주소가 여러개 일 경우 -->
+									<dl>
+										<dt>지번주소 <span class="stxt">(검색된 주소중 하나를 선택해 주세요)</span></dt>
+										<dd>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr01" name="rdo_addr">
+												<label for="rdo_addr01">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr02" name="rdo_addr">
+												<label for="rdo_addr02">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+										</dd>
+									</dl>
+									<!-- //지번주소가 여러개 일 경우 -->
+								</div>
+							</div>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //상세주소 입력 -->
+
+					</div>
+					
+					<!-- 지번으로 찾기 -->
+					<div>
+						<div class="sch_box">
+							<div class="addr_info">
+								<p class="stxt">찾고 싶으신 주소의<br>동(읍/면)이름을 입력해 주세요.</p>
+							</div>
+							<div class="sch03">
+								<ul>
+									<li class="absL"><label for="inp_add01">동(읍/면)</label></li>
+									<li class="inp_box"><input type="text" id="inp_add01" class="w100" placeholder="가산디지털1로"></li>
+									<li class="absR"><a href="#" class="btn_brd02 c05">검색</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- 검색결과 -->
+						<div class="sch_result">
+							<p>* 검색결과 중 해당 주소를 클릭하시면 자동 입력됩니다.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 도로명 주소 검색결과의 우편번호, 주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>우편번호</th>
+										<th>주소</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="alC">08593</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08592</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08591</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //검색결과 -->
+
+						<!-- 검색결과 없음 -->
+						<div class="txt_nodata">
+							<em>"후인동"</em> 에 대한 검색결과가 없습니다.<br>
+							도로명을 다시 입력해 주세요.
+						</div>
+						<!-- //검색결과 없음 -->
+						
+
+						<!-- 상세주소 입력 -->
+						<div class="sch_result">
+							<p>나머지 상세 주소를 입력하신 후<br>주소입력 버튼을 눌러 주세요.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 상세주소 입력의 우편번호, 기본주소, 상세주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="col"><span class="fc02">우편번호</span></th>
+										<td>08593</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">기본주소</span></th>
+										<td>서울특별시 금천구 가산디지털2로 11 지식산업센타</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">상세주소</span></th>
+										<td>
+											<div class="addr_detail">
+												<input type="text" class="w100" title="상세주소" placeholder="번지수를 포함한 상세주소를 입력해 주세요.">
+												<a href="#" class="btn_brd02 c05">입력완료</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="addr_result">
+
+								<div class="txt_info">자동 변환된 도로명 주소 입니다. 변환된 주소 정보를 확인해 주세요.</div>
+								<div class="result_box">
+									<dl>
+										<dt>도로명주소</dt>
+										<dd>[08593] 서울 금천구 가산디지털2로 11, 지식산업센터 302호 (가산동)</dd>
+									</dl>
+									<dl>
+										<dt>지번주소</dt>
+										<dd>[08593] 서울 금천구 가산동 343-8번지 지식산업센터 302호</dd>
+									</dl>
+									<!-- 지번주소가 여러개 일 경우 -->
+									<dl>
+										<dt>지번주소 <span class="stxt">(검색된 주소중 하나를 선택해 주세요)</span></dt>
+										<dd>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr03" name="rdo_addr">
+												<label for="rdo_addr03">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr04" name="rdo_addr">
+												<label for="rdo_addr04">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+										</dd>
+									</dl>
+									<!-- //지번주소가 여러개 일 경우 -->
+								</div>
+							</div>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //상세주소 입력 -->
+					</div>
+				</div>
+
+			</div>
+
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 주소찾기 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

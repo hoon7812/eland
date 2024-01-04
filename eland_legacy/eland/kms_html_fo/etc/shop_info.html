@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>KIMS CLUB</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean&family=Roboto:wght@400;700&display=swap">
+  <link rel="shortcut icon" type="image/x-icon" href="../../images/pcweb/kms_pcweb/common/ico_kms.ico" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_main.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/category.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/kms_pcweb/main.css" />
+  <script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/jquery.plugin.js"></script> 
+  <script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/kms_ui.js"></script>
+</head>
+
+<body>
+ <!-- wrapper -->
+ <div id="wrapper" class="kims">
+  
+  <!-- HEADER -->
+  <script src="../common/incHeaderW.js"></script>
+  <script type="text/javascript">
+    //gnb
+    $(document).ready(function(){
+      cateSwiper('gnbScroll',10,1)
+    })
+    //gnbAllCate
+    $('.catg_lyr .lnb_cate_main ul li').on('focusin mouseover', function(){
+      $(this).addClass('on').siblings('li').removeClass('on');
+    })
+    .on('mouseleave', function() {
+      $(this).removeClass('on');
+    });   
+    //topBn
+    $(document).ready (function(){
+      $(".btn_hdtb_close").on("click",function(){
+        $(".header_top_banner").removeClass("on");
+        $(".btn_hdtb_open").focus();
+      });
+      $(".btn_hdtb_open").on("click",function(){
+        $(".header_top_banner").addClass("on");
+        $(".btn_hdtb_img").focus();
+      });
+    });
+  </script> 
+  <!-- //HEADER -->
+
+  <!-- container -->
+  <div id="container">
+   <!-- content -->
+   	<div id="content">  
+
+			<div class="store_visual_img">
+				<img src="../../images/pcweb/kms_pcweb/temp/shopinfo.jpg" alt="오프라인 매장안내" />
+			</div>
+
+			<div class="store_search_cmn">
+
+				<div class="cmn_tab_intro">
+					<ul class="d_intro_tab">
+						<li class="on"><a href="#">전체</a></li>
+						<li><a href="#">서울</a></li>
+						<li><a href="#">인천</a></li>
+						<li><a href="#">대전</a></li>
+						<li><a href="#">부산</a></li>
+						<li><a href="#">울산</a></li>
+						<li><a href="#">대구</a></li>
+						<li><a href="#">광주</a></li>
+						<li><a href="#">경기도</a></li>
+						<li><a href="#">강원도</a></li>
+						<li><a href="#">충청도</a></li>
+						<li><a href="#">경상도</a></li>
+						<li><a href="#">전라도</a></li>
+						<li><a href="#">제주도</a></li>	
+						<li><a href="#">세종</a></li>
+					</ul>
+				</div>
+
+				<input type="text" class="ipt_sch" title="매장명 또는 주소 입력" placeholder="매장명 또는주소를 입력해 주세요." />
+				<button class="btn_shop_sch" type="submit">매장찾기</button>	
+			</div>
+
+			<div class="cmn_intro_cont">
+				<div class="store_info_list">
+					<ul>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>NC 서면점</span></p>
+								<p class="adr"><em class="d_addr">부산 부산진구 동천로 92 (전포동,디씨티)</em><em class="d_addr2">NC서면점</em></p>
+								<p class="tel">T.051-794-7000</p>
+								<p><em>영업시간</em><em>일-목 10:30~21:00 금-토 10:30~22:00</em></p>
+								<p>휴점일 1.10(일), 1.24(일)</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>강남점</span></p>
+								<p class="adr"><em class="d_addr">서울 서초구 잠원로 51 (잠원동,뉴코아백화점)</em><em class="d_addr2">강남점</em></p>
+								<p class="tel">T.02-530-5000</p>
+								<p><em>영업시간</em><em>8:00~24:00</em></p>
+								<p>2주4주 일요일 정기휴무</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>NC 서면점</span></p>
+								<p class="adr"><em class="d_addr">부산 부산진구 동천로 92 (전포동,디씨티)</em><em class="d_addr2">NC서면점</em></p>
+								<p class="tel">T.051-794-7000</p>
+								<p><em>영업시간</em><em>일-목 10:30~21:00 금-토 10:30~22:00</em></p>
+								<p>휴점일 1.10(일), 1.24(일)</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>강남점</span></p>
+								<p class="adr"><em class="d_addr">서울 서초구 잠원로 51 (잠원동,뉴코아백화점)</em><em class="d_addr2">강남점</em></p>
+								<p class="tel">T.02-530-5000</p>
+								<p><em>영업시간</em><em>8:00~24:00</em></p>
+								<p>2주4주 일요일 정기휴무</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>NC 서면점</span></p>
+								<p class="adr"><em class="d_addr">부산 부산진구 동천로 92 (전포동,디씨티)</em><em class="d_addr2">NC서면점</em></p>
+								<p class="tel">T.051-794-7000</p>
+								<p><em>영업시간</em><em>일-목 10:30~21:00 금-토 10:30~22:00</em></p>
+								<p>휴점일 1.10(일), 1.24(일)</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>강남점</span></p>
+								<p class="adr"><em class="d_addr">서울 서초구 잠원로 51 (잠원동,뉴코아백화점)</em><em class="d_addr2">강남점</em></p>
+								<p class="tel">T.02-530-5000</p>
+								<p><em>영업시간</em><em>8:00~24:00</em></p>
+								<p>2주4주 일요일 정기휴무</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>NC 서면점</span></p>
+								<p class="adr"><em class="d_addr">부산 부산진구 동천로 92 (전포동,디씨티)</em><em class="d_addr2">NC서면점</em></p>
+								<p class="tel">T.051-794-7000</p>
+								<p><em>영업시간</em><em>일-목 10:30~21:00 금-토 10:30~22:00</em></p>
+								<p>휴점일 1.10(일), 1.24(일)</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>강남점</span></p>
+								<p class="adr"><em class="d_addr">서울 서초구 잠원로 51 (잠원동,뉴코아백화점)</em><em class="d_addr2">강남점</em></p>
+								<p class="tel">T.02-530-5000</p>
+								<p><em>영업시간</em><em>8:00~24:00</em></p>
+								<p>2주4주 일요일 정기휴무</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>NC 서면점</span></p>
+								<p class="adr"><em class="d_addr">부산 부산진구 동천로 92 (전포동,디씨티)</em><em class="d_addr2">NC서면점</em></p>
+								<p class="tel">T.051-794-7000</p>
+								<p><em>영업시간</em><em>일-목 10:30~21:00 금-토 10:30~22:00</em></p>
+								<p>휴점일 1.10(일), 1.24(일)</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>강남점</span></p>
+								<p class="adr"><em class="d_addr">서울 서초구 잠원로 51 (잠원동,뉴코아백화점)</em><em class="d_addr2">강남점</em></p>
+								<p class="tel">T.02-530-5000</p>
+								<p><em>영업시간</em><em>8:00~24:00</em></p>
+								<p>2주4주 일요일 정기휴무</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>NC 서면점</span></p>
+								<p class="adr"><em class="d_addr">부산 부산진구 동천로 92 (전포동,디씨티)</em><em class="d_addr2">NC서면점</em></p>
+								<p class="tel">T.051-794-7000</p>
+								<p><em>영업시간</em><em>일-목 10:30~21:00 금-토 10:30~22:00</em></p>
+								<p>휴점일 1.10(일), 1.24(일)</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="store_info">
+								<p class="store_name"><span>강남점</span></p>
+								<p class="adr"><em class="d_addr">서울 서초구 잠원로 51 (잠원동,뉴코아백화점)</em><em class="d_addr2">강남점</em></p>
+								<p class="tel">T.02-530-5000</p>
+								<p><em>영업시간</em><em>8:00~24:00</em></p>
+								<p>2주4주 일요일 정기휴무</p>
+								<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>천호점</strong></div>
+										<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+										<a href="#" class="tip_close">지도 닫기</a>
+									</div>
+								</div>
+							</div>
+						</li>												
+					</ul>
+				</div>
+				<div class="store_no_data">검색된 매장이 없습니다.</div>
+				<!-- 페이징 -->
+				<div class="box_page">
+					<span class="num">
+						<a class="btn_paging_first" href="#"><img src="../../images/pcweb/common/btn_paging_first.gif" alt="처음페이지이동" /></a>
+						<a class="btn_paging_prev" href="#"><img src="../../images/pcweb/common/btn_paging_prev.gif" alt="이전페이지이동" /></a>
+						<a href="#" class="on">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">6</a>
+						<a href="#">7</a>
+						<a href="#">8</a>
+						<a href="#">9</a>
+						<a href="#">10</a>
+						<a class="btn_paging_next" href="#"><img src="../../images/pcweb/common/btn_paging_next.gif" alt="다음페이지이동" /></a>
+						<a class="btn_paging_end" href="#"><img src="../../images/pcweb/common/btn_paging_end.gif" alt="마지막페이지이동" /></a>
+					</span>
+				</div>
+				<!-- //페이징 -->
+			</div>
+
+		</div>
+		<!-- content -->
+	</div>
+	<!--- //container -->
+
+	<!-- FOOTER -->
+	<script src="../common/incFooter.js"></script>
+	<!-- //FOOTER -->
+</div>
+<!-- //wrapper -->
+
+</body>
+</html>

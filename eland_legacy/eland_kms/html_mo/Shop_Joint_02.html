@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="renewal2">	
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER -->
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+<!-- //INC_HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<!-- TITLE -->
+	<div class="cts_tit">
+		<h2>
+			<b>예약구매</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>		
+		</h2>
+	</div>
+	<!-- //TITLE -->
+
+	<!-- JOINT SHOP -->
+	<div class="plan_top">
+		<div class="plan_bn g_reserve"><!-- 예약구매 배너 .g_reserve 추가 -->
+			<img src="../images/mobile/category/bn_plan_joint_02_01.jpg" alt="미리득템. 인기상품 사전예약하시고 할인혜택 받으세요! 미리 예약하시면 선착순으로 할인쿠폰을 드립니다" />
+			<span class="date3" style="color:#fff"><!-- BO에서 컬러값 등록 -->
+				<b>미리득템기간</b> : 2016년 10월 15일 (월) ~ 10월 24일 (수)
+			</span>
+		</div>
+		<div class="plan_noti">
+			<dl>
+				<dt><button type="button" id="plan_bn" onclick="fnToggleSlide('plan_bn', 'plan_noti');return false;" onkeypress="this.onclick;">알려드립니다.<em class="ir">열기</em></button></dt>
+				<dd id="plan_noti">
+					<ul>
+						<li>미리득템참여 버튼을 클릭하고 상품별 최소  참여신청수를 달성/초과시  할인쿠폰이 발급됩니다.(단, 상품별 최대 참여수는 한정되어 있습니다)</li>
+						<li>발급된 쿠폰은 마이페이지 마이쿠폰에서 확인하실 수 있습니다.</li>
+						<li>미리득템기간 내에 발급된 쿠폰으로 구매 완료 하셔야 합니다.</li>
+						<li>상품에따라 개인별 구매가능 수량 한정이 있을 수 있습니다.</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!-- //JOINT SHOP -->
+
+	<!-- SEARCH -->
+	<div class="search_wrap">
+	
+		<div class="plan_shop">
+			<!-- LIST -->
+			<div class="goods_list">
+				<h3 class="ir">상품리스트</h3>
+				<ul class="tlist">
+					<li>
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_brd">휘슬러</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<!-- 미리득템가 -->
+								<span class="g_reserve"> 
+									<span class="g_pri"><em class="ir">판매가</em><b>55,000</b>원</span> 
+									<span class="g_buy"><em>미리득템가</em><b>36,000</b>원</span>
+								</span>
+								<!-- //미리득템가 -->
+								<span class="g_rv">
+									<span class="scr s45"><em class="ir">별점평균:90</em></span>
+									<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+								</span>
+								<span class="g_bnf">
+									<span class="bnf1">마감임박</span>
+									<span class="bnf2">무료배송</span>
+									<span class="bnf3">최저가</span>
+									<span class="bnf4">BEST</span>
+									<span class="bnf5">HIT</span>
+									<span class="bnf">SMS</span>
+									<span class="bnf6">SALE</span>
+									<span class="bnf">N+1</span>
+									<span class="bnf">세트할인</span>
+									<span class="bnf">즉시할인</span>
+									<span class="bnf">사은품</span>
+									<span class="bnf7">매장수령</span>
+									<span class="bnf">재입고</span>
+									<span class="bnf8">착불</span>
+								</span>
+							</a>
+							<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+							<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							<!-- 참여하기 그래프 -->
+							<div class="set_graph" id="set_graph01">
+								<div class="box_graph">
+									<span class="g_total"><em>999</em>명</span><!-- 전체 쿠폰지급수 -->
+									<span class="g_full"><em>10</em>명</span><!-- 전체 참여수 -->
+									<span class="g_all">
+										<span class="ico"><em>0</em>명</span><!-- 참여 신청자수 -->
+									</span>
+								</div>
+								<div class="txt_graph">
+									<span class="g_total"><em>999</em>명</span><!-- 전체 쿠폰지급수 -->
+									<span class="g_full"><em>10</em>명</span><!-- 전체 참여수 -->
+									<span class="g_start"><em>0</em>명</span>
+								</div>
+								<script>
+									$(document).ready(function() {
+										var gTotal = $("#set_graph01 .box_graph .g_total em").text();
+										var gFull = $("#set_graph01 .box_graph .g_full em").text();
+										var gAll = $("#set_graph01 .box_graph .g_all em").text();
+
+										sFull = (100 / gTotal) * gFull;
+										sAll = (100 / gTotal) * gAll;
+
+										$("#set_graph01 .g_full").css("width",sFull+"%");
+										$("#set_graph01 .g_all").css("width",sAll+"%");
+									});
+								</script>
+							</div>
+							<!-- //참여하기 그래프 -->
+							<span class="g_rbtn"><button type="button"><b>참여하기</b><em>(12/10)</em></button></span> <!-- 참여인원이 넘었을 경우 .g_rbtn 클래스 사용 -->
+						</div>
+					</li>
+					<li>
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_brd">휘슬러</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<!-- 미리득템가 -->
+								<span class="g_reserve"> 
+									<span class="g_pri"><em class="ir">판매가</em><b>55,000</b>원</span> 
+									<span class="g_buy"><em>미리득템가</em><b>36,000</b>원</span>
+								</span>
+								<!-- //미리득템가 -->
+								<span class="g_rv">
+									<span class="scr s45"><em class="ir">별점평균:90</em></span>
+									<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+								</span>
+								<span class="g_bnf">
+									<span class="bnf1">마감임박</span>
+									<span class="bnf2">무료배송</span>
+									<span class="bnf3">최저가</span>
+									<span class="bnf4">BEST</span>
+									<span class="bnf5">HIT</span>
+									<span class="bnf">SMS</span>
+									<span class="bnf6">SALE</span>
+									<span class="bnf">N+1</span>
+									<span class="bnf">세트할인</span>
+									<span class="bnf">즉시할인</span>
+									<span class="bnf">사은품</span>
+									<span class="bnf7">매장수령</span>
+									<span class="bnf">재입고</span>
+									<span class="bnf8">착불</span>
+								</span>
+							</a>
+							<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+							<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							<!-- 참여하기 그래프 -->
+							<div class="set_graph" id="set_graph02">
+								<div class="box_graph">
+									<span class="g_total"><em>50</em>명</span><!-- 전체 쿠폰지급수 -->
+									<span class="g_full"><em>10</em>명</span><!-- 전체 참여수 -->
+									<span class="g_all">
+										<span class="ico"><em>0</em>명</span><!-- 참여 신청자수 -->
+									</span>
+								</div>
+								<div class="txt_graph">
+									<span class="g_total"><em>50</em>명</span><!-- 전체 쿠폰지급수 -->
+									<span class="g_full"><em>10</em>명</span><!-- 전체 참여수 -->
+									<span class="g_start"><em>0</em>명</span>
+								</div>
+								<script>
+									$(document).ready(function() {
+										var gTotal = $("#set_graph02 .box_graph .g_total em").text();
+										var gFull = $("#set_graph02 .box_graph .g_full em").text();
+										var gAll = $("#set_graph02 .box_graph .g_all em").text();
+
+										sFull = (100 / gTotal) * gFull;
+										sAll = (100 / gTotal) * gAll;
+
+										$("#set_graph02 .g_full").css("width",sFull+"%");
+										$("#set_graph02 .g_all").css("width",sAll+"%");
+									});
+								</script>
+							</div>
+							<!-- //참여하기 그래프 -->
+							<span class="g_jbtn"><button type="button"><b>참여하기</b><em>(0/10)</em></button></span> <!-- 참여인원이 넘지 않았을 경우 .g_jbtn 클래스 사용 -->
+						</div>
+					</li>
+					<li>
+						<div class="g_wrap">
+							<a href="#" class="g_link">
+								<span class="g_img">
+									<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								</span>
+								<span class="g_brd">휘슬러</span>
+								<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+								<!-- 미리득템가 -->
+								<span class="g_reserve"> 
+									<span class="g_pri"><em class="ir">판매가</em><b>55,000</b>원</span> 
+									<span class="g_buy"><em>미리득템가</em><b>36,000</b>원</span>
+								</span>
+								<!-- //미리득템가 -->
+								<span class="g_rv">
+									<span class="scr s45"><em class="ir">별점평균:90</em></span>
+									<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+								</span>
+								<span class="g_bnf">
+									<span class="bnf1">마감임박</span>
+									<span class="bnf2">무료배송</span>
+									<span class="bnf3">최저가</span>
+									<span class="bnf4">BEST</span>
+									<span class="bnf5">HIT</span>
+									<span class="bnf">SMS</span>
+									<span class="bnf6">SALE</span>
+									<span class="bnf">N+1</span>
+									<span class="bnf">세트할인</span>
+									<span class="bnf">즉시할인</span>
+									<span class="bnf">사은품</span>
+									<span class="bnf7">매장수령</span>
+									<span class="bnf">재입고</span>
+									<span class="bnf8">착불</span>
+								</span>
+							</a>
+							<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+							<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+							<!-- 참여하기 그래프 -->
+							<div class="set_graph" id="set_graph03">
+								<div class="box_graph">
+									<span class="g_total"><em>20</em>명</span><!-- 전체 쿠폰지급수 -->
+									<span class="g_full"><em>10</em>명</span><!-- 전체 참여수 -->
+									<span class="g_all">
+										<span class="ico"><em>5</em>명</span><!-- 참여 신청자수 -->
+									</span>
+								</div>
+								<div class="txt_graph">
+									<span class="g_total"><em>20</em>명</span><!-- 전체 쿠폰지급수 -->
+									<span class="g_full"><em>10</em>명</span><!-- 전체 참여수 -->
+									<span class="g_start"><em>0</em>명</span>
+								</div>
+								<script>
+									$(document).ready(function() {
+										var gTotal = $("#set_graph03 .box_graph .g_total em").text();
+										var gFull = $("#set_graph03 .box_graph .g_full em").text();
+										var gAll = $("#set_graph03 .box_graph .g_all em").text();
+
+										sFull = (100 / gTotal) * gFull;
+										sAll = (100 / gTotal) * gAll;
+
+										$("#set_graph03 .g_full").css("width",sFull+"%");
+										$("#set_graph03 .g_all").css("width",sAll+"%");
+									});
+								</script>
+							</div>
+							<!-- //참여하기 그래프 -->
+							<span class="g_jbtn"><button type="button"><b>참여하기</b><em>(5/10)</em></button></span> <!-- 참여인원이 넘지 않았을 경우 .g_jbtn 클래스 사용 -->
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- //LIST -->
+			
+			<!-- MORE BUTTON -->
+			<div class="goods_list_more">
+				<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+			</div>
+			<!-- /MORE BUTTON -->
+		</div>
+
+	</div>
+	<!-- //SEARCH -->
+
+</div>
+<!-- //CONTENT -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>

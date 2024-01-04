@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//조회기간 선택
+	$(function(){
+		$(".sch_order li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+	//포인트 조회 탭
+	$(function(){
+		var tabAddr = $(".tabmenu .tab_tit > li");
+		var conAddr = $(".tabmenu .tab_con > div");
+
+		tabAddr.bind("click", function(){
+			addrId = $(this).index();
+
+			tabAddr.removeClass("on");
+			tabAddr.eq(addrId).addClass("on");
+			conAddr.removeClass("on");
+			conAddr.eq(addrId).addClass("on");
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>예치금 조회</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>			
+	<div class="my_coupon">
+		<div class="top_point">
+			<ul class="all">
+				<li>
+					<div class="txt"><em>김이랜드</em>님 예치금</div>
+					<div class="pit all">
+						<em>19,800</em>P
+						<a href="#" onclick="fn_layer_open('pop_deposit');return false;" onkeypress="this.onclick;" class="btn_conver">환불 신청</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="coupon_box">
+			<div class="sch_order">
+				<ul>
+					<li><a href="#" class="on">1주일</a></li>
+					<li><a href="#">1개월</a></li>
+					<li><a href="#">3개월</a></li>
+					<li><a href="#">6개월</a></li>
+					<li><a href="#" class="set">기간설정</a></li>
+				</ul>
+				<div class="sch_period">
+					<div class="inp_box">
+						<input type="text" title="시작날짜" placeholder="예시)20160101">
+						<span class="dash">~</span>
+						<input type="text" title="종료날짜" placeholder="예시)20160101">
+					</div>
+					<div class="btn">
+						<a href="#">조회</a>
+					</div>
+					<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+				</div>
+			</div>
+
+			<div class="tabmenu">
+				<div class="my_nolist">
+					<div class="txt">최근 1개월 내<br>적립/사용한 예치금 내역이 <strong>없습니다.</strong></div>
+				</div>
+				<ul class="point_list">
+					<li>
+						<span class="pit_day">2016.01.28</span>
+						<span class="pit_txt">상품주문</span>
+						<span class="pit_num pit">+27,000원</span> <!-- 포인트 적립시 .pit 추가 -->
+					</li>
+					<li>
+						<span class="pit_day">2016.01.26</span>
+						<span class="pit_txt">교환/반품</span>
+						<span class="pit_num pit">+99,400원</span>
+					</li>
+					<li>
+						<span class="pit_day">2016.01.24</span>
+						<span class="pit_txt">예치금 소멸 처리</span>
+						<span class="pit_num">-180원</span>
+					</li>
+					<li>
+						<span class="pit_day">2016.01.22</span>
+						<span class="pit_txt">상품주문</span>
+						<span class="pit_num">-27,210원</span>
+					</li>
+					<li>
+						<span class="pit_day">2016.01.26</span>
+						<span class="pit_txt">교환/반품</span>
+						<span class="pit_num pit">+99,400원</span>
+					</li>
+					<li>
+						<span class="pit_day">2016.01.26</span>
+						<span class="pit_txt">교환/반품</span>
+						<span class="pit_num pit">+99,400원</span>
+					</li>
+					<!-- 더보기 버튼 -->
+					<li class="last">
+						<div class="btn_more">
+							<a href="#"><span class="ico">더보기 (20/1000)</span></a>
+						</div>
+					</li>
+				</ul>
+				<div class="my_noti">
+					<ul>
+						<li>반품으로 인해 환불 받을 금액을 다음 주문 시 편하게 사용하실 수 있도록 예치금으로 보관해드립니다.</li>
+						<li>예치금은 상품 주문시 금액에 상관없이 자유롭게 사용하실 수 있습니다.</li>
+						<li>예치금의 보관 가능 기간은 5년이며 이후에 소멸처리 됩니다.</li>
+					</ul>
+				</div>
+			</div> <!-- //tabmenu -->
+		</div>
+	</div>
+	<!-- //my_coupon -->
+</div>
+<!-- //CONTENT -->
+
+
+<!-- layer_popup : 예치금 환불 신청 -->
+<div id="pop_deposit" class="layer_fix deposit"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">예치금 환불 신청</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="pop_deposit">
+				<div class="deposit_top">
+					<em>김이랜드</em> 님의 환불 가능한<br>예치금은 <strong>99,999,900</strong><span class="won">원</span> 입니다.
+				</div>
+				<div class="deposit_box">
+					<ul>
+						<li>
+							<div class="box_tit">환불 금액</div>
+							<div class="box_con">
+								<div class="inp_txt price"><input type="text" class="w100" title="환불금액" value="900,000,000"><span class="won">원</span></div>
+								<div class="inp_txt chk">
+									<input type="checkbox" id="chk_de01">
+									<label for="chk_de01">전체금액</label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">예금주</div>
+							<div class="box_con">
+								<div class="inp_txt"><input type="text" class="w100" title="예금주명" value="김이랜드"></div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">은행</div>
+							<div class="box_con">
+								<select class="w100">
+									<option>우리은행</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">계좌번호</div>
+							<div class="box_con">
+								<div class="inp_txt"><input type="text" class="w100" title="계좌번호"></div>
+								<p class="txt">"-" 없이 숫자만 입력해 주세요</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="txt_deposit">
+					* 예치금 환불은 2~3일 이내에 처리됨을 알려드립니다.
+				</div>
+
+			</div>
+			<ul class="btn_list02 btn_deposit">
+				<li><a href="#" class="btn_brd03 c01">닫기</a></li>
+				<li><a href="#" class="btn_bg06 c01"><strong>신청하기</strong></a></li>
+			</ul>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 예치금 환불 신청 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

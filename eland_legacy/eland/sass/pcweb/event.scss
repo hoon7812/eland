@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+// event
+.box_cate_link{position:relative;height:50px;margin-top:30px;border-top:2px solid #084271;border-bottom:2px solid #084271;
+	.btn_controller{position:absolute;top:0;left:0;right:0;
+		.btn_prev{position:absolute;top:0;left:0;z-index:1;
+			span{overflow:hidden;display:block;width:32px;height:50px;background:url('../../images/pcweb/event/ico_dp_prev.gif') 50% 50% no-repeat;text-indent:-9999px;}
+			&.active span{background:url('../../images/pcweb/event/ico_dp_prev_on.gif') 50% 50% no-repeat;}
+		}
+		.btn_next{position:absolute;top:0;right:0;z-index:1;
+			span{overflow:hidden;display:block;width:32px;height:50px;background:url('../../images/pcweb/event/ico_dp_next.gif') 50% 50% no-repeat;text-indent:-9999px;}
+			&.active span{background:url('../../images/pcweb/event/ico_dp_next_on.gif') 50% 50% no-repeat;}
+		}
+	}
+	.box_hidden{overflow:hidden;position:relative;height:50px;margin:0 32px;
+		ul{position:absolute;top:11px;left:0;width:9999px;}
+		li{float:left;padding-left:4px;
+			&:first-child{padding-left:0;}
+			a{display:block;position:relative;height:28px;
+				> span{display:block;margin:0;padding:0 20px;line-height:28px;}
+			}
+			&.on a,&:hover a{display:block;position:relative;height:28px;}
+			&.on a:before,&:hover a:before{display:block;position:absolute;top:0;left:0;width:15px;height:28px;background:url('../../images/pcweb/common/bg_round02_l.png') 0 0 no-repeat;content:"";}
+			&.on a:after,&:hover a:after{display:block;position:absolute;top:0;right:0;width:15px;height:28px;background:url('../../images/pcweb/common/bg_round02_r.png') 0 0 no-repeat;content:"";}
+			&.on a > span,&:hover a > span{display:block;height:28px;margin:0 15px 0 15px;padding:0 5px;background:url('../../images/pcweb/common/bg_round02_c.png') 0 0 repeat-x;font-weight:800;color:#0162b1;line-height:28px;vertical-align:middle;}
+			.round02 > span{display:block;height:28px;padding:0 20px;margin:0;}
+			&.on .round02{}
+		}
+	}
+}
+.main_evt{.title{
+	.sel01{width:256px;}
+		.tit_h2_01{padding-right:350px;}
+	}
+	.tab_type02 > ul li a{overflow:hidden;white-space:nowrap;}
+}
+// common
+.tab_nav{padding:0 0 0 1px;
+	> ul{
+		&:after{display:block;content:'';clear:both;}
+		> li{float:left;position:relative;width:25%;
+			&.on{z-index:10;}
+		}
+	}
+	&.size05 > ul > li{width:20%;}
+	> ul > li{
+		> a{display:block;border:1px solid #ccc;margin:-1px 0 0 -1px;
+			span{overflow:hidden;display:block;position:relative;height:44px;padding:0 28px 0 15px;border:1px solid #fff;line-height:44px;
+				&:before{display:block;position:absolute;top:50%;right:15px;width:6px;height:9px;margin-top:-4px;background:url('../../images/pcweb/common/ico_arrow_anchor.png') 0 0 no-repeat;content:'';}
+			}
+		}
+		&.on > a{
+			span{border:1px solid #000;color:#333;font-weight:800;
+				&:before{display:block;position:absolute;top:50%;right:15px;width:6px;height:9px;margin-top:-4px;background:url('../../images/pcweb/common/ico_arrow_anchor_on.png') 0 0 no-repeat;content:'';}
+			}
+		position:relative;border:1px solid #000;}
+	}
+	.depth2{display:none;position:absolute;top:46px;left:-1px;right:0;z-index:1;padding:13px 0 18px;border:1px solid #333;background:#fff;
+		li{
+			a{display:block;padding:5px 16px;color:#999;
+				&:hover{color:#333;font-weight:800;}
+			}
+			&.on a span{padding-bottom:0;margin-bottom:2px;border-bottom:1px solid #333;color:#333;font-weight:800;}
+		}
+	}
+	> ul > li.on .depth2{display:block;}
+}
+.section_corner{margin-top:60px;
+	.list_product01{padding-bottom:0;border-bottom:none;}
+}
+
+// 브랜드 관리형
+.section_bnr01{margin-top:40px;
+	&:after{display:block;content:'';clear:both;}
+	.box_promotion_bnr{float:left;}
+	.box_best_bnr02{float:right;}
+	.rolling_wrap{width:360px;overflow:hidden;margin:0 auto;}
+}
+
+// 라이벌매치
+.box_rival{position:relative;
+	.l_sel{position:absolute;bottom:26px;left:0;right:50%;margin-right:139px;text-align:right;}
+	.r_sel{position:absolute;bottom:26px;left:50%;right:0;margin-left:139px;}
+	.l_sel .btn04{margin-left:24px;}
+	.r_sel .btn04{margin-right:24px;}
+	.btn04.suc{border:1px solid #ccc;
+		span{background:#ccc;}
+	}
+	strong{vertical-align:middle;font-size:16px;
+		span{font-size:24px;font-weight:800;color:#a40001;}
+	}
+}
+.box_html{
+	&:after{display:block;content:'';clear:both;}
+	.l_cont{float:left;}
+	.r_cont{float:right;}
+}

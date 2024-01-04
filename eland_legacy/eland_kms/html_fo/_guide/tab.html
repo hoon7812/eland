@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>E랜드 통합몰 - 가이드 | 테이블</title>
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/common.css">
+	<link rel="stylesheet" type="text/css" href="./css/guide.css">
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+</head>
+<body>
+<h1 class="guide-tit-h1">가이드 - ETC</h1>
+
+<div class="guide-section">
+	<h2 class="guide-tit-h2">탭 - type1 (50% : 50%)</h2>
+
+	<div style="width:500px;">
+		<div class="tab_type01">
+			<ul class="d_tab">
+				<li class="on"><a href="#" onClick="commonUI.tab('.d_tab','0');return false;">탭1</a></li>
+				<li><a href="#" onClick="commonUI.tab('.d_tab','1');return false;">탭2</a></li>
+			</ul>
+			<div class="tab_cont">
+				<div class="d_tab_cont on">탭1 내용</div>
+				<div class="d_tab_cont">탭2 내용</div>
+			</div>
+		</div>
+	</div>
+<br /><br /><br /><br /><br /><br /><br /><br />
+<pre>
+&lt;div class="tab_type01"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#" onclick="commonUI.tab('.d_tab','0');return false;"&gt;탭1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" onclick="commonUI.tab('.d_tab','1');return false;"&gt;탭2&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class="tab_cont"&gt;
+		&lt;div class="d_tab_cont<span class="guide-c01"> on</span>"&gt;탭1 내용&lt;/div&gt;
+		&lt;div class="d_tab_cont"&gt;탭2 내용&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+
+<div class="guide-section">
+	<h2 class="guide-tit-h2">탭 - type2</h2>
+	<!-- 탭2단 -->
+	<div class="tab_type02 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#detail_part01">아이템 name1</a></li>
+			<li><a href="#detail_part02">아이템 name2</a></li>
+		</ul>
+	</div>
+	
+	<!-- 탭3단 -->
+	<div class="tab_type02 full_size03 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#">아이템 name1</a></li>
+<!-- disabled 효과 -->
+			<li class="disabled"><a href="#">아이템 name2</a></li>
+<!-- //disabled 효과 -->			
+			<li><a href="#">아이템 name3</a></li>
+		</ul>
+	</div>
+	
+	<!-- 탭4단 -->
+	<div class="tab_type02 full_size04 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#">아이템 name1</a></li>
+			<li><a href="#">아이템 name2</a></li>
+			<li><a href="#">아이템 name3</a></li>
+			<li><a href="#">아이템 name4</a></li>
+		</ul>
+	</div>
+	
+	<!-- 탭5단 -->
+	<div class="tab_type02 full_size05 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#">아이템 name1</a></li>
+			<li><a href="#">아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2</a></li>
+			<li><a href="#">아이템 name3</a></li>
+			<li><a href="#">아이템 name4</a></li>
+			<li><a href="#">아이템 name5</a></li>
+		</ul>
+	</div>
+<pre>
+&lt;!-- 탭2단 --&gt;
+&lt;div class="tab_type02"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#detail_part01"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#detail_part02"&gt;아이템 name2&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- 탭3단 --&gt;
+&lt;div class="tab_type02 full_size03"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- 탭4단 --&gt;
+&lt;div class="tab_type02 full_size04"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- 탭5단 --&gt;
+&lt;div class="tab_type02 full_size05"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name4&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name5&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>	
+</div>
+
+<div class="guide-section">
+	<h2 class="guide-tit-h2">탭 - color</h2>
+	<div class="tab_type02 full_size05 tab_c10 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#">아이템 name1</a></li>
+			<li><a href="#">아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2</a></li>
+			<li><a href="#">아이템 name3</a></li>
+			<li><a href="#">아이템 name4</a></li>
+			<li><a href="#">아이템 name5</a></li>
+		</ul>
+	</div>
+	
+	<div class="tab_type02 full_size05 tab_c20 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#">아이템 name1</a></li>
+			<li><a href="#">아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2</a></li>
+			<li><a href="#">아이템 name3</a></li>
+			<li><a href="#">아이템 name4</a></li>
+			<li><a href="#">아이템 name5</a></li>
+		</ul>
+	</div>
+	
+	<div class="tab_type02 full_size05 tab_c30 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#">아이템 name1</a></li>
+			<li><a href="#">아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2</a></li>
+			<li><a href="#">아이템 name3</a></li>
+			<li><a href="#">아이템 name4</a></li>
+			<li><a href="#">아이템 name5</a></li>
+		</ul>
+	</div>
+	
+	<div class="tab_type02 full_size05 tab_c40 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#">아이템 name1</a></li>
+			<li><a href="#">아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2</a></li>
+			<li><a href="#">아이템 name3</a></li>
+			<li><a href="#">아이템 name4</a></li>
+			<li><a href="#">아이템 name5</a></li>
+		</ul>
+	</div>
+	
+	<div class="tab_type02 full_size05 tab_c50 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#">아이템 name1</a></li>
+			<li><a href="#">아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2</a></li>
+			<li><a href="#">아이템 name3</a></li>
+			<li><a href="#">아이템 name4</a></li>
+			<li><a href="#">아이템 name5</a></li>
+		</ul>
+	</div>	
+<pre>
+&lt;!-- 컬러1 --&gt;
+&lt;div class="tab_type02 full_size05 <span class="guide-c01">tab_c10</span>"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name4&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name5&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- 컬러2 --&gt;
+&lt;div class="tab_type02 full_size05 <span class="guide-c01">tab_c20</span>"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name4&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name5&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- 컬러3 --&gt;
+&lt;div class="tab_type02 full_size05 <span class="guide-c01">tab_c30</span>"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name4&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name5&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- 컬러4 --&gt;
+&lt;div class="tab_type02 full_size05 <span class="guide-c01">tab_c40</span>"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name4&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name5&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- 컬러5 --&gt;
+&lt;div class="tab_type02 full_size05 <span class="guide-c01">tab_c50</span> "&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2 아이템 name2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name4&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name5&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+<div class="guide-section">
+	<h2 class="guide-tit-h2">탭 - disabled 효과</h2>
+	<!-- 탭3단 -->
+	<div class="tab_type02 full_size03 mt20">
+		<ul class="d_tab">
+			<li class="on"><a href="#">아이템 name1</a></li>
+<!-- disabled 효과 -->
+			<li class="disabled"><a href="#">아이템 name2</a></li>
+<!-- //disabled 효과 -->			
+			<li><a href="#">아이템 name3</a></li>
+		</ul>
+	</div>
+<pre>
+&lt;div class="tab_type02 full_size03"&gt;
+	&lt;ul class="d_tab"&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;아이템 name1&lt;/a&gt;&lt;/li&gt;
+<span class="guide-c01">&lt;!-- disabled 효과 --&gt;
+		&lt;li class="disabled"&gt;&lt;a href="#"&gt;아이템 name2&lt;/a&gt;&lt;/li&gt;
+&lt;!-- //disabled 효과 --&gt;</span>
+		&lt;li&gt;&lt;a href="#"&gt;아이템 name3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>	
+</div>
+
+<div class="guide-section">
+	<h2 class="guide-tit-h2">앵커탭</h2>
+	<div id="tab_cate_anchor" class="tab_anchor01 tab_c10 mt20">
+		<ul>
+			<li class="on"><a href="#anchor1"><span>추천상품</span></a></li>
+			<li><a href="#anchor2"><span>정장</span></a></li>
+			<li><a href="#anchor3"><span>가디건</span></a></li>
+			<li><a href="#anchor4"><span>점퍼</span></a></li>
+			<li><a href="#anchor5"><span>원피스</span></a></li>
+			<li><a href="#anchor6"><span>타이틀1</span></a></li>
+			<li><a href="#anchor7"><span>타이틀1 타이틀1 타이틀1 타이틀1 타이틀1</span></a></li>
+			<li><a href="#anchor8"><span>타이틀1</span></a></li>
+			<li><a href="#anchor9"><span>타이틀1</span></a></li>
+			<li><a href="#anchor10"><span>타이틀1</span></a></li>
+			<li><a href="#anchor11"><span>타이틀1</span></a></li>
+		</ul>
+	</div>
+<pre>
+&lt;div id="tab_cate_anchor" class="tab_anchor01 tab_c10"&gt;
+	&lt;ul&gt;
+		&lt;li class="on"&gt;&lt;a href="#anchor1"&gt;&lt;span&gt;추천상품&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor2"&gt;&lt;span&gt;정장&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor3"&gt;&lt;span&gt;가디건&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor4"&gt;&lt;span&gt;점퍼&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor5"&gt;&lt;span&gt;원피스&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor6"&gt;&lt;span&gt;타이틀1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor7"&gt;&lt;span&gt;타이틀1 타이틀1 타이틀1 타이틀1 타이틀1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor8"&gt;&lt;span&gt;타이틀1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor9"&gt;&lt;span&gt;타이틀1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor10"&gt;&lt;span&gt;타이틀1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#anchor11"&gt;&lt;span&gt;타이틀1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<div class="guide-section">
+	<h2 class="guide-tit-h2">앵커탭-color</h2>
+	<div id="tab_cate_anchor" class="tab_anchor01 tab_c10 mt20">
+		<ul>
+			<li class="on"><a href="#anchor1"><span>추천상품</span></a></li>
+			<li><a href="#anchor2"><span>정장</span></a></li>
+			<li><a href="#anchor3"><span>가디건</span></a></li>
+			<li><a href="#anchor4"><span>점퍼</span></a></li>
+			<li><a href="#anchor5"><span>원피스</span></a></li>
+			<li><a href="#anchor6"><span>타이틀1</span></a></li>
+			<li><a href="#anchor7"><span>타이틀1 타이틀1 타이틀1 타이틀1 타이틀1</span></a></li>
+			<li><a href="#anchor8"><span>타이틀1</span></a></li>
+			<li><a href="#anchor9"><span>타이틀1</span></a></li>
+			<li><a href="#anchor10"><span>타이틀1</span></a></li>
+			<li><a href="#anchor11"><span>타이틀1</span></a></li>
+		</ul>
+	</div>
+	
+	<div id="tab_cate_anchor" class="tab_anchor01 tab_c20 mt20">
+		<ul>
+			<li class="on"><a href="#anchor1"><span>추천상품</span></a></li>
+			<li><a href="#anchor2"><span>정장</span></a></li>
+			<li><a href="#anchor3"><span>가디건</span></a></li>
+			<li><a href="#anchor4"><span>점퍼</span></a></li>
+			<li><a href="#anchor5"><span>원피스</span></a></li>
+		</ul>
+	</div>
+	
+	<div id="tab_cate_anchor" class="tab_anchor01 tab_c30 mt20">
+		<ul>
+			<li class="on"><a href="#anchor1"><span>추천상품</span></a></li>
+			<li><a href="#anchor2"><span>정장</span></a></li>
+			<li><a href="#anchor3"><span>가디건</span></a></li>
+			<li><a href="#anchor4"><span>점퍼</span></a></li>
+			<li><a href="#anchor5"><span>원피스</span></a></li>
+		</ul>
+	</div>
+	
+	<div id="tab_cate_anchor" class="tab_anchor01 tab_c40 mt20">
+		<ul>
+			<li class="on"><a href="#anchor1"><span>추천상품</span></a></li>
+			<li><a href="#anchor2"><span>정장</span></a></li>
+			<li><a href="#anchor3"><span>가디건</span></a></li>
+			<li><a href="#anchor4"><span>점퍼</span></a></li>
+			<li><a href="#anchor5"><span>원피스</span></a></li>
+		</ul>
+	</div>
+	
+	<div id="tab_cate_anchor" class="tab_anchor01 tab_c50 mt20">
+		<ul>
+			<li class="on"><a href="#anchor1"><span>추천상품</span></a></li>
+			<li><a href="#anchor2"><span>정장</span></a></li>
+			<li><a href="#anchor3"><span>가디건</span></a></li>
+			<li><a href="#anchor4"><span>점퍼</span></a></li>
+			<li><a href="#anchor5"><span>원피스</span></a></li>
+		</ul>
+	</div>
+<pre>
+&lt;div id="tab_cate_anchor" class="tab_anchor01 <span class="guide-c01">tab_c10</span>"&gt;
+	&lt;ul&gt;
+..이하 동일..
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="tab_cate_anchor" class="tab_anchor01 <span class="guide-c01">tab_c20</span>"&gt;
+	&lt;ul&gt;
+..이하 동일..
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="tab_cate_anchor" class="tab_anchor01 <span class="guide-c01">tab_c30</span>"&gt;
+	&lt;ul&gt;
+..이하 동일..
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="tab_cate_anchor" class="tab_anchor01 <span class="guide-c01">tab_c40</span>"&gt;
+	&lt;ul&gt;
+..이하 동일..
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="tab_cate_anchor" class="tab_anchor01 <span class="guide-c01">tab_c50</span>"&gt;
+	&lt;ul&gt;
+..이하 동일..
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<script>
+$(document).ready(function() {
+	var $wrapper = $('#wrapper')
+	var currentValue ='';
+	$('.guide-section').append('<button type="button" class="pretag_open">소스열기</button>');
+	$('.guide-section pre').hide();
+	$('.pretag_open').on('click',function() {
+		$(this).prev().show();
+	});
+	$('#chg_selbox').on('change',function() {
+		if(currentValue!='') {
+			$wrapper.removeClass(currentValue);
+		}
+		var value = $(this).find('option:selected').attr('value');
+		$wrapper.addClass(value);
+		currentValue = value;
+
+	});
+});
+</script>
+</body>
+</html>

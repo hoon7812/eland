@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>마이페이지</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="my_con">
+		<div class="my_member">
+			<!-- 등급안내 -->
+			<div class="user_grade vip"> <!-- 등급별 class : VIP - vip, Gold - gld, Silver - slv, Bronze - brz, 일반 - 없음 -->
+				<div class="info">
+					<!-- <span class="ico_grd"><em class="ir">구매등급 아이콘  : Welcome</em></span>
+					<span class="ico_grd"><em class="ir">구매등급 아이콘  : Bronze</em></span>
+					<span class="ico_grd"><em class="ir">구매등급 아이콘  : Silver</em></span>
+					<span class="ico_grd"><em class="ir">구매등급 아이콘  : Gold/em></span> -->
+					<span class="ico_grd"><em class="ir">구매등급 아이콘  : VIP</em></span>
+					<span class="tit"><em class="name">이랜드</em>님의<br />1월 구매등급은 <em class="grade">VIP</em> 입니다.</span>
+					<!-- 아래로 이동  <p class="grd_info">
+						<a href="#none" class="chk_btn"  onclick="fn_layer_open('pop_grade');return false;" onkeypress="this.onclick;" ><span>등급산정 내역 확인</span></a>
+					</p> -->
+					<p class="nxt_info">
+						<em class="nxt_grd">2월 VIP</em> 등급으로 상승하기 위해서는<br />
+						구매건수 <em class="num">9</em>건 / 구매금액은 <em class="num"> 99,999</em>원 이 필요합니다.
+						<span class="exp">(산정기간 : 2017.12~2018.03)</span>
+						<span class="cau_info">
+							※ 취소/환불건 발생시 등급 산정에 반영됩니다. <br />
+							※ 필요 구매 조건은 확인 시점에 따라 오차가 발생할 수 있습니다.
+						</span>
+						<a href="#none" class="chk_btn"  onclick="fn_layer_open('pop_grade');return false;" onkeypress="this.onclick;" ><span>등급산정 내역 확인</span></a>
+						<a href="#none" class="chk_btn"  onclick="fn_layer_open('pop_grade_ord');return false;" onkeypress="this.onclick;" ><span>등급 혜택 받기</span></a>
+					</p>
+				</div>
+				<div class="bcd_lyr">
+					<div class="top">
+						<strong class="tit"><img src="../images/mobile/my/logo_bcd.png" alt="Epoint 카드" /></strong>
+						<button class="open_bcd"><span class="ir">바코드 레이어 열기</span></button>
+						<button class="close_bcd"><span class="ir">바코드 레이어 닫기</span></button>
+					</div>
+					<div class="bcd_body">
+						<img src="../images/mobile/temp/bcd_temp.png" alt="1216548971254" class="bcd" />
+					</div>
+					<div class="bcd_dim"></div>
+				</div>
+			</div>
+			<!-- //등급안내 -->
+			<div class="point">
+				<ul class="member">
+					 <!-- NGCPO-4890 [PC/MO] 포인트 UI개선 -->
+					<li class="pnt_cell"> <!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : .pnt_cell -->
+						<div class="sum_point">
+							<dl>
+								<dt class="rep"><a href="javascript:">포인트</a></dt>
+								<dd class="rep"><a href="javascript:"><em>9,999,999</em> P</a></dd>
+								<dt>구매포인트</dt>
+								<dd><em>99,999</em> P</dd>
+								<dt>이벤트포인트</dt>
+								<dd><em>99,999</em> P</dd>
+								<dt>당월 소멸예정포인트</dt>
+								<dd><em>999,999</em> P</dd>
+							</dl>
+							<a href="javascript:" class="chk_btn"><span>포인트 소멸안내</span></a>
+						</div>
+					</li>
+					<li>
+						<dl onclick="" keypress="this.onclick"><!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : dl에 페이지 이동 이벤트 걸어주세요-->
+							<dt class="cup">쿠폰</dt>
+							<dd><em>10</em> 장</dd>
+						</dl>
+					</li>
+					<li>
+						<dl onclick="" keypress="this.onclick"> <!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : dl에 페이지 이동 이벤트 걸어주세요-->
+							<dt class="dep">예치금</dt>
+							<dd><em>9,999,999</em> 원</dd>
+						</dl>
+					</li>
+					<!-- //NGCPO-4890 [PC/MO] 포인트 UI개선 -->
+				</ul>
+				<ul class="staff">
+					<li>
+						<a href="#">
+							<span>자기계발</span>
+							<p><em>897,320,320</em>P</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>자율</span>
+							<p><em>897,320</em>P</p>
+						</a>
+					</li>
+				</ul>
+				<!-- 160809 포인트 1개일 경우 -->
+				<ul class="staff">
+					<li class="w100">
+						<a href="#">
+							<span>자율</span>
+							<p><em>897,320</em>P</p>
+						</a>
+					</li>
+				</ul>
+				<!-- //160810 포인트 1개일 경우 -->
+			</div>
+		</div>
+		<!-- 2017.08.31 임시 공지사항 -->
+		<div class="noti_em">
+			<strong class="tit">* 공지사항</strong>
+			<span>임시 공지사항입니다. 텍스트는 자르거나 줄이지 않고 전체 노출합니다.임시 공지사항입니다. 텍스트는 자르거나 줄이지 않고 전체 노출합니다.</span>
+		</div>
+		<div class="my_menu">
+			<div class="tit">
+				<h3>주문/배송 조회</h3>
+				<span class="stxt">최근 1개월 기준</span>
+			</div>
+			<ul class="order">
+				<li>
+					<a href="#" class="order_stp1">
+						<span class="stit">입금확인중</span>
+						<span class="num"><em>3</em> 건</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="order_stp2">
+						<span class="stit">결제완료</span>
+						<span class="num"><em>1</em> 건</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="order_stp3">
+						<span class="stit">상품준비중</span>
+						<span class="num"><em>5</em> 건</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="order_stp4">
+						<span class="stit">배송중</span>
+						<span class="num"><em>0</em> 건</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="order_stp5">
+						<span class="stit">배송완료</span>
+						<span class="num"><em>0</em> 건</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="my_menu no_border">
+			<h3 class="ir">바로가기 메뉴</h3>
+			<ul class="menus">
+				<li><a href="#">주문/배송 조회</a></li>
+				<li><a href="#">취소/교환/반품</a></li>
+				<li><a href="#">항공권 예약확인</a></li>
+				<li><a href="#">나의 상품평</a></li>
+				<li><a href="#">나의 문의 답변</a></li>
+				<li><a href="#">선물함</a></li>
+				<li><a href="#">이벤트 참여현황</a></li>
+				<li><a href="#">재입고 알림내역</a></li>
+				<li><a href="#">회원 정보수정</a></li>
+			</ul>
+		</div>
+		<div class="my_menu">
+			<div class="tit">
+				<h3>찜한 상품</h3>
+				<a href="#" class="all_see">전체보기</a>
+			</div>
+			<ul class="pre_show">
+				<li><a href="#"><img src="../images/mobile/temp/img_180_01.png" alt="상품 이미지" /></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/img_180_02.png" alt="상품 이미지" /></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/img_180_03.png" alt="상품 이미지" /></a></li>
+			</ul>
+		</div>
+		<div class="my_menu">
+			<div class="tit">
+				<h3>최근 본 상품</h3>
+				<a href="#" class="all_see">전체보기</a>
+			</div>
+			<ul class="pre_show">
+				<li><a href="#"><img src="../images/mobile/temp/img_180_04.png" alt="상품 이미지" /></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/img_180_05.png" alt="상품 이미지" /></a></li>
+				<li><a href="#"><img src="../images/mobile/temp/img_180_06.png" alt="상품 이미지" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- //my_con -->
+
+</div>
+<!-- //CONTENT -->
+
+<!-- layer_popup : 등급산정 레이어 -->
+<div id="pop_grade" class="layer_fix deposit">
+	<h3 class="pop_tit">등급산정 내역</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="pop_deposit">
+				<div class="deposit_box">
+					<ul>
+						<li>
+							<div class="box_tit">기간</div>
+							<div class="box_con">
+								2018.01~2018.03월 구매 내역
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">구매금액</div>
+							<div class="box_con">
+								<strong>568,000</strong>원
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">구매건수</div>
+							<div class="box_con">
+								<strong>00</strong>건
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="btn_list02 btn_deposit">
+				<a href="#" class="btn_bg06 c01 btn_arr a01"><strong>구매내역 확인</strong></a>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 등급산정 레이어 -->
+
+
+<!-- layer_popup : 등급산정 레이어 -->
+<div id="pop_grade_ord" class="layer_fix deposit">
+	<h3 class="pop_tit">구매내역</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="pop_deposit">
+				<div class="deposit_box">
+					<ul>
+						<li>
+							<div class="box_tit">기간</div>
+							<div class="box_con">
+								2018.01~2018.04월(현재) 구매 내역
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">구매금액</div>
+							<div class="box_con">
+								<strong>568,000</strong>원
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">구매건수</div>
+							<div class="box_con">
+								<strong>00</strong>건
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="btn_list02 btn_deposit">
+				<a href="#" class="btn_bg06 c01 btn_arr a01"><strong>구매내역 확인</strong></a>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 등급산정 레이어 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

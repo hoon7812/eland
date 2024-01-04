@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_new.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+		<a href="#gnb" onClick="document.getElementById('gnb').tabIndex = -1;document.getElementById('gnb').focus();return false;">메뉴바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<div class="header_top_banner on" style="background-color:#fef6d2;">
+			<div class="btn_hdtb_img"><a href="#"><img src="../../images/pcweb/temp/_temp_1080x80_kinder.jpg" alt="아이들도 패션이 있다구요~ (기획전바로가기)" /></a></div>
+			<a href="#" class="btn_hdtb_close">배너 닫기</a>
+			<a href="#" class="btn_hdtb_open"><span class="ir">배너 열기</span>OPEN</a>
+			<script type="text/javascript">
+				$(document).ready (function(){
+					$(".btn_hdtb_close").on("click",function(){
+						$(".header_top_banner").removeClass("on");
+						$(".btn_hdtb_open").focus();
+					});
+					$(".btn_hdtb_open").on("click",function(){
+						$(".header_top_banner").addClass("on");
+						$(".btn_hdtb_img").focus();
+					});
+				});
+			</script>
+		</div>
+		<div class="center_btm_banner">
+			<a href="#"><img src="../../images/pcweb/temp/_sample_1080x100.jpg" alt="광고배너" /></a>
+			<a href="#" class="btn_close"><img src="../../images/pcweb/renewal/btn_center_btn.png" alt="배너 닫기"></a>
+			<script>
+				$(document).ready (function(){
+					$(".center_btm_banner .btn_close").click(function(e){
+						e.preventDefault();
+						$(".center_btm_banner").hide();
+					});
+				});
+			</script>
+		</div>
+		
+		<!-- HEADER  header_fix -->
+		<div id="header" class="header">
+			<div class="head">
+				<!-- LOGO -->
+				<h1><a href="#"><img src="../../images/pcweb/renewal/logo_eland.png" alt="이랜드 쇼핑포털 - E·LAND MALL" /></a></h1>
+				<!-- //LOGO -->
+
+				<!-- MALL TAB -->
+				<div class="hd_mall">
+					<div class="tit">
+						<a href="#" class="btn_home"><img src="../../images/pcweb/renewal/tit_eland.png" alt="E·LAND MALL" /></a>
+					</div>
+					<div class="mall_select">
+						<ul>
+							<li class="el"><a href="#none" class="d_move_link">이랜드몰 <span class="ir">이동</span></a></li>
+							<li class="mh"><a href="#none" class="d_move_link">모던하우스몰 <span class="ir">이동</span></a></li>
+							<li class="ki"><a href="#none" class="d_move_link">킴스클럽몰 <span class="ir">이동</span></a></li> 
+						</ul>
+					</div>
+				</div>
+				<!-- //MALL TAB -->
+
+				<!-- BRAND SITE -->
+				<div class="bs_selectbox d_bs_sel">
+					<div class="bs_sel_tit"><a href="#"><span>BRAND SITE</span></a></div>
+					<div class="brand_select">
+						<ul>
+							<li><a href="#"><span class="sel"><em>브랜드선택됨</em></span><img src="../../images/pcweb/header/bs_0000014.jpg" alt="E-LAND MALL" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000013.jpg" alt="Mordern house" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_kims.jpg" alt="KIM'S CLUB" /></a></li> <!-- 킴스클럽몰 추가 -->
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000038.jpg" alt="new balance" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000204.jpg" alt="new balance kids" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0002578.jpg" alt="LATEM" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000035.jpg" alt="Roem" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000034.jpg" alt="LLOYD" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000150.jpg" alt="LUKKEN" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0002579.jpg" alt="MOLLTI" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000043.jpg" alt="MIXXO" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000240.jpg" alt="BUTTER" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000063.jpg" alt="SHOOPEN" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000037.jpg" alt="SPAO" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000033.jpg" alt="EBLIN" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0002580.jpg" alt="Enc" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000046.jpg" alt="Kinders Mall" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000041.jpg" alt="ost" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000333.jpg" alt="CLOVIS" /></a></li>	
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000036.jpg" alt="clue" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000322.jpg" alt="태창" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000317.jpg" alt="2me" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000308.jpg" alt="TEENIE WEENIE" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000039.jpg" alt="FOLDER" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000259.jpg" alt="Hunt" /></a></li>
+							<li><a href="#"><img src="../../images/pcweb/header/bs_0000042.jpg" alt="WHO.A.U" /></a></li>			
+						</ul>
+						<div class="ldeco"></div>
+						<div class="rdeco"></div>
+					</div>
+				</div>
+				<!-- //BRAND SITE -->
+
+				<!-- TNB -->
+				<div class="hd_tnb">
+					<dl>
+						<dt class="ir">마이메뉴</dt>
+						<dd><a href="#">로그아웃</a></dd>
+						<dd><a href="#">회원가입</a></dd>
+						<dd><a href="#">마이페이지</a></dd>
+						<dd><a href="#">고객센터</a></dd>
+						<dd><a href="#">즐겨찾기</a></dd>
+					</dl>
+					
+				</div>
+				<!-- //TNB -->
+
+				<!-- SEARCH 검색 고도화 170717 -->
+				<div class="hd_sch" id="hd_sch">
+					<div class="sch_wrap">
+						<div class="sch_box">
+							<label class="ir" for="searchTerm">검색</label>
+							<input type="text" class="input d_searchTerm" name="sch" id="searchTerm" placeholder="겨울엔 스파오 패딩이 필수템" />
+						</div>
+
+						<!-- KEYWORD LAYER -->
+						<div id="sch_keyword" class="sch_keyword d_sch_keyword">
+							<dl class="f_keyword">
+								<dt><button type="button"  class="on">인기 검색어</button></dt>
+								<dd>
+									<ol>
+										<li class="rank">
+											<a href="#" class="d_links"><em class="num">1</em><span>아이폰 6S</span></a>
+											<div class="rl_pot"><span class="rl_up">213</span></div>
+										</li>
+										<li class="rank">
+											<a href="#" class="d_links"><em class="num">2</em><span>모던하우스</span></a>
+											<div class="rl_pot"><span class="rl_down">32</span></div>
+										</li>
+										<li class="rank">
+											<a href="#" class="d_links"><em class="num">3</em><span>패딩</span></a>
+											<div class="rl_pot"><span class="rl_up">24</span></div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">4</em><span>겨울잠바</span></a>
+											<div class="rl_pot">-</div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">5</em><span>스파오</span></a>
+											<div class="rl_pot">new</div>
+										</li>
+										<li><a href="#" class="d_links"><em class="num">6</em><span>여성 영클부츠</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">7</em><span>코트</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">8</em><span>암막커튼</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">9</em><span>신상품</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">10</em><span>가구</span><em class="cnt">100,022회</em></a></li>
+									</ol>
+									<!-- 검색고도화 기획전,이벤트 추가(항목당 최대 3개씩 최신 등록 순으로 출력) -->
+									<div class="k_planevt">
+										<!-- 기획전 -->
+										<div class="plan">
+											<ul>
+												<li>
+													<a href="#">
+														<span class="ico">기획전</span>
+														<span class="txt">후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="ico">기획전</span>
+														<span class="txt">명품 도자기 상반기 결산</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="ico">기획전</span>
+														<span class="txt">로엠 MD's talk</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<!-- 이벤트 -->
+										<div class="event">
+											<ul>
+												<li>
+													<a href="#">
+														<span class="ico">이벤트</span>
+														<span class="txt">6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="ico">이벤트</span>
+														<span class="txt">핫썸머룩 인기예보</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="ico">이벤트</span>
+														<span class="txt">비오는날 할인예보</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- //검색고도화 기획전,이벤트 추가(항목당 최대 3개씩 최신 등록 순으로 출력) -->
+								</dd>
+								<dt><button type="button" >최근 검색어</button></dt>
+								<dd>
+									<ul>
+										<li><a href="#" class="d_links"><span>키보드</span></a><button type="button" class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>인테리어</span></a><button type="button" class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>컴퓨터</span></a><button type="button" class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>코르그</span></a><button type="button" class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>양말</span></a><button type="button" class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>게임</span></a><button type="button" class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>하드</span></a><button type="button" class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>애완용품</span></a><button type="button" class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>침구</span></a><button type="button" class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>반팔 티셔츠</span></a><button type="button" class="del">삭제</button></li>
+									</ul>
+									<div class="s_del"><button type="button" >최근검색어 전체삭제</button></div>
+									<div class="k_planevt">
+										<!-- 기획전 -->
+										<div class="plan">
+											<ul>
+												<li>
+													<a href="#">
+														<span class="ico">기획전</span>
+														<span class="txt">후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="ico">기획전</span>
+														<span class="txt">명품 도자기 상반기 결산</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="ico">기획전</span>
+														<span class="txt">로엠 MD's talk</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="event">
+											<ul>
+												<li>
+													<a href="#">
+														<span class="ico">이벤트</span>
+														<span class="txt">6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="ico">이벤트</span>
+														<span class="txt">핫썸머룩 인기예보</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="ico">이벤트</span>
+														<span class="txt">비오는날 할인예보</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</dd>
+							</dl>
+						</div>
+						<!-- //KEYWORD LAYER -->
+
+						<!-- AUTO COMPLETE LAYER -->
+						<div id="sch_complete" class="sch_keyword d_sch_complete">
+							<div class="k_brand">
+
+								<ul>
+									<li><a href="#">공동구매 바로가기</a></li>
+									<li><a href="#">뉴발란스 바로가기</a></li>
+								</ul>
+							</div>
+							<div class="s_keyword">
+								<ul class="sch_ing">
+									<li><a href="#" class="d_links"><span>청<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>디젤청<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>등산<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span><b>바지</b>걸이</span></a></li>
+									<li><a href="#" class="d_links"><span>트레이닝<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>스파오청<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>기모<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span><b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>수면<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>치마<b>바지</b></span></a></li>
+								</ul>
+							</div>
+							<div class="k_planevt">
+								<!-- 카테고리 -->
+								<div class="category">
+									<ul>
+										<li>
+											<span class="ico">카테고리</span>
+											<span class="txt">
+												<span>패션의류</span> &gt;
+												<span>유니섹스/캐주얼</span> &gt;
+												<a href="#"><em>바지</em>/청<em>바지</em></a> <!-- 키워드 강조 em태그 추가 -->
+											</span>
+										</li>
+										<li>
+											<span class="ico">카테고리</span>
+											<span class="txt">
+												<span>유아동/출산</span> &gt;
+												<span>유아동 의류</span> &gt;
+												<a href="#">아동의류(4~8세) 아동의류(4~8세) 아동의류(4~8세)</a> <!-- 키워드 강조 em태그 추가 -->
+											</span>
+										</li>
+										<li>
+											<span class="ico">카테고리</span>
+											<span class="txt">
+												<span>레저/스포츠</span> &gt;
+												<span>골프의류/잡화</span> &gt;
+												<a href="#"><em>바지</em></a> <!-- 키워드 강조 em태그 추가 -->
+											</span>
+										</li>
+									</ul>
+								</div>
+								<!-- 기획전 -->
+								<div class="plan">
+									<ul>
+										<li>
+											<a href="#">
+												<span class="ico">기획전</span>
+												<span class="txt">후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠후아유 하와이안 셔츠</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="ico">기획전</span>
+												<span class="txt">명품 도자기 상반기 결산</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="ico">기획전</span>
+												<span class="txt">로엠 MD's talk</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="event">
+									<ul>
+										<li>
+											<a href="#">
+												<span class="ico">이벤트</span>
+												<span class="txt">6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보6월의 혜택 예보</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="ico">이벤트</span>
+												<span class="txt">핫썸머룩 인기예보</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="ico">이벤트</span>
+												<span class="txt">비오는날 할인예보</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="s_del"><button type="button" >끄기</button></div> 
+						</div>
+						<!-- //AUTO COMPLETE LAYER -->
+						<button type="button"  id="sch_del" class="sch_del" title="삭제하기">삭제</button>
+						<button type="button"  id="sch_btn" class="sch_btn" title="검색하기">검색</button>
+					</div>
+				</div>
+				<!-- //SEARCH 검색 고도화 170717 -->
+
+				<!-- BANNER -->
+				<div class="hd_bn">
+					<div class="bn_lst" id="hdBanner">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide" data-index="0"><a href="#"><img src="../../images/pcweb/temp/_sample_320x76_02.jpg" alt="검색 우측배너" /></a></li>
+							<li class="swiper-slide" data-index="1"><a href="#"><img src="../../images/pcweb/temp/_sample_320x76_02.jpg" alt="검색 우측배너" /></a></li>
+							<li class="swiper-slide" data-index="2"><a href="#"><img src="../../images/pcweb/temp/_sample_320x76.jpg" alt="검색 우측배너" /></a></li>
+						</ul>
+					</div>
+					<div class="bt_hd_btns">
+						<button type="button"  class="bt_hd_prev d_hd_prev">이전</button>
+						<button type="button"  class="bt_hd_next d_hd_next">다음</button>
+					</div>
+				</div>
+				<!-- //BANNER  -->
+
+				<!-- CATG ALL -->
+				<div class="hd_catg">
+					<div class="catg_wrap">
+						<button type="button"  id="catg_bt" class="catg_bt">전체 카테고리</button>
+
+						<!-- LAYER -->
+						<div class="catg_lyr" id="catg_lyr">
+							<!-- 카테고리 -->
+							<div class="cate_area01">
+								<div id="cateMainLnb" class="lnb_cate_main">
+									<ul class="welfare"><!-- 170720 임직원 복지샵 추가시 .welfare 클래스 추가해주세요 -->
+										<li><a href="#"><span>패션의류</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">패션의류</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>스니커즈/운동화</span></a></li>
+														<li><a href="#"><span>가방</span></a></li>
+														<li><a href="#"><span>캐주얼가방</span></a></li>
+														<li><a href="#"><span>지갑/벨트</span></a></li>
+														<li><a href="#"><span>패션잡화</span></a></li>
+														<li><a href="#"><span>쥬얼리</span></a></li>
+														<li><a href="#"><span>여성 속옷</span></a></li>
+														<li><a href="#"><span>남성 속옷</span></a></li>
+														<li><a href="#"><span>잠옷/이지웨어/슬립</span></a></li>
+														<li><a href="#"><span>아동/주니어 속옷</span></a></li>
+														<li><a href="#"><span>속옷</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>아우프</span></a></li>
+														<li><a href="#"><span>미닝스</span></a></li>
+														<li><a href="#"><span>푸스토</span></a></li>
+														<li><a href="#"><span>인디고뱅크</span></a></li>
+														<li><a href="#"><span>파시</span></a></li>
+														<li><a href="#"><span>유니온베이</span></a></li>
+														<li><a href="#"><span>스파오</span></a></li>
+														<li><a href="#"><span>트루젠</span></a></li>
+														<li><a href="#"><span>티아이포맨</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb03">
+													<div class="ir">배너</div>
+													<ul>
+														<li><a href="#"><img src="../../images/pcweb/temp/_sample_290x156.jpg" alt="ziozia 최고 90%파격세일 단! 한주 마지막 찬스 놓치지 마세요." /></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>잡화/슈즈</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">잡화/슈즈</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>뷰티</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">뷰티</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>유아동/출산</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">유아동/출산</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>가구/침구/인테리어</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">가구/침구/인테리어</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>주방/생활/수납</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">주방/생활/수납</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>가전/디지털</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">가전/디지털</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>레저/스포츠</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">레저/스포츠</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>해외명품</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">해외명품</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>팬시/애완용품</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">팬시/애완용품</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>식품/생필품</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">식품/생필품</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li><a href="#"><span>숙박/외식/e티켓</span></a>
+											<div class="depth2">
+												<div class="lnb_tit"><a href="#">숙박/외식/e티켓</a></div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>여성구두</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+														<li><a href="#"><span>남성구두</span></a></li>
+													</ul>
+												</div>
+												<div class="lb02">
+													<div class="lnb_tit02 txt_en">BEST BRAND</div>
+													<ul>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+														<li><a href="#"><span>BRAND</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="sp_depth"><a href="#"><span>전문관</span></a>
+											<div class="depth2">
+												<div class="lnb_tit">전문관</div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>상설샵</span><em class="flag_new">NEW</em></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="sp_depth"><a href="#"><span>스페셜샵</span></a>
+											<div class="depth2">
+												<div class="lnb_tit">스페셜샵</div>
+												<div class="lb01">
+													<ul>
+														<li><a href="#"><span>공동구매</span><em class="flag_new">NEW</em></a></li>
+														<li><a href="#"><span>라이벌매치</span></a></li>
+														<li><a href="#"><span>셀프 스타일링</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="sp_depth welfare"><a href="#"><span>복지몰 &gt;</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<script type="text/javascript">
+								$('.renewal .catg_lyr .lnb_cate_main ul li').on('focusin mouseover', function(){
+										$(this).addClass('on').siblings('li').removeClass('on');
+									}
+								)
+								.on('mouseleave', function() {
+										$(this).removeClass('on');
+									}
+								);
+							</script>
+							<!-- //카테고리 -->
+						</div>
+						<!-- //LAYER -->
+
+					</div>
+				</div>
+				<!-- //CATG ALL -->
+
+				<!-- DISP. MENU -->
+				<div class="hd_disp welfare">
+					<dl>
+						<dt class="ir">전시메뉴</dt>
+						<dd><a href="#"><img src="../../images/pcweb/temp/hd_disp_sample.png" alt="미리5월GIFT" width="114px" height="49px"></a></dd>
+						<dd><a href="#">지점관</a></dd>
+						<dd><a href="#">럭키딜</a></dd>
+						<dd><a href="#">베스트</a></dd>
+						<dd><a href="#">기획전</a></dd>
+						<dd><a href="#">상설샵</a></dd>
+						<dd class="dd">
+							<a href="#" id="spc_bt" class="spc_bt">스페셜샵</a>
+							<!-- LAYER -->
+							<div class="depth2 spc_lyr" id="spc_lyr">
+								<div class="spc_all">
+									<ul>
+										<li><a href="#">공동구매</a></li>
+										<li><a href="#">라이벌매치</a></li>
+										<li><a href="#">셀프스타일링</a></li>
+									</ul>
+								</div>
+							</div>
+							<!-- //LAYER -->
+						</dd>
+						<dd><a href="#">이벤트&amp;혜택</a></dd>
+					</dl>
+				</div>
+				<!-- //DISP. MENU -->
+
+				<script type="text/javascript">
+					var gnbMenu = new commonUI.header.gnbCate('.hd_disp');
+				</script>
+
+				<!-- BRAND ZONE -->
+				<div class="hd_zone welfare">
+					<a href="#">브랜드</a>
+					<a href="#" class="wf">복지몰</a>
+				</div>
+				<!-- //BRAND ZONE -->
+			</div>
+		</div>
+		<!-- //HEADER -->
+
+		<!-- container -->
+		<div id="container">
+			<div class="wing_menu">
+				<div class="wm_left">
+					<ul class="wm_list">
+						<li><a href="#" class="wm_l01">시작페이지</a></li>
+						<li><a href="#" class="wm_l02">즐겨찾기</a></li>
+						<li><a href="#" class="wm_l03">앱다운로드</a></li>
+					</ul>
+					<div class="wm_adds">
+						<a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="" /></a>
+					</div>
+					<div class="wm_adds" id="wingleftBanner">
+						<div class="swiper-container">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide" data-index="0"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="1" /></a></li>
+								<li class="swiper-slide" data-index="1"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="2" /></a></li>
+								<li class="swiper-slide" data-index="2"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="3" /></a></li>
+								<li class="swiper-slide" data-index="3"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="4" /></a></li>
+								<li class="swiper-slide" data-index="4"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="5" /></a></li>
+								<li class="swiper-slide" data-index="5"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="6" /></a></li>
+								<li class="swiper-slide" data-index="6"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="7" /></a></li>
+								<li class="swiper-slide" data-index="7"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="8" /></a></li>
+								<li class="swiper-slide" data-index="8"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="9" /></a></li>
+								<li class="swiper-slide" data-index="9"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="10" /></a></li>
+								<li class="swiper-slide" data-index="10"><a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="11" /></a></li>
+							</ul>
+						</div>
+						<div class="wl_btns">
+							<button type="button" class="wl_prev d_prev">이전</button>
+							<button type="button" class="wl_next d_next">다음</button>
+							<div class="wl_cnt">
+								<span class="wlc_idx">1</span>/<span class="wlc_length">11</span>
+							</div>
+						</div>
+					</div>
+					<script>
+						function wl_bn(){
+							var wl_banner_ins = new Swiper('#wingleftBanner .swiper-container',{
+								speed: 300
+								,autoplay: 3000
+								,simulateTouch : false
+								,createPagination: false
+								,paginationClickable : false
+								,loop : true
+								,onSlideChangeEnd : function() {
+									$('.wl_cnt').find('.wlc_idx').text(wl_banner_ins.activeLoopIndex+1);
+								}
+							});
+							var $target = $('#wingleftBanner');
+
+							var wl_swiperEle = { $target : $target , status : true , last_idx : 0 , ins : wl_banner_ins , $prevBtn : $target.find(".d_prev") , $nextBtn :  $target.find(".d_next") };
+							// $target : 최상단 박스 ,  status : autoplay - play , last_idx : autoplay 관련 , ins : swiper instance name
+
+							wl_swiperEle.$target.hover(
+								function (e) { //mouseenter
+									wl_swiperEle.ins.stopAutoplay();
+									e.preventDefault();
+								},
+								function (e) { //mouseleave
+									if ( wl_swiperEle.status ) wl_swiperEle.ins.startAutoplay();
+									e.preventDefault();
+								}
+							);
+
+							wl_swiperEle.$prevBtn.on('click',function(e){
+								wl_swiperEle.ins.swipePrev();
+							})
+
+							wl_swiperEle.$nextBtn.on('click',function(e){
+								wl_swiperEle.ins.swipeNext();
+							})
+
+							wl_swiperEle.$target.on("keydown", ".swiper-slide > a" , function(e) {
+								var idx = Math.floor($(this).attr('data-index'));
+								if(e.keyCode == 9){ wl_swiperEle.ins.swipeTo(idx, 0 , 0 );}
+								wl_swiperEle.last_idx = idx;
+							});
+
+							wl_swiperEle.$target.on("focusin" , "a" , function(e) {
+								wl_swiperEle.ins.stopAutoplay();
+							});
+
+							wl_swiperEle.$target.on("focus", ".swiper-slide" ,function(){
+								var idx = Math.floor($(this).attr('data-index'));
+								wl_swiperEle.ins.stopAutoplay();
+								wl_swiperEle.ins.swipeTo( idx, 0 , 0 )
+							})
+
+							wl_swiperEle.$target.find(".swiper-slide-duplicate a").attr('tabindex','-1');
+							setTimeout(function(){
+								wl_swiperEle.$target.find(".swiper-slide:not(.swiper-slide-duplicate)").removeAttr('tabindex');
+							},1000)
+
+							// random
+							function wl_bn_rand(){
+								var lengths = wl_swiperEle.$target.find(".swiper-slide:not(.swiper-slide-duplicate)").length;
+								var random_idx = Math.floor(Math.random()*lengths);
+								wl_swiperEle.ins.swipeTo( random_idx , 0 , 0 )
+								$('.wl_cnt').find('.wlc_idx').text(wl_banner_ins.activeLoopIndex+1);
+							}
+							wl_bn_rand();
+						}
+
+						$(window).ready(function(){
+							wl_bn();
+						})
+					</script>
+
+				</div>
+				<div class="wm_right">
+					<div class="wm_user">
+						<strong><span>홍길동</span>님</strong>
+						<span>
+
+							<a href="#" class="tx_num">1,243P</a><br />
+							쿠폰 <a href="#">43</a>장
+						</span>
+					</div>
+					<ul class="wm_list">
+						<li><a href="#" class="wm_r01">찜리스트<br/>(3)</a></li>
+						<li><a href="#" class="wm_r02">최근본상품</a></li>
+					</ul>
+					<div class="wm_goods_wrap" tabindex="0">
+						<div class="wm_goods" id="wmGoods">
+							<ul class="d_wg_slider">
+								<li>
+									<a href="#" class="wm_gd_links" data-index="0">
+										<img src="" alt="11111111" />
+										<span class="wm_gd_info">
+											<strong>11111(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="1">
+										<img src="" alt="22222222222222222" />
+										<span class="wm_gd_info">
+											<strong>22222(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="2">
+										<img src="" alt="333333333" />
+										<span class="wm_gd_info">
+											<strong>33333(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="3">
+										<img src="" alt="44444444" />
+										<span class="wm_gd_info">
+											<strong>44444(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="4">
+										<img src="" alt="55555555" />
+										<span class="wm_gd_info">
+											<strong>55555(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="5">
+										<img src="" alt="66666666666" />
+										<span class="wm_gd_info">
+											<strong>666666(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="6">
+										<img src="" alt="777777777" />
+										<span class="wm_gd_info">
+											<strong>77777(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="7">
+										<img src="" alt="88888888888" />
+										<span class="wm_gd_info">
+											<strong>88888(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="5">
+										<img src="" alt="99999999999" />
+										<span class="wm_gd_info">
+											<strong>99999(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="6">
+										<img src="" alt="101010101010" />
+										<span class="wm_gd_info">
+											<strong>77777(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="7">
+										<img src="" alt="11111111111" />
+										<span class="wm_gd_info">
+											<strong>88888(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+							</ul>
+							<div class="nodata">
+								최근<br />본 상품이<br />없습니다.
+							</div>
+						</div>
+						<div class="wm_btns">
+							<a href="#" class="wm_bt_next d_wm_next" tabindex="-1">이전목록</a>
+							<a href="#" class="wm_bt_prev d_wm_prev" tabindex="-1">다음목록</a>
+						</div>
+					</div>
+					<script>
+
+						function wbGoods(){
+							var $target = $(".wm_goods_wrap");
+							if ( commonUI.isTarget( $target ) ) return ;
+
+							var $wrapper, $links, $btns, $lastOnItems, $itemWrap ,$tabItems;
+							var _lastIDX = 0;
+							var _IDX = 0;
+							var _pageIDX = 0;
+							function wbInit(){
+								$wrapper = $target.find(".wm_goods");
+								$liItems = $target.find("li");
+								$links = $target.find(".wm_gd_links");
+								$itemWrap = $target.find(".d_wg_slider");
+								$btns = {
+									prev : $target.find(".d_wm_prev")
+									,next :  $target.find(".d_wm_next")
+									,del :  $target.find(".wm_btn_del")
+								}
+
+								if ( setInit() ) {
+									function _bodyClickFn(e){ // body click func
+										if (!$wrapper.is(e.target) && $wrapper.has(e.target).length < 1){
+											$wrapper.removeClass("active");
+											$liItems.removeClass("on");
+											commonUI.bodyClickOffFunc( "d_wbGoods" );
+
+											e.preventDefault();
+										}
+									}
+
+									commonUI.bodyClickFunc( "d_wbGoods" , _bodyClickFn );
+
+									wbEventHanlder();
+								};
+							}
+
+							function wbEventHanlder(){
+								$wrapper.on("mouseenter", ".wm_gd_links" , function(e) {
+									var $this = $(this);
+
+									$(this).parent().addClass("on");
+								})
+
+								$wrapper.on("mouseleave", "li" , function(e) {
+									var $this = $(this);
+									$wrapper.removeClass("active");
+									$this.removeClass("on");
+								})
+
+								$wrapper.on("focusin mouseenter" , "li" , function(e) {
+									var $this = $(this);
+
+									_lastIDX = $wrapper.find("li.on .wm_gd_links").attr("data-index");
+									_IDX = $this.index();
+
+									wbEngine();
+									commonUI.bodyClickOnFunc( "d_wbGoods" );
+								})
+
+								$btns.del.on("click" , function(e) {
+									e.preventDefault();
+									wbDelete();
+								})
+
+								$btns.prev.on("click" , function(e) {
+									e.preventDefault();
+									wbPrev();
+								})
+
+								$btns.next.on("click" , function(e) {
+									e.preventDefault();
+									wbNext();
+								})
+
+								$tabItems = $wrapper.find("li .wm_gd_links");
+
+								$tabItems.on("focus" , function(e) {
+									e.preventDefault();
+									var _vi = Math.floor($(this).attr("data-index")/3);
+									_pageIDX = _vi;
+									wbAni();
+								})
+							}
+
+							function _tabEvent(){
+								var _$tabItems  = $wrapper.find("li:not(.off)");
+
+								_$tabItems.each(function(idx){
+									$(this).find(".wm_gd_links").attr("data-index",idx);
+								})
+							}
+
+							function wbDelete(){
+								var $this = $liItems.eq(_IDX);
+								$(".wm_goods_wrap").focus();
+								$this.addClass("off");
+								setInit();
+								wbDeleteChk();
+								_tabEvent();
+							}
+
+							function wbDeleteChk(){
+								var chksItemLength = $wrapper.find("li:visible").length;
+								if ( (_pageIDX*3) >= chksItemLength ){
+									wbPrev();
+								}
+							}
+
+							function setInit(){
+								var chksItemLength = $wrapper.find("li:visible").length;
+
+								if ( chksItemLength < 1  ) {
+									$wrapper.removeClass("active").off("mouseenter");
+									$itemWrap.hide();
+									$(".nodata").addClass("on");
+									$wrapper.height(70);
+									$(".wm_btns").remove();
+
+									return false;
+								}else if ( chksItemLength < 4 ) {
+									$wrapper.height(chksItemLength*70);
+
+									$(".wm_btns").remove();
+									return true;
+								}
+
+								return true;
+							}
+
+							function wbPrev(){
+								var chksItemLength = parseInt($wrapper.find("li:visible").length/3);
+								_pageIDX = ( _pageIDX > 0 )? _pageIDX -1: chksItemLength ;
+
+								wbAni();
+							}
+
+							function wbNext(){
+								var chksItemLength = parseInt($wrapper.find("li:visible").length/3);
+								_pageIDX = ( _pageIDX < chksItemLength )? _pageIDX+1: 0 ;
+
+								wbAni();
+							}
+
+							function wbAni(){
+								var _css = { "top" : "-"+_pageIDX*207+"px" }
+								$itemWrap.css(_css);
+							}
+
+							function wbEngine(){
+								$wrapper.addClass("active");
+
+								$liItems.removeClass("on");
+								$liItems.eq(_IDX).addClass("on");
+
+								$lastOnItems = $liItems.eq(_IDX);
+							}
+
+							wbInit();
+						}
+						$(window).ready(function(){
+							wbGoods();
+						})
+
+					</script>
+					<span class="wm_top"><a href="#">TOP</a></span>
+					<div class="btm_fixed_adds">
+						<a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="" /></a>
+					</div>
+				</div>
+			</div>
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li>
+							<select>
+								<option>주방용품</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+
+				컨텐츠
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<!-- 푸터배너 -->
+			<div class="footer_bnr" style="background:#2b2c30">
+				<a href="#"><img src="../../images/pcweb/temp/_sample_1080x120.jpg" alt="SPEACIAL BRAND DAY 미리 준비하는 겨울 아이템" /></a>
+			</div>
+			<!-- //푸터배너 -->
+			<div class="foot_section">
+				<div class="foot_opt_area">
+					<ul class="foot_opt_list">
+						<li><a href="#" target="_blank" title="새창">이랜드 리테일 소개</a></li>
+						<li><a href="#" target="_blank" title="새창">이랜드 상품권 소개</a></li>
+						<li><a href="#" target="_blank" title="새창"><strong>개인정보취급방침</strong></a></li>
+						<li><a href="#" target="_blank" title="새창">영상정보처리기기운영, 관리방침</a></li>
+						<li><a href="#" target="_blank" title="새창">약관안내</a></li>
+						<li><a href="#" target="_blank" title="새창">윤리경영</a></li>
+						<li><a href="#" target="_blank" title="새창">전자세금 계산서</a></li>
+						<li><a href="#" target="_blank" title="새창">인터넷 쇼핑몰 입점 상담</a></li>
+<!-- 160219 -->
+						<li><a href="#" target="_blank" title="새창">단체구매 상담</a></li>
+<!-- //160219 -->
+					</ul>
+				</div>
+				<div class="cont">
+					<div class="logo_footer">
+						<a href="#"><img src="../../images/pcweb/common/logo_footer.gif" alt="이랜드 쇼핑포털 ELAND MALL"></a>
+						<div class="logo_footer_qrcode"><img src="../../images/pcweb/common/logo_footer_qrcode.gif" alt="이랜드 모바일 QR CODE"></div>
+						<!-- 이동 : 2018.03.07 -->
+						<button type="button" class="foot_app_btn"><span class="ir">앱다운로드</span></button>
+					</div>
+					<div class="foot_context">
+						<ul class="foot_view">
+							<li>상호명 : 주식회사 이랜드 리테일</li>
+							<li>대표이사 : 이광일/김연배</li>
+							<li>서울특별시 서초구 잠원동 7c0번지 2호</li>
+							<li>사업자등록번호 : 114-81-01855</li>
+							<li>통신판매업 신고번호 : 서초 제 09998호 <button type="button" class="btn07 c01 ico_arrow04"><span>사업자 정보확인</span></button></li>
+							<li>개인정보보호정책 : 대표이사 김연배</li>
+							<li class="mail">EMAIL : <a href="mailto:;">webmaster@2001outlet.com</a></li>
+						</ul>
+						<div class="copyright">Copyright@ELAND MALL all right reserved.</div>
+
+					</div>
+					<div class="foot_side_opt">
+						<div class="fm_links">
+							<a class="btn_fm_site" href="#"><span>FAMILY SITE</span></a>
+							<div class="list_fm_site">
+								<ul class="scroll">
+									<li><a href="#">이랜드 리테일</a></li>
+									<li><a href="#">모던하우스</a></li>
+									<li><a href="#">이랜드 그룹</a></li>
+									<li><a href="#">MIXXO</a></li>
+									<li><a href="#">SPAO</a></li>
+									<li><a href="#">패밀리 사이트 패밀리 사이트</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="foot_cs">
+							<strong class="foot_cs_tit">고객센터</strong>
+							<strong class="foot_csph">1899-9500</strong>
+							<span>상담시간 : 오전9시~오후6시(토요일, 공휴일은 쉽니다) </span>
+							<button type="button" class="auth_btn partner"><span>협력사 입직원 인증</span></button>
+							<button type="button" class="auth_btn"><span>임직원 회원가입 / 인증</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="foot_bot">
+					<p><strong>소비자피해보상보험</strong> 고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 구매 안전서비스를 이용하실 수 있습니다.</p>
+					<button type="button" class="btn07 c01 ico_arrow04"><span>서비스 가입사실 확인하기</span></button>
+					<ul class="foot_menus"> <!-- 2018.07.12 변경 : isms_info, norton 클래스 삽입 유의 -->
+						<li class="isms_info">
+							<a href="#" target="_blank" title="새창"><img src="../../images/pcweb/common/foot_menu04.png" alt="정보관리체계인증(ISMS) 마크">
+								<span>
+									인증범위 : 온라인 서비스 운영 (이랜드몰, 이랜드리테일)<br />유효기간 : 2017.11.27 ~ 2020.11.26
+								</span>
+							</a>
+						</li>
+						<li class="norton"><a href="#" target="_blank" title="새창"><img src="../../images/pcweb/common/foot_menu03.png" alt="Norton Secured"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

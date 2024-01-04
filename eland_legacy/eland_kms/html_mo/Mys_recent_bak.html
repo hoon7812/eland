@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//장바구니, 바로구매 버튼
+	$(function(){
+		btnCart = $(".sel_zzim li .cart");
+		btnBuy = $(".sel_zzim li .buy");
+
+		btnCart.click(function(e){
+			e.preventDefault();
+			$(this).parent().parent().parent().parent().find(".opt_open.buy").slideUp(200);
+			$(this).parent().parent().parent().parent().find(".opt_open.cart").slideToggle(200);
+		});
+		btnBuy.click(function(e){
+			e.preventDefault();
+			$(this).parent().parent().parent().parent().find(".opt_open.cart").slideUp(200);
+			$(this).parent().parent().parent().parent().find(".opt_open.buy").slideToggle(200);
+		});
+	});
+
+
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>최근 본 상품</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>		
+	<div class="my_con">
+		<div class="my_nolist">
+			<div class="txt">최근 본 상품이 <strong>없습니다.</strong></div>
+		</div>
+		<div class="mypage_box">
+			<div class="prd_group">
+				<div class="basket_prd">
+					<a href="#">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodprice">
+								77,200<span class="won">원</span>
+							</span>
+						</div>
+					</a>
+					<div class="sel_zzim">
+						<ul class="btn_list02">
+							<li><a href="#" class="btn_line01 c01 cart">장바구니</a></li>
+							<li><a href="#" class="btn_line01 c02 buy"><strong>바로구매</strong></a></li>
+						</ul>
+						<div class="absL"><a href="#" class="btn_wish">찜 하기</a></div>
+					</div>
+					<!-- 옵션,수량 변경 -->
+					<div class="opt_open cart">
+						<div class="top_txt"> 옵션 선택 후 장바구니에 상품을 담으실 수 있습니다.</div>
+						<dl>
+							<dt>색상</dt>
+							<dd>
+								<select class="w100">
+									<option>베이지브라운</option>
+								</select>
+							</dd>
+							<dt>사이즈</dt>
+							<dd>
+								<select class="w100">
+									<option>55</option>
+								</select>
+							</dd>
+						</dl>
+						<div class="btnbox"><a href="#" class="btn_line01 c02">장바구니 담기</a></div>
+					</div>
+					<div class="opt_open buy">
+						<div class="top_txt">옵션 선택 후 바로구매 하실 수 있습니다.</div>
+						<dl>
+							<dt>색상</dt>
+							<dd>
+								<select class="w100">
+									<option>베이지브라운</option>
+								</select>
+							</dd>
+							<dt>사이즈</dt>
+							<dd>
+								<select class="w100">
+									<option>55</option>
+								</select>
+							</dd>
+						</dl>
+						<div class="btnbox"><a href="#" class="btn_line01 c02">주문하기</a></div>
+					</div>
+					<!-- //옵션,수량 변경 -->
+				</div>
+			</div>
+
+			<!-- 판매종료 -->
+			<div class="prd_group">
+				<div class="basket_prd">
+					<div class="basket_txt">
+						<div class="pic">
+							<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+							<div class="ico_soldout"><span>판매종료</span></div>
+						</div>
+						<span class="prodtit">포트메리온</span>
+						<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+						<span class="prodprice">
+							77,200<span class="won">원</span>
+						</span>
+						<span class="soldout">상품이 <em>판매종료</em> 되었습니다.</span>
+					</div>
+				</div>
+			</div>
+			<!-- //판매종료 -->
+
+			<div class="prd_group">
+				<div class="basket_prd">
+					<a href="#">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodprice">
+								77,200<span class="won">원</span>
+							</span>
+						</div>
+					</a>
+					<div class="sel_zzim">
+						<ul class="btn_list02">
+							<li><a href="#" class="btn_line01 c01 cart">장바구니</a></li>
+							<li><a href="#" class="btn_line01 c02 buy"><strong>바로구매</strong></a></li>
+						</ul>
+						<div class="absL"><a href="#" class="btn_wish">찜 하기</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="blank1"></div>
+	</div>
+	<!-- //my_con -->
+
+</div>
+<!-- //CONTENT -->
+
+<!-- layer_popup : 찜록록 -->
+<div class="layer_pop nodim pop_zzim">
+	<section class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<p class="ico"><em>찜 목록에</em></p>
+				<p>추가되었습니다.</p>
+				<p class="etc">마이페이지 <em>나의 찜록록</em>에서 <br>확인 하실 수 있습니다.</p>
+			</div>
+		</div>   
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</section>
+</div>
+<!-- //layer_popup : 찜록록 -->
+
+<!-- FOOTER -->
+<!-- //FOOTER -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+</body>
+</html>
+

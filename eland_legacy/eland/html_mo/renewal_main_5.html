@@ -1,0 +1,3646 @@
+		<!-- SWIPER 5 : 오프라인쇼핑 -->
+		<div class="slide_cont" data-index="0">
+			<div class="search_wrap">
+				<div class="nc_wrap">
+					<!-- 사용안함 <div class="area_lv1">
+						<div class="title_area">
+							<div class="float_tit">
+								<h2>NC 스토어쇼핑</h2>
+								<p>NC백화점/아울렛의 오프라인 현장상품을<br />온라인 특가로 만나볼 수 있습니다</p>
+							</div>
+							<img src="../images/mobile/main/nc_tit_bak.jpg" class="bg" alt="" />
+						</div>
+					</div> -->
+					<!-- 메인 슬라이드 배너 -->
+					<div class="area_lv1">
+						<!-- TOP_BN -->
+						<div class="main_bn_wrap new" id="main_bn_wrap">
+							<div class="main_bn swiper-container" id="main_bn">
+								<ul class="swiper-wrapper">
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_01.jpg" width="640" height="342" alt="배너1" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_02.jpg" width="640" height="342" alt="배너2" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_03.jpg" width="640" height="342" alt="배너3" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_01.jpg" width="640" height="342" alt="배너1" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_02.jpg" width="640" height="342" alt="배너2" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_03.jpg" width="640" height="342" alt="배너3" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_01.jpg" width="640" height="342" alt="배너1" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_02.jpg" width="640" height="342" alt="배너2" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_03.jpg" width="640" height="342" alt="배너3" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_01.jpg" width="640" height="342" alt="배너1" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_02.jpg" width="640" height="342" alt="배너2" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_03.jpg" width="640" height="342" alt="배너3" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_01.jpg" width="640" height="342" alt="배너1" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_02.jpg" width="640" height="342" alt="배너2" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_03.jpg" width="640" height="342" alt="배너3" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_01.jpg" width="640" height="342" alt="배너1" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_02.jpg" width="640" height="342" alt="배너2" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_03.jpg" width="640" height="342" alt="배너3" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_01.jpg" width="640" height="342" alt="배너1" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_02.jpg" width="640" height="342" alt="배너2" /></a></li>
+									<li class="swiper-slide"><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_03.jpg" width="640" height="342" alt="배너3" /></a></li>
+								</ul>
+							</div>
+							<div class="main_bn_option">
+								<div class="pg_num"><b>0</b>/<em>0</em></div>
+								<a href="#" class="bt_opa_lyr_new" onclick="OpacityLyrOpen('layer_main_bn');return false;" onkeypress="this.onclick;"><b class="ir">배너 전체 보기</b></a>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(document).ready(function() {
+								var myTop_bn = new Swiper('#main_bn',{
+									createPagination: false,
+									simulateTouch: true,
+									calculateHeight: true,
+									loop: true,
+									autoplay: 3000,
+									onSlideChangeEnd : function() {
+										loop_active_index();
+										myTop_bn.startAutoplay();
+									}
+								});
+								 var slide_num = $('#main_bn_wrap').find('.swiper-slide').length;
+								 $('#main_bn_wrap').find('.pg_num em').text(slide_num - 2);
+								 loop_active_index();
+								function loop_active_index() {
+									$('#main_bn_wrap').find('.pg_num b').text(myTop_bn.activeLoopIndex+1);
+								}
+								/* [v2] : 추가 */
+								$('#main_bn_wrap').find('.swiper-bn-left').on('click', function(e){
+									e.preventDefault();myTop_bn.swipePrev();
+								})
+								$('#main_bn_wrap').find('.swiper-bn-right').on('click', function(e){
+									e.preventDefault();myTop_bn.swipeNext();
+								});
+								/* //[v2] : 추가 */
+								$(window).resize(function(){	
+									myTop_bn.reInit();
+								});
+							});
+						</script>
+						<!--// TOP_BN -->
+					</div>
+					<!-- //메인 슬라이드 배너 -->
+
+					<!-- 설정 전 케이스 -->
+					<div class="qck_dest">
+						<a href="nc_Ship_addr.html" class="pre_set" onclick="fn_layer_open('addrManage');return false;" onkeypress="this.onclick;"><em class="flag">배송지설정</em><span>배송지를 설정해 주세요.</span></a>
+					</div>
+					<!-- 설정 후 가능 케이스-->
+					<div class="qck_dest">
+						<a href="nc_Ship_addr.html" class="fin_set" onclick="fn_layer_open('addrManage');return false;" onkeypress="this.onclick;"><em class="flag">반짝배송가능</em><span>서울 송파구 올림픽대로 269 큰 건물 1106동 21034호 큰 집</span></a>
+						<div class="view_qck_prd">
+							<a href="javascript:;"><img src="../images/mobile/main/bn_qck_dlv.gif" alt="오늘 주문 오늘 도착! 반짝배송 상품보기" /></a>
+						</div>
+					</div>
+					<!-- 빠른 배송 불가 케이스 -->
+					<div class="qck_dest">
+						<a href="nc_Ship_addr.html" class="disabled" onclick="fn_layer_open('addrManage');return false;" onkeypress="this.onclick;"><em class="flag">반짝배송 불가</em><span>전라남도 해남군 해남읍</span></a>
+					</div>
+
+
+
+
+					<!-- 추천지점 -->
+					<div class="area_lv1">
+						<div class="recom_store_wrap">
+							<div class="nc_tit">
+								<h3>추천 지점</h3>
+							</div>
+							<div class="recom_store swiper-container" id="recomStore">
+								<ul class="swiper-wrapper">
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_01.png" alt="">
+											<span>뉴코아 모란점 </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_02.png" alt="">
+											<span>뉴코아 모란점 </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_03.png" alt="">
+											<span>뉴코아 모란점 </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_01.png" alt="">
+											<span>뉴코아 모란점 </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_02.png" alt="">
+											<span>뉴코아 모란점 </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_03.png" alt="">
+											<span>뉴코아 모란점 </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_01.png" alt="">
+											<span>뉴코아 모란점 </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_02.png" alt="">
+											<span>뉴코아 모란점 </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_01.png" alt="">
+											<span>뉴코아 모란점 </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="javascript:;">
+											<img src="../images/mobile/temp/nc_store_02.png" alt="">
+											<span>뉴코아 모란점 킴스클럽</span>
+										</a>
+									</li>
+									<li class="swiper-slide more_li">
+										<a href="javascript:;" onclick="fn_layer_open('allStore');return false;" onkeypress="this.onclick" class="more" class="more">
+											<span>더보기</span>
+										</a>
+									</li>
+								</ul>
+								<script type="text/javascript">
+									var recomStore;
+									$(document).ready(function() {
+										recomStore = new Swiper('#recomStore',{
+											loop: false,
+											freeMode: true,
+											freeModeFluid: true,
+											slidesPerView: 'auto',
+											calculateHeight: true,
+											createPagination : false,
+											simulateTouch : true,
+											momentumRatio:0.3
+										});
+										$(window).resize(function(){
+											recomStore.reInit();
+										});
+									});
+								</script>
+							</div>
+						</div>
+					</div>
+					<!-- //추천지점 -->
+
+					<!-- 배너 -->
+					<div class="area_lv1">
+						<div class="main_evt_bn">
+							<a href="javascript:;"><img src="../images/mobile/temp/bn_kims1.jpg" alt="이벤트배너"></a>
+						</div>
+					</div>
+					<!-- //배너 -->
+				
+					<!-- 나의 단골매장 -->
+					<div class="area_lv1">
+						<div class="fav_wrap">
+							<div class="nc_tit">
+								<h3>나의 단골매장</h3>
+								<a href="javascript:;" onclick="fn_layer_open('favStore');return false;" onkeypress="this.onclick" class="more">매장찾기</a>
+							</div>
+							<div class="tab_fav swiper-container" id="tabFav">
+								<ul class="swiper-wrapper">
+									<li id="tabFav0" class="swiper-slide on"><a href="javascript:;" onclick="fnTab(3, 'tabFav', 0, 'favList',function(){tabSld(0);favSld0.reInit();});return false;">#[NC평촌점]럭셔리갤러리_엔와이커머스_BGO </a></li>
+									<li id="tabFav1" class="swiper-slide off"><a href="javascript:;" onclick="fnTab(3, 'tabFav', 1, 'favList',function(){tabSld(1);favSld1.reInit();});return false;">#일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼</a></li>
+									<li id="tabFav2" class="swiper-slide off"><a href="javascript:;" onclick="fnTab(3, 'tabFav', 2, 'favList',function(){tabSld(2);favSld2.reInit();});return false;">#NC 강서점 버버리</a></li>
+								</ul>
+							</div>
+							<script type="text/javascript">
+								function tabSld(sld){
+									tabFav.reInit();
+									setTimeout(function(){tabFav.swipeTo(sld)},300);
+								}
+								var tabFav;
+								$(document).ready(function() {
+									tabFav = new Swiper('#tabFav',{
+										loop: false,
+										freeMode: true,
+										freeModeFluid: true,
+										slidesPerView: 'auto',
+										calculateHeight: true,
+										createPagination : false,
+										simulateTouch : true,
+										momentumRatio:0.3
+									});
+									$(window).resize(function(){
+										tabFav.reInit();
+									});
+								});
+							</script>
+							<div class="fav_list" id="favList0">
+								<!-- LIST -->
+								<div class="goods_list swiper-container" id="favSld0">
+									<h3 class="ir">상품리스트</h3>
+									<ul class="glist swiper-wrapper">
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide more_li">
+											<a href="javascript:;" class="more">
+												<span>더보기</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<!-- //LIST -->
+								<script type="text/javascript">
+									var favSld0;
+									$(document).ready(function() {
+										favList0 = new Swiper('#favSld0',{
+											loop: false,
+											freeMode: true,
+											freeModeFluid: true,
+											slidesPerView: 'auto',
+											calculateHeight: true,
+											createPagination : false,
+											simulateTouch : true,
+											momentumRatio:0.3
+										});
+										$(window).resize(function(){
+											favList0.reInit();
+										});
+									});
+								</script>
+							</div>
+				
+							<div class="fav_list" id="favList1" style="display:none">
+								<!-- LIST -->
+								<div class="goods_list swiper-container" id="favSld1">
+									<h3 class="ir">상품리스트</h3>
+									<ul class="glist swiper-wrapper">
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!-- //LIST -->
+								<script type="text/javascript">
+									var favSld1;
+									$(document).ready(function() {
+										favSld1 = new Swiper('#favSld1',{
+											loop: false,
+											freeMode: true,
+											freeModeFluid: true,
+											slidesPerView: 'auto',
+											calculateHeight: true,
+											createPagination : false,
+											simulateTouch : true,
+											momentumRatio:0.3
+										});
+										$(window).resize(function(){
+											favSld1.reInit();
+										});
+									});
+								</script>
+							</div>
+				
+							<div class="fav_list" id="favList2" style="display:none">
+								<!-- LIST -->
+								<div class="goods_list swiper-container" id="favSld2">
+									<h3 class="ir">상품리스트</h3>
+									<ul class="glist swiper-wrapper">
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="g_wrap">
+												<a href="javascript:;" class="g_link">
+													<span class="g_img">
+														<span class="img">
+															<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+															<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+														</span>
+													</span>
+													<span class="g_brd">휘슬러</span>
+													<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+													<span class="g_land">
+														<span class="g_prc">
+															<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+															<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+														</span>
+													</span>
+												</a>
+												<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+												<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!-- //LIST -->
+								<script type="text/javascript">
+									var favList2;
+									$(document).ready(function() {
+										favSld2 = new Swiper('#favSld2',{
+											loop: false,
+											freeMode: true,
+											freeModeFluid: true,
+											slidesPerView: 'auto',
+											calculateHeight: true,
+											createPagination : false,
+											simulateTouch : true,
+											momentumRatio:0.3
+										});
+										$(window).resize(function(){
+											favSld2.reInit();
+										});
+									});
+								</script>
+							</div>
+						</div>
+					</div>
+					<!-- //나의 단골매장 -->
+				
+					<!-- 나의 단골매장 : 미등록 케이스 -->
+					<div class="area_lv1">
+						<div class="fav_wrap">
+							<div class="nc_tit">
+								<h3>나의 단골매장</h3>
+							</div>
+							<div class="no_fav">
+								<strong>등록된 당골매장이 없습니다.</strong>
+								<span>단골매장을 등록하면<br />해당 매장의 최신 상품을 확인할 수 있습니다.</span>
+								<button onclick="fn_layer_open('favStore');return false;" onkeypress="this.onclick"><em>매장찾기</em></button>
+							</div>
+						</div>
+					</div>
+					<!-- //나의 단골매장 : 미등록 케이스 -->
+				
+					<!-- 스토어픽 지점 -->
+					<div class="area_lv1">
+						<div class="str_pick_wrap">
+							<div class="nc_tit">
+								<h3>스토어픽 지점</h3>
+								<span class="sub_tit">매장에서 직접 확인하고 픽업해보세요.</span>
+							</div>
+							<div class="pick_store">
+								<strong class="selected_str">강남점</strong>
+								<button class="find" onclick="fixedSelectLayer('laySmartPick',this).layOn();" keypress="this.onclick">다른지점 찾기</button>
+							</div>
+						
+							<!-- CATEGORY SELECT -->
+							<div class="catg_sel plan_sel tab_c10">
+								<div class="s_catg">
+									<label for="s_catg" class="ir">카테고리 선택</label>
+									<select id="s_catg">
+										<option selected="selected">정확도순</option>
+										<option>정확도순</option>
+										<option>정확도순</option>
+										<option>정확도순</option>
+									</select>
+								</div>
+								<div class="s_type">
+									<ul>
+										<li class="t1 on"><button type="button" data-type="glist"><em class="ir">이미지형 보기</em></button></li>
+										<li class="t2"><button type="button" data-type="tlist"><em class="ir">리스트형  보기</em></button></li>
+										<li class="t3"><button type="button" data-type="blist"><em class="ir">큰이미지형 보기</em></button></li>
+									</ul>
+								</div>
+							</div>	
+							<!-- //CATEGORY SELECT -->
+						
+							<!-- LIST -->
+							<div class="goods_list">
+								<h3 class="ir">상품리스트</h3>
+								<ul class="glist">
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="view_all">
+								<a href="javascript:;">전체보기</a>
+							</div>
+							<!-- //LIST -->
+						</div>
+					</div>
+					<script>
+						$(function(){
+							$(".str_pick_wrap .s_type li").find('button').each(function(){
+								$(this).on("click", function(){
+									if($(this).parent("li").hasClass("on")){
+										if($(this).parent("li").hasClass("active")){
+											$(".str_pick_wrap .s_type li").removeClass("on");
+											$(".str_pick_wrap .s_type li").hide();
+											$(this).parent("li").show();
+											$(this).parent("li").addClass("on");
+											$(this).parent("li").removeClass("active");
+										}else{
+											$(".str_pick_wrap .s_type li").show();
+											$(this).parent("li").addClass("active");
+										}
+									}else{
+										$(".str_pick_wrap .s_type li").removeClass("on");
+										$(".str_pick_wrap .s_type li").hide();
+										$(this).parent("li").show();
+										$(this).parent("li").addClass("on");
+										$(this).parent("li").removeClass("active");
+										
+										$(".str_pick_wrap .goods_list ul").attr("class","");
+										$(".str_pick_wrap .goods_list ul").addClass($(this).attr("data-type"));
+										
+									}
+								})
+							});
+						})
+					</script>
+					<!-- //스토어픽 지점 -->
+				
+					<!-- 카테고리별 베스트 상품 -->
+					<div class="area_lv1">
+						<div class="cate_best_wrap">
+							<div class="nc_tit">
+								<h3>카테고리별 베스트 상품</h3>
+							</div>
+						
+							<!-- 카테고리 탭 -->
+							<div id="cont_dummy">
+								<div class="ctg_per swiper-container" id="ctg_per">
+									<ul class="swiper-wrapper">
+
+										<li class="swiper-slide on" data-d-img="../images/mobile/temp/nc_cate_02_off.png" data-a-img="../images/mobile/temp/nc_cate_02_on.png">
+											<a href="javascript:;">
+												<img src="../images/mobile/temp/nc_cate_02_on.png" alt="잡화/뷰티">  <!-- D : 개발 전 - on 이미지 처리 방식 논의 필요 -->
+												<span>언더웨어</span>
+											</a>
+										</li>
+										<li class="swiper-slide" data-d-img="../images/mobile/temp/nc_cate_03_off.png" data-a-img="../images/mobile/temp/nc_cate_03_on.png">
+											<a href="javascript:;">
+												<img src="../images/mobile/temp/nc_cate_03_off.png" alt="가구/인테리어">
+												<span>남성</span>
+											</a>
+										</li>
+										<li class="swiper-slide" data-d-img="../images/mobile/temp/nc_cate_04_off.png" data-a-img="../images/mobile/temp/nc_cate_04_on.png">
+											<a href="javascript:;">
+												<img src="../images/mobile/temp/nc_cate_04_off.png" alt="출산/유아동">
+												<span>캐주얼</span>
+											</a>
+										</li>
+										<li class="swiper-slide" data-d-img="../images/mobile/temp/nc_cate_05_off.png" data-a-img="../images/mobile/temp/nc_cate_05_on.png">
+											<a href="javascript:;">
+												<img src="../images/mobile/temp/nc_cate_05_off.png" alt="가전/디지털">
+												<span>패션잡화</span>
+											</a>
+										</li>
+										<li class="swiper-slide" data-d-img="../images/mobile/temp/nc_cate_06_off.png" data-a-img="../images/mobile/temp/nc_cate_06_on.png">
+											<a href="javascript:;">
+												<img src="../images/mobile/temp/nc_cate_06_off.png" alt="주방/생활수납">
+												<span>유아동</span>
+											</a>
+										</li>
+										<li class="swiper-slide" data-d-img="../images/mobile/temp/nc_cate_07_off.png" data-a-img="../images/mobile/temp/nc_cate_07_on.png">
+											<a href="javascript:;">
+												<img src="../images/mobile/temp/nc_cate_07_off.png" alt="팻용품/팬시">
+												<span>여성의류</span>
+											</a>
+										</li>
+										<li class="swiper-slide" data-d-img="../images/mobile/temp/nc_cate_08_off.png" data-a-img="../images/mobile/temp/nc_cate_08_on.png">
+											<a href="javascript:;">
+												<img src="../images/mobile/temp/nc_cate_08_off.png" alt="레저/스포츠">
+												<span>스포츠</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //카테고리 탭 -->
+				
+							<!-- LIST -->
+							<div class="goods_list">
+								<h4 data-list-ord="1">언더웨어</h4> <!-- h4 추가 및 ul.glist의 data-list-ord 이전 -->
+								<ul class="glist">
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+								</ul>
+								<h4 data-list-ord="2">남성</h4>
+								<ul class="glist">
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+								</ul>
+								<h4 data-list-ord="3">캐주얼</h4>
+								<ul class="glist">
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+								</ul>
+								<h4 data-list-ord="4">패션잡화</h4>
+								<ul class="glist">
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+								</ul>
+								<h4 data-list-ord="5">유아동</h4>
+								<ul class="glist">
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+								</ul>
+								<h4 data-list-ord="6">여성의류</h4>
+								<ul class="glist">
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+								</ul>
+								<h4 data-list-ord="7">스포츠</h4>
+								<ul class="glist">
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_nor"> 
+													<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s45"><em class="ir">별점평균:90</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+													<span class="bnf5">HIT</span>
+													<span class="bnf">SMS</span>
+													<span class="bnf6">SALE</span>
+													<span class="bnf">N+1</span>
+													<span class="bnf">세트할인</span>
+													<span class="bnf">즉시할인</span>
+													<span class="bnf">사은품</span>
+													<span class="bnf7">매장수령</span>
+													<span class="bnf">재입고</span>
+													<span class="bnf8">착불</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="javascript:;" class="g_link">
+												<span class="g_img">
+													<span class="img">
+														<span class="ico_new drct"><em class="ir">오늘직송</em></span>
+														<img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" />
+													</span>
+												</span>
+												<span class="g_brd">휘슬러</span>
+												<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>1,236,000</b>원</span>
+													</span>
+												</span>
+												<span class="g_rv">
+													<span class="scr s40"><em class="ir">별점평균:80</em></span>
+													<span class="cnt"><em class="ir">댓글수:</em>(112)</span>
+												</span>
+												<span class="g_bnf">
+													<span class="bnf1">마감임박</span>
+													<span class="bnf2">무료배송</span>
+													<span class="bnf3">최저가</span>
+													<span class="bnf4">BEST</span>
+												</span>
+											</a>
+											<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+											<a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- //LIST -->
+						</div>
+					</div>
+					<!-- 카테고리별 베스트 상품 -->
+
+					<script type="text/javascript">
+						bestTab = $('.ctg_per > ul > li');
+						ncBest = 0;
+						var FuncOff = function(){
+							bestTab.each(function(){
+								$(this).removeClass("on");
+								$(this).find('img').attr('src',$(this).data('dImg'));
+							});
+						}
+						$(document).ready(function() {
+							ncBestInit = function(){
+								ncBest = new Swiper('.ctg_per',{
+									loop: false,
+									freeMode: true,
+									freeModeFluid: true,
+									slidesPerView: 'auto',
+									calculateHeight: true,
+									createPagination : false,
+									simulateTouch : true,
+									momentumRatio:0.3
+								});
+							}
+							ncBestInit();
+							$(window).resize(function(){
+								ncBest.reInit();
+							})
+						});
+						bestTabOn = function(){
+							bestTab = $('.ctg_per > ul > li');
+							var bnHeight = function(){
+								if($('.header_bn').length){return $('.header_bn').outerHeight()}
+								else{return 0}
+							}
+							$('.cate_best_wrap h4').each(function(){
+								$(this)[0].offTop = $(this)[0].offsetTop - $('#ctg_per').outerHeight();
+								$(this)[0].offBottom = $(this)[0].offTop  + $(this).outerHeight() + $(this).find('+.glist').outerHeight();
+							});
+							bestTab.unbind('click');
+							bestTab.on('click',function(e){
+								e.preventDefault();
+								var mdId = $(this).index();
+								var that = $(this);
+								var thisHeight = function(){
+									if(that.parent().parent().hasClass('fixtop')){
+										return that.outerHeight();
+									}
+									else{
+										return 0;
+									}
+								}();
+								var getTop = $('.cate_best_wrap h4[data-list-ord='+(mdId+1)+']').offset().top - $('.ctg_per').outerHeight() - $('.main_top').outerHeight() + 3 + thisHeight;
+								$("html,body").animate({scrollTop :getTop},300)
+								ncBestInit();
+							});
+						}
+
+
+						$(window).scrollEnd(function(){
+							var nowP = parseInt($(this).scrollTop())+6;
+							$('.cate_best_wrap h4').each(function(){
+								if(nowP > $(this)[0].offTop && nowP < $(this)[0].offBottom){
+									bestTab.removeClass('on');
+									FuncOff();
+									$current = bestTab.eq($(this).data('listOrd')-1);
+									$current.addClass("on").find('img').attr('src',$current.data('aImg'));
+									ncBest.swipeTo($(this).data('listOrd')-1);
+								}
+								if(nowP < $('.cate_best_wrap h4')[0].offTop){
+									bestTab.removeClass('on');
+									FuncOff();
+									$current = bestTab.eq(0);
+									$current.addClass("on").find('img').attr('src',$current.data('aImg'));
+									ncBest.swipeTo(0);
+								}
+							});
+						},30);
+
+						
+						// $(window).ready(function(){
+						// 	setTimeout(function(){
+						// 		commonUI.fixtop($('.ctg_per'));
+						// 		bestTabOn();
+						// 	},500);
+						// });
+						delaySet=setTimeout(function(){
+							commonUI.fixtop($('.ctg_per'), bestTabOn);
+							bestTabOn();
+						 },300);
+						$('.main_bn_wrap li:last-child img, .recom_store li:nth-last-of-type(2) img, .fav_wrap li:nth-last-of-type(2) img, .str_pick_wrap li:last-child img').load(function(){
+							clearTimeout(delaySet);
+							delaySet=setTimeout(function(){
+								commonUI.fixtop($('.ctg_per'), bestTabOn);
+								bestTabOn();
+							 },300);
+						});
+					</script>
+				</div>
+			</div>
+
+
+			<!-- 카테고리 리스트 -->
+			<div class="box_omni">
+				<div class="area_lv1">
+					<!-- EVENT ALL LAYER -->
+					<div id="layer_main_bn" class="layer_opacity">
+						<h3 class="pop_tit">이벤트 전체</h3>
+						<div class="pop_con">
+							<div class="main_bn_lyr">
+								<ul>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_01.jpg" width="640" height="342" alt="배너1" /></a></li>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_02.jpg" width="640" height="342" alt="배너2" /></a></li>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/nc_bbd_03.jpg" width="640" height="342" alt="배너3" /></a></li>
+								</ul>
+							</div>
+						</div>
+						<a href="#" class="btn_close" onclick="OpacityLyrCls('layer_main_bn');return false;" onkeypress="this.onclick;"><span class="ir">팝업 닫기</span></a>
+					</div>
+					<!-- //EVENT ALL LAYER -->
+				</div>
+			</div>
+			
+		</div>
+		<!-- //SWIPER 5 : 오프라인쇼핑 -->
+
+		

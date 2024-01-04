@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<title>kidikidi</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_kids.css" type="text/css"> <!-- kids add css -->
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<style>
+
+</style>
+</head>
+<body class="renewal renewal2_brand kids">
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+<!-- <div class="header_bn" id="header_bn" style="background-color: rgb(34, 34, 34);">
+	<a href="javascript:;"><img src="../images/mobile/temp/bn_head_100.jpg" alt="이벤트배너" style="height: 59px;"></a>
+	<a href="javascript:;" class="cls"><img src="../images/mobile/common/btn_bn_close.png" alt="닫기"></a>
+</div> --> 
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" ><b class="ir">카테고리 전체메뉴 열기</b></button></div><!-- [v2] : onClick="left_lnb_open()" 제거 -->
+		<h1><a href="http://www.google.com"><b class="ir">E-LAND MALL 메인</b></a></h1>
+		<div class="hnb sch_bcd"> <!-- 앱 에서만 sch_bcd 사용 -->
+			<ul>
+				<!-- NGCPO-5005 (모바일) 추천 검색어 있을 경우, 랜딩 페이지 변경 요청 -->
+				<li class="sch">
+					<button type="button" class="txt_btn"><b>검색어 입력검색어 입력검색어 입력검색어 입력</b></button> <!-- 1st ~ 2st : 예비용 class 추가 -->
+					<button type="button" class="sch_btn"><em class="ir">검색결과로 이동</em></button>
+				</li>
+				<li class="cart"><a href="javascript:;"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="javascript:;"><b class="ir">마이페이지 이동</b></a></li>
+				<li class="bcd"><a href="javascript:;"><b class="ir">바코드로 이동</b></a></li>
+			</ul>
+		</div>
+	</div>
+</header>	
+<!-- //HEADER -->
+<!-- LEFT MENU -->
+<div id="lnb" class="lnb_wrap">
+	<div class="lnb">
+		<div class="lnb_hd">
+			<div class="hd">
+				<a class="home" href="Md_Main.html"><b class="ir">메인 바로가기</b></a>
+				<!-- <a class="login" href="#">로그인</a> --> 
+				<a class="logout" href="#">로그아웃</a>
+			</div>
+		</div>
+		<!-- LEFT CATG. -->
+		<div class="lnb_mn ctg_btn"><a href="javascript:;" class="on"><b class="ir">카테고리 열기</b></a></div>
+		<div class="lnb_cont">
+			<div class="lnb_log"><b>홍길동 님</b>
+				<em class="m0000005">Family</em>
+				<!--
+				<em class="m0000004">Bronze</em>
+				<em class="m0000003">Silver</em>
+				<em class="m0000002">Gold</em>
+				<em class="m0000001">Platinum</em>
+				-->
+			</div>
+			<div class="lnb_tnb">
+				<ul>
+					<li class="myp"><a href="javascript:;"><b>마이페이지</b></a></li>
+					<li class="drv"><a href="javascript:;"><b>주문배송조회</b></a></li>
+					<li class="wish"><a href="javascript:;"><b>나의 찜목록</b></a></li>
+					<!-- <li class="cs"><a href="javascript:;"><b>고객센터</b></a></li> -->
+					<li class="cpn"><a href="javascript:;"><b>쿠폰 12장</b></a></li> 
+				</ul>
+			</div>
+			<div  id="lnb_ctg" class="lnb_ctg scroller">
+				<div  class="lnb_scroll">
+					<!-- MENU -->
+					<div  class="menu" id="menu" tabindex="0">
+						<dl>
+							<dt>카테고리</dt>
+							<dd>  
+								<ul>  
+									<li><a href="javascript:;" class="tit">가구<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">가구 이동</em></a>
+										<ul>
+											<li><a href="javascript:;">거실가구</a></li>
+											<li><a href="javascript:;">주방소품</a></li>
+											<li><a href="javascript:;">주방가구 </a></li>
+											<li><a href="javascript:;">보관용기</a></li>
+											<li><a href="javascript:;">책상/책장/의자</a></li>
+											<li><a href="javascript:;">주방수납/잡화</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:;" class="tit">주방용품<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">주방용품 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">주방식기<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">주방식기 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">데코<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">데코 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">욕실/생활<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">욕실/생활 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">침구/수예<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">침구/수예 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">커튼/매트<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">커튼/매트 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">수납/정리<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">수납/정리 이동</em></a></li>	
+									<li><a href="javascript:;" class="tit">키즈용품<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">키즈용품 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">SALE<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">SALE 이동
+									</em></a></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+					<!-- //MENU -->
+					<div class="lnb_gd">
+						<dl>
+							<dt>최근 본 상품</dt>
+							<dd>
+								<ul>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/img_154_01.jpg" width="154" height="154" alt="주방용품" /></a></li>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/img_154_02.jpg" width="154" height="154" alt="소파쿠션" /></a></li>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/img_154_03.jpg" width="154" height="154" alt="폴햄패딩" /></a></li>
+								</ul>
+							</dd>
+							<dd class="more"><a href="javascript:;" title="최근 본 상품 더보기">MORE</a></dd>
+						</dl>
+					</div>
+					<div class="lnb_cn">
+						<ul>
+							<li><a href="javascript:;" class="wi">WITH STAR</a></li>
+							<li><a href="javascript:;" class="bs">BEST</a></li>
+							<li><a href="javascript:;" class="sa">SALE</a></li>
+							<li><a href="javascript:;" class="fo">Follow</a></li>
+							<li><a href="javascript:;" class="sp">기획전</a></li>
+							<li><a href="javascript:;" class="ev">이벤트</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //LEFT CATG. -->
+		<!-- LEFT MALL -->
+		<div class="lnb_mn mall_btn"><a href="javascript:;"><b class="ir">몰 열기</b></a></div>
+		<div class="lnb_cont">
+			<dl class="lnb_mall">
+				<dt>몰이동</dt>
+				<dd>
+					<div id="lnb_mlst" class="lnb_mlst scroller">
+						<ul>
+							<li class="selected"> <!-- 몰 선택시 .selected -->
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_00.jpg" alt="이랜드 통합몰">
+									<em>이랜드 통합몰</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_12.jpg" alt="모던하우스">
+									<em>모던하우스</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_04.jpg" alt="뉴발란스">
+									<em>뉴발란스</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_13.jpg" alt="뉴발란스 키즈">
+									<em>뉴발란스 키즈</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_14.jpg" alt="라템">
+									<em>라템</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_07.jpg" alt="로엠">
+									<em>로엠</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_08.jpg" alt="로이드">
+									<em>로이드</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_15.jpg" alt="루켄">
+									<em>루켄</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_16.jpg" alt="몰리">
+									<em>몰리</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_01.jpg" alt="미쏘">
+									<em>미쏘</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_17.jpg" alt="버터">
+									<em>버터</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_18.jpg" alt="슈펜">
+									<em>슈펜</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_11.jpg" alt="스파오">
+									<em>스파오</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_09.jpg" alt="에블린">
+									<em>에블린</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_19.jpg" alt="ENC">
+									<em>ENC</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_10.jpg" alt="킨더리그">
+									<em>킨더리그</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_02.jpg" alt="OST">
+									<em>OST</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_20.jpg" alt="클로비스">
+									<em>클로비스</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_05.jpg" alt="클루">
+									<em>클루</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_21.jpg" alt="태창">
+									<em>태창</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_22.jpg" alt="투미">
+									<em>투미</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_23.jpg" alt="티니위니">
+									<em>티니위니</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_03.jpg" alt="폴더">
+									<em>폴더</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_24.jpg" alt="헌트">
+									<em>헌트</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_06.jpg" alt="후아유">
+									<em>후아유</em>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //LEFT MALL -->
+		<div class="lnb_cls"><button type="button" id="left_cls" class="left_cls"><b class="ir">카테고리 전체메뉴 닫기</b></button></div>
+	</div>
+</div>
+<div class="lnb_dim"></div>
+<!-- //LEFT MENU -->       
+<!-- CONTENT -->
+<div class="contents" id="contents"> 
+
+	<div class="main_top" id="main_top">
+		<div class="gnb_wrap">
+			<div class="eland"><a href="javascript:;">E LAND</a></div>
+			<div class="gnb" id="gnb">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><span>홈</span></li>
+					<li class="swiper-slide"><span>가치공구</span></li>
+					<li class="swiper-slide on"><span>팝업샵</span></li>
+					<li class="swiper-slide"><span>알짜쇼핑</span></li>
+					<li class="swiper-slide"><span>스타일뷰</span></li>
+					<li class="swiper-slide"><span>키디옷장</span></li>
+					<li class="swiper-slide"><span>라이프</span></li>
+					<li class="swiper-slide"><span>키디키디 이벤트</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide">
+				<!-- SWIPER 2 -->
+				<div class="slide_cont" data-index="2">
+
+					<!-- 팝업샵 -->
+					<div class="area_lv1">
+						<div class="groupDeal_wrap">
+							<div class="sub_visual">
+								<div class="kids_container_l">
+									<div class="bn_visual">
+										<img src="../images/mobile/temp/kids_dealPop_ban.jpg" alt="">
+									</div>
+									
+									<!-- 20200306 띠배너 슬라이드 수정// -->
+									<div class="bn_event swiper-container">
+										<ul class="swiper-wrapper">
+											<li class="swiper-slide">
+												<div class="kids_slide_cont">
+													<a href="#">
+														<div class="img_box"><img src="../images/mobile/temp/kids_dealPop_ban02.jpg" alt="" /></div>
+													</a>
+												</div>
+											</li>
+											<li class="swiper-slide">
+												<div class="kids_slide_cont">
+													<a href="#">
+														<div class="img_box"><img src="../images/mobile/temp/kids_dealPop_ban02.jpg" alt="" /></div>
+													</a>
+												</div>
+											</li>
+											<li class="swiper-slide">
+												<div class="kids_slide_cont">
+													<a href="#">
+														<div class="img_box"><img src="../images/mobile/temp/kids_dealPop_ban02.jpg" alt="" /></div>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<style>
+										.bn_event .swiper-wrapper.disabled {transform: translate3d(0px, 0, 0) !important;}
+									</style>
+									<script type="text/javascript">
+										$(document).ready(function() {
+											$('.bn_event .swiper-slide').show();
+											var sldPopDealBn = new Swiper('.bn_event',{
+												slidesPerView: 1,
+												simulateTouch: false,
+												onlyExternal: true,
+												noSwiping: true,
+												calculateHeight: true,
+												loop: true,
+												autoplay: 3000,
+												speed: 500,
+												onSlideChangeEnd : function() {sldPopDealBn.startAutoplay();}
+											});
+											$(window).resize(function(){	
+												sldPopDealBn.reInit();
+											});
+											if($('.bn_event .swiper-slide').length == 3) {
+												$('.bn_event .swiper-wrapper').addClass("disabled");
+											}
+										});
+									</script>
+									<!-- //20200306 띠배너 슬라이드 수정 -->
+
+								</div>
+							</div>
+							<!-- 20200309 배너 추가 // -->
+							<div class="popDeal pt_vw">
+								<div class="bn_popDealMain kids_slide swiper-container">
+									<ul class="swiper-wrapper">
+										<li class="swiper-slide">
+											<div class="kids_slide_cont">
+												<a href="#">
+													<div class="img_box"><img src="../images/mobile/temp/kids_main_slide.jpg" alt="" /></div>
+												</a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="kids_slide_cont">
+												<a href="#">
+													<div class="img_box"><img src="../images/mobile/temp/kids_main_slide.jpg" alt="" /></div>
+												</a>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="kids_slide_cont">
+												<a href="#">
+													<div class="img_box"><img src="../images/mobile/temp/kids_main_slide.jpg" alt="" /></div>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<script type="text/javascript">
+									$(document).ready(function() {
+										var bn_popDealMain  = new Swiper('.bn_popDealMain',{
+											slidesPerView: 1.2,
+											simulateTouch: true,
+											calculateHeight: true,
+											loop: true,
+											centeredSlides: true,
+											loopAdditionalSlides : 1,
+											autoplay: 3000,
+											speed: 500,
+											onTouchStart: function(){
+												unableSwiping()
+											},
+											onTouchEnd: function(){
+												enableSwiping()
+											},
+											onSlideChangeEnd : function() {bn_popDealMain.startAutoplay();}
+										});
+										$(window).resize(function(){	
+											bn_popDealMain.reInit();
+										});
+										function unableSwiping(){
+												if(typeof mainCate !== "undefined"){
+												mainCate.params.onlyExternal=true;
+												}
+											}
+											function enableSwiping(){
+												if(typeof mainCate !== "undefined"){
+												mainCate.params.onlyExternal=false;
+												}
+											}
+									});
+								</script>
+							</div>
+							<!-- // 20200309 배너 추가 -->
+							<div class="groupDeal ptb_vw02">
+								<div class="kids_container">
+									<h3 class="kids_main_tit color_black">공동구매 LIST</h3>
+									<div class="groupDeal_filter">
+										<span class="kids_select">
+											<label for="kidsWearRange" style="display: none;">정렬방법 선택</label>
+											<select id="kidsWearRange" title="정렬">
+												<option>최신순</option>
+												<option>베스트</option>
+												<option>마감 임박순</option>
+											</select>
+										</span>
+									</div>
+									<!-- 공동구매 List -->
+									<div class="groupDeal_list">
+										<!-- 공동구매 Item -->
+										<div class="deal_item">
+											<a href="#">
+												<div class="deal_img">
+													<img src="../images/mobile/temp/kids_deal_ban_sample01.jpg" alt="">
+													<div class="kids_countdown">
+														<p class="count_tit">판매 잔여시간</p>
+														<div class="count_wrap">
+															<ul class="countdown" id="countdown">
+																<li class="item"><i class="hour">00</i></li>
+																<li class="blank">:</li>
+																<li class="item"><i class="minute">00</i></li>
+																<li class="blank">:</li>
+																<li class="item"><i class="second">00</i></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="deal_txt">
+													<div class="kid_pd_info">
+														<p class="kid_tit"><b>[마르마르]</b>인기 BEST 캐릭터 가디건!</p>
+														<p class="kid_price02">22,000<span>원</span></p>
+													</div>
+													<div class="kid_pd_acc">
+														<p class="kid_sm_tit">누적판매액</p>
+														<p class="kid_price03">1,559,000<span>원</span></p>
+													</div>
+												</div>
+											</a>
+										</div>
+										<!-- //공동구매 Item -->
+										<!-- 공동구매 Item -->
+										<div class="deal_item">
+											<a href="#">
+												<div class="deal_img">
+													<img src="../images/mobile/temp/kids_deal_ban_sample04.jpg" alt="">
+													<div class="kids_countdown">
+														<p class="count_tit">판매 잔여시간</p>
+														<div class="count_wrap">
+															<ul class="countdown">
+																<li class="item"><i class="hour">100</i></li>
+																<li class="blank">:</li>
+																<li class="item"><i class="minute">40</i></li>
+																<li class="blank">:</li>
+																<li class="item"><i class="second">15</i></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="deal_txt">
+													<div class="kid_pd_info">
+														<p class="kid_tit"><b>[마르마르]</b>인기 BEST 캐릭터 가디건! 인기 BEST 캐릭터 가디건!</p>
+														<p class="kid_price02">999,999,999,999,999<span>원</span></p>
+													</div>
+													<div class="kid_pd_acc">
+														<p class="kid_sm_tit">누적판매액</p>
+														<p class="kid_price03">999,999,999,999,999<span>원</span></p>
+													</div>
+												</div>
+											</a>
+										</div>
+										<!-- //공동구매 Item -->
+										<!-- 공동구매 Item -->
+										<div class="deal_item">
+											<a href="#">
+												<div class="deal_img">
+													<img src="../images/mobile/temp/kids_deal_ban_sample01.jpg" alt="">
+													<div class="kids_countdown">
+														<p class="count_tit">판매 잔여시간</p>
+														<div class="count_wrap">
+															<ul class="countdown">
+																<li class="item"><i class="hour">100</i></li>
+																<li class="blank">:</li>
+																<li class="item"><i class="minute">40</i></li>
+																<li class="blank">:</li>
+																<li class="item"><i class="second">15</i></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="deal_txt">
+													<div class="kid_pd_info">
+														<p class="kid_tit"><b>[마르마르]</b>인기 BEST 캐릭터 가디건!</p>
+														<p class="kid_price02">22,000<span>원</span></p>
+													</div>
+													<div class="kid_pd_acc">
+														<p class="kid_sm_tit">누적판매액</p>
+														<p class="kid_price03">1,559,000<span>원</span></p>
+													</div>
+												</div>
+											</a>
+										</div>
+										<!-- //공동구매 Item -->
+										<!-- 공동구매 Item -->
+										<div class="deal_item">
+											<a href="#">
+												<div class="deal_img">
+													<img src="../images/mobile/temp/kids_deal_ban_sample04.jpg" alt="">
+													<div class="kids_countdown">
+														<p class="count_tit">판매 잔여시간</p>
+														<div class="count_wrap">
+															<ul class="countdown">
+																<li class="item"><i class="hour">100</i></li>
+																<li class="blank">:</li>
+																<li class="item"><i class="minute">40</i></li>
+																<li class="blank">:</li>
+																<li class="item"><i class="second">15</i></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="deal_txt">
+													<div class="kid_pd_info">
+														<p class="kid_tit"><b>[마르마르]</b>인기 BEST 캐릭터 가디건!</p>
+														<p class="kid_price02">22,000<span>원</span></p>
+													</div>
+													<div class="kid_pd_acc">
+														<p class="kid_sm_tit">누적판매액</p>
+														<p class="kid_price03">1,559,000<span>원</span></p>
+													</div>
+												</div>
+											</a>
+										</div>
+										<!-- //공동구매 Item -->
+									</div>
+									<!-- //공동구매 List -->
+									<div class="pt_vw"><a href="#" class="kids_btn_wide">더보기</a></div> <!-- 20200306 더보기 추가 -->
+								</div>
+							</div>
+							<div class="popDeal ptb_vw02">
+								<div class="kids_container">
+									<h3 class="kids_main_tit color_black">전체 상품 LIST</h3>
+									
+									<div class="kids_pd_list">
+										<ul>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_03.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_04.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_03.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_04.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_03.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_04.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_03.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_04.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_03.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_04.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_03.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_pd_x450_04.jpg" alt="">
+													<div class="kid_pd_info">
+														<p class="kid_brand">밀리밤</p>
+														<p class="kid_name">배색 원피스</p>
+														<p class="kid_price">49,000<span>원</span></p>
+													</div>
+												</a>
+											</li>
+										</ul>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 카운트 다운 JS -->
+					<script src="../common/js/jQuery.yuukCountdown.js"></script>
+					<script>
+						$(function(){
+							$('#countdown').yuukCountDown({
+								starttime: '2020/02/26 00:00:00',
+								endtime: '2020/03/04 00:00:00'
+							});
+						});
+					</script>
+					<!-- //카운트 다운 JS -->
+					<!-- //팝업샵 -->
+                    
+				</div>
+				<!-- //SWIPER 2 -->			
+            </li>
+		</ul>
+    </div>
+</div>
+<!-- //CONTENT -->
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<!-- <div class="ft_bn" style="background-color:#5aa9ca">
+		<a href="javascript:;"><img src="../images/mobile/temp/spao_foot_100.jpg" width="640" height="100" alt="LIVE YOUR LIFE - 콜라보 X SEOLHYUN" /></a>
+	</div> -->
+	<div class="ft_menu">
+		<ul>
+			<li><a href="javascript:;">로그아웃</a></li>
+			<li><a href="javascript:;">마이페이지</a></li>
+			<li><a href="javascript:;">장바구니</a></li>
+			<li><a href="javascript:;">고객센터</a></li>
+		</ul>
+	</div>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드리테일</dt>
+		<dd>서울시 서초구 잠원동 70-2 대표이사 : 이광일/김연배</dd>
+		<dd>사업자등록번호 : 114-81-01855  <a href="javascript:;">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 서초 제 09998호</dd>
+		<dd>고객센터 : <a href="tel:1899-9500">1899-9500</a></dd>
+		<!-- 160927 바로방문 추가 -->
+		<dd>
+			<div class="ft_direct">
+				<!-- web에서는 off만 사용 <a href="javascript:;"><i class="on">APP방문ON</i></a> -->
+				<a href="javascript:;"><i class="off">APP방문OFF</i></a>
+			</div>
+		</dd>
+		<!-- //160927 바로방문 추가 -->
+	</dl>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드월드</dt>
+		<dd>서울특별시 금천구 가산디지털1로 159  대표이사 : 김광래/최종양/김연배</dd>
+		<dd>사업자등록번호 : 113-85-19030  <a href="javascript:;">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 금천구청 제 2005-01053호</dd>
+	</dl>	
+	<div class="ft_sns">
+		<ul>
+			<li><a href="javascript:;" class="fb"><em class="ir">페이스북</em></a></li>
+			<li><a href="javascript:;" class="bl"><em class="ir">블로그</em></a></li>
+			<li><a href="javascript:;" class="is"><em class="ir">인스타그램</em></a></li>
+		</ul>
+	</div>
+	<div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="ft_app">
+		<ul>
+			<!-- <li><a href="javascript:;">PC 버전보기</a></li> -->
+			<li><a href="javascript:;">SPAO APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+<script>
+    var GNB_SCROLL;
+    var LOADING_HTML = '<div class="loading"><span>로딩중</span></div>';
+    
+    $(document).ready(function() {
+        GNB_SCROLL = new Swiper('#gnb',{
+            createPagination: false,
+            freeMode: true,
+            freeModeFluid: true,
+            slidesPerView: 'auto',
+            roundLengths: true,
+            onSlideClick: function(){
+                $(".gnb li").removeClass("on");
+                $('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);			
+                GNB_SCROLL.swipeTo(GNB_SCROLL.clickedSlideIndex);
+                call_slide(GNB_SCROLL.clickedSlideIndex);
+            }
+        });
+
+        $(window).resize(function(){	
+            GNB_SCROLL.reInit();
+        });
+    });
+
+	$(window).resize(function(){
+		headerControl();
+	});
+</script>
+</body>
+</html>

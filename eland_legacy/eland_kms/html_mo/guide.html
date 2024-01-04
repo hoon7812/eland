@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<style>
+    .box {padding:30px 10px 50px;}
+    .con{display:none; padding:10px 10px 20px;}
+    h1{font-size:20px; font-weight:bold;}
+    h2{font-size:15px; border-bottom:1px solid #ccc; padding:20px 0 10px; color:#333}
+    .con h3{font-size:12px; padding-bottom:10px; font-weight:bold; color:#333}
+	header{position:relative; min-width:768px; width:100%; background:#132347;}
+	header h1{padding:0 14px; color:#fff; font-size:16px; font-weight:bold; line-height:50px;}
+	.contents {background:transparent; padding-top:50px;}
+	.contents:after {display:block; clear:both; content:'';}
+	.g_menu {position:fixed; top:0; left:0; width:20%; height:100%; border-right:1px solid #ddd; box-sizing:border-box; -webkit-box-sizing:border-box; background:#f3f3f3;}
+	.g_menu ul {margin:50px 0;}
+	.g_menu li {height:40px; line-height:40px; text-indent:5px; font-size:13px; color:#333; border-bottom:1px solid #ddd; cursor:pointer;}
+	.g_menu li.on {font-weight:bold; background:#f5f5f5;}
+	.g_section {margin-left:20%; width:80%; background:#fff;}
+	.g_title {margin:20px 0 10px; padding-top:20px; font-size:18px; font-weight:bold; color:#000; border-top:1px dotted #e7e7e7;}
+	.g_title:first-child {padding-top:0; border-top:none;}
+	.source {display:inline-block; margin:5px 0; padding:3px 5px; font-size:12px; color:#fff; background:#132347; cursor:pointer;}
+	.v_source {margin-bottom:20px;}
+	pre {padding:4px; border:1px dashed #ddd; background:#f5f5f5; font-size:12px; -moz-user-select:text; -webkit-user-select:text; -ms-user-select:text;}
+</style>
+<script>
+	$(function(){
+		$(".g_menu li").bind("click", function(){
+			gId = $(this).index();
+			$(".g_menu li").removeClass("on");
+			$(".g_menu li").eq(gId).addClass("on");
+			$(".contents .con").hide();
+			$(".contents .con").eq(gId).show();
+		});
+		$(".source").bind("click", function(){
+			$(this).next().toggle();
+		});
+	});
+</script>
+</head>
+<body>	
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- HEADER PUBLISHING INCLUDE -->
+<!-- //HEADER PUBLISHING INCLUDE -->
+
+<!-- HEADER -->
+<header id="header" class="header"><h1>E랜드 모바일 코딩 가이드</h1></header>
+<!-- //HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="g_menu">
+		<ul>
+			<li class="on">TITLE</li>
+			<li>CATEGORY</li>
+			<li>FORM</li>
+			<li>BUTTON</li>
+			<li>TABLE</li>
+			<li>TAB MENU</li>
+			<li>FLAG</li>
+			<li>POPUP</li>
+			<li>ETC</li>
+		</ul>
+	</div>
+	
+	<div class="g_section">
+
+		<!-- TITLE -->
+		<div class="con" style="display:block">
+			<div class="g_title">타이틀 1</div>
+			<div class="g_html">
+				<div class="cts_tit" style="position:relative;top:0">
+					<h2>
+						<b>장바구니</b>
+						<button type="button" class="back"><em class="ir">이전페이지</em></button>
+						<button type="button" class="wish"><em class="ir">검색결과 저장하기</em></button>
+					</h2>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+<pre>
+&lt;div class="cts_tit"&gt;
+	&lt;h2&gt;
+		&lt;b&gt;장바구니&lt;/b&gt;
+		&lt;button type="button" class="back"&gt;&lt;em class="ir"&gt;이전페이지&lt;/em&gt;&lt;/button&gt;
+		&lt;button type="button" class="wish"&gt;&lt;em class="ir"&gt;검색결과 저장하기&lt;/em&gt;&lt;/button&gt;
+	&lt;/h2&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_html">
+				<div class="cts_tit" style="position:relative;top:0">
+					<h2>
+						<b>출석체크 이벤트</b>
+						<button type="button" class="back"><em class="ir">이전페이지</em></button>
+						<a href="#contents" class="sns"><em class="ir">공유 하기</em></a>
+					</h2>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+<pre>
+&lt;div class="cts_tit"&gt;
+	&lt;h2&gt;
+		&lt;b&gt;출석체크 이벤트&lt;/b&gt;
+		&lt;button type="button" class="back"&gt;&lt;em class="ir"&gt;이전페이지&lt;/em&gt;&lt;/button&gt;
+		&lt;a href="#contents" class="sns"&gt;&lt;em class="ir"&gt;공유 하기&lt;/em&gt;&lt;/a&gt;
+	&lt;/h2&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_html">
+				<div class="cts_tit" style="position:relative;top:0">
+					<h2>
+						<b>장바구니</b>
+						<button type="button" class="back"><em class="ir">이전페이지</em></button>
+					</h2>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+<pre>
+&lt;div class="cts_tit"&gt;
+	&lt;h2&gt;
+		&lt;b&gt;장바구니&lt;/b&gt;
+		&lt;button type="button" class="back"&gt;&lt;em class="ir"&gt;이전페이지&lt;/em&gt;&lt;/button&gt;
+	&lt;/h2&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_html">
+				<div class="cts_tit" style="position:relative;top:0">
+					<h2>
+						<b>‘반바지’</b> 검색결과 <em>(9,999)</em>
+						<button type="button" class="back"><em class="ir">이전페이지</em></button>		
+						<button type="button" class="wish"><em class="ir">검색결과 저장하기</em></button>	
+					</h2>		
+				</div>
+			</div><!-- .g_html -->
+
+			<div class="source">소스보기</div>
+			<div class="v_source">
+<pre>
+&lt;div class="cts_tit"&gt;
+	&lt;h2&gt;
+		&lt;b&gt;‘반바지’&lt;/b&gt; 검색결과 &lt;em&gt;(9,999)&lt;/em&gt;
+		&lt;button type="button" class="back"&gt;&lt;em class="ir"&gt;이전페이지&lt;/em&gt;&lt;/button&gt;		
+		&lt;button type="button" class="wish"&gt;&lt;em class="ir"&gt;검색결과 저장하기&lt;/em&gt;&lt;/button&gt;	
+	&lt;/h2&gt;		
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">타이틀 2</div>
+			<div class="g_html">
+				<div class="cts_tit" style="position:relative;top:0">
+					<h2>
+						<div class="ctg_sel">
+							<label for="ctg_sel" class="ir">카테고리 선택</label>
+							<select id="ctg_sel">
+								<option>옵션</option>
+							</select>
+						</div>
+						<button type="button" class="back"><em class="ir">이전페이지</em></button>		
+						<a href="#contents" class="sns"><em class="ir">공유 하기</em></a>	
+					</h2>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+<pre>
+&lt;div class="cts_tit"&gt;
+	&lt;h2&gt;
+		&lt;div class="ctg_sel"&gt;
+			&lt;label for="ctg_sel" class="ir"&gt;카테고리 선택&lt;/label&gt;
+			&lt;select id="ctg_sel"&gt;
+				&lt;option&gt;옵션&lt;/option&gt;
+			&lt;/select&gt;
+		&lt;/div&gt;
+		&lt;button type="button" class="back"&gt;&lt;em class="ir"&gt;이전페이지&lt;/em&gt;&lt;/button&gt;		
+		&lt;a href="#contents" class="sns"&gt;&lt;em class="ir"&gt;공유 하기&lt;/em&gt;&lt;/a&gt;	
+	&lt;/h2&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+		</div><!--// .con -->
+
+		<!-- CATEGORY -->
+		<div class="con">
+			<div class="g_title">카테고리</div>
+			<div class="g_html">
+				<div class="catg_nav">
+					<ul>
+						<li><a href="#">Luxury Gallery</a></li>
+						<li>전체</li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+<pre>
+&lt;div class="catg_nav"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Luxury Gallery&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;전체&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">카테고리 셀렉트박스 1</div>
+			<div class="g_html">
+				<div class="search_wrap">
+					<!-- CATEGORY SELECT tab_cxx - 10:검정색 , 20:핑크, 30:하늘, 40:브라운색 -->
+					<div class="catg_sel tab_c10">
+						<div class="s_catg">
+							<label for="s_catg" class="ir">카테고리 선택</label>
+							<select>
+								<option selected="selected">전체</option>
+								<option>옵션</option>
+							</select>
+						</div>
+					</div>
+					<div class="catg_sel tab_c20">
+						<div class="s_catg">
+							<label for="s_catg" class="ir">카테고리 선택</label>
+							<select>
+								<option selected="selected">전체</option>
+								<option>옵션</option>
+							</select>
+						</div>
+					</div>
+					<div class="catg_sel tab_c30">
+						<div class="s_catg">
+							<label for="s_catg" class="ir">카테고리 선택</label>
+							<select>
+								<option selected="selected">전체</option>
+								<option>옵션</option>
+							</select>
+						</div>
+					</div>
+					<div class="catg_sel tab_c40">
+						<div class="s_catg">
+							<label for="s_catg" class="ir">카테고리 선택</label>
+							<select>
+								<option selected="selected">전체</option>
+								<option>옵션</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+<pre>
+&lt;!-- CATEGORY SELECT tab_cxx - 10:검정색 , 20:핑크, 30:하늘, 40:브라운색 --&gt;
+&lt;div class="catg_sel tab_c10"&gt;
+	&lt;div class="s_catg"&gt;
+		&lt;label for="s_catg" class="ir"&gt;카테고리 선택&lt;/label&gt;
+		&lt;select&gt;
+			&lt;option selected="selected"&gt;전체&lt;/option&gt;
+			&lt;option&gt;옵션&lt;/option&gt;
+		&lt;/select&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">카테고리 셀렉트박스 2</div>
+			<div class="g_html">
+				<div class="search_wrap">
+					<div class="catg_sel plan_sel">
+						<div class="s_catg">
+							<label for="s_catg" class="ir">카테고리 선택</label>
+							<select>
+								<option selected="selected">전체</option>
+								<option>옵션</option>
+							</select>
+						</div>
+						<div class="s_type">
+							<ul>
+								<li class="t1 on"><button type="button" data-type="glist"><em class="ir">이미지형 보기</em></button></li>
+								<li class="t2"><button type="button" data-type="tlist"><em class="ir">리스트형  보기</em></button></li>
+								<li class="t3"><button type="button" data-type="blist"><em class="ir">큰이미지형 보기</em></button></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //CATEGORY SELECT -->
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+<pre>
+&lt;div class="search_wrap"&gt;
+	&lt;div class="catg_sel plan_sel"&gt;
+		&lt;div class="s_catg"&gt;
+			&lt;label for="s_catg" class="ir"&gt;카테고리 선택&lt;/label&gt;
+			&lt;select&gt;
+				&lt;option selected="selected"&gt;전체&lt;/option&gt;
+				&lt;option&gt;옵션&lt;/option&gt;
+			&lt;/select&gt;
+		&lt;/div&gt;
+		&lt;div class="s_type"&gt;
+			&lt;ul&gt;
+				&lt;li class="t1 on"&gt;&lt;button type="button" data-type="glist"&gt;&lt;em class="ir"&gt;이미지형 보기&lt;/em&gt;&lt;/button&gt;&lt;/li&gt;
+				&lt;li class="t2"&gt;&lt;button type="button" data-type="tlist"&gt;&lt;em class="ir"&gt;리스트형  보기&lt;/em&gt;&lt;/button&gt;&lt;/li&gt;
+				&lt;li class="t3"&gt;&lt;button type="button" data-type="blist"&gt;&lt;em class="ir"&gt;큰이미지형 보기&lt;/em&gt;&lt;/button&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- //CATEGORY SELECT --&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">카테고리 셀렉트박스 3</div>
+			<div class="g_html">
+				<div class="search_wrap">
+					<div class="sch_sort">
+						<div class="s_sort">
+							<label for="s_sort" class="ir">상품정렬 순서 선택</label>
+							<select id="s_sort">
+								<option selected="selected">인기상품순</option>
+								<option>신상품순</option>
+								<option>낮은가격순</option>
+								<option>높은가격순</option>
+								<option>상품평순</option>
+							</select>
+						</div>
+						<div class="s_filter">
+							<a href="#sch_detail" class="open_layer">상세검색<em class="ir">열기</em></a>
+						</div>
+						<div class="s_type">
+							<ul>
+								<li class="t1 on"><button type="button" data-type="glist"><em class="ir">이미지형 보기</em></button></li>
+								<li class="t2"><button type="button" data-type="tlist"><em class="ir">리스트형  보기</em></button></li>
+								<li class="t3"><button type="button" data-type="blist"><em class="ir">큰이미지형 보기</em></button></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+<pre>
+&lt;div class="search_wrap"&gt;
+	&lt;div class="sch_sort"&gt;
+		&lt;div class="s_sort"&gt;
+			&lt;label for="s_sort" class="ir"&gt;상품정렬 순서 선택&lt;/label&gt;
+			&lt;select id="s_sort"&gt;
+				&lt;option selected="selected"&gt;인기상품순&lt;/option&gt;
+				&lt;option&gt;신상품순&lt;/option&gt;
+				&lt;option&gt;낮은가격순&lt;/option&gt;
+				&lt;option&gt;높은가격순&lt;/option&gt;
+				&lt;option&gt;상품평순&lt;/option&gt;
+			&lt;/select&gt;
+		&lt;/div&gt;
+		&lt;div class="s_filter"&gt;
+			&lt;a href="#sch_detail" class="open_layer"&gt;상세검색&lt;em class="ir"&gt;열기&lt;/em&gt;&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;div class="s_type"&gt;
+			&lt;ul&gt;
+				&lt;li class="t1 on"&gt;&lt;button type="button" data-type="glist"&gt;&lt;em class="ir"&gt;이미지형 보기&lt;/em&gt;&lt;/button&gt;&lt;/li&gt;
+				&lt;li class="t2"&gt;&lt;button type="button" data-type="tlist"&gt;&lt;em class="ir"&gt;리스트형  보기&lt;/em&gt;&lt;/button&gt;&lt;/li&gt;
+				&lt;li class="t3"&gt;&lt;button type="button" data-type="blist"&gt;&lt;em class="ir"&gt;큰이미지형 보기&lt;/em&gt;&lt;/button&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+		</div><!--// .con -->
+
+		<!-- FORM -->
+		<div class="con">
+			
+			<div class="g_title">체크박스</div>
+			<div class="g_html">
+				<input type="checkbox" id="chk01">
+				<label for="chk01">체크박스</label>
+				<ul class="rdo_refund">
+					<li>
+						<input type="checkbox" name="chk1" id="chk1_1" checked="">
+						<label for="chk1_1">체크1</label>
+					</li>
+					<li>
+						<input type="checkbox" name="chk1" id="chk1_2">
+						<label for="chk1_2">체크2</label>
+					</li>
+				</ul>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;input type="checkbox" id="chk01"&gt;
+&lt;label for="chk01"&gt;체크박스&lt;/label&gt;
+
+&lt;ul class="rdo_refund"&gt;
+	&lt;li&gt;
+		&lt;input type="checkbox" name="chk1" id="chk1_1" checked=""&gt;
+		&lt;label for="chk1_1"&gt;체크1&lt;/label&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;input type="checkbox" name="chk1" id="chk1_2"&gt;
+		&lt;label for="chk1_2"&gt;체크2&lt;/label&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</pre>
+			</div>
+
+			<div class="g_title">라디오</div>
+			<div class="g_html">
+				<input type="radio" id="rdo01">
+				<label for="rdo01">라디오버튼</label>
+				<ul class="rdo_refund">
+					<li>
+						<input type="radio" name="rdo2" id="rdo2_1" checked="">
+						<label for="rdo2_1">라디오1</label>
+					</li>
+					<li>
+						<input type="radio" name="rdo2" id="rdo2_2">
+						<label for="rdo2_2">라디오2</label>
+					</li>
+				</ul>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;input type="radio" id="rdo01"&gt;
+&lt;label for="rdo01"&gt;라디오버튼&lt;/label&gt;
+
+&lt;ul class="rdo_refund"&gt;
+	&lt;li&gt;
+		&lt;input type="radio" name="rdo2" id="rdo2_1" checked=""&gt;
+		&lt;label for="rdo2_1"&gt;라디오1&lt;/label&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;input type="radio" name="rdo2" id="rdo2_2"&gt;
+		&lt;label for="rdo2_2"&gt;라디오2&lt;/label&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</pre>
+			</div>
+
+			<div class="g_title">인풋</div>
+			<div class="g_html">
+				<input type="text" id="inp_txt"> <label for="inp_txt">text</label><br>
+				<input type="password" id="inp_pwd"> <label for="inp_pwd">password</label><br>
+				<input type="number" id="inp_num"> <label for="inp_num">number</label><br>
+				<input type="tel" id="inp_tel"> <label for="inp_tel">tel</label><br>
+				<input type="email" id="inp_mail"> <label for="inp_mail">email</label><br>
+				<input type="date" id="inp_date"> <label for="inp_date">date</label><br>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;input type="text"&gt;
+&lt;input type="password"&gt;
+&lt;input type="number"&gt;
+&lt;input type="tel"&gt;
+&lt;input type="email"&gt;
+&lt;input type="date"&gt;</pre>
+			</div>
+			
+			<div class="g_title">셀렉트박스</div>
+			<div class="g_html">
+				<select class="w100">
+					<option>옵션</option>
+				</select>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;select class="w100"&gt;
+	&lt;option&gt;옵션&lt;/option&gt;
+&lt;/select&gt;</pre>
+			</div>
+						
+		</div><!--// .con -->
+
+		<!-- BUTTON -->
+		<div class="con">
+			
+			<div class="g_title">버튼 타입 1 (inline, min-width:70px, height:32px, border 1px, )</div>
+			<div class="g_html">
+				<a href="#" class="btn_line01 c01">button</a>
+				<a href="#" class="btn_line01 c02">button</a>
+				<a href="#" class="btn_line01 c03">button</a>
+				<a href="#" class="btn_line01 c04">button</a>
+				<a href="#" class="btn_line01 c05">button</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;a href="#" class="btn_line01 c01"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_line01 c02"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_line01 c03"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_line01 c04"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_line01 c05"&gt;button&lt;/a&gt;</pre>
+			</div>
+
+			<div class="g_title">버튼 타입 2 (inline, min-width:70px, height:32px, border 2px, )</div>
+			<div class="g_html">
+				<a href="#" class="btn_line02 c01">button</a>
+				<a href="#" class="btn_line02 c02">button</a>
+				<a href="#" class="btn_line02 c03">button</a>
+				<a href="#" class="btn_line02 c04">button</a>
+				<a href="#" class="btn_line02 c05">button</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;a href="#" class="btn_line02 c01"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_line02 c02"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_line02 c03"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_line02 c04"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_line02 c05"&gt;button&lt;/a&gt;</pre>
+			</div>
+
+			<div class="g_title">버튼 타입 3 (block, height:32px, border 1px, )</div>
+			<div class="g_html">
+				<a href="#" class="btn_brd01 c01">button</a>
+				<a href="#" class="btn_brd01 c02">button</a>
+				<a href="#" class="btn_brd01 c03">button</a>
+				<a href="#" class="btn_brd01 c04">button</a>
+				<a href="#" class="btn_brd01 c05">button</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;a href="#" class="btn_brd01 c01"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd01 c02"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd01 c03"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd01 c04"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd01 c05"&gt;button&lt;/a&gt;</pre>
+			</div>
+
+			<div class="g_title">버튼 타입 4 (block, height:32px, bgcolor )</div>
+			<div class="g_html">
+				<a href="#" class="btn_bg c01">button</a>
+				<a href="#" class="btn_bg c02">button</a>
+				<a href="#" class="btn_bg c03">button</a>
+				<a href="#" class="btn_bg c04">button</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;a href="#" class="btn_bg c01"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_bg c02"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_bg c03"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_bg c04"&gt;button&lt;/a&gt;</pre>
+			</div>
+
+			<div class="g_title">버튼 타입 5 (block, height:35px, border 1px, )</div>
+			<div class="g_html">
+				<a href="#" class="btn_brd02 c01">button</a>
+				<a href="#" class="btn_brd02 c02">button</a>
+				<a href="#" class="btn_brd02 c03">button</a>
+				<a href="#" class="btn_brd02 c04">button</a>
+				<a href="#" class="btn_brd02 c05">button</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;a href="#" class="btn_brd02 c01"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd02 c02"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd02 c03"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd02 c04"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd02 c05"&gt;button&lt;/a&gt;</pre>
+			</div>
+
+			<div class="g_title">버튼 타입 6 (block, height:40px, border 1px )</div>
+			<div class="g_html">
+				<a href="#" class="btn_brd03 c01">button</a>
+				<a href="#" class="btn_brd03 c02">button</a>
+				<a href="#" class="btn_brd03 c03">button</a>
+				<a href="#" class="btn_brd03 c04">button</a>
+				<a href="#" class="btn_brd03 c05">button</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;a href="#" class="btn_brd03 c01"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd03 c02"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd03 c03"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd03 c04"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_brd03 c05"&gt;button&lt;/a&gt;</pre>
+			</div>
+
+			<div class="g_title">버튼 타입 7 (block, height:40px, bgcolor )</div>
+			<div class="g_html">
+				<a href="#" class="btn_bg06 c01">button</a>
+				<a href="#" class="btn_bg06 c02">button</a>
+				<a href="#" class="btn_bg06 c03">button</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;a href="#" class="btn_bg06 c01"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_bg06 c02"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_bg06 c03"&gt;button&lt;/a&gt;</pre>
+			</div>
+
+			<div class="g_title">버튼 타입 8 (block, height:50px, bgcolor )</div>
+			<div class="g_html">
+				<a href="#" class="btn_bg03 c01">button</a>
+				<a href="#" class="btn_bg03 c02">button</a>
+				<a href="#" class="btn_bg03 c03">button</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;a href="#" class="btn_bg03 c01"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_bg03 c02"&gt;button&lt;/a&gt;
+&lt;a href="#" class="btn_bg03 c03"&gt;button&lt;/a&gt;</pre>
+			</div>
+
+			<div class="g_title">버튼 리스트</div>
+			<div class="g_html">
+				<ul class="btn_list02">
+					<li><a href="#" class="btn_bg c01">button</a></li>
+					<li><a href="#" class="btn_bg c02">button</a></li>
+				</ul><br>
+				<ul class="btn_list03">
+					<li><a href="#" class="btn_bg02 c01">button</a></li>
+					<li><a href="#" class="btn_bg02 c02">button</a></li>
+					<li><a href="#" class="btn_bg02 c03">button</a></li>
+				</ul><br>
+				<ul class="btn_list04">
+					<li><a href="#" class="btn_brd01 c01">button</a></li>
+					<li><a href="#" class="btn_bg c01">button</a></li>
+					<li><a href="#" class="btn_brd01 c03">button</a></li>
+					<li><a href="#" class="btn_bg c02">button</a></li>
+				</ul>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;ul class="btn_list02"&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_bg c01"&gt;button&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_bg c02"&gt;button&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="btn_list03"&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_bg02 c01"&gt;button&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_bg02 c02"&gt;button&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_bg02 c03"&gt;button&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="btn_list04"&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_brd01 c01"&gt;button&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_bg c01"&gt;button&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_brd01 c03"&gt;button&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_bg c02"&gt;button&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+			</div>
+
+			<div class="g_title">더보기 버튼</div>
+			<div class="g_html">
+				<div class="goods_list_more">
+					<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+				</div><br>
+				<div class="goods_more">
+					<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+				</div><br>
+				<div class="main_list_more">
+					<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+				</div><br>
+				<div class="btn_mymore">
+					<a href="#"><span class="ico">더보기 (20/27)</span></a>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="goods_list_more"&gt;
+	&lt;button type="button" title="리스트 더보기"&gt;&lt;em&gt;더보기 (20/27)&lt;/em&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="goods_more"&gt;
+	&lt;button type="button" title="리스트 더보기"&gt;&lt;em&gt;더보기 (20/27)&lt;/em&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="main_list_more"&gt;
+	&lt;button type="button" title="리스트 더보기"&gt;&lt;em&gt;더보기 (20/27)&lt;/em&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="btn_mymore"&gt;
+	&lt;a href="#"&gt;&lt;span class="ico"&gt;더보기 (20/27)&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">기타 버튼 1</div>
+			<div class="g_html">
+				<div class="main_list_more">
+					<button type="button" title="목록 가기">목록으로</button>
+				</div>
+				<div class="btn_ly">
+					<a href="#" class="btn_bg06 c01"><strong>확인</strong></a>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="main_list_more"&gt;
+	&lt;button type="button" title="목록 가기"&gt;목록으로&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="btn_ly"&gt;
+	&lt;a href="#" class="btn_bg06 c01"&gt;&lt;strong&gt;확인&lt;/strong&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">기타 버튼 2</div>
+			<div class="g_html">
+				<ul class="btn_list02 refund">
+					<li><a href="#" class="btn_brd03 c01">목록으로</a></li>
+					<li><a href="#" class="btn_bg06 c01"><strong>신청</strong></a></li>
+				</ul>
+				<ul class="btn_agree">
+					<li><a href="#" class="btn_brd03 c01">취소</a></li>
+					<li><a href="#" class="btn_bg06 c01"><strong>다음</strong></a></li>
+				</ul>
+				<ul class="btn_mymix">
+					<li><a href="#" class="gray">이전으로</a></li>
+					<li><a href="#" class="dark">Mix&amp;Match 매장 가기</a></li>
+				</ul>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;ul class="btn_list02 refund"&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_brd03 c01"&gt;목록으로&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_bg06 c01"&gt;&lt;strong&gt;신청&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="btn_agree"&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_brd03 c01"&gt;취소&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#" class="btn_bg06 c01"&gt;&lt;strong&gt;다음&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="btn_mymix"&gt;
+	&lt;li&gt;&lt;a href="#" class="gray"&gt;이전으로&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#" class="dark"&gt;Mix&amp;Match 매장 가기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+			</div>
+
+			<div class="g_title">기타 버튼 3</div>
+			<div class="g_html">
+				<div class="mlike_opt">
+					<ul>
+						<li><a href="#" class="btn_line01 c02">전체선택</a></li>
+						<li><a href="#" class="btn_line01 c01">선택삭제</a></li>
+					</ul>
+					<div class="btn_r"><a href="#" class="btn_line01 c02">품절상품 모두 삭제</a></div>
+				</div>
+			</div>
+			<div class="g_html">
+				<div class="mlike_opt">
+					<ul>
+						<li><a href="#" class="btn_line01 c02">전체선택</a></li>
+						<li><a href="#" class="btn_line01 c01">선택삭제</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="mlike_opt"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#" class="btn_line01 c02"&gt;전체선택&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" class="btn_line01 c01"&gt;선택삭제&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class="btn_r"&gt;&lt;a href="#" class="btn_line01 c02"&gt;품절상품 모두 삭제&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="g_html"&gt;
+	&lt;div class="mlike_opt"&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href="#" class="btn_line01 c02"&gt;전체선택&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#" class="btn_line01 c01"&gt;선택삭제&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+
+		</div><!--// .con -->
+
+		<!-- TABLE -->
+		<div class="con">
+			
+			<div class="g_title">테이블 1</div>
+			<div class="g_html">
+				<table class="tbl_address">
+					<colgroup>
+						<col style="width:30%;">
+						<col style="">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>주소</th>
+							<th>우편번호</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>111</td>
+							<td>111</td>
+						</tr>
+						<tr>
+							<td>111</td>
+							<td>111</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;table class="tbl_address"&gt;
+	&lt;colgroup&gt;
+		&lt;col style="width:30%;"&gt;
+		&lt;col style=""&gt;
+	&lt;/colgroup&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;주소&lt;/th&gt;
+			&lt;th&gt;우편번호&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;111&lt;/td&gt;
+			&lt;td&gt;111&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;111&lt;/td&gt;
+			&lt;td&gt;111&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</pre>
+			</div>
+
+			<div class="g_title">테이블 2</div>
+			<div class="g_html">
+				<table class="tbl_wel">
+					<colgroup>
+						<col style="width:18%;">
+						<col style="width:22%;">
+						<col style="width:30%;">
+						<col style="width:30%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>직급</th>
+							<th>직급<span>(연단위)</span></th>
+							<th>직급<span>(연단위)</span></th>
+							<th>직급</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>임원</td>
+							<td>500,000</td>
+							<td>1,400,000</td>
+							<td>1,900,000</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;table class="tbl_wel"&gt;
+	&lt;colgroup&gt;
+		&lt;col style="width:18%;"&gt;
+		&lt;col style="width:22%;"&gt;
+		&lt;col style="width:30%;"&gt;
+		&lt;col style="width:30%;"&gt;
+	&lt;/colgroup&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;직급&lt;/th&gt;
+			&lt;th&gt;직급&lt;span&gt;(연단위)&lt;/span&gt;&lt;/th&gt;
+			&lt;th&gt;직급&lt;span&gt;(연단위)&lt;/span&gt;&lt;/th&gt;
+			&lt;th&gt;직급&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;임원&lt;/td&gt;
+			&lt;td&gt;500,000&lt;/td&gt;
+			&lt;td&gt;1,400,000&lt;/td&gt;
+			&lt;td&gt;1,900,000&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&nbsp;&lt;/td&gt;
+			&lt;td&gt;&nbsp;&lt;/td&gt;
+			&lt;td&gt;&nbsp;&lt;/td&gt;
+			&lt;td&gt;&nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</pre>
+			</div>
+
+			<div class="g_title">테이블 3</div>
+			<div class="g_html">
+				<div class="gd_size">
+					<div class="g_tbl">
+						<table>
+							<caption>제공하는 표</caption>
+							<colgroup>
+								<col style="width:32%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+								<col style="width:17%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="th">표준사이즈</th>
+									<th scope="col">110</th>
+									<th scope="col">115</th>
+									<th scope="col"></th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><b>브랜드사이즈</b></th>
+									<td>110</td>
+									<td>115</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="gd_size"&gt;
+	&lt;div class="g_tbl"&gt;
+		&lt;table&gt;
+			&lt;caption&gt;상품 실측 사이즈 | 표준사이즈, 브랜드사이즈, 허리둘레(CM), 밑위길이(CM), 엉덩이둘레(CM) 제공하는 표&lt;/caption&gt;
+			&lt;colgroup&gt;
+				&lt;col style="width:32%"&gt;
+				&lt;col style="width:17%"&gt;
+				&lt;col style="width:17%"&gt;
+				&lt;col style="width:17%"&gt;
+				&lt;col style="width:17%"&gt;
+			&lt;/colgroup&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th scope="col" class="th"&gt;표준사이즈&lt;/th&gt;
+					&lt;th scope="col"&gt;110&lt;/th&gt;
+					&lt;th scope="col"&gt;115&lt;/th&gt;
+					&lt;th scope="col"&gt;&lt;/th&gt;
+					&lt;th scope="col"&gt;&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;th scope="row"&gt;&lt;b&gt;브랜드사이즈&lt;/b&gt;&lt;/th&gt;
+					&lt;td&gt;110&lt;/td&gt;
+					&lt;td&gt;115&lt;/td&gt;
+					&lt;td&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">테이블 4</div>
+			<div class="g_html">
+				<div class="gd_drv">
+					<h4 class="ir">배송정보</h4>
+					<div class="g_tbl">
+						<table>
+							<caption>제공하는 표</caption>
+							<colgroup>
+								<col style="width:85px">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">공급업체</th>
+									<td>모던하우스</td>
+								</tr>
+								<tr>
+									<th scope="row">배송비</th>
+									<td>
+										2,500원 (30,000원 이상 무료)<br>
+										제주도 및 도서산간 추가비용 발생.<br> 
+										상세설명 참고<br> 
+										도서/산간 배송불가 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="gd_drv"&gt;
+	&lt;h4 class="ir"&gt;배송정보&lt;/h4&gt;
+	&lt;div class="g_tbl"&gt;
+		&lt;table&gt;
+			&lt;caption&gt;배송정보 | 공급업체, 배송비, 배송정보를 제공하는 표&lt;/caption&gt;
+			&lt;colgroup&gt;
+				&lt;col style="width:85px"&gt;
+				&lt;col&gt;
+			&lt;/colgroup&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;th scope="row"&gt;공급업체&lt;/th&gt;
+					&lt;td&gt;모던하우스&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;th scope="row"&gt;배송비&lt;/th&gt;
+					&lt;td&gt;
+						2,500원 (30,000원 이상 무료)&lt;br&gt;
+						제주도 및 도서산간 추가비용 발생.&lt;br&gt; 
+						상세설명 참고&lt;br&gt; 
+						도서/산간 배송불가 
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+		</div><!--// .con -->
+
+		<!-- TAB MENU -->
+		<div class="con">
+			
+			<div class="g_title">탭메뉴 1</div>
+			<div class="g_html">
+				<div class="ps_tabs">
+					<ul>
+						<li class="on"><a href="#">체험 상품</a></li>
+						<li class="off"><a href="#">기대평 보기</a></li>
+					</ul>
+				</div>
+				<div class="write_tab">
+					<ul>
+						<li class="on"><a href="#">설문작성</a></li>
+						<li class="off"><a href="#">추천상품</a></li>
+					</ul>
+				</div>
+				<ul class="tab_exchange">
+					<li><a href="#" class="on">반품 신청</a></li>
+					<li><a href="#">교환 신청</a></li>
+				</ul>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="ps_tabs"&gt;
+	&lt;ul&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;체험 상품&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="off"&gt;&lt;a href="#"&gt;기대평 보기&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="write_tab"&gt;
+	&lt;ul&gt;
+		&lt;li class="on"&gt;&lt;a href="#"&gt;설문작성&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="off"&gt;&lt;a href="#"&gt;추천상품&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;ul class="tab_exchange"&gt;
+	&lt;li&gt;&lt;a href="#" class="on"&gt;반품 신청&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;교환 신청&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+			</div>
+			
+			<div class="g_title">탭메뉴 2</div>
+			<div class="g_html">
+				<div class="pre_return">
+					<ul class="tab">
+						<li><a href="#" class="on">신용카드</a></li>
+						<li><a href="#">실시간 계좌이체</a></li>
+						<li><a href="#">예치금</a></li>
+					</ul>
+				</div>
+				<div class="notice_menu">
+					<ul class="tab">
+						<li><a href="#" class="on"><span>전체</span></a></li>
+						<li><a href="#"><span>서비스공지</span></a></li>
+						<li><a href="#"><span>이벤트공지</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="pre_return"&gt;
+	&lt;ul class="tab"&gt;
+		&lt;li&gt;&lt;a href="#" class="on"&gt;신용카드&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;실시간 계좌이체&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;예치금&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="notice_menu"&gt;
+	&lt;ul class="tab"&gt;
+		&lt;li&gt;&lt;a href="#" class="on"&gt;&lt;span&gt;전체&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;서비스공지&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;이벤트공지&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+			</div>
+			
+			<div class="g_title">탭메뉴 3</div>
+			<div class="g_html">
+				<div class="tabmenu">
+					<ul class="tab_tit">
+						<li class="on"><span>사용 가능쿠폰<em>(20장)</em></span></li>
+						<li><span>전체 발급쿠폰<em>(99장)</em></span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="tabmenu"&gt;
+	&lt;ul class="tab_tit"&gt;
+		&lt;li class="on"&gt;&lt;span&gt;사용 가능쿠폰&lt;em&gt;(20장)&lt;/em&gt;&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;span&gt;전체 발급쿠폰&lt;em&gt;(99장)&lt;/em&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+			</div>
+			
+			<div class="g_title">탭메뉴 4</div>
+			<div class="g_html">
+				<div class="faq_menu">
+					<ul class="tab">
+						<li><a href="#" class="on"><span>회원정보</span></a></li> <!-- 선택시 .on 클래스 추가 -->
+						<li><a href="#"><span>상품상담</span></a></li>
+						<li><a href="#"><span>주문/결제/배송</span></a></li>
+						<li><a href="#"><span>취소/교환/반품</span></a></li>
+						<li><a href="#"><span>포인트/쿠폰/예치금</span></a></li>
+						<li><a href="#"><span>증명서류발급</span></a></li>
+						<li><a href="#"><span>모바일</span></a></li>
+						<li><a href="#"><span>서비스/기타</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="faq_menu"&gt;
+	&lt;ul class="tab"&gt;
+		&lt;li&gt;&lt;a href="#" class="on"&gt;&lt;span&gt;회원정보&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; &lt;!-- 선택시 .on 클래스 추가 --&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;상품상담&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;주문/결제/배송&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;취소/교환/반품&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;포인트/쿠폰/예치금&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;증명서류발급&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;모바일&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;서비스/기타&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+			</div>
+			
+			<div class="g_title">탭메뉴 5</div>
+			<div class="g_html">
+				<div class="catg_tabs">
+					<ul>
+						<li><a href="#" class="on">MD 추천</a></li>
+						<li><a href="#" class="off">BEST</a></li>
+						<li><a href="#" class="off">무료배송</a></li>
+					</ul>
+				</div>
+				<div class="best_tabs">
+					<ul>
+						<li class="b1"><a href="#" class="on">카테고리 BEST</a></li>
+						<li class="b2"><a href="#" class="off">상품평 BEST</a></li>
+						<li class="b3"><a href="#" class="off">인기검색어 BEST</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="catg_tabs"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#" class="on"&gt;MD 추천&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" class="off"&gt;BEST&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" class="off"&gt;무료배송&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="best_tabs"&gt;
+	&lt;ul&gt;
+		&lt;li class="b1"&gt;&lt;a href="#" class="on"&gt;카테고리 BEST&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="b2"&gt;&lt;a href="#" class="off"&gt;상품평 BEST&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="b3"&gt;&lt;a href="#" class="off"&gt;인기검색어 BEST&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">탭메뉴 6</div>
+			<div class="g_html">
+				<div class="ord_payment">
+					<ul class="tab_pay">
+						<li class="pay01"><a href="#" class="selected"><span>신용카드</span></a></li>
+						<li class="pay02"><a href="#"><span>실시간<br>계좌이체</span></a></li>
+						<li class="pay03"><a href="#"><span>무통장입금</span></a></li>
+						<li class="pay04"><a href="#"><span>카카오페이</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="ord_payment"&gt;
+	&lt;ul class="tab_pay"&gt;
+		&lt;li class="pay01"&gt;&lt;a href="#" class="selected"&gt;&lt;span&gt;신용카드&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="pay02"&gt;&lt;a href="#"&gt;&lt;span&gt;실시간&lt;br&gt;계좌이체&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="pay03"&gt;&lt;a href="#"&gt;&lt;span&gt;무통장입금&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="pay04"&gt;&lt;a href="#"&gt;&lt;span&gt;카카오페이&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_html">
+				<div class="ord_payment">
+					<ul class="tab_pay">
+						<li class="pay01"><a href="#" class="disable"><span>신용카드</span></a></li>
+						<li class="pay02"><a href="#"><span>실시간<br>계좌이체</span></a></li>
+						<li class="pay03"><a href="#" class="disable"><span>무통장입금</span></a></li>
+						<li class="pay04"><a href="#" class="disable"><span>카카오페이</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+				<pre>
+&lt;!-- 결제수단 비활성화 --&gt;
+&lt;div class="ord_payment"&gt;
+	&lt;ul class="tab_pay"&gt;
+		&lt;li class="pay01"&gt;&lt;a href="#" class="disable"&gt;&lt;span&gt;신용카드&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="pay02"&gt;&lt;a href="#"&gt;&lt;span&gt;실시간&lt;br&gt;계좌이체&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="pay03"&gt;&lt;a href="#" class="disable"&gt;&lt;span&gt;무통장입금&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="pay04"&gt;&lt;a href="#" class="disable"&gt;&lt;span&gt;카카오페이&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- //결제수단 비활성화 --&gt;</pre>
+			</div>
+
+		</div><!--// .con -->
+
+		<!-- FLAG -->
+		<div class="con">
+			
+			<div class="g_title">플래그</div>
+			<div class="g_html">
+				<div class="goods_list" id="goods_list">
+					<h3 class="ir">상품리스트</h3>
+					<ul class="tlist">
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div><span style="font-size:11px;">모든 flag에 아래 태그 적용해주면 됩니다.</span>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;span class="g_bnf"&gt;
+	&lt;span class="bnf1"&gt;마감임박&lt;/span&gt;
+	&lt;span class="bnf2"&gt;무료배송&lt;/span&gt;
+	&lt;span class="bnf3"&gt;최저가&lt;/span&gt;
+	&lt;span class="bnf4"&gt;BEST&lt;/span&gt;
+	&lt;span class="bnf5"&gt;HIT&lt;/span&gt;
+	&lt;span class="bnf"&gt;SMS&lt;/span&gt;
+	&lt;span class="bnf6"&gt;SALE&lt;/span&gt;
+	&lt;span class="bnf"&gt;N+1&lt;/span&gt;
+	&lt;span class="bnf"&gt;세트할인&lt;/span&gt;
+	&lt;span class="bnf"&gt;즉시할인&lt;/span&gt;
+	&lt;span class="bnf"&gt;사은품&lt;/span&gt;
+	&lt;span class="bnf7"&gt;매장수령&lt;/span&gt;
+	&lt;span class="bnf"&gt;재입고&lt;/span&gt;
+	&lt;span class="bnf8"&gt;착불&lt;/span&gt;
+	&lt;span class="bnf9"&gt;온라인단독&lt;/span&gt;
+	&lt;span class="bnf10"&gt;품절&lt;/span&gt;
+&lt;/span&gt;</pre>
+			</div>
+
+		</div><!--// .con -->
+
+		<!-- POPUP -->
+		<div class="con">
+			
+			<div class="g_title">풀 레이어 팝업</div>
+			<div class="g_html">
+				<a href="#" onclick="fn_layer_open('popup01');return false;" onkeypress="this.onclick;" style="font-size:13px;text-decoration:underline;color:#0162b1">팝업 보기 &gt;</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div id="popup01" class="layer_fix"&gt;
+	&lt;h3 class="pop_tit"&gt;타이틀&lt;/h3&gt;
+	&lt;div class="pop_con"&gt;
+		&lt;div class="pop_txt"&gt;
+			내용입니다.내용입니다.
+			&lt;div class="btn_ship"&gt;
+				&lt;ul class="btn_list02"&gt;
+					&lt;li&gt;&lt;a href="#" class="btn_brd03 c01"&gt;취소&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#" class="btn_bg06 c01"&gt;&lt;strong&gt;확인&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;   
+	&lt;/div&gt;
+	&lt;a href="#close" class="btn_close"&gt;&lt;span class="ir"&gt;팝업 닫기&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+			</div>
+			
+			<div class="g_title">찜목록 추가 레이어팝업</div>
+			<div class="g_html">
+				<div class="top_chkbox">
+					<input type="checkbox" title="상품선택">
+					<div class="right">
+						<a href="#" class="btn_wish"><span>찜하기</span></a>
+						<a href="#" class="btn_del"><span>삭제</span></a>
+					</div>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="layer_pop nodim pop_zzim"&gt;
+	&lt;div class="pop_con"&gt;
+		&lt;div class="pop_txt"&gt;
+			&lt;div class="zzim_box alC"&gt;
+				&lt;p class="ico"&gt;&lt;em&gt;찜 목록에&lt;/em&gt;&lt;/p&gt;
+				&lt;p&gt;추가되었습니다.&lt;/p&gt;
+				&lt;p class="etc"&gt;마이페이지 &lt;em&gt;나의 찜록록&lt;/em&gt;에서 &lt;br&gt;확인 하실 수 있습니다.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;   
+		&lt;a href="#close" class="btn_close"&gt;&lt;span class="ir"&gt;팝업 닫기&lt;/span&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+			
+			<div class="g_title">SNS 공유하기 레이어팝업</div>
+			<div class="g_html">
+				<div class="cts_tit" style="position:relative;top:0">
+					<h2>
+						<b>카테고리명</b>
+						<button type="button" class="back"><em class="ir">이전페이지</em></button>		
+						<a href="#" class="sns" onclick="fn_layer_open('sns_lyr');return false;" onkeypress="this.onclick;"><em class="ir">공유 하기</em></a>	
+					</h2>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div id="sns_lyr" class="layer_con" style="display:"&gt;
+	&lt;div class="pop_con"&gt;
+		&lt;h3 class="pop_tit"&gt;SNS 공유하기&lt;/h3&gt;
+		&lt;div class="pop_con"&gt;
+			&lt;div class="sns"&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href="#" class="fb"&gt;페이스북&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#" class="ks"&gt;카카오&lt;br/&gt;스토리&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#" class="nb"&gt;네이버&lt;br/&gt;블로그&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#" class="ln"&gt;라인&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#" class="kt"&gt;카카오톡&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#" class="is"&gt;인스타그램&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#" class="ur"&gt;URL복사&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;a href="#close" class="btn_close"&gt;닫기&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class="pop_con" style="display:none"&gt; &lt;!-- URL복사 터치시 보여주세요 --&gt;
+		&lt;div class="pop_con"&gt;
+			&lt;div class="sns"&gt;
+				&lt;div class="sns_ur"&gt;
+					&lt;div class="info"&gt;아래의 url을 전체 선택하여 복사하세요.&lt;/div&gt;
+					&lt;div class="urbox"&gt;&lt;textarea onfocus = "this.select()"&gt;http://m.elandmall.com/Shop/Product_Detail.aspx?PC=A250967100203#none&lt;/textarea&gt;&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;a href="#close" class="btn_close"&gt;닫기&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;script type="text/javascript"&gt;
+		$(".layer_con .sns .ur").click(function(){
+			$(this).parents(".pop_con").hide().next().show();
+		});
+	&lt;/script&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">장바구니 레이어팝업</div>
+			<div class="g_html">
+				<a href="#" onclick="fn_layer_open('msg_lyr_cart');return false;" onkeypress="this.onclick;" style="font-size:13px;text-decoration:underline;color:#0162b1">팝업 보기</a>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div id="msg_lyr_cart" class="layer_pop nodim"&gt;
+	&lt;div class="pop_con"&gt;
+		&lt;div class="pop_txt"&gt;
+			&lt;div class="zzim_box alC"&gt;
+				&lt;p&gt;&lt;b&gt;선택한 상품이&lt;/b&gt;&lt;br/&gt;장바구니에 담겼습니다. &lt;/p&gt;
+				&lt;p class="cbtn"&gt;&lt;a href="#"&gt;장바구니 가기&lt;/a&gt;&lt;/p&gt;
+			&lt;/div&gt;  
+		&lt;/div&gt;
+		&lt;a href="#close" class="btn_close"&gt;&lt;span class="ir"&gt;팝업 닫기&lt;/span&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+		</div><!--// .con -->
+
+		<!-- ETC -->
+		<div class="con">
+			
+			<div class="g_title">기타</div>
+			<div class="g_html">
+				<div class="my_nolist">
+					<div class="txt">최근 1개월 내<br>적립/사용한 예치금 내역이 <strong>없습니다.</strong></div>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="my_nolist"&gt;
+	&lt;div class="txt"&gt;최근 1개월 내&lt;br&gt;적립/사용한 예치금 내역이 &lt;strong&gt;없습니다.&lt;/strong&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_html">
+				<div class="goods_lst_none">
+					등록된 상품평이 <b>없습니다.</b>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="goods_lst_none"&gt;
+	등록된 상품평이 &lt;b&gt;없습니다.&lt;/b&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_html">
+				<div class="sch_none_msg">
+					<div class="msg"><b>‘수납/욕실/생활’</b>에 전시된<br>상품이 <b>없습니다. </b></div>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="sch_none_msg"&gt;
+	&lt;div class="msg"&gt;&lt;b&gt;‘수납/욕실/생활’&lt;/b&gt;에 전시된&lt;br&gt;상품이 &lt;b&gt;없습니다. &lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_html">
+				<div class="sch_nodata">
+					<div class="box">
+						<em>'ㅁㄴㄴㅇㅈ'</em> 에 대한<br>검색결과가 <em>없습니다.</em><br>
+					</div>
+					<ul>
+						<li>검색어가 올바른지 다시 확인 후 정확하게 입력해 주세요.</li>
+						<li>검색어를 정확히 모르시면 자주하는 질문상담 검색 유형을 선택해 주세요.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="sch_nodata"&gt;
+	&lt;div class="box"&gt;
+		&lt;em&gt;'ㅁㄴㄴㅇㅈ'&lt;/em&gt; 에 대한&lt;br&gt;검색결과가 &lt;em&gt;없습니다.&lt;/em&gt;&lt;br&gt;
+	&lt;/div&gt;
+	&lt;ul&gt;
+		&lt;li&gt;검색어가 올바른지 다시 확인 후 정확하게 입력해 주세요.&lt;/li&gt;
+		&lt;li&gt;검색어를 정확히 모르시면 자주하는 질문상담 검색 유형을 선택해 주세요.&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+			</div>
+
+
+			<div class="g_title">기간검색 1</div>
+			<div class="g_html">
+				<div class="sch_order">
+					<ul>
+						<li><a href="#" class="on">1주일</a></li>
+						<li><a href="#">1개월</a></li>
+						<li><a href="#">3개월</a></li>
+						<li><a href="#">6개월</a></li>
+						<li><a href="#" class="set">기간설정</a></li>
+					</ul>
+					<div class="sch_period">
+						<div class="inp_box">
+							<input type="text" title="시작날짜" placeholder="예시)20160101">
+							<span class="dash">~</span>
+							<input type="text" title="종료날짜" placeholder="예시)20160101">
+						</div>
+						<div class="btn">
+							<a href="#">조회</a>
+						</div>
+						<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="sch_order"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#" class="on"&gt;1주일&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;1개월&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;3개월&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;6개월&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" class="set"&gt;기간설정&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class="sch_period"&gt;
+		&lt;div class="inp_box"&gt;
+			&lt;input type="text" title="시작날짜" placeholder="예시)20160101"&gt;
+			&lt;span class="dash"&gt;~&lt;/span&gt;
+			&lt;input type="text" title="종료날짜" placeholder="예시)20160101"&gt;
+		&lt;/div&gt;
+		&lt;div class="btn"&gt;
+			&lt;a href="#"&gt;조회&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;p&gt;- 최대 6개월 이내로 조회하실 수 있습니다.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">기간검색 2</div>
+			<div class="g_html">
+				<div class="sch_point">
+					<ul>
+						<li><a href="#" class="on">1주일</a></li>
+						<li><a href="#">1개월</a></li>
+						<li><a href="#" class="set">기간설정</a></li>
+					</ul>
+					<div class="sch_period">
+						<div class="inp_box">
+							<input type="text" title="시작날짜" placeholder="예시)20160101">
+							<span class="dash">~</span>
+							<input type="text" title="종료날짜" placeholder="예시)20160101">
+						</div>
+						<div class="btn">
+							<a href="#">조회</a>
+						</div>
+						<p>- 최대 1개월 이내로 조회하실 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="sch_point"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#" class="on"&gt;1주일&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;1개월&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" class="set"&gt;기간설정&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class="sch_period"&gt;
+		&lt;div class="inp_box"&gt;
+			&lt;input type="text" title="시작날짜" placeholder="예시)20160101"&gt;
+			&lt;span class="dash"&gt;~&lt;/span&gt;
+			&lt;input type="text" title="종료날짜" placeholder="예시)20160101"&gt;
+		&lt;/div&gt;
+		&lt;div class="btn"&gt;
+			&lt;a href="#"&gt;조회&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;p&gt;- 최대 1개월 이내로 조회하실 수 있습니다.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">리스트 1</div>
+			<div class="g_html">
+				<div class="basket_notice">
+					<h3>* 장바구니 이용안내</h3>
+					<ul>
+						<li>오랫동안 장바구니에 보관된 상품을 주문하실 경우, 가격이나 혜택이 변동 될 수 있습니다. </li>
+						<li>장바구니에 담긴 상품은 30일 동안만 보관할 수 있습니다. 더 오랫동안 보관하시려면 ‘찜’ 목록에 추가해 주세요.</li>
+						<li>구매하기 선택 시, 구매시점에 품절된 상품은 제외하고 주문이 진행됩니다.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="basket_notice"&gt;
+	&lt;h3&gt;* 장바구니 이용안내&lt;/h3&gt;
+	&lt;ul&gt;
+		&lt;li&gt;오랫동안 장바구니에 보관된 상품을 주문하실 경우, 가격이나 혜택이 변동 될 수 있습니다. &lt;/li&gt;
+		&lt;li&gt;장바구니에 담긴 상품은 30일 동안만 보관할 수 있습니다. 더 오랫동안 보관하시려면 ‘찜’ 목록에 추가해 주세요.&lt;/li&gt;
+		&lt;li&gt;구매하기 선택 시, 구매시점에 품절된 상품은 제외하고 주문이 진행됩니다.&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+
+			<div class="g_title">리스트 2</div>
+			<div class="g_html">
+				<div class="my_noti">
+					<ul>
+						<li>입금 확인중~상품 준비중 단계에서는 상품 취소가 가능하고, 배송중~배송완료 단계에서는 상품 취소가 불가능 합니다. <br>(단, 주문 제작 상품의 경우 상품준비 중 단계에서 취소가 불가능 할 수 있습니다.)</li>
+						<li>상품의 위치추적은 배송현황조회를 통해 조회가 가능합니다.</li>
+						<li>상세주문내역을 통해 주문 상세 내역을 확인하실 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="my_noti"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;입금 확인중~상품 준비중 단계에서는 상품 취소가 가능하고, 배송중~배송완료 단계에서는 상품 취소가 불가능 합니다. &lt;br&gt;(단, 주문 제작 상품의 경우 상품준비 중 단계에서 취소가 불가능 할 수 있습니다.)&lt;/li&gt;
+		&lt;li&gt;상품의 위치추적은 배송현황조회를 통해 조회가 가능합니다.&lt;/li&gt;
+		&lt;li&gt;상세주문내역을 통해 주문 상세 내역을 확인하실 수 있습니다.&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">리스트 3</div>
+			<div class="g_html">
+				<div class="pay_method">
+					<dl>
+						<dt>결제수단</dt>
+						<dd>신용카드</dd>
+					</dl>
+					<dl>
+						<dt>결제금액</dt>
+						<dd><em>78,100</em>원</dd>
+					</dl>
+					<dl>
+						<dt>결제카드</dt>
+						<dd>신한카드 (3552 **** **** 2048 ) 일시불</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="pay_method"&gt;
+	&lt;dl&gt;
+		&lt;dt&gt;결제수단&lt;/dt&gt;
+		&lt;dd&gt;신용카드&lt;/dd&gt;
+	&lt;/dl&gt;
+	&lt;dl&gt;
+		&lt;dt&gt;결제금액&lt;/dt&gt;
+		&lt;dd&gt;&lt;em&gt;78,100&lt;/em&gt;원&lt;/dd&gt;
+	&lt;/dl&gt;
+	&lt;dl&gt;
+		&lt;dt&gt;결제카드&lt;/dt&gt;
+		&lt;dd&gt;신한카드 (3552 **** **** 2048 ) 일시불&lt;/dd&gt;
+	&lt;/dl&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+			<div class="g_title">리스트 4</div>
+			<div class="g_html">
+				<div class="plan_noti">
+					<dl>
+						<dt><button type="button" id="plan_bn" onclick="fnToggleSlide('plan_bn', 'plan_noti');return false;" onkeypress="this.onclick;" class="">알려드립니다.<em class="ir">열기</em></button></dt>
+						<dd id="plan_noti" style="display: none;">
+							<ul>
+								<li>상품을 구매하지 않고 칭찬만 해도 추첨을 통해 바로 그 상품을 보내 드립니다.</li>
+								<li>댓글 게시판에 기대평을 작성하면 자동응모 처리됩니다.</li>
+								<li>당첨자는 이벤트 공지 페이지에서 발표됩니다.</li>
+								<li>당첨자는 해당 상품을 무료로 구매하실 수 있도록 100% 쿠폰이 발행되고, 구매절차를 거쳐 상품을 받아 보실 수 있습니다.(단, 소정의 배송비는 당첨자 부담입니다.)</li>
+								<li>상품 수령 후 포토상품평을 꼭 작성해 주세요. 미작성 시 다음 이벤트 당첨자 선정에서 제외됩니다.</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+&lt;div class="plan_noti"&gt;
+	&lt;dl&gt;
+		&lt;dt&gt;&lt;button type="button" id="plan_bn" onclick="fnToggleSlide('plan_bn', 'plan_noti');return false;" onkeypress="this.onclick;" class=""&gt;알려드립니다.&lt;em class="ir"&gt;열기&lt;/em&gt;&lt;/button&gt;&lt;/dt&gt;
+		&lt;dd id="plan_noti" style="display: none;"&gt;
+			&lt;ul&gt;
+				&lt;li&gt;상품을 구매하지 않고 칭찬만 해도 추첨을 통해 바로 그 상품을 보내 드립니다.&lt;/li&gt;
+				&lt;li&gt;댓글 게시판에 기대평을 작성하면 자동응모 처리됩니다.&lt;/li&gt;
+				&lt;li&gt;당첨자는 이벤트 공지 페이지에서 발표됩니다.&lt;/li&gt;
+				&lt;li&gt;당첨자는 해당 상품을 무료로 구매하실 수 있도록 100% 쿠폰이 발행되고, 구매절차를 거쳐 상품을 받아 보실 수 있습니다.(단, 소정의 배송비는 당첨자 부담입니다.)&lt;/li&gt;
+				&lt;li&gt;상품 수령 후 포토상품평을 꼭 작성해 주세요. 미작성 시 다음 이벤트 당첨자 선정에서 제외됩니다.&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/dd&gt;
+	&lt;/dl&gt;
+&lt;/div&gt;</pre>
+			</div>
+
+		</div><!--// .con -->
+
+
+
+		<!-- con -->
+		<div class="con">
+			<div class="g_title">테이블 5</div>
+			<div class="g_html"></div>
+			<div class="source">소스보기</div>
+			<div class="v_source">
+			<pre>
+</pre>
+			</div>
+		</div><!--// .con -->
+
+
+	</div>
+</div>
+<!-- //CONTENT -->
+
+
+<!-- layer_popup -->
+<div id="popup01" class="layer_fix">
+	<h3 class="pop_tit">타이틀</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			내용입니다.내용입니다.
+			<div class="btn_ship">
+				<ul class="btn_list02">
+					<li><a href="#" class="btn_brd03 c01">취소</a></li>
+					<li><a href="#" class="btn_bg06 c01"><strong>확인</strong></a></li>
+				</ul>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup -->
+
+<!-- layer_popup : 찜록록 -->
+<div class="layer_pop nodim pop_zzim">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<p class="ico"><em>찜 목록에</em></p>
+				<p>추가되었습니다.</p>
+				<p class="etc">마이페이지 <em>나의 찜록록</em>에서 <br>확인 하실 수 있습니다.</p>
+			</div>
+		</div>   
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //layer_popup : 찜록록 -->
+
+<!-- LAYER SNS -->
+<div id="sns_lyr" class="layer_con" style="display:">
+	<div class="pop_con">
+		<h3 class="pop_tit">SNS 공유하기</h3>
+		<div class="pop_con">
+			<div class="sns">
+				<ul>
+					<li><a href="#" class="fb">페이스북</a></li>
+					<li><a href="#" class="ks">카카오<br/>스토리</a></li>
+					<li><a href="#" class="nb">네이버<br/>블로그</a></li>
+					<li><a href="#" class="ln">라인</a></li>
+					<li><a href="#" class="kt">카카오톡</a></li>
+					<li><a href="#" class="is">인스타그램</a></li>
+					<li><a href="#" class="ur">URL복사</a></li>
+				</ul>
+			</div>
+		</div>
+		<a href="#close" class="btn_close">닫기</a>
+	</div>
+	<div class="pop_con" style="display:none"> <!-- URL복사 터치시 보여주세요 -->
+		<div class="pop_con">
+			<div class="sns">
+				<div class="sns_ur">
+					<div class="info">아래의 url을 전체 선택하여 복사하세요.</div>
+					<div class="urbox"><textarea onfocus = "this.select()">http://m.elandmall.com/Shop/Product_Detail.aspx?PC=A250967100203#none</textarea></div>
+				</div>
+			</div>
+		</div>
+		<a href="#close" class="btn_close">닫기</a>
+	</div>
+	<script type="text/javascript">
+		$(".layer_con .sns .ur").click(function(){
+			$(this).parents(".pop_con").hide().next().show();
+		});
+	</script>
+</div>
+<!-- //LAYER SNS -->
+
+<!-- LAYER MSG. -->
+<div id="msg_lyr_cart" class="layer_pop nodim">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<p><b>선택한 상품이</b><br/>장바구니에 담겼습니다. </p>
+				<p class="cbtn"><a href="#">장바구니 가기</a></p>
+			</div>  
+		</div>
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //LAYER MSG. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>

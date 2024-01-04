@@ -1,0 +1,1189 @@
+<!--
+	해당소스는 1개의 팝업창에서 로직에 따라 변경되는 4단계의 페이지를 모두 모아두었습니다.
+	각각 레이어 id에 담겨져 있으며 이 페이지 그대로 확인시 아래와 같은 동작이 싱행되지 않습니다.
+	검색어 삭제 / 팝업창 닫기버튼 클릭 / 더보기 페이징 동작은 팝업창 하나만 켜두고 실행시켜야 정상작동됩니다.
+	작업부분은 52라인 부터 3612라인까지입니다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+<!--  전달을 위한 css 입니다. -->
+<style type="text/css"> 
+	.layer_fix{display:block;}
+</style>
+
+</head>
+<body class="renewal2">	
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER -->
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+<!-- //INC_HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>주문서 작성</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>
+		</h2>
+	</div>
+	<div class="order_content">
+	</div>
+	<!-- //order_content -->
+</div>
+<!-- //CONTENT -->
+
+<!-- 검색결과없음 -->	
+<!-- <div id="post_layer" class="layer_fix">
+	<h3 class="pop_tit">주소찾기</h3>
+	<div class="pop_con">
+		<div class="pop_txt post">
+			<div class="search_btns">
+				<input type="text" class="input_txt on" id="searchTerm" title="상세주소 입력" placeholder="ㅁ아리ㅓㅣㅜ" />
+				<button type="button" class="add_sch_btn"><span>검색버튼</span></button>
+				<button type="button" class="add_sch_del" id="sch_del" style="display:none"><span>삭제버튼</span></button>
+			</div>																	
+			<div class="txt_info2">
+				<p class="no_data">검색결과가 없습니다.</p>
+				<p>이렇게 검색하세요!</p>
+				<p>- 도로명 + 건물번호 <span>예) 가산디지털1로 159</span></p>
+				<p>- 건물명. 아파트명 <span>예) 이랜드 가산동 사옥</span></p>
+				<p>- 동/읍/면/리+번지 <span>예) 가산동 371-12</span></p>
+			</div>						
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div> -->
+<!-- //검색결과없음 -->
+
+<!-- 검색결과_200개이상 -->
+<!-- <div id="post_layer" class="layer_fix">
+	<h3 class="pop_tit">주소찾기</h3>
+	<div class="pop_con">
+		<div class="pop_txt post">
+			<div class="search_btns">
+				<input type="text" class="input_txt on" id="searchTerm" title="상세주소 입력" placeholder="가산디지털1로" />
+				<button type="button" class="add_sch_btn"><span>검색버튼</span></button>
+				<button type="button" class="add_sch_del" id="sch_del" style="display:none"><span>삭제버튼</span></button>
+			</div>		
+			<div class="txt_info2">
+				<p><em>가산</em>에 대한 검색결과가 너무 많습니다.</p>
+				<p>검색어를 상세히 입력해 보세요.</p>
+				<p>- 도로명 + 건물번호 <span>예) 가산디지털1로 159</span></p>
+				<p>- 건물명. 아파트명 <span>예) 이랜드 가산동 사옥</span></p>
+				<p>- 동/읍/면/리+번지 <span>예) 가산동 371-12</span></p>
+			</div>															
+			<div class="adr_sreach_results on">
+				<div class="results_list on">
+					<div class="txt_info">
+						<p>주소 검색결과 <em>210</em>건</p>
+					</div>							
+					<div class="board_scroll">
+	                    <table class="active">
+	                        <colgroup>
+	                            <col style="width:100%"></col>
+	                        </colgroup>
+	                        <tbody>
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>                                                        
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>                                               
+	                        </tbody>
+	                    </table>
+	                    <table>
+	                        <colgroup>
+	                            <col style="width:100%"></col>
+	                        </colgroup>
+	                        <tbody>
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>                                                        
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>                                               
+	                        </tbody>
+	                    </table>	
+	                    <table>
+	                        <colgroup>
+	                            <col style="width:100%"></col>
+	                        </colgroup>
+	                        <tbody>
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>                                                        
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>                                               
+	                        </tbody>
+	                    </table>	                    																		
+					</div>
+				</div>	
+			</div>	
+			<div class="addr_more">
+				<button type="button" title="주소더보기"><span>더보기(<b>1</b>/<em></em>)</span></button>
+			</div>					
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div> -->
+<!-- //검색결과_200개이상 -->
+
+<!-- 검색결과_200개이하 -->	
+<div id="post_layer" class="layer_fix">
+	<h3 class="pop_tit">주소찾기</h3>
+	<div class="pop_con">
+		<div class="pop_txt post">
+			<div class="search_btns">
+				<input type="text" class="input_txt on" id="searchTerm" title="상세주소 입력" placeholder="가산디지털1로" />
+				<button type="button" class="add_sch_btn"><span>검색버튼</span></button>
+				<button type="button" class="add_sch_del" id="sch_del" style="display:none"><span>삭제버튼</span></button>
+			</div>												
+			<div class="adr_sreach_results on">
+				<div class="results_list on">
+					<div class="txt_info">
+						<p>주소 검색결과 <em>50</em>건</p>
+					</div>							
+					<div class="board_scroll">
+	                    <table class="active">
+	                        <colgroup>
+	                            <col style="width:100%"></col>
+	                        </colgroup>
+	                        <tbody>
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>                                                        
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <table class="inner_active">
+	                                        <colgroup>
+	                                            <col style="width:57px"></col>
+	                                            <col style="width:399px"></col>
+	                                        </colgroup>
+	                                        <tr>
+	                                            <td><div class="zipcode">16808</div></td>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td><div class="road"><span>도로명</span></div></td>
+	                                            <td>
+	                                                <div class="addr_road"><a href="#">서울 금천구 가산디지털1로 1(더루벤스밸리)</a></div> 
+	                                            </td>
+	                                        </tr>
+	                                        <tr>                                                                    
+	                                            <td><div class="num"><span>지번</span></div></td>
+	                                            <td><div class="addr_num"><a href="#">서울 금천구 가산동 691-3</a></div></td>
+	                                        </tr>
+	                                    </table>
+	                                </td>                                                 
+	                            </tr>                                               
+	                        </tbody>
+	                    </table>
+					</div>
+				</div>	
+			</div>	
+			<div class="addr_more" style="display:none">
+				<button type="button" class="clickBtn" title="주소더보기"><span>더보기(<b>1</b>/<em></em>)</span></button>
+			</div>					
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //검색결과_200개이하 -->
+
+<!-- 주소 찾기 defalt -->	
+<!-- <div id="post_layer" class="layer_fix">
+	<h3 class="pop_tit">주소찾기</h3>
+	<div class="pop_con">
+		<div class="pop_txt post">
+			<div class="search_btns">
+				<input type="text" class="input_txt on" id="searchTerm" title="상세주소 입력" placeholder="도로명, 지번, 건물명" />
+				<button type="button" class="add_sch_btn"><span>검색버튼</span></button>
+				<button type="button" class="add_sch_del" id="sch_del" style="display:none"><span>삭제버튼</span></button>
+			</div>														
+			<div class="txt_info">
+				<p>이렇게 검색하세요!</p>
+				<p>- 도로명 + 건물번호 <span>예) 가산디지털1로 159</span></p>
+				<p>- 건물명. 아파트명 <span>예) 이랜드 가산동 사옥</span></p>
+				<p>- 동/읍/면/리+번지 <span>예) 가산동 371-12</span></p>
+			</div>						
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div> -->
+<!-- //주소 찾기 defalt -->
+
+<script>
+function active_tb(){
+	$(".addr_more button").on("click",function(){
+		var tb = $(".board_scroll table");
+		var tba = $(".board_scroll table.active");
+			tba.removeClass("active");
+			tba.next("table").addClass("active");
+		var	tba = $(".board_scroll table.active");
+		var	idx = tba.index()+1;
+		$('.pop_txt').find('.addr_more span b').text(idx);
+		if($(".board_scroll table.active").length == 0 ){
+			$(".board_scroll table:first-child").addClass("active");
+			$('.pop_txt').find('.addr_more span b').text(1);
+		}
+	});	
+	var addr_list_num = $('.pop_txt').find('.board_scroll table').length;
+	$('.pop_txt').find('.addr_more span em').text(addr_list_num);
+}
+active_tb();
+
+
+</script>
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+
+</body>
+</html>
+

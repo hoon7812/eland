@@ -1,0 +1,39 @@
+// mixins
+
+//image-stripes
+@mixin stripe($type, $url, $hori, $vert,  $position:false, $top:false, $right:false,  $bottom:false, $left:false, $width:false, $height:false){
+	@if $type == "before"{
+		&:before{
+			@include stripe_inner($url, $hori, $vert, $position, $top, $right,  $bottom, $left, $width, $height);
+			content:"";
+		}
+	}
+	@if $type == "after"{
+		&:after{
+			@include stripe_inner($url, $hori, $vert, $position, $top, $right,  $bottom, $left, $width, $height);
+			content:"";
+		}
+	}
+	@if $type == "self"{
+		@include stripe_inner($url, $hori, $vert)
+	}
+}
+@mixin stripe_inner($url, $hori, $vert, $position:false, $top:false, $right:false,  $bottom:false, $left:false, $width:false, $height:false){
+	@if $position{position:$position;}
+	@if $top{top:$top;}
+	@if $right{right:$right;}
+	@if $bottom{right:$bottom;}
+	@if $left{left:$left;}
+	@if $width{width:$width;}
+	@if $height{height:$height;}
+	background:url($url) no-repeat $hori $vert;
+}
+
+
+
+// Float - Clear
+@mixin clear{
+	&:after{display:block;clear:both;content:"";}
+}
+
+

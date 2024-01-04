@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no"><!-- 160829 ios 자동전화걸기 방지 태그추가 -->
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<style type="text/css">
+	.renewal2 .header .head h1 a
+</style>
+<link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon180.png">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon160.png">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon192.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon160.png">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="modern renewal2_brand"><!-- MODERN HOUSE : CALSS --><!-- 2018.01.03 xmas 클래스 삭제 -->
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INSTALL APP POPUP 160926 -->
+<div class="ins_app" style="display:none;">
+	<div class="cont">
+		<div class="pannel">
+			<a href="#" class="go_app">
+				<img src="../images/mobile/common/ins_app_md.png" alt="모던하우스몰 앱으로 보기">
+			</a>
+			<a href="#" class="pop_close"><strong>모바일웹으로 볼게요</strong></a>
+		</div>
+	</div>
+</div>
+<!-- //INSTALL APP POPUP 160926 -->
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" onClick="left_lnb_open()"><b class="ir">카테고리 전체메뉴 열기</b></button></div>
+		<h1><a href="Md_Main.html"><b class="ir">MODERN HOUSE 메인</b></a></h1>
+		<div class="hnb">
+			<ul>
+				<li class="sch"><button type="button"><b class="">검색 열기검색 열기검색 열기검색 열기검색 열기</b></button></li>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+		
+	</div>
+</header>
+<!-- //HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">				   
+	<div class="main_top" id="main_top">
+		<div class="gnb_wrap">
+			<div class="eland"><a href="#">E LAND</a></div> <!-- 170515 E LAND 바로가기 추가 -->
+			<div class="gnb" id="gnb">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><span>홈</span></li>
+					<li class="swiper-slide"><span>신상품</span></li>
+					<li class="swiper-slide"><span>베스트</span></li>
+					<li class="swiper-slide"><span>스토리쇼핑</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var GNB_SCROLL;
+		var LOADING_HTML = '<div class="loading"><span>로딩중</span></div>';
+		
+		$(document).ready(function() {
+			GNB_SCROLL = new Swiper('#gnb',{
+				createPagination: false,
+				freeMode: true,
+				freeModeFluid: true,
+				slidesPerView: 'auto',
+				roundLengths: true,
+				onSlideClick: function(){
+					$(".gnb li").removeClass("on");
+					$('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);			
+					GNB_SCROLL.swipeTo(GNB_SCROLL.clickedSlideIndex);
+					call_slide(GNB_SCROLL.clickedSlideIndex);
+				}
+			});
+
+			$(window).resize(function(){	
+				GNB_SCROLL.reInit();
+			});
+		});
+		
+		
+		$(window).load(function() {	
+			mainCate.prependSlide(LOADING_HTML, 'swiper-slide','li');					
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active').html(LOADING_HTML);			
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			mainCate.swipeTo(1, 0, true);
+			call_slide(0);
+		});
+		
+		function change_slide(idx) {
+			$('#m_cts').find('li:not(.swiper-slide-active)').remove();
+			mainCate.prependSlide( LOADING_HTML, 'swiper-slide','li');
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			$('#m_cts').find('.swiper-slide').removeClass('swiper-slide-active');
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active');			
+			if(	$('#m_cts').find('.swiper-slide').eq(1).hasClass('swiper-slide-active')){
+				$('#m_cts').find('.slide_cont').remove();
+				window.scrollTo(0, 0);
+				call_slide(idx);
+			}
+		}
+
+		function call_slide(idx){ 
+			$.ajax({
+				type : 'get',
+				isLocal: true,
+				headers: { "cache-control": "no-cache" },
+				url : 'md_main_'+ idx +'.html',
+				dataType : 'html',
+				success: function(data){	
+					setTimeout(function() { 
+						$('#m_cts').find('.swiper-slide').eq(1).html(data);						
+						mainCate.reInit();
+						setSlideHeight();
+					}, 100);
+					$('.gnb li').removeClass('on');
+					$('.gnb').find('li').eq(idx).addClass('on');	
+					mainCate.swipeTo(1, 0, true);
+				},
+				error: function(){
+					setTimeout(function() { call_slide(0) }, 100);
+					GNB_SCROLL.swipeTo(idx, 200);
+				}
+			});
+		}
+			
+		var mainCate = new Swiper('#m_cts',{
+			loop: false,
+			simulateTouch : true,
+			calculateHeight:true,
+			onSlideNext : function() {
+				var index = parseInt($('.gnb').find('li.on').index()) + 1;
+				var max_gnb = $('.gnb li').length;
+				if(index == max_gnb ){	
+					var idx = 0;
+					GNB_SCROLL.swipeTo(0, 200); 
+				}else{
+					var idx = index;
+					var w_width = $(window).width();
+					var	active_li = $('.gnb').find('li.on').next('li');
+					var active_left = active_li.offset().left + active_li.outerWidth();
+					if(active_left > w_width){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}
+				}
+				change_slide(idx);
+			},
+			onSlidePrev : function() {
+				var index = parseInt($('#m_cts' ).find('.slide_cont').attr('data-index'));
+				if(index == 0 ){	
+					var idx = $('.gnb li').length -1;
+						GNB_SCROLL.swipeTo(idx, 200);
+				}else{
+					var idx = index - 1;
+					var active_li = $('.gnb').find('li.on').prev('li');
+					var active_left = active_li.offset().left;
+					if(active_left <= 0){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}	
+				}	
+				change_slide(idx);
+			}
+		});
+		
+		$(window).resize(function(){
+			mainCate.reInit();
+			setSlideHeight();
+		});
+	</script>
+</div>
+<!-- //CONTENT -->
+
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<div class="ft_bn" style="background-color:#f8e8ce">
+		<a href="#"><img src="../images/mobile/temp/bn_foot_100_02.jpg" width="640" height="100" alt="이벤트배너" /></a>
+	</div>
+	<div class="ft_menu">
+		<ul>
+			<li><a href="#">로그아웃</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li><a href="#">장바구니</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div>
+	<div class="ft_info">
+		<p>주식회사 이랜드리테일  서울시 서초구 잠원동 70-2</p>
+		<p>대표이사 : 이광일/김연배</p>
+		<p>사업자등록번호 : 114-81-01855  <a href="#">사업자정보확인</a></p>
+		<p>통신판매업 신고번호 : 서초 제 09998호</p>
+		<p>고객센터 : <a href="tel:1899-9500">1899-9500</a></p>
+		<!-- 160926 바로방문 추가 -->
+		<!-- 삭제  <div class="ft_direct">
+			<a href="#"><i class="on">APP방문ON</i></a>
+			<a href="#"><i class="off">APP방문OFF</i></a>
+		</div> -->
+		<!-- //160926 바로방문 추가 -->
+	</div>
+	<div class="ft_sns">
+		<ul>
+			<li><a href="#" class="fb"><em class="ir">페이스북</em></a></li>
+			<li><a href="#" class="bl"><em class="ir">블로그</em></a></li>
+		</ul>
+	</div>
+	<div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="ft_app">
+		<ul>
+			<!-- 160901 삭제 <li><a href="#">PC 버전보기</a></li> -->
+			<li><a href="#">APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

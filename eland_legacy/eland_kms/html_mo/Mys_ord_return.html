@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//취소 신청
+	$(function(){
+
+	    var ordTit = $(".order_content .ico_open");
+
+	    ordTit.bind("click", function(e){
+	        e.preventDefault();
+	        $(this).parent().find(".ico_open").toggleClass("selected");
+	        $(this).parent().find(".txt_order").toggleClass("on");
+	        $(this).parent().next().slideToggle(200);
+	        $(this).parent().find(".pay_noti").toggle();
+	    });
+	    $(".tab_list02 li").bind("click", function(e){
+	        e.preventDefault();
+	        tabId = $(this).index();
+
+	        $(this).parent().parent().parent().find(".tab_list02 li").removeClass("selected");
+	        $(this).addClass("selected");
+	        $(this).parent().parent().parent().find(".tab_con > div").hide();
+	        $(this).parent().parent().parent().find(".tab_con > div").eq(tabId).show();
+	    });
+	});
+
+	//전체취소
+	$(function(){
+		$("#chk_cancelAll").click(function(){
+			var chk = $(this).is(":checked");
+			if(chk) $(".prd_total05.cancel").show();
+			else  $(".prd_total05.cancel").hide();
+		});
+	});
+
+	//취소신청 체크
+	$(function(){
+		$(".prd_total05").hide();
+		$(".prd_group .cancel_chk input").click(function(){
+			var chkCancel = $(this).is(":checked");
+			if(chkCancel == true){
+				$(this).parent().parent().next(".prd_total05").slideDown(200);
+			}else{
+				$(this).parent().parent().next(".prd_total05").slideUp(200);
+			}
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>반품 신청</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>	
+	<div class="order_content">
+		<!-- 상품선택 -->
+		<div class="step02">
+			<div class="ord_tit">
+				<h3 class="tit_order">1. 상품선택</h3>
+				<a href="#" class="ico_open"><span>열기</span></a>
+			</div>
+			<div class="ord_con">
+				<div class="tit_order2">
+					<div class="tit">주문 상품</div>
+				</div>
+				<div class="mypage_box">
+					<div class="tit_order">
+						<em>2016.12.01</em>
+						<span>(주문번호:M151116002268196)</span>
+					</div>
+
+					<!-- 1번 배송지 -->
+					<div class="prd_group">
+						<div class="basket_prd">
+							<div class="cancel_chk">
+								<input type="checkbox" title="상품선택">
+							</div>
+							<div class="top_deli"><span class="addr"><em class="ico">1번</em> 발송지</span></div>
+							<a href="#">
+								<div class="basket_txt">
+									<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+									<span class="prodtit">Cindy</span>
+									<span class="prodname">POLHAM 배색 스웨이드 후드 탈부 POLHAM 배색 스웨이드 후드 탈부</span>
+									<span class="prodprice">87,200<span class="won">원</span></span>
+									<span class="prodopt">A-1 OO호텔 예약권 / 1개</span>
+									<span class="prodnum">(<em>0</em>개 사용 완료)</span>
+								</div>
+							</a>
+						</div>
+						<!-- 반품사유 -->
+						<div class="prd_total05">
+							<div class="txt">
+								<strong class="stxt">반품사유</strong>
+							</div>
+							<div class="sel_box">
+								<select class="w100">
+									<option>반품사유 선택</option>
+								</select>
+							</div>
+							<div class="mt10">
+								<input type="text" class="w100" title="반품사유" placeholder="반품상세사유를 입력하여 주세요.">
+							</div>
+						</div>
+						<!-- //반품사유 -->
+					</div>
+					<!-- //1번 배송지 -->
+
+					<!-- 2번 배송지 -->
+					<div class="prd_group">
+						<div class="basket_prd">
+							<div class="cancel_chk">
+								<input type="checkbox" title="상품선택">
+							</div>
+							<div class="top_deli"><span class="addr"><em class="ico">2번</em> 발송지</span></div>
+							<a href="#">
+								<div class="basket_txt">
+									<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+									<span class="prodtit">Cindy</span>
+									<span class="prodname">POLHAM 배색 스웨이드 후드 탈부 POLHAM 배색 스웨이드 후드 탈부</span>
+									<span class="prodprice">87,200<span class="won">원</span></span>
+									<span class="prodopt">A-1 OO호텔 예약권 / 1개</span>
+									<span class="prodnum">(<em>0</em>개 사용 완료)</span>
+								</div>
+							</a>
+						</div>
+						<!-- 반품사유 -->
+						<div class="prd_total05">
+							<div class="txt">
+								<strong class="stxt">반품사유</strong>
+							</div>
+							<div class="sel_box">
+								<select class="w100">
+									<option>반품사유 선택</option>
+								</select>
+							</div>
+							<div class="mt10">
+								<input type="text" class="w100" title="반품사유" placeholder="반품상세사유를 입력하여 주세요.">
+							</div>
+						</div>
+						<!-- //반품사유 -->
+					</div>
+					<!-- //2번 배송지 -->
+
+					<!-- 3번 배송지 -->
+					<div class="prd_group">
+						<div class="basket_prd">
+							<div class="cancel_chk">
+								<input type="checkbox" title="상품선택" disabled> <!-- 체크박스 비활성 -->
+							</div>
+							<div class="top_deli"><span class="addr"><em class="ico">3번</em> 발송지</span></div>
+							<a href="#">
+								<div class="basket_txt">
+									<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+									<span class="prodtit">Cindy</span>
+									<span class="prodname">POLHAM 배색 스웨이드 후드 탈부 POLHAM 배색 스웨이드 후드 탈부</span>
+									<span class="prodprice">87,200<span class="won">원</span></span>
+									<span class="prodopt">A-1 OO호텔 예약권 / 1개</span>
+									<span class="prodnum">(<em>0</em>개 사용 완료)</span>
+								</div>
+							</a>
+						</div>
+						<!-- 반품사유 -->
+						<div class="prd_total05">
+							<div class="txt">
+								<strong class="stxt">반품사유</strong>
+							</div>
+							<div class="sel_box">
+								<select class="w100">
+									<option>반품사유 선택</option>
+								</select>
+							</div>
+							<div class="mt10">
+								<input type="text" class="w100" title="반품사유" placeholder="반품상세사유를 입력하여 주세요.">
+							</div>
+						</div>
+						<!-- //반품사유 -->
+					</div>
+					<!-- //2번 배송지 -->
+				</div>
+			</div>
+		</div>
+		<!-- //상품선택 -->
+
+		<!-- 발송 정보 -->
+		<div class="step02">
+			<div class="ord_tit">
+				<h3 class="tit_order">2. 발송 정보</h3>
+				<a href="#" class="ico_open"><span>열기</span></a>
+			</div>
+			<div class="ord_con">
+				<div class="mypage_delivery">
+					<div class="sbox_delivery">
+						<select>
+							<option>1번 배송지</option>
+							<option>2번 배송지</option>
+							<option>3번 배송지</option>
+						</select>
+					</div>
+					<div class="ord_box01">
+						<div class="tab_con">
+							<ul>
+								<li>
+									<div class="box_tit">주문자명</div>
+									<div class="box_con"><div class="stxt">홍길동</div></div>
+								</li>
+								<li>
+									<div class="box_tit">받으시는 분</div>
+									<div class="box_con">
+										<div class="stxt">
+											홍길동<br><br>
+											휴대전화 : 010-1234-****
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //발송 정보 -->
+
+		<!-- 환불정보 -->
+		<div class="step02">
+			<div class="ord_tit">
+				<h3 class="tit_order">2. 환불정보</h3>
+				<a href="#" class="ico_open"><span>열기</span></a>
+			</div>
+			<div class="ord_con">
+				<div class="pay_title">
+					<h4 class="tit">환불 예정 금액</h4>
+				</div>
+				<div class="my_pay">
+					<div class="pay_all">
+						<ul class="left">
+							<li>
+								<span class="txt">환불금액</span>
+								<span class="pri"><em>99,000</em>원</span>
+							</li>
+							<li>
+								<span class="txt">취소 배송비</span>
+								<span class="pri"><em>-2,500</em>원</span>
+							</li>
+						</ul>
+						<div class="right">
+							<span class="txt">총 환불금액</span>
+							<span class="pri"><em>99,999</em>원</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- 환불 방법 선택 -->
+				<div class="pay_title mt20">
+					<h4 class="tit">환불 방법 선택</h4>
+					<p class="txt">입력계좌로 환불 받기 원하실 경우, 빠르고 편리한 환불서비스를 위해 정확한 계좌정보를 입력해 주세요.</p>
+				</div>
+
+				<ul class="rdo_refund">
+					<li>
+						<input type="radio" name="rdo_refund" id="rdo_refund1" checked="">
+						<label for="rdo_refund1">입력계좌로 환불 받기</label>
+					</li>
+					<li>
+						<input type="radio" name="rdo_refund" id="rdo_refund2">
+						<label for="rdo_refund2">예치금으로 환불 받기</label>
+					</li>
+				</ul>
+
+				<ul class="btn_list02 refund">
+					<li><a href="#" class="btn_brd03 c01">목록으로</a></li>
+					<li><a href="#" class="btn_bg06 c01"><strong>신청</strong></a></li>
+				</ul>
+				<!-- 환불 방법 선택 -->
+
+			</div>
+		</div>
+		<!-- //환불정보 -->
+		<!-- 주문취소 안내문구 -->
+		<div class="my_noti">
+			<ul>
+				<li>주문취소는 “상품준비중" 및 이전 단계에서만 가능합니다.</li>
+				<li>주문 취소시에는 상품구입시 제공되는 모든 사은품(상품 구입시 제공되는 사은품, 구매금액별 제공되는 사은품)의 주문도 자동으로 취소됩니다. </li>
+				<li>단, 주문상품 중 일부만 취소하실 경우 취소하지 않은 상품의 사은품만 제공됩니다. (구매금액별 사은품은 제공되지 않을 수 있습니다.)</li>
+				<li>부분 취소를 지원하지 않는 카드 사용시 고객센터로 연락주세요.(1899-9500) </li>
+			</ul>
+		</div>
+		<!-- //주문취소 안내문구 -->
+	</div>
+</div>
+<!-- //CONTENT -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

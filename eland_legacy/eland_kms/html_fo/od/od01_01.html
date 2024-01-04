@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div id="content">
+
+				<!-- 현재 주문스탭 -->
+				<div class="steparea step_01_on">
+					<strong class="steparea_title">장바구니</strong>
+					<ul>
+						<li class="step_01"><strong class="ir">현재 페이지</strong><span>01</span>장바구니</li>
+						<li class="step_02"><span>02</span>주문/결제</li>
+						<li class="step_03"><span>03</span>주문완료</li>
+					</ul>
+				</div>
+				<!-- //현재 주문스탭 -->
+				<!-- 장바구니 - 상품없음 -->
+				<div class="no_data cart">
+					<div class="no_data_txt">
+						장바구니에 담긴 상품이 없습니다.
+					</div>
+				</div>
+				<div class="set_btn mt20">
+					<div class="r_cont">
+						<button type="button" class="btn06 c01"><span>계속 쇼핑하기</span></button>
+					</div>
+				</div>
+				<!-- //장바구니 - 상품없음 -->
+
+				<!-- 160713 추가 장바구니 탭메뉴 -->
+				<div class="cart_tab">
+					<div class="tab_type02 full_size06">
+						<ul class="d_tab" id="tGoods">
+							<li class="on"><a href="#tGoods">일반 상품 (105)</a></li>
+							<li><a href="#tDigit">디지털 상품 (105)</a></li>
+							<li><a href="#qckDlv">당일배송상품 (78)</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- //160713 추가 장바구니 탭메뉴 -->
+
+				<!-- 장바구니 - 택배배송 -->
+				<div class="set_btn_up left">
+					<button type="button" class="btn03 c01"><span>상품 전체 선택</span></button>
+					<button type="button" class="btn03 c01"><span>상품 선택 해지</span></button>
+					<button type="button" class="btn03 c03"><span>선택상품 삭제</span></button>
+					<button type="button" class="btn03 c03"><span>품절상품 모두 삭제</span></button>
+				</div>
+				<div class="table_title c01">
+					<strong>택배배송 (3)</strong>
+				</div>
+				<div class="board02">
+					<table>
+						<caption>택배배송 장바구니 표이며 상품명/선택사항, 상품금액, 수량, 할인금액, 주문금액, 배송정보, 주문하기순으로 제공합니다.</caption>
+						<colgroup>
+							<!-- 1210 -->
+							<col style="width:3%;" /><col style="width:9%" /><col /><col style="width:10%" /><col style="width:6%" /><col style="width:11%" /><col style="width:12%" /><col style="width:12%" /><col style="width:11%" />
+							<!-- //1210 -->
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" class="chkbox" title="전체 체크" /></th>
+							<th scope="col" colspan="2">상품명/선택사항</th>
+							<th scope="col">상품금액</th>
+							<th scope="col">수량</th>
+							<th scope="col">할인금액</th>
+							<th scope="col">주문금액</th>
+							<th scope="col">배송정보</th>
+							<th scope="col">주문하기</th>
+						</tr>
+						</thead>
+						<tbody>
+						<!-- 예약상품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">BEALL</span>
+										<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+										<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼 / 블루 / 100</span>
+									</a>
+									<a href="#" class="btn_txt02" id="btns01" onClick="commonUI.popupOpen('#layer01');return false;" ><span>변경하기</span></a>
+
+									<!-- NGCPO-4914 명품CD 구매대행 상품/주문처리 기능 추가 -->
+									<span class="goods_txt08">
+										<span class="flag_icon t07">해외배송</span>
+										해당 상품은 해외배송 상품입니다.
+									</span>
+
+									<!-- 2018.07.23 문화비 소득공제 추가  -->
+									<span class="goods_txt07">
+										<span class="flag_icon t06">안내사항</span>
+										해당 상품은 문화비 소득공제 대상입니다.
+									</span>
+
+									<!-- 170529 배송형태가 등기배송이거나, 상품 유형이 지류 상품권인 경우 추가 -->
+									<div class="goods_card">
+										<p class="txt_c03">상품권은 취소 신청 후 업체에서 이미 발송된 경우 취소처리 되지 않고 배송 진행 될수 있습니다. <br />신중한 구매 부탁 드립니다.</p>
+									</div>
+									<!-- //170529 배송형태가 등기배송이거나, 상품 유형이 지류 상품권인 경우 추가 -->
+									<!-- 160125 -->
+									<span class="goods_txt06">
+										<span class="flag_icon t01">예약상품</span>
+										발송예정일 <span class="txt_en">2015-12-25</span> 금요일
+									</span>
+									<!-- //160125 -->
+									<span class="goods_txt_alert">* 선택한 주소로 배송 불가한 상품</span><!-- 160125 -->
+									<span class="goods_txt_alert2">배송지가 변경되어 주문할 수 없습니다.</span> <!-- 스토어쇼핑 퀵배송 메시지 -->
+									<span class="goods_txt_alert2">상품정보가 변경되어 주문할 수 없습니다.</span>
+								</div>
+							</td>
+							<td><span class="tx_price02">12,178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">120,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>할인쿠폰</strong></div>
+										<div class="tip_txt">
+											즉시할인 쿠폰 <strong>5%</strong> 적용 금액
+											<br />더블쿠폰 할인  미 적용(주문서에서
+											<br />적용 예정)
+										</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+								<div class="mt4">
+									<a class="btn_etc03" href="#"><span>더블쿠폰<br /><strong>5%</strong></span></a><!-- 160328 -->
+								</div>
+							</td>
+							<td><strong class="tx_price">11,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+									<!-- 160121 삭제 -->
+									<!-- <li>
+										<span class="flag_icon t01">예약상품</span>
+										<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+										<div class="set_tooltip">
+											<div class="tip_info">
+												<div class="tip_title"><strong>예약상품</strong></div>
+												<div class="tip_txt">
+													예약 상품 <strong class="txt_c06">발송 예정일 2015-12-25</strong>
+													<br />본 상품은 예약상품으로 발송 예정일
+													<br />이후에 개별로 배송 되오니 발송예정<br />
+													일을 꼭 확인하시기 바랍니다.
+												</div>
+												<a href="#" class="tip_close">툴팁 닫기</a>
+											</div>
+										</div>
+									</li> -->
+									<!-- //160121 삭제 -->
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 업체직배송 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">BEALL</span>
+										<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									</a>
+									<!-- 160125 -->
+									<span class="goods_txt06">
+										<span class="flag_icon t03">업체직배송</span>
+										배송예정일 별도안내
+									</span>
+									<!-- //160125 -->
+								</div>
+							</td>
+							<td><span class="tx_price02">12,178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">120,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+								<div class="mt4">
+									<a class="btn_etc03" href="#"><span>더블쿠폰<br /><strong>100,000원</strong></span></a><!-- 160328 -->
+								</div>
+							</td>
+							<td><strong class="tx_price">11,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+									<!-- 160121 삭제 -->
+									<!-- <li>
+										<span class="flag_icon t03">업체직배송</span>
+										<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+										<div class="set_tooltip">
+											<div class="tip_info">
+												<div class="tip_title"><strong>업체직배송</strong></div>
+												<div class="tip_txt">
+													협력업체에서 직접 배송/설치하는
+													<br />상품으로 배송 예정일을 별도로
+													<br />안내해 드리겠습니다.
+												</div>
+												<a href="#" class="tip_close">툴팁 닫기</a>
+											</div>
+										</div>
+									</li> -->
+									<!-- //160121 삭제 -->
+									<li><span class="txt_c04 font_12">도서/산간 배송불가</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 착불 상품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goods_txt05">[사은품] 딸기핸드폰케이스</span><!-- 151221 -->
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+									<!-- 160125 -->
+									<span class="goods_txt06">
+										<span class="flag_icon c01">배송일 선택가능</span>
+										주문서에서 배송 날짜 선택가능 상품
+									</span>
+									<!-- //160125 -->
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">착불</span></li>
+									<!-- 160125 -->
+									<!-- <li>
+										<span class="flag_icon c01">배송일 선택가능</span>
+										<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+										<div class="set_tooltip">
+											<div class="tip_info">
+												<div class="tip_title"><strong>희망배송일 선택 가능 상품</strong></div>
+												<div class="tip_txt">
+													주문서에서  원하시는 배송 날짜로
+													<br />선택 가능한 상품입니다.
+												</div>
+												<a href="#" class="tip_close">툴팁 닫기</a>
+											</div>
+										</div>
+									</li> -->
+									<!-- //160125 -->
+									<li><span class="txt_c04 font_12">배송비 지역별 상이</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 배송비 절약하기 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">[모던하우스]</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goods_txt04">[사은품] 딸기핸드폰케이스</span><!-- 151221 -->
+									<a href="#" class="btn_txt02" id="btns02" onClick="commonUI.popupOpen('#layer02');return false;" ><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02"><span class="tx_price">2,500</span>원</span></li>
+									<li class="font_12"><span class="txt_c04">30,000원<br />이상 무료배송</span></li>
+									<li><a href="#" class="btn_txt03"><span>배송비 절약하기</span></a></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 일반상품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 </span>
+									<span class="goods_txt02">상품 : 후드 야상형 경량점퍼 / 블루 / 100</span>
+								</div>
+								<a href="#" class="btn_txt02"><span>변경하기</span></a>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 사은품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goods_txt04">[사은품] 딸기핸드폰케이스</span><!-- 151221 -->
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 지점상품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03"><strong>[강남점]</strong> 선택7) 블루프린트원피스 / 66</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 묶음상품(1개 장바구니 담을 시) -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">옵션 : 상품명_옵션명</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 묶음상품, 배송지(출고지)가 동일한 상품 (2개  이상 장바구니 담을 시 – 유료배송) -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">옵션 : 상품명_옵션명</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td class="td_delivery" rowspan="2">
+								<ul class="list_txt01">
+									<li><span class="txt_c02"><span class="tx_price">2,500</span>원</span></li>
+									<li class="font_12"><span class="txt_c04">30,000원<br />이상 무료배송</span></li>
+									<li><a href="#" class="btn_txt03"><span>배송비 절약하기</span></a></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">보니</span>
+									<span class="goods_txt02">SOMI 에쿠퍼 패딩코트(숏)</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 묶음상품, 배송지(출고지)가 동일한 상품 (2개  이상 장바구니 담을 시 – 무료배송) -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">옵션 : 상품명_옵션명</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td class="td_delivery" rowspan="2">
+								<ul class="list_txt01">
+									<li>무료배송</li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">보니</span>
+									<span class="goods_txt02">SOMI 에쿠퍼 패딩코트(숏)</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 선택옵션 일시품절 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<div class="disabled_txt"><span>일시품절</span></div>
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goofs_txt_etc">선택 옵션이 <strong>일시품절</strong> 되었습니다.</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 전체옵션 일시품절 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<div class="disabled_txt"><span>일시품절</span></div>
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">상품 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goofs_txt_etc">모든 옵션이 <strong>일시품절</strong> 되었습니다.</span>
+								</div>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 판매종료 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<div class="disabled_txt"><span>판매종료</span></div>
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goofs_txt_etc">상품이 <strong>판매종료</strong> 되었습니다.</span>
+								</div>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 장바구니에 담긴 상품 가격이 인하되었을 경우 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R</span>
+									<span class="goofs_txt_etc">상품가격이 장바구니에 담으셨을 때 보다 <strong>인하되었습니다.</strong></span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="txt_c05"><span class="tx_price">7,800</span>원</span>
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span>바로구매</span></button>
+									<button type="button" class="btn05 full c01"><span>찜하기</span></button>
+									<button type="button" class="btn05 full c01"><span>삭제</span></button>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //장바구니 - 택배배송 -->
+				<!-- 장바구니 - 택배배송 결제금액 -->
+				<div class="total_wrap c01">
+					<ul class="total_area">
+						<li>총 상품금액<span class="total_price"><strong>12,317,200</strong>원</span></li>
+						<li>할인금액<span class="total_price"><strong>- 25,000</strong>원</span></li><!-- 1210 -->
+						<li>배송비<span class="total_price"><strong>+ 2,500</strong>원</span></li>
+						<li>총 결제금액<span class="total_price"><strong>12,294,700</strong>원</span></li>
+					</ul>
+				</div>
+				<!-- //장바구니 - 택배배송 결제금액 -->
+
+				<!-- 매장수령 장바구니 -->
+				<div class="table_title c02">
+					<strong>매장수령 (2)</strong>
+				</div>
+				<div class="board02">
+					<table>
+						<caption>매장수령 장바구니 표이며 상품명/선택사항, 상품금액, 수량, 할인금액, 주문금액, 배송정보, 주문하기순으로 제공합니다.</caption>
+						<colgroup>
+							<!-- 1210 -->
+							<col style="width:3%;" /><col style="width:9%" /><col /><col style="width:10%" /><col style="width:6%" /><col style="width:11%" /><col style="width:12%" /><col style="width:12%" /><col style="width:11%" />
+							<!-- //1210 -->
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" class="chkbox" title="상품 체크" /></th>
+							<th scope="col" colspan="2">상품명/선택사항</th>
+							<th scope="col">상품금액</th>
+							<th scope="col">수량</th>
+							<th scope="col">할인금액</th>
+							<th scope="col">주문금액</th>
+							<th scope="col">배송정보</th>
+							<th scope="col">주문하기</th>
+						</tr>
+						</thead>
+						<tbody>
+						<!-- 매장수령 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03"><strong>[NC평촌점]</strong> 선택7) 블루프린트원피스 / 66</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>할인쿠폰</strong></div>
+										<div class="tip_txt">
+											즉시할인 쿠폰 <strong>5%</strong> 적용 금액
+											<br />더블쿠폰 할인  미 적용(주문서에서
+											<br />적용 예정)
+										</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+								<div class="mt4">
+									<a class="btn_etc03" href="#"><span>더블쿠폰<br /><strong>5%</strong></span></a><!-- 151221 -->
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">매장수령</span></li>
+									<li><span class="txt_c04 font_12">[NC평촌점]</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>택배배송이동</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03"><strong>[NC평촌점]</strong> 선택7) 블루프린트원피스 / 66</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">매장수령</span></li>
+									<li><span class="txt_c04 font_12">[NC평촌점]</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>택배배송이동</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<!-- //매장수령 장바구니 -->
+				<!-- 장바구니 - 매장수령 결제금액 -->
+				<div class="total_wrap c02">
+					<ul class="total_area">
+						<li>총 상품금액<span class="total_price"><strong>12,317,200</strong>원</span></li>
+						<li>할인금액<span class="total_price"><strong>- 25,000</strong>원</span></li><!-- 1210 -->
+						<li>배송비<span class="total_price"><strong>+ 2,500</strong>원</span></li>
+						<li>총 결제금액<span class="total_price"><strong>12,294,700</strong>원</span></li>
+					</ul>
+				</div>
+				<!-- //장바구니 - 매장수령 결제금액 -->
+				<!-- 총 결제금액 -->
+				<div class="total_wrap c03">
+					<ul class="total_area">
+						<li class="total_txt01">총 상품금액<span class="total_price"><strong>12,317,200</strong>원</span></li>
+						<li class="total_txt02">할인금액<span class="total_price"><strong>25,000</strong>원</span></li><!-- 1210 -->
+						<li class="total_txt03">배송비<span class="total_price"><strong>2,500</strong>원</span></li>
+						<li class="total_txt04"><span>총 결제금액</span><span class="total_price"><strong>12,294,700</strong>원</span></li>
+					</ul>
+				</div>
+				<!-- //총 결제금액 -->
+				<div class="set_btn mt20">
+					<div class="l_cont">
+						<button type="button" class="btn03 c01"><span>상품 전체 선택</span></button>
+						<button type="button" class="btn03 c01"><span>상품 선택 해지</span></button>
+						<button type="button" class="btn03 c03"><span>선택상품 삭제</span></button>
+						<button type="button" class="btn03 c03"><span>품절상품 모두 삭제</span></button>
+					</div>
+					<div class="r_cont">
+						<button type="button" class="btn06 c01"><span>계속 쇼핑하기</span></button>
+						<button type="button" class="btn06 c02"><span>구매하기</span></button>
+						<p class="mt15"><a class="btn04 c01 no_member" href="#"><span>비회원 구매하기</span></a></p>
+					</div>
+				</div>
+
+				<!-- 160713 추가 장바구니 탭메뉴 -->
+				<div class="cart_tab">
+					<div class="tab_type02 full_size06">
+						<ul class="d_tab" id="tDigit">
+							<li><a href="#tGoods">일반 상품 (105)</a></li>
+							<li class="on"><a href="#tDigit">디지털 상품 (105)</a></li>
+							<li><a href="#qckDlv">당일배송상품 (78)</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- //160713 추가 장바구니 탭메뉴 -->
+
+				<!-- 160713 디지털 상품 리스트 -->
+				<!-- 장바구니 - 택배배송 -->
+				<div class="set_btn_up left">
+					<button type="button" class="btn03 c01"><span>상품 전체 선택</span></button>
+					<button type="button" class="btn03 c01"><span>상품 선택 해지</span></button>
+					<button type="button" class="btn03 c03"><span>선택상품 삭제</span></button>
+					<button type="button" class="btn03 c03"><span>품절상품 모두 삭제</span></button>
+				</div>
+				<div class="board02">
+					<table>
+						<caption>택배배송 장바구니 표이며 상품명/선택사항, 상품금액, 수량, 할인금액, 주문금액, 배송정보, 주문하기순으로 제공합니다.</caption>
+						<colgroup>
+							<col style="width:3%;" /><col style="width:9%" /><col /><col style="width:10%" /><col style="width:6%" /><col style="width:11%" /><col style="width:12%" /><col style="width:12%" /><col style="width:11%" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" class="chkbox" title="전체 체크" /></th>
+							<th scope="col" colspan="2">상품명/선택사항</th>
+							<th scope="col">상품금액</th>
+							<th scope="col">수량</th>
+							<th scope="col">할인금액</th>
+							<th scope="col">주문금액</th>
+							<th scope="col">배송정보</th>
+							<th scope="col">주문하기</th>
+						</tr>
+						</thead>
+						<tbody>
+						<!-- 예약상품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">BEALL</span>
+										<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+										<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼 / 블루 / 100</span>
+									</a>
+									<a href="#" class="btn_txt02" id="btns01" onClick="commonUI.popupOpen('#layer01');return false;" ><span>변경하기</span></a>
+									<span class="goods_txt06">
+										<span class="flag_icon t01">예약상품</span>
+										발송예정일 <span class="txt_en">2015-12-25</span> 금요일
+									</span>
+									<span class="goods_txt_alert">* 선택한 주소로 배송 불가한 상품</span>
+								</div>
+							</td>
+							<td><span class="tx_price02">12,178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">120,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title"><strong>할인쿠폰</strong></div>
+										<div class="tip_txt">
+											즉시할인 쿠폰 <strong>5%</strong> 적용 금액
+											<br />더블쿠폰 할인  미 적용(주문서에서
+											<br />적용 예정)
+										</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+								<div class="mt4">
+									<a class="btn_etc03" href="#"><span>더블쿠폰<br /><strong>5%</strong></span></a>
+								</div>
+							</td>
+							<td><strong class="tx_price">11,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 업체직배송 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">BEALL</span>
+										<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									</a>
+									<span class="goods_txt06">
+										<span class="flag_icon t03">업체직배송</span>
+										배송예정일 별도안내
+									</span>
+								</div>
+							</td>
+							<td><span class="tx_price02">12,178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">120,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+								<div class="mt4">
+									<a class="btn_etc03" href="#"><span>더블쿠폰<br /><strong>100,000원</strong></span></a>
+								</div>
+							</td>
+							<td><strong class="tx_price">11,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+									<li><span class="txt_c04 font_12">도서/산간 배송불가</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 착불 상품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goods_txt05">[사은품] 딸기핸드폰케이스</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+									<span class="goods_txt06">
+										<span class="flag_icon c01">배송일 선택가능</span>
+										주문서에서 배송 날짜 선택가능 상품
+									</span>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">착불</span></li>
+									<li><span class="txt_c04 font_12">배송비 지역별 상이</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 배송비 절약하기 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">[모던하우스]</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goods_txt04">[사은품] 딸기핸드폰케이스</span>
+									<a href="#" class="btn_txt02" id="btns02" onClick="commonUI.popupOpen('#layer02');return false;" ><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02"><span class="tx_price">2,500</span>원</span></li>
+									<li class="font_12"><span class="txt_c04">30,000원<br />이상 무료배송</span></li>
+									<li><a href="#" class="btn_txt03"><span>배송비 절약하기</span></a></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 일반상품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 </span>
+									<span class="goods_txt02">상품 : 후드 야상형 경량점퍼 / 블루 / 100</span>
+								</div>
+								<a href="#" class="btn_txt02"><span>변경하기</span></a>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 사은품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goods_txt04">[사은품] 딸기핸드폰케이스</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 지점상품 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+									<span class="goods_txt03"><strong>[강남점]</strong> 선택7) 블루프린트원피스 / 66</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 묶음상품(1개 장바구니 담을 시) -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">옵션 : 상품명_옵션명</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 묶음상품, 배송지(출고지)가 동일한 상품 (2개  이상 장바구니 담을 시 – 유료배송) -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">옵션 : 상품명_옵션명</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td class="td_delivery" rowspan="2">
+								<ul class="list_txt01">
+									<li><span class="txt_c02"><span class="tx_price">2,500</span>원</span></li>
+									<li class="font_12"><span class="txt_c04">30,000원<br />이상 무료배송</span></li>
+									<li><a href="#" class="btn_txt03"><span>배송비 절약하기</span></a></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">보니</span>
+									<span class="goods_txt02">SOMI 에쿠퍼 패딩코트(숏)</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 묶음상품, 배송지(출고지)가 동일한 상품 (2개  이상 장바구니 담을 시 – 무료배송) -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">옵션 : 상품명_옵션명</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td class="td_delivery" rowspan="2">
+								<ul class="list_txt01">
+									<li>무료배송</li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">보니</span>
+									<span class="goods_txt02">SOMI 에쿠퍼 패딩코트(숏)</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="tx_price">7,800</span>원
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 선택옵션 일시품절 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<div class="disabled_txt"><span>일시품절</span></div>
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goofs_txt_etc">선택 옵션이 <strong>일시품절</strong> 되었습니다.</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 전체옵션 일시품절 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<div class="disabled_txt"><span>일시품절</span></div>
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">상품 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goofs_txt_etc">모든 옵션이 <strong>일시품절</strong> 되었습니다.</span>
+								</div>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 판매종료 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<div class="disabled_txt"><span>판매종료</span></div>
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R</span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<span class="goofs_txt_etc">상품이 <strong>판매종료</strong> 되었습니다.</span>
+								</div>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+								</div>
+							</td>
+						</tr>
+						<!-- 장바구니에 담긴 상품 가격이 인하되었을 경우 -->
+						<tr>
+							<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+							<td class="vat">
+								<a href="#" class="goods_imgs">
+									<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+								</a>
+							</td>
+							<td class="alig_l vat">
+								<div class="goods_info">
+									<span class="goods_txt01">BEALL</span>
+									<span class="goods_txt02">R빅무드 플라오 스카프 R빅무드 플라오 스카프 R</span>
+									<span class="goofs_txt_etc">상품가격이 장바구니에 담으셨을 때 보다 <strong>인하되었습니다.</strong></span>
+									<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼_블루_100</span>
+									<a href="#" class="btn_txt02"><span>변경하기</span></a>
+								</div>
+							</td>
+							<td><span class="tx_price02">178,000</span>원</td>
+							<td>
+								<div class="count_area">
+									<div class="d_count">
+										<input class="count_input" type="text" title="수량" value="1" />
+										<div class="count_buttons">
+											<a href="#" class="count_button_plus">수량 증가</a>
+											<a href="#" class="count_button_minus">수량 감소</a>
+										</div>
+									</div>
+									<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+								</div>
+							</td>
+							<td>
+								<span class="txt_c05"><span class="tx_price">7,800</span>원</span>
+								<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+								<div class="set_tooltip">
+									<div class="tip_info">
+										<div class="tip_title">할인쿠폰</div>
+										<div class="tip_txt">즉시할인 쿠폰 <strong>5%</strong> 적용 금액</div>
+										<a href="#" class="tip_close">툴팁 닫기</a>
+									</div>
+								</div>
+							</td>
+							<td><strong class="tx_price">1,500,200</strong>원</td>
+							<td>
+								<ul class="list_txt01">
+									<li><span class="txt_c02">무료배송</span></li>
+								</ul>
+							</td>
+							<td>
+								<div class="set_vbtn">
+									<button type="button" class="btn05 full"><span>바로구매</span></button>
+									<button type="button" class="btn05 full c01"><span>찜하기</span></button>
+									<button type="button" class="btn05 full c01"><span>삭제</span></button>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //장바구니 - 택배배송 -->
+				<!-- 장바구니 - 택배배송 결제금액 -->
+				<div class="total_wrap c01">
+					<ul class="total_area">
+						<li>총 상품금액<span class="total_price"><strong>12,317,200</strong>원</span></li>
+						<li>할인금액<span class="total_price"><strong>- 25,000</strong>원</span></li>
+						<li>배송비<span class="total_price"><strong>+ 2,500</strong>원</span></li>
+						<li>총 결제금액<span class="total_price"><strong>12,294,700</strong>원</span></li>
+					</ul>
+				</div>
+				<!-- //장바구니 - 택배배송 결제금액 -->
+				<!-- 총 결제금액 -->
+				<div class="total_wrap c03">
+					<ul class="total_area">
+						<li class="total_txt01">총 상품금액<span class="total_price"><strong>12,317,200</strong>원</span></li>
+						<li class="total_txt02">할인금액<span class="total_price"><strong>25,000</strong>원</span></li>
+						<li class="total_txt03">배송비<span class="total_price"><strong>2,500</strong>원</span></li>
+						<li class="total_txt04"><span>총 결제금액</span><span class="total_price"><strong>12,294,700</strong>원</span></li>
+					</ul>
+				</div>
+				<!-- //총 결제금액 -->
+				<div class="set_btn mt20">
+					<div class="l_cont">
+						<button type="button" class="btn03 c01"><span>상품 전체 선택</span></button>
+						<button type="button" class="btn03 c01"><span>상품 선택 해지</span></button>
+						<button type="button" class="btn03 c03"><span>선택상품 삭제</span></button>
+						<button type="button" class="btn03 c03"><span>품절상품 모두 삭제</span></button>
+					</div>
+					<div class="r_cont">
+						<button type="button" class="btn06 c01"><span>계속 쇼핑하기</span></button>
+						<button type="button" class="btn06 c02"><span>구매하기</span></button>
+						<p class="mt15"><a class="btn04 c01 no_member" href="#"><span>비회원 구매하기</span></a></p>
+					</div>
+				</div>
+				<!-- //160713 디지털 상품 리스트 -->
+
+				<div class="cart_tab">
+					<div class="tab_type02 full_size06">
+						<ul class="d_tab" id="qckDlv">
+							<li><a href="#tGoods">일반 상품 (105)</a></li>
+							<li><a href="#tDigit">디지털 상품 (105)</a></li>
+							<li class="on"><a href="#qckDlv">당일배송상품 (78)</a></li>
+						</ul>
+					</div>
+				</div>
+					<div class="set_btn_up left">
+						<button type="button" class="btn03 c01"><span>상품 전체 선택</span></button>
+						<button type="button" class="btn03 c01"><span>상품 선택 해지</span></button>
+						<button type="button" class="btn03 c03"><span>선택상품 삭제</span></button>
+						<button type="button" class="btn03 c03"><span>품절상품 모두 삭제</span></button>
+					</div>
+					<div class="table_title c01">
+						<strong>택배배송 (3)</strong>
+					</div>
+					<div class="board02">
+						<table>
+							<caption>택배배송 장바구니 표이며 상품명/선택사항, 상품금액, 수량, 할인금액, 주문금액, 배송정보, 주문하기순으로 제공합니다.</caption>
+							<colgroup>
+								<!-- 1210 -->
+								<col style="width:3%;" /><col style="width:9%" /><col /><col style="width:10%" /><col style="width:6%" /><col style="width:11%" /><col style="width:12%" /><col style="width:12%" /><col style="width:11%" />
+								<!-- //1210 -->
+							</colgroup>
+							<thead>
+							<tr>
+								<th scope="col"><input type="checkbox" class="chkbox" title="전체 체크" /></th>
+								<th scope="col" colspan="2">상품명/선택사항</th>
+								<th scope="col">상품금액</th>
+								<th scope="col">수량</th>
+								<th scope="col">할인금액</th>
+								<th scope="col">주문금액</th>
+								<th scope="col">배송정보</th>
+								<th scope="col">주문하기</th>
+							</tr>
+							</thead>
+							<tbody>
+							<!-- 예약상품 -->
+							<tr>
+								<td class="vat"><input type="checkbox" class="chkbox" title="상품 체크" /></td>
+								<td class="vat">
+									<a href="#" class="goods_imgs">
+										<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지" />
+									</a>
+								</td>
+								<td class="alig_l vat">
+									<div class="goods_info">
+										<a href="#" class="goods_link">
+											<span class="goods_txt01">BEALL</span>
+											<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+											<span class="goods_txt03">상품 1 : 후드 야상형 경량점퍼 / 블루 / 100</span>
+										</a>
+										<a href="#" class="btn_txt02" id="btns01" onClick="commonUI.popupOpen('#layer01');return false;" ><span>변경하기</span></a>
+										<span class="goods_txt_alert2">배송지가 변경되어 주문할 수 없습니다.</span> <!-- 스토어쇼핑 퀵배송 메시지 -->
+										<span class="goods_txt_alert2">상품정보가 변경되어 주문할 수 없습니다</span>
+									</div>
+								</td>
+								<td><span class="tx_price02">12,178,000</span>원</td>
+								<td>
+									<div class="count_area">
+										<div class="d_count">
+											<input class="count_input" type="text" title="수량" value="1" />
+											<div class="count_buttons">
+												<a href="#" class="count_button_plus">수량 증가</a>
+												<a href="#" class="count_button_minus">수량 감소</a>
+											</div>
+										</div>
+										<a href="#" class="count_button_change"><span class="ir">수량</span> 변경</a>
+									</div>
+								</td>
+								<td>
+									<span class="tx_price">120,800</span>원
+									<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>할인쿠폰</strong></div>
+											<div class="tip_txt">
+												즉시할인 쿠폰 <strong>5%</strong> 적용 금액
+												<br />더블쿠폰 할인  미 적용(주문서에서
+												<br />적용 예정)
+											</div>
+											<a href="#" class="tip_close">툴팁 닫기</a>
+										</div>
+									</div>
+									<div class="mt4">
+										<a class="btn_etc03" href="#"><span>더블쿠폰<br /><strong>5%</strong></span></a><!-- 160328 -->
+									</div>
+								</td>
+								<td><strong class="tx_price">11,500,200</strong>원</td>
+								<td>
+									<ul class="list_txt01">
+										<li><span class="txt_c02">무료배송</span></li>
+										<!-- 160121 삭제 -->
+										<!-- <li>
+											<span class="flag_icon t01">예약상품</span>
+											<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+											<div class="set_tooltip">
+												<div class="tip_info">
+													<div class="tip_title"><strong>예약상품</strong></div>
+													<div class="tip_txt">
+														예약 상품 <strong class="txt_c06">발송 예정일 2015-12-25</strong>
+														<br />본 상품은 예약상품으로 발송 예정일
+														<br />이후에 개별로 배송 되오니 발송예정<br />
+														일을 꼭 확인하시기 바랍니다.
+													</div>
+													<a href="#" class="tip_close">툴팁 닫기</a>
+												</div>
+											</div>
+										</li> -->
+										<!-- //160121 삭제 -->
+									</ul>
+								</td>
+								<td>
+									<div class="set_vbtn">
+										<!-- <button type="button" class="btn05 full"><span><strong>바로구매</strong></span></button> -->
+										<button type="button" class="btn05 full c01"><span><strong>찜하기</strong></span></button>
+										<button type="button" class="btn05 full c01"><span><strong>삭제</strong></span></button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+				<!-- 1210 -->
+				<!-- 장바구니 이용안내 , 매장 수령 유의사항 -->
+				<div class="box_info01">
+					<dl class="list_dl01">
+						<dt>장바구니 이용안내</dt>
+						<dd>오랫동안 장바구니에 보관된 상품을 주문하실 경우, 가격이나 혜택이 변동 될 수 있습니다. </dd>
+						<dd>장바구니에 담긴 상품은 30일 동안만 보관할 수 있습니다. 더 오랫동안 보관하시려면 <span class="txt_c02">‘찜’</span> 목록에 추가해 주세요.</dd>
+						<dd>구매하기 선택 시, 구매시점에 품절된 상품은 제외하고 주문이 진행됩니다.</dd>
+					</dl>
+					<dl class="list_dl01">
+						<dt>매장 수령 유의사항</dt>
+						<dd>오후 2시 30분까지 주문 시, 당일 픽업이 가능합니다. 안내 및 상품교환권SMS는 주문하시는 분의 휴대전화 번호로 발송됩니다. </dd>
+						<dd>수신 후, 픽업예정일에 방문해 주세요</dd>
+					</dl>
+				</div>
+				<!-- //1210 -->
+				<!-- //장바구니 이용안내 , 매장 수령 유의사항 -->
+
+				<!-- 무이자할부 안내 -->
+				<!-- 1210 -->
+				<div class="board_section">
+					<div class="board_left">
+						<div class="title">
+							<strong class="txt_h3">무이자할부 안내</strong>
+						</div>
+						<div class="board02 card01">
+							<table>
+								<caption>무이자할부 안내 표이며 카드사, 적용금액, 할부개월, 기간 순으로 제공합니다.</caption>
+								<colgroup><col style="width:25%" /><col style="width:20%" /><col style="width:20%" /><col style="width:35%" /></colgroup>
+								<thead>
+								<tr>
+									<th scope="col">카드사</th>
+									<th scope="col">적용금액</th>
+									<th scope="col">할부개월</th>
+									<th scope="col">기간</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td><img src="../../images/pcweb/order/img_cardlogo-01.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>2, 3, 4, 5 개월</td>
+									<td>2015.10.19<br />~2015.10.25(총7일)</td>
+								</tr>
+								<tr>
+									<td><img src="../../images/pcweb/order/img_cardlogo-02.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>2, 3, 4, 5 개월</td>
+									<td>2015.10.19<br />~2015.10.25(총7일)</td>
+								</tr>
+								<tr>
+									<td><img src="../../images/pcweb/order/img_cardlogo-03.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>2, 3, 4, 5 개월</td>
+									<td>2015.10.19<br />~2015.10.25(총7일)</td>
+								</tr>
+								<tr>
+									<td><img src="../../images/pcweb/order/img_cardlogo-04.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>2, 3, 4, 5 개월</td>
+									<td>2015.10.19<br />~2015.10.25(총7일)</td>
+								</tr>
+								<tr>
+									<td><img src="../../images/pcweb/order/img_cardlogo-05.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>2, 3, 4, 5 개월</td>
+									<td>2015.10.19<br />~2015.10.25(총7일)</td>
+								</tr>
+								<tr>
+									<td><img src="../../images/pcweb/order/img_cardlogo-05.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>2, 3, 4, 5 개월</td>
+									<td>2015.10.19<br />~2015.10.25(총7일)</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="board_right">
+						<div class="title">
+							<strong class="txt_h3">부분 무이자할부 안내</strong>
+						</div>
+						<div class="board02 card02">
+							<table>
+								<caption>부분 무이자할부 안내 안내 표이며 카드사, 적용금액, 할부개월, 고객부담 수수료 순으로 제공합니다.</caption>
+								<colgroup><col style="width:25%" /><col style="width:20%" /><col style="width:20%" /><col style="width:35%" /></colgroup>
+								<thead>
+								<tr>
+									<th scope="col">카드사</th>
+									<th scope="col">적용금액</th>
+									<th scope="col">할부개월</th>
+									<th scope="col">고객부담 수수료</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td rowspan="2"><img src="../../images/pcweb/order/img_cardlogo-01.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>6개월</td>
+									<td>1회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td>5만원 이상</td>
+									<td>10개월</td>
+									<td>1,2회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td rowspan="2"><img src="../../images/pcweb/order/img_cardlogo-02.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>6개월</td>
+									<td>1회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td>5만원 이상</td>
+									<td>10개월</td>
+									<td>1,2회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td rowspan="2"><img src="../../images/pcweb/order/img_cardlogo-03.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>6개월</td>
+									<td>1회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td>5만원 이상</td>
+									<td>10개월</td>
+									<td>1,2회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td rowspan="2"><img src="../../images/pcweb/order/img_cardlogo-04.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>6개월</td>
+									<td>1회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td>5만원 이상</td>
+									<td>10개월</td>
+									<td>1,2회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td rowspan="2"><img src="../../images/pcweb/order/img_cardlogo-05.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>6개월</td>
+									<td>1회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td>5만원 이상</td>
+									<td>10개월</td>
+									<td>1,2회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td rowspan="2"><img src="../../images/pcweb/order/img_cardlogo-05.gif" alt="삼성카드" /></td>
+									<td>5만원 이상</td>
+									<td>6개월</td>
+									<td>1회차 수수료 고객 부담</td>
+								</tr>
+								<tr>
+									<td>5만원 이상</td>
+									<td>10개월</td>
+									<td>1,2회차 수수료 고객 부담</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="div_ntx">* 법인카드와 선불카드는 무이자(부분) 할부혜택이 제외됩니다.</div><!-- 2017-01-23 -->
+				</div>
+				<!-- //1210 -->
+				<!-- //무이자할부 안내 -->
+			</div>
+			<!-- content -->
+			<!-- layer popup -->
+			<div class="layer_pop_section">
+			</div>
+			<!-- //layer popup -->
+
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

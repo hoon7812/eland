@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li class="lct_txt"><span>마이페이지</span></li>
+					</ul>
+				</div>
+
+				<div class="mypage_wrap">
+					<!-- 마이페이지 top 정보 -->
+					<div class="mypage_top">
+						<div class="title">
+							<h2 class="tit_img high"><img src="../../images/pcweb/mypage/h2_mypage.gif" alt="마이페이지" /></h2> <!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : .high 추가 -->
+						</div>
+						<div class="set_my_info">
+							<div class="smi dv01">
+								<div class="s_cont">
+									<div class="box_info_grade">
+										<div class="l_scont">
+											<span class="ico_grd vip"><em class="ir">구매등급 아이콘  : VIP</em></span>
+											<!-- <span class="ico_grd gld"><em class="ir">구매등급 아이콘  : Gold</em></span>
+											<span class="ico_grd slv"><em class="ir">구매등급 아이콘  : Silver</em></span>
+											<span class="ico_grd brz"><em class="ir">구매등급 아이콘  : Bronze</em></span>
+											<span class="ico_grd"><em class="ir">구매등급 아이콘  :  Welcome</em></span> -->
+										</div>
+										<div class="r_scont">
+											<div class="grd_info">
+												<strong class="usr_name">한동기</strong> 님의 <br />1월 구매등급은 <span class="usr_grd vip">VVIP</span>입니다.<!-- vip, gld, slv, brz -->
+												<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+												<div class="set_tooltip">
+													<div class="tip_info">
+														<dl class="list_dot01">
+															<dt>VVIP 등급 혜택</dt>
+															<dd>APP 7%장바구니 (최대2만원)</dd>
+															<dd>APP 3천원 장바구니 (5만원 이상 구매시)</dd>
+															<dd>APP 3천원 배송비 (1만원 이상 구매시)</dd>
+														</dl>
+														<dl class="list_dot01 mt15">
+															<dt>VVIP 등급 유지를 위해서는 <a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade3.png" alt="구매 내역 확인" /></a></dt>
+															<dd>구매 건수는 <span class="txt_c01">3건</span>/구매 금액은 <span class="txt_c01">200,000원</span>이 필요합니다.<br />(산정기간 : 2018.02~2018.04)</dd>
+														</dl>
+
+														<p class="txt_s_info01 txt_c04 mt15"><em>*</em> 필요 구매 조건은 확인 시점에 따라 오차가 발생할 수 있습니다.</p>
+														<a href="#" class="tip_close">툴팁 닫기</a>
+													</div>
+												</div>
+											</div>
+											<a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade1.png" alt="등급혜택 받기" /></a> <!-- 버튼 추가 및 디자인 변경 -->
+											<a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade2.png" alt="등급산정 내역 확인" /></a> <!-- 버튼 추가 및 디자인 변경 -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- NGCPO-4890 [PC/MO] 포인트 UI개선 -->
+							<div class="smi dv03">
+								<div class="s_cont">
+									<div class="sum_point">
+										<dl>
+											<dt class="rep"><a href="javascript:">포인트</a></dt>
+											<dd class="rep"><a href="javascript:"><em>9,999,999</em>P</a></dd>
+											<dt>구매포인트</dt>
+											<dd><em>99,999</em>P</dd>
+											<dt>이벤트 포인트</dt>
+											<dd><em>99,999</em>P</dd>
+											<dt>당월 소멸예정 포인트</dt>
+											<dd><em>999,999</em>P</dd>
+										</dl>
+										<a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade4.png" alt="포인트 소멸안내" /></a>
+									</div>
+								</div>
+							</div>
+							<div class="smi dv04">
+								<div class="s_cont">
+									<div class="partic p02"> <!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : 2단 - .p02   3단 - .p03 -->
+										<dl>
+											<dt><a href="javascript:">예치금</a></dt>
+											<dd><a href="javascript:"><em>9,999,999</em>원</a></dd>
+										</dl>
+									</div>
+									<div class="partic p02">
+										<dl>
+											<dt><a href="javascript:">사용가능쿠폰</a></dt>
+											<dd><a href="javascript:"><em>99</em>장</a></dd>
+										</dl>
+									</div>
+
+									<!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : 3단 케이스
+									<div class="partic p03">
+										<dl>
+											<dt><a href="javascript:">복지포인티</a></dt>
+											<dd><a href="javascript:"><em>9,999,999</em>원</a></dd>
+										</dl>
+									</div>
+									<div class="partic p03">
+										<dl>
+											<dt><a href="javascript:">예치금</a></dt>
+											<dd><a href="javascript:"><em>9,999,999</em>원</a></dd>
+										</dl>
+									</div>
+									<div class="partic p03">
+										<dl>
+											<dt><a href="javascript:">사용가능쿠폰</a></dt>
+											<dd><a href="javascript:"><em>99</em>장</a></dd>
+										</dl>
+									</div> -->
+								</div>
+							</div>
+							<!-- //NGCPO-4890 [PC/MO] 포인트 UI개선 -->
+						</div>
+					</div>
+					<!-- //마이페이지 top 정보 -->
+
+					<div class="mypage_cont">
+						<!-- my_l_cont -->
+						<div class="my_l_cont">
+							<!-- lnb_mypage -->
+							<div class="lnb_mypage">
+								<ul>
+									<li><strong class="stit">나의 쇼핑정보</strong>
+										<div class="depth2">
+											<ul>
+												<li class="on"><a href="#">주문/배송 조회</a></li>
+												<li><a href="#">취소/교환/반품 내역</a></li>
+												<li><a href="#">항공원 예약확인</a></li>
+												<li><a href="#">증빙 서류 발급</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><strong class="stit">나의 쇼핑 통장</strong>
+										<div class="depth2">
+											<ul>
+												<li><a href="#">포인트 조회</a></li>
+												<li><a href="#">쿠폰 조회</a></li>
+												<li><a href="#">예치금 조회</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><strong class="stit">나의 서비스 정보</strong>
+										<div class="depth2">
+											<ul>
+												<li><a href="#">나의 상품평</a></li>
+												<li><a href="#">나의 문의/답변</a></li>
+												<li><a href="#">나의 Mix&amp;Match</a></li>
+												<li><a href="#">나의 찜 목록</a></li>
+												<li><a href="#">최근 본 상품</a></li>
+												<li><a href="#">이벤트 참여 현황</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><strong class="stit">회원 정보</strong>
+										<div class="depth2">
+											<ul>
+												<li><a href="#">배송지 관리</a></li>
+												<li><a href="#">환불 계좌 관리</a></li>
+												<li><a href="#">주문정보 수신 설정</a></li>
+												<li><a href="#">개인정보 수정</a></li>
+												<li><a href="#">비밀번호 변경</a></li>
+												<li><a href="#">온라인 회원 탈퇴</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- //lnb_mypage -->
+
+							<!-- 고객센터 바로가기 -->
+							<div class="btn_customer_center">
+								<a href="#">
+									<div class="cc_top"><strong>고객센터 바로가기</strong></div>
+									<div class="cc_cont">
+										<img class="img" src="../../images/pcweb/common/img_customer_center.gif" alt="" />
+										<strong class="tel">1899-9500</strong>
+										<span class="txt">오전9시~오후6시<br />(주말/공휴일 휴무)</span>
+									</div>
+								</a>
+							</div>
+							<!-- //고객센터 바로가기 -->
+						</div>
+						<!-- //my_l_cont -->
+
+						<!-- my_r_cont -->
+						<div class="my_r_cont">
+							<div class="title">
+								<h2 class="tit_h2_dot">상세 주문내역</h2>
+							</div>
+
+							<!-- 주문 상품 -->
+							<div class="title mt40">
+								<h3 class="tit_h3_01">주문 상품</h3>
+							</div>
+
+							<div class="board02">
+								<table>
+									<caption>
+										주문한 상품 표이며 상품정보, 할인금액, 적립금액, 주문금액, 진행현황 순으로 제공합니다.
+									</caption>
+									<colgroup>
+										<col />
+										<col style="width:12%" />
+										<col style="width:12%" />
+										<col style="width:14%" />
+										<col style="width:14%" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" colspan="1">상품정보</th>
+											<th scope="col">할인금액</th>
+											<th scope="col">적립금액</th>
+											<th scope="col">주문금액</th>
+											<th scope="col">진행현황</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- 단일 배송지 -->
+										<tr>
+											<td colspan="5">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( PC주문 )</span></a></li>
+													<li>주문일 : 2015-11-18</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+														<a href="#" class="btn_txt02"><span>변경하기</span></a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">결제완료</strong>
+													<button type="button" class="btn05 full c01"><span><strong>주문취소</strong></span></button>
+													<button type="button" class="btn05 full c01"><span><strong>배송지 변경</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<!-- //단일 배송지 -->
+										<!-- 복수 배송지 case1 -->
+										<tr>
+											<td colspan="5">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( PC주문 )</span></a></li>
+													<li>주문일 : 2015-11-18</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">1번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+														<a href="#" class="btn_txt02"><span>변경하기</span></a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">결제완료</strong>
+													<button type="button" class="btn05 full c01"><span><strong>주문취소</strong></span></button>
+													<button type="button" class="btn05 full c01"><span><strong>배송지 변경</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">2번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">배송완료</strong>
+													<button type="button" class="btn05 full c01"><span><strong>교환/반품신청</strong></span></button>
+													<button type="button" class="btn05 full"><span><strong>상품평 작성</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<!-- //복수 배송지 case1 -->
+										<!-- 복수 배송지 case2 -->
+										<tr>
+											<td colspan="5">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( PC주문 )</span></a></li>
+													<li>주문일 : 2015-11-18</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">1번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+														<a href="#" class="btn_txt02"><span>변경하기</span></a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">결제완료</strong>
+													<button type="button" class="btn05 full c01"><span><strong>주문취소</strong></span></button>
+													<button type="button" class="btn05 full c01"><span><strong>배송지 변경</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">2번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">배송완료</strong>
+													<button type="button" class="btn05 full c01"><span><strong>교환/반품신청</strong></span></button>
+													<button type="button" class="btn05 full"><span><strong>상품평 작성</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">2번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">배송완료</strong>
+													<button type="button" class="btn05 full c01"><span><strong>교환/반품신청</strong></span></button>
+													<button type="button" class="btn05 full"><span><strong>상품평 작성</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<!-- 복수 배송지 case2 -->
+										<!-- 주문 취소 , 반품 , 교환 case -->
+										<tr>
+											<td colspan="5">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( PC주문 )</span></a></li>
+													<li>주문일 : 2015-11-18</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">1번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td>-</td>
+											<td>-</td>
+											<td>-</td>
+											<td>
+												<span class="txt_c02">취소완료<br />(2015-11-18)</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">2번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td>-</td>
+											<td>-</td>
+											<td>-</td>
+											<td>
+												<span class="txt_c02">반품완료<br />(2015-11-18)</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">2번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<span class="txt_c02">교환완료<br />(2015-11-18)</span>
+											</td>
+										</tr>
+										<!-- 주문 취소 , 반품 , 교환 case -->
+										<!-- 지점 수령상품 case -->
+										<tr>
+											<td colspan="5">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( PC주문 )</span></a></li>
+													<li>주문일 : 2015-11-18</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">2번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">픽업완료</strong>
+													<button type="button" class="btn05 full c01"><span><strong>교환/반품신청</strong></span></button>
+													<button type="button" class="btn05 full"><span><strong>상품평 작성</strong></span></button>
+												</div>
+											</td>
+										</tr>
+<!-- 160224_수정_추가 -->
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<strong class="flag_ship_num">2번 배송지</strong>
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">6,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">교환권 발급</strong>
+													<button type="button" class="btn05 full c01"><span><strong>주문취소</strong></span></button>
+													<button type="button" class="btn05 full c01"><span><strong>교환권 발송</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="5" class="bg_visit">
+												<div class="box_visit">
+													<ul>
+														<li>
+															<em>방문 일자 변경 :</em>
+															<select title="방문 일자 변경">
+																<option>2015-11-19</option>
+															</select>
+															<button type="button" class="btn03"><span>확인</span></button>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<!-- 160812 희망배송일 추가 -->
+										<tr>
+											<td colspan="5" class="bg_visit">
+												<div class="box_visit">
+													<ul>
+														<li>
+															<em>희망배송일 :</em>
+															<span class="day">2016-08-12(금요일)</span>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<!-- //160812 희망배송일 추가 -->
+<!-- //160224_수정_추가 -->
+										<!-- //지점 수령상품 case -->
+										<!-- 디지털 상품권 / 입장권 case -->
+										<tr>
+											<td colspan="5">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( PC주문 )</span></a></li>
+													<li>주문일 : 2016-06-23</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">[모던하우스]</span>
+															<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+															<span class="goods_txt03">A-1 OO호텔 예약권</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">156,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+																<em class="tx_ing">(1개 사용 완료)</em>
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">발송완료</strong>
+													<button type="button" class="btn05 full c01"><span><strong>반품신청</strong></span></button>
+													<button type="button" class="btn05 full"><span><strong>상품평작성</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="5">
+												<ul class="list_h_dot01">
+													<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( PC주문 )</span></a></li>
+													<li>주문일 : 2016-06-23</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">[모던하우스]</span>
+															<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+															<span class="goods_txt03">A-1 OO호텔 예약권</span>
+															<span class="goods_txt05">
+																<strong class="tx_price">156,000</strong>원<span class="gt05_bar">/</span><strong class="tx_num">2</strong>개
+																<em class="tx_ing">(1개 사용 완료)</em>
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">100,000</strong>원</td>
+											<td><strong class="tx_price">11,500,200</strong>원</td>
+											<td>
+												<div class="set_vbtn02">
+													<strong class="txt_ord_state">발송완료</strong>
+													<button type="button" class="btn05 full"><span><strong>상품평작성</strong></span></button>
+												</div>
+											</td>
+										</tr>
+										<!-- //디지털 상품권 / 입장권 case -->
+
+									</tbody>
+								</table>
+							</div>
+							<!-- //주문 상품 -->
+
+							<!-- 단일 배송지일 경우 배송정보 -->
+							<div class="title mt60">
+								<h3 class="tit_h3_01">배송지 정보</h3>
+							</div>
+							<div class="data_table01">
+								<table>
+									<caption>배송지 정보 표이며 주문자명, 받으시는 분, 배송 메세지, 배송비 순으로 제공합니다.</caption>
+									<colgroup><col style="width:18%"><col></colgroup>
+									<tbody>
+									<tr>
+										<th scope="row">주문자명</th>
+										<td><span class="txt_c02">한동기</span></td>
+									</tr>
+									<tr>
+										<th scope="row">받으시는 분</th>
+										<td>
+											<ul class="txt_row">
+												<li>홍길동</li>
+												<li>전화번호 : 02-0000-0000  /  휴대폰 번호 : 010-0000-0000</li>
+												<li>
+													<span class="vat">주소 :</span>
+													<span class="col_70">[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호(가산동)<br />
+													(서울 금천구 가산동 371-47번지 신한이노플렉스 803호)</span>
+													<button type="button" class="btn05 c01 vat"><span><strong>배송지 변경</strong></span></button>
+												</li>
+
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">배송 메세지</th>
+										<td>배송 전 연락 후 방문해 주세요.</td>
+									</tr>
+									<tr>
+										<th scope="row">배송비</th>
+										<td><span class="tx_price">2,500</span> 원</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //단일 배송지일 경우 배송정보 -->
+
+							<!-- 단일 배송지일 경우 회수지 정보 -->
+							<div class="title mt60">
+								<h3 class="tit_h3_01">회수지 정보</h3>
+							</div>
+							<div class="data_table01">
+								<table>
+									<caption>회수지 정보 표이며 주문자명, 받으시는 분, 배송 메세지, 반품 배송비 순으로 제공합니다.</caption>
+									<colgroup><col style="width:18%"><col></colgroup>
+									<tbody>
+									<tr>
+										<th scope="row">주문자명</th>
+										<td><span class="txt_c02">한동기</span></td>
+									</tr>
+									<tr>
+										<th scope="row">받으시는 분</th>
+										<td>
+											<ul class="txt_row">
+												<li>홍길동</li>
+												<li>전화번호 : 02-0000-0000  /  휴대폰 번호 : 010-0000-0000</li>
+												<li>
+													<span class="vat">주소 :</span>
+													<span class="col_70">[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호(가산동)<br />
+													(서울 금천구 가산동 371-47번지 신한이노플렉스 803호)</span>
+													<button type="button" class="btn05 c01 vat"><span><strong>배송지 변경</strong></span></button>
+												</li>
+
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">배송 메세지</th>
+										<td>배송 전 연락 후 방문해 주세요.</td>
+									</tr>
+									<tr>
+										<th scope="row">반품 배송비</th>
+										<td><span class="tx_price">2,500</span> 원</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //단일 배송지일 경우 회수지 정보 -->
+
+							<!-- 단일 배송지 일경우 지점수령 정보 -->
+							<div class="data_table01">
+								<table>
+<!-- 160204 -->
+									<caption>지점수령 정보 표이며 주문자명, 받으시는 분, 픽업장소, 대표번호 순으로 제공합니다.</caption>
+<!-- //160204 -->
+									<colgroup><col style="width:18%"><col></colgroup>
+									<tbody>
+									<tr>
+										<th scope="row">주문자명</th>
+										<td><span class="txt_c02">한동기</span></td>
+									</tr>
+									<tr>
+										<th scope="row">받으시는 분</th>
+										<td>
+											<ul class="txt_row">
+												<li>홍길동</li>
+												<li>전화번호 : 02-0000-0000  /  휴대폰 번호 : 010-0000-0000</li>
+											</ul>
+										</td>
+									</tr>
+<!-- 160204 -->
+									<tr>
+										<th scope="row">픽업장소</th>
+										<td>
+											NC백화점 강서점 4층 SPAO매장
+											<a class="btn_txt01 c02 ml20" href="#"><span>위치보기</span></a>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">대표번호</th>
+										<td>02-2157-5000</td>
+									</tr>
+<!-- //160204 -->
+									</tbody>
+								</table>
+							</div>
+							<!-- 단일 배송지 일경우 지점수령 정보 -->
+
+							<!-- 복수 배송지일 경우 배송정보 -->
+							<div class="title mt60">
+								<h3 class="tit_h3_01">배송지 정보</h3>
+							</div>
+							<!-- 배송지가 6개 이상일 경우 -->
+							<div class="tab_type02 full_size10">
+								<ul class="d_tab2">
+									<li class="on"><a href="#" onClick="commonUI.tab('.d_tab2','0');return false;">1번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab2','1');return false;">2번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab2','2');return false;">3번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab2','3');return false;">4번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab2','4');return false;">5번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab2','5');return false;">6번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab2','6');return false;">7번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab2','7');return false;">8번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab2','8');return false;">9번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab2','9');return false;">10번 배송지</a></li>
+								</ul>
+							</div>
+							<!-- //배송지가 6개 이상일 경우 -->
+
+							<!-- 배송지가 5개 이하일 경우 -->
+							<div class="tab_type02 full_size05">
+								<ul class="d_tab">
+									<li class="on"><a href="#" onClick="commonUI.tab('.d_tab','0');return false;">1번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab','1');return false;">2번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab','2');return false;">3번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab','3');return false;">4번 배송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab','4');return false;">5번 배송지</a></li>
+								</ul>
+								<div class="tab_cont">
+									<div class="d_tab_cont on">
+
+										<div class="data_table01">
+											<table>
+												<caption>배송지 정보 표이며 주문자명, 받으시는 분, 배송 메세지, 배송비 순으로 제공합니다.</caption>
+												<colgroup><col style="width:18%"><col></colgroup>
+												<tbody>
+												<tr>
+													<th scope="row">주문자명</th>
+													<td><span class="txt_c02">한동기</span></td>
+												</tr>
+												<tr>
+													<th scope="row">받으시는 분</th>
+													<td>
+														<ul class="txt_row">
+															<li>홍길동</li>
+															<li>전화번호 : 02-0000-0000  /  휴대폰 번호 : 010-0000-0000</li>
+															<li>
+																<span class="vat">주소 :</span>
+																<span class="col_70">[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호(가산동)<br />
+																(서울 금천구 가산동 371-47번지 신한이노플렉스 803호)</span>
+																<button type="button" class="btn05 c01 vat"><span><strong>배송지 변경</strong></span></button>
+															</li>
+
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">배송 메세지</th>
+													<td>배송 전 연락 후 방문해 주세요.</td>
+												</tr>
+												<tr>
+													<th scope="row">배송비</th>
+													<td><span class="tx_price">2,500</span> 원</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+
+										<!-- 복수 배송지일 경우 회수지 정보 -->
+										<div class="title mt60">
+											<h3 class="tit_h3_01">회수지 정보</h3>
+										</div>
+										<div class="data_table01">
+											<table>
+												<caption>회수지 정보 표이며 주문자명, 받으시는 분, 배송 메세지, 반품 배송비 순으로 제공합니다.</caption>
+												<colgroup><col style="width:18%"><col></colgroup>
+												<tbody>
+												<tr>
+													<th scope="row">주문자명</th>
+													<td><span class="txt_c02">한동기</span></td>
+												</tr>
+												<tr>
+													<th scope="row">받으시는 분</th>
+													<td>
+														<ul class="txt_row">
+															<li>홍길동</li>
+															<li>전화번호 : 02-0000-0000  /  휴대폰 번호 : 010-0000-0000</li>
+															<li>
+																<span class="vat">주소 :</span>
+																<span class="col_70">[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호(가산동)<br />
+																(서울 금천구 가산동 371-47번지 신한이노플렉스 803호)</span>
+																<button type="button" class="btn05 c01 vat"><span><strong>배송지 변경</strong></span></button>
+															</li>
+
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">배송 메세지</th>
+													<td>배송 전 연락 후 방문해 주세요.</td>
+												</tr>
+												<tr>
+													<th scope="row">반품 배송비</th>
+													<td><span class="tx_price">2,500</span> 원</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+										<!-- //복수 배송지일 경우 회수지 정보 -->
+
+										<!-- 복수 배송지 일경우 지점수령 정보 -->
+										<div class="data_table01">
+											<table>
+<!-- 160204 -->
+												<caption>지점수령 정보 표이며 주문자명, 받으시는 분, 픽업장소, 대표번호 순으로 제공합니다.</caption>
+<!-- /16/0204 -->
+												<colgroup><col style="width:18%"><col></colgroup>
+												<tbody>
+												<tr>
+													<th scope="row">주문자명</th>
+													<td><span class="txt_c02">한동기</span></td>
+												</tr>
+												<tr>
+													<th scope="row">받으시는 분</th>
+													<td>
+														<ul class="txt_row">
+															<li>홍길동</li>
+															<li>전화번호 : 02-0000-0000  /  휴대폰 번호 : 010-0000-0000</li>
+														</ul>
+													</td>
+												</tr>
+<!-- 160204 -->
+												<tr>
+													<th scope="row">픽업장소</th>
+													<td>
+														NC백화점 강서점 4층 SPAO매장
+														<a class="btn_txt01 c02 ml20" href="#"><span>위치보기</span></a>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">대표번호</th>
+													<td>02-2157-5000</td>
+												</tr>
+<!-- //160204 -->
+												</tbody>
+											</table>
+										</div>
+										<!-- 복수 배송지 일경우 지점수령 정보 -->
+									</div>
+									<div class="d_tab_cont">
+
+										<div class="data_table01">
+											<table>
+												<caption>주문정보(택배배송) 표이며 받으시는 분, 배송 메세지 순으로 제공합니다.</caption>
+												<colgroup><col style="width:18%"><col></colgroup>
+												<tbody>
+												<tr>
+													<th scope="row">주문자명</th>
+													<td><span class="txt_c02">한동기2</span></td>
+												</tr>
+												<tr>
+													<th scope="row">받으시는 분</th>
+													<td>
+														<ul class="txt_row">
+															<li>홍길동</li>
+															<li>전화번호 : 02-0000-0000  /  휴대폰 번호 : 010-0000-0000</li>
+															<li>
+																<span class="vat">주소 :</span>
+																<span class="col_70">[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호(가산동)<br />
+																(서울 금천구 가산동 371-47번지 신한이노플렉스 803호)</span>
+																<button type="button" class="btn05 c01 vat"><span><strong>배송지 변경</strong></span></button>
+															</li>
+
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">배송 메세지</th>
+													<td>배송 전 연락 후 방문해 주세요.</td>
+												</tr>
+												<tr>
+													<th scope="row">배송비</th>
+													<td><span class="tx_price">2,500</span> 원</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+
+									</div>
+
+									<div class="d_tab_cont">3번 배송지 내용</div>
+
+									<div class="d_tab_cont">4번 배송지 내용</div>
+
+									<div class="d_tab_cont">5번 배송지 내용</div>
+								</div>
+							</div>
+							<!-- //배송지가 5개 이하일 경우 -->
+							<!-- //복수 배송지일 경우 배송정보 -->
+
+							<!-- 발송 정보 2016-06-27 -->
+							<div class="title mt60">
+								<h3 class="tit_h3_01">발송 정보</h3>
+							</div>
+							<div class="tab_type02 full_size05">
+								<ul class="d_tab3">
+									<li class="on"><a href="#" onClick="commonUI.tab('.d_tab3','0');return false;">1번 발송지</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab3','1');return false;">2번 발송지</a></li>
+								</ul>
+								<div class="tab_cont">
+									<div class="d_tab_cont on">
+										<div class="data_table01">
+											<table>
+												<caption>발송지 정보 표이며 주문자명, 받으시는 분 순으로 제공합니다.</caption>
+												<colgroup><col style="width:18%"/><col/></colgroup>
+												<tbody>
+												<tr>
+													<th scope="row">주문자명</th>
+													<td><span class="txt_c02">한동기</span></td>
+												</tr>
+												<tr>
+													<th scope="row">받으시는 분</th>
+													<td>
+														<ul class="txt_row">
+															<li>홍길동</li>
+															<li>
+																휴대폰 번호 : 010-0000-0000
+																<button type="button" class="btn05 c01"><span><strong>재발송</strong></span></button>
+															</li>
+														</ul>
+													</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="d_tab_cont">2번 발송지</div>
+								</div>
+							</div>
+							<!--// 발송 정보 2016-06-27 -->
+
+
+							<div class="title mt40">
+								<h3 class="tit_h3_01">결제 정보</h3>
+							</div>
+
+							<div class="total_wrap c05 mt0">
+								<ul class="total_area">
+									<li class="total_txt01">상품금액<span class="total_price"><strong>12,317,200</strong>원</span></li>
+									<li class="total_txt02">총 할인금액<span class="total_price"><strong>25,000</strong>원</span></li>
+									<li class="total_txt03">총 배송비<span class="total_price"><strong>25,000</strong>원</span></li>
+									<li class="total_txt04">
+										<span>총 결제금액</span>
+										<span class="total_price"><strong>12,294,700</strong>원</span>
+									</li>
+								</ul>
+							</div>
+							<!-- 무통장 입금 결제시(결제 예정) -->
+							<div class="box_pay_info">
+								<div class="l_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">상품 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">장바구니 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">카드 할인</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">포인트</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>P</div>
+										</li>
+										<li>
+											<div class="th">배송비 쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">예치금</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+									</ul>
+								</div>
+								<div class="r_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">무통장 입금</div>
+											<div class="td"><strong class="tx_price">99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">입금계좌</div>
+											<div class="td">
+												<span class="bank_info01">우리은행 11604137218106</span>
+												<span class="bank_info02">예금주: 이랜드몰닷컴(~2015.11.20까지)</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //무통장 입금 결제시(결제 예정) -->
+
+							<!-- 무통장 입금 결제시 (결제 완료) -->
+							<div class="box_pay_info">
+								<div class="l_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">상품 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">장바구니 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">카드 할인</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">포인트</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>P</div>
+										</li>
+										<li>
+											<div class="th">배송비 쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">예치금</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+									</ul>
+								</div>
+								<div class="r_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">무통장 입금</div>
+											<div class="td">
+												<strong class="tx_price">99,999,999</strong>원
+												<span class="bank_info01">우리은행 11604137218106</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //무통장 입금 결제시 (결제 완료) -->
+
+							<!-- 실시간 계좌이체시 -->
+							<div class="box_pay_info">
+								<div class="l_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">상품 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">장바구니 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">카드 할인</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">포인트</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>P</div>
+										</li>
+										<li>
+											<div class="th">배송비 쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">예치금</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+									</ul>
+								</div>
+								<div class="r_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">실시간 계좌이체</div>
+											<div class="td">
+												<strong class="tx_price">99,999,999</strong>원
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //실시간 계좌이체시 -->
+
+							<!-- 신용카드 결제시 -->
+							<div class="box_pay_info">
+								<div class="l_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">상품 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">장바구니 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">카드 할인</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">포인트</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>P</div>
+										</li>
+										<li>
+											<div class="th">배송비 쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">예치금</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+									</ul>
+								</div>
+								<div class="r_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">신용카드</div>
+											<div class="td">
+												<strong class="tx_price">99,999,999</strong>원 (비씨카드 일시불)
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //신용카드 결제시 -->
+
+							<!-- 할인/혜택으로만 결제시 -->
+							<div class="box_pay_info">
+								<div class="l_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">상품 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">장바구니 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">카드 할인</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">포인트</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>P</div>
+										</li>
+										<li>
+											<div class="th">배송비 쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">예치금</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">복지 포인트</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>P</div>
+										</li>
+										<li>
+											<div class="th">직원 자기계발 포인트</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>P</div>
+										</li>
+									</ul>
+								</div>
+								<div class="r_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">포인트결제</div>
+											<div class="td">
+												<strong class="tx_price">0</strong>원
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //할인/혜택으로만 결제시 -->
+
+							<!-- 주문수단 복수시 -->
+							<div class="box_pay_info">
+								<div class="l_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">상품 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">장바구니 할인쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">카드 할인</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">포인트</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>P</div>
+										</li>
+										<li>
+											<div class="th">배송비 쿠폰</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+										<li>
+											<div class="th">예치금</div>
+											<div class="td"><strong class="tx_price">-99,999,999</strong>원</div>
+										</li>
+									</ul>
+								</div>
+								<div class="r_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">신용카드</div>
+											<div class="td">
+												<strong class="tx_price">99,999,999</strong>원 (비씨카드 일시불)
+											</div>
+										</li>
+										<li>
+											<div class="th">실시간 계좌이체</div>
+											<div class="td">
+												<strong class="tx_price">99,999,999</strong>원
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //주문수단 복수시 -->
+
+							<!-- 멀티 결제시 (전체 즉시 취소) -->
+							<div class="box_pay_info">
+								<div class="l_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th"><div class="ir">내용없음</div></div>
+											<div class="td"><div class="ir">내용없음</div></div>
+										</li>
+									</ul>
+								</div>
+								<div class="r_cont">
+									<ul class="list_pay_info">
+										<li>
+											<div class="th">신용카드</div>
+											<div class="td">
+												<strong class="tx_price">0</strong>원 (비씨카드 일시불 취소)
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //멀티 결제시 (전체 즉시 취소) -->
+
+							<div class="box_excl01 mt100">
+								<dl class="list_dl_excl01">
+									<dt>
+										<span class="stit">결제 수단별로 해당 증빙서류를 발급받으실 수 있습니다.</span>
+										<a class="btn03 c01" href="#"><span>신용카드 전표 발급</span></a>
+										<a class="btn03 c01" href="#"><span>현금 영수증 발급</span></a>
+									</dt>
+									<dd>카드의 경우 카드 전표가 자동 발급되므로 조회 버튼을 클릭하시면 되고 현금영수증의 경우 결제 완료시 자동 발급되며 현금 영수증은
+									국세청 홈페이지에서 확인하실 수 있습니다.</dd>
+									<dd>자진 발급된 현금영수증을 소득공제나 지출증빙용으로 변경하시려면 국세청 현금영수증 사이트에서 변경하시거나 국세청 현금영수증 상담센터
+									( 1544-2020 )로 문의하시기 바랍니다.</dd>
+									<dd>카드영수증과 현금영수증의 발급시점은 주문완료 시점입니다. 기타 자세한 문의사항은 고객만족센터로 연락주시기 바랍니다. ( 1899-9500 )</dd>
+								</dl>
+							</div>
+
+							<!-- 환불 방법 선택 20170112 추가 -->
+							<div class="title mt40">
+								<h3 class="tit_h3_01">환불 방법 선택</h3>
+							</div>
+							<div class="box_refund_sel">
+								<p class="s_tit"><span>입력계좌로 환불 받기 원하실 경우, 빠르고 편리한 환불서비스를 위해 정확한 계좌정보를 입력해 주세요</span></p>
+								<div class="s_type">
+									<label for="refund_rdo01"><input id="refund_rdo01" type="radio" class="rdobox" name="refund_rdo" checked="checked" /> 입력계좌로 환불 받기</label>
+									<label for="refund_rdo02"><input id="refund_rdo02" type="radio" class="rdobox" name="refund_rdo" /> 예치금으로 환불 받기</label>
+								</div>
+								<div class="box_rs">
+									<div class="rs_cont_case">
+										<p class="rs_txt">우리은행 <span class="tx_num">1002941000000</span>(한동기)으로 입금 <button type="button" class="btn03 c01"><span>새로 입력</span></button></p>
+									</div>
+									<div class="rs_cont_case">
+										<div class="list_rs">
+											<ul>
+												<li>
+													<strong class="rs_tit">예금주명</strong>
+													<div class="rs_cont">
+														<input type="text" class="input_txt wide" title="예금주명" value="" />
+													</div>
+												</li>
+												<li>
+													<strong class="rs_tit">은행선택</strong>
+													<div class="rs_cont">
+														<select class="wide" title="은행선택">
+															<option>은행선택</option>
+															<option>옵션2 옵션2 옵션2 옵션2 옵션2 옵션2 옵션2 옵션2 옵션2</option>
+															<option>옵션3</option>
+															<option>옵션4</option>
+															<option>옵션5</option>
+														</select>
+													</div>
+												</li>
+												<li>
+													<strong class="rs_tit">계좌번호</strong>
+													<div class="rs_cont">
+														<input type="text" class="input_txt wide" title="계좌번호" value="" />
+														<div class="rs_btn"><button type="button" class="btn03 c01"><span>계좌 확인</span></button></div>
+													</div>
+												</li>
+											</ul>
+											<label for="chk_save_info"><input id="chk_save_info" type="checkbox" class="chkbox" /> 환불계좌정보 저장하기</label>
+										</div>
+									</div>
+								</div>
+								<div class="list_dot02">
+									<ul>
+										<li>주문취소는 “상품준비중" 및 이전 단계에서만 가능합니다.</li>
+										<li>주문 취소 시에는 상품구입시 제공되는 모든 사은품(상품 구입시 제공되는 사은품, 구매금액별 제공되는 사은품)의 주문도 자동으로 취소됩니다. </li>
+										<li>단, 주문상품 중 일부만 취소하실 경우 취소하지 않은 상품의 사은품만 제공됩니다. (구매금액별 사은품은 제공되지 않을 수 있습니다.)</li>
+										<li>부분 취소를 지원하지 않는 카드 사용시 고객센터로 연락 주세요. (1899-9500)</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //환불 방법 선택 20170112 추가 -->
+
+							<div class="set_btn mt30">
+								<a class="btn01" href="#"><span>신청</span></a><!-- 20170113 버튼추가 -->
+								<a class="btn01 c01" href="#"><span>목록으로</span></a>
+							</div>
+
+							<!-- 즉시 취소 case -->
+							<div class="box_ord_cancel">
+								<strong class="stxt01">현재 주문 전체 즉시 취소가 가능합니다.<br />취소하시겠습니까?</strong>
+								<span class="stxt02">주문 전체 즉시 취소는 주문 후 전체 주문상품이 상품 준비중 단계 혹은 이전 단계일 경우 전체 주문에 대해 즉시취소가 가능합니다.</span>
+								<div class="set_btn">
+									<a class="btn01 c04" href="#"><span>주문 전체 즉시 취소</span></a>
+								</div>
+							</div>
+							<!-- //즉시 취소 case -->
+
+						</div>
+						<!-- //my_r_cont -->
+					</div>
+				</div>
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

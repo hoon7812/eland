@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+</head>
+
+<!-- .hd_del : header del / back / title : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+</div>
+<!-- //CONTENT -->
+
+
+<!-- layer_popup : 비회원 주문 정보수집 동의 -->
+<div id="layerTerms2" class="layer_fix" style="display:block"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<!-- 160817 수정 -->
+	<h3 class="pop_tit">비회원 주문 정보수집 동의</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="nomember_terms">
+				<div class="title">
+					정보수집 동의 약관
+					<div class="absR"><a href="#" onclick="fn_layer_open('layerTerms');return false;" onkeypress="this.onclick;" class="btn_line01 c02">전문보기</a></div>
+				</div>
+				<div class="terms_sbox">
+					1. 개인정보의 수집 및 이용 목적<br /><br />
+					1) 주문자 정보 확보<br />
+					2) 물품에 관한 배송지 정보 확보<br />
+					3) 불만처리 의사소통 경로 확보<br />
+					4) 주문상품에 대한 결제 및 취소
+					<br /><br /><br />
+
+					2. 수집하는 개인정보의 항목<br /><br />
+						1)	주문자의 이름, 주소, 연락처, 이메일 (단, 주문자와 주문물품의 수취인가 다른 경우에는 수취인의 이름, 주소, 연락처)<br />
+						2) 대금 결제에 관한 정보 (청약 철회 시 현금 환불 계좌 정보 등)<br /><br />
+						* 서비스이용과정이나 사업처리 과정에서 아래와 같은 정보들이 생성되어 수집될 수 있습니다.<br />
+						- 서비스이용기록, 접속로그, 쿠키, 접속IP정보, 결제기록, 이용정지기록
+					<br /><br /><br />
+
+					3. 개인정보의 보유 및 이용 기간 <br /><br />
+						* 원칙적으로 개인정보의 수집목적 또는 제공받은 목적이 달성되면 지체 없이 파기합니다. 다만, 전자상거래 등에서의 소비자 보호에 관한 법률 등 관계법률에 의해 보존할 필요가 있는 경우에는 일정기간 보존합니다. 이 경우 보관하는 정보를 그 보관 목적으로만 이용하며, 보존기간은 아래와 같습니다.<br /><br />
+						1)계약 또는 청약철회 등에 관한 기록 <br />
+						• 보존 이유: 전자상거래 등에서의 소비자 보호에 관한 법률<br />
+						• 보존 기간: 5년<br />
+						2)대금결제 및 재화 등의 공급에 관한 기록<br />
+						• 보존 이유: 전자상거래 등에서의 소비자 보호에 관한 법률<br />
+						• 보존 기간: 5년<br />
+						3)소비자의 불만 또는 분쟁처리에 관한 기록<br />
+						• 보존 이유: 전자상거래 등에서의 소비자 보호에 관한 법률<br />
+						• 보존 기간: 3년<br /><br />
+						비회원 주문 시 제공하신 모든 정보는 상기 목적에 필요한 용도 이외로는 사용되지 않습니다. 보다 자세한 내용은 "개인정보취급방침"을 확인하여 주시기 바랍니다.
+					<br /><br /><br />
+
+					4.동의를 거부할 권리 및 거부에 따른 불이익<br /><br />
+					개인 정보 수집, 이용 목적에 관한 사항에 대해 동의를 거부할 수 있으나, 거부하실 경우 저희 이랜드 몰에서 비회원 구매를 하실 수 없습니다.
+					<br /><br /><br />
+				</div>
+				<div class="terms_chk">
+					<input type="checkbox" id="chk_terms01">
+					<label for="chk_terms01">(필수) 비회원 주문 정보수집에 동의 합니다.</label>
+				</div>
+			</div>
+
+			<!-- 160817 삭제 <div class="nomember_terms">
+				<div class="title mt10">개인정보 수집 및 이용 안내</div>
+				<div class="terms_list">
+					160310 수정
+					<div class="list_box">
+						<span class="stit">목적</span>
+						<span class="stxt">상품 주문 확인 및 이용자 식별, 서비스 이용 및 상담</span>
+						<span class="stit">항목 및 보유/이용기간</span>
+						<span class="stxt">주문자 정보(이름, 생년월일, 휴대전화번호, 이메일, 비밀번호)5년(계약 및 철회, 결제 및 공급)</span>
+					</div>
+					<div class="list_box">
+						<span class="stit">목적</span>
+						<span class="stxt">상품 배송 및 서비스 제공을 위한 사용자 정보 확인</span>
+						<span class="stit">항목 및 보유/이용기간</span>
+						<span class="stxt">배송상품 : 수취인정보 (이름, 주소, 전화번호) 5년(계약 및 철회, 결제 및 공급)</span>
+					</div>
+					<div class="list_box">
+						<span class="stit">목적</span>
+						<span class="stxt">서비스 제공 및 계약의 이행, 부정 이용방지, 비인가 사용 방지</span>
+						<span class="stit">항목 및 보유/이용기간</span>
+						<span class="stxt">서비스 이용 기록, 쿠키, 방문 일시, 기기정보 3개월</span>
+					</div>
+					//160310 수정
+				</div>
+				<div class="terms_chk">
+					<input type="checkbox" id="chk_terms02">
+					<label for="chk_terms02">(필수) 개인정보 수집 및 이용에 동의 합니다.</label>
+				</div>
+			</div> -->
+
+			<ul class="btn_agree">
+				<li><a href="#" class="btn_brd03 c01">취소</a></li>
+				<li><a href="#" class="btn_bg06 c01"><strong>다음</strong></a></li>
+			</ul>
+			<!-- 160322 수정 -->
+			<ul class="btn_agree">
+				<li><button type="button" class="btn_brd03 c01">취소</button></li>
+				<li><button type="button" class="btn_bg06 c01" disabled="disabled"><strong>다음</strong></button></li>
+			</ul>
+			<!-- //160322 수정 -->
+		</div>
+	</div>
+	<!-- //160817 수정 -->
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- layer_popup : //비회원 주문 정보수집 동의 -->
+
+<!-- 160817 수정 -->
+<!-- layer_popup : 정보수집 동의 약관 전문보기 -->
+<div id="layerTerms" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">정보수집 동의 약관 전문보기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="terms">
+				1. 개인정보의 수집 및 이용 목적<br /><br />
+				1) 주문자 정보 확보<br />
+				2) 물품에 관한 배송지 정보 확보<br />
+				3) 불만처리 의사소통 경로 확보<br />
+				4) 주문상품에 대한 결제 및 취소
+				<br /><br /><br />
+
+				2. 수집하는 개인정보의 항목<br /><br />
+					1)	주문자의 이름, 주소, 연락처, 이메일 (단, 주문자와 주문물품의 수취인가 다른 경우에는 수취인의 이름, 주소, 연락처)<br />
+					2) 대금 결제에 관한 정보 (청약 철회 시 현금 환불 계좌 정보 등)<br /><br />
+					* 서비스이용과정이나 사업처리 과정에서 아래와 같은 정보들이 생성되어 수집될 수 있습니다.<br />
+					- 서비스이용기록, 접속로그, 쿠키, 접속IP정보, 결제기록, 이용정지기록
+				<br /><br /><br />
+
+				3. 개인정보의 보유 및 이용 기간 <br /><br />
+					* 원칙적으로 개인정보의 수집목적 또는 제공받은 목적이 달성되면 지체 없이 파기합니다. 다만, 전자상거래 등에서의 소비자 보호에 관한 법률 등 관계법률에 의해 보존할 필요가 있는 경우에는 일정기간 보존합니다. 이 경우 보관하는 정보를 그 보관 목적으로만 이용하며, 보존기간은 아래와 같습니다.<br /><br />
+					1)계약 또는 청약철회 등에 관한 기록 <br />
+					• 보존 이유: 전자상거래 등에서의 소비자 보호에 관한 법률<br />
+					• 보존 기간: 5년<br />
+					2)대금결제 및 재화 등의 공급에 관한 기록<br />
+					• 보존 이유: 전자상거래 등에서의 소비자 보호에 관한 법률<br />
+					• 보존 기간: 5년<br />
+					3)소비자의 불만 또는 분쟁처리에 관한 기록<br />
+					• 보존 이유: 전자상거래 등에서의 소비자 보호에 관한 법률<br />
+					• 보존 기간: 3년<br /><br />
+					비회원 주문 시 제공하신 모든 정보는 상기 목적에 필요한 용도 이외로는 사용되지 않습니다. 보다 자세한 내용은 "개인정보취급방침"을 확인하여 주시기 바랍니다.
+				<br /><br /><br />
+
+				4.동의를 거부할 권리 및 거부에 따른 불이익<br /><br />
+				개인 정보 수집, 이용 목적에 관한 사항에 대해 동의를 거부할 수 있으나, 거부하실 경우 저희 이랜드 몰에서 비회원 구매를 하실 수 없습니다.
+				<br /><br /><br />
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 정보수집 동의 약관 전문보기 -->
+<!-- //160817 수정 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

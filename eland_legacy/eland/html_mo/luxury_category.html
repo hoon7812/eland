@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_luxury.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="renewal renewal2_brand luxury">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER -->
+<script type="text/javascript" src="inc/ui.inc.header_luxury.js"></script>
+<!-- //INC_HEADER -->
+
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<!-- TITLE -->
+	<div class="cts_tit">
+		<h2>
+			<div class="ctg_sel">
+				<label for="ctg_sel" class="ir">카테고리 선택</label>
+				<select id="ctg_sel">
+					<option selected="selected">Clothing</option>
+					<option>SHOES</option>
+					<option>BAG</option>
+					<option>ACCESSORY</option>
+				</select>
+			</div>
+			<button type="button" class="back" onclick="history.back();"><em class="ir">이전페이지</em></button>
+			<!-- <a href="#contents" class="sns"><em class="ir">공유 하기</em></a> -->
+			<!-- <button type="button" class="wish"><em class="ir">카테고리 찜</em></button> -->
+		</h2>
+	</div>
+	<!-- //TITLE -->
+
+
+
+	<!-- BRAND Details -->
+	<div class="search_wrap">
+		<div class="brand_top">
+			<!-- depth2 -->
+			<div class="cate_dep2">
+				<label for="cate_dep2" class="ir">하위 카테고리 선택</label>
+				<select id="cate_dep2">
+					<option selected="selected">전체</option>
+					<option>상의</option>
+					<option>하의</option>
+					<option>원피스</option>
+				</select>
+			</div>
+			<!-- //depth2 -->
+			<!-- TOP_BN -->
+			<div class="cate_bn_wrap" id="cate_bn_wrap">
+				<div class="main_bn swiper-container" id="main_bn">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/lux_cate_02.png" width="640" height="362" alt="성숙한 자아의 완성" /></a></li>
+						<!--
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/lux_cate_01.png" width="640" height="362" alt="성숙한 자아의 완성" /></a></li>
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/lux_cate_02.png" width="640" height="362" alt="성숙한 자아의 완성" /></a></li>
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/lux_cate_01.png" width="640" height="362" alt="성숙한 자아의 완성" /></a></li>  -->
+					</ul>
+				</div>
+				<div class="pagination">
+					<a href="#none" class="swiper-pagination-switch"><b class="ir">1번 이미지 보기</b></a>					
+					<!--
+					<a href="#none" class="swiper-pagination-switch"><b class="ir">2번 이미지 보기</b></a>
+					<a href="#none" class="swiper-pagination-switch"><b class="ir">3번 이미지 보기</b></a>
+					<a href="#none" class="swiper-pagination-switch"><b class="ir">4번 이미지 보기</b></a>
+					  -->
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					var page_count = $(".pagination > a").length; //슬라이드배너 갯수 체크
+					var page_count_only = $(".pagination > a").length <= 1; //슬라이드배너 1개이거나 없을경우
+					if( !page_count_only ){ //슬라이드배너 다수일경우														
+						$(".cate_bn_wrap > .pagination").css("display","block");
+						var myTop_bn = new Swiper('#main_bn',{
+							createPagination: false,
+							simulateTouch: true,
+							calculateHeight: true,
+							pagination: '#cate_bn_wrap .pagination',
+							loop: true,
+							paginationClickable: true
+						});
+					}else{ //슬라이드배너 1개일경우
+						$(".swiper-slide").addClass("no_apply");						
+					}				
+					$(window).resize(function(){	
+						myTop_bn.reInit();
+					});
+				});
+			</script>
+			<!-- //TOP_BN -->
+		</div>
+		<!-- SORT -->
+		<div class="sch_sort">
+			<div class="s_sort">
+				<label for="s_sort" class="ir">상품정렬 순서 선택</label>
+				<select id="s_sort">
+					<option selected="selected">인기상품순</option>
+					<option>신상품순</option>
+					<option>낮은가격순</option>
+					<option>높은가격순</option>
+					<option>상품평순</option>
+				</select>
+			</div>
+			<div class="s_filter">
+				<a href="#sch_detail" onclick="fn_layer_open('sch_detail');return false;" onkeypress="this.onclick;">상세검색<em class="ir">열기</em></a>
+			</div>
+			<div class="s_type">
+				<ul>
+					<li class="t1 on"><button type="button" data-type="glist"><em class="ir">이미지형 보기</em></button></li>
+					<li class="t2"><button type="button" data-type="tlist"><em class="ir">리스트형  보기</em></button></li>
+					<li class="t3"><button type="button" data-type="blist"><em class="ir">큰이미지형 보기</em></button></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //SORT -->
+		<!-- LIST -->
+		<div class="goods_list" id="goods_list">
+			<h3 class="ir">상품리스트</h3>
+			<ul class="glist">
+				<li>
+					<div class="g_wrap">
+						<a href="javascript:;" class="g_link">
+							<span class="g_img">
+								<span class="img"><img src="../images/mobile/temp/sample_320x320_g01.png" width="320" height="320" alt="" /></span>
+							</span>
+							<span class="g_brd">GUCCI</span>
+							<span class="g_tit">남녀공동) N/P에코자켓 MST1KC1005 2종 택1</span>
+							<span class="g_nor">
+								<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>415,000</b>원</span>
+									<span class="sale"><em class="ir">판매가:</em><b>336,000</b>원</span>
+								</span>
+							</span>
+							<span class="g_rv">
+								<span class="scr s45"><em class="ir">별점평균:90</em></span>
+								<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+							</span>
+							<span class="g_bnf">
+								<span class="bnf1">마감임박</span>
+								<span class="bnf2">무료배송</span>
+								<span class="bnf3">최저가</span>
+								<span class="bnf4">BEST</span>
+								<span class="bnf5">HIT</span>
+								<span class="bnf">SMS</span>
+								<span class="bnf6">SALE</span>
+								<span class="bnf">N+1</span>
+								<span class="bnf">세트할인</span>
+								<span class="bnf">즉시할인</span>
+								<span class="bnf">사은품</span>
+								<span class="bnf7">매장수령</span>
+								<span class="bnf">재입고</span>
+								<span class="bnf8">착불</span>
+							</span>
+						</a>
+						<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+					</div>
+				</li>
+				<li>
+					<div class="g_wrap">
+						<a href="javascript:;" class="g_link">
+							<span class="g_img">
+								<span class="img"><img src="../images/mobile/temp/sample_320x320_g02.png" width="320" height="320" alt="" /></span>
+							</span>
+							<span class="g_brd">GUCCI</span>
+							<span class="g_tit">GUCCI AFPM008 NYL BK02 그레이 맨투맨</span>
+							<span class="g_nor"> 
+								<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>215,000</b>원</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>86,000</b>원</span>
+								</span>
+							</span>
+							<span class="g_rv">
+								<span class="scr s45"><em class="ir">별점평균:90</em></span>
+								<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+							</span>
+							<span class="g_bnf">
+								<span class="bnf1">마감임박</span>
+								<span class="bnf2">무료배송</span>
+								<span class="bnf3">최저가</span>
+								<span class="bnf4">BEST</span>
+								<span class="bnf5">HIT</span>
+								<span class="bnf">SMS</span>
+								<span class="bnf6">SALE</span>
+								<span class="bnf">N+1</span>
+								<span class="bnf">세트할인</span>
+								<span class="bnf">즉시할인</span>
+								<span class="bnf">사은품</span>
+								<span class="bnf7">매장수령</span>
+								<span class="bnf">재입고</span>
+								<span class="bnf8">착불</span>
+							</span>
+						</a>
+						<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+					</div>
+				</li>
+				<li>
+					<div class="g_wrap">
+						<a href="javascript:;" class="g_link">
+							<span class="g_img">
+								<span class="img"><img src="../images/mobile/temp/sample_320x320_g03.png" width="320" height="320" alt="" /></span>
+							</span>
+							<span class="g_brd">GUCCI</span>
+							<span class="g_tit">골든구스 베가 G33WP067 A1 패딩 블루</span>
+							<span class="g_nor"> 
+								<span class="g_per"><em class="ir">할인율</em><b>10</b>%</span> 
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>915,000</b>원</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>67,000</b>원</span>
+								</span>
+							</span>
+							<span class="g_rv">
+								<span class="scr s45"><em class="ir">별점평균:90</em></span>
+								<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+							</span>
+							<span class="g_bnf">
+								<span class="bnf1">마감임박</span>
+								<span class="bnf2">무료배송</span>
+								<span class="bnf3">최저가</span>
+								<span class="bnf4">BEST</span>
+								<span class="bnf5">HIT</span>
+								<span class="bnf">SMS</span>
+								<span class="bnf6">SALE</span>
+								<span class="bnf">N+1</span>
+								<span class="bnf">세트할인</span>
+								<span class="bnf">즉시할인</span>
+								<span class="bnf">사은품</span>
+								<span class="bnf7">매장수령</span>
+								<span class="bnf">재입고</span>
+								<span class="bnf8">착불</span>
+							</span>
+						</a>
+						<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+					</div>
+				</li>
+				<li>
+					<div class="g_wrap">
+						<a href="javascript:;" class="g_link">
+							<span class="g_img">
+								<span class="img"><img src="../images/mobile/temp/sample_320x320_g04.png" width="320" height="320" alt="" /></span>
+							</span>
+							<span class="g_brd">GUCCI</span>
+							<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+							<span class="g_nor"> 
+								<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>905,000</b>원</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>850,000</b>원</span>
+								</span>
+							</span>
+							<span class="g_rv">
+								<span class="scr s45"><em class="ir">별점평균:90</em></span>
+								<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+							</span>
+							<span class="g_bnf">
+								<span class="bnf1">마감임박</span>
+								<span class="bnf2">무료배송</span>
+								<span class="bnf3">최저가</span>
+								<span class="bnf4">BEST</span>
+								<span class="bnf5">HIT</span>
+								<span class="bnf">SMS</span>
+								<span class="bnf6">SALE</span>
+								<span class="bnf">N+1</span>
+								<span class="bnf">세트할인</span>
+								<span class="bnf">즉시할인</span>
+								<span class="bnf">사은품</span>
+								<span class="bnf7">매장수령</span>
+								<span class="bnf">재입고</span>
+								<span class="bnf8">착불</span>
+							</span>
+						</a>
+						<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+					</div>
+				</li>
+				<li>
+					<div class="g_wrap">
+						<a href="javascript:;" class="g_link">
+							<span class="g_img">
+								<span class="img"><img src="../images/mobile/temp/sample_320x320_g05.png" width="320" height="320" alt="" /></span>
+							</span>
+							<span class="g_brd">GUCCI</span>
+							<span class="g_tit">R13 코트 M1431 281</span>
+							<span class="g_nor"> 
+								<span class="g_per"><em class="ir">할인율</em><b>10</b>%</span> 
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>1,905,000</b>원</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>1,036,000</b>원</span>
+								</span>
+							</span>
+							<span class="g_rv">
+								<span class="scr s45"><em class="ir">별점평균:90</em></span>
+								<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+							</span>
+							<span class="g_bnf">
+								<span class="bnf1">마감임박</span>
+								<span class="bnf2">무료배송</span>
+								<span class="bnf3">최저가</span>
+								<span class="bnf4">BEST</span>
+								<span class="bnf5">HIT</span>
+								<span class="bnf">SMS</span>
+								<span class="bnf6">SALE</span>
+								<span class="bnf">N+1</span>
+								<span class="bnf">세트할인</span>
+								<span class="bnf">즉시할인</span>
+								<span class="bnf">사은품</span>
+								<span class="bnf7">매장수령</span>
+								<span class="bnf">재입고</span>
+								<span class="bnf8">착불</span>
+							</span>
+						</a>
+						<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+					</div>
+				</li>
+				<li>
+					<div class="g_wrap">
+						<a href="javascript:;" class="g_link">
+							<span class="g_img">
+								<span class="img"><img src="../images/mobile/temp/sample_320x320_g06.png" width="320" height="320" alt="" /></span>
+							</span>
+							<span class="g_brd">GUCCI</span>
+							<span class="g_tit">GUCCI(D2291024LO 0) 여성 커프 디테일 코트</span>
+							<span class="g_nor"> 
+								<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>1,415,000</b>원</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+								</span>
+							</span>
+							<span class="g_rv">
+								<span class="scr s45"><em class="ir">별점평균:90</em></span>
+								<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+							</span>
+							<span class="g_bnf">
+								<span class="bnf1">마감임박</span>
+								<span class="bnf2">무료배송</span>
+								<span class="bnf3">최저가</span>
+								<span class="bnf4">BEST</span>
+								<span class="bnf5">HIT</span>
+								<span class="bnf">SMS</span>
+								<span class="bnf6">SALE</span>
+								<span class="bnf">N+1</span>
+								<span class="bnf">세트할인</span>
+								<span class="bnf">즉시할인</span>
+								<span class="bnf">사은품</span>
+								<span class="bnf7">매장수령</span>
+								<span class="bnf">재입고</span>
+								<span class="bnf8">착불</span>
+							</span>
+						</a>
+						<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+					</div>
+				</li>
+				<li>
+					<div class="g_wrap">
+						<a href="javascript:;" class="g_link">
+							<span class="g_img">
+								<span class="img"><img src="../images/mobile/temp/sample_320x320_g07.png" width="320" height="320" alt="" /></span>
+							</span>
+							<span class="g_brd">GUCCI</span>
+							<span class="g_tit">아스페시 ASPESI 퍼 코트 I8G0915G708 2종 택1</span>
+							<span class="g_nor"> 
+								<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>615,000</b>원</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>556,000</b>원</span>
+								</span>
+							</span>
+							<span class="g_rv">
+								<span class="scr s45"><em class="ir">별점평균:90</em></span>
+								<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+							</span>
+							<span class="g_bnf">
+								<span class="bnf1">마감임박</span>
+								<span class="bnf2">무료배송</span>
+								<span class="bnf3">최저가</span>
+								<span class="bnf4">BEST</span>
+								<span class="bnf5">HIT</span>
+								<span class="bnf">SMS</span>
+								<span class="bnf6">SALE</span>
+								<span class="bnf">N+1</span>
+								<span class="bnf">세트할인</span>
+								<span class="bnf">즉시할인</span>
+								<span class="bnf">사은품</span>
+								<span class="bnf7">매장수령</span>
+								<span class="bnf">재입고</span>
+								<span class="bnf8">착불</span>
+							</span>
+						</a>
+						<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+					</div>
+				</li>
+				<li>
+					<div class="g_wrap">
+						<a href="javascript:;" class="g_link">
+							<span class="g_img">
+								<span class="img"><img src="../images/mobile/temp/sample_320x320_g08.png" width="320" height="320" alt="" /></span>
+							</span>
+							<span class="g_brd">GUCCI</span>
+							<span class="g_tit">(남녀공동) N/P패딩자켓 M ST1KC1005 2종 택1</span>
+							<span class="g_nor"> 
+								<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span> 
+								<span class="g_prc">
+									<span class="org"><em class="ir">정상가:</em><b>905,000</b>원</span> 
+									<span class="sale"><em class="ir">판매가:</em><b>850,000</b>원</span>
+								</span>
+							</span>
+							<span class="g_rv">
+								<span class="scr s45"><em class="ir">별점평균:90</em></span>
+								<span class="cnt"><em class="ir">댓글수:</em>(1212)</span>
+							</span>
+							<span class="g_bnf">
+								<span class="bnf1">마감임박</span>
+								<span class="bnf2">무료배송</span>
+								<span class="bnf3">최저가</span>
+								<span class="bnf4">BEST</span>
+								<span class="bnf5">HIT</span>
+								<span class="bnf">SMS</span>
+								<span class="bnf6">SALE</span>
+								<span class="bnf">N+1</span>
+								<span class="bnf">세트할인</span>
+								<span class="bnf">즉시할인</span>
+								<span class="bnf">사은품</span>
+								<span class="bnf7">매장수령</span>
+								<span class="bnf">재입고</span>
+								<span class="bnf8">착불</span>
+							</span>
+						</a>
+						<a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- //LIST -->
+	</div>
+	<!-- //BRAND Details -->
+
+</div>
+<!-- //CONTENT -->
+
+
+<!-- LAYER_POPUP 맞춤 상세검색 -->
+<div id="sch_detail" class="layer_fix">
+	<h3 class="pop_tit">상세검색</h3>
+	<div class="pop_con">
+
+		<div class="pop_sch_dtl">
+			<dl>
+				<dt><button type="button"><b>브랜드</b><em>* 중복선택이 가능합니다.</em></button></dt>
+				<dd class="n2 brd">
+					<ul>
+						<li>
+							<input type="checkbox" id="brd01" class="ir" />
+							<label for="brd01"><span>GUCCI</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd02" class="ir" />
+							<label for="brd02"><span>라르고</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd03" class="ir" />
+							<label for="brd03"><span>버버리</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd04" class="ir" />
+							<label for="brd04"><span>지방시</span><em>(9,999)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd05" class="ir" />
+							<label for="brd05"><span>조르지오 알마니</span><em>(19)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd06" class="ir" />
+							<label for="brd06"><span>펜디</span><em>(19)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd07" class="ir" />
+							<label for="brd07"><span>프라다</span><em>(19)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd08" class="ir" />
+							<label for="brd08"><span>샤넬</span><em>(10)</em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="brd09" class="ir" />
+							<label for="brd09"><span>시크릿 가든</span><em>(10)</em></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>사이즈</b><em>* 중복선택이 가능합니다.</em></button></dt>
+				<dd class="n3">
+					<ul>
+						<li>
+							<input type="checkbox" id="siz01" class="ir" />
+							<label for="siz01"><span>XS</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz02" class="ir" />
+							<label for="siz02"><span>S</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz03" class="ir" />
+							<label for="siz03"><span>M</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz04" class="ir" />
+							<label for="siz04"><span>L</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz05" class="ir" />
+							<label for="siz05"><span>XL</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz06" class="ir" />
+							<label for="siz06"><span>XXL</span></label>
+						</li>
+						<li>
+							<input type="checkbox" id="siz07" class="ir" />
+							<label for="siz07"><span>FREE</span></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl>
+				<dt><button type="button"><b>색상</b><em>* 중복선택이 가능합니다.</em></button></dt>
+				<dd class="clr_lst">
+					<ul>     
+						<li>
+							<input type="checkbox" id="lchk01" class="ir" >
+							<label for="lchk01"><em><img src="../images/mobile/temp/img_color_1.png" width="54" height="54" alt="파랑" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk02" class="ir" >
+							<label for="lchk02"><em><img src="../images/mobile/temp/img_color_2.png" width="54" height="54" alt="분홍" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk03" class="ir" >
+							<label for="lchk03"><em><img src="../images/mobile/temp/img_color_3.png" width="54" height="54" alt="소라" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk04" class="ir" >
+							<label for="lchk04"><em><img src="../images/mobile/temp/img_color_4.png" width="54" height="54" alt="고동" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk05" class="ir" >
+							<label for="lchk05"><em><img src="../images/mobile/temp/img_color_5.png" width="54" height="54" alt="검정" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk06" class="ir" >
+							<label for="lchk06"><em><img src="../images/mobile/temp/img_color_6.png" width="54" height="54" alt="그레이" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk07" class="ir" >
+							<label for="lchk07"><em><img src="../images/mobile/temp/img_color_7.png" width="54" height="54" alt="빨강" /></em></label>
+						</li>
+						<li>
+							<input type="checkbox" id="lchk08" class="ir" >
+							<label for="lchk08"><em><img src="../images/mobile/temp/img_color_8.png" width="54" height="54" alt="노랑" /></em></label>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<div class="sch_dtl_btn">
+			<button type="button" class="re"><em>선택초기화</em></button>
+			<button type="button" class="ok"><em>선택 결과보기</em></button>
+		</div>
+		<!-- 레이어 팝업 닫기 추가 -->
+		<div class="btn_layertop">
+			<a href="#close"><span class="ir">레이어 팝업 닫기</span></a>
+		</div>
+		<!-- //레이어 팝업 닫기 추가 -->
+	</div>
+	<a href="#close" class="btn_close" id="btn_close"><span class="ir">레이어 팝업 닫기</span></a>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var popCtgTit = $(".pop_sch_dtl .ctg_list .tit");
+		var popCtgMore = $(".pop_sch_dtl .ctg_list_more .more");
+
+		popCtgTit.click(function(e){
+			e.preventDefault();
+			$(this).toggleClass("selected");
+		});
+		popCtgMore.click(function(){
+			$(this).toggleClass("selected");
+			$(this).next().toggle();
+		});
+
+		$("#sch_detail .btn_layertop").click(function(e){
+			e.preventDefault();
+			 var this_name = '#' + $(this).parent().parent().attr('id');
+			$("#sch_detail").hide();
+			$('#header').css('z-index', '');
+			$('#contents').unbind('touchmove');
+			$('#contents').css({ 'position': '', 'z-index': ''});
+			$("html,body").scrollTop(scrpos);
+	        layer_close(this_name);
+	        scroll_on();
+		});
+	});
+</script>
+<!-- //LAYER_POPUP 맞춤 상세검색 -->
+
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer_luxury.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="javascript:;"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="javascript:;"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//조회기간 선택 150308
+	$(function(){
+		$(".sch_order li a,.sch_point li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set,.sch_point li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+	//포인트 조회 탭 150309
+	$(function(){
+		var tabAddr = $(".tabmenu .tab_tit > li");
+		var conAddr = $(".tabmenu .tab_con > div");
+
+		$(".sch_tab .sch_order").hide();
+		tabAddr.bind("click", function(){
+			addrId = $(this).index();
+
+			tabAddr.removeClass("on");
+			tabAddr.eq(addrId).addClass("on");
+			conAddr.removeClass("on");
+			conAddr.eq(addrId).addClass("on");
+
+			if(addrId == 1){
+				$(".sch_tab .sch_order").show();
+			}else{
+				$(".sch_tab .sch_order").hide();
+			}
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>포인트 조회</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>		
+	<div class="my_coupon">
+		<div class="top_point">
+			<ul class="all">
+				<li>
+					<div class="txt"><em>김이랜드</em>님 포인트</div>
+					<div class="pit all"><em>19,873,400</em> P</div><!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : P와 숫자사이 한칸 간격 주기 -->
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<div class="txt">구매 포인트</div>
+					<div class="pit"><em>999,999,000</em> P</div><!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : P와 숫자사이 한칸 간격 주기 -->
+				</li>
+				<li>
+					<div class="txt">이벤트 포인트</div>
+					<div class="pit"><em>999,999,000</em> P</div><!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : P와 숫자사이 한칸 간격 주기 -->
+				</li>
+				<li>
+					<div class="txt">당월 소멸예정포인트</div>
+					<div class="pit"><em>253,100</em > P</div><!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : P와 숫자사이 한칸 간격 주기 -->
+				</li>
+			</ul>
+			<!-- 임직원 전용 복지샵 포인트 안내 -->
+			<ul>
+				<li>
+					<div class="txt">자기계발</div>
+					<div class="pit"><em>999,999,000</em> P</div>
+				</li>
+				<li>
+					<div class="txt">자기계발</div>
+					<div class="pit"><em>999,999,000</em> P</div>
+				</li>
+				<li class="welfp">
+					<div class="txt">복지 포인트</div>
+					<div class="pit"><em>253,100</em> P</div>
+				</li>
+				<li class="gift">
+					<div class="pit">( 상품권 구매가능 포인트 : <em>500,000</em> P )</div>
+				</li>
+			</ul>
+			<!-- //임직원 전용 복지샵 포인트 안내 -->
+		</div>
+
+		<div class="coupon_box">
+			<!-- sch_tab 160309 -->
+			<div class="sch_tab">
+				<div class="sch_order">
+					<ul>
+						<li><a href="#" class="on">1주일</a></li>
+						<li><a href="#">1개월</a></li>
+						<li><a href="#">3개월</a></li>
+						<li><a href="#">6개월</a></li>
+						<li><a href="#" class="set">기간설정</a></li>
+					</ul>
+					<div class="sch_period">
+						<div class="inp_box">
+							<input type="text" title="시작날짜" placeholder="예시)20160101">
+							<span class="dash">~</span>
+							<input type="text" title="종료날짜" placeholder="예시)20160101">
+						</div>
+						<div class="btn">
+							<a href="#">조회</a>
+						</div>
+						<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
+			<!-- //sch_tab 160309 -->
+
+			<div class="tabmenu">
+				<ul class="tab_tit">
+					<li class="on"><span>포인트 사용/적립</span></li>
+					<li><span>복지몰 포인트 내역</span></li>
+				</ul>
+
+				<div class="tab_con">
+					<!-- 포인트 사용/적립 -->
+					<div class="on">
+						<div class="my_nolist">
+							<div class="txt">최근 1개월 내<br>포인트 사용/적립 내역이 <strong>없습니다.</strong></div>
+						</div>
+						<ul class="point_list">
+							<li>
+								<span class="pit_day">2016.01.28</span>
+								<span class="pit_txt">상품주문 적립</span>
+								<span class="pit_num pit">+1,210P</span> <!-- 포인트 적립시 .pit 추가 -->
+							</li>
+							<li>
+								<span class="pit_day">2016.01.28</span>
+								<span class="pit_txt">상품주문 적립 (NC 강서점)</span>
+								<span class="pit_num pit">+1,210P</span> <!-- 포인트 적립시 .pit 추가 -->
+							</li>
+							<li>
+								<span class="pit_day">2016.01.26</span>
+								<span class="pit_txt">포인트 사용</span>
+								<span class="pit_num">-5,400P</span>
+							</li>
+							<li>
+								<span class="pit_day">2016.01.24</span>
+								<span class="pit_txt">포인트 적립</span>
+								<span class="pit_num pit">+80P</span> <!-- 포인트 적립시 .pit 추가 -->
+							</li>
+							<li>
+								<span class="pit_day">2016.01.22</span>
+								<span class="pit_txt">상품주문 적립</span>
+								<span class="pit_num pit">+1,210P</span> <!-- 포인트 적립시 .pit 추가 -->
+							</li>
+							<li>
+								<span class="pit_day">2016.01.20</span>
+								<span class="pit_txt">상품주문 적립</span>
+								<span class="pit_num pit">+1,210P</span> <!-- 포인트 적립시 .pit 추가 -->
+							</li>
+							<!-- 더보기 버튼 -->
+							<li class="last">
+								<div class="btn_more">
+									<a href="#"><span class="ico">더보기 (20/1000)</span></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+					<!-- 복지몰 포인트 내역 -->
+					<div>
+						<div class="my_nolist">
+							<div class="txt">최근 1개월 내<br>복지 포인트 이용 내역이 <strong>없습니다.</strong></div>
+						</div>
+						<ul class="point_list">
+							<li>
+								<span class="pit_day"><em>2016.01.28</em></span>
+								<span class="pit_txt">[자율]상품주문</span>
+								<span class="pit_num"><em>-53,210P</em></span>
+							</li>
+							<li>
+								<span class="pit_day"><em>2016.01.20</em></span>
+								<span class="pit_txt">[자기계발]상품주문</span>
+								<span class="pit_num"><em>-54,210P</em></span>
+							</li>
+							<li>
+								<span class="pit_day"><em>2016.01.20</em></span>
+								<span class="pit_txt">[상품권]상품주문</span>
+								<span class="pit_num"><em>-160,210P</em></span> <!-- 포인트 적립시 .pit 추가 -->
+							</li>
+							<li>
+								<span class="pit_day"><em>2016.01.20</em></span>
+								<span class="pit_txt">[자기계발]상품주문 적립</span>
+								<span class="pit_num"><em>+1,210P</em></span> <!-- 포인트 적립시 .pit 추가 -->
+							</li>
+							<!-- 더보기 버튼 -->
+							<li class="last">
+								<div class="btn_more">
+									<a href="#"><span class="ico">더보기 (20/1000)</span></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //my_coupon -->
+</div>
+<!-- //CONTENT -->
+
+<!-- FOOTER PUBLISHING INCLUDE -->
+<!-- //FOOTER PUBLISHING INCLUDE -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

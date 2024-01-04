@@ -1,0 +1,17 @@
+var utilTag;
+utilTag ='<div class="utilBar" role="navigation" aria-label="킴스클럽하단네비게이션">'
++'			<ul>'
++'				<li><a href="#"><em class="ct">카테고리</em></a></li>'
++'				<li><a href="#"><em class="ws">주문조회<b aria-label="조회 상품있음"></b></em></a></li>'
++'				<li><a href="#"><em class="hm" aria-current="page">홈</em></a></li>'
++'				<li><a href="#"><em class="my">마이페이지</em></a></li>'
++'				<!-- <li><a href="#"><em class="rc">최근본상품</em></a></li> -->'
++'				<li>'
++'					<a href="#">'
++'						<span><img src="images/mobile/kms_mobile/temp/img_48x48_0.jpg" alt=""></span>'
++'						<em class="rc">최근본상품</em>'
++'					</a>'
++'				</li>'
++'			</ul>'
++'		</div>'
+document.write(utilTag);

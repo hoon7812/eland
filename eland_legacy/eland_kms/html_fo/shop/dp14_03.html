@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li class="lct_txt"><span>MIX&amp;MATCH</span></li>
+					</ul>
+				</div>
+
+				<div class="mix_wrap">
+					<div class="title">
+						<h2 class="tit_h2_mix">MIX&amp;MATCH</h2>
+					</div>
+
+					<div class="mix_making">
+						<div class="making_left">
+							<div class="txt_step"><span class="ico_step">STEP 1</span> MATCH 할 상품 <span class="txt_c06">수량을 선택</span>해 주세요</div>
+<!-- 160112_스크립트 추가 -->
+							<!-- 매칭할 상품의 수량 선택 -->
+							<div class="making_item">
+								<ul>
+									<li class="item02 on"><a href="#">2개</a></li>
+									<li class="item03"><a href="#">3개</a></li>
+									<li class="item04"><a href="#">4개</a></li>
+								</ul>
+							</div>
+							<script type="text/javascript">
+								var mkLi = $('.making_item li');
+								var mkLink = $('.making_item li a');
+
+								mkLink.on('click',function() {
+									var idx = mkLink.index($(this));
+									mkLi.removeClass('on');
+									mkLi.eq(idx).addClass('on');
+								});
+
+							</script>
+							<!--// 매칭할 상품의 수량 선택 -->
+<!-- //160112_스크립트 추가 -->
+							<!-- 상품 이미지를 미리보기 -->
+							<div class="mix_big detail">
+								<div class="mix_bigbox">
+									<!-- 조합 상품이 2개인 경우 -->
+									<div class="mix_box big">
+										<div class="thumb_img2">
+											<span><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><a href="#" class="btn_del"><span>상품 삭제하기</span></a></span>
+											<span><img src="../../images/pcweb/temp/_sample_240x240_2.jpg" alt="두번째 상품 이미지" /><a href="#" class="btn_del"><span>상품 삭제하기</span></a></span>
+										</div>
+									</div>
+									<!-- 조합 상품이 3개인 경우 -->
+									<div class="mix_box big">
+										<div class="thumb_img3">
+											<span class="first"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><a href="#" class="btn_del"><span>상품 삭제하기</span></a></span>
+											<span><img src="../../images/pcweb/temp/_sample_240x240_2.jpg" alt="두번째 상품 이미지" /><a href="#" class="btn_del"><span>상품 삭제하기</span></a></span>
+											<span><img src="../../images/pcweb/temp/_sample_240x240_3.jpg" alt="세번째 상품 이미지" /><a href="#" class="btn_del"><span>상품 삭제하기</span></a></span>
+										</div>
+									</div>
+									<!-- 조합 상품이 4개인 경우 -->
+									<div class="mix_box big">
+										<div class="thumb_img4">
+											<span><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><a href="#" class="btn_del"><span>상품 삭제하기</span></a></span>
+											<span><img src="../../images/pcweb/temp/_sample_240x240_2.jpg" alt="두번째 상품 이미지" /><a href="#" class="btn_del"><span>상품 삭제하기</span></a></span>
+											<span><img src="../../images/pcweb/temp/_sample_240x240_3.jpg" alt="세번째 상품 이미지" /><a href="#" class="btn_del"><span>상품 삭제하기</span></a></span>
+											<span><img src="../../images/pcweb/temp/_sample_240x240_4.jpg" alt="네번째 상품 이미지" /><a href="#" class="btn_del"><span>상품 삭제하기</span></a></span>
+										</div>
+									</div>
+									<!-- 조합 상품 이미지 없는 경우 -->
+									<div class="mix_box big">
+										<div class="thumb_img4">
+											<span><img src="../../images/pcweb/shop/noimage_01.jpg" alt="첫번째 상품 미리보기" /></span>
+											<span><img src="../../images/pcweb/shop/noimage_02.jpg" alt="두번째 상품 미리보기" /></span>
+											<span><img src="../../images/pcweb/shop/noimage_03.jpg" alt="세번째 상품 미리보기" /></span>
+											<span><img src="../../images/pcweb/shop/noimage_04.jpg" alt="네번째 상품 미리보기" /></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--// 상품 이미지를 미리보기 -->
+
+							<div class="list_chip mix_chip">
+								<ul>
+									<li><a href="#" class="chip on"><span class="ir">컬러1</span><img src="../../images/pcweb/temp/_sample_18x18-01.gif" alt="" /></a></li>
+									<li><a href="#" class="chip"><span class="ir">컬러2</span><img src="../../images/pcweb/temp/_sample_18x18-02.gif" alt="" /></a></li>
+									<li><a href="#" class="chip"><span class="ir">컬러3</span><img src="../../images/pcweb/temp/_sample_18x18-03.gif" alt="" /></a></li>
+									<li><a href="#" class="chip"><span class="ir">컬러4</span><img src="../../images/pcweb/temp/_sample_18x18-04.gif" alt="" /></a></li>
+									<li><a href="#" class="chip"><span class="ir">컬러5</span><img src="../../images/pcweb/temp/_sample_18x18-05.gif" alt="" /></a></li>
+									<li><a href="#" class="chip disabled"><span class="ir">컬러6</span><img src="../../images/pcweb/temp/_sample_18x18-06.gif" alt="" /></a></li>
+								</ul>
+							</div>
+
+							<div class="set_btn mt15">
+								<a class="btn02" href="#"><span>바로구매</span></a><!-- [v2] 버튼 컬러수정 -->
+								<a class="btn02 c01" href="#"><span>장바구니</span></a>
+								<a class="btn02 c01" href="#"><span>찜하기</span></a>
+							</div>
+						</div>
+
+						<div class="making_right">
+							<div class="txt_step"><span class="ico_step">STEP 2</span> MATCH 할 <span class="txt_c06">상품을 선택</span>해 주세요</div>
+
+							<!-- 매칭할 상품 선택 -->
+							<div class="making_item_sel">
+								<ul>
+									<li><label for="mix_rdo01_1"><input id="mix_rdo01_1" type="radio" name="mix_rdo01" class="rdobox" checked=checked /> 첫번째 상품</label></li>
+									<li><label for="mix_rdo01_2"><input id="mix_rdo01_2" type="radio" name="mix_rdo01" class="rdobox" /> 두번째 상품</label></li>
+									<li><label for="mix_rdo01_3"><input id="mix_rdo01_3" type="radio" name="mix_rdo01" class="rdobox" /> 세번째 상품</label></li>
+									<li><label for="mix_rdo01_4"><input id="mix_rdo01_4" type="radio" name="mix_rdo01" class="rdobox" /> 네번째 상품</label></li>
+								</ul>
+							</div>
+							<!--// 매칭할 상품 선택 -->
+
+							<!-- 상품 선택 영역 -->
+							<div class="tab_type02 full_size03">
+								<ul class="d_tab">
+									<li class="on"><a href="#" onClick="commonUI.tab('.d_tab','0');return false;">카테고리 상품</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab','1');return false;">상품 코드 입력</a></li>
+									<li><a href="#" onClick="commonUI.tab('.d_tab','2');return false;">나의 찜 상품</a></li>
+								</ul>
+								<div class="tab_cont">
+									<div class="d_tab_cont on">
+										<div class="mix_sel_box">
+											<ul>
+												<li>
+													<select>
+														<option value="여성패션">여성패션</option>
+														<option value="여성패션">여성패션</option>
+														<option value="여성패션">여성패션</option>
+													</select>
+												</li>
+												<li>
+													<select>
+														<option value="원피스">원피스</option>
+														<option value="원피스">원피스</option>
+														<option value="원피스">원피스</option>
+													</select>
+												</li>
+												<li>
+													<select>
+														<option value="캐주얼 원피스">캐주얼 원피스</option>
+														<option value="캐주얼 원피스">캐주얼 원피스</option>
+														<option value="캐주얼 원피스">캐주얼 원피스</option>
+													</select>
+												</li>
+											</ul>
+										</div>
+
+										<div class="mix_img_box">
+											<!-- 검색결과 없을 경우 -->
+											<div class="no_list alig_c">
+												<p>검색된 결과가 없습니다.</p>
+												<p>다시 검색해 주시기 바랍니다.</p>
+											</div>
+											<!--// 검색결과 없을 경우 -->
+											<ul> <!-- 페이지당 이미지 25개 출력됨 -->
+												<li class="selected"><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li> <!-- 이미지 선택시 .selected 추가 -->
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+											</ul>
+											<div class="box_page mt20">
+												<span class="num">
+													<a class="btn_paging_first" href="#"><img src="../../images/pcweb/common/btn_paging_first.gif" alt="처음페이지이동" /></a>
+													<a class="btn_paging_prev" href="#"><img src="../../images/pcweb/common/btn_paging_prev.gif" alt="이전페이지이동" /></a>
+													<a href="#" class="on">1</a>
+													<a href="#">2</a>
+													<a href="#">3</a>
+													<a href="#">4</a>
+													<a href="#">5</a>
+													<a href="#">6</a>
+													<a href="#">7</a>
+													<a href="#">8</a>
+													<a href="#">9</a>
+													<a href="#">10</a>
+													<a class="btn_paging_next" href="#"><img src="../../images/pcweb/common/btn_paging_next.gif" alt="다음페이지이동" /></a>
+													<a class="btn_paging_end" href="#"><img src="../../images/pcweb/common/btn_paging_end.gif" alt="마지막페이지이동" /></a>
+												</span>
+											</div>
+										</div>
+										<!-- 이미지 선택 스크립트 추가 -->
+										<script>
+											$(function() {
+												var mixBox = $(".mix_img_box ul li");
+												mixBox.bind("click", function(){
+													mixBox.removeClass("selected");
+													$(this).addClass("selected");
+												});
+											});
+										</script>
+
+									</div>
+
+									<div class="d_tab_cont">
+
+										<div class="mix_search">
+											<input type="text" class="input_txt" value="" title="상품코드 입력" placeholder="상품 코드를 입력해 주세요." />
+											<button type="button" class="btn03 mini"><span>검색</span></button>
+											<p class="txt_info">* 상품코드는 상품상세페이지에서 확인 가능합니다. </p>
+										</div>
+										<div class="mix_img_box">
+											<!-- 검색결과 없을 경우 -->
+											<div class="no_list alig_c">
+												<p>검색된 결과가 없습니다.</p>
+												<p>다시 검색해 주시기 바랍니다.</p>
+											</div>
+											<!--// 검색결과 없을 경우 -->
+											<ul>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+											</ul>
+										</div>
+
+										<div class="box_page mt20">
+											<span class="num">
+												<a class="btn_paging_first" href="#"><img src="../../images/pcweb/common/btn_paging_first.gif" alt="처음페이지이동" /></a>
+												<a class="btn_paging_prev" href="#"><img src="../../images/pcweb/common/btn_paging_prev.gif" alt="이전페이지이동" /></a>
+												<a href="#" class="on">1</a>
+												<a href="#">2</a>
+												<a href="#">3</a>
+												<a href="#">4</a>
+												<a href="#">5</a>
+												<a href="#">6</a>
+												<a href="#">7</a>
+												<a href="#">8</a>
+												<a href="#">9</a>
+												<a href="#">10</a>
+												<a class="btn_paging_next" href="#"><img src="../../images/pcweb/common/btn_paging_next.gif" alt="다음페이지이동" /></a>
+												<a class="btn_paging_end" href="#"><img src="../../images/pcweb/common/btn_paging_end.gif" alt="마지막페이지이동" /></a>
+											</span>
+										</div>
+									</div>
+
+									<div class="d_tab_cont">
+										<div class="mix_img_box">
+											<!-- 검색결과 없을 경우 -->
+											<div class="no_list alig_c">
+												<p>검색된 결과가 없습니다.</p>
+												<p>다시 검색해 주시기 바랍니다.</p>
+											</div>
+											<!--// 검색결과 없을 경우 -->
+											<ul>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+												<li><a href="#"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /><span class="item_sel">선택하기</span></a></li>
+											</ul>
+										</div>
+
+										<div class="box_page mt20">
+											<span class="num">
+												<a class="btn_paging_first" href="#"><img src="../../images/pcweb/common/btn_paging_first.gif" alt="처음페이지이동" /></a>
+												<a class="btn_paging_prev" href="#"><img src="../../images/pcweb/common/btn_paging_prev.gif" alt="이전페이지이동" /></a>
+												<a href="#" class="on">1</a>
+												<a href="#">2</a>
+												<a href="#">3</a>
+												<a href="#">4</a>
+												<a href="#">5</a>
+												<a href="#">6</a>
+												<a href="#">7</a>
+												<a href="#">8</a>
+												<a href="#">9</a>
+												<a href="#">10</a>
+												<a class="btn_paging_next" href="#"><img src="../../images/pcweb/common/btn_paging_next.gif" alt="다음페이지이동" /></a>
+												<a class="btn_paging_end" href="#"><img src="../../images/pcweb/common/btn_paging_end.gif" alt="마지막페이지이동" /></a>
+											</span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<!--// 상품 선택 영역 -->
+
+						</div>
+
+					</div>
+
+					<div class="set_btn mt30">
+						<a class="btn01" href="#"><span>등록</span></a>
+						<a class="btn01 c01" href="#"><span>목록으로</span></a>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<!-- 푸터배너 -->
+			<div class="footer_bnr" style="background:#2b2c30">
+				<a href="#"><img src="../../images/pcweb/temp/_sample_1080x120.jpg" alt="SPEACIAL BRAND DAY 미리 준비하는 겨울 아이템" /></a>
+			</div>
+			<!-- //푸터배너 -->
+			<div class="footer_links">
+				<div class="cont"><img src="../../images/pcweb/temp/_sample_footer01.jpg" alt="샘플푸터"></div>
+			</div>
+			<div class="footer_info01"><img src="../../images/pcweb/temp/_sample_footer02.jpg" alt="샘플푸터" /></div>
+			<div class="footer_info02">
+				<div class="cont"><img src="../../images/pcweb/temp/_sample_footer03.jpg" alt="샘플푸터" /></div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+	<script>
+
+
+	</script>
+</body>
+</html>

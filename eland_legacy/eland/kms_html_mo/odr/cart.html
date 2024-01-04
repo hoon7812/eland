@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="KIM’S CLUB">
+<meta property="og:type" content="website">
+<base href="../../" />
+<title>KIM’S CLUB :: GLOBAL FRESH MARKET | 장바구니</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean&family=Roboto:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/kms_mobile/common.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/kms_mobile/odr.css" type="text/css">
+
+<link rel="shortcut icon" href="images/mobile/kms_mobile/icon/ico_kms.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/mobile/kms_mobile/icon/icon_60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/mobile/kms_mobile/icon/icon_76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/mobile/kms_mobile/icon/icon_120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/mobile/kms_mobile/icon/icon_152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/mobile/kms_mobile/icon/icon_180.png">
+<link rel="apple-touch-icon-precomposed" href="images/mobile/kms_mobile/icon/icon_192.png">
+<link rel="apple-touch-icon-precomposed" href="images/mobile/kms_mobile/icon/icon_160.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="images/mobile/kms_mobile/icon/icon_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="images/mobile/kms_mobile/icon/icon_160.png">
+
+<script rel="preload" type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/kms.plugin.mobile.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/kms.ui.mobile.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/kms.ui.mobile.old.js"></script>
+
+<!-- 대카/중카에서만 사용 -->
+<script rel="preload" type="text/javascript" src="mobile/js/jquery-ui.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/jquery.ui.touch-punch.min.js"></script>
+
+</head>
+
+<body>
+<!-- .wrapper -->
+<div class="wrapper">
+	<div class="accessibility"><a href="#skip_cont">본문 바로가기</a></div><!-- accessibility -->
+
+	<!-- .container -->
+	<div class="container crt"><!-- kms - addClass:crt -->
+
+		<!-- HEADER -->
+		<div class="header_kms" role="banner">
+			<div class="head">
+				<h1>장바구니</h1>
+				<span class="btH left">
+					<button type="button" class="prv" aria-label="이전페이지로 이동"></button>
+				</span>
+				<span class="btH right">
+					<button type="button" class="hm" aria-label="메인으로 이동"></button>
+					<button type="button" class="sch" aria-label="검색레이어 열기"></button>
+				</span>
+			</div>
+		</div>
+		<!--// HEADER -->
+
+		<!-- CONTENT -->
+		<div class="contents" role="main">
+			<a id="skip_cont"></a><!-- accessibility -->
+			<!-- tab -->
+			<div class="cartTabFxd">
+				<div class="ktabs kor" id="cart_tabs">
+					<div role="tablist">
+						<button type="button" id="cartBt_0" role="tab" aria-controls="panel_cart_0" aria-selected="true">일반배송<em>99</em></button>
+						<button type="button" id="cartBt_1" role="tab" aria-controls="panel_cart_1" aria-selected="false">오늘직송<em>5</em></button>
+					</div>
+				</div>
+			</div>
+			<!--// tab -->
+
+			<div class="ordTop_log">장바구니 상품을 저장하실려면 <a href="#">로그인</a>해주세요.</div>
+
+			<!-- 일반배송.tab -->
+			<div id="panel_cart_0" role="tabpanel" aria-labelledby="cartBt_0">
+
+				<div class="cartTopFxd" id="cartTopFxd_0">
+					<div>
+						<span class="chk"><input type="checkbox" id="ck_crtItems_all_0"><label for="ck_crtItems_all_0">전체선택</label></span>
+						<span class="rtl"><button type="button" class="kbt sd">선택삭제</button></span>
+					</div>
+				</div>
+
+				<div class="basket_box">
+					<div class="tit_delivery">
+						<strong>일반배송 상품</strong> (<em class="num">3</em>개)
+					</div>
+					<div class="prd_group">
+						<!-- <div class="sel_group">
+							<input type="checkbox" id="chk01">
+							<label for="chk01">묶음선택</label>
+						</div> -->
+						<div class="basket_prd">
+							<div class="top_chkbox">
+								<input type="checkbox" title="상품선택">
+								<div class="right">
+									<a href="javascript:;" class="btn_wish on"><span>찜하기</span></a>
+									<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+								</div>
+							</div>
+							<a href="javascript:;">
+								<div class="basket_txt">
+									<div class="pic"><img src="images/mobile/kms_mobile/temp/img_160x160_3.jpg" alt="상품 이미지"></div>
+									<span class="prodtit">종가집</span>
+									<span class="prodname">콩이 가득두부 찌개용 500g  콩이 가득두부 찌개용 500g 콩이 가득두부 찌개용 500g</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodpoint">이랜드리테일 포인트 <em>65점</em> 적립예정 </span>
+									<span class="prodopt">BK(89)/M / 1개</span>
+								</div>
+							</a>
+							<div class="sel">
+								<div class="opt w100"><span>옵션변경</span></div>
+								<!-- <div class="absL"><a href="javascript:;" class="btn_line01 c05">더블쿠폰 <span class="ico_coupon">5%</span></a></div> -->
+								<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+							</div>
+							<!-- 옵션,수량 변경 -->
+							<div class="opt_open">
+								<dl>
+									<dt>색상</dt>
+									<dd>
+										<select class="w100">
+											<option>베이지브라운</option>
+										</select>
+									</dd>
+									<dt>사이즈</dt>
+									<dd>
+										<select class="w100">
+											<option>55</option>
+										</select>
+									</dd>
+									<dt>사은품</dt>
+									<dd>
+										<select class="w100">
+											<option>위스카스파우치 50g</option>
+										</select>
+									</dd>
+									<dt>수량</dt>
+									<dd>
+										<div class="numbox">
+											<span class="minus"><img src="images/mobile/order/bts_minus_default.png" alt="삭제"></span>
+											<!--a href="javascript:;" class="minus"><img src="images/mobile/order/bts_minus.png" alt="삭제" /></a-->
+											<input type="text" class="inp_txt" value="1" title="수량">
+											<!--span class="plus"><img src="images/mobile/order/bts_plus_default.png" alt="추가" /></span-->
+											<a href="javascript:;" class="plus"><img src="images/mobile/order/bts_plus.png" alt="추가"></a>
+										</div>
+									</dd>
+								</dl>
+								<div class="btnbox"><a href="javascript:;" class="btn_line01 c02">변경</a></div>
+							</div>
+							<!-- //옵션,수량 변경 -->
+						</div>
+						<div class="prd_total">
+							<span class="price">307,200<em>원</em></span> + 
+							<span class="price">2,500<em>원(배송비)</em></span> = 
+							<span class="pricePg">309,700<em>원</em></span>
+							<div class="save_info">
+								<span>100,000원 이상 무료배송<em>9,900원 더 결제하면! 무료배송</em></span>
+								<a href="javascript:;" class="goto_shop">배송비 절약하기</a>
+							</div>
+							<div class="qck_tx"><em>킴스클럽 강남점</em>에서 배송되는 상품입니다.</div>
+						</div>
+
+						<div class="basket_prd">
+							<div class="top_chkbox">
+								<input type="checkbox" title="상품선택">
+								<div class="right">
+									<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+									<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+								</div>
+							</div>
+							<a href="javascript:;">
+								<div class="basket_txt">
+									<div class="pic"><img src="images/mobile/kms_mobile/temp/img_200x200_4.jpg" alt="상품 이미지"></div>
+									<span class="prodtit">킴스클럽</span>
+									<span class="prodname">박성춘 김장용 황토판 천일염 (굵은소금)(4kg)</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt">1개</span>
+								</div>
+							</a>
+							<div class="sel">
+								<div class="opt w100"><span>옵션변경</span></div>
+								<div class="absL"><a href="javascript:;" class="btn_line01 c05">더블쿠폰 <span class="ico_coupon">10%</span></a></div>
+								<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+							</div>
+							<!-- 옵션,수량 변경 -->
+							<div class="opt_open">
+								<dl>
+									<dt>색상</dt>
+									<dd>
+										<select class="w100">
+											<option>베이지브라운</option>
+										</select>
+									</dd>
+									<dt>사이즈</dt>
+									<dd>
+										<select class="w100">
+											<option>55</option>
+										</select>
+									</dd>
+									<dt>사은품</dt>
+									<dd>
+										<select class="w100">
+											<option>위스카스파우치 50g</option>
+										</select>
+									</dd>
+									<dt>수량</dt>
+									<dd>
+										<div class="numbox">
+											<!-- <span class="minus"><img src="images/mobile/order/bts_minus_default.png" alt="삭제"></span> -->
+											<a href="javascript:;" class="minus"><img src="images/mobile/order/bts_minus.png" alt="삭제" /></a>
+											<input type="text" class="inp_txt" value="1" title="수량">
+											<span class="plus"><img src="images/mobile/order/bts_plus_default.png" alt="추가" /></span>
+											<!-- <a href="javascript:;" class="plus"><img src="images/mobile/order/bts_plus.png" alt="추가"></a> -->
+										</div>
+									</dd>
+								</dl>
+								<div class="btnbox"><a href="javascript:;" class="btn_line01 c02">변경</a></div>
+							</div>
+							<!-- //옵션,수량 변경 -->
+						</div>
+						<div class="prd_total">
+							<span class="pricePg">309,700<em>원 (무료배송)</em></span>
+							<div class="qck_tx"><em>킴스클럽 강남점</em>에서 배송되는 상품입니다.</div>
+						</div>
+
+					</div>
+
+					<div class="tit_delivery">
+						<strong>산지직송 상품</strong> (<em class="num">1</em>개)
+					</div>
+					<div class="prd_group">
+						<div class="basket_prd">
+							<div class="top_chkbox">
+								<input type="checkbox" title="상품선택" disabled>
+								<div class="right">
+									<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+									<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+								</div>
+							</div>
+							<a href="javascript:;">
+								<div class="basket_txt">
+									<div class="pic"><img src="images/mobile/kms_mobile/temp/img_200x200_1.jpg" alt="상품 이미지"></div>
+									<span class="prodtit">킴스클럽</span>
+									<span class="prodname">오프라이스 3분땡 빙글만두 김치 168g</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt">화이트 / 1개</span>
+								</div>
+							</a>
+							<div class="sel">
+								<div class="opt w100"><span>옵션변경</span></div>
+								<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+							</div>
+							<!-- 옵션,수량 변경 -->
+							<div class="opt_open">
+								<dl>
+									<dt>색상</dt>
+									<dd>
+										<select class="w100">
+											<option>베이지브라운</option>
+										</select>
+									</dd>
+									<dt>사이즈</dt>
+									<dd>
+										<select class="w100">
+											<option>55</option>
+										</select>
+									</dd>
+									<dt>사은품</dt>
+									<dd>
+										<select class="w100">
+											<option>위스카스파우치 50g</option>
+										</select>
+									</dd>
+									<dt>수량</dt>
+									<dd>
+										<div class="numbox">
+											<span class="minus"><img src="images/mobile/order/bts_minus_default.png" alt="삭제"></span>
+											<!--a href="javascript:;" class="minus"><img src="images/mobile/order/bts_minus.png" alt="삭제" /></a-->
+											<input type="text" class="inp_txt" value="1" title="수량">
+											<!--span class="plus"><img src="images/mobile/order/bts_plus_default.png" alt="추가" /></span-->
+											<a href="javascript:;" class="plus"><img src="images/mobile/order/bts_plus.png" alt="추가"></a>
+										</div>
+									</dd>
+								</dl>
+								<div class="btnbox"><a href="javascript:;" class="btn_line01 c02">변경</a></div>
+							</div>
+							<!-- //옵션,수량 변경 -->
+						</div>
+						<!-- 상품금액,배송비 합계 -->
+						<div class="prd_total">
+							<span class="pricePg">309,700<em>원 (무료배송)</em></span>
+						</div>
+						<!-- //상품금액,배송비 합계 -->
+					</div>
+					<!-- listNone -->
+					<div class="listNone">
+						<span>장바구니에 저장된 상품이 없습니다.</span>
+					</div>
+					<!--// listNone -->
+
+				</div>
+
+			</div>
+			<!--// 일반배송.tab -->
+			<!-- 오늘직송.tab -->
+			<div id="panel_cart_1" role="tabpanel" aria-labelledby="cartBt_1">
+
+				<div class="cartTopFxd" id="cartTopFxd_1">
+					<div>
+						<span class="chk"><input type="checkbox" id="ck_crtItems_all_1"><label for="ck_crtItems_all_1">전체선택</label></span>
+						<span class="rtl"><button type="button" class="kbt sd">선택삭제</button></span>
+					</div>
+				</div>
+
+				<div class="basket_box">
+					<div class="prd_group">
+						<div class="basket_prd">
+							<div class="top_chkbox">
+								<input type="checkbox" title="상품선택">
+								<div class="right">
+									<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+									<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+								</div>
+							</div>
+							<a href="javascript:;">
+								<div class="basket_txt">
+									<div class="pic"><img src="images/mobile/kms_mobile/temp/img_200x200_20.jpg" alt="상품 이미지"></div>
+									<span class="prodtit">킴스클럽</span>
+									<span class="prodname">오프라이스 3분땡 빙글만두 김치 168g</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt">화이트 / 1개</span>
+								</div>
+							</a>
+							<div class="sel">
+								<div class="opt w100"><span>옵션변경</span></div>
+								<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+							</div>
+							<!-- 옵션,수량 변경 -->
+							<div class="opt_open">
+								<dl>
+									<dt>색상</dt>
+									<dd>
+										<select class="w100">
+											<option>베이지브라운</option>
+										</select>
+									</dd>
+									<dt>사이즈</dt>
+									<dd>
+										<select class="w100">
+											<option>55</option>
+										</select>
+									</dd>
+									<dt>사은품</dt>
+									<dd>
+										<select class="w100">
+											<option>위스카스파우치 50g</option>
+										</select>
+									</dd>
+									<dt>수량</dt>
+									<dd>
+										<div class="numbox">
+											<span class="minus"><img src="images/mobile/order/bts_minus_default.png" alt="삭제"></span>
+											<!--a href="javascript:;" class="minus"><img src="images/mobile/order/bts_minus.png" alt="삭제" /></a-->
+											<input type="text" class="inp_txt" value="1" title="수량">
+											<!--span class="plus"><img src="images/mobile/order/bts_plus_default.png" alt="추가" /></span-->
+											<a href="javascript:;" class="plus"><img src="images/mobile/order/bts_plus.png" alt="추가"></a>
+										</div>
+									</dd>
+								</dl>
+								<div class="btnbox"><a href="javascript:;" class="btn_line01 c02">변경</a></div>
+							</div>
+							<!-- //옵션,수량 변경 -->
+						</div>
+						<!-- 상품금액,배송비 합계 -->
+						<div class="prd_total">
+							<span class="pricePg">309,700<em>원 (무료배송)</em></span>
+						</div>
+						<!-- //상품금액,배송비 합계 -->
+					</div>
+					<div class="tit_delivery">
+						<strong>품절/판매종료 상품</strong> (<em class="num">2</em>개)
+					</div>
+					<div class="prd_group">
+						<div class="basket_prd">
+							<div class="top_chkbox">
+								<input type="checkbox" title="상품선택">
+								<div class="right">
+									<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+									<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+								</div>
+							</div>
+							<a href="javascript:;">
+								<div class="basket_txt">
+									<div class="pic">
+										<img src="images/mobile/kms_mobile/temp/img_200x200_19.jpg" alt="상품 이미지">
+										<div class="ico_soldout"><span>품절</span></div>
+									</div>
+									<span class="prodtit">킴스클럽</span>
+									<span class="prodname">오프라이스 3분땡 빙글만두 김치 168g</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt">화이트 / 1개</span>
+									<span class="soldout">일시품절 되었습니다.</span>
+								</div>
+							</a>
+						</div>
+						<!-- 상품금액,배송비 합계 -->
+						<div class="prd_total">
+							<span class="pricePg">309,700<em>원 (무료배송)</em></span>
+						</div>
+						<!-- //상품금액,배송비 합계 -->
+						<div class="basket_prd">
+							<div class="top_chkbox">
+								<input type="checkbox" title="상품선택">
+								<div class="right">
+									<a href="javascript:;" class="btn_wish"><span>찜하기</span></a>
+									<a href="javascript:;" class="btn_del" onclick="commonUI.lyrCnfmO(cartCnfm)" keypress="this.onclick"><span>삭제</span></a>
+								</div>
+							</div>
+							<a href="javascript:;">
+								<div class="basket_txt">
+									<div class="pic">
+										<img src="images/mobile/kms_mobile/temp/img_200x200_1.jpg" alt="상품 이미지">
+										<div class="ico_soldout"><span>일시품절</span></div>
+									</div>
+									<span class="prodtit">종가집</span>
+									<span class="prodname">콩이 가득두부 찌개용 500g  종가집 콩가</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt">1개</span>
+									<span class="soldout">선택옵션이 일시품절 되었습니다.</span>
+								</div>
+							</a>
+							<div class="sel">
+								<div class="opt w100"><span>옵션변경</span></div>
+								<div class="absR"><a href="javascript:;" class="btn_line01 c02"><strong>바로구매</strong></a></div>
+							</div>
+							<!-- 옵션,수량 변경 -->
+							<div class="opt_open">
+								<dl>
+									<dt>색상</dt>
+									<dd>
+										<select class="w100">
+											<option>베이지브라운</option>
+										</select>
+									</dd>
+									<dt>사이즈</dt>
+									<dd>
+										<select class="w100">
+											<option>55</option>
+										</select>
+									</dd>
+									<dt>사은품</dt>
+									<dd>
+										<select class="w100">
+											<option>위스카스파우치 50g</option>
+										</select>
+									</dd>
+									<dt>수량</dt>
+									<dd>
+										<div class="numbox">
+											<span class="minus"><img src="images/mobile/order/bts_minus_default.png" alt="삭제"></span>
+											<!--a href="javascript:;" class="minus"><img src="images/mobile/order/bts_minus.png" alt="삭제" /></a-->
+											<input type="text" class="inp_txt" value="1" title="수량">
+											<!--span class="plus"><img src="images/mobile/order/bts_plus_default.png" alt="추가" /></span-->
+											<a href="javascript:;" class="plus"><img src="images/mobile/order/bts_plus.png" alt="추가"></a>
+										</div>
+									</dd>
+								</dl>
+								<div class="btnbox"><a href="javascript:;" class="btn_line01 c02">변경</a></div>
+							</div>
+							<!-- //옵션,수량 변경 -->
+						</div>
+						<!-- 상품금액,배송비 합계 -->
+						<div class="prd_total">
+							<span class="pricePg">309,700<em>원 (무료배송)</em></span>
+							<div class="qck_tx"><em>킴스클럽 강남점</em>에서 배송되는 상품입니다.</div>
+						</div>
+						<!-- //상품금액,배송비 합계 -->
+					</div>
+				</div>
+
+			</div>
+			<!--// 오늘직송.tab -->
+			<script type="text/javascript">
+			$(document).ready(function(){
+				fn_subFixed('.cartTabFxd','.cartTabFxd > .ktabs')
+				if($('#cartTopFxd_0').length>0){ fn_subFixed('#cartTopFxd_0','#cartTopFxd_0 > div',false,'.cartTabFxd > .ktabs') }
+				if($('#cartTopFxd_1').length>0){ fn_subFixed('#cartTopFxd_1','#cartTopFxd_1 > div',false,'.cartTabFxd > .ktabs') }
+
+				gtTabs('#cart_tabs', 'panel_cart_', 0, false)
+				$('.cartTabFxd button').on('click', function(){
+					$("html,body").animate({scrollTop: 0}, 0);
+					$('.cartTopFxd>div').removeClass('fixed').css({'transform':'translate3d(0, 0, 0)'})
+				})
+				//as-is
+				$(".basket_prd .sel .opt").bind("click", function() {
+					$(this).toggleClass("on");
+					$(this).parent().parent().find(".opt_open").slideToggle(200);
+				});
+
+			})
+			</script>
+
+			<!-- 총 결제금액 -->
+			<div class="basketwrap">
+				<div class="basketback_all">
+					<div class="basket_total">
+						<span class="price">총 결제 예정 금액<span class="num"><em>10,506,500</em>원</span></span>
+					</div>
+					<ul class="basketback_tb">
+						<li class="left">
+							<p>총 주문금액 : <span class="num">104,000</span>원</p>
+							<p>총 배송비 : <span class="num">2,500</span>원</p>
+						</li>
+						<li class="right alR">
+							<div class="btn_buy">
+								<a href="javascript:;" class="btn_bg02 c01"><strong>구매하기</strong></a>
+							</div>
+						</li>
+					</ul>
+				</div>												
+			</div>
+			<!-- //총 결제금액 -->
+
+		</div>
+		<!--// CONTENT -->
+
+		<!-- FOOTER -->
+		<script src="kms_html_mo/common/incFooter.js"></script>
+		<div class="btn_top"><button type="button" aria-label="맨위로 이동"></button></div>
+
+		<!-- layer_search -->
+		<script src="kms_html_mo/common/incSchLyr.js"></script>
+
+		<!-- layer_popup : 찜록록 -->
+		<div class="layer_pop nodim pop_zzim">
+			<div class="pop_con">
+				<div class="pop_txt">
+					<div class="zzim_box alC">
+						<p class="ico"><em>찜 목록에</em></p>
+						<p>추가되었습니다.</p>
+						<p class="etc">마이페이지 <em>나의 찜록록</em>에서 <br>확인 하실 수 있습니다.</p>
+					</div>
+				</div>   
+				<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- //layer_popup : 찜록록 -->
+
+		<!-- 레이어 타입 confirm -->
+		<div class="lyr_confirm" id="cartCnfm">
+			<strong class="chk_txt">선택한 상품을<br />삭제하시겠습니까?</strong>
+			<div class="btns">
+				<button class="cancel" onclick="commonUI.lyrCnfmC(cartCnfm)" keypress="this.onclick"><em>취소</em></button>
+				<button class="cnfm" onclick="commonUI.lyrCnfmC(cartCnfm)" keypress="this.onclick"><em>확인</em></button>
+			</div>
+		</div>
+		<!-- //레이어 타입 confirm -->
+
+	</div>
+	<!-- //.container -->
+
+</div>
+<!-- // .wrapper -->
+
+
+</body>
+</html>

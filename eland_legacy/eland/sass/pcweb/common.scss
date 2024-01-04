@@ -1,0 +1,3222 @@
+@charset "utf-8";
+
+// Reset
+@import "font";
+@import "reset";
+@import "color";
+// 스크롤
+.scroll{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-highlight-color:#ccc;scrollbar-shadow-color:#ccc;scrollbar-face-color:#fff;scrollbar-arrow-color:#ccc;scrollbar-track-color:#fff;}
+
+
+// 스킵네비
+#skipNav{position:absolute;top:0;left:0;right:0;z-index:999;height:0;
+	a{display:block;overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;margin:0 -1px 0 -1px;text-align:center;white-space:nowrap;font-weight:bold;color:#000;
+		&:focus,&:hover,&:active{z-index:1000;width:100%;height:auto;padding:4px 0;color:#fff;background:#666;}
+	}
+}
+
+// 접근성
+.ir{position:absolute!important;left:-99999px;top:-99999px;overflow:hidden;text-indent:-9999px;font-size:1px;line-height:1px;color:#fff;}
+
+// 정렬
+.vat{vertical-align:top!important;}
+
+// 폼요소
+// placeholder 컬러지정
+// ::-webkit-input-placeholder,::-moz-placeholder,:-ms-input-placeholder,input:-moz-placeholder{}
+
+fieldset{border:0 none;}
+legend{visibility:hidden;overflow:hidden;position:absolute;width:0;height:0;font-size:0;}
+.chkbox,.rdobox{width:14px;height:14px;cursor:pointer;}
+label.disabled{color:#999;}
+.input_txt{width:175px;height:28px;padding:0 10px;border:1px solid #ddd;color:#333;line-height:18px;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+
+// 폼요소 file
+.input_file{box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;height:28px;line-height:28px;}
+.chrome .input_file{height:auto;line-height:1em;padding:3px;border:1px solid #ddd;}
+// IE8
+@media \0screen{
+	.input_txt{line-height:24px;}
+}
+.input_txt{
+	&.readonly{border:1px solid #ddd;background:#f3f3f3;}
+	&.alig_r{text-align:right;}
+	&.wide{display:block;width:100%;}
+}
+.input_file.wide{display:block;width:100%;}
+select{width:220px;height:28px;padding:4px 5px 3px 5px;border:1px solid #ddd;line-height:22px;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	&.wide{display:block;width:100%;}
+	&.auto{width:auto;}
+}
+.textarea{width:220px;height:200px;padding:6px 8px 5px 5px;border:1px solid #ddd;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	&.h100{height:90px;}
+	&.wide{display:block;width:100%;}
+}
+@media \0screen{
+	select{height:30px;padding:5px 5px 5px 10px;}
+}
+
+// IE8
+@-moz-document url-prefix(){
+	select{height:28px;padding:2px 3px 5px 5px;font-family:Verdana,'Nanum Gothic',sans-serif;}
+}
+
+
+//포인트 컬러
+.point_color{color:#c9000b;}
+
+// 아이콘
+.ico_reply{display:inline-block;padding-left:14px;background:url('../../images/pcweb/common/ico_reply.png') 0 0 no-repeat;font-weight:800;color:#333;}
+.ico_reply02{display:inline-block;padding-left:14px;background:url('../../images/pcweb/common/ico_reply02.png') 0 4px no-repeat;font-weight:800;color:#333;}
+
+// 폼요소 - 너비 클레스
+.col_2{display:inline-block;width:2%;}
+.col_5{display:inline-block;width:5%;}
+.col_7{display:inline-block;width:7%;}
+.col_10{display:inline-block;width:10%;}
+.col_15{display:inline-block;width:15%;}
+.col_20{display:inline-block;width:20%;}
+.col_25{display:inline-block;width:25%;}
+.col_30{display:inline-block;width:30%;}
+.col_36{display:inline-block;width:36%;}
+.col_40{display:inline-block;width:40%;}
+.col_50{display:inline-block;width:50%;}
+.col_60{display:inline-block;width:60%;}
+.col_70{display:inline-block;width:70%;}
+.col_80{display:inline-block;width:80%;}
+.col_90{display:inline-block;width:90%;}
+.col_100{display:inline-block;width:100%;}
+.col_80 .btn05{position:relative;top:-5px;vertical-align:top;}
+
+// 폼요소 - 전화번호, 주소 SET
+.txt_row03{width:90%;margin-top:-8px;
+	li{margin-top:8px;padding-left:100px;*zoom:1;
+		&:after{display:block;clear:both;content:"";}
+		.same_th{display:block;float:left;width:100px;margin-left:-100px;padding-top:7px;}
+	}
+	&.no_tit{width:100%;
+		li{padding-left:0;}
+	}
+}
+.phone_inputs{display:block;width:60%;*zoom:1;
+	&:after{display:block;clear:both;content:"";}
+	> *{display:block;float:left;}
+	select{width:34%;}
+	.cro{width:3%;font-size:12px;line-height:28px;vertical-align:middle;text-align:center;}
+	.input_txt{width:30%;}
+	&.type02{width:87%;}
+}
+.email_inputs{display:block;width:100%;*zoom:1;
+	&:after{display:block;clear:both;content:"";}
+	> *{display:block;float:left;}
+	.cro{width:5%;font-size:12px;line-height:28px;vertical-align:middle;text-align:center;}
+	.input_txt{width:27.5%;}
+	select{margin-left:2%;width:30%;}
+}
+.card_inputs{display:left;width:80%;*zoom:1;
+	&:after{display:block;clear:both;content:"";}
+	> *{display:block;float:left;}
+	.cro{width:3%;font-size:12px;line-height:28px;vertical-align:middle;text-align:center;}
+	.input_txt{width:20%;}
+}
+.zip_input{display:block;float:left;width:100%;margin-top:-8px;
+	p{display:block;margin-top:8px;}
+}
+
+// 로케이션
+.location{margin-top:-38px;margin-bottom:30px;
+	>ul{
+		&:after{display:block;content:'';clear:both;}
+		>li{float:left;height:29px;margin-left:9px;padding-left:14px;background:url('../../images/pcweb/common/ico_location.gif') 0 50% no-repeat;
+			&:first-child{margin-left:10px;padding-left:0;background:none;}
+			a{display:block;}
+			.home{font-size:11px;color:#000;font-family:"Verdana","Nanum Gothic",sans-serif;font-weight:bold;line-height:29px;}
+		}
+	}
+	select{width:150px;min-width:65px;height:25px;padding:4px 5px 3px 5px;border:1px solid #ddd;line-height:19px;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+	.lct_txt{
+		span,a{font-size:12px;color:#666;line-height:29px;}
+	}
+	.lyr_select{position:relative;display:inline-block;height:27px;border:1px solid #dadada;
+		&.disabled{border-color:#fff;background:#fff;
+			.sel_btn{padding-left:0;padding-right:0;background:#fff;cursor:default;
+				&:after{display:none;}
+			}
+		}
+		// &.on{
+		// 	// .sel_txt{color:#fff !important;}
+		// }
+		.sel_btn{position:relative;display:block;width:100%;height:27px;padding-left:10px;padding-right:33px;line-height:26px;text-align:left;
+			&:after{position:absolute;top:50%;right:11px;width:7px;height:4px;margin-top:-2px;background:url("../../images/pcweb/common/ico_arrow19.png") no-repeat 0 0;content:"";}
+			// &.selected{
+			// 	// .sel_txt{display:block;width:332px;height:27px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:$point_color_txt;}
+			// }
+		}
+		.lyr_options{position:absolute;top:28px;display:none;min-width:100%;
+			.options{margin:0 -1px;padding:11px 0;background:#fff;border:2px solid #000;
+				li{padding:0 13px;
+					&:hover{background:#3e3e3e;
+						.ancor{color:#fff;}
+					}
+					// &.selected{background:#fffaf0}
+					.ancor{display:block;color:#666;cursor:pointer;
+						.opt_name{display:block;height:24px;line-height:24px;word-break:keep-all;white-space:nowrap;}
+					}
+				}
+			}
+		}
+		&.on{border-color:#666;z-index:40;
+			// .sel_btn{color:#fff;background:#666;
+			// 	&:after{background-position:0 -6px;}
+			// }
+			.lyr_options{display:block;}
+		}
+	}
+}
+@media \0screen{
+	.location select{height:25px;padding:2px 5px;}
+}
+
+
+@-moz-document url-prefix(){
+	.location select{height:25px;padding:2px 3px 4px 5px;font-family:Verdana,'Nanum Gothic',sans-serif;}
+}
+
+// 타이틀
+.title{position:relative;
+	&.bline{border-bottom:1px solid #242424;}
+	.right{position:absolute;right:0;bottom:0;
+		&.mix{position:relative;padding-bottom:40px;border-bottom:1px solid #333;text-align:center;}
+	}
+	.right02{position:absolute;right:0;bottom:16px;}
+	.r_cont{float:right;width:50%;text-align:right;}
+}
+// .tit_h2_img{}
+
+// 반품샵-이미지타이틀
+.tit_h2{margin:0 0 12px 10px;font-size:22px;color:#242424;font-weight:normal;font-family:"Noto Sans CJK KR", "Noto Sans KR", "Noto Sans", "Noto", Verdana,'Nanum Gothic',sans-serif;
+	> .btn_etc02{vertical-align:4px;margin-left:5px;font-family:Verdana,'Nanum Gothic',sans-serif}
+}
+.tit_h2_01{margin:0 0 14px 9px;padding-top:8px;font-size:22px;color:#333;font-weight:800;}
+.tit_h2_dot{margin-top:10px;padding:0 0 16px 9px;border-bottom:1px solid #adadad;background:url('../../images/pcweb/common/ico_dot03.gif') 0 10px no-repeat;font-size:20px;color:#333;font-weight:800;
+	.quantity{font-weight:normal;font-size:20px;letter-spacing:-0.05em;}
+}
+.tit_h2_02{margin-bottom:26px;text-align:center;font-size:18px;color:#333;font-weight:800;
+	&.txt_en{font-weight:bold;}
+}
+.tit_h3{margin:0 0 16px 0;font-size:24px;color:#242424;font-weight:800;}
+.tit_h3_01{margin:0 0 13px 10px;font-size:16px;color:#333;font-weight:800;}
+.tit_h3_02{margin:0 0 8px 15px;font-size:16px;color:#000;font-weight:800;}
+.tit_h3_03{margin:0 0 23px;font-size:30px;color:#000;font-family:"Noto Sans CJK KR", "Noto Sans KR", "Noto Sans", "Noto", "Verdana","Nanum Gothic", sans-serif;font-weight:normal;text-align:center;
+	strong{font-weight:bold;}
+}
+.txt_h3{display:block;margin:48px 0 12px;padding-left:8px;padding-bottom:2px;font-size:18px;line-height:1.3em;font-weight:800;color:#333;
+	.txt_h3_mini{font-size:14px;vertical-align:middle;}
+	.dtl_lnk{position:relative;margin:0 0 0 10px;font-size:12px;color:#666;letter-spacing:-0.05em;font-weight:normal;border-bottom:1px solid #666;
+		&:after{position:absolute;top:50%;right:-11px;width:4px;height:7px;margin:-2px 0 0;background:url("../../images/pcweb/common/ico_arrow08.gif") no-repeat;;content:"";}
+	}
+}
+.txt_h3_mini.type2{font-size:14px;display:block;padding-left:8px;margin-top:4px;}
+.txt_h5{display:block;margin:40px 0 12px;padding-left:8px;padding-bottom:2px;font-size:15px;line-height:1.3em;font-weight:800;color:#333;}
+.title .right .btn03{margin-left:3px;}
+.tit_underline{padding:0 0 14px 6px;font-size:18px;color:#333;border-bottom:1px solid #000;
+	&.type02{padding:0 0 14px 6px;font-size:24px;color:#333;border-bottom:1px solid #000;}
+	&.type03{padding:0 0 14px 6px;font-size:16px;color:#242424;border-bottom:1px solid #000;}
+	.tit_info01{font-size:13px;color:#666;line-height:1;}
+}
+.tit_topline{
+	&.type02{padding:17px 0 14px 6px;font-size:24px;color:#333;border-top:1px solid #000;}
+	}
+.tit_h3_bar01{margin:0 0 30px;padding:0 0 13px;background:url('../../images/pcweb/common/ico_tit_underbar01.gif') 50% 100% no-repeat;color:#242424;font-size:24px;font-weight:800;text-align:center;}
+.tit_h3_bar02{margin:0 0 30px;color:#242424;font-size:24px;font-weight:800;text-align:center;
+	> span{display:inline-block;padding:0 10px 6px;border-bottom:1px solid #ddd;}
+	.txt_en{font-size:28px;vertical-align:-2px;}
+}
+.tit_h3_bg01{margin-bottom:30px;background:url('../../images/pcweb/common/bg_tit_repeat01.gif') 0 50% repeat-x;text-align:center;
+	span{display:inline-block;padding:0 20px;background:#fff;font-size:24px;font-weight:800;color:#333;}
+}
+.tit_h3_bg02{padding:0 0 15px 18px;background:url('../../images/pcweb/common/bg_tit_repeat01.gif') 0 100% repeat-x;font-size:26px;font-weight:800;color:#242424;}
+
+.tit_h3_bg01{
+	// &.tit_c10,&.tit_c40 span{}// 기본 검정
+	&.tit_c20{background:url('../../images/pcweb/common/bg_tit_repeat01_c04.gif') 0 50% repeat-x;}
+	&.tit_c40 span{color:#9a8a7a;} // 파랑
+	&.tit_c30{background:url('../../images/pcweb/common/bg_tit_repeat01_c02.gif') 0 50% repeat-x;
+		span{color:#084271;} //세피아
+	}
+	&.tit_c40{background:url('../../images/pcweb/common/bg_tit_repeat01_c03.gif') 0 50% repeat-x;}
+	&.tit_c20 span{color:#b75252;} //브라운
+	&.tit_c50{background:url('../../images/pcweb/common/bg_tit_repeat01_c04.gif') 0 50% repeat-x;
+		span{color:#763c36;} //빨강
+	}
+}
+
+.tit_h3_ln01{padding:20px 0 40px;border-top:1px solid #242424;
+	span{display:inline-block;background:#fff;font-size:24px;line-height:24px;font-weight:normal;color:#333;font-family: "Noto Sans CJK KR", "Noto Sans KR", "Noto Sans", "Noto", Verdana,'Nanum Gothic',sans-serif;}
+	// &.tit_c10,&.tit_c40 span{}// 기본 검정
+	&.tit_c20{border-color:#b75252;
+		span{color:#b75252;} //브라운
+	}
+	&.tit_c30{border-color:#084271;
+		span{color:#084271;} //세피아
+	}
+	&.tit_c40{border-color:#9a8a7a;
+		span{color:#9a8a7a;} // 파랑
+	}
+	&.tit_c50{border-color:#763c36;
+		span{color:#763c36;} //빨강
+	}
+}
+
+.tab_anchor01{padding:0 0 90px 1px;
+	&.tab_c20 li a:hover{border:1px solid #be6363;
+		span{border:1px solid #be6363;color:#be6363;
+			&:before{background:url('../../images/pcweb/common/ico_arrow_anchor04_on.png') 0 0 no-repeat;}
+		}
+	}
+	&.tab_c30 li a:hover{border:1px solid #084271;
+		span{border:1px solid #084271;color:#084271;
+			&:before{background:url('../../images/pcweb/common/ico_arrow_anchor02_on.png') 0 0 no-repeat;}
+		}
+	}
+	&.tab_c40 li a:hover{border:1px solid #9a8a7a;
+		span{border:1px solid #9a8a7a;color:#9a8a7a;
+			&:before{background:url('../../images/pcweb/common/ico_arrow_anchor03_on.png') 0 0 no-repeat;}
+		}
+	}
+	&.tab_c50 li a:hover{border:1px solid #763c36;
+		span{border:1px solid #763c36;color:#763c36;
+			&:before{background:url('../../images/pcweb/common/ico_arrow_anchor04_on.png') 0 0 no-repeat;}
+		}
+	}
+	ul:after{display:block;content:'';clear:both;}
+	li{float:left;width:25%;}
+	&.size05 li{width:20%;}
+	li a{display:block;border:1px solid #ccc;margin:-1px 0 0 -1px;
+		span{overflow:hidden;display:block;position:relative;height:44px;padding:0 28px 0 15px;border:1px solid #fff;line-height:44px;
+			&:before{display:block;position:absolute;top:50%;right:15px;width:6px;height:9px;margin-top:-4px;background:url('../../images/pcweb/common/ico_arrow_anchor.png') 0 0 no-repeat;content:'';}
+		}
+		&:hover{
+			span{
+				&:before{display:block;position:absolute;top:50%;right:15px;width:6px;height:9px;margin-top:-4px;background:url('../../images/pcweb/common/ico_arrow_anchor_on.png') 0 0 no-repeat;content:'';}
+			border:1px solid #000;color:#333;font-weight:800;}
+		position:relative;border:1px solid #000;}
+	}
+	// &.tab_c10{}
+	&.tab_c20 li a:hover{border:1px solid #be6363;
+		span{border:1px solid #be6363;color:#be6363;
+			&:before{background:url('../../images/pcweb/common/ico_arrow_anchor04_on.png') 0 0 no-repeat;}
+		}
+	}
+	&.tab_c30 li a:hover{border:1px solid #084271;
+		span{border:1px solid #084271;color:#084271;
+			&:before{background:url('../../images/pcweb/common/ico_arrow_anchor02_on.png') 0 0 no-repeat;}
+		}
+	}
+	&.tab_c40 li a:hover{border:1px solid #9a8a7a;
+		span{border:1px solid #9a8a7a;color:#9a8a7a;
+			&:before{background:url('../../images/pcweb/common/ico_arrow_anchor03_on.png') 0 0 no-repeat;}
+		}
+	}
+}
+
+.box_anchor{padding-top:60px;}
+// [v2] : 기획전 lp 정리
+.section_evt{margin-bottom:-60px;
+	.list_product01,.list_product02,.list_product03,.list_product04,.list_product05{border-bottom:none;}
+	.list_product01 .list:first-child,.list_product01 .list li,
+	.list_product02 .list:first-child,.list_product02 .list li,
+	.list_product03 .list:first-child,.list_product03 .list li,
+	.list_product04 .list:first-child,.list_product04 .list li,
+	.list_product05 .list:first-child,.list_product05 .list li {margin-top:0;}
+	.list_product05{padding-top:0;
+		&.size05{
+			.list {
+				> li{margin:0;
+					&+li{margin-left:20px;}
+				}
+			}
+		}
+	}
+	.box_page{margin-top:20px;}
+	&+.title{margin-top:120px;}
+}
+.tab_cont .section_evt{margin-top:15px;margin-bottom:0;}
+.box_anchor .section_evt{
+	.list_product01,.list_product02,.list_product03,.list_product04{margin-bottom:0;}
+}
+.title .btn_anchor_top{display:none;position:absolute;top:-19px;right:0;display:inline-block;padding:5px 10px;
+	img{vertical-align:middle;}
+}
+
+// 버튼
+.set_vbtn{
+	button + button,a + a{margin-top:3px;}
+}
+.set_vbtn02{
+	button + button,a + a{margin-top:3px;}
+}
+.type_img span{min-width:inherit!important;
+	img{margin-right:3px;vertical-align:middle;}
+}
+.btn01.full,.btn02.full,.btn03.full,.btn04.full,.btn05.full,.btn06.full,.btn07.full,.btn08.full{display:block;width:100%;}
+.btn01.full span,.btn02.full span,.btn03.full span,.btn04.full span,.btn05.full span,.btn06.full span{min-width:inherit;width:auto;padding:0;}
+.btn01{display:inline-block;border:1px solid #333;background:#333;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;min-width:178px;height:43px;padding:0 10px;color:#fff;font-size:14px;line-height:43px;font-weight:800;}
+	&.c01{border:1px solid #333;background:#fff;
+		span{color:#333;}
+	}
+	&.c02{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c03{border:1px solid #ddd;background:#f3f3f3;
+		span{color:#666;}
+	}
+	&.c04{border:1px solid #bbb5a4;background:#bbb5a4;
+		span{color:#fff;}
+	}
+	&.c05{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c06{border:1px solid #dadada;background:#fff;
+		span{color:#333;}
+	}
+	&.c07{border:1px solid #2d2d2d;background:#2d2d2d;
+		span{color:#fff;}
+	}
+	&.c08{border:1px solid #222;background:#222;
+		span{color:#fff;}
+	}
+	&.c09{border:1px solid #eee;background:#eee;
+		span{color:#333;}
+	}
+	&.disabled{background:#ccc;border:1px solid #ccc;}
+	&.set_more{display:block;width:100%;
+		span {display:inline-block;width:auto;min-width:inherit;padding-right:18px; background:url('../../images/pcweb/common/ico_arrow_more3.png') no-repeat 100% 54%;}
+	}
+}
+.btn02{display:inline-block;border:1px solid #333;background:#333;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;min-width:60px;height:33px;padding:0 20px;color:#fff;font-size:13px;line-height:33px;font-weight:800;}
+	&.c01{border:1px solid #333;background:#fff;
+		span{color:#333;}
+	}
+	&.c02{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c03{border:1px solid #ddd;background:#f3f3f3;
+		span{color:#666;}
+	}
+	&.c04{border:1px solid #b3b3b3;background:#b3b3b3;
+		span{color:#fff;}
+	}
+	&.c05{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+}
+	&.c06{border:1px solid #dadada;background:#fff;
+		span{color:#333;}
+	}
+	&.c07{border:1px solid #2d2d2d;background:#2d2d2d;
+		span{color:#fff;}
+	}
+	&.c08{border:1px solid #222;background:#222;
+		span{color:#fff;}
+	}
+	&.c09{border:1px solid #eee;background:#eee;
+		span{color:#333;}
+	}
+}
+.btn03{display:inline-block;border:1px solid #333;background:#333;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;min-width:50px;height:26px;padding:0 15px;color:#fff;font-size:12px;line-height:26px;font-weight:800;letter-spacing:-1px;}
+	&.c01{border:1px solid #ccc;background:#fff;
+		&.disabled{background:#ddd;border:none;
+			span{color:#fff;height:28px;line-height:28px;}
+		}
+		span{color:#333;}
+	}
+	&.c02{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c03{border:1px solid #ddd;background:#f3f3f3;
+		span{color:#666;}
+	}
+	&.c04{border:1px solid #bbb5a4;background:#bbb5a4;
+		span{color:#fff;}
+	}
+	&.c05{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c06{border:1px solid #adadad;background:#adadad;
+		span{color:#fff;}
+	}
+	&.c07{border:1px solid #2d2d2d;background:#2d2d2d;
+		span{color:#fff;}
+	}
+	&.c08{border:1px solid #222;background:#222;
+		span{color:#fff;}
+	}
+	&.c09{border:1px solid #eee;background:#eee;
+		span{color:#333;}
+	}
+}
+.btn04{display:inline-block;border:1px solid #454545;background:#454545;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;min-width:50px;height:28px;padding:0 15px;color:#fff;font-size:12px;line-height:28px;font-weight:800;letter-spacing:-1px;}
+	&.c01{border:1px solid #ccc;background:#fff;
+		span{color:#333;}
+	}
+	&.c02{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c03{border:1px solid #ddd;background:#f3f3f3;
+		span{color:#666;}
+	}
+	&.c04{border:1px solid #444;background:#444;
+		span{color:#fff;}
+	}
+	&.c05{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c06{border:1px solid #dadada;background:#fff;
+		span{color:#333;}
+	}
+	&.c07{border:1px solid #2d2d2d;background:#2d2d2d;
+		span{color:#fff;}
+	}
+	&.c08{border:1px solid #222;background:#222;
+		span{color:#fff;}
+	}
+	&.c09{border:1px solid #eee;background:#eee;
+		span{color:#333;}
+	}
+	&.replace span{display:inline-block;padding-right:23px;margin-right:12px;background:url('../../images/pcweb/common/ico_replace.png') 100% 50% no-repeat;}
+	&.full.replace span{margin-right:0;}
+	&.ico_evt01{display:block;width:100%;
+		span{display:inline-block;padding-left:32px;background:url('../../images/pcweb/common/ico_join0.png') 0 center no-repeat;}
+	}
+	&.no_member{padding:0 15px;
+		span{display:inline-block;padding:0 7px 0 0;color:#666;background:url('../../images/pcweb/common/ico_arrow02.gif') right center no-repeat;}
+	}
+	&.dp11_6 span{display:inline-block;padding:0 10px 0 34px;color:#fff;background:url('../../images/pcweb/shop/ico_dp11_6.png') 10px center no-repeat;text-align:center;}
+}
+.btn05{display:inline-block;border:1px solid #333;background:#333;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;min-width:50px;height:23px;padding:0 10px;color:#fff;font-size:12px;line-height:23px;font-weight:800;}
+	&.c01{border:1px solid #ccc;background:#fff;
+		span{color:#333;}
+	}
+	&.c02{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c03{border:1px solid #ddd;background:#f3f3f3;
+		span{color:#666;}
+	}
+	&.c04{border:1px solid #bbb5a4;background:#bbb5a4;
+		span{color:#fff;}
+	}
+	&.c05{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c06{border:1px solid #dadada;background:#fff;
+		span{color:#333;}
+	}
+	&.c07{border:1px solid #2d2d2d;background:#2d2d2d;
+		span{color:#fff;}
+	}
+	&.c08{border:1px solid #222;background:#222;
+		span{color:#fff;}
+	}
+	&.c09{border:1px solid #eee;background:#eee;
+		span{color:#333;}
+	}
+	&.disabled{border-color:#ccc;background:#ccc;cursor:default;}
+}
+.btn06{display:inline-block;border:1px solid #333;background:#333;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;width:200px;height:53px;color:#fff;font-size:18px;line-height:51px;font-weight:800;}
+	&.c01{border:1px solid #999;background:#fff;
+		span{color:#000;}
+	}
+	&.c02{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c03{border:1px solid #ddd;background:#f3f3f3;
+		span{color:#666;}
+	}
+	&.c04{border:1px solid #bbb5a4;background:#bbb5a4;
+		span{color:#fff;}
+	}
+	&.c05{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c06{border:1px solid #dadada;background:#fff;
+		span{color:#333;}
+	}
+	&.c07{border:1px solid #2d2d2d;background:#2d2d2d;
+		span{color:#fff;}
+	}
+	&.c08{border:1px solid #222;background:#222;
+		span{color:#fff;}
+	}
+	&.c09{border:1px solid #eee;background:#eee;
+		span{color:#333;}
+	}
+	&.disabled{&.c01{border:1px solid #ddd;background:#fff;color:#999;
+			span{background:#fff;color:#999;}
+		}
+		&.c02{border:1px solid #999!important;background:#999!important;
+			span{color:#fff!important;}
+		}
+	}
+	&.set_more{display:block;width:100%;
+		span {display:inline-block;width:auto;padding-right:24px; background:url('../../images/pcweb/common/ico_arrow_more.png') no-repeat 100% 52%;}
+	}
+	&.set_more2{display:block;width:100%;
+		span {display:inline-block;width:auto;padding-right:24px; background:url('../../images/pcweb/common/ico_arrow_more2.png') no-repeat 100% 52%;}
+	}
+}
+.btn07{display:inline-block;border:1px solid #000;background:#333;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;min-width:30px;height:18px;color:#fff;font-size:11px;line-height:20px;padding-left:10px;padding-right:10px;}
+	&.c01{border:1px solid #ccc;background:#fff;
+		span{color:#333;}
+	}
+	&.c02{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c03{border:1px solid #ddd;background:#f3f3f3;
+		span{color:#666;}
+	}
+	&.c04{border:1px solid #bbb5a4;background:#bbb5a4;
+		span{color:#fff;}
+	}
+	&.c05{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c06{border:1px solid #dadada;background:#fff;
+		span{color:#333;}
+	}
+	&.c07{border:1px solid #2d2d2d;background:#2d2d2d;
+		span{color:#fff;}
+	}
+	&.c08{border:1px solid #222;background:#222;
+		span{color:#fff;}
+	}
+	&.c09{border:1px solid #eee;background:#eee;
+		span{color:#333;}
+	}
+	&.rv_down,&.rv_up,&.rv_del{padding-right:5px;}
+	&.rv_down span{padding-right:15px;background:url('../../images/pcweb/common/ico_arrow09.gif') right center no-repeat;}
+	&.rv_up{span{padding-right:15px;background:url('../../images/pcweb/common/ico_arrow10.png') right center no-repeat;}
+	/* background:#f3f3f3; */}
+	&.rv_del{span{padding-right:15px;background:url('../../images/pcweb/common/ico_rv_del.gif') right center no-repeat;}
+	background:#ddd;}
+	&.rv_edit{span{min-width:40px;}
+	background:#ddd;}
+	display:inline-block;border:1px solid #000;background:#333;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;min-width:30px;height:18px;color:#fff;font-size:11px;line-height:20px;padding-left:10px;padding-right:10px;}
+}
+//spao_comingsoon
+.btn08{display:inline-block;border:1px solid #ededed;background:#ededed;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;min-width:30px;height:53px;color:#fff;font-size:18px;line-height:51px;font-weight:800;}
+	&.c01{border:1px solid #ededed;background:#ededed;
+		span{color:#333;}
+	}
+	&.c02{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c03{border:1px solid #ddd;background:#f3f3f3;
+		span{color:#666;}
+	}
+	&.c04{border:1px solid #bbb5a4;background:#bbb5a4;
+		span{color:#fff;}
+	}
+	&.c05{border:1px solid $point_color_bg;background:$point_color_bg;
+		span{color:#fff;}
+	}
+	&.c06{border:1px solid #dadada;background:#fff;
+		span{color:#333;}
+	}
+	&.c07{border:1px solid #2d2d2d;background:#2d2d2d;
+		span{color:#fff;}
+	}
+	&.c08{border:1px solid #222;background:#222;
+		span{color:#fff;}
+	}
+	&.rv_down,&.rv_up,&.rv_del{padding-right:5px;}
+	&.rv_down span{padding-right:15px;background:url('../../images/pcweb/common/ico_arrow09.gif') right center no-repeat;}
+	&.rv_up{span{padding-right:15px;background:url('../../images/pcweb/common/ico_arrow10.png') right center no-repeat;}
+	/* background:#f3f3f3; */}
+	&.rv_del{span{padding-right:15px;background:url('../../images/pcweb/common/ico_rv_del.gif') right center no-repeat;}
+	background:#ddd;}
+	&.rv_edit{
+		span{min-width:40px;}
+	background:#ddd;}	
+}
+
+.btn_etc01{display:inline-block;border:1px solid #ccc;background:#fff;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;height:23px;color:#666;font-size:12px;line-height:22px;padding-left:15px;padding-right:15px;letter-spacing:-1px;}
+	&.on{border:1px solid #bbb5a4;background:#bbb5a4;
+		span{color:#fff;padding-left:22px;padding-right:6px;background:url('../../images/pcweb/common/ico_btn_etc01.png') 6px center no-repeat;}
+	}
+}
+.btn_etc02{display:inline-block;border:1px solid #ccc;background:#fff;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;height:23px;margin-right:11px;color:#666;font-size:12px;font-weight:800;line-height:23px;padding-left:12px;padding-right:10px;letter-spacing:-1px;background:url('../../images/pcweb/common/ico_arrow12.png') right center no-repeat;}
+	&.c01{border:1px solid #ccc;
+		span{background:url('../../images/pcweb/common/ico_arrow08.gif') right center no-repeat;color:#666;}
+	}
+}
+.btn_etc03{display:inline-block;overflow:hidden;padding:4px 20px 2px 0;text-align:center;font-family:dotum;font-size:11px;letter-spacing:-1px;border:1px solid #cc6666;color:#cc6666;background:url('../../images/pcweb/common/ico_doublecoupon.png') right center no-repeat;
+	span{display:block;height:22px;width:60px;text-align:center;line-height:12px;
+		strong{letter-spacing:initial;}
+	}
+}
+.btn_etc04{display:inline-block;width:118px;height:28px;font-family:dotum;font-size:12px;line-height:28px;letter-spacing:-1px;border:1px solid #ccc;font-weight:800;text-align:center;
+	span{display:inline-block;padding-right:20px;height:26px;color:#333;background:url('../../images/pcweb/common/ico_cp_down.png') right center no-repeat;}
+	&:hover{border:1px solid #333;background:#333;
+		span{color:#fff;background-image:url('../../images/pcweb/common/ico_cp_down_hover.png');}
+	}
+	&.comp{background:#ddd;border:1px solid #ddd;
+		span{padding-right:0;background:none;color:#fff;}
+	}
+}
+
+.btn_etc05{display:inline-block;height:35px;line-height:36px;padding:0 14px;color:#fff;font-size:13px;font-weight:bold;background:#333;
+	&:after{display:inline-block;width:4px;height:7px;margin-left:4px;background:url("../../images/pcweb/common/ico_arrow18.png") no-repeat;content:"";}
+}
+
+// 기타 버튼
+.btn_login{display:inline-block;border:1px solid #242424;background:#242424;text-align:center;vertical-align:middle;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+	span{display:block;width:120px;height:88px;color:#fff;font-size:18px;line-height:90px;font-weight:800;}
+}
+
+// 텍스트 버튼
+.btn_txt01{display:inline-block;
+	span{display:block;padding:0 7px 1px 0;border-bottom:1px solid #ee4422;background:url('../../images/pcweb/common/ico_arrow01.gif') 100% 5px no-repeat;color:#ee4422;font-size:12px;font-weight:800;}
+	&.c01 span{border-bottom:1px solid #999;background:url('../../images/pcweb/common/ico_arrow02.gif') 100% 5px no-repeat;color:#999;}
+	&.c02 span{border-bottom:1px solid #666;background:url('../../images/pcweb/common/ico_arrow06.gif') 100% 5px no-repeat;color:#666;}
+	&.c03 span{border-bottom:1px solid #b5b5b5;background:url('../../images/pcweb/common/ico_arrow13.png') 100% 5px no-repeat;color:#999;font-weight:400;}
+	&.c04 span{border-bottom:1px solid #333;background:url('../../images/pcweb/common/ico_arrow14.png') 100% 5px no-repeat;color:#333;}
+	&.c05 span{border-bottom:1px solid #333;background:url('../../images/pcweb/common/ico_arrow14.png') 100% 5px no-repeat;color:#333;font-weight:400;}
+}
+@media \0screen{
+	.btn_txt01 span{padding-bottom:0;background-position:100% 4px;}
+}
+
+.btn_txt02{display:inline-block;
+	span{display:block;padding:0 7px 1px 0;background:url('../../images/pcweb/common/ico_arrow03.gif') 100% 50% no-repeat;color:#666;font-size:12px;font-weight:800;letter-spacing:0;text-decoration:underline;}
+}
+@media \0screen{
+	.btn_txt02 span{padding-bottom:0;background-position:100% center;}
+}
+
+.btn_txt03{display:inline-block;
+	span{display:block;padding:0 0 1px 0;color:$point_color_txt;font-size:12px;font-weight:400;letter-spacing:-1px;border-bottom:1px solid $point_color_txt;}
+}
+.btn_more01{display:inline-block;margin-right:10px;background:url('../../images/pcweb/common/ico_arrow04.png') 100% 5px no-repeat;
+	span{display:block;padding:0 13px 0 0;color:#242424;font-size:12px;line-height:1.25em;font-family:"Verdana","Nanum Gothic",sans-serif;font-weight:400;letter-spacing:-1;}
+}
+.ico_arrow04 span{margin-right:8px;background:url('../../images/pcweb/common/ico_arrow05.png') right center no-repeat;}
+.ico_arrow08{padding-right:10px;
+	span{background:url('../../images/pcweb/common/ico_arrow08.gif') right center no-repeat;}
+}
+.ico_arrow18{padding-right:10px;
+	span{background:url('../../images/pcweb/common/ico_arrow18.png') right center no-repeat;}
+}
+.ico_arrow37{padding-right:10px;
+	span{background:url('../../images/pcweb/common/ico_arrow37.gif') right center no-repeat;}
+}
+
+//쿠폰 다운 버튼
+.cpn_down_btn{position:relative;display:inline-block;width:170px;height:35px;padding-left:34px;line-height:33px;font-size:13px;color:#333;font-weight:bold;border:1px solid #242424;
+	&:before{position:absolute;top:-1px;left:-1px;width:34px;height:35px;background:url('../../images/pcweb/common/ico_download04.png') center center no-repeat #c9000b;content:"";}
+	&:disabled{padding:0;border-color:#d1d1d1;background:#f4f4f4;color:#bababa;
+		&:before{display:none;}
+	}
+}
+// 버튼 정렬
+.set_btn,.set_btn_up{text-align:center;}
+.set_btn_down{text-align:center;margin-top:10px;}
+.set_btn_up{margin-bottom:10px;}
+.set_btn{
+	a,button{margin-left:7px;}
+	&.closed{
+		a,button{margin-left:1px;}
+	}
+}
+.set_btn_up{
+	a,button{margin-left:1px;}
+}
+.set_btn_down{
+	a,button{margin-left:7px;}
+}
+.set_btn{
+	a:first-child,button:first-child{margin-left:0;}
+}
+.set_btn_up{
+	a:first-child,button:first-child{margin-left:0;}
+}
+.set_btn_down{
+	a:first-child,button:first-child{margin-left:0;}
+}
+.set_btn:after,.set_btn_up:after,.set_btn_down:after{display:block;content:'';clear:both;}
+.set_btn.left,.set_btn_up.left,.set_btn_down.left{text-align:left;}
+.set_btn.right,.set_btn_up.right,.set_btn_down.right{text-align:right;}
+.set_btn .l_cont,.set_btn_up .l_cont,.set_btn_down .l_cont{float:left;width:50%;text-align:left;}
+.set_btn .r_cont,.set_btn_up .r_cont{float:right;width:50%;text-align:right;}
+.set_btn_down{
+	.r_cont{float:right;width:50%;text-align:right;}
+	.txt_c01{line-height:1.4em;}
+}
+
+.abs{position:relative;width:100%;height:28px;
+	.l_txt{position:absolute;right:0;top:0;left:0;bottom:0;line-height:28px;color:#333;}
+	.r_cont{position:absolute;right:0;top:0;}
+}
+
+// 게시판
+.board01{
+	table{width:100%;}
+	thead th{height:44px;border-top:1px solid #adadad;border-bottom:1px solid #ddd;color:#333;background:#f3f3f3;font-weight:800;}
+	tbody td{height:20px;padding:10px 5px;border-bottom:1px solid #ddd;}
+	.alig_c{text-align:center;}
+	.btn_etc02.c01{margin-top:3px;}
+}
+.board02{
+	table{width:100%;border-bottom:1px solid #ddd;}
+	thead th{height:44px;padding:0 10px;border-top:1px solid #adadad;border-bottom:1px solid #ddd;background:#f3f3f3;font-weight:800;color:#333;}
+	tbody td{padding:19px 10px;border-top:1px solid #ddd;text-align:center;}
+	.alig_l{text-align:left;}
+	.set_vbtn{margin:-10px 0;padding:0 10px;}
+	.date{font-family:"Verdana","Nanum Gothic",sans-serif;color:#333;}
+	&.card01 tbody td{height:35px;padding:19px 0px;}
+	&.card02 tbody td{height:36px;padding:18px 0px 19px;}
+}
+.board03{
+	table{width:100%;border-bottom:1px solid #ddd;}
+	thead th{height:38px;padding:0 10px;border-top:1px solid #adadad;border-bottom:1px solid #ddd;background:#f3f3f3;font-weight:800;color:#333;}
+	tbody td{padding:12px 10px;border-top:1px solid #ddd;text-align:center;}
+	.alig_l{text-align:left;}
+	.set_vbtn{margin:-10px 0;padding:0 10px;}
+}
+.data_table01{position:relative;margin-top:10px;border-top:1px solid #adadad;
+	table{width:100%;margin-bottom:-1px;}
+	th{padding:16px 13px 16px 20px;height:28px;border-right:1px solid #ddd;border-bottom:1px solid #ddd;background:#f3f3f3;color:#333;text-align:left;font-weight:400;line-height:24px;}
+	td{padding:16px 13px 16px 20px;height:28px;border-bottom:1px solid #ddd;vertical-align:middle;line-height:24px;}
+	&.not_line{margin-top:-1px;}
+	td p{line-height:24px;}
+}
+.data_table02{margin-top:20px;
+	table{width:100%;border-top:1px solid #adadad;}
+	th{padding:10px 10px;border-bottom:1px solid #ddd;background:#f3f3f3;color:#333;}
+	td{padding:10px 20px;border-bottom:1px solid #ddd;vertical-align:middle;text-align:left;
+		&.bdl{border-left:1px solid #ddd;}
+	}
+}
+.data_table03{margin-top:10px;
+	table{width:100%;border:1px solid #ddd;}
+	th{height:28px;padding:10px 20px;border-bottom:1px solid #ddd;background:#f3f3f3;color:#333;text-align:left;}
+	td{height:28px;padding:10px 20px;border-bottom:1px solid #ddd;vertical-align:middle;text-align:left;}
+	.list_chk_col select{width:70px;}
+}
+.data_table04{margin-top:10px;
+	table{width:100%;border:1px solid #ddd;}
+	th{height:28px;padding:10px 20px;border:1px solid #ddd;background:#f8f8f8;color:#333;text-align:center;}
+	td{height:28px;padding:10px 20px;border:1px solid #eee;vertical-align:middle;font-weight:800;
+		&.alig_r{padding-right:75px;}
+	}
+}
+.date_table04 .point_num{padding:0 55px 0 0;}
+.data_size_table{margin-top:20px;
+	table{width:100%;border-top:1px solid #adadad;}
+	thead th{padding:10px 10px;border-bottom:1px solid #adadad;border-left:1px solid #adadad;background:#e2e2e2;color:#333;
+		&:first-child{border-left:none;}
+	}
+	tbody th{padding-left:28px;border-bottom:1px solid #ddd;background:#f3f3f3;color:#333;text-align:left;}
+	th.th02{padding-left:28px;color:#333;text-align:left;}
+	.tr_typ02{
+		th:first-child{border-left:none;}
+		td{border-bottom:1px solid #adadad;border-left:1px solid #adadad;background:#e2e2e2;color:#333;font-weight:400;}
+		th.th02{border-bottom:1px solid #adadad;background:#e2e2e2;color:#333;font-weight:800;}
+	}
+	td{padding:10px 20px;border-bottom:1px solid #ddd;border-left:1px solid #ddd;vertical-align:middle;text-align:center;}
+}
+.board_section{*zoom:1;
+	&:after{display:block;clear:both;content:"";}
+	.board_left{float:left;width:530px;}
+	.board_right{float:right;width:530px;}
+}
+
+//배송지팝업 
+.deli{min-height:442px;
+	.deli_tb{position:relative;margin-top:10px;border-top:1px solid #adadad;
+		a{outline: none;}
+		table{width:100%;margin-bottom:-1px;}
+		th{padding: 10px 0 10px 17px;height: 28px;border-bottom: 1px solid #ddd;background: #f3f3f3;color: #333;text-align: left;line-height: 24px;
+			&.v_top{vertical-align: top;}
+		}
+		td{padding:10px 22px 10px 20px;height:28px;border-bottom:1px solid #ddd;vertical-align:middle;line-height:24px;}
+		&.not_line{margin-top:-1px;}
+		td p{line-height:24px;}
+		.input_txt.readonly {border: none;background: #f3f3f3;}
+		.input_txt.mid {display:inline-block;width: 201px;}
+		.zip_input p {display: block;margin-top: 5px;}
+		.addr_sch{width: 103px;height: 28px;line-height: 26px;border: 1px solid #ddd;margin-left: -4px;
+			span{display: block;color: #333;font-size: 13px;font-weight: 800;}
+		}
+		select{width: 80px;line-height: 24px;padding: 0 30px 0 12px;border: 1px solid #ddd;color: #747474;background: url(../../images/pcweb/goods/ico_arrow_set.png) no-repeat 56px 11px;border-radius: 0px;-webkit-appearance: none;-moz-appearance: none;appearance: none;
+			&::-ms-expand{display: none;}
+			&:focus{outline: none;}
+			&.sel_box.w100{width: 100%;background: url(../../images/pcweb/goods/ico_arrow_set.png) no-repeat 280px 11px;}
+
+		}
+		.input_wrap{font-size: 13px;float: right;display: block;height: 28px;line-height: 28px;	
+			input[type="checkbox"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip:rect(0,0,0,0);border: 0;
+				&:focus{outline: none;}
+			}
+			input[type="checkbox"] + label {display: inline-block;position: relative; cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+			input[type="checkbox"] + label:before {content: ' ';display: inline-block;width: 12px;height: 12px;line-height: 12px;margin: 0 2px 0 0;text-align: center;vertical-align: middle;background: #fff;border: 1px solid #ccc;}
+			input[type="checkbox"] + label:active:before,
+			// input[type="checkbox"]:checked + label:active:before {}
+			input[type="checkbox"]:checked + label:before {content: '\2713';color: #191919;background: #fff;border: 1px solid #ccc;box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);font-weight:bold;}	
+			&:after{display:block;clear:both;content:"";}
+		}
+		input {
+			&:focus{outline: none;}
+		}
+		textarea.w100{width: 100%;border: 1px solid #ddd;}
+	}
+}
+
+// qna
+tr{
+	&.qna_ques,&.qna_ans{display:none;}
+	&.qna_ques.on,&.qna_ans.on{display:table-row;}
+	&.qna_ques td{padding:20px 5px;background:#f8f8f8;}
+	&.qna_cont{td{height:0;padding:0;border-bottom:none;
+			.qna_txt{display:none;}
+		}
+		&.on td .qna_txt{display:block;}
+	}
+}
+.qna_txt{display:block;overflow:hidden;background:#f8f8f8;border-bottom:1px solid #ddd;position:relative;}
+.qna_qns{position:relative;display:block;padding:20px 286px 20px 272px;background:url('../../images/pcweb/common/bg_qna_ques.gif') 0 bottom repeat-x;
+	> span{display:inline-block;padding:2px 0 0 30px;min-height:2.7em;background:url('../../images/pcweb/common/ico_ques.png') 0 0 no-repeat;color:#333;line-height:1.35em;}
+}
+.qna_ans{position:relative;display:block;padding:20px 286px 20px 272px;
+	> span{display:inline-block;padding:2px 0 0 30px;min-height:2.7em;background:url('../../images/pcweb/common/ico_ans.png') 0 0 no-repeat;line-height:1.35em;}
+}
+.qna_date{position:absolute;right:0;  /*top:20px;*/bottom:20px;text-align:center;width:150px;}
+.qna_btns{position:absolute;right:10px;bottom:10px;text-align:right;}
+.dt_qna_btns{margin:10px 0 0 30px;}
+.goods_area{padding-left:100px;margin-bottom:20px;*zoom:1;
+	&:after{display:block;clear:both;content:"";}
+	.goods_imgs{display:block;margin-left:-100px;float:left;}
+}
+
+// 리스트
+.box_info01{margin-top:40px;padding:10px 30px 36px 110px;background:#f3f3f3 url('../../images/pcweb/common/ico_excl_mark01.png') no-repeat 42px 40px;}
+.list_dl01{
+	dt{margin-top:30px;padding-bottom:10px;color:#333;font-size:14px;font-weight:800;}
+	dd{margin-top:3px;padding:0 0 0 10px;background:url('../../images/pcweb/common/bul_bar01.png') no-repeat 0 6px;color:#666;}
+	&.exc dd{margin-top:3px;padding:0;background:none;color:#666;
+		ul{padding:3px 0 0 10px;
+			li{margin-top:3px;color:#999;}
+		}
+	}
+}
+// .list_txt{}
+.list_txt02{overflow:hidden;
+	li{float:left;padding:0 16px 0 12px;background:url('../../images/pcweb/common/bg_list_txt02.gif') 0 center no-repeat;
+		&:first-child{padding-left:0;background:none;}
+	}
+}
+.list_chk_col ul{display:inline-block;margin-left:-9px;padding-right:8px;line-height:1.5em;
+ li{display:inline-block;min-width:70px;padding-left:9px;vertical-align:top;}
+}
+.list_chk_row{.chk_list_title{display:inline-block;padding:0;
+		+ ul{margin-top:-2px;}
+	}
+	ul{margin-top:-8px;
+		li{margin-top:8px;}
+	}
+	&.font_12{.chk_list_title,ul li{font-size:12px;}
+	}
+	&.type02{ul{margin-top:4px;}
+		li{margin-top:4px;padding-left:16px;
+			label{*zoom:1;
+				&:after{display:block;clear:both;content:"";}
+				.rdobox{display:block;float:left;margin-left:-16px;margin-right:2px;}
+			}
+		}
+	}
+}
+.list_dot02{
+	&.type02{
+		ul{padding-left:7px;}
+		.stit{margin-left:-7px;}
+	}
+	.s_tit{padding-bottom:5px;font-weight:800;color:#333;}
+	li{
+		&:first-child{margin-top:0;}
+		margin-top:4px;padding-left:6px;background:url('../../images/pcweb/common/ico_dot01.gif') 0 7px no-repeat;
+		.img_tip{vertical-align:-3px;margin-right:5px;}
+	}
+}
+.list_dot03{margin-top:18px;
+	li{margin-left:10px;margin-top:8px;padding-left:10px;background:url('../../images/pcweb/common/ico_dot05.gif') 0 center no-repeat;
+		a{color:#333;}
+	}
+}
+.list_dot04 li{margin-left:10px;margin-top:6px;padding-left:10px;background:url('../../images/pcweb/common/ico_dot06.gif') 0 center no-repeat;color:#ca9e71;
+	a{color:#ca9e71;}
+}
+.list_dash01{
+	li{position:relative;margin-top:5px;padding-left:8px;
+		&:before{position:absolute;top:0;left:0;height:16px;line-height:16px;content:"-"}
+	}
+}
+.list_asterisk01{
+	li{position:relative;margin-top:5px;padding-left:8px;
+		&:before{position:absolute;top:0;left:0;height:16px;line-height:16px;content:"*"}
+	}
+}
+.txt_chk01{padding:0 0 0 17px;background:url('../../images/pcweb/common/ico_info_chk.png') no-repeat 0 3px;font-size:14px;color:#333;}
+// 텍스트 폰트
+// .tx_num,.txt_en{}
+.f_verd{font-family:"Verdana","Nanum Gothic",sans-serif;}
+.tx_price{color:#333;font-family:Verdana,sans-serif!important;letter-spacing:-1px;}
+.tx_price02{color:#666;font-family:Verdana,sans-serif!important;letter-spacing:-1px;}
+
+// 텍스트 스타일 - 사이즈
+.font_12{font-size:12px;line-height:1.3em;}
+.font_14{font-size:14px;line-height:1.3em;}
+.font_16{font-size:16px!important;}
+
+// 텍스트 스타일 - 자간
+.ls0{letter-spacing:0;}
+.ls1{letter-spacing:-1px;}
+
+// 텍스트 스타일 - 정렬
+.alig_l{text-align:left;}
+.alig_c{text-align:center!important;}
+.alig_r{text-align:right;}
+
+// 텍스트 스타일 - 컬러
+.txt_c01{color:$point_color_txt !important;}
+.txt_c02{color:#333!important;}
+.txt_c03{color:#666!important;}
+.txt_c04{color:#999!important;}
+.txt_c05{color:#333!important;}
+.txt_c06{color:$point_color_txt !important;}
+.txt_c07{color:#242424!important;}
+
+// 텍스트 언더라인
+.txt_uline{text-decoration:underline;}
+
+// 여백
+.mtm1{position:relative;margin-top:-1px!important;}
+
+// 상단 라인 제거용
+.mt0{margin-top:0!important;}
+.mt4{margin-top:4px!important;}
+.mt6{margin-top:6px!important;}
+.mt10{margin-top:10px!important;}
+.mt15{margin-top:15px!important;}
+.mt20{margin-top:20px!important;}
+.mt30{margin-top:30px!important;}
+.mt40{margin-top:40px!important;}
+.mt50{margin-top:50px!important;}
+.mt60{margin-top:60px!important;}
+.mt100{margin-top:100px!important;}
+.mt120{margin-top:120px!important;}
+.pt0{padding-top:0px!important;}
+.pl8{padding-left:8px!important;}
+.ml5{margin-left:5px!important;}
+.ml10{margin-left:10px!important;}
+.ml20{margin-left:20px!important;}
+.ml50{margin-left:50px!important;}
+
+// 페이징
+.box_page{margin-top:30px;
+	.num{display:block;text-align:center;
+		a{display:inline-block;min-width:24px;height:24px;margin:0 -2px 0 -1px;border:1px solid #fff;line-height:24px;font-family:"Verdana","Nanum Gothic",sans-serif;color:#999;
+			&.on{color:#000;font-weight:bold;letter-spacing:-1px;}
+			&:hover{border:1px solid #ddd;background:#f3f3f3;color:#000;font-weight:bold;letter-spacing:-1px;}
+		}
+		.btn_paging_first{border:1px solid #ddd;}
+		.btn_paging_prev{margin-left:-3px;margin-right:7px;border:1px solid #ddd;}
+		.btn_paging_next{border:1px solid #ddd;margin-left:7px;}
+		.btn_paging_end{margin-left:-3px;margin-right:0;border:1px solid #ddd;}
+	}
+}
+.bg_gray .box_page .num a{border:1px solid #f5f5f1;
+	&.on{color:#000;font-weight:bold;letter-spacing:-1px;}
+	&:hover{border:1px solid #ddd;background:#f3f3f3;color:#000;font-weight:bold;letter-spacing:-1px;}
+}
+
+// 레이어팝업
+// .layer_pop_section{}
+.layer_pop{display:none;position:absolute;width:500px;left:50%;top:0;z-index:4004;margin-left:-250px;background:#fff;
+	&.on{display:block;}
+}
+.lay_wrap{position:relative;padding:0 20px 20px;border:2px solid #333;}
+.lay_tit{padding:17px 0 15px;border-bottom:1px solid #ddd;text-align:center;
+	strong{font-size:18px;font-weight:800;color:#333;}
+}
+.lay_tit02{padding:16px 0 18px;text-align:center;
+	strong{font-size:18px;font-weight:800;color:#333;}
+}
+.lay_tit03{padding:27px 0 7px;text-align:center;
+	strong{font-size:16px;font-weight:800;color:#000;}
+}
+.layer_pop{
+	.set_btn{margin-top:20px;}
+	.btn_lay_close{position:absolute;top:17px;right:20px;}
+}
+.lay_cont{padding-top:20px;
+	.box_scroll{overflow:auto;overflow-x:hidden;max-height:429px;margin-right:-20px;padding-right:20px;scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-highlight-color:#ccc;scrollbar-shadow-color:#ccc;scrollbar-face-color:#fff;scrollbar-arrow-color:#ccc;scrollbar-track-color:#fff;
+		> *{width:456px;}
+	}
+	.scroller{overflow:auto;overflow-x:hidden;max-height:523px;margin-right:-20px;padding-right:20px;scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-highlight-color:#ccc;scrollbar-shadow-color:#ccc;scrollbar-face-color:#fff;scrollbar-arrow-color:#ccc;scrollbar-track-color:#fff;}
+
+	//빠른 배송 안내
+	.quick_dlv_lyr{text-align:center;line-height:20px;font-size:13px;letter-spacing:0;color:#333;
+		.caution{display:block;height:13px;margin-top:16px;text-align:center;color:#666;line-height:13px;}
+	}
+	// 쿠폰 다운로드
+	.card_bnf{padding-bottom:7px;
+		+ .card_bnf{margin-top:13px;padding-top:20px;border-top:1px dashed#c4c4c4;}
+		.tit{display:block;margin-bottom:18px;padding:0 0 0 6px;font-size:16px;color:#333;font-weight:bold;line-height:16px;}
+		ul li{
+			ul{margin-top:5px;
+				li{margin-top:0;line-height:16px;}
+			}
+		}
+	}
+}
+.layer_pop{
+	&.type01{width:300px;margin-left:-150px;}
+	&.type02{width:800px;margin-left:-400px;}
+	&.type01 .lay_cont .box_scroll > *{width:256px;}
+	&.type02 .lay_cont .box_scroll > *{width:756px;}
+	&.type03{width:380px;}
+	&.type04{width:430px;}
+	&.laybrand{width:800px;top:0;left:169px;margin:0;
+		.lay_cont .box_scroll > *{width:756px;}
+	}
+	&.lay_mini_detail{width:940px;margin-left:-470px;
+		.lay_wrap{padding:0 30px 20px;}
+		.lay_cont .quick_view{position:relative;width:903px;height:620px;overflow-y:auto;}
+		.btn_lay_close{top:23px;}
+	}
+	&.login01{width:750px;margin-left:-385px;
+		&.no_bnr{width:460px;margin-left:-230px;top:119px !important;}
+	}
+	&.lay_temp01,&.lay_temp02{width:400px;margin-left:-200px;}
+	&.type02 .lay_cont .box_scroll.size_view{height:680px;}
+	&.in_cart{width:250px;margin-left:-125px;}
+	&.order_paying{width:500px;height:300px;margin-left:-250px;background:url('../../images/pcweb/order/bg_order_paying.jpg') 0 0 no-repeat;
+		.img_gif{position:absolute;left:50%;margin-left:-165px;top:120px;}
+	}
+	&.inquiry{width:700px;}
+}
+
+// 새로운비밀번호팝업용
+.layer_msg01{margin:10px 0 24px;font-size:14px;color:#a40001;text-align:center;}
+.layer_msg02{margin:10px 0 24px;font-size:14px;line-height:20px;color:#333;text-align:left;
+	b{color:#000;}
+}
+.layer_pop.staff_cpn{
+	.lay_wrap{overflow:hidden;width:600px;height:500px;padding:0;border:none;
+		a{display:block;}
+	}
+	.btn_lay_close{background:none;top:auto;bottom:0;right:0;}
+}
+
+// 퀵뷰 팝업
+.quick_view{
+	.d_tab_cont{
+		&.on{overflow: auto;}
+	}
+	.goods_title{position:relative;margin:20px 15px 20px 0;padding-left:8px;}
+	.goods_img_area{min-height:492px;}
+	.goods_brand_name{display:block;font-size:18px;line-height:1.3em;font-weight:800;color:#333;}
+	.goods_name{display:block;overflow:hidden;width:707px;margin:5px 0 15px;height:1.3em;font-size:20px;line-height:1.3em;font-weight:400;color:#666;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;
+		.flag_pre{display:inline-block;height:24px;margin:0 10px 0 0;padding:0 6px;line-height:23px;font-size:16px;font-weight:bold;color:#fff;letter-spacing:0;text-align:center;background:#242424;border-radius:0;}
+		.flag_pre em{line-height: 23px;}
+	}
+	.goods_head{padding-top:0;border-top:none;
+		.goods_detail_txt{border-top:1px solid #ddd;}
+	}
+	.goods_head_left .goods_view_large{width:auto;height:auto;
+		img{width:410px;height:410px;}
+	}	 
+	.goods_txt_info{
+		.goods_set_btn{
+			.btn08 span{width: 338px;height: 41px;line-height: 41px;font-size: 14px;} //퀵뷰레이어 판매예고 버튼 추가 2020228
+			.btn06.c02 span{width:138px;}
+			> .btn06{height:43px;margin-right:0;margin-left:5px;
+				&:first-child{margin-left:0;}
+				span{height:41px;line-height:40px;font-size:14px;}
+				&.c01 span{width:93px;}
+			}
+			&.type02 > .btn06{span{width:272px;}
+				&.c01 span{width:76px;}
+			}
+			&.type03 > .btn06{span{width:355px;}
+				&.c01 span{width:76px;}
+			}
+		}
+		.goods_select li{width:400px;padding:14px 20px;}
+	}
+}
+.safari .quick_view .goods_txt_info .goods_select li{width:100%;padding:14px 20px;}
+.quick_view{
+	.goods_txt_info{
+		.goods_sel_na{display:block;width:100%;padding:0 0 10px 0;}
+		.goods_sel_co{display:block;float:left;}
+		.goods_sel_pr{display:block;float:left;width:283px;text-align:right;height:24px;line-height:24px;}
+		.goods_sel_de{display:block;float:left;width:13px;margin-left:20px;height:24px;line-height:24px;
+			a{vertical-align:middle;}
+		}
+	}
+	.top_flag_area{position:absolute;left:804px;top:0;width:72px;}
+	.flag_lar{width:72px;padding-top:5px;height:52px;font-size:14px;line-height:1.3em;text-align:center;color:#fff;background:url('../../images/pcweb/goods/bg_sale_flag_quick.png') 0 bottom no-repeat;
+		strong{padding-right:2px;font-size:26px;line-height:1.3em;font-family:Verdana;letter-spacing:-2px;font-weight:400;}
+	}
+	.goods_pr{padding:16px 0;text-align:right;
+		.goods_pr01{display:inline-block;font-size:16px;}
+		.goods_pr02{display:inline-block;font-size:16px;margin-left:20px;
+			strong{display:inline-block;font-family:Verdana;font-size:22px;margin-right:2px;}
+		}
+	}
+	.goods_view_handler{margin-left:10px;
+		.goods_view_handler_left{height:60px;}
+	}
+}
+.lay_mini_detail .goods_view_handler .goods_view_handler_right{height:60px;}
+.quick_view{
+	.goods_view_thum{height:62px;}
+	.goods_view_img{margin:0 30px;
+		ul li{margin-left:8px;width:62px;height:62px;
+			img{width:60px;height:60px;}
+		}
+	}
+	.detail_part{width:100%;
+		img{max-width:100%;}
+	}
+	.detail_viewer{margin-top:-20px;
+		.dt_ve_contents{padding:0;background:none;}
+	}
+}
+.lay_mini_detail .quick_view{
+	.goods_head_left{width:410px;}
+	.goods_txt_info{width:440px;float:left;position:static;margin-left:16px;}
+}
+
+// 로그인 팝업
+.box_login01{
+	&:after{display:block;content:'';clear:both;}
+	.l_cont{float:left;width:416px;}
+	.box_ad_bnr{float:right;width:268px;
+		a{display:block;border:1px solid #ddd;}
+	}
+	.cont_login{
+		.txt01{margin:17px 0 16px;
+			strong{display:block;color:#333;}
+		}
+		.scont{position:relative;padding:0 130px 0 0;}
+		.btn_login{position:absolute;top:0;right:0;}
+		.input_txt{height:40px;line-height:40px;}
+	}
+	.input_login li{margin-top:10px;
+		&:first-child{margin-top:0;}
+	}
+	.set_save_opt{margin:13px -130px 22px 0;
+		&:after{display:block;content:'';clear:both;}
+		.opt01{float:left;}
+		.opt02{float:right;}
+	}
+	.txt_alert{margin:-15px 0 18px;}
+	.box_join{padding-top:15px;border-top:1px solid #d7d7d7;
+		&:after{display:block;content:'';clear:both;}
+		.l_scont{float:left;}
+		.r_scont{float:right;}
+		strong{display:block;font-size:14px;}
+		.stxt01{display:block;}
+		&.buy{margin-top:13px;
+			.btn02.c01{border-color:#ccc;}
+			strong{color:#333;}
+		}
+	}
+	.scont02 + .box_join{padding-top:1px;border-top:0;}
+	.cont_login .scont02{
+		.txt_alert{margin:10px 0 11px;}
+		.set_btn{margin-top:10px;margin-bottom:20px;}
+	}
+	.box_nonmember{padding:15px 20px;background:#f3f3f3;
+		&:after{display:block;content:'';clear:both;}
+		.l_scont{float:left;}
+		.r_scont{float:right;width:98px;}
+		.l_scont strong{display:block;margin-bottom:4px;padding-top:8px;color:#333;font-weight:800;}
+	}
+	.d_input01.ph_bg_on{background:url('../../images/pcweb/common/bg_input01.gif') 10px center no-repeat;}
+	.d_input02.ph_bg_on{background:url('../../images/pcweb/common/bg_input02.gif') 10px center no-repeat;}
+	.d_input03.ph_bg_on{background:url('../../images/pcweb/common/bg_input03.gif') 10px center no-repeat;}
+	.d_input04.ph_bg_on{background:url('../../images/pcweb/common/bg_input04.gif') 10px center no-repeat;}
+	.d_input05.ph_bg_on{background:url('../../images/pcweb/common/bg_input05.gif') 10px center no-repeat;}
+}
+p.txt_alert{padding-left:20px;background:url('../../images/pcweb/common/ico_excl_mark02.png') 0 1px no-repeat;color:$point_color_txt;}
+.txt_alert01{overflow:hidden;margin:10px 0 0 15px;padding-left:11px;
+	> em{display:block;float:left;margin-left:-11px;}
+}
+.txt_alert02{position:relative;border:1px solid #ddd;border-top:none;margin-top:-50px;margin-bottom:50px;
+	.btn_close{position:absolute;right:18px;top:17px;width:15px;height:15px;background:url('../../images/pcweb/common/btn_alert_close.png') center center no-repeat;text-indent:-9999px;}
+	dt{display:block;padding:12px 60px;background:#ffffcd;
+		span{display:block;height:25px;padding-left:34px;background:url('../../images/pcweb/common/ico_alert_i.png') 0 center no-repeat;font-size:16px;line-height:25px;color:#333;font-weight:800;}
+	}
+	dd{position:relative;display:block;padding:28px 60px;border-top:1px solid #ddd;
+		ul{margin-top:-10px;
+			li{margin-top:10px;padding-left:25px;
+				em{display:block;float:left;width:25px;margin-left:-25px;}
+				span{display:inline-block;}
+			}
+		}
+		.down_explorer{position:absolute;right:40px;top:40px;width:181px;height:60px;background:url('../../images/pcweb/common/btn_down_ex.gif') 0 0 no-repeat;text-indent:-9999px;}
+	}
+}
+
+// 새로운 비밀번호 개인정보보호 팝업
+.lay_temp01{
+	.tit01{font-size:26px;color:#333;text-align:center;letter-spacing:-1px;margin:0 30px;
+		strong{font-weight:800;text-align:center;}
+	}
+	.txt01{color:#333;text-align:center;}
+	.img_visual{padding:32px 0 25px;text-align:center;}
+	.txt_bul02{padding-top:6px;border-top:1px solid #d7d7d7;}
+}
+.lay_temp02{
+	.tit01{font-size:26px;color:#333;text-align:center;letter-spacing:-1px;padding:24px 30px 26px;
+		strong{font-weight:800;text-align:center;}
+	}
+	.txt01{color:#333;text-align:center;}
+	.img_visual{padding:32px 0 25px;text-align:center;}
+	.txt_bul02{padding-top:6px;border-top:1px solid #d7d7d7;}
+	.lay_temp_cont{padding:20px 0;border-top:1px solid #d7d7d7;border-bottom:1px solid #d7d7d7;
+		ul{margin-top:-10px;
+			li{margin-top:10px;padding-left:5px;background:url('../../images/pcweb/common/bul_lay_temp_ul.gif') 0 7px no-repeat;}
+		}
+		&.type02 ul li{padding-left:0;background:none;}
+	}
+}
+
+//지점 바로가기 레이어
+.all_store_wrap{height:376px;overflow-y:auto;
+	.store_list{
+		ul{border-top:1px solid #ddd;
+			&:after{display:block;clear:both;content:"";}
+			li{float:left;width:50%;height:54px;line-height:54px;
+				&:nth-of-type(2n){
+					a{border-left:0;}
+				}
+				a{display:block;padding:0 15px;border:solid #ddd;border-width:0 1px 1px 1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+			}
+		}
+	}
+}
+
+//단골매장 레이어
+.lyr_fav{
+	.fav_sch_wrap{padding:0 0 20px;
+		.fav_sch{position:relative;height:44px;border:1px solid #333;
+			input{width:334px;height:44px;margin-right:74px;padding:0 13px;line-height:44px;font-size:14px;color:#666;letter-spacing:-0.02em;border:0;}
+			.del{display:none;position:absolute;top:12px;right:46px;width:21px;height:21px;background:url("../../images/pcweb/shop/ico_del.png") no-repeat;}
+			.search{position:absolute;top:12px;right:15px;width:22px;height:21px;background:url("../../images/pcweb/shop/ico_sch3.png") no-repeat;}
+		}
+	}
+	.result_wrap{border-bottom:1px solid #ddd;
+		.tit{display:block;height:16px;font-size:14px;letter-spacing:-0.02em;color:#111;font-weight:bold;
+			em{color:#c9000b;}
+			+ul{border-top:1px solid #ddd;}
+		}
+		ul{height:270px;margin-top:16px;overflow-y:auto;}
+		.reg{margin-bottom:2px;
+			.reg_info{display:block;margin-top:4px;font-size:14px;color:#333;letter-spacing:-0.025em;
+				i{display:inline-block;width:16px;height:14px;margin-right:5px;vertical-align:-3px;;background:url("../../images/pcweb/shop/ico_heart_s.png") no-repeat;}
+			}
+		}
+		&.fav_ul{
+			ul{max-height:none;border-top:0;overflow-y:initial;}
+			li{position:relative;padding:18px 78px 18px 14px;font-size:15px;line-height:17px;border:solid #ddd;border-width:1px;
+				+li{margin-top:8px;}
+			}
+		}
+		li{position:relative;padding:18px 78px 18px 14px;font-size:15px;line-height:17px;border:solid #ddd;border-width:0 0 1px;
+			.heart{position:absolute;right:14px;top:0;bottom:0;width:20px;height:18px;margin:auto;background:url("../../images/pcweb/shop/ico_heart_set.png") 0 0 no-repeat;
+				&.on{background-position:0 -18px;}
+			}
+			&.no_store{padding:18px 20px;border-width:0;
+				&.find{
+					.info{padding-top:145px;background-position-y:37px;}
+				}
+				.info{padding-top:158px;text-align:center;font-size:14px;color:#666;font-weight:bold;letter-spacing:-0.02em;box-sizing:border-box;background:url("../../images/pcweb/shop/no_store.png") center 50px no-repeat;}
+			}
+		}
+		.no_result{width:100%;height:303px;line-height:303px;font-size:14px;letter-spacing:-0.02em;color:#8e8e8e;text-align:center;}
+	}
+}
+
+// 탭
+.tab_type01{
+	> ul{margin:0;*zoom:1;border-bottom:1px solid #333;
+		&:after{display:block;clear:both;content:"";}
+		li{width:50%;float:left;background:#f8f8f8;margin-bottom:-1px;
+			a{border:1px solid #d7d7d7;border-bottom:none;margin:0 0 0 -1px;}
+			&:last-child{margin-right:0;}
+			position:relative;
+			a,span{overflow:hidden;display:block;padding:13px 5px;font-size:14px;color:#999;text-align:center;white-space:nowrap;text-overflow:ellipsis;}
+			&.on{position:relative;z-index:30;
+				a{border:1px solid #333;border-bottom:1px solid #fff;background:#fff;
+					&:before{display:block;position:absolute;left:-1px;right:inherit;bottom:0;width:1px;height:1px;background:#333;content:"";}
+				}
+				&:first-child a:before{display:block;position:absolute;left:-1px;right:inherit;bottom:0;width:1px;height:1px;background:#333;content:"";}
+			}
+			&:first-child a:before{display:block;position:absolute;left:-1px;right:inherit;bottom:-1px;width:1px;height:1px;background:#333;content:"";}
+			&.on{a:after,&:first-child a:after{display:block;position:absolute;left:inherit;right:0;bottom:0;width:1px;height:1px;background:#333;content:"";}
+				a,span{color:#333;font-weight:800;}
+			}
+		}
+	}
+	&.size02 > ul{position:relative;margin-bottom:0;border-bottom:1px solid #242424;
+		li{width:148px;}
+	}
+	&.full_size03 > ul li{width:33%;
+		&:first-child{width:34%;}
+	}
+	&.full_size04 > ul li{width:25%;}
+	&.full_size05 > ul li{width:20%;}
+}
+.tab_type02{position:relative;z-index:1;
+	> ul{margin:0;*zoom:1;border-bottom:1px solid #333;
+		&:after{display:block;clear:both;content:"";}
+		li{width:50%;float:left;background:#fff;margin-bottom:-1px;
+			a{border:1px solid #d7d7d7;border-bottom:none;margin:0 0 0 -1px;}
+			&:last-child{margin-right:0;}
+			position:relative;
+			a,span{overflow:hidden;display:block;padding:13px 5px;font-size:14px;color:#999;text-align:center;white-space:nowrap;text-overflow:ellipsis;}
+			&.on{position:relative;z-index:30;
+				a{padding-top:12px;border-top:2px solid #333;border-left:1px solid #333;border-right:1px solid #333;border-bottom:1px solid #fff;background:#fff;
+					&:before{display:block;position:absolute;left:-1px;right:inherit;bottom:0;width:1px;height:1px;background:#333;content:"";}
+				}
+				&:first-child a:before{display:block;position:absolute;left:-1px;right:inherit;bottom:0;width:1px;height:1px;background:#333;content:"";}
+			}
+			&:first-child a:before{display:block;position:absolute;left:-1px;right:inherit;bottom:-1px;width:1px;height:1px;background:#333;content:"";}
+			&.on{a:after,&:first-child a:after{display:block;position:absolute;left:inherit;right:0;bottom:0;width:1px;height:1px;background:#333;content:"";}
+				a,span{color:#333;font-weight:800;}
+			}
+			&.disabled{background:#ddd;
+				a{color:#fff;}
+			}
+		}
+	}
+	//앱다운로드 탭
+	> ul.d_tab_appdown{display: flex;		
+		li{width: auto;float: none;background: #fff;margin-bottom: -1px;position: relative;flex-grow: 6;max-width: 180px;
+			a{border: 1px solid #d7d7d7;border-bottom: none;margin: 0 0 0 -1px;border-bottom: 1px solid #000;}
+			&:last-child{margin-right:0;}
+			position:relative;
+			a,span{font-size:14px;color:#999;text-align:center;white-space:nowrap;text-overflow:ellipsis;}
+			&.on{position:relative;z-index:30;
+				a{padding-top:12px;border-top:2px solid #333;border-left:1px solid #333;border-right:1px solid #333;border-bottom:1px solid #fff;background:#fff;
+					&:before{display:block;position:absolute;left:-1px;right:inherit;bottom:0;width:1px;height:1px;background:#333;content:"";}
+				}
+				&:first-child a:before{display:block;position:absolute;left:-1px;right:inherit;bottom:0;width:1px;height:1px;background:#333;content:"";}
+			}
+			&:first-child a:before{display:block;position:absolute;left:-1px;right:inherit;bottom:-1px;width:1px;height:1px;background:#333;content:"";}
+			&.on{a:after,&:first-child a:after{display:block;position:absolute;left:inherit;right:0;bottom:0;width:1px;height:1px;background:#333;content:"";}
+				a,span{color:#333;font-weight:800;}
+			}
+			&.disabled{background:#ddd;
+				a{color:#fff;}
+			}			
+		}
+	}		
+	&.size02 > ul{position:relative;margin-bottom:0;border-bottom:1px solid #242424;
+		li{width:148px;}
+	}
+	&.full_size03 > ul li{width:33%;
+		&:first-child{width:34%;}
+	}
+	&.full_size04 > ul li{width:25%;}
+	&.full_size05 > ul li{width:20%;}
+	&.full_size06 > ul li{width:16.66%;}
+	&.full_size07 > ul li{width:14.28%;}
+	&.full_size08 > ul li{width:12.5%;}
+	&.full_size09 > ul li{width:11.11%;}
+	&.full_size10 > ul li{width:10%;}
+	&.full_free > ul li{width:auto;
+		a{padding-left:15px;padding-right:15px;}
+	}
+	.right{position:absolute;right:0;top:0;}
+	// &.tab_c10 > ul{}
+	&.tab_c20 > ul{border-bottom:1px solid #be6363;
+		li{
+			&.on{
+				a{border-top:2px solid #be6363;border-left:1px solid #be6363;border-right:1px solid #be6363;
+					&:before{background:#be6363;}
+				}
+				&:first-child a:before{background:#be6363;}
+			}
+			&:first-child a:before{background:#be6363;}
+			&.on{a:after,&:first-child a:after{background:#be6363;}
+				a,span{color:#be6363;}
+			}
+		}
+	}
+	&.tab_c30 > ul{border-bottom:1px solid #084271;
+		li{
+			&.on{
+				a{border-top:2px solid #084271;border-left:1px solid #084271;border-right:1px solid #084271;
+					&:before{background:#084271;}
+				}
+				&:first-child a:before{background:#084271;}
+			}
+			&:first-child a:before{background:#084271;}
+			&.on{a:after,&:first-child a:after{background:#084271;}
+				a,span{color:#084271;}
+			}
+		}
+	}
+	&.tab_c40 > ul{border-bottom:1px solid #9a8a7a;
+		li{
+			&.on{
+				a{border-top:2px solid #9a8a7a;border-left:1px solid #9a8a7a;border-right:1px solid #9a8a7a;
+					&:before{background:#9a8a7a;}
+				}
+				&:first-child a:before{background:#9a8a7a;}
+			}
+			&:first-child a:before{background:#9a8a7a;}
+			&.on{
+				a:after,&:first-child a:after{background:#9a8a7a;}
+				a{color:#9a8a7a;}
+			}
+		}
+	}
+	&.tab_c20 > ul li.on span{color:#9a8a7a;}
+	&.tab_c50 > ul{border-bottom:1px solid #763c36;
+		li{
+			&.on{
+				a{border-top:2px solid #763c36;border-left:1px solid #763c36;border-right:1px solid #763c36;
+					&:before{background:#763c36;}
+				}
+				&:first-child a:before{background:#763c36;}
+			}
+			&:first-child a:before{background:#763c36;}
+			&.on{
+				a:after,&:first-child a:after{background:#763c36;}
+				a{color:#763c36;}
+			}
+		}
+	}
+	&.tab_c20 > ul li.on span{color:#763c36;}
+}
+
+.tab_type03{
+	> ul{margin:0;*zoom:1;border-bottom:2px solid #525252;
+		&:after{display:block;clear:both;content:"";}
+		li{width:50%;float:left;background:#fff;
+			a{border:1px solid #ccc;border-bottom:none;margin:0 0 0 -1px;}
+			&:first-child a{margin-left:0;}
+			position:relative;
+			a,span{overflow:hidden;display:block;padding:16px 5px 15px;font-size:14px;color:#999;text-align:center;white-space:nowrap;text-overflow:ellipsis;}
+			&.on{position:relative;z-index:30;
+				a{border:1px solid #525252;border-bottom:none;background:#525252;color:#fff;color:#fff;font-weight:800;}
+				span{color:#fff;font-weight:800;}
+			}
+		}
+	}
+	&.size02 > ul{position:relative;margin-bottom:0;border-bottom:1px solid #242424;
+		li{width:148px;}
+	}
+	&.full_size03 > ul li{width:33%;
+		&:first-child{width:34%;}
+	}
+	&.full_size04 > ul li{width:25%;}
+	&.full_size05 > ul li{width:20%;}
+}
+//[v2_2] 탭 스타일 추가
+.tab_type04{position:relative;
+	> ul {
+		&:after {display:block;content:'';clear:both;}
+	}
+	li {position:relative;float:left;border-bottom:1px solid #ededed;border-right:1px solid #ededed;
+		em {
+			display:block;overflow:hidden;line-height:36px;white-space:nowrap;text-overflow:ellipsis;text-align:center;font-size:13px;color:#555;text-align:center;
+		}
+		a {display:block;overflow:hidden;line-height:36px;white-space:nowrap;text-overflow:ellipsis;text-align:center;font-size:13px;color:#555;text-align:center;
+			> span {position:relative;display:block;line-height:36px;z-index:2;}
+			&:hover {
+				> span {color:#fff;}
+				&:after {position:absolute;top:0;left:0;right:-1px;bottom:-1px;z-index:1;display:block;content:'';background-color:#242424;}
+			}
+		}
+		&.on {
+			a {
+				> span {color:#fff;}
+			}
+			a:after {
+				position:absolute;top:0;left:0;right:-1px;bottom:-1px;z-index:1;display:block;content:'';background-color:#242424;
+			}
+		}
+	}
+	&.size08 {
+		li {width:12.4%;}
+		li:nth-of-type(8n) {border-right:none;}
+	}
+	&:after {position:absolute;top:0;left:0;right:0;bottom:0;display:block;content:'';border:1px solid #dbdbdb;}
+}
+.tab_cont > div,.d_tab_cont,.d_sub_tab{display:none;overflow:hidden;
+	&.on{display:block;}
+}
+.txt_tab_txt01{overflow:hidden;
+	li{float:left;margin-left:-1px;
+		a{display:inline-block;padding:0 11px;background:url('../../images/pcweb/common/bul_btn_txt03.gif') 0 center no-repeat;font-size:15px;line-height:22px;color:#999;font-weight:800;
+			.tx_num{font-weight:400;}
+		}
+		&.on a{color:#333;font-weight:800;
+			.tx_num{font-weight:800;}
+		}
+	}
+}
+
+// 수량
+.count_area{position:relative;width:48px;height:30px;margin:0 auto;}
+.d_count{position:relative;top:0;left:0;height:26px;border:1px solid #ccc;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.count_input{display:block;position:absolute;left:0;top:0;width:28px;height:24px;font-size:12px;text-align:center;color:#333;line-height:24px;border:none;font-weight:800;font-family:Verdana;}
+.count_buttons{
+	.count_button_plus{display:block;position:absolute;top:0;right:0;width:18px;height:12px;border-left:1px solid #ccc;border-bottom:1px solid #ccc;text-indent:-9999px;background:#f8f8f8 url('../../images/pcweb/common/ico_arrow_up.gif') center center no-repeat;}
+	.count_button_minus{display:block;position:absolute;top:13px;right:0;width:18px;height:11px;border-left:1px solid #ccc;text-indent:-9999px;background:#f8f8f8 url('../../images/pcweb/common/ico_arrow_down.gif') center center no-repeat;}
+}
+.count_button_change{display:block;position:absolute;top:31px;left:0;width:100%;height:20px;border:1px solid #ccc;font-size:11px;line-height:18px;color:#333;text-align:center;letter-spacing:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;font-weight:800;}
+.count_area.disabled:after{display:block;position:absolute;top:0;left:0;width:48px;height:26px;background:url('../../images/pcweb/common/bg_disabled.png') 0 0 repeat;content:"";}
+.board02 table .count_area{height:51px;}
+
+// 아이콘
+.ico_tooltip{display:inline-block;width:16px;height:16px;background:url('../../images/pcweb/common/ico_tooltip01.png') center center no-repeat;text-indent:-9999px;}
+.ico_tooltip02{display:inline-block;width:14px;background:url('../../images/pcweb/common/ico_tooltip02.gif') center center no-repeat;text-indent:-9999px;}
+
+// ToolTip
+.set_tooltip{position:relative;display:inline-block;vertical-align:middle;margin-left:5px;
+	&.on .tip_info{display:block;}
+}
+.tip_info{display:none;padding:15px 12px 12px;position:absolute;top:16px;left:-68px;text-indent:0;border:1px solid #333;background:#fff;z-index:1002;white-space:nowrap;
+	&:after{position:absolute;top:-7px;left:50px;display:block;margin-left:-5px;width:11px;height:8px;background:url('../../images/pcweb/common/bg_lp_arrow.gif') center 0 no-repeat;text-indent:0;content:"";}
+}
+.tip_close{position:absolute;top:10px;right:10px;width:11px;height:11px;background:url('../../images/pcweb/common/ico_tip_close.gif') center center no-repeat;text-indent:-9999px;font-size:1px;line-height:1px;}
+.tip_info{.tip_title{color:#333;font-size:12px;font-weight:800;text-align:left;}
+	.tip_txt{margin-top:6px;font-size:12px;font-weight:400;line-height:1.3em;text-align:left;
+		strong{color:#ee4422;}
+	}
+}
+.cp_except .tip_info{width:262px;padding:20px;white-space:normal;
+	.tip_txt br{line-height:2em;}
+}
+.set_tooltip02{display:none;clear:both;position:relative;top:-54px;left:0;width:0;height:0;
+	&.on{display:block;}
+	.lay_wrap{position:absolute;padding:10px 10px 15px;width:208px;top:-144px;left:193px;border:1px solid #333;background:#fff;
+		&:after{display:block;position:absolute;bottom:-7px;left:50%;margin-left:-6px;width:11px;height:7px;background:url('../../images/pcweb/common/bg_lp_arrow02.png') 0 0 no-repeat;content:"";}
+		.lay_cont{padding-top:0;}
+		.btn_lay_close{position:absolute;right:10px;top:10px;}
+	}
+}
+.bg_incart{width:100%;height:26px;padding-top:54px;background:url('../../images/pcweb/common/ico_cart02.png') center 6px no-repeat;font-size:12px;color:#666;text-align:center;}
+.set_tooltip02.d_cartOn .lay_wrap:after{display:none;}
+
+// 170224 bahus
+.set_tooltip.bahus_furn{
+	.tip_info{top:25px;left:-355px;width:450px;white-space:inherit;
+		&:after{left:308px;}
+	}
+	ol li{margin-bottom:5px;padding-left:14px;text-indent:-14px;color:#666;font-size:12px;}
+}
+
+// 플래그 표시
+.flag_icon{display:inline-block;height:14px;padding:0 4px;font-family:dotum;font-size:11px;line-height:16px;letter-spacing:-1px;
+	&.c01{border:1px solid #ababab;color:#544f49;}
+	&.c02{border:1px solid #a6cae7;color:#439de6;}
+	&.c03{border:1px solid #d3b18e;color:#a27b54;}
+	&.c04{border:1px solid #de7668;color:#d9351c;}
+	&.c05{border:1px solid #77a2c4;color:#0162b1;}
+	&.c06{border:1px solid #ffcb3e;color:#f6b401;}
+	&.c07{border:1px solid #ff9b65;color:#ff5b01;}
+	&.c08{border:1px solid #999;color:#999;}
+	&.c09{border:1px solid #ee7e8f;color:#e21836;}
+	&.c10{border:1px solid #333;color:#fff;background:#333;}
+	&.c11{border:1px solid #0c8249;color:#0c8249;}
+	&.c12{border:1px solid #4a47bf;color:#4a47bf;}
+	&.c13{border:1px solid #ffde29;color:#f5c400;}
+	&.c14{border:1px solid #7b97ff;color:#7b97ff;}
+	&.t01{border:1px solid #bbb5a4;color:#fff;background:#bbb5a4;}
+	&.t03{border:1px solid #ababab;color:#4e4e4e;background:#f1ebe4;}
+	&.t04{border:1px solid #ad191a;color:#fff;background:#ad191a;}
+	&.t05{border:1px solid #74593c;color:#fff;background:#74593c;line-height:20.9px;height:18px;vertical-align:middle;}
+	&.t06{border:1px solid #568ae0;color:#fff;background:#568ae0;}
+	&.t07{border:1px solid #439de6;color:#fff;background:#439de6;}
+	&.t08{border:1px solid #d49307;color:#fff;background:#d49307;}
+	&.n01{border:1px solid #d1d1d1;background:#efefef;color:#999;}
+}
+@media screen\0{
+	.flag_icon{line-height:17px;}
+}
+
+@media \0screen{
+	.flag_icon{line-height:15px;}
+}
+
+
+
+// 알림박스
+.alert_box01{position:relative;margin-top:10px;padding:18px 0 22px;border:1px solid #a40001;
+	&:after{display:block;position:absolute;width:11px;height:7px;left:50%;bottom:-7px;margin-left:-6px;background:url("../../images/pcweb/common/bg_lp_arrow02.gif") 0 0 no-repeat;content:"";}
+}
+.alert_title{text-align:center;
+	span{display:inline-block;padding-left:22px;font-size:15px;line-height:18px;color:#a40001;font-weight:800;background:url("../../images/pcweb/common/ico_alert_txt01.png") 0 center no-repeat;}
+}
+.alert_cont{margin-top:6px;color:#666;text-align:center;line-height:1.35em;}
+.alert_box02{padding:108px 0 40px;border-top:1px solid #adadad;border-bottom:1px solid #ddd;color:#999;text-align:center;background:url("../../images/pcweb/common/ico_alert02.png") center 27px no-repeat;
+	.set_btn{margin-top:30px;}
+}
+.alert_box03{min-height:64px;margin:30px 0 0;padding-left:76px;background:url("../../images/pcweb/common/ico_alert02.png") 0 4px no-repeat;
+	.alert_tit{font-size:20px;color:#333;line-height:24px;letter-spacing:-2px;}
+	.alert_txt{margin-top:12px;font-size:13px;line-height:18px;color:#333;}
+}
+.alert_box04{position:relative;margin-top:10px;padding:18px 0 22px;background:#f3f3f3;
+	.alert_title span{color:#5d5d5d;background:url("../../images/pcweb/common/ico_alert_txt03.png") 0 center no-repeat;}
+	.alert_cont{font-size:13px;color:#5d5d5d;letter-spacing:-0.05em;}
+}
+p.txt_bul{display:inline-block;padding-left:8px;background:url('../../images/pcweb/common/bul_li01.gif') 0 6px no-repeat;font-size:13px;line-height:1.4em;
+	&.type02{background-position:0 50%;
+		a,button,a,select{margin-left:20px;}
+	}
+}
+ul{&.txt_bul{margin-top:-3px;
+		li{margin-top:3px;display:inline-block;padding-left:8px;background:url('../../images/pcweb/common/bul_li01.gif') 0 6px no-repeat;font-size:12px;line-height:1.4em;}
+	margin-top:-6px;}
+	&.txt_bul02 li{margin-top:6px;display:inline-block;padding-left:5px;background:url('../../images/pcweb/common/bul_li02.gif') 0 8px no-repeat;letter-spacing:-1px;line-height:1.4em;
+		strong{font-weight:800;}
+	}
+}
+p.txt_bul03{position:relative;padding-left:10px;
+	&:after{display:block;position:absolute;left:0;top:0;width:10px;height:13px;font-size:13px;color:#666;content:"*";}
+}
+ul.txt_bul03 li{position:relative;padding-left:10px;margin-top:3px;
+	&:after{display:block;position:absolute;left:0;top:0;width:10px;height:13px;font-size:13px;color:#666;content:"*";}
+	&:first-child{margin-top:0;}
+}
+.txt_bul04{display:inline-block;margin-left:30px;padding-left:8px;background:url('../../images/pcweb/common/ico_arrow07.gif') 0 center no-repeat;}
+.txt_bul05 ul{margin-top:-10px;
+	li{margin-top:10px;padding-left:78px;*zoom:1;
+		&:after{display:block;clear:both;content:"";}
+		em{display:block;float:left;padding-left:16px;margin-left:-78px;width:62px;background:url('../../images/pcweb/common/bul_li03.gif') 6px 6px no-repeat;color:#333;}
+		.txt_cro{display:inline-block;width:12px;color:#333;}
+	}
+}
+
+// 컬러칩
+.list_chip{> ul{margin:-6px 0 0 -6px;overflow:hidden;}
+	li{float:left;margin:6px 0 0 6px;position:relative;
+		.chip{position:relative;display:block;width:20px;height:20px;border:2px solid #c7c7c7;overflow:hidden;
+			&:hover{border:2px solid #797979;}
+			&.on{border:2px solid #000;}
+		}
+		&.checked .chip{border:2px solid #000;}
+		input[type=checkbox]{position:absolute;top:0;left:0;z-index:0;width:15px;height:15px;margin:0;opacity:0;border:none;outline:none;background:none;filter:alpha(opacity = 0);opacity:0;}
+		label{position:relative;z-index:1;background:#f8f8f8;}
+		.chip{
+			&.disabled{border:none;padding:2px;
+				.ir{position:absolute;top:0px;left:0px;right:0px;bottom:0px;z-index:8;background:url('../../images/pcweb/common/bg_chip_dis.png') 0 0 no-repeat;}
+				img{position:absolute;top:2px;left:2px;z-index:7;}
+				&.bk .ir{background:url('../../images/pcweb/common/bg_chip_dis_bk.png') 0 0 no-repeat;}
+			}
+			img{display:block;width:18px;height:18px;border:1px solid #fff;}
+			span{display:block;}
+		}
+		a{
+			&.disabled{display:block;width:20px;height:20px;}
+			img{position:absolute;top:0;left:0;display:block;width:24px;height:24px;z-index:15;}
+		}
+	}
+}
+// 사이즈 칩
+.size_chip{
+	> ul{margin:-6px 0 0 -6px;overflow:hidden;
+		li{float:left;margin:6px 0 0 6px;position:relative;
+			.chip{position:relative;display:block;min-width:24px;height:20px;padding:0 4px;border:2px solid #c7c7c7;overflow:hidden;text-align:center;line-height:20px;color:#666;font-family:verdana;font-size:12px;background:#fff;
+				&:hover{border:2px solid #797979;}
+				&.on{border:2px solid #000;}
+			}
+			&.checked .chip{border:2px solid #000;}
+			input[type=checkbox]{position:absolute;top:0;left:0;z-index:0;width:15px;height:15px;margin:0;opacity:0;border:none;outline:none;background:none;filter:alpha(opacity = 0);opacity:0;}
+			label{position:relative;z-index:1;background:#f8f8f8;}
+			.chip{
+				&.disabled{color:#bbb;border-color:#c7c7c7;background:#efefef;cursor:default;
+					&:before{position:absolute;top:0;left:0;width:100%;height:100%;background:url('../../images/pcweb/common/bg_chip_dis_size.png') 0 0 no-repeat;background-size:100% 100%;content:"";}
+				}
+				span{display:block;}
+			}
+		}
+	}
+	&.unavail{
+		> ul{
+			li{
+				.chip{color:#bbb;border-color:#c7c7c7;background:#efefef;cursor:default;}
+			}
+		}
+	}
+}
+
+// // 검색결과
+// .resch_wrap{height:212px;margin-bottom:40px;}
+// .rsch_word{height:47px;font-size:18px;line-height:30px;color:#666;text-align:center;
+// 	strong{color:$point_color_txt;}
+// }
+// .rsch_box{position:relative;height:154px;padding:0 10px 11px 10px;background:#f3f3f3;}
+// .rsch_bar{height:53px;padding:20px 0 0 25px;
+// 	dd{float:left;height:33px;}
+// 	.rdo{padding-top:7px;
+// 		.rdobox{margin:0 4px 0 0;}
+// 		label{margin-right:12px;font-size:13px;color:#333;vertical-align:middle;}
+// 	}
+// 	.bar{width:344px;
+// 		span{display:inline-block;width:260px;height:31px;padding:0 5px 0 10px;border:1px solid #e8e8e8;border-right:0;background:#fff;}
+// 		.input{width:260px;height:31px;border:0;line-height:31px;background:#fff;}
+// 		button{display:inline-block;width:67px;height:33px;font-size:14px;line-height:33px;color:#fff;font-weight:bold;text-align:center;background:#242424;}
+// 	}
+// }
+// .rsch_rank{position:absolute;right:2px;top:9px;width:264px;padding:20px;height:20px;
+// 	dt{float:left;height:20px;padding:0;font-size:13px;line-height:15px;color:#333;font-weight:bold;text-align:left;}
+// 	dd{position:absolute;right:10px;top:14px;overflow:hidden;width:140px;height:27px;
+// 		li{overflow:hidden;height:0;position:relative;
+// 			&.on{height:27px;}
+// 			a{display:inline-block;overflow:hidden;height:27px;font-size:13px;line-height:27px;color:#333;width:96px;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;
+// 				.num{display:inline-block;width:15px;height:15px;margin:-2px 10px 0 0;border:1px solid #ddd;font-size:10px;line-height:15px;color:#666;font-weight:800;text-align:center;vertical-align:middle;font-family:Verdana;background:#fff;letter-spacing:-1px;}
+// 			}
+// 		}
+// 	}
+// 	&.rank_pop{position:absolute;top:8px;right:1px;width:264px;height:300px;border:1px solid #000;background:#fff;z-index:10;
+// 		dl{
+// 			dt{padding-left:0;}
+// 			dd{top:54px;left:20px;right:20px;width:auto;height:auto;
+// 				li{display:block;height:27px;
+// 					a{width:200px;
+// 						&:hover{text-decoration:underline;}
+// 					}
+// 					&.on a{font-weight:bold;color:#000;}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// .rl_pot{position:absolute;min-width:52px;right:10px;top:7px;font-family:"tahoma","Verdana","Nanum Gothic",sans-serif;font-style:italic;color:#666;font-size:12px;text-align:right;letter-spacing:0;
+// 	span{padding-left:10px;}
+// 	.new{color:#c9000b;font-size:11px;}
+// 	.rl_up{display:block;color:#c9000b;background:url('../../images/pcweb/common/ico_res_up.png') 0 center no-repeat;}
+// 	.rl_down{display:block;background:url('../../images/pcweb/common/ico_res_do.png') 0 center no-repeat;}
+// }
+// .rank_pop .rl_pot{right:0;}
+// .rsch_kwd{height:67px;padding:14px 15px 0 15px;background:#fff;
+// 	dl{clear:both;height:31px;}
+// 	dt{float:left;width:86px;height:21px;padding-left:10px;font-size:12px;line-height:20px;color:#333;font-weight:bold;background:#fff url("../../images/pcweb/common/bg_rsch_dt.png") no-repeat 0 0;}
+// 	dd{overflow:hidden;max-width:730px;height:21px;margin-bottom:10px;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;
+// 		a{display:inline-block;padding-left:9px;font-size:12px;line-height:20px;color:#666;background:url("../../images/pcweb/common/bu_comma.png") no-repeat -2px 14px;
+// 			&:first-child{padding-left:0;background:none;}
+// 		}
+// 	}
+// }
+// .rsch_txt{padding:44px 0 20px 284px;background:url("../../images/pcweb/common/img_sch_none.png") no-repeat 73px 30px;
+// 	li{padding-left:12px;font-size:13px;line-height:20px;color:#666;background:url("../../images/pcweb/common/bu_dot2.gif") no-repeat 0 50%;}
+// }
+
+// //검색어 레이어 최근 본 상품- 추천 검색어- 브랜드 몰 통합을 위해 common.scss로 이관
+// html body  .hd_sch{
+// 	// 검색어 레이어 오픈 시, 모든 사이트 동일하게 384px로 고정
+// 	&.on{width:390px;
+// 		.input{position:relative;width:283px;z-index:1;}
+// 		.sch_wrap{width:auto;
+// 			&:before{position:absolute;top:-2px;left:0;right:0;height:50px;content:'';border:2px solid #000;border-bottom:none;border-top-left-radius:20px;border-top-right-radius:20px;}
+// 			.sch_keyword{width:100%;box-sizing:border-box;
+// 				&:after{width:100%;}
+// 				.f_keyword dt{left:50%;width:50%;box-sizing:border-box;
+// 					&:first-child{left:0;}
+// 					button{width:100%;}
+// 				}
+// 			}
+// 		}
+// 		.sch_box{border-radius:20px 20px 0 0;}
+// 	}
+// 	.sch_box{width:100%;border-radius:20px;background:#fff;overflow:hidden;box-sizing:border-box;}
+// 	.sch_keyword{
+// 		.f_keyword .k_recent{width:346px;margin:15px auto 0;
+// 			.tit{display:block;margin-bottom:11px;font-size:13px;color:#333;letter-spacing:-0.05em;}
+// 			ul{
+// 				&:after{display:block;clear:both;content:"";}
+// 				li{float:left;width:115px;height:115px;margin:0;padding:0;
+// 					a{width:100%;height:100%;margin:0;
+// 						img{display:block;width:auto;height:100%;}
+// 					}
+// 				}
+// 			}
+// 			.all_view{margin-top:13px;
+// 				&:after{display:block;clear:both;content:"";}
+// 				a{float:right;height:16px;line-height:16px;margin-left:auto;padding:0 12px 0 0;background:url("../../images/pcweb/common/ico_arrow36.png") no-repeat right 2px;}
+// 			}
+// 		}
+
+// 		.k_planbn{width:346px;margin:14px auto 0;padding:20px 0 0 0;border-top: 1px solid #ddd;
+// 			.tit{display:block;margin-bottom:11px;font-size:13px;color:#333;letter-spacing:-0.05em;}
+// 			ul{padding:0 3px;
+// 				&:after{display:block;clear:both;content:"";}
+// 				li{float:left;width:85px;height:120px;padding:0;
+// 					a{display:block;width:100%;height:100%;
+// 						img{display:block;width:73px;height:73px;margin:0 auto;border-radius:8px;}
+// 						span{display:block;height:2.4em;margin-top:13px;padding:0 2px;line-height:1.2em;overflow:hidden;text-align:center;color:#666;letter-spacing:-0.05em;white-space:normal;}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// html body .header_fix .hd_sch .sch_wrap{width:auto;}
+
+
+// // 검색결과없음 - 인기검색어
+// .rsch_int{border:1px solid #ccc;border-top:none;
+// 	> ul{padding:20px 15px 20px 20px;
+// 		> li{position:relative;margin-top:10px;
+// 			&:first-child{margin-top:0;}
+// 			.rl_pot{top:0;right:0;}
+// 			> a{display:block;font-size:13px;color:#333;overflow:hidden;width:104px;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;
+// 				> span > em{display:inline-block;font-family:"Verdana","Nanum Gothic",sans-serif;font-size:10px;letter-spacing:-1px;}
+// 			}
+// 			&.on > a span{border-bottom:1px solid #000;}
+// 			> a .num{display:inline-block;width:15px;height:15px;margin-right:10px;border:1px solid #ddd;font-size:10px;line-height:14px;color:#333;font-weight:800;text-align:center;font-family:"Verdana","Nanum Gothic",sans-serif;letter-spacing:-1px;}
+// 		}
+// 	}
+// 	.depth2{padding:4px 0 0 5px;
+// 		li{
+// 			a{display:block;
+// 				span{display:inline-block;padding:5px 0;
+// 					em{display:inline-block;font-family:"Verdana","Nanum Gothic",sans-serif;letter-spacing:-1px;}
+// 				}
+// 				&:hover span,&:focus span{color:#333;font-weight:800;}
+// 			}
+// 			&.on a span{padding-bottom:0;margin-bottom:4px;border-bottom:1px solid #333;color:#333;font-weight:800;}
+// 		}
+// 	}
+// }
+
+// //검색 결과 더보기 ( 브랜드 몰 -> 통합몰)
+// .sch_more_brd{margin:25px 0 70px;text-align:right;
+// 	.sch_more_btn{display:inline-block;width:146px;height:34px;line-height:34px;color:#fff;text-align:center;background:#3e3e3e;
+// 		&:after{display:inline-block;width:8px;height:12px;margin-left:8px;vertical-align:-2px;background:url("../../images/pcweb/common/ico_arrow29.png") no-repeat;content:"";}
+// 	}
+// }
+
+
+
+// 달력
+.itd_tit{display:block;color:#333;margin-bottom:8px;text-align:center;}
+.inputs_date{position:relative;display:inline-block;text-align:center;}
+.box_calendar{display:none;position:absolute;top:27px;right:0;z-index:10;width:250px;border:1px solid #333;background:#fff;
+	&.type02{width:500px;
+		.cal_lcont{float:left;width:250px;}
+		.cal_rcont{float:right;width:250px;}
+	}
+	&.on{display:block;}
+	table{margin-bottom:0;border-bottom:none;}
+	.tit_cal{padding:13px 0 0 0;font-size:14px;color:#333;font-weight:800;text-align:center;}
+	.cont_cal{padding:0 10px 10px;}
+	.current_year{font-size:12px;font-family:"Verdana","Nanum Gothic",sans-serif;font-weight:bold;color:#333;}
+	.set_cal_control{position:relative;margin:22px 0 6px;text-align:center;
+		.btn_prev_month{display:block;position:absolute;top:-2px;left:0;width:6px;height:9px;padding:5px;}
+		.btn_next_month{display:block;position:absolute;top:-2px;right:0;width:6px;height:9px;padding:5px;}
+	}
+}
+
+// 시작일 종료일 같이 나올 경우
+.tbl_calendar{padding:0 10px 11px;border:1px solid #ddd;
+	table{padding:0 10px;}
+	th{width:25px!important;height:30px!important;border:none!important;background:none!important;font-family:"Verdana","Nanum Gothic",sans-serif;font-weight:bold;color:#333;
+		&.su{color:#b63334;
+			a,.no_sel{color:#999;}
+		}
+	}
+	td a{font-weight:bold;color:#999;}
+	th{border:none!important;padding:0!important;}
+	td{height:19px;padding:2px 0 0 0!important;border:none!important;text-align:center;font-family:"Verdana","Nanum Gothic",sans-serif;}
+	table{table-layout:fixed;width:100%;}
+	.no_sel{color:#ccc;display:inline-block;width:25px;height:19px;text-align:center;}
+	a{display:inline-block;width:25px;height:19px;text-align:center;}
+	.chk_date{background:#494949;font-weight:bold;color:#fff;}
+}
+.box_calendar{.btn_cal_close{position:absolute;top:10px;right:10px;}
+	.cal_btn{padding-bottom:10px;text-align:center;}
+}
+.box_calendar_my{display:none;position:absolute;top:284px;left:-50px;right:0;z-index:10;width:250px;border:1px solid #333;background:#fff;
+	&.type02{width:500px;
+		.cal_lcont{float:left;width:250px;}
+		.cal_rcont{float:right;width:250px;}
+	}
+	&.on{display:block;}
+	table{margin-bottom:0;border-bottom:none;}
+	.tit_cal{padding:13px 0 0 0;font-size:14px;color:#333;font-weight:800;text-align:center;}
+	.cont_cal{padding:0 10px 10px;}
+	.current_year{font-size:12px;font-family:"Verdana","Nanum Gothic",sans-serif;font-weight:bold;color:#333;}
+	.set_cal_control{position:relative;margin:22px 0 6px;text-align:center;
+		.btn_prev_month{display:block;position:absolute;top:-2px;left:0;width:6px;height:9px;padding:5px;}
+		.btn_next_month{display:block;position:absolute;top:-2px;right:0;width:6px;height:9px;padding:5px;}
+	}
+	.btn_cal_close{position:absolute;top:10px;right:10px;}
+	.cal_btn{padding-bottom:10px;text-align:center;}
+}
+
+// 달력_상품상세 타입
+.lyr_calendar{
+	.set_cal_control{position:relative;height:63px;line-height:63px;text-align:center;
+		.current_year{font-family:Verdana;font-size:15px;font-weight:bold;color:#000;}
+		a{position:absolute;top:50%;width:17px;height:17px;margin:-9px 0 0;color:#333;background:url("../../images/pcweb/common/set_calendar.png") 0 0 no-repeat;
+			&.btn_prev_month{left:122px}
+			&.btn_next_month{right:122px;background-position:-17px 0;}
+		}
+	}
+}
+.calendar{padding:0 31px 23px;;
+	table{width:100%;
+		th,td{width:47px;text-align:center}
+		th{height:31px;
+			&.su{color:#a40001;}
+		}
+		td{position:relative;height:40px;vertical-align:middle;
+			.no_sel, a{display:inline-block;width:23px;height:21px;line-height:21px;color:#333;font-size:12px;}
+			a{
+				&:hover{color:#fff;background:#f36f34;
+					+.prc_bl{display:block;}
+				}
+			}
+			&.su a{color:#a40001;
+				&:hover{color:#fff;background:#f36f34;
+					+.prc_bl{display:block;}
+				}
+			}
+			.no_sel{color:#ccc;background:#eaeaea;}
+			.prc_bl{display:none;position:absolute;top:-33px;left:50%;min-width:88px;height:34px;margin:0 0 0 -54px;padding:0 8px 0 10px;line-height:34px;font-size:12px;color:#242424;white-space:nowrap;background:#fff;border:1px solid #ccc;
+				&:after{position:absolute;bottom:-5px;left:50%;width:9px;height:5px;margin:0 0 0 -4px;background:url("../../images/pcweb/common/set_calendar.png") 0 -21px no-repeat;content:"";}
+				em{font-family:verdana;font-weight:bold;}
+			}
+		}
+	}
+}
+
+
+// grade
+.set_grade01{width:70px;height:12px;overflow:hidden;background:url('../../images/pcweb/common/bg_comment_grade.png') 0 0 no-repeat;
+	span{display:block;overflow:hidden;background:url('../../images/pcweb/common/bg_comment_grade.png') 0 -12px no-repeat;text-indent:-9999px;}
+}
+.set_grade02{display:inline-block;width:85px;height:14px;background:url('../../images/pcweb/common/bg_comment_grade02.png') 0 -15px no-repeat;
+	span{display:block;height:14px;background:url('../../images/pcweb/common/bg_comment_grade02.png') 0 0 no-repeat;text-indent:-9999px;}
+}
+.set_grade03{display:inline-block;width:85px;height:16px;background:url('../../images/pcweb/common/bg_comment_grade03.png') 0 -15px no-repeat;
+	span{display:block;height:15px;background:url('../../images/pcweb/common/bg_comment_grade03.png') 0 0 no-repeat;text-indent:-9999px;}
+}
+.set_grade04{display:inline-block;width:65px;height:12px;background:url('../../images/pcweb/common/bg_comment_grade04.png') 0 -11px no-repeat;
+	span{display:block;height:12px;background:url('../../images/pcweb/common/bg_comment_grade04.png') 0 0 no-repeat;text-indent:-9999px;}
+}
+.set_grade_new{display:inline-block;width:193px;height:34px;background:url('../../images/pcweb/common/bg_comment_grade_new.png') 0 -34px no-repeat;
+	span{display:block;height:34px;background:url('../../images/pcweb/common/bg_comment_grade_new.png') 0 0 no-repeat;text-indent:-9999px;}
+}
+.set_grade_line01{display:inline-block;width:90px;height:20px;background:url('../../images/pcweb/common/bg_grade_line01.gif') 0 center repeat-x;
+	span{display:block;height:20px;background:url('../../images/pcweb/common/bg_grade_line01_on.gif') 0 center repeat-x;text-indent:-9999px;}
+}
+.set_grade_line02{display:inline-block;width:90px;height:20px;background:url('../../images/pcweb/common/bg_grade_line01.gif') 0 center repeat-x;
+	span{display:block;height:20px;background:url('../../images/pcweb/common/bg_grade_line02_on.gif') 0 center repeat-x;text-indent:-9999px;}
+}
+
+// no data
+.no_data{display:table;width:100%;
+	&.gd_dt{margin-top:12px;margin-bottom:60px;height:135px;border-top:1px solid #333;border-bottom:1px solid #ddd;
+		.no_data_txt{font-size:18px;color:#666;}
+		&.photo{height:350px;
+			.no_data_txt{line-height:28px;
+				&:before{display:block;width:110px;height:73px;margin:0 auto 24px;background:url("../../images/pcweb/goods/ico_camera.png") no-repeat;content:"";}
+				em{font-weight:bold;color:#333;}
+			}
+		}
+	}
+	.no_data_txt{display:table-cell;text-align:center;vertical-align:middle;line-height:1.4em;}
+}
+.no_data02{display:table;width:100%;
+	&.type02{border-bottom:1px solid #ddd;}
+	.no_data_txt{display:table-cell;text-align:center;vertical-align:middle;font-weight:800;color:#333;}
+	.img_no_data{display:block;margin:0 auto 18px;}
+}
+
+// total Price
+.total_wrap{position:relative;margin-top:-1px;padding:26px 26px 26px 110px; *zoom:1;}
+
+.total_area{*zoom:1;
+	&:after{display:block;clear:both;content:"";}
+}
+.total_wrap{
+	&.c01,&.c02{border-top:2px solid #494949;border-bottom:1px solid #494949;}
+}
+.total_area li{float:left;width:220px;text-align:right;line-height:22px;
+	.total_price{display:inline-block;min-width:60px;padding-left:22px;font-size:14px;color:#666;
+		strong{font-weight:800;font-family:Verdana;color:#333;}
+	}
+	&:last-child{float:right;width:280px;font-weight:800;
+		.total_price{font-size:13px;
+			strong{font-size:18px;}
+		}
+	}
+}
+.total_wrap{
+	&.c03{margin:20px 0;padding:40px 60px 40px 50px;border:3px solid #494949;
+		.total_area{position:relative;height:22px;
+			li{padding-top:1px;font-size:15px;text-align:center;
+				.total_price{font-size:15px;}
+				&.total_txt01{width:22%;}
+				&.total_txt02{padding-left:10px;width:22%;background:url('../../images/pcweb/common/ico_total01.gif') 0 3px no-repeat;}
+				&.total_txt03{padding-left:10px;width:20%;background:url('../../images/pcweb/common/ico_total02.gif') 0 3px no-repeat;}
+				&.total_txt04{width:32%;color:$point_color_txt;text-align:right;background:url('../../images/pcweb/common/ico_total03.gif') 0 4px no-repeat;
+					span{display:inline-block;line-height:24px;vertical-align:middle;}
+					strong{display:inline-block;font-size:24px;letter-spacing:0;font-family:Verdana;}
+				}
+				&.total_txt03 .total_price{padding-left:0px;width:100px;}
+				&:last-child{color:$point_color_txt;
+					.total_price{color:$point_color_price;
+						strong{color:$point_color_price;}
+					}
+				}
+			}
+		}
+	}
+	&.c04{margin:20px 0;height:76px;padding:34px 0 0 0;border:3px solid #494949;text-align:center;
+		.total_area{position:relative;display:inline-block;
+			li{padding-top:1px;font-size:15px;text-align:left;padding:0 24px 0 45px;width:auto;
+				.total_price{display:block;font-size:13px;padding-left:0;
+					strong{font-size:15px;}
+				}
+				&.total_txt01{padding-left:22px;}
+				&.total_txt02{background:url('../../images/pcweb/common/ico_total01.gif') 0 14px no-repeat;}
+				&.total_txt03{background:url('../../images/pcweb/common/ico_total02.gif') 0 14px no-repeat;}
+				&.total_txt04{margin-top:-4px;background:url('../../images/pcweb/common/ico_total03.gif') 0 18px no-repeat;font-size:14px;
+					> span{display:block;line-height:1.4em;}
+					strong{display:inline-block;font-size:24px;letter-spacing:0;font-family:Verdana;}
+					.total_price{font-size:17px;}
+					.total_txt04in{display:block;font-size:13px;color:#999;font-weight:400;letter-spacing:-1px;line-height:1.3em;
+						.txt_c03{font-size:13px;color:#666;}
+					}
+				}
+			}
+		}
+	}
+	&.c05{margin:20px 0 0;height:64px;padding:20px 0 0 0;border:2px solid #494949;text-align:center;
+		.total_area{position:relative;display:inline-block;
+			.ico_tooltip{height:22px;}
+			li{padding-top:1px;font-size:15px;text-align:left;padding:0 24px 0 45px;width:auto;
+				.total_price{display:block;font-size:13px;padding-left:0;color:#000;
+					strong{color:#333;font-size:15px;}
+				}
+				&.total_txt01{padding-left:22px;}
+				&.total_txt02{background:url('../../images/pcweb/common/ico_total01.gif') 0 14px no-repeat;}
+				&.total_txt03{background:url('../../images/pcweb/common/ico_total02.gif') 0 14px no-repeat;}
+				&.total_txt04{margin-top:0;color:#0162b1;background:url('../../images/pcweb/common/ico_total03.gif') 0 center no-repeat;font-size:14px;
+					> span{display:block;line-height:22px;color:$point_color_txt;}
+					strong{display:inline-block;font-size:20px;color:$point_color_price;letter-spacing:0;font-family:Verdana;}
+					.total_price{font-size:17px;}
+					.total_txt04in{display:block;font-size:13px;color:#999;font-weight:400;letter-spacing:-1px;line-height:1.3em;
+						.txt_c03{font-size:13px;color:#666;}
+					}
+				}
+			}
+		}
+	}
+	&.c06{margin:20px 0 0;height:64px;padding:20px 0 0 0;border:2px solid #494949;text-align:center;
+		.total_area{position:relative;display:inline-block;
+			.ico_tooltip{height:22px;}
+			li{padding-top:1px;font-size:15px;text-align:left;padding:0 24px 0 45px;width:auto;
+				.total_price{display:block;font-size:13px;padding-left:0;color:#000;
+					strong{color:#333;font-size:15px;}
+				}
+				&.total_txt01{padding-left:22px;}
+				&.total_txt02{background:url('../../images/pcweb/common/ico_total01.gif') 0 14px no-repeat;}
+				&.total_txt03{background:url('../../images/pcweb/common/ico_total02.gif') 0 14px no-repeat;}
+				&.total_txt05{background:url('../../images/pcweb/common/ico_total03.gif') 0 14px no-repeat;}
+				&.total_txt04{margin-top:0;background:url('../../images/pcweb/common/ico_total03.gif') 0 center no-repeat;font-size:14px;
+					> span{display:block;line-height:22px;color:#333;}
+					strong{display:inline-block;font-size:20px;color:#333;letter-spacing:0;font-family:Verdana;}
+					.total_price{font-size:17px;}
+					.total_txt04in{display:block;font-size:13px;color:#999;font-weight:400;letter-spacing:-1px;line-height:1.3em;
+						.txt_c03{font-size:13px;color:#666;}
+					}
+				}
+			}
+		}
+	}
+	&.c04.mini{margin:10px 0;padding:20px 0 0 0;height:64px;
+		.total_area li{font-size:13px;letter-spacing:-1px;
+			.total_price strong{font-size:13px;letter-spacing:0;}
+			&.total_txt04{margin-top:0;
+				.total_price{font-size:13px;
+					strong{font-size:18px;letter-spacing:-1px;}
+				}
+				> span{line-height:inherit;}
+			}
+		}
+	}
+}
+
+// 로그인 바닥페이지
+.login_area{
+	.tit_h2{margin:0;padding:0 0 14px 20px;border-bottom:1px solid #333;}
+	.box_login01{width:735px;margin:60px auto;
+		&.no_bnr{width:446px;}
+		.l_cont{width:445px;}
+	}
+}
+
+// 이랜드몰 입점 안내
+.mall_partner{
+	.box_bg01{border-top:1px solid #242424;}
+	.box_stp{text-align:center;padding:63px 0 60px;
+		li{display:inline-block;font-size:15px;font-weight:800;background:url('../../images/pcweb/common/ico_partner03.png') 0 42px no-repeat;
+			&.fir{padding:0!important;margin:0!important;background-image:none;}
+			.ico{display:block;width:125px;height:125px;margin:0 0 10px;font-size:0;line-height:0;text-indent:-9999px;}
+		}
+		&.counsel{
+			li{color:#666;margin:0 0 0 37px;padding:0 0 0 60px;}
+			.ico{background:url(../../images/pcweb/common/ico_partner01.png) no-repeat;}
+		}
+		&.buy{
+			.ico{background:url(../../images/pcweb/common/ico_partner02.png) no-repeat;}
+			li{color:#666;margin:0 0 0 27px;padding:0 0 0 50px;}
+		}
+		li .ico{
+			&.stp01{background-position:0 0;}
+			&.stp02{background-position:0 -125px;}
+			&.stp03{background-position:0 -250px;}
+			&.stp04{background-position:0 -375px;}
+			&.stp05{background-position:0 -500px;}
+		}
+	}
+}
+
+// 폼요소 - 상품선택
+.f_item_slt .f_item_box .f_item_list{margin:10px 0;
+	&:after{display:block;clear:both;content:'';}
+	.name_box{float:left;width:80%;border-bottom:1px solid #ddd;color:#333;
+		&:after{display:block;clear:both;content:'';}
+		.name{float:left;width:80%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;height:28px;line-height:28px;}
+		.price{float:left;width:20%;text-align:right;height:28px;line-height:28px;}
+	}
+	.num_box{float:left;width:20%;text-align:center;font-weight:800;
+		input[type="text"]{width:45%;text-align:right;}
+	}
+}
+
+// 레이어 팝업 상품 작은 이미지 사이즈
+.lay_cont .list_detail_ord{
+	.goods_imgs{width:60px;height:60px;
+		img{width:58px;height:58px;}
+	}
+	.goods_info{padding-left:70px;}
+}
+
+// 에러페이지
+// .error_wrap{}
+.er_eland{overflow:hidden;background:#132347;height:80px;background:#132347 url('../../images/pcweb/common/er_eland.png') center center no-repeat;text-indent:-9999px;}
+.er_cont{padding-top:260px;text-align:center;background:url('../../images/pcweb/common/bg_er.png') center 70px no-repeat;}
+.er_txt01{text-align:center;font-weight:bold;font-size:22px;color:#132347;}
+.er_txt02{text-align:center;margin-top:16px;font-size:22px;color:#132347;}
+.error_wrap .set_btn{margin-top:60px;
+	.c01 span{margin-right:20px;background:url('../../images/pcweb/common/ico_erbtn_01.png') right center no-repeat;}
+	.c02 span{margin-right:20px;background:url('../../images/pcweb/common/ico_erbtn_02.png') right center no-repeat;}
+}
+
+// 임직원 회원가입/인증
+.staff_mem_cert{
+	.box_bg01{background:url('../../images/pcweb/common/bg_tit_repeat01.gif') 0 0 repeat-x;}
+	.box_step{margin-top:18px;border-top:1px solid #000;text-align:left;
+		.step01,.step02{padding:50px 0 50px 72px;}
+		.step01{margin-top:19px;background:#f7f7f7;}
+		.step02{background:#f7f7f7;padding-top:10px;
+			.btn01{margin-top:40px;}
+		}
+		dt{padding-bottom:29px;font-size:16px;color:#333;letter-spacing:-0.006em;}
+	}
+	.list_star_info{padding-left:10px;}
+	.btn_staff{display:block;width:94px;height:32px;margin:7px 0 0 62px;padding-left:35px;line-height:32px;color:#fff;font-size:13px;font-weight:bold;background:url("../../images/pcweb/common/btn_staff_mem.png") no-repeat 0 0;}
+	.partner{
+		.btn_staff{margin-left:27px;}
+	}
+}
+.tbl_info{margin-top:10px;}
+.ipt_alert{margin-left:4px;color:$point_color_txt;}
+.list_star_info{margin-top:15px;
+	li{padding:0 0 0 11px;line-height:20px;
+		&:after{display:block;content:'';clear:both;}
+	}
+	em{display:block;float:left;width:11px;margin-left:-11px;}
+	b.point_c{font-weight:normal;color:$point_color_txt;}
+	li span{display:block;font-size:16px;margin-bottom:5px;
+		strong{font-weight:bold;border-bottom:1px solid #666;}
+	}
+}
+
+// TEMP AREA
+.handle{clear:both;width:150px;height:22px;padding-top:8px;color:#FFF;cursor:move;text-align:center;font-size:11px;font-weight:bold;background:#000;}
+.handle2{clear:both;width:150px;height:22px;padding-top:8px;color:#FFF;cursor:move;text-align:center;font-size:11px;font-weight:bold;background:#333;}
+.handle3{clear:both;width:150px;height:16px;padding-top:4px;color:#FFF;cursor:move;text-align:center;font-size:11px;font-weight:bold;background:#666;}
+.handle4{clear:both;width:150px;height:16px;padding-top:4px;color:#FFF;cursor:move;text-align:center;font-size:11px;font-weight:bold;background:#999;}
+
+// TEMP AREA
+.divBoxBorder{border:2px dashed #999;}
+.divBoxBorder2{border:1px dashed #777;float:left;}
+.divBoxBorder3{border:1px dashed #555;}
+.divBoxBorder4{border:1px dashed #333;float:left;}
+
+// 앱다운로드
+.box_app_down .tab_type01,.tab_type02{margin-top:20px;}
+.box_app_down{
+	.tab_cont{margin-top:60px;}
+	.box_adown01,.box_adown02,.box_adown03{position:relative;}
+	.ad_btn01{position:absolute;top:491px;left:194px;display:block;overflow:hidden;width:84px;height:24px;background:url('../../images/pcweb/common/bg_repeat.gif') repeat 0 0;}
+	.ad_btn02{position:absolute;top:557px;left:194px;display:block;overflow:hidden;width:84px;height:24px;background:url('../../images/pcweb/common/bg_repeat.gif') repeat 0 0;}
+	.ad_btn03{position:absolute;top:515px;left:403px;display:block;overflow:hidden;width:275px;height:44px;background:url('../../images/pcweb/common/bg_repeat.gif') repeat 0 0;}
+	.ad_btn01 span,.ad_btn02 span,.ad_btn03 span{display:block;text-indent:-9999px;}
+	.ad_url{position:absolute;top:470px;left:404px;width:273px;height:40px;border:none;background-color:transparent;text-align:center;font-size:20px;font-weight:800;color:#132347;line-height:40px;
+		&.plc_on{background:transparent url('../../images/pcweb/common/txt_appdown_plcholder.png') no-repeat 50% 50%;}
+		&.plc_on2{background:transparent url('../../images/pcweb/common/txt_appdown_plcholder2.png') no-repeat 50% 50%;}
+	}
+	.no_mem{position:absolute;top:568px;left:403px;}
+}
+.lay_appdown{.apd_txt01{text-align:center;color:#333;}
+	.apd_txt02{text-align:center;color:#a40001;}
+	.apd_list{
+		li{padding-top:20px;}
+		.stit{display:block;padding:0 0 7px 10px;color:#333;}
+		.sinput{position:relative;padding:0 57px 20px 0;border-bottom:1px solid #ddd;
+			.btn03{position:absolute;top:0;right:0;
+				span{width:52px;min-width:inherit;padding:0;}
+			}
+		}
+	}
+	.apd_txt_info{margin:10px -57px 0 0;letter-spacing:-1px;color:#999;}
+	.img_barcode{background:#f5f5f5;text-align:center;padding:22px 0;}
+}
+.lay_wrap.appdn .tab_type01,.tab_type02{margin-top:30px;}
+.lay_wrap.appdn{
+	.tab_cont{margin-top:60px;}
+	.box_adown01{position:relative;}
+}
+.box_app_down{.box_adown02,.box_adown03{position:relative;}
+}
+.lay_wrap.appdn{background:#f1f1f1;
+	.ad_btn03{position:absolute;top:215px;left:29px;display:block;overflow:hidden;width:275px;height:44px;background:url('../../images/pcweb/common/bg_repeat.gif') repeat 0 0;
+		span{display:block;text-indent:-9999px;}
+	}
+	.ad_url{position:absolute;top:170px;left:30px;width:273px;height:40px;border:none;background-color:transparent;text-align:center;font-size:20px;font-weight:800;color:#132347;line-height:40px;
+		&.plc_on{background:transparent url('../../images/pcweb/common/txt_appdown_plcholder.png') no-repeat 50% 50%;}
+	}
+	.no_mem{position:absolute;top:283px;left:37px;}
+}
+.layer_pop .lay_wrap.appdn .btn_lay_close{background:none;}
+.appdown_img{position:relative;width:332px;height:334px;background:url("../../images/pcweb/shop/app_down.png") no-repeat;}
+
+// 매장안내
+.cmn_store_info .tab_type02{margin-bottom:40px;
+	> ul li{
+		a{font-size:18px;padding:15px 5px;}
+		&.on a{padding-top:14px;}
+	}
+}
+.cmn_tab_intro{position:relative;margin:20px 0 0 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;overflow:hidden;
+	ul{overflow:hidden;margin:0 -1px -1px;*zoom:1;
+		&:after{display:block;clear:both;content:"";}
+		li{float:left;width:154px;height:47px;background:url('../../images/pcweb/common/bg_sch_tab.gif') repeat 0 0;
+			&.on{width:155px;}
+			a{display:block;padding:15px 0;background:url('../../images/pcweb/modern/bg_mdintro_tab.png') 0 50% no-repeat;text-align:center;}
+			&.on a{background:#ca9e71;color:#fff;font-weight:800;}
+		}
+	}
+}
+.cmn_tab_intro ul li.bg_no a{background-image:none;}
+.store_info_list{
+	ul{margin:40px 8px 0 7px;*zoom:1;
+		&:after{display:block;clear:both;content:'';}
+	}
+	li{float:left;width:340px;margin:0 7px 30px 8px;}
+	.store_name span{font-size:14px;color:#333;font-weight:bold;margin:0 0 0 10px;}
+	.store_info{position:relative;min-height:90px;margin:13px 0 0;padding:16px 20px;border:2px solid #d8cec5;
+		.tip_info{top:-2px;left:-177px;
+			&:after{left:156px;}
+		}
+		p{font-size:13px;color:#666;line-height:18px;}
+		.adr{overflow:hidden;height:36px;padding-left:68px;
+			span{display:block;float:left;width:68px;margin-left:-68px;}
+		}
+		.btn_map{position:absolute;right:11px;bottom:11px;padding-left:16px;background:url('../../images/pcweb/common/ico_map.png') no-repeat 0 0;color:#333;}
+	}
+	.set_tooltip{position:absolute;right:-2px;bottom:-2px;width:24px;}
+}
+.store_api{margin:10px 0 0;width:301px;height:242px;}
+.store_search_cmn{position:relative;height:42px;margin-top:40px;padding:18px 155px 0 25px;background:#f3f3f3;
+	.ipt_sch{display:block;width:100%;border:none;height:24px;background-color:transparent;font-size:18px;}
+	.btn_shop_sch{position:absolute;top:50%;right:30px;height:24px;margin-top:-12px;padding-left:30px;background:url('../../images/pcweb/common/btn_shop_sch.png') no-repeat 0 50%;font-weight:800;font-size:14px;}
+}
+.store_int_bn{margin:50px 0;}
+.store_no_data{padding:150px 0 150px;font-size:18px;line-height:30px;color:#666;text-align:center;}
+
+// main popup
+.pop_wrap{overflow:hidden;margin:0!important;padding:0!important;position:relative;left:0!important;top:0!important;background:#fff;
+	.bx{overflow:hidden;text-align:center;}
+	.btn{overflow:hidden;
+		&:after{display:block;clear:both;content:'';}
+		button{float:left;width:50%;height:55px;line-height:55px;font-size:15px;color:#333;font-weight:800;border-top:1px solid #999;border-bottom:1px solid #999;
+			span{display:block;color:#f47942;border-right:1px solid #999;}
+		}
+	}
+}
+
+// 무실적 계정 안내
+.layer_pop.no_act{width:535px;
+	.bx{overflow:hidden;
+		.tx{line-height:20px;color:#666;
+			b{color:#333;}
+		}
+		.mn{margin:20px 0 0 0;
+			dt{margin:0 0 7px 0;color:#333;}
+			dd{position:relative;padding:0 0 0 10px;line-height:20px;color:#666;
+				&:before{content:'';display:block;width:2px;height:2px;position:absolute;left:3px;top:10px;background:#666;}
+			}
+		}
+		.cs{overflow:hidden;margin:18px 0 0 0;border:#b3b3b3 1px solid;
+			dt{height:44px;background:#b3b3b3;text-align:center;
+				b{display:inline-block;padding:0 0 0 32px;font-size:15px;line-height:44px;background:url('../../images/pcweb/common/ico_call_01.png') no-repeat left center;color:#fff;}
+			}
+			dd{padding:16px 0;text-align:center;color:#333;
+				span{display:block;font-size:14px;line-height:14px;}
+				em{display:block;margin:8px 0 0 0;font-size:13px;line-height:13px;}
+			}
+		}
+	}
+}
+
+// SWIPER SLIDER PLUGIN
+.swiper-container{position:relative;overflow:hidden;margin:0 auto;z-index:1;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-o-backface-visibility:hidden;backface-visibility:hidden;}
+.swiper-wrapper{position:relative;z-index:1;width:100%;-webkit-transition-property:-webkit-transform,left,top;-webkit-transition-duration:0s;-webkit-transform:translate3d(0px,0,0);-webkit-transition-timing-function:ease;-moz-transition-property:-moz-transform,left,top;-moz-transition-duration:0s;-moz-transform:translate3d(0px,0,0);-moz-transition-timing-function:ease;-o-transition-property:-o-transform,left,top;-o-transition-duration:0s;-o-transform:translate3d(0px,0,0);-o-transition-timing-function:ease;-o-transform:translate(0px,0px);-ms-transition-property:-ms-transform,left,top;-ms-transition-duration:0s;-ms-transform:translate3d(0px,0,0);-ms-transition-timing-function:ease;transition-property:transform,left,top;transition-duration:0s;transform:translate3d(0px,0,0);transition-timing-function:ease;}
+.swiper-slide{float:left;-webkit-font-smoothing:antialiased;}
+// .swiper-wp8-horizontal{-ms-touch-action:pan-y;}
+// .swiper-wp8-vertical{-ms-touch-action:pan-x;}
+
+// for safari
+.safari{
+	.ir,.swiper-container .ir{visibility:hidden;position:absolute;z-index:-1;width:0;height:0;font-size:0;line-height:0;}
+}
+
+// 공지사항 레이어 2016-10-13
+.lyr_notice{position:absolute;left:0;top:450px;z-index:999;width:100%;text-align:center;
+	.wrap{display:inline-block;}
+	.lyr{float:left;position:relative;border:#333 2px solid;vertical-align:top;
+		+ .lyr{margin:0 0 0 5px;}
+		&:after{content:'';display:block;position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:rgba(0,0,0,0.2);}
+	}
+	.bx{position:relative;overflow:hidden;text-align:center;
+		.swiper-slide{float:none;display:table-cell;vertical-align:middle;background:#eee;}
+		.roll_wrap{position:absolute;bottom:23px;width:100%;text-align:center;line-height:0;z-index:2;}
+		.roll_indi{display:inline-block;line-height:21px;
+			.swiper-pagination-switch{display:block;float:left;width:21px;height:21px;margin:0;padding:0;background:url('../../images/pcweb/common/ico_indi08.png') center center no-repeat;text-indent:-9999px;
+				+ .swiper-pagination-switch{margin-left:8px;}
+				&.swiper-active-switch{background-image:url('../../images/pcweb/common/ico_indi08_on.png');}
+			}
+		}
+	}
+	.btn{overflow:hidden;
+		&:after{display:block;clear:both;content:'';}
+		button{float:left;width:50%;height:55px;line-height:55px;font-size:15px;color:#333;font-weight:800;border-top:1px solid #999;
+			span{display:block;color:$point_color_txt;border-right:1px solid #999;}
+		}
+	}
+	.bp_btns{position:absolute;top:50%;width:100%;height:0;z-index:2;
+		a{
+			&.bp_bt_prev,&.bp_bt_next{position:absolute;top:0;width:60px;height:60px;text-indent:-9999em;}
+		}
+		.d_prev{left:0;background:url(../../images/pcweb/renewal/bill_btn.png) no-repeat;background-position:-60px 0;}
+		.d_next{right:0;background:url(../../images/pcweb/renewal/bill_btn.png) no-repeat;background-position:-60px -60px;}
+		a{
+			&.bp_bt_prev:hover{background-position:-120px 0;}
+			&.bp_bt_next:hover{background-position:-120px -60px;}
+		}
+	}
+}
+
+// 2016-10-21
+.main_evt .tab_anchor01.mt20{margin-top:30px!important;}
+
+// 2017-01-13
+.tab_top_img{position:relative;margin:0 auto;padding:40px 0 0;width:1080px;text-align:center;
+	span{display:none;position:absolute;right:0;top:76px;z-index:2;
+		a{display:block;padding:10px;}
+	}
+}
+.section_evt .tab_top_img{padding-top:0; padding-bottom:15px;}
+
+// TOOLTIP TEMPLATE
+.temp_tooltip{overflow:hidden;position:relative;width:1080px;margin:0 auto;
+	.bg{display:block;}
+	li .open{display:block;position:absolute;z-index:3;width:37px;height:37px;background:url('../../images/pcweb/shop/bahus_tooltip.png') no-repeat 0 0;
+		em{display:block;position:relative;width:100%;height:100%;text-indent:-9999px;}
+		.arrow{display:none;position:absolute;top:11px;width:8px;height:15px;}
+	}
+	.active{
+		&.left .open .arrow{display:block;left:-1px;background:url('../../images/pcweb/shop/bahus_tooltip.png') no-repeat -8px -37px;}
+		&.right .open .arrow{display:block;right:-1px;background:url('../../images/pcweb/shop/bahus_tooltip.png') no-repeat 0 -37px;}
+	}
+	dl{display:none;position:absolute;z-index:2;background:#fff;width:92px;height:90px;padding:20px 20px 54px 120px;border:#000 1px solid;
+		dt{overflow:hidden;max-height:48px;padding:16px 0 0 0;font-size:13px;line-height:16px;color:#666;}
+		.prc{margin:8px 0 0 0;font-weight:bold;font-size:14px;line-height:14px;color:#333;}
+		.img{position:absolute;left:20px;top:20px;}
+		.btn{position:absolute;left:0;bottom:20px;width:100%;text-align:center;
+			a{display:inline-block;padding:0 14px;border:#ccc 1px solid;
+				span{display:block;height:23px;padding:0 9px 0 0;font-size:12px;line-height:23px;background:url('../../images/pcweb/shop/bahus_tooltip_arrow.gif') no-repeat right center;color:#666;}
+			}
+		}
+		.close{display:block;position:absolute;top:8px;right:8px;width:13px;height:13px;background:url('../../images/pcweb/shop/bahus_tooltip.png') no-repeat -20px -38px;text-indent:-9999px;}
+	}
+	.active dl{display:block;}
+	dl:after{content:'';display:block;width:100%;height:2px;position:absolute;left:0;bottom:-3px;background:url('../../images/pcweb/shop/bahus_tooltip_bg.png') repeat 0 0;}
+}
+
+// 브랜드몰 HTML 배너등록
+.bnr_html{width:1080px;margin:0 auto;}
+
+
+// * 상품상세 포토리뷰 공통 CSS 170421 *
+// REVIEW SLIDER
+.gd_slider_wrap{overflow:hidden;padding:0 0 40px 0;background:#eee;border-top:#adadad 1px solid;
+	h3{display:block;padding:32px 0 0 0;text-align:center;
+		.tx{display:block;font-weight:bold;font-size:15px;line-height:15px;color:#333;
+			em{color:#000;text-decoration:underline;}
+		}
+		.bt{display:block;margin:10px 0 0 0;
+			a{display:inline-block;height:23px;font-size:12px;line-height:23px;padding:0 19px 0 12px;background:url('../../images/pcweb/goods/bahus_bt_001.png') no-repeat right center;border:#ccc 1px solid;color:#333;}
+		}
+	}
+}
+.review_bn{position:relative;margin:26px 0 0 0;
+	.swiper_container{overflow:hidden;width:878px;height:150px;margin:0 auto;}
+	.swiper-slide ul li{overflow:hidden;float:left;width:150px;height:150px;
+		+ li{margin:0 0 0 32px;}
+		a{display:block;position:relative;width:100%;height:100%;
+			img{position:absolute;left:0;top:0;transform:inherit;}
+			&:hover img{transform:scale(1.1);}
+		}
+		&.imgLoadDone{
+			img{transition:all 0.3s ease;}
+		}
+	}
+}
+
+// REVIEW LAYER
+.dk_dimm_layer{display:none;overflow:hidden;position:absolute;margin:0;z-index:6000;
+	&:after{content:'';display:block;clear:both;}
+}
+.dk_dimm{position:fixed;top:0;left:0;right:0;bottom:0;background:#000;filter:alpha(opacity = 50);opacity:.50;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";z-index:5999;cursor:default;}
+.lyr_review{position:relative;width:1076px;margin:0 auto;border:#333 2px solid;background:#fff;
+	h3{display:block;height:66px;padding:0 0 0 24px;border-bottom:#888 1px solid;
+		strong{font-weight:bold;font-size:16px;line-height:66px;color:#333;}
+		.btn_etc02{display:inline-block;margin:-2px 0 0 10px;vertical-align:middle;
+			span{font-size:12px;line-height:22px;}
+		}
+	}
+	.cont{padding:20px;
+		&:after{content:'';display:block;clear:both;}
+	}
+	.bt_close{display:block;position:absolute;top:23px;right:20px;}
+	.review_bn_big{overflow:hidden;position:relative;float:left;width:682px;
+		.swiper_container{overflow:hidden;position:relative;width:682px;height:512px;background:#f2f2f2;}
+		.swiper-slide{overflow:hidden;position:relative;width:682px;height:512px;
+			span{display:table-cell;width:682px;height:512px;vertical-align:middle;text-align:center;}
+		}
+	}
+	.bahus_pg_bt{padding:20px 0 0 0;width:100%;height:40px;text-align:center;
+		.swiper-pagination-switch{display:inline-block;margin:0;}
+		.pg{display:table-cell;width:652px;height:40px;text-align:center;vertical-align:middle;line-height:0;}
+	}
+	.review_table{float:right;width:314px;
+		table{border:none;
+			td{border:none;padding:0;
+				&.bg_area{padding:13px;}
+			}
+		}
+		.rv_info01{margin-top:5px;color:#888;}
+		.rv_info03{overflow-y:auto;margin:7px 0 0;padding-right:5px;max-height:346px;line-height:18px;}
+		.tx_num{display:inline-block;margin-bottom:2px;height:15px;margin:0 0 0 15px;vertical-align:top;
+			.under_line{height:14px;color:#000;border-bottom:1px solid #000;}
+		}
+		.rv_info01 .review_ids{padding:0;;background:none;}
+	}
+	.review_phto{float:right;width:314px;
+		table{border:none;
+			td{border:none;padding:0;
+				&.bg_area{padding:13px;}
+			}
+		}
+		.rv_info01{margin-top:5px;color:#888;}
+		.rv_info03{overflow-y:auto;margin:7px 0 0;padding-right:5px;max-height:346px;line-height:18px;}
+		.tx_num{display:inline-block;margin-bottom:2px;height:15px;margin:0 0 0 15px;vertical-align:top;
+			.under_line{height:14px;color:#000;border-bottom:1px solid #000;}
+		}
+		.rv_info01 .review_ids{padding:0;;background:none;}
+	}	
+	.rv_info05.bottom{clear:both;float:none;width:100%;padding:22px 0 0 0;
+		.rst{display:inline-block;margin:0 0 0 15px;font-size:13px;color:#000;font-weight:bold;vertical-align:middle;}
+	}
+	.star{height:21px;line-height:22px;font-size:21px;color:#333;font-family:"Verdana","Nanum Gothic",sans-serif;
+		.ico{display:inline-block;width:21px;height:21px;margin-right:6px;vertical-align:-1px;background:url("../../images/pcweb/common/ico_star_big.png") no-repeat;}
+	}
+	.rv_recom{position:absolute;bottom:27px;}
+	.user_sum{margin-top:20px;
+		ul{
+			&:after{display:block;clear:both;content:"";}
+			li{position:relative;float:left;height:44px;padding:8px 10px 0;color:#888;text-align:center;background:url("../../images/pcweb/common/bg_round10.png") 0 0 no-repeat;
+				&:after{position:absolute;right:0;top:0;width:7px;height:52px;background:url("../../images/pcweb/common/bg_round10.png") right 0 no-repeat;z-index:0;content:"";}
+				&+li{margin-left:4px;}
+				em{display:block;margin-top:4px;color:#333;}
+			}
+		}
+	}
+	.option{margin-top:30px;color:#888;}
+}
+
+// REVIEW SLIDE prev / next
+.bahus_nav_bt{
+	a{display:block;width:52px;height:52px;position:absolute;background:url('../../images/pcweb/header/header_bahus.png') no-repeat 0 -142px;text-indent:-9999px;}
+	.prev{top:299px;left:-150px;background-position:0 -142px;}
+	.next{top:299px;right:-150px;background-position:-52px -142px;}
+	.prev:hover{background-position:-104px -142px;}
+	.next:hover{background-position:-156px -142px;}
+}
+.bahus_nav_bt02{
+	a{display:block;position:absolute;top:50%;margin-top:-20px;z-index:3;width:40px;height:40px;text-indent:-9999px;}
+	.prev{left:0;background:url('../../images/pcweb/category/bahus_promo_bt.png') 0 -40px no-repeat;
+		&:hover{background:url('../../images/pcweb/category/bahus_promo_bt.png') 0 0 no-repeat;}
+	}
+	.next{right:0;background:url('../../images/pcweb/category/bahus_promo_bt.png') -40px -40px no-repeat;
+		&:hover{background:url('../../images/pcweb/category/bahus_promo_bt.png') -40px 0 no-repeat;}
+	}
+}
+@media screen and (max-width:1410px){
+	.bahus_nav_bt{.prev{left:-86px;}
+		.next{right:-86px;}
+	}
+}
+
+// 170529 배송형태가 등기배송이거나, 상품 유형이 지류 상품권인 경우 추가
+.goods_card p{font-size:12px;}
+.goods_detail_txt .goods_card{padding:12px 10px;border-bottom:1px solid #ddd;background:#f8f8f8;}
+.goods_info .goods_card,.my_r_cont .goods_card{margin-top:5px;padding:10px;background:#f8f8f8;}
+
+// 2017.08.25 임직원 서비스 안내 팝업
+.lay_temp02{
+	&.wfl{width:800px;margin-left:-400px;
+		.lay_wrap{padding:0;border:0;
+			.lay_cont{padding:0;}
+		}
+		.lay_temp_cont{padding:0;border:0;}
+	}
+	&.wfp{width:700px;margin-left:-350px;
+		.lay_wrap{padding:0;border:0;
+			.lay_cont{padding:0;}
+		}
+		.lay_temp_cont{padding:0;border:0;
+			.d_agr{position:relative;padding:50px 0 15px;text-align:center;background:#fff;
+				.agr{width:235px;margin:0 auto;
+					&:after{display:block;content:"";clear:both;}
+				}
+				.eCk{position:relative;display:inline-block;height:32px;margin:20px 0 25px;text-align:left;line-height:32px;
+					&:first-child{float:left;}
+					label{position:relative;display:inline-block;height:32px;padding:0 0 0 40px;line-height:32px;font-size:20px;color:#333;vertical-align:middle;background:url("../../images/pcweb/wf/ico_radio.png") no-repeat 0 -32px;cursor:pointer;z-index:1;}
+					input{position:absolute;top:0;left:0;z-index:-1;margin:0;opacity:0;border:none;outline:none;background:none;filter:alpha(opacity = 0);}
+					&.checked label{background-position:0 0;}
+				}
+			}
+			.cnfm{display:block;width:243px;height:58px;margin:0 auto 32px;font-size:0;text-indent:-999em;background:url("../../images/pcweb/wf/btn_confirm.png") no-repeat 0 0;}
+			.receipt{display:none;position:relative;padding:38px 39px 0 40px;
+				&:before{position:absolute;left:0;top:0;width:100%;height:2px;background:url("../../images/pcweb/wf/donation_line.png") repeat-x;content:"";}
+				.prv_info{position:relative;}
+				.title{display:block;margin:0 0 25px;}
+				.choose{position:absolute;top:31px;right:61px;line-height:15px;
+					label{font-size:15px;color:#333;line-height:15px;vertical-align:middle;cursor:pointer;}
+					input{width:15px;height:15px;margin-right:3px;border-color:#333;color:#333;vertical-align:middle;cursor:pointer;}
+					.radio + .radio{margin-left:35px;}
+				}
+				.receipt_desc{margin:28px 0 0;padding:0 0 37px;}
+			}
+		}
+	}
+	&.whole_500{width:500px;margin-left:-250px;
+		.lay_wrap{padding:0;border:0;
+			.lay_cont{padding:0;}
+		}
+		.lay_temp_cont{padding:0;border:0;}
+		.btn_lay_close{top:32px;right:32px;}
+	}
+	&.reware{
+		.lay_temp_cont{
+			&.type02 .my_noti{padding:20px 0;border:none;background:none;
+				li{position:relative;margin-top:5px;padding-left:8px;
+					&:before{position:absolute;top:0;left:0;height:16px;line-height:16px;content:"-"}
+				}
+			}
+			.list_detail_ord {
+				.goods_info{padding:14px 0 0 92px;
+					.goods_txt02{max-height:2.5em;}
+				}
+				.goods_imgs{width:80px;height:80px;
+					 img{width:80px;height:80px;}
+				}
+			}
+			.reg_num{height:35px;line-height:35px;border:1px solid #bebebe;text-align:center;font-size:13px;color:#666;letter-spacing:-0.05em;background:#eee;
+				em{margin-left:3px;font-weight:bold;color:#333;}
+			}
+			.opt_open{margin-top:12px;
+				select{display:block;width:100%;height:35px;padding:7px 5px 7px 5px;color:#222;font-size:13px;box-sizing:border-box;}
+				.set{margin:15px 12px;color:#666;font-size:13px;}
+				dl{margin:12px 0 0;padding-bottom:6px;
+					&:after{display:block;clear:both;content:'';}
+				}
+				dt{overflow:hidden;float:left;width:82px;padding:2px 0 0 0;height:35px;line-height:35px;color:#333;font-size:13px;letter-spacing:-1px;box-sizing:border-box;}
+				dd{position:relative;margin:0 0 12px;padding-left:82px;height:35px;line-height:35px;text-align:right;color:#333;font-size:13px;}
+				.numbox{float:right;clear:right;width:110px;
+					&:after{display:block;clear:both;content:'';}
+					.minus,.inp_txt{float:left;}
+					span img,a img{width:28px;height:28px;border:1px solid #bebebe;}
+					.inp_txt{width:50px;height:30px;line-height:30px;text-indent:0;text-align:center;border-left:none;border-right:none;}
+				}
+				.btnbox{margin:12px;text-align:center;
+					a{width:93px;}
+				}
+				.top_txt{margin:12px;padding-left:8px;color:#999;font-size:13px;
+					&:before{content:'* ';margin-left:-9px;}
+				}
+			}
+		}
+	}
+}
+
+.layer_pop.grade{
+	.data_table01 th,.data_table01 td{padding:11px 13px;}
+	.data_table01 th{font-weight:bold;color:#333;}
+	.data_table01 td{letter-spacing:-0.05em;
+		em{font-weight:bold;color:#333;}
+	}
+}
+
+
+// shop.scss로 이동?
+body .tit_dp{margin-bottom:27px;
+	h2{font-size:32px;}
+	.s_dp{line-height:1.2em;}
+}
+
+// 할인율 퍼센트 간격 조절
+.renewal .box_price .p_per{margin-left:3px;font-family:"Verdana","Nanum Gothic",sans-serif}
+/* 최신브라우저 업데이트 */
+.box_old_broswer {height:99px;background-color:#eaf7ff;border-bottom:1px solid #ededed;
+	.cont {width:1080px;margin:0 auto;}
+	.txt_noti {float:left;width:520px;padding:33px 0 0 40px;background:url("../../images/pcweb/common/ico_alert_i2.png") 10px 31px no-repeat;
+		> strong {display:block;font-size:16px;}
+		> span {display:block;margin-top:4px;font-size:14px;}
+	}
+	.set_broswer {float:right;padding-top:21px;
+		ul{
+			li {float:left;
+				a {
+					display:block;height:44px;padding-top:16px;
+					> strong {display:block;font-size:13px;}
+					> span {display:inilne-block;padding-right:7px;background:url("../../images/pcweb/renewal/bg_old_browser.png") 100% -290px no-repeat;font-size:12px;color:#3e3e3e;}
+					&:hover > span {text-decoration:underline;}
+				}
+				&.ie {margin-left:0;padding:0 0 0 74px;background:url("../../images/pcweb/renewal/bg_old_browser.png") 0 0 no-repeat;
+					strong {color:#00b8f4;}
+				}
+				&.chrome {margin-left:35px;padding:0 0 0 69px;background:url("../../images/pcweb/renewal/bg_old_browser.png") 0 -60px no-repeat;
+					strong {color:#0e9e59;}
+				}
+				&.ff {margin-left:44px;padding:0 0 0 70px;background:url("../../images/pcweb/renewal/bg_old_browser.png") 0 -119px no-repeat;
+					strong {color:#2175be;}
+				}
+			}
+			&:after {
+				display:block;content:'';clear:both;
+			}
+		}
+		
+	}
+}
+
+//white clear dim
+.clear_dim{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;opacity:0.5;z-index:4002;}
+
+//white clear dim
+.blk_dim{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;opacity:0.5;z-index:4200;}
+
+
+//round type ancor
+.rnd_anc{
+	a{position:relative;display:inline-block;min-width:84px;height:28px;padding:0 18px;line-height:28px;color:#666;text-align:center;background:url("../../images/pcweb/common/bg_round06.png") top left no-repeat;
+		.heart{display:inline-block;width:16px;height:14px;margin-left:3px;vertical-align:-3px;background:url("../../images/pcweb/common/bg_heart.png") 0 0 no-repeat;}
+		&:after{position:absolute;right:0;top:0;width:14px;height:28px;background:url("../../images/pcweb/common/bg_round06.png") top right no-repeat;content:"";}
+		&.on{color:#fff;font-weight:bold;background-position:bottom left;
+			&:after{background-position:bottom right;}
+			.heart{background-position:0 -14px;}
+		}
+	}
+}
+.rnd_anc_s{
+	a{position:relative;display:inline-block;min-width:84px;height:25px;padding:0 18px;line-height:26px;color:#666;text-align:center;background:url("../../images/pcweb/common/bg_round07.png") top left no-repeat;
+		.heart{display:inline-block;width:16px;height:14px;margin-left:5px;vertical-align:-3px;background:url("../../images/pcweb/common/bg_heart.png") 0 0 no-repeat;}
+		.count{display:inline-block;margin-left:5px;}
+		&:after{position:absolute;right:0;top:0;width:13px;height:25px;background:url("../../images/pcweb/common/bg_round07.png") top right no-repeat;content:"";}
+		&.on{color:#fff;font-weight:bold;background-position:bottom left;
+			&:after{background-position:bottom right;}
+			.heart{background-position:0 -14px;}
+		}
+	}
+}
+.multi_li{
+	&:after{display:block;clear:both;content:"";}
+	li{float:left;
+		&+li{margin-left:4px;}
+	}
+}
+//table type ancor
+.tbl_anc{width:551px;
+	&:after{display:block;clear:both;content:"";}
+	li{float:left;margin-left:-1px;margin-top:-1px;
+		a{display:block;width:109px;height:26px;line-height:26px;border:solid #ddd;text-align:center;border-width:1px;
+			&.on{color:#fff;font-weight:bold;border-color:#c9000b;background:#c9000b;}
+		}
+	}
+}
+
+//주소찾기팝업 UI 개편 
+.lay_cont{	
+	.adr_popup{height: 614px;border-top: 1px solid #333;padding-top: 12px;margin-bottom: 36px;overflow: hidden;
+		.search_btns{position:relative;margin-bottom:17px;   position: relative;margin-bottom: 17px;top: auto;left: auto;height: auto;width: auto;
+			.input_txt {width: 100%;height: 30px;padding: 0 35px 0 10px;border: 1px solid #bebebe;color: #333;line-height: 18px;box-sizing: border-box;-ms-box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;
+				&:focus {border:1px solid #333;outline:none;}
+				&.on {border:1px solid #333; color: #333;}
+			}      		
+			button.add_sch_btn{background: url(../../images/pcweb/common/add_sch.png) right center no-repeat;text-indent: -9999px;width: 17px;height: 18px;display: block;position: absolute;top:6px;right:10px;}
+			button.add_sch_del{background: url(../../images/pcweb/common/add_sch_del.png) right center no-repeat;text-indent: -9999px;width: 16px;height: 16px;display: block;position: absolute;top:8px;right:38px;}	
+		}
+		.txt_info{
+			p{height:20px;line-height:20px;color:#333;text-align:left;
+				span{color:#c9000b;}
+			}
+			em{font-weight:bold;}
+		}
+		.txt_info2{margin-bottom:20px;
+			p{height:20px;line-height:20px;color:#333;text-align:left;
+				span{color:#c9000b;}
+				&:first-child{display:block;margin-bottom:10px;}
+				&.no_data{font-weight:bold;}
+			}			
+			em{font-weight:bold;}
+		}		
+		.adr_sreach_results{display:none;position:relative;padding-top:4px;
+			&.on{display:block;}
+			.no_data{display:none;height:470px;
+				&.on{display:table;}
+			}
+			.results_list{display:none;
+				&.on{display:block;}
+			}
+			.board_scroll{border-bottom: none;height: auto;overflow: scroll;overflow-x: hidden;height: 535px;margin-top:12px;
+				table{border-top:1px solid #666;display:none;
+					&.active {display:block;}
+					&.inner_active {display:block;border:none;
+						td{padding:0px;border:none;}
+					}
+					td{padding: 6px 0 8px 0;border-bottom: 1px solid #eee;vertical-align: top;
+						.zipcode{height:22px;line-height:22px; font-weight:bold;text-align:left;color:#333;}
+						.road{margin:4px 0;
+							span{display:block;width:50px; height:17px;line-height:17px;border:1px solid #ccc;background:#fff;color:#666;text-align:center;font-size:12px;margin-right:10px;}
+						}
+						.num{margin:4px 0;
+							span{display:block;width:50px; height:17px;line-height:17px;border:1px solid #eaeaea;background:#eaeaea;color:#666;text-align:center;font-size:12px;}
+						}
+						.h20{height:20px;}
+						.addr_road, .addr_num{min-height:22px;line-height:17px;text-align:left;padding-top: 4px;
+							a{color:#666;font-size:12px;
+								&:hover{text-decoration: underline;}
+							}
+						}						
+					}
+
+				}
+				&::-webkit-scrollbar { /* 스크롤바 전체 */
+				  width: 5px; 
+				}
+				&::-webkit-scrollbar-track { /* 스크롤바 막대외부전체 */
+				  background-color: #fff;
+				}
+				&::-webkit-scrollbar-track-piece { /* 스크롤바 막대여백 */
+				  background-color: #fff;
+				}
+				&::-webkit-scrollbar-thumb { /* 스크롤바 막대 */
+				  border-radius: 10px;
+				  background-color: #e5e5e5;
+				  width:5px;
+				  min-height:105px;
+				}
+				&::-webkit-scrollbar-button { /* 위아래 동작버튼 */
+				  width:20px;height:5px;
+				  background:#fff;
+				}
+			}
+		}		
+	}
+	a, button {outline:none;}
+}
+
+//플래그 //각 영역마다 클래스 중첩되어 우선순위 밀릴경우 대비 + 추후 관리를 위해 플래그css는 여기서 관리하되 important를 사용
+.flag{
+	&.xl{width:100px;height:100px;display:block;position:absolute;top:5px;left:5px;
+		img{width:100px !important;height:100px !important;}
+	}	
+	&.l{width:80px;height:80px;display:block;position:absolute;top:5px;left:5px;
+		img{width:80px !important;height:80px !important;}
+	}
+	&.m{width:64px;height:64px;display:block;position:absolute;top:5px;left:5px;
+		img{width:64px !important;height:64px !important;}
+	}
+	&.s{width:50px;height:50px;display:block;position:absolute;top:5px;left:5px;
+		img{width:50px !important;height:50px !important;}
+	}
+	&.xl10{width:100px;height:100px;display:block;position:absolute;top:10px;left:10px;
+		img{width:100px !important;height:100px !important;}
+	}		
+	&.l10{width:80px;height:80px;display:block;position:absolute;top:10px;left:10px;
+		img{width:80px !important;height:80px !important;}
+	}	
+}
+
+/* 바디에 스크롤 막을 때 */
+.not_scroll{position:fixed;width:100%;height:100%;
+	.layer_pop{position:fixed;width:500px;left:50%;top:100px!important;z-index:9999!important;margin-left:-250px;background:#fff;}
+}
+
+.box_sns{position:relative;height:70px;margin-top:15px;padding-top:20px;border-top:1px solid #d7d7d7;
+	.tit{color:#333;font-size:14px;font-weight:bold;}
+	.list_sns{float:right;margin-top:-17px;
+		&:after{display:block;clear:both;content:'';}
+		li{float:left;margin-left:10px;
+			&:first-child{margin-left:0px;}
+			a{display:block;}
+
+		}
+	}
+}
+
+.ad_bn{clear: both;overflow: hidden;margin-bottom:50px;margin-top:15px;
+	a{display: block;
+		img{
+			display: block;
+		    max-width: 100%;
+		    height: auto;
+		    margin: 0 auto;
+		}
+	}
+}
+//안전거래센터
+.safe_ct{position:relative;width:1080px;margin:0 auto;
+	&:after{content:'';display:block;clear:both}
+	div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,select,textarea,p,blockquote,th,td,legend,button,a{color:#333;font-family:'Noto Sans KR', "Roboto","Droid Sans","AppleSDGothicNeo";font-weight:400;letter-spacing:-0.5px;}
+	.saf_main{
+		.topBn{overflow:hidden;
+			h2{display:block;
+				img{display:block;width:100%;height:auto;}
+			}
+		}
+		.ntcLst{overflow:hidden;margin-top:80px;
+			dl{overflow:hidden;float:left;position:relative;width:320px;
+				+dl{margin-left:60px;}
+				dt{padding-bottom:10px;border-bottom:#191919 2px solid;font-weight:500;font-size:22px;line-height:32px;}
+				.bt{position:absolute;right:0;top:8px;
+					a{display:block;position:relative;padding-right:11px;font-size:12px;line-height:18px;
+						&:after{content:'';display:block;position:absolute;right:2px;top:50%;width:6px;height:10px;margin-top:-5px;background:url("../../images/pcweb/safe_ct/ico_safe_ct.png") no-repeat 0 0;background-position:0 -28px;}
+						&:hover{text-decoration:underline;}
+					}
+				}
+				.lst{position:relative;height:222px;padding:10px 0;border-bottom:#ddd 1px solid;box-sizing:border-box;
+					li{margin-top:10px;
+						a{display:block;overflow:hidden;font-size:14px;line-height:20px;white-space:nowrap;text-overflow:ellipsis;
+							&:hover{text-decoration:underline;}
+						}
+					}
+				}
+				.none{position:relative;top:50%;color:#666;font-size:16px;line-height:24px;text-align:center;transform:translateY(-50%);}
+			}
+		}
+		.ntcLnk{margin-top:80px;
+			&:after{content:'';display:block;clear:both;}
+			h3{display:block;overflow:hidden;padding-bottom:20px;font-weight:500;font-size:22px;line-height:32px;}
+			ul{margin:-13px 0 0 -13px;
+				&:after{content:'';display:block;clear:both;}
+				li{float:left;margin:13px 0 0 13px;
+					a{display:block;position:relative;width:260px;height:150px;border:#ddd 1px solid;border-radius:4px;box-sizing:border-box;transition:all 0.2s;
+						span{display:block;position:absolute;left:20px;right:20px;bottom:20px;color:#333;font-size:16px;line-height:24px;}
+						&:hover{z-index:2;border-color:#333;box-shadow:0 3px 6px rgba(0,0,0,0.16);
+							span{font-weight:500;}
+						}
+						&:after{content:'';display:block;position:absolute;right:16px;top:10px;width:98px;height:98px;background:url("../../images/pcweb/safe_ct/ico_safe_mn.png") no-repeat 0 0;}
+						&.n0:after{background-position:0 0;}
+						&.n1:after{background-position:0 -98px;}
+						&.n2:after{background-position:0 -196px;}
+						&.n3:after{background-position:0 -294px;}
+						&.n4:after{background-position:-98px 0;}
+						&.n5:after{background-position:-98px -98px;}
+						&.n6:after{background-position:-98px -196px;}
+						&.n7:after{background-position:-98px -294px;}
+					}
+				}
+			}
+		}
+		.safe_tx_lnk{margin-top:80px;}
+	}
+	.safe_ctg{overflow:hidden;position:relative;
+		>.lnb{float:left;width:180px;
+			h2{display:block;overflow:hidden;font-weight:500;font-size:30px;line-height:44px;}
+			ul{margin-top:10px;border-bottom:#333 2px solid;
+				li+li{border-top:#ddd 1px solid;}
+				a{display:block;font-size:16px;line-height:64px;
+					&:hover{text-decoration:underline;}
+					&[aria-selected="true"]{font-weight:500;text-decoration:underline;}
+				}
+			}
+		}
+		>.con{float:right;width:870px;
+			h3.title{display:block;overflow:hidden;padding-bottom:34px;font-size:25px;line-height:36px;}
+			.brd{overflow:hidden;
+				.top{position:relative;margin-bottom:10px;
+					&:after{content:'';display:block;clear:both;}
+					.num{float:left;color:#666;font-size:14px;line-height:38px;
+						em{color:#333;font-weight:500;font-size:15px;font-family:'Roboto';letter-spacing:0;}
+					}
+					.right{float:right;
+						>div{float:left;
+							+div{margin-left:6px;}
+						}
+						.sch{overflow:hidden;position:relative;width:310px;height:38px;padding-right:38px;border-radius:4px;background:#F4F4F4;box-sizing:border-box;
+							input{display:block;width:100%;height:38px;padding-left:10px;border:none;outline:none;background:none;font-size:14px;box-sizing:border-box;}
+							button{display:block;position:absolute;right:0;top:0;width:38px;height:38px;background:none;
+								&:after{content:'';display:block;position:relative;width:24px;height:28px;margin:auto;background:url("../../images/pcweb/safe_ct/ico_safe_ct.png") no-repeat 0 0;background-position:0 0;}
+							}
+						}
+					}
+				}
+				.lst{border-top:#191919 2px solid;border-bottom:#ddd 1px solid;
+					table{width:100%;
+						th{font-weight:500;font-size:15px;line-height:60px;}
+						td{padding:16px 0 15px;border-top:#ddd 1px solid;text-align:center;
+							a{display:block;font-size:15px;line-height:18px;text-align:left;box-sizing:border-box;
+								&:hover{text-decoration:underline;}
+								b{font-weight:500;}
+							}
+							em{display:block;font-size:14px;line-height:30px;font-family:'Roboto';letter-spacing:0;}
+							.rd{display:inline-block;height:30px;padding:0 15px;border:#C9000B 1px solid;border-radius:30px;color:#C9000B;font-weight:500;font-size:13px;line-height:28px;vertical-align:top;box-sizing:border-box;}
+						}
+						.none{display:block;padding:100px 0;color:#666;font-size:18px;line-height:26px;}
+					}
+					&.n2 td a{padding-left:18px;}
+				}
+			}
+			.dtl{
+				&:after{content:'';display:block;clear:both;}
+				.top{padding-bottom:10px;
+					&:after{content:'';display:block;clear:both;}
+					a{display:block;float:right;height:38px;padding:0 17px;border:#ddd 1px solid;border-radius:38px;font-size:14px;line-height:36px;box-sizing:border-box;
+						&:hover{border-color:#191919;}
+					}
+				}
+				dl{overflow:hidden;
+					span{display:table-cell;font-size:14px;line-height:64px;text-align:center;vertical-align:middle;}
+					dt,dd{overflow:hidden;}
+					.lst{display:table;width:100%;border-bottom:#ddd 1px solid;
+						.num{width:84px;}
+						.ctg{width:80px;}
+						.date{width:110px;font-family:'Roboto';}
+						.tit{width:auto;padding:23px 0;font-size:15px;line-height:18px;text-align:left;box-sizing:border-box;}
+						a:hover{text-decoration:underline;}
+					}
+					dt.lst{border-top:#191919 2px solid;background:#F4F4F4;
+						.num{font-family:'Roboto';}
+					}
+					.inrHtml{overflow:hidden;padding:30px 15px 60px;border-bottom:#666 1px solid;font-size:14px;line-height:30px;
+						.down{display:inline-block;position:relative;padding-left:26px;color:#1249FF;font-size:12px;line-height:20px;vertical-align:top;text-decoration:underline;
+							&:after{content:'';display:block;position:absolute;left:0;top:0;width:20px;height:20px;background:url("../../images/pcweb/safe_ct/ico_safe_ct.png") no-repeat 0 0;background-position:-44px 0;}
+						}
+						p{color:#333;font-size:14px;line-height:30px;}
+						.saf_tbl{width:100%;
+							th,td{padding:10px 20px;border:#ddd 1px solid;color:#666;font-size:14px;line-height:20px;text-align:left;}
+							th{color:#333;font-weight:500;}
+						}
+						.more{display:inline-block;position:relative;padding-right:12px;color:#1249FF;font-size:14px;line-height:20px;text-decoration:underline;vertical-align:top;
+							&:after{content:'';display:block;position:absolute;right:0;top:50%;width:7px;height:12px;margin-top:-5px;background:url("../../images/pcweb/safe_ct/ico_safe_ct.png") no-repeat 0 0;background-position:-37px -20px;}
+						}
+					}
+				}
+				&.n2 .tit{padding-left:18px;}
+			}
+		}
+		.dec{
+			&:after{content:'';display:block;clear:both;}
+			.box{margin-top:40px;border-top:#333 2px solid;border-bottom:#333 1px solid;
+				&:after{content:'';display:block;clear:both;}
+				>ul{padding:28px 20px;box-sizing:border-box;
+					&.gds{padding:0 0 0 124px;border:none;
+						>li{display:block;position:relative;padding:20px 146px 20px 0;border-top:#ddd 1px solid;
+							+li{margin:0;}
+							a{display:block;position:relative;min-height:70px;padding:13px 0 0 90px;box-sizing:border-box;}
+							span{display:block;}
+							button{display:block;position:absolute;top:50%;right:23px;width:100px;height:38px;border:#ddd 1px solid;border-radius:4px;color:#666;font-size:14px;line-height:36px;transform:translateY(-50%);box-sizing:border-box;
+								&:hover{border-color:#191919;color:#191919;}
+							}
+							.img{position:absolute;left:0;top:0;width:70px;height:70px;border:#ddd 1px solid;
+								img{width:70px;height:70px;}
+							}
+							.gdTit{color:#333;font-size:14px;line-height:20px;overflow:hidden;display:-webkit-box !important;display:box !important;text-overflow:ellipsis;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;box-orient:vertical;}
+							.opt{margin-top:4px;
+								em{display:block;color:#999;font-size:14px;line-height:20px;
+									+em{margin-top:1px;}
+								}
+							}
+						}
+					}
+					+ul{border-top:#999 1px solid;}
+					&:after{content:'';display:block;clear:both;}
+					>li{display:flex;align-items:center;
+						+li{margin-top:20px;}
+						>.tit{width:104px;color:#333;font-weight:500;font-size:14px;line-height:20px;}
+						>.con{flex:1;
+							.btn_opt_slt{width:420px;}
+							.inp{display:block;
+								input{display:block;width:100%;height:38px;padding:0 10px;border:#ddd 1px solid;border-radius:4px;font-size:14px;line-height:20px;box-sizing:border-box;outline:none;
+									&:focus{border-color:#191919;}
+								}
+								+.opnBt{margin-top:10px;}
+							}
+							.opnBt{display:block;overflow:hidden;
+								button{display:block;min-width:120px;height:38px;padding:0 10px;float:left;border:#ddd 1px solid;border-radius:4px;color:#666;font-weight:500;font-size:14px;box-sizing:border-box;
+									+button{margin-left:10px;}
+									&:disabled{background:#ddd;color:#999;}
+									&:hover{border-color:#191919;color:#191919;}
+								}
+							}
+							.tx_gry{display:block;color:#999;font-size:14px;line-height:20px;}
+							textarea{display:block;width:100%;height:140px;border:#ddd 1px solid;border-radius:4px;font-size:14px;line-height:20px;box-sizing:border-box;outline:none;
+								&:focus{border-color:#191919;}
+							}
+							.saf_file{display:block;overflow:hidden;position:relative;
+								.upFile{display:block;position:absolute;left:0;top:0;width:496px;height:38px;opacity:0;cursor:pointer;}
+								.name{display:block;float:left;width:496px;height:38px;padding:0 10px;border:#ddd 1px solid;border-radius:4px;background:#F4F4F4;box-sizing:border-box;cursor:pointer;
+									&.on{background:#fff;}
+								}
+								label{display:block;float:left;width:100px;height:38px;margin-left:6px;border:#ddd 1px solid;border-radius:4px;color:#666;font-weight:500;font-size:14px;line-height:36px;text-align:center;box-sizing:border-box;cursor:pointer;
+									&:hover{border-color:#191919;}
+								}
+							}
+							.ntc{display:block;margin-top:12px;color:#999;font-size:13px;line-height:20px;}
+						}
+					}
+				}
+			}
+			.pvc{margin-top:20px;
+				&:after{content:'';display:block;clear:both;}
+				.sub{display:block;float:left;margin-left:16px;color:#666;font-size:14px;line-height:21px;}
+			}
+		}
+	}
+	.btn_opt_slt{position:relative;min-width:120px;
+		&:after{content:'';display:block;position:absolute;right:9px;top:50%;z-index:5;width:13px;height:8px;margin-top:-4px;background:url("../../images/pcweb/safe_ct/ico_safe_ct.png") no-repeat 0 0;background-position:-24px -19px;pointer-events:none;}
+		.bt button{display:block;position:relative;overflow:hidden;width:100%;height:38px;padding:0 24px 0 10px;border-radius:4px;border:#ddd 1px solid;background:#fff;-webkit-transition:all 0.2s;transition:all 0.2s;box-sizing:border-box;
+			span{display:block;overflow:hidden;font-size:14px;text-align:left;text-overflow:ellipsis;white-space:nowrap;}
+		}
+		.lyr{display:none;position:absolute;left:0;top:37px;z-index:4;width:100%;
+			ul{overflow-x:hidden;overflow-y:auto;max-height:250px;border-radius:0 0 4px 4px;border:#ddd 1px solid;background:#fff;box-sizing:border-box;}
+			li a{display:block;overflow:hidden;padding:0 24px 0 10px;height:38px;
+				&:hover{background:#F4F4F4;}
+				&[aria-selected="true"] .tx{font-weight:700;}
+				.tx{display:block;font-size:14px;line-height:36px;color:#333;}
+			}
+		}
+		&.case{display:none;}
+		&[aria-expanded='true']{
+			.bt button{border-radius:4px 4px 0 0;}
+		}
+	}
+	.pgs{overflow:hidden;margin-top:40px;text-align:center;
+		>span.num{display:inline-block;
+			a{display:block;position:relative;float:left;width:30px;height:30px;border:transparent 1px solid;border-radius:100%;box-sizing:border-box;color:#999;font-size:14px;line-height:30px;font-family:'Roboto';
+				+a{margin-left:5px;}
+				&:hover{text-decoration:underline;}
+				&.on{background:#333;color:#fff;font-weight:700;
+					&:hover{text-decoration:none;}
+				}
+			}
+			.btn_paging_first,.btn_paging_prev,.btn_paging_next,.btn_paging_end{border-color:#ddd;
+				&:hover{border-color:#666;}
+				&:after{content:'';display:block;position:absolute;top:50%;left:50%;width:10px;height:10px;background:url("../../images/pcweb/safe_ct/ico_safe_ct.png") no-repeat 0 0;transform:translate(-50%, -50%);}
+			}
+			.btn_paging_first:after{margin:-1px 0 0 -1px;background-position:-24px 0;}
+			.btn_paging_prev{margin-right:5px;
+				&:after{margin:-1px 0 0 -1px;background-position:-24px -10px;}
+			}
+			.btn_paging_next{margin-left:10px;
+				&:after{margin:-1px 0 0 1px;background-position:-34px -10px;}
+			}
+			.btn_paging_end:after{margin:-1px 0 0 1px;background-position:-34px 0;}
+		}
+	}
+	.saf_btn{overflow:hidden;margin-top:40px;text-align:center;
+		>span{display:inline-block;vertical-align:top;
+			button{display:block;float:left;min-width:150px;height:44px;padding:0 16px;border:#fff 1px solid;border-radius:44px;font-weight:500;font-size:16px;line-height:42px;box-sizing:border-box;
+				+button{margin-left:10px;}
+				&.wt{border-color:#999;background:#fff;color:#666;}
+				&.bk{border-color:#333;background:#333;color:#fff;}
+			}
+		}
+	}
+	.chk{display:block;position:relative;float:left;
+		+.chk{margin-left:40px;}
+		input[type="radio"]{position:absolute;left:0;top:4px;z-index:2;width:14px;height:14px;margin:0;padding:0;-moz-opacity:0;-khtml-opacity:0;opacity:0;cursor:pointer;
+			+ label{display:block;position:relative;min-height:20px;padding:0 1px 0 18px;color:#666;font-size:14px;line-height:20px;box-sizing:border-box;cursor:pointer;
+				&:after{content:'';display:block;position:absolute;left:0;top:4px;width:14px;height:14px;background:url("../../images/pcweb/safe_ct/ico_safe_ct.png") no-repeat 0 0;background-position:-6px -28px;}
+			}
+			&:checked + label:after{background-position:-20px -28px;}
+		}
+		input[type="checkbox"]{position:absolute;left:0;top:4px;z-index:2;width:21px;height:21px;margin:0;padding:0;-moz-opacity:0;-khtml-opacity:0;opacity:0;cursor:pointer;
+			+ label{display:block;position:relative;min-height:21px;padding:0 1px 0 27px;color:#333;font-size:14px;line-height:21px;box-sizing:border-box;cursor:pointer;
+				&:after{content:'';display:block;position:absolute;left:0;top:0;width:21px;height:21px;background:url("../../images/pcweb/safe_ct/ico_safe_ct.png") no-repeat 0 0;background-position:-64px 0;}
+			}
+			&:checked + label:after{background-position:-85px 0;}
+		}
+	}
+}
+.safe_tx_lnk{overflow:hidden;
+	span{display:block;float:left;margin-right:20px;color:#333;font-size:15px;line-height:44px;letter-spacing:-0.5px;font-family:'Noto Sans KR','NanumGothic';}
+	a{display:block;float:left;padding:0 46px;border-radius:44px;background:#333;color:#fff;font-weight:500;font-size:16px;line-height:44px;letter-spacing:-0.5px;font-family:'Noto Sans KR','NanumGothic';}
+	&.gd{padding:40px 0 28px;
+		a{border-radius:0;}
+	}
+}

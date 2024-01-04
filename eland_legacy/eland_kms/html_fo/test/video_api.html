@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<style>
+		* {margin:0; padding:0;}
+		.set_vdo {position: relative; width: 560px; height:315px; border:1px solid red;}
+		.set_vdo button {cursor:pointer;}
+		.set_vdo iframe {display:block;}
+		.set_vdo.flex {width: 100%; height:100%;}
+		.set_vdo .btn_vdo_play {position:absolute; top:50%; left:50%; z-index:2; width:80px; height:80px; margin:-40px 0 0 -40px; border:none; background: #ccc; border-radius:40px 40px;}
+		.set_vdo .btn_vdo_pause {display:none;position:absolute; top:0; left:0; right:0; bottom:0; z-index:2; width:100%; height:100%; background:none; border:none;}
+		.set_vdo:before {display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:1;background:#fff; opacity:0;content: '';}
+		.ir{display:block;overflow:hidden;position:absolute !important;width:1px  !important;height:1px  !important;padding:0 !important; font-size:0 !important;;line-height:0 !important;-moz-opacity:0;-khtml-opacity:0;opacity:0;}
+	</style>
+</head>
+<body>
+	<div class="set_vdo">
+
+		<button class="btn_vdo_play" type="button" onclick="playYoutube(0);"><span>Play</span></button>
+		<button class="btn_vdo_pause" type="button" onclick="pauseYoutube(0);"><span class="ir">Pause</span></button>
+		<div id="gangnamStyleIframe"></div>
+	</div>
+
+	<div class="set_vdo">
+		<button class="btn_vdo_play" ="btn_vdo_play" type="button" onclick="playYoutube(1);"><span>Play</span></button>
+		<button class="btn_vdo_pause" type="button" onclick="pauseYoutube(1);"><span class="ir">Pause</span></button>
+		<div id="gangnamStyleIframe2"></div> 
+	</div>
+
+	<div class="set_vdo flex">
+		<button class="btn_vdo_play" type="button" onclick="playYoutube(2);"><span>Play</span></button>
+		<button class="btn_vdo_pause" type="button" onclick="pauseYoutube(2);"><span class="ir">Pause</span></button>
+		<div id="gangnamStyleIframe3"></div> 
+	</div>
+ 
+	<!-- <button type="button" onclick="playYoutube();">Play</button>
+	<button type="button" onclick="pauseYoutube();">Pause</button>
+	<button type="button" onclick="stopYoutube();">Stop</button>
+	<button type="button" onclick="changeVideoAndStart();">ChangeVideo And Start</button>
+	<button type="button" onclick="changeVideoObjectAndStart();">ChangeVideoObject And Start</button>
+	<button type="button" onclick="changeVideoListAndStart();">ChangeVideoList And Start</button>
+	<button type="button" onclick="changeVideoListObjectAndStart();">ChangeVideoListObject(Video IDs) And Start</button>
+	<button type="button" onclick="changeVideoListObjectAndStart2();">ChangeVideoListObject(playlist ID) And Start</button> -->
+ 
+	<script type="text/javascript">
+		var player;
+		var playerArr = [];
+		var vdoCurrentIDX; //현재 선택된 동영상 index
+		var playerState;//플레이 상태 
+		var youtubeVdoArray = [
+			{
+				yId : 'gangnamStyleIframe',
+				yOpt : {width: '560', height: '315', videoId: 'IHNzOHi8sJs'},
+			},
+			{
+				yId : 'gangnamStyleIframe2',
+				yOpt : { width: '560', height: '315', videoId: '9bZkp7q19f0'},
+			},
+			{
+				yId : 'gangnamStyleIframe3',
+				yOpt : { width: '100%', height: '100%', videoId: 'Fm5iP0S1z9w'},
+			}
+		];
+		var vdosLeng = youtubeVdoArray.length;
+		function onYouTubeIframeAPIReady(vdos) {
+			for(var i=0; i < vdosLeng; i++) {
+				youTubeSetting(i);
+			}
+		}
+		function youTubeSetting(idx) {
+			console.log('idx==',idx);
+			var youtubeID = youtubeVdoArray[idx].yId;
+			var youtubeOPT = youtubeVdoArray[idx].yOpt;
+			
+			playerArr[idx] = new YT.Player(youtubeID, {
+				width : youtubeOPT.width,
+				height : youtubeOPT.height,
+				videoId : youtubeOPT.videoId,
+				playerVars: {
+					controls: 0, //하단 컨트롤 바
+					showinfo: 0  //상단 Info
+				},
+				events : {
+					'onStateChange': onPlayerStateChange
+				}
+			});
+			
+		}	
+
+		/**
+		 * onYouTubeIframeAPIReady 함수는 필수로 구현해야 한다.
+		 * 플레이어 API에 대한 JavaScript 다운로드 완료 시 API가 이 함수 호출한다.
+		 * 페이지 로드 시 표시할 플레이어 개체를 만들어야 한다.
+		 */
+
+		function onPlayerStateChange(event) {
+			playerState = event.data == YT.PlayerState.ENDED ? '종료됨' :
+					event.data == YT.PlayerState.PLAYING ? '재생 중' :
+					event.data == YT.PlayerState.PAUSED ? '일시중지 됨' :
+					event.data == YT.PlayerState.BUFFERING ? '버퍼링 중' :
+					event.data == YT.PlayerState.CUED ? '재생준비 완료됨' :
+					event.data == -1 ? '시작되지 않음' : '예외';
+			if(playerState=='종료됨') {
+ 				$(event.target.a).parents('.box_video').find('.btn_vdo_play').show();
+
+ 			}
+ 			/*if(playerState=='재생 중') {
+ 				
+ 			} else if(playerState=='종료됨') {
+ 				$(event.target.a).parents('.box_video').find('.btn_vdo_play').show();	
+ 			} else if(playerState=='일시중지 됨') {
+ 				$(event.target.a).parents('.box_video').find('.btn_vdo_play').show();
+ 			}
+			console.log('onPlayerStateChange 실행: ' + playerState);*/
+		}
+ 
+		function playYoutube(idx) {
+			// 플레이어 자동실행 (주의: 모바일에서는 자동실행되지 않음)
+			console.log(vdoCurrentIDX)
+			for(var i=0; i < vdosLeng; i++) {
+				if(vdoCurrentIDX!=undefined && vdoCurrentIDX==idx) {//영상 멈춘 부분 부터 다시 재생
+					continue;
+				} else {
+					stopYoutube(i);
+				}
+			}
+			var $id = $('#'+youtubeVdoArray[idx].yId);
+			var $boxVdo = $id.parents('.box_video');
+			var $vdoPlay = $boxVdo.find('.btn_vdo_play');
+			var $vdoPause = $boxVdo.find('.btn_vdo_pause');
+			$vdoPlay.hide();
+			$vdoPause.css('display','block');
+			$vdoPause.on('click',function() {
+				actionPause(idx);
+			});
+			playerArr[idx].playVideo();
+			vdoCurrentIDX = idx;//현재 선택된 동영상 index
+		}
+
+		function actionPause(idx) {//일시중지 액션
+			var $id = $('#'+youtubeVdoArray[idx].yId);
+			var $boxVdo = $id.parents('.box_video');
+			var $vdoPlay = $boxVdo.find('.btn_vdo_play');
+			var $vdoPause = $boxVdo.find('.btn_vdo_pause');
+			playerArr[idx].pauseVideo();
+			$vdoPause.hide();
+			$vdoPlay.show();
+		}
+
+		function actionStop(idx) {//정지 액션
+			var $id = $('#'+youtubeVdoArray[idx].yId);
+			var $boxVdo = $id.parents('.box_video');
+			var $vdoPlay = $boxVdo.find('.btn_vdo_play');
+			var $vdoPause = $boxVdo.find('.btn_vdo_pause');
+			playerArr[idx].seekTo(0, true);     // 영상의 시간을 0초로 이동시킨다.
+			playerArr[idx].stopVideo();
+			$vdoPause.hide();
+			$vdoPlay.show();
+		}
+		function pauseYoutube(idx) {
+			actionPause(idx);
+		}
+		function stopYoutube(idx) {
+			//console.log('aaaaaa' , youtubeVdoArray[idx].yId)
+			actionStop(idx);
+		}
+
+		/**
+		 * Youtube API 로드
+		 */
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+ 
+	</script>
+</body>

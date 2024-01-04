@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//옵션 수량
+    $(document).ready(function() {
+        $(".basket_prd .sel .opt").bind("click", function() {
+            $(this).toggleClass("on");
+            $(this).parent().parent().find(".opt_open").slideToggle(200);
+        });
+    });
+    //160712 추가 장바구니 탭
+	$(function(){
+		tabCart = $(".tab_cart li a");
+		tabCartCon = $(".basket_content .cart_con");
+
+		tabCart.click(function(){
+			exId = $(this).parent().index();
+			$(this).parent().parent().find("a").removeClass("on");
+			$(this).addClass("on");
+			tabCartCon.removeClass("on");
+			tabCartCon.hide();
+			tabCartCon.eq(exId).show();
+		});
+	});
+
+	//배송메세지
+	$(function(){
+		$(".sel_box").change(function(){ 
+			$(".sel_box option:selected").each(function(){
+				msg = $(this).text();
+				if(msg == "메시지 직접입력 (배송기사/매장 전달)"){
+					$(this).parent().parent().parent().find("select").hide();
+					$(this).parent().parent().parent().find(".msg_selected").hide();
+					$(this).parent().parent().append("<textarea cols='30' rows='2' class='w100'>배송 시 전달사항을 입력해주세요.</textarea>");
+				}else{
+					$(this).parent().parent().find(".msg_selected").show().find("span").text(msg);
+				}
+			});  
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>선물 배송정보</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>
+		</h2>
+	</div>		
+	<div class="order_content">
+		<!-- 배송정보 -->
+		<div class="step01 gift">
+			<div class="ord_tit">
+				<h3 class="ir">인증정보 입력</h3>
+				<span class="txt_order">서울 금천구 가산디지털1로 151 가산디지털1로 151</span>
+			</div>
+			<div class="ord_con">
+				<div class="ord_box01">
+					<ul class="info_gift">
+						<li><strong>10월 20일까지</strong> 선물 받을 배송정보 입력을 꼭! 완료해 주세요.</li>
+						<li>배송정보를 입력하지 않으실 경우, 선물주문은 자동 취소 됩니다. </li>
+						<li>선물 상품의 취소/교환/반품은 선물 보내신 분이 진행 할 수 있습니다.</li>
+						<li>일부 배송 불가 지역(도서산간)은 선물 수령이 안됩니다.</li>
+					</ul>
+					<h3 class="tit_gift"><em class="ico">01</em>선물확인</h3>
+					<div class="basket_prd">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodopt">화이트 / 1개</span>
+							<div class="sel">
+								<div class="opt w100"><span>옵션/수량 변경</span></div>
+							</div>
+							<!-- 옵션,수량 변경 -->
+							<div class="opt_open">
+								<dl>
+									<dt>색상</dt>
+									<dd>
+										<select class="w100">
+											<option>베이지브라운</option>
+										</select>
+									</dd>
+									<dt>사이즈</dt>
+									<dd>
+										<select class="w100">
+											<option>55</option>
+										</select>
+									</dd>
+								</dl>
+								<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+							</div>
+							<!-- //옵션,수량 변경 -->
+						</div>
+					</div>
+
+					<div class="basket_prd">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodopt">화이트 / 1개</span>
+							<div class="sel">
+								<div class="opt w100"><span>옵션/수량 변경</span></div>
+							</div>
+							<!-- 옵션,수량 변경 -->
+							<div class="opt_open">
+								<dl>
+									<dt>색상</dt>
+									<dd>
+										<select class="w100">
+											<option>베이지브라운</option>
+										</select>
+									</dd>
+									<dt>사이즈</dt>
+									<dd>
+										<select class="w100">
+											<option>55</option>
+										</select>
+									</dd>
+								</dl>
+								<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+							</div>
+							<!-- //옵션,수량 변경 -->
+						</div>
+					</div>
+
+					<div class="basket_prd">
+						<div class="basket_txt">
+							<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodopt">화이트 / 1개</span>
+							<div class="sel">
+								<div class="opt w100"><span>옵션/수량 변경</span></div>
+							</div>
+							<!-- 옵션,수량 변경 -->
+							<div class="opt_open">
+								<dl>
+									<dt>색상</dt>
+									<dd>
+										<select class="w100">
+											<option>베이지브라운</option>
+										</select>
+									</dd>
+									<dt>사이즈</dt>
+									<dd>
+										<select class="w100">
+											<option>55</option>
+										</select>
+									</dd>
+								</dl>
+								<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+							</div>
+							<!-- //옵션,수량 변경 -->
+						</div>
+					</div>
+
+					<h3 class="tit_gift"><em class="ico">02</em>배송정보</h3>
+					<div class="tab_con">
+						<strong class="gift_sub_tit">받으시는분</strong>
+						<ul>
+							<li>
+								<div class="box_tit ir">이름</div>
+								<div class="box_con"><input type="text" title="이름" class="w100" placeholder="선물번호"></div>
+							</li>
+							<li>
+								<div class="box_tit ir">휴대전화</div>
+								<div class="box_con">
+									<ul class="inp_tel01">
+										<li>
+											<select>
+												<option>010</option>
+											</select>
+										</li>
+										<li><input type="text" title="휴대전화 가운데자리"></li>
+										<li><input type="text" title="휴대전화 세번째자리"></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="box_tit ir">주소</div>
+								<div class="box_con">
+									<div class="addr">
+										<input type="text" title="우편번호" class="w100" disabled="disabled" />
+										<div class="absR">
+											<a href="javascript:;" class="btn_brd02 c01">주소찾기</a>
+										</div>
+									</div>
+									<div class="addr_etc">
+										<div class="inp_txt"><input type="text" title="도로명주소" disabled="disabled"></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<strong class="gift_sub_tit">배송메세지</strong>
+						<ul>
+							<li>
+								<div class="box_con">
+									<select class="sel_box w100">
+										<option>선택해 주세요</option>
+										<option>부재시 경비(관리)실에 맡겨주세요</option>
+										<option>빠른 배송 부탁드려요</option>
+										<option>부재시 문 앞에 놓아주세요</option>
+										<option>파손의 위험이 있는 상품이 있습니다.</option>
+										<option>배송전에 연락주세요</option>
+										<option>메시지 직접입력 (배송기사/매장 전달)</option>
+									</select>
+									<!-- 배송메세지 선택 -->
+									<div class="msg_selected">
+										<span>선택해 주세요</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="gift_agree">
+						<div class="tit">
+							<input type="checkbox" id="gift_agr" checked="">
+							<label for="gift_agr">선물 수령을 위한 정보제공에 대한 동의</label>
+						</div>
+						<p class="agree_term">
+							1. 개인정보의 수집 및 이용 목적<br /><br />
+							1) 주문자 정보 확보<br />
+							2) 물품에 관한 배송지 정보 확보<br /><br />
+							2. 수집하는 개인정보의 항목<br /><br />
+							1) 수취인의 이름, 주소, 연락처<br /><br /><br />
+							* 서비스이용과정이나 사업처리 과정에서 아래와 같은 정보들이 생성되어 수집될 수 있습니다.<br />
+							- 서비스이용기록, 접속로그, 쿠키, 접속IP정보, 결제기록, 이용정지기록<br /><br /><br />
+							3. 개인정보의 보유 및 이용 기간<br /><br />
+							* 원칙적으로 개인정보의 수집목적 또는 제공받은 목적이 달성되면 지체 없이 파기합니다. 다만, 전자상거래 등에서의 소비자 보호에 관한 법률 등 관계법률에 의해 보존할 필요가 있는 경우에는 일정기간 보존합니다. 이 경우 보관하는 정보를 그 보관 목적으로만 이용하며, 보존기간은 아래와 같습니다.<br /><br />
+							1)계약 또는 청약철회 등에 관한 기록<br />
+							• 보존 이유: 전자상거래 등에서의 소비자 보호에 관한 법률<br />
+							• 보존 기간: 5년<br />
+							2)대금결제 및 재화 등의 공급에 관한 기록<br />
+							• 보존 이유: 전자상거래 등에서의 소비자 보호에 관한 법률<br />
+							• 보존 기간: 5년<br />
+							3)소비자의 불만 또는 분쟁처리에 관한 기록<br />
+							• 보존 이유: 전자상거래 등에서의 소비자 보호에 관한 법률<br />
+							• 보존 기간: 3년<br /><br />
+							선물하기 수령 시 제공하신 모든 정보는 상기 목적에 필요한 용도 이외로는 사용되지 않습니다.<br /><br />
+							4.동의를 거부할 권리 및 거부에 따른 불이익<br /><br />
+							개인 정보 수집, 이용 목적에 관한 사항에 대해 동의를 거부할 수 있으나, 거부하실 경우 상품을 수령 하실 수 없습니다. 
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d_gift_btn btn_set fixed">
+			<button type="button" onclick="fn_layer_open('msg_lyr_cart');return false;" onkeypress="this.onclick;"  class="cancel"><em>선물거절</em></button>
+			<button type="button" class="confirm"><em>선물수락</em></button>
+		</div>
+	</div>
+	<!-- //order_content -->
+</div>
+<!-- //CONTENT -->
+
+<!-- 181207_추가 JSH -->
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+<!-- //181207_추가 JSH -->
+
+<div id="msg_lyr_cart" class="layer_pop nodim">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<h4 class="gray">거절하기</h4>
+				<p>선물을 한번 거절하시면<br />다시 받으실 수 없으며,<br />선물 보내신 분께 전달 됩니다.</p>
+				<p class="cbtn"><a href="#">확인</a></p>
+			</div>
+			<div class="zzim_box alC">
+				<h4>수락하기</h4>
+				<p>입력하신 주소로 당품 준비 후<br />발송해 드리겠습니다.
+					<span class="info">*상품의 배송현황은 선물함에서 확인 가능 하십니다.</span>
+				</p>
+				<p class="cbtn"><a href="#">확인</a></p>
+			</div>
+		</div>
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+</body>
+</html>
+

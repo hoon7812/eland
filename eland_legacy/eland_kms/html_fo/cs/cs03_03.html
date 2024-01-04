@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+	<style type="text/css"> /* 전달을 위한 css 입니다. 무시해주시고, 아래 레이어팝업 html 소스 만 참고 부탁드립니다. */
+	#content{min-height:auto;}
+	.layer_pop{position:relative;left:0 !important;margin-left:0 !important;top:0;}
+	</style>	
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div id="content">
+			</div>
+			<!-- content -->
+
+
+			<div class="layer_pop_section">
+
+<!-- 주문 상품 검색 -->
+<div class="layer_pop on">
+	<div class="lay_wrap">
+		<div class="lay_tit"><strong>주문 상품 검색</strong></div>
+		<div class="lay_cont">
+
+			<!-- 조회기간 -->
+			<div class="box_period02">
+				<div class="scont">
+					<strong class="stit">조회기간</strong>
+					<div class="set_grade_select02 type02 d_gradeSelect">
+						<ul class="attr_grade">
+							<li><a href="#">1주일</a></li>
+							<li><a href="#" class="on">1개월</a></li>
+							<li><a href="#">3개월</a></li>
+							<li><a href="#">6개월</a></li>
+						</ul>
+					</div>
+					<!-- 시작일 -->
+					<div class="inputs_date type02">
+						<input type="text" class="input_txt input_date" title="주문 상품 검색 중 시작,종료 일자중 시작일자" value="2015.11.17" />
+						<a href="#" class="btn_calendar">날짜 선택</a>
+						<!-- 달력 -->
+						<div class="box_calendar type02"><!-- class : on (레이어 켜짐) -->
+							<div class="tit_cal">기간 선택</div>
+							<div class="cal_lcont">
+								<div class="cont_cal">
+									<div class="set_cal_control">
+										<a class="btn_prev_month" href="#"><img src="../../images/pcweb/common/btn_calendar_prev.gif" alt="이전 달 보기" /></a>
+										<a class="btn_next_month" href="#"><img src="../../images/pcweb/common/btn_calendar_next.gif" alt="다음 달 보기" /></a>
+										<strong class="current_year">2015.12</strong>
+									</div>
+									<div class="tbl_calendar">
+										<table>
+											<caption>달력</caption>
+											<thead>
+											<tr>
+												<th scope="col">Mo</th>
+												<th scope="col">Tu</th>
+												<th scope="col">We</th>
+												<th scope="col">Th</th>
+												<th scope="col">Fr</th>
+												<th scope="col">Sa</th>
+												<th scope="col" class="su">Su</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td><span class="no_sel">1</span></td>
+												<td><span class="no_sel">2</span></td>
+												<td><span class="no_sel">3</span></td>
+												<td><span class="no_sel">4</span></td>
+												<td class="su"><span class="no_sel">5</span></td>
+											</tr>
+											<tr>
+												<td><span class="no_sel">6</span></td>
+												<td><span class="no_sel">7</span></td>
+												<td><span class="no_sel">8</span></td>
+												<td><span class="no_sel">9</span></td>
+												<td><span class="no_sel">10</span></td>
+												<td><span class="no_sel">11</span></td>
+												<td class="su"><span class="no_sel">12</span></td>
+											</tr>
+											<tr>
+												<td><a href="#">13</a></td>
+												<td><a href="#">14</a></td>
+												<td><a href="#">15</a></td>
+												<td><a href="#">16</a></td>
+												<td><a href="#">17</a></td>
+												<td><a class="chk_date" href="#">18</a></td>
+												<td class="su"><a href="#">19</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">20</a></td>
+												<td><a href="#">21</a></td>
+												<td><a href="#">22</a></td>
+												<td><a href="#">23</a></td>
+												<td><a href="#">24</a></td>
+												<td><a href="#">25</a></td>
+												<td class="su"><a href="#">26</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">27</a></td>
+												<td><a href="#">28</a></td>
+												<td><a href="#">29</a></td>
+												<td><a href="#">30</a></td>
+												<td><a href="#">31</a></td>
+												<td></td>
+												<td class="su"></td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+									<a class="btn_cal_close" href="#"><img src="../../images/pcweb/common/btn_close_calendar.gif" alt="달력 레이어 팝업 닫기" /></a>
+								</div>
+							</div>
+
+							<div class="cal_rcont">
+								<div class="cont_cal">
+									<div class="set_cal_control">
+										<a class="btn_prev_month" href="#"><img src="../../images/pcweb/common/btn_calendar_prev.gif" alt="이전 달 보기" /></a>
+										<a class="btn_next_month" href="#"><img src="../../images/pcweb/common/btn_calendar_next.gif" alt="다음 달 보기" /></a>
+										<strong class="current_year">2015.12</strong>
+									</div>
+									<div class="tbl_calendar">
+										<table>
+											<caption>달력</caption>
+											<thead>
+											<tr>
+												<th scope="col">Mo</th>
+												<th scope="col">Tu</th>
+												<th scope="col">We</th>
+												<th scope="col">Th</th>
+												<th scope="col">Fr</th>
+												<th scope="col">Sa</th>
+												<th scope="col" class="su">Su</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td><span class="no_sel">1</span></td>
+												<td><span class="no_sel">2</span></td>
+												<td><span class="no_sel">3</span></td>
+												<td><span class="no_sel">4</span></td>
+												<td class="su"><span class="no_sel">5</span></td>
+											</tr>
+											<tr>
+												<td><span class="no_sel">6</span></td>
+												<td><span class="no_sel">7</span></td>
+												<td><span class="no_sel">8</span></td>
+												<td><span class="no_sel">9</span></td>
+												<td><span class="no_sel">10</span></td>
+												<td><span class="no_sel">11</span></td>
+												<td class="su"><span class="no_sel">12</span></td>
+											</tr>
+											<tr>
+												<td><a href="#">13</a></td>
+												<td><a href="#">14</a></td>
+												<td><a href="#">15</a></td>
+												<td><a href="#">16</a></td>
+												<td><a href="#">17</a></td>
+												<td><a class="chk_date" href="#">18</a></td>
+												<td class="su"><a href="#">19</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">20</a></td>
+												<td><a href="#">21</a></td>
+												<td><a href="#">22</a></td>
+												<td><a href="#">23</a></td>
+												<td><a href="#">24</a></td>
+												<td><a href="#">25</a></td>
+												<td class="su"><a href="#">26</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">27</a></td>
+												<td><a href="#">28</a></td>
+												<td><a href="#">29</a></td>
+												<td><a href="#">30</a></td>
+												<td><a href="#">31</a></td>
+												<td></td>
+												<td class="su"></td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+									<a class="btn_cal_close" href="#"><img src="../../images/pcweb/common/btn_close_calendar.gif" alt="달력 레이어 팝업 닫기" /></a>
+								</div>
+							</div>
+						</div>
+						<!-- //달력 -->
+					</div>
+					<!-- //시작일 -->
+
+					<div class="gap">~</div>
+
+					<!-- 종료일 -->
+					<div class="inputs_date type02">
+						<input type="text" class="input_txt input_date" title="주문 상품 검색 중 시작,종료 일자중 종료일자" value="2015.11.17" />
+						<a href="#" class="btn_calendar">날짜 선택</a>
+						<!-- 달력 -->
+						<div class="box_calendar type02">
+							<div class="tit_cal">기간 선택</div>
+							<div class="cal_lcont">
+								<div class="cont_cal">
+									<div class="set_cal_control">
+										<a class="btn_prev_month" href="#"><img src="../../images/pcweb/common/btn_calendar_prev.gif" alt="이전 달 보기" /></a>
+										<a class="btn_next_month" href="#"><img src="../../images/pcweb/common/btn_calendar_next.gif" alt="다음 달 보기" /></a>
+										<strong class="current_year">2015.12</strong>
+									</div>
+									<div class="tbl_calendar">
+										<table>
+											<caption>달력</caption>
+											<thead>
+											<tr>
+												<th scope="col">Mo</th>
+												<th scope="col">Tu</th>
+												<th scope="col">We</th>
+												<th scope="col">Th</th>
+												<th scope="col">Fr</th>
+												<th scope="col">Sa</th>
+												<th scope="col" class="su">Su</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td><span class="no_sel">1</span></td>
+												<td><span class="no_sel">2</span></td>
+												<td><span class="no_sel">3</span></td>
+												<td><span class="no_sel">4</span></td>
+												<td class="su"><span class="no_sel">5</span></td>
+											</tr>
+											<tr>
+												<td><span class="no_sel">6</span></td>
+												<td><span class="no_sel">7</span></td>
+												<td><span class="no_sel">8</span></td>
+												<td><span class="no_sel">9</span></td>
+												<td><span class="no_sel">10</span></td>
+												<td><span class="no_sel">11</span></td>
+												<td class="su"><span class="no_sel">12</span></td>
+											</tr>
+											<tr>
+												<td><a href="#">13</a></td>
+												<td><a href="#">14</a></td>
+												<td><a href="#">15</a></td>
+												<td><a href="#">16</a></td>
+												<td><a href="#">17</a></td>
+												<td><a class="chk_date" href="#">18</a></td>
+												<td class="su"><a href="#">19</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">20</a></td>
+												<td><a href="#">21</a></td>
+												<td><a href="#">22</a></td>
+												<td><a href="#">23</a></td>
+												<td><a href="#">24</a></td>
+												<td><a href="#">25</a></td>
+												<td class="su"><a href="#">26</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">27</a></td>
+												<td><a href="#">28</a></td>
+												<td><a href="#">29</a></td>
+												<td><a href="#">30</a></td>
+												<td><a href="#">31</a></td>
+												<td></td>
+												<td class="su"></td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+									<a class="btn_cal_close" href="#"><img src="../../images/pcweb/common/btn_close_calendar.gif" alt="달력 레이어 팝업 닫기" /></a>
+								</div>
+							</div>
+
+							<div class="cal_rcont">
+								<div class="cont_cal">
+									<div class="set_cal_control">
+										<a class="btn_prev_month" href="#"><img src="../../images/pcweb/common/btn_calendar_prev.gif" alt="이전 달 보기" /></a>
+										<a class="btn_next_month" href="#"><img src="../../images/pcweb/common/btn_calendar_next.gif" alt="다음 달 보기" /></a>
+										<strong class="current_year">2015.12</strong>
+									</div>
+									<div class="tbl_calendar">
+										<table>
+											<caption>달력</caption>
+											<thead>
+											<tr>
+												<th scope="col">Mo</th>
+												<th scope="col">Tu</th>
+												<th scope="col">We</th>
+												<th scope="col">Th</th>
+												<th scope="col">Fr</th>
+												<th scope="col">Sa</th>
+												<th scope="col" class="su">Su</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td><span class="no_sel">1</span></td>
+												<td><span class="no_sel">2</span></td>
+												<td><span class="no_sel">3</span></td>
+												<td><span class="no_sel">4</span></td>
+												<td class="su"><span class="no_sel">5</span></td>
+											</tr>
+											<tr>
+												<td><span class="no_sel">6</span></td>
+												<td><span class="no_sel">7</span></td>
+												<td><span class="no_sel">8</span></td>
+												<td><span class="no_sel">9</span></td>
+												<td><span class="no_sel">10</span></td>
+												<td><span class="no_sel">11</span></td>
+												<td class="su"><span class="no_sel">12</span></td>
+											</tr>
+											<tr>
+												<td><a href="#">13</a></td>
+												<td><a href="#">14</a></td>
+												<td><a href="#">15</a></td>
+												<td><a href="#">16</a></td>
+												<td><a href="#">17</a></td>
+												<td><a class="chk_date" href="#">18</a></td>
+												<td class="su"><a href="#">19</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">20</a></td>
+												<td><a href="#">21</a></td>
+												<td><a href="#">22</a></td>
+												<td><a href="#">23</a></td>
+												<td><a href="#">24</a></td>
+												<td><a href="#">25</a></td>
+												<td class="su"><a href="#">26</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">27</a></td>
+												<td><a href="#">28</a></td>
+												<td><a href="#">29</a></td>
+												<td><a href="#">30</a></td>
+												<td><a href="#">31</a></td>
+												<td></td>
+												<td class="su"></td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+									<a class="btn_cal_close" href="#"><img src="../../images/pcweb/common/btn_close_calendar.gif" alt="달력 레이어 팝업 닫기" /></a>
+								</div>
+							</div>
+						</div>
+						<!-- //달력 -->
+					</div>
+					<!-- //종료일 -->
+
+					<div class="btn_inquiry"><button type="button" class="btn03 c01"><span>조회하기</span></button></div>
+				</div>
+
+				<script type="text/javascript">
+				$(window).ready(function(){
+					$(".d_gradeSelect").each(function(){
+						var $this = $(this);
+						var $links = $this.find("a");
+						$links.on("click",function(e){
+							$links.removeClass("on");
+
+							$(this).addClass("on");
+							e.preventDefault();
+						})
+					})
+				})
+				</script>
+
+			</div>
+			<!-- //조회기간 -->
+
+			<!-- 검색 결과가 없을 경우 -->
+			<div class="no_data02 layer_pop">
+				<p class="no_data_txt">
+					<img class="img_no_data" src="../../images/pcweb/common/ico_no_data01.png" alt="">
+					최근 1개월 내 주문내역이 없습니다. <br />
+					조회기간은 상단의 기간 선택을 통해 다시 조회하실 수 있습니다.
+				</p>
+			</div>
+			<!--// 검색 결과가 없을 경우 -->
+
+			<!-- 선택한 상품을 출력 -->
+			<div class="title mt20">
+				<h3 class="tit_srh">검색결과</h3>
+			</div>
+			<div class="board02 mt10 box_scroll">
+				<table>
+					<caption>주문상품 선택시 출력되는 표이며 상품정보, 결제금액 순으로 제공합니다.</caption>
+					<colgroup>
+						<col /><col style="width:30%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">상품정보</th>
+							<th scope="col">결제금액</th>
+						</tr>
+					</thead>
+					<tbody>
+					<!-- 주문별 그룹핑하여 상품 리스트 제공 -->
+					<tr>
+						<td colspan="2">
+							<ul class="list_h_dot01">
+								<li><strong>주문번호 :</strong> <a class="btn_txt01 c04" href="#"><span>M151116002268196 ( PC주문 )</span></a></li>
+								<li>주문일 : 2015-11-18</li>
+							</ul>
+						</td>
+					</tr>
+					<!--// 주문별 그룹핑하여 상품 리스트 제공 -->
+					<tr>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+										<span class="goods_txt03">
+											옵션: A-1 화이트셔츠/100
+										</span>
+									</a>
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+					<tr>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+										<span class="goods_txt03">
+											옵션: A-1 화이트셔츠/100
+										</span>
+									</a>
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+					<tr>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+										<span class="goods_txt03">
+											옵션: A-1 화이트셔츠/100
+										</span>
+									</a>
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="mt10">* 최대 5개 상품까지 선택 가능합니다.</div>
+			<!--// 선택한 상품을 출력 -->
+
+			<div class="set_btn">
+				<button type="button" class="btn02"><span>상품선택</span></button>
+				<button type="button" class="btn02 c01"><span>취소</span></button>
+				<button type="button" class="btn02 c01"><span>닫기</span></button>
+			</div>
+		</div>
+		<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+	</div>
+</div>
+<!--// 주문 상품 검색 -->
+
+<!-- 장바구니 상품 선택 -->
+<div class="layer_pop on">
+	<div class="lay_wrap">
+		<div class="lay_tit"><strong>장바구니 상품 선택</strong></div>
+		<div class="lay_cont">
+			<!-- 장바구니 상품이 없을 경우 -->
+			<div class="no_data02 layer_pop">
+				<p class="no_data_txt">
+					<img class="img_no_data" src="../../images/pcweb/common/ico_no_data01.png" alt="">
+					장바구니에 담긴 상품이 없습니다.
+				</p>
+			</div>
+			<!--// 장바구니 상품이 없을 경우 -->
+			<!-- 선택한 상품을 출력 -->
+			<div class="title mt20">
+				<h3 class="tit_srh">검색결과</h3>
+			</div>
+			<div class="board02 mt10 box_scroll">
+				<table>
+					<caption>장바구니 상품 선택 선택시 출력되는 표이며 상품정보, 판매금액 순으로 제공합니다.</caption>
+					<colgroup>
+						<col style="width:5%;"><col /><col style="width:30%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" title="전체 상품 선택" class="chkbox"></th>
+							<th scope="col">상품정보</th>
+							<th scope="col">판매금액</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="vat">
+							<input type="checkbox" title="개별 상품 선택" class="chkbox">
+						</td>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+										<span class="goods_txt03">
+											옵션: A-1 화이트셔츠/100
+										</span>
+									</a>
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+					<tr>
+						<td class="vat">
+							<input type="checkbox" title="개별 상품 선택" class="chkbox">
+						</td>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+										<span class="goods_txt03">
+											옵션: A-1 화이트셔츠/100
+										</span>
+									</a>
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+					<tr>
+						<td class="vat">
+							<input type="checkbox" title="개별 상품 선택" class="chkbox">
+						</td>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+										<span class="goods_txt03">
+											옵션: A-1 화이트셔츠/100
+										</span>
+									</a>
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="mt10">* 최대 5개 상품까지 선택 가능합니다.</div>
+			<!--// 선택한 상품을 출력 -->
+
+			<div class="set_btn">
+				<button type="button" class="btn02"><span>상품선택</span></button>
+				<button type="button" class="btn02 c01"><span>취소</span></button>
+				<button type="button" class="btn02 c01"><span>닫기</span></button>
+			</div>
+		</div>
+		<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+	</div>
+</div>
+<!--// 장바구니 상품 선택 -->
+
+<!-- 찜한 상품 선택 -->
+<div class="layer_pop on">
+	<div class="lay_wrap">
+		<div class="lay_tit"><strong>찜한 상품 선택</strong></div>
+		<div class="lay_cont">
+			<!-- 찜한 상품이 없을 경우 -->
+			<div class="no_data02 layer_pop">
+				<p class="no_data_txt">
+					<img class="img_no_data" src="../../images/pcweb/common/ico_no_data01.png" alt="">
+					찜한 상품이 없습니다.
+				</p>
+			</div>
+			<!--// 찜한 상품이 없을 경우 -->
+
+			<!-- 선택한 상품을 출력 -->
+			<div class="board02 mt10 box_scroll">
+				<table>
+					<caption>찜한 상품 선택시 출력되는 표이며 상품정보, 판매금액 순으로 제공합니다.</caption>
+					<colgroup>
+						<col style="width:5%;"><col /><col style="width:30%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" title="전체 상품 선택" class="chkbox"></th>
+							<th scope="col">상품정보</th>
+							<th scope="col">판매금액</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="vat">
+							<input type="checkbox" title="개별 상품 선택" class="chkbox">
+						</td>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+									</a>
+									<!-- 2016-12-20 -->
+									<label for="slt_prd_01" class="ir">상품선택</label>
+									<select id="slt_prd_01" class="pop_slt">
+										<option>상품을 선택하세요</option>
+									</select>
+									<!--// 2016-12-20 -->
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+					<tr>
+						<td class="vat">
+							<input type="checkbox" title="개별 상품 선택" class="chkbox">
+						</td>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+									</a>
+									<!-- 2016-12-20 -->
+									<label for="slt_prd_02" class="ir">상품선택</label>
+									<select id="slt_prd_02" class="pop_slt">
+										<option>상품을 선택하세요</option>
+									</select>
+									<!--// 2016-12-20 -->
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+					<tr>
+						<td class="vat">
+							<input type="checkbox" title="개별 상품 선택" class="chkbox">
+						</td>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+									</a>
+									<!-- 2016-12-20 -->
+									<label for="slt_prd_03" class="ir">상품선택</label>
+									<select id="slt_prd_03" class="pop_slt">
+										<option>상품을 선택하세요</option>
+									</select>
+									<!--// 2016-12-20 -->
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+				</table>
+			</div>
+			<div class="mt10">* 최대 5개 상품까지 선택 가능합니다.</div>
+			<!--// 선택한 상품을 출력 -->
+
+			<div class="set_btn">
+				<button type="button" class="btn02"><span>상품선택</span></button>
+				<button type="button" class="btn02 c01"><span>취소</span></button>
+				<button type="button" class="btn02 c01"><span>닫기</span></button>
+			</div>
+		</div>
+		<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+	</div>
+</div>
+<!--// 찜한 상품 선택 -->
+
+<!-- 상품 코드 검색 -->
+<div class="layer_pop on">
+	<div class="lay_wrap">
+		<div class="lay_tit"><strong>상품 코드 검색</strong></div>
+		<div class="lay_cont">
+			<div class="box_period03">
+				<input type="text" class="input_txt" placeholder="상품 코드를 입력해 주세요." value="" title="상품코드" /><button type="button" >검색</button>
+				<div class="mt10">* 상품코드는 상품상세페이지에서 확인 가능합니다.</div>
+			</div>
+
+			<!-- 검색 결과 없을 경우 -->
+			<div class="no_data02 layer_pop">
+				<p class="no_data_txt">
+					<img class="img_no_data" src="../../images/pcweb/common/ico_no_data01.png" alt="">
+					검색된 결과가 없습니다.<br />
+					다시 검색해 주시기 바랍니다.
+				</p>
+			</div>
+			<!--// 검색 결과 없을 경우 -->
+
+			<!-- 선택한 상품을 출력 -->
+			<div class="title mt20">
+				<h3 class="tit_srh">검색결과</h3>
+			</div>
+			<div class="board02 mt10">
+				<table>
+					<caption>상품 코드 검색시 출력되는 표이며 상품정보, 판매금액 순으로 제공합니다.</caption>
+					<colgroup>
+						<col style="width:5%;"><col /><col style="width:30%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" title="전체 상품 선택" class="chkbox"></th>
+							<th scope="col">상품정보</th>
+							<th scope="col">판매금액</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="vat">
+							<input type="checkbox" title="개별 상품 선택" class="chkbox">
+						</td>
+						<td class="alig_l vat">
+							<div class="list_detail_ord">
+								<div class="goods_imgs">
+									<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+								</div>
+								<div class="goods_info">
+									<a href="#" class="goods_link">
+										<span class="goods_txt01">[모던하우스]</span>
+										<span class="goods_txt02">(셀링포인트)R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 스카프 플라오 스카프</span>
+									</a>
+									<!-- 2016-12-20 -->
+									<label for="slt_prd_04" class="ir">상품선택</label>
+									<select id="slt_prd_04" class="pop_slt">
+										<option>상품을 선택하세요</option>
+									</select>
+									<!--// 2016-12-20 -->
+								</div>
+							</div>
+						</td>
+						<td><strong class="tx_price">12,500,200</strong>원</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="mt10">* 최대 5개 상품까지 선택 가능합니다.</div>
+			<!--// 선택한 상품을 출력 -->
+
+			<div class="set_btn">
+				<button type="button" class="btn02"><span>상품선택</span></button>
+				<button type="button" class="btn02 c01"><span>취소</span></button>
+				<button type="button" class="btn02 c01"><span>닫기</span></button>
+			</div>
+		</div>
+		<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+	</div>
+</div>
+<!--// 상품 코드 검색 -->
+			</div>
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

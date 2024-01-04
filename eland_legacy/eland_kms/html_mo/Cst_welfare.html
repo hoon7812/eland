@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//복지제도 탭
+	$(function(){
+		$(".faq_menu .tab li").click(function(){
+			tId = $(this).index();
+
+			$(this).parent().find("a").removeClass("on");
+			$(this).find("a").addClass("on");
+			$(".cst_wel").removeClass("on");
+			$(".cst_wel").eq(tId).addClass("on");
+		});
+	});
+	//자주하는 질문 탭
+	$(function(){
+		$(".faq_list dt").click(function(e){
+			e.preventDefault();
+			if($(this).next().css("display") == "block"){
+				$(".faq_list dd").slideUp(200);
+			} else {
+				$(".faq_list dd").slideUp(200);
+				$(this).next().slideDown(200);
+			}
+		});
+		$(".faq_list dd .a_btn").click(function(e){
+			e.preventDefault();
+			$(this).parent().parent().parent().find("dd").slideUp(200);
+		});
+	});
+</script>
+
+
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>복지제도 안내</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+	</div>		
+	<div class="cst_con">
+		<div class="faq_menu">
+			<ul class="tab">
+				<li><a href="#" class="on"><span>제도안내</span></a></li> <!-- 선택시 .on 클래스 추가 -->
+				<li><a href="#"><span>이용방법</span></a></li>
+				<li><a href="#"><span>포인트 사용</span></a></li>
+				<li><a href="#"><span>복지정책</span></a></li>
+				<li><a href="#"><span>결제가이드</span></a></li>
+			</ul>
+		</div>
+
+		<div class="cst_wel on">
+			<div class="wel_box">
+				<div class="tit">선진형 복지제도(Flexible Benefits Plan)</div>
+				<div class="txt_wel">
+					이랜드그룹에서는 임직원 개인이 자신의 라이프스타일 및 선호도에 따라 자유롭게 복리후생 내용을 선택하는 선진형 복지제도(Flexible Benefits Plan)를 실시하고 있습니다.<br /><br />
+					이랜드몰에서는 임직원 맞춤형 서비스를 위해 자사부터 특정까지 다양한 상품과 복지서비스를 제공하고 있으며, 취급 상품 및 서비스의 가격 경쟁력 확보를 위해 최선을 다하고 있습니다.
+				</div>
+			</div>
+			<div class="wel_box">
+				<div class="tit">이랜드몰에서 제공하는 임직원 혜택</div>
+				<div class="txt_wel">
+					<span class="point">이랜드몰 내 모든 상품을 복지 포인트로 구매하실 수 있습니다.</span><br /><br />
+					또 임직원을 위한 특별 할인 코너인 <복지몰>을 신설해  PB부터 특정까지 다양한 상품을 더욱 저렴하게 구매하실 수 있습니다.<br />일반 카테고리에서 구매하실 경우 가격 차이가 발생할 수 있사오니, 먼저 <복지몰> 카테고리에서 가격 확인 후 구매하시기 바랍니다.
+				</div>
+			</div>
+			<div class="wel_box">
+				<div class="tit">복지몰 접속 방법</div>
+				<div class="txt_wel">
+					임직원 인증 후 로그인하시면, 복지몰 카테고리를 확인하실 수 있습니다.
+				</div>
+				<div class="img_wel">
+					<img src="../images/mobile/cs/img_wel1.png" alt="복지몰 접속 방법 설명 이미지">
+				</div>
+				<div class="ir">사이드 메뉴를 여신 후, 전문관 메뉴 중 임직원복지몰을 클릭하시면 접속하실 수 있습니다.</div>
+			</div>
+		</div>
+
+		<div class="cst_wel">
+			<div class="wel_box">
+				<div class="tit">임직원 이용방법</div>
+				<div class="txt_wel">
+					이가입하신 이랜드몰 아이디로 임직원 인증 절차를 완료해 주십시오. <br />인증이 완료되면 복지 포인트로 이랜드몰 전 상품을 구매하실 수 있습니다.
+				</div>
+			</div>
+			<div class="wel_box">
+				<div class="tit">Q. 임직원 인증 절차는 어떻게 되나요? </div>
+				<div class="txt_wel">
+					<ol class="order_circle">
+						<li><span class="order">①</span>PC로 이랜드몰 로그인 후, 계열사를 선택해주세요.</li>
+						<li><span class="order">②</span>회사 아이디(@eland.co.kr 제외)와 비밀 번호를 입력해주세요.</li>
+						<li><span class="order">③</span>인증 버튼을 누르시면 인증이 완료됩니다.</li>
+					</ol>
+					<span class="point after_order">한번만 인증하시면, 다음 방문부터 추가 절차 없이 자유롭게 이용하실 수 있습니다.</span>
+					<div class="img_wel">
+						<img src="../images/mobile/cs/img_wel2.png" alt="복지몰 인증 절차 이미지">
+					</div>
+				</div>
+			</div>
+			<div class="wel_box">
+				<div class="tit">Q. 모바일에서도 임직원 복지 제도를 이용할 수 있나요?</div>
+				<div class="txt_wel">
+					네. PC와 동일하게 이랜 드몰 모바일웹 또는 APP에서 이용하실 수 있습니다.
+				</div>
+			</div>
+			<div class="wel_box">
+				<div class="tit">Q. 임직원을 위한 특별할인 상품이 있나요?</div>
+				<div class="txt_wel">
+					임직원 할인 상품은 <복지몰> 코너에 별도로 게시하고 있습니다.<br />임직원 특가 상품의 경우, 타 카테고리 검색 후 구매 하시면 일반 회원가로 적용되오니, 꼭 복지몰과 비교 후 구매해 주십시오.<br />상품군은 이랜드리테일 PB부터 특정 상품까지 시즌에 따라 변경될 수 있습니다.
+				</div>
+			</div>
+			<div class="wel_box">
+				<div class="tit">Q. 복지 포인트 소진 후에는 복지몰 이용이 불가한가요?</div>
+				<div class="txt_wel">
+					아니요. 임직원이라면 다른 결제 방법으로도 복지몰 상품을 구매하실 수 있습니다.
+				</div>
+			</div>
+		</div>
+
+		<div class="cst_wel">
+			<div class="wel_box">
+				<div class="tit">포인트 사용 구성</div>
+				<div class="txt_wel">
+					<strong class="black">복지몰을 포함해 이랜드몰 내 모든 상품을 복지 포인트로 구매하실 수 있습니다.</strong>
+					단, 상품권(이랜드리테일 / 상품권)은 <span class="point">복지포인트의 40% 내에서만 구매</span>하실 수 있습니다.
+				</div>
+				<div class="img_wel">
+					<img src="../images/mobile/cs/img_wel3.png" alt="v포인트 사용 구성 이미지"><br>
+					<dl class="ir">
+						<dt>상품 구매 복지 포인트 100%</dt>
+						<dd>이랜드 임직원 복지포인트로 상품을 자유롭게 구입 할 수 있습니다.</dd>
+						<dt>상품권 구매 복지 포인트의 40%</dt>
+						<dd>복지 포인트의 40%한도 내에서 이랜드 상품권을 구입 할 수 있습니다.</dd>
+					</dl>
+
+					<span class="txt">이랜드리테일 상품권은 복지 포인트 외에 <span class="point">현금이나 카드로 추가 구매하실 수 없습니다.</span></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="cst_wel">
+			<div class="wel_box">
+				<div class="tit">
+					<span class="n1">정책 FAQ</span>
+					임직원에게 부여되는 포인트는 얼마인가요?
+				</div>
+				<div class="txt_wel">
+					복지 포인트는 직급에 따라 상이하며, 상반기와 하반기로 나누어 각 50%씩 지급됩니다.
+				</div>
+
+				<table class="tbl_wel">
+					<colgroup>
+						<col style="width:20%;">
+						<col style="width:26%;">
+						<col style="width:27%;">
+						<col style="width:27%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">직급</th>
+							<th scope="col">기본포인트<span>(연단위)</span></th>
+							<th scope="col">직급포인트<span>(연단위)</span></th>
+							<th scope="col">합계</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="alC">임원</td>
+							<td rowspan="8" class="alC">전 임직원<br>공통<br>500,000</td>
+							<td class="alR">1,400,000</td>
+							<td class="alR">1,900,000</td>
+						</tr>
+						<tr>
+							<td class="alC">부장</td>
+							<td class="alR">700,000</td>
+							<td class="alR">1,200,000</td>
+						</tr>
+						<tr>
+							<td class="alC">차장</td>
+							<td class="alR">600,000</td>
+							<td class="alR">1,100,000</td>
+						</tr>
+						<tr>
+							<td class="alC">과장</td>
+							<td class="alR">500,000</td>
+							<td class="alR">1,000,000</td>
+						</tr>
+						<tr>
+							<td class="alC">대리</td>
+							<td class="alR">300,000</td>
+							<td class="alR">800,000</td>
+						</tr>
+						<tr>
+							<td class="alC">주임</td>
+							<td class="alR">200,000</td>
+							<td class="alR">700,000</td>
+						</tr>
+						<tr>
+							<td class="alC">사원</td>
+							<td class="alR">100,000</td>
+							<td class="alR">600,000</td>
+						</tr>
+						<tr>
+							<td class="alC">계약직</td>
+							<td class="alR">0</td>
+							<td class="alR">500,000</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="wel_box">
+				<div class="tit">
+					<span class="n2">정책 FAQ</span>
+					복지 포인트의 사용 기준 및 지급 원칙이 궁금합니다.
+				</div>
+				<dl>
+					<dt>1. 지급 기준</dt>
+					<dd>복지몰 오픈일 기준, 재직자에게만 포인트 부여</dd>
+				</dl>
+				<dl>
+					<dt>2. 사용 기준</dt>
+					<dd>상반기, 하반기에 각 50%씩 지급</dd>
+					<dd>상반기 미사용 포인트는 하반기로 이월</dd>
+					<dd>하반기 미사용 포인트는 11월 30일 일괄 소멸 <br />(해당년도에만 사용 가능하며 다음해 이월 불가)</dd>
+					<dd>타인에게 양도 불가</dd>
+					<dd>금전적으로 청구 불가</dd>
+				</dl>
+				<dl>
+					<dt>3. 신분 변동자 포인트 부여원칙</dt>
+					<dd>적용 법인간 이동 시, 포인트 연계하여 사용 가능</dd>
+					<dd>미적용 법인에서 적용 법인으로 이동/ 신규 입사 직원 :<br />발령일 기준으로 해당 반기에 일할 계산하여 지급<br />(이랜드몰 임직원 인증 후 지급)</dd>
+					<dd>적용 법인에서 미적용 법인으로 이동 / 퇴사자 – 발령일 기준으로 포인트 모두 소멸</dd>
+					<dd>승진자, 정직원 전환자 – 승진 및 전환 인사발령일 기준으로 일할 계산하여 다음 반기에 지급(일괄 지급)</dd>
+				</dl>
+			</div>
+			<div class="wel_box">
+				<div class="tit">
+					<span class="n3">정책 FAQ</span>
+					기존 법정/기본 복리후생 제도는 어떻게 되나요?
+				</div>
+				<div class="step">
+					<div class="txt">법정/기본 복리후생은 선택적 복리후생 제도(복지 포인트)와 별개로 유지됩니다.</div>
+					<div class="box">
+						<div class="txt1">
+							<span class="stxt">임직원 복리후생</span>
+							<span>명절 선물 / 생일 선물 / 포상제도<br>(사업부별 선택사항)</span>
+						</div>
+						<div class="txt2">
+							<span>복지 포인트로 전환하여 운영합니다.</span>
+						</div>
+					</div>
+					<div class="box">
+						<div class="txt1">
+							<span class="stxt">법정 복리후생</span>
+							<span>4대 보험 / 건강검진(기본)</span>
+							<span class="stxt mt10">기본 복리후생</span>
+							<span>경조금</span>
+						</div>
+						<div class="txt2">
+							<span>법정 복리후생 및 기본 복리후생 제도는 종전과 동일하게 유지됩니다</span>
+						</div>
+					</div>
+					<!-- <span class="info">일괄적으로 부여되는 포인트 외에 사업부에서 시행하는 각종 포상을 복지몰 포인트로 부여할 수 있습니다.<br>문의는 CAO실로 해주세요.</span> -->
+				</div>
+			</div> 
+		</div>
+
+		<div class="cst_wel">
+			<div class="wel_box">
+				<div class="tit">결제가이드</div>
+				<div class="txt_wel">
+					이랜드몰은 이랜드 임직원을 위해 다양한 상품을 합리적인 가격에 소개합니다. 복지 포인트 또는 기타 결제 방법을 통해 보다 편리하게 임직원 복지 혜택을 누려보십시오.
+				</div>
+			</div>
+			<div class="wel_box">
+				<div class="tit">결제 프로세스</div>
+				<div class="txt_wel">주문 및 결제내역은 “마이페이지” 에서 확인이 가능합니다.</div>
+				<div class="img_wel mt20">
+					<img src="../images/mobile/cs/img_wel4.png" alt="결제 프로세스 이미지">
+				</div>
+			</div>
+			<div class="wel_box">
+				<div class="tit">결제수단</div>
+				<dl class="pay">
+					<dt>1. 복지 포인트</dt>
+					<dd><span class="num">(1)</span>복지 포인트란 임직원 개인별로 배분된 복지 예산으로 이랜드몰에서 현금처럼 사용하실 수 있습니다.</dd>
+					<dd><span class="num">(2)</span>결제와 동시에 복지 포인트가 차감되므로, 별도의 차감 절차가 필요하지 않습니다.<span class="mg">복지 포인트가 부족할 경우 일반 결제 수단(신용카드, 실시간 계좌이체, 무통장 입금 등)과 혼합하여 사용하실 수 있습니다.</span></dd>
+				</dl>
+				<dl class="pay">
+					<dt>2. 일반 결제</dt>
+					<dd><span class="num">(1)</span>결제 수단 : 신용카드 / 실시간 계좌이체 / 무통장 입금 / 카카오페이 / 페이코</dd>
+					<dd>(2) 결제 방법 : 복지 포인트가 부족하거나 소진되었을 경우 일반 결제 수단을 통해 복지몰 및 이랜드몰 상품을 구매하실 수 있습니다.<span class="mg">복지몰은 임직원 특가 코너로 일반 결제로도 구매하실 수 있사오니, 적극 활용 부탁 드립니다.</span></dd>
+				</dl>
+			</div>
+			<div class="wel_box">
+				<div class="tit">이랜드리테일 포인트 적립</div>
+				<div class="txt_wel">복지 포인트 사용시에도 이랜드리테일 포인트 적립이 가능합니다.</div>
+			</div>
+			<div class="wel_box">
+				<div class="tit">프로모션 및 쿠폰 할인</div>
+				<div class="txt_wel">복지 포인트 결제 시, 타 프로모션 및 쿠폰과 중복 적용이 불가합니다.</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- //cst_con -->
+
+</div>
+<!-- //CONTENT -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

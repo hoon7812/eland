@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//주문서 작성
+	$(function(){
+
+	    var ordTit = $(".order_content .ico_open");
+
+	    ordTit.bind("click", function(e){
+	        e.preventDefault();
+	        $(this).parent().find(".ico_open").toggleClass("selected");
+	        $(this).parent().find(".txt_order").toggleClass("on");
+	        $(this).parent().next().slideToggle(200);
+	        $(this).parent().find(".pay_noti").toggle();
+	    });
+	    $(".tab_list02 li").bind("click", function(e){
+	        e.preventDefault();
+	        tabId = $(this).index();
+
+	        $(this).parent().parent().parent().find(".tab_list02 li").removeClass("selected");
+	        $(this).addClass("selected");
+	        $(this).parent().parent().parent().find(".tab_con > div").hide();
+	        $(this).parent().parent().parent().find(".tab_con > div").eq(tabId).show();
+	    });
+	});
+
+	//결제수단 탭
+	$(function(){
+	    var tabPay = $(".tab_pay > li");
+	    var tabPayCon = $(".tab_pay_con > div");
+
+	    tabPay.bind("click", function(e){
+	        e.preventDefault();
+
+			var tabDis = $(this).find("a").hasClass("disable");
+
+			if(tabDis === true){
+				return false;
+			}else{
+		        payId = $(this).index();
+
+		        tabPay.find("a").removeClass("selected");
+		        tabPay.find("a").eq(payId).addClass("selected");
+		        tabPayCon.hide();
+		        tabPayCon.eq(payId).show();
+			}
+
+	    });
+	});
+
+	//나의 배송지 목록
+	$(function(){
+		$(".pop_con02 .tbl_ship tr").bind("click", function(){
+			shipId = $(this).index();
+
+			$(".pop_con02 .tbl_ship th input").removeAttr('checked');
+			$(".pop_con02 .tbl_ship th input").eq(shipId).attr('checked', true);
+		});
+	});
+
+	//주소찾기
+	$(function(){
+		var tabAddr = $(".pop_addr .tab_addr > li");
+		var conAddr = $(".pop_addr .con_addr > div");
+
+		tabAddr.bind("click", function(){
+			addrId = $(this).index();
+
+			tabAddr.removeClass("on");
+			tabAddr.eq(addrId).addClass("on");
+			conAddr.removeClass("on");
+			conAddr.eq(addrId).addClass("on");
+		});
+	});
+
+	//배송메세지 160307
+	$(function(){
+		$(".sel_box").change(function(){ 
+		    $(".sel_box option:selected").each(function(){
+			    msg = $(this).text();
+		        if(msg == "메시지 직접입력 (배송기사/매장 전달)"){
+		        	$(this).parent().parent().parent().find("select").hide();
+		        	$(this).parent().parent().parent().find(".msg_selected").hide();
+		        	$(this).parent().parent().append("<textarea cols='30' rows='2' class='w100'>배송 시 전달사항을 입력해주세요.</textarea>");
+		        }else{
+			        $(this).parent().parent().find(".msg_selected").show().find("span").text(msg);
+		        }
+		    });  
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>주문서 작성</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>
+		</h2>
+	</div>	
+	<div class="order_content">
+		<!-- 배송정보 -->
+		<div class="step01">
+			<div class="ord_tit">
+				<h3 class="tit_order">1. 배송정보</h3>
+				<span class="txt_order">서울 금천구 가산디지털1로 151 가산디지털1로 151</span>
+				<a href="#" class="ico_open"><span>열기</span></a>
+			</div>
+			<div class="ord_con">
+				<div class="ord_box01">
+					<div class="tit_top">
+						주문하시는 분
+						<div class="btn_ord"><a href="#addrList" class="btn_brd02 c01">주문자 변경</a></div>
+					</div>
+					<div class="tab_con">
+						<ul>
+							<li>
+								<div class="box_tit">이름</div>
+								<div class="box_con">홍길동</div>
+							</li>
+							<li>
+								<div class="box_tit">이메일</div>
+								<div class="box_con">abcdefg@gmail.com</div>
+							</li>
+							<li>
+								<div class="box_tit">휴대전화</div>
+								<div class="box_con">010-0000-0000</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ord_box01">
+					<div class="tit_top noline">받으시는 분</div>
+					<div class="tab_list02">
+						<ul>
+							<li class="selected"><a href="#">배송지</a></li>
+							<li><a href="#">새로운 배송지</a></li>
+						</ul>
+					</div>
+					<div class="tab_con">
+						<!-- 배송지 -->
+						<div class="shipping">
+							<ul>
+								<li>
+									<div class="box_tit">배송지명</div>
+									<div class="box_con">
+										우리집
+										<div class="btn_addr"><a href="#" onclick="fn_layer_open('addrList');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">배송지 목록</a></div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">이름</div>
+									<div class="box_con">홍길동</div>
+								</li>
+								<li>
+									<div class="box_tit">전화번호</div>
+									<div class="box_con">010-0000-0000</div>
+								</li>
+								<li>
+									<div class="box_tit">휴대전화</div>
+									<div class="box_con">02-0000-0000</div>
+								</li>
+								<li>
+									<div class="box_tit">주소</div>
+									<div class="box_con">
+										[08506] 서울 금천구 가산디지털1호51, 신한이노플렉스 803호(가산동)
+										<p class="noti">* 해당 주소로 배송 불가한 상품이 존재 합니다.</p>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">배송메세지</div>
+									<div class="box_con">
+										<select class="sel_box w100">
+											<option>선택해 주세요</option>
+											<option>부재시 경비(관리)실에 맡겨주세요</option>
+											<option>빠른 배송 부탁드려요</option>
+											<option>부재시 문 앞에 놓아주세요</option>
+											<option>파손의 위험이 있는 상품이 있습니다.</option>
+											<option>배송전에 연락주세요</option>
+											<option>메시지 직접입력 (배송기사/매장 전달)</option>
+										</select>
+										<!-- 배송메세지 선택 -->
+										<div class="msg_selected">
+											<span>선택해 주세요</span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- 새로운 배송지 -->
+						<div class="shipping_new">
+							<ul>
+								<li>
+									<div class="box_tit">배송지명</div>
+									<div class="box_con">
+										<div class="inp_txt"><input type="text" title="배송지명" placeholder="10자 이내"></div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">이름</div>
+									<div class="box_con">
+										<div class="inp_txt"><input type="text" title="이름"></div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">전화번호</div>
+									<div class="box_con">
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>02</option>
+												</select>
+											</li>
+											<li><input type="text" title="전화번호 가운데자리" value="0000"></li>
+											<li><input type="text" title="전화번호 세번째자리" value="0000"></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">휴대전화</div>
+									<div class="box_con">
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>010</option>
+												</select>
+											</li>
+											<li><input type="text" title="휴대전화 가운데자리" value="0000"></li>
+											<li><input type="text" title="휴대전화 세번째자리" value="0000"></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">주소</div>
+									<div class="box_con">
+										<div class="addr">
+											<input type="text" title="우편번호" class="w100">
+											<div class="absR">
+												<a href="#" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+											</div>
+										</div>
+										<div class="addr_etc">
+											<div class="inp_txt"><input type="text"  title="도로명주소"></div>
+										</div>
+										<p class="chk"><input type="checkbox" id="chk_addr"> <label for="chk_addr">기본 배송지로 설정</label></p>
+									</div>
+								</li>
+
+								<li>
+									<div class="box_tit">배송메세지</div>
+									<div class="box_con">
+										<select class="sel_box w100">
+											<option>선택해 주세요</option>
+											<option>부재시 경비(관리)실에 맡겨주세요</option>
+											<option>빠른 배송 부탁드려요</option>
+											<option>부재시 문 앞에 놓아주세요</option>
+											<option>파손의 위험이 있는 상품이 있습니다.</option>
+											<option>배송전에 연락주세요</option>
+											<option>메시지 직접입력 (배송기사/매장 전달)</option>
+											<option>테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 </option>
+										</select>
+										<!-- 배송메세지 선택 -->
+										<div class="msg_selected">
+											<span>선택해 주세요</span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //배송정보 -->
+
+		<!-- 주문하실 상품 -->
+		<div class="step02">
+			<div class="ord_tit">
+				<h3 class="tit_order">2. 주문하실 상품(5)</h3>
+				<span class="txt_order">택배배송(<em>3</em>)/매장수령(<em>2</em>)</span>
+				<a href="#" class="ico_open"><span>열기</span></a>
+			</div>
+			<div class="ord_con">
+
+				<!-- 복지포인트사용 안내 -->
+				<div class="ord_staff">
+					<!-- 160405 삭제 <ul class="txt_staff">
+						<li>복지혜택을 받기 위해서 "직원할인"을 선택해 주세요.</li>
+						<li>직원 할인  외 기타 쿠폰 사용시 복지 포인트를 사용하실 수 없습니다.</li>
+						<li>직원 할인이 적용되지 않는 일반 상품은 복지 포인트를 사용하실 수 없습니다.</li>
+					</ul> -->
+					<!-- 160405 추가 -->
+					<ul class="txt_staff ty2">
+						<li>*복지 포인트로 결제하실 경우, <할인> 항목에서 ‘복지포인트 사용’을 체크해 주십시오.</li>
+						<li>*복지 포인트 사용 시, 타 프로모션 및 쿠폰과 중복 적용이 불가합니다.</li>
+					</ul>
+					<!-- //160405 추가 -->
+				</div>
+					
+				<!-- 택배배송 -->
+				<div class="basket_box">
+					<div class="tit_delivery">
+						<strong>택배배송</strong> (<em class="num">3</em>개)
+					</div>
+
+					<div class="prd_group">
+						<div class="basket_prd">
+							<a href="#">
+								<div class="basket_txt">
+									<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+									<span class="prodtit">포트메리온</span>
+									<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt">옵션명/1개</span>
+								</div>
+							</a>
+							<div class="ord_coupon">
+								<ul>
+									<li>
+										<div class="left">
+											<select class="w100">
+												<option>직원할인10%</option>
+											</select>
+										</div>
+										<div class="right"><em>-7,800</em>원</div>
+									</li>
+									<li>
+										<div class="left">
+											<select class="w100">
+												<option>혜택을 선택해주세요</option><!-- 160511 수정 -->
+											</select>
+										</div>
+										<div class="right"><em>-15,000</em>원</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 상품금액,배송비 합계 -->
+						<div class="prd_total02">
+							<span class="price">307,200<em>원</em></span> + 
+							<span class="price">2,500<em>원(배송비)</em></span>
+							<!-- <p class="txt_info">* 선택한 주소로 배송 불가한 상품</p> -->
+						</div>
+					</div>
+
+					<!-- 복지몰 전용 상품(임직원 전용 상품) -->
+					<div class="prd_group">
+						<div class="basket_prd">
+							<a href="#">
+								<div class="basket_txt">
+									<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+									<span class="prodtit">포트메리온</span>
+									<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt">베이지브라운_55/1개</span>
+									<span class="prodopt">사은품: 위스카스파우치 50g</span>
+								</div>
+							</a>
+						</div>
+						<!-- 상품금액,배송비 합계 -->
+						<div class="prd_total02">
+							<span class="price">307,200<em>원</em></span> + 
+							<span class="price">0<em>원(배송비)</em></span>
+						</div>
+					</div>
+					<!-- //복지몰 전용 상품(임직원 전용 상품) -->
+
+					<!-- 복지제외 일반 상품 -->
+					<div class="prd_group">
+						<div class="basket_prd">
+							<a href="#">
+								<div class="basket_txt">
+									<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+									<span class="prodtit">포트메리온</span>
+									<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt">
+										<span class="set">세트상품1 : </span>선택1) 폼폼이케이스 / 아이폰6S / REDRED <br>
+										<span class="set">세트상품2 : </span>선택2) 폼폼이케이스 / 아이폰6S / REDRED
+									</span>
+								</div>
+							</a>
+							<div class="ord_coupon">
+								<ul>
+									<li>
+										<div class="left">
+											<select class="w100">
+												<option>직원할인쿠폰5% (~12.30)</option>
+											</select>
+										</div>
+										<div class="right"><em>-15,000</em>원</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 상품금액,배송비 합계 -->
+						<div class="prd_total02">
+							<span class="price">307,200<em>원</em></span> + 
+							<span class="price">0<em>원(배송비)</em></span>
+						</div>
+					</div>
+					<!-- //복지제외 일반 상품 -->
+				</div>
+				<!-- //택배배송 -->
+
+				<!-- 매장수령 -->
+				<div class="basket_box mt30">
+					<div class="sel_store">
+						<div class="ico_store"><strong>매장수령</strong> (<em>2</em>개)</div>
+					</div>
+
+					<div class="prd_group">
+						<div class="basket_prd">
+							<a href="#">
+								<div class="basket_txt">
+									<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+									<span class="prodtit">포트메리온</span>
+									<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt"><em>[NC 평촌점]</em> BK(89)/M / 1개</span>
+								</div>
+							</a>
+							<div class="ord_coupon">
+								<ul>
+									<li>
+										<div class="left">
+											<select class="w100">
+												<option>직원할인쿠폰5% (~12.30)</option>
+											</select>
+										</div>
+										<div class="right"><em>-7,800</em>원</div>
+									</li>
+									<li>
+										<div class="left">
+											<select class="w100">
+												<option>혜택을 선택해주세요</option><!-- 160511 수정 -->
+											</select>
+										</div>
+										<div class="right"><em>-15,000</em>원</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 상품금액,배송비 합계 -->
+						<div class="prd_total02">
+							<span class="price">307,200<em>원</em></span>
+							<!-- <p class="txt_info">* 선택한 주소로 배송 불가한 상품</p> -->
+						</div>
+						<!-- 방문일자 선택 -->
+						<div class="prd_total">
+							<div class="store line01">
+								<!-- 매장 위치정보 추가 160624 -->
+								<a href="#" onclick="fn_layer_open('pop_store');return false;" onkeypress="this.onclick;">
+									<span class="shop">NC 평촌점</span>
+									<span class="location">(지상5층/스파오)</span>
+								</a>
+								<!-- //매장 위치정보 추가 160624 -->
+							</div>
+							<select class="w60">
+								<option>방문 일자를 선택 해 주세요</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="prd_group">
+						<div class="basket_prd">
+							<a href="#">
+								<div class="basket_txt">
+									<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+									<span class="prodtit">포트메리온</span>
+									<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+									<span class="prodprice">77,200<span class="won">원</span></span>
+									<span class="prodopt"><em>[NC 평촌점]</em> BK(89)/M / 1개</span>
+								</div>
+							</a>
+							<div class="ord_coupon">
+								<ul>
+									<li>
+										<div class="left">
+											<select class="w100">
+												<option>직원할인쿠폰5% (~12.30)</option>
+											</select>
+										</div>
+										<div class="right"><em>-7,800</em>원</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 상품금액,배송비 합계 -->
+						<div class="prd_total02">
+							<span class="price">307,200<em>원</em></span>
+							<!-- <p class="txt_info">* 선택한 주소로 배송 불가한 상품</p> -->
+						</div>
+						<!-- 방문일자 선택 -->
+						<div class="prd_total">
+							<div class="store line01">
+								<!-- 매장 위치정보 추가 160624 -->
+								<a href="#" onclick="fn_layer_open('pop_store');return false;" onkeypress="this.onclick;">
+									<span class="shop">NC 평촌점</span>
+									<span class="location">(지상5층/스파오)</span>
+								</a>
+								<!-- //매장 위치정보 추가 160624 -->
+							</div>
+							<select class="w60">
+								<option>방문 일자를 선택 해 주세요</option>
+							</select>
+						</div>
+					</div>
+
+
+				</div>
+				<!-- //매장수령 -->
+
+			</div>
+		</div>
+		<!-- //주문하실 상품 -->
+
+		<!-- 할인 혜택 -->
+		<div class="step03">
+			<div class="ord_tit">
+				<h3 class="tit_order">3. 할인 혜택</h3>
+				<span class="txt_order"><strong>57,175</strong> <span class="coupon">원 할인</span></span>
+				<a href="#" class="ico_open"><span>열기</span></a>
+			</div>
+			<div class="ord_con">
+				<!-- 상품 할인쿠폰 -->
+				<div class="ord_box02">
+					<div class="tab_con">
+						<ul>
+							<li>
+								<div class="box_tit">상품 할인쿠폰</div>
+								<div class="box_con alR">
+									<em>57,175</em><span class="coupon">원 할인</span>
+									<span class="staff">(직원할인/쿠폰적용 <em>11,800</em>원)</span>
+								</div>
+							</li>
+							<li>
+								<div class="box_tit">장바구니 <br>할인쿠폰</div>
+								<div class="box_con">
+									<select class="w100">
+										<option>장바구니 10,000원 할인쿠폰</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<div class="box_tit">
+									<p>포인트</p>
+									<span class="txt_poi">(<strong class="fc04">1,257,175</strong>원)</span>
+								</div>
+								<div class="box_con">
+									<div class="inp_point">
+										<input type="text" class="w100" title="포인트" value="1,000,000">
+										<span class="won">원</span>
+										<a href="#" class="btn_brd02 c01">모두사용</a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="box_tit">
+									<p>복지 포인트</p>
+									<span class="txt_poi">(<strong class="fc04">1,257,175</strong>원)</span>
+								</div>
+								<div class="box_con">
+									<p class="alR fc02"><strong>5,000</strong>원 사용</p>
+								</div>
+							</li>
+							<!-- 160322 추가 -->
+							<li>
+								<span class="txt_poi">*상품권 이용가능: <strong>220,000</strong>원</span>
+							</li>
+							<!-- //160322 추가 -->
+							<li>
+								<div class="box_tit">
+									<p>자기계발 포인트</p>
+									<span class="txt_poi">(<strong class="fc04">1,257,175</strong>원)</span>
+								</div>
+								<div class="box_con">
+									<p class="alR fc02"><strong>5,000</strong>원 사용</p>
+								</div>
+							</li>
+							<li>
+								<div class="box_tit">
+									<p>예치금</p>
+									<span class="txt_poi">(<strong class="fc04">1,257,175</strong>원)</span>
+								</div>
+								<div class="box_con">
+									<div class="inp_point">
+										<input type="text" class="w100" title="예치금" value="1,000,000">
+										<span class="won">원</span>
+										<a href="#" class="btn_brd02 c01">모두사용</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 배송비 쿠폰 -->
+				<div class="ord_box02">
+					<dl>
+						<dt>배송비 쿠폰</dt>
+						<dd><span>배송비 쿠폰은  쿠폰별 정해진 금액 이하의 배송비에  자동 적용 됩니다.</span></dd>
+						<dd>
+							<input type="checkbox" id="chk_coupon01">
+							<label for="chk_coupon01" class="num">2,500원</label>
+							<span class="txt_chk">배송비 최대 3,000원 할인쿠폰 (~11.30)</span>
+						</dd>
+						<dd>
+							<input type="checkbox" id="chk_coupon02">
+							<label for="chk_coupon02" class="num">10,000원</label>
+							<span class="txt_chk">배송비 최대 10,000원 할인쿠폰 (~11.30)</span>
+						</dd>
+					</dl>
+				</div>
+				<!-- //배송비 쿠폰 -->
+
+				<!-- 사은품 -->
+				<div class="ord_box02">
+					<dl>
+						<dt>사은품</dt>
+						<dd>
+							<input type="checkbox" id="chk_gift01">
+							<label for="chk_gift01">[사은품] 글라스락 이유식 보관용기 500ml 1개</label>
+						</dd>
+						<dd>
+							<input type="checkbox" id="chk_gift02">
+							<label for="chk_gift02">[사은품] 사은품명 증정개수</label>
+						</dd>
+						<dd>
+							<select class="w100">
+								<option>[사은품] 글라스락 이유식 보관용기 500ml 1개</option>
+							</select>
+						</dd>
+					</dl>
+				</div>
+				<!-- //사은품 -->
+
+				<!-- 결제합계 -->
+				<div class="ord_sum">
+					<ul>
+						<li>
+							<div class="txt">상품금액</div>
+							<div class="price"><strong>561,600</strong>원</div>
+						</li>
+						<li>
+							<div class="txt">쿠폰/할인금액</div>
+							<div class="price"><span class="coupon"><em>-67,175</em>원</span></div>
+						</li>
+						<li>
+							<div class="txt">포인트/예치금 사용</div>
+							<div class="price"><span class="point"><em>-1,000</em>원</span></div>
+						</li>
+						<li>
+							<div class="txt">복지 포인트 사용</div>
+							<div class="price"><strong class="point">-93,200</strong>원</div>
+						</li>
+						<li>
+							<div class="txt">총 배송비</div>
+							<div class="price"><strong>0</strong>원</div>
+						</li>
+						<li class="total">
+							<div class="txt">합계</div>
+							<div class="price"><strong>12,493,425</strong>원</div>
+						</li>
+					</ul>
+					<div class="buy_point">
+						<div class="txt">구매시 적립 예정 포인트</div>
+						<div class="price"><strong>780</strong>원</div>
+					</div>
+				</div>
+				<!-- //결제합계 -->
+			</div>
+		</div>
+		<!-- //할인 혜택 -->
+
+		<!-- 결제수단 -->
+		<div class="step04">
+			<div class="ord_tit">
+				<h3 class="tit_order">4. 결제수단</h3>
+				<span class="txt_order on"><em>무통장 입금(하나은행)</em> <a href="#" class="btn_s">변경</a></span>
+				<a href="#" class="ico_open selected"><span>열기</span></a>
+				<div class="pay_noti">
+					<p class="box">* 보증보험 신청과 환불방법 선택은 결제수단 상세 설정에서 추가 진행해 주시기 바랍니다.</p>
+				</div>
+			</div>
+			<div class="ord_con">
+				<div class="ord_payment">
+					<ul class="tab_pay">
+						<li class="pay01"><a href="#" class="selected"><span>신용카드</span></a></li>
+						<li class="pay02"><a href="#"><span>실시간<br>계좌이체</span></a></li>
+						<li class="pay03"><a href="#"><span>무통장입금</span></a></li>
+						<li class="pay04"><a href="#"><span>카카오페이</span></a></li>
+					</ul>
+
+					<div class="tab_pay_con">
+						<div style="display:block">
+							<div class="pay_card">
+								<div class="sel_card">
+									<div class="card_name">
+										<select class="w100">
+											<option>신한카드</option>
+										</select>
+									</div>
+									<div class="card_num">
+										<select class="w100">
+											<option>일시불</option>
+										</select>
+									</div>
+								</div>
+								<ol class="pay_info">
+									<li>30만원 이상 결제 시에는 공인인증서가 필요합니다.</li>
+									<li>공인인증서가 없으신 고객님께서는 공인인증서를 발급 받아주시기 바랍니다.</li>
+									<li>무이자행사 진행중인 카드도 결제 시에는 일반할부로 표시되나, 카드사에서 무이자 할부로 처리되어 할부수수료가 청구되지 않습니다.</li>
+									<li>결제를 시작한 후에는 결제완료 시까지 기다려주세요.</li>
+								</ol>
+								<div class="btn_area">
+									<a href="#" onclick="fn_layer_open('pop_card');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">카드혜택 보기</a>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="pay_insurance">
+								<div class="bank_box01">
+									<p>* 안전한 거래를 위해 현금결제시 <span class="fc01">"소비자피해보상보험서비스"</span>에 가입신청 하실 수 있습니다.</p>
+									<div class="btn_area">
+										<a href="#" onclick="fn_layer_open('mall_guarantee');return false;" onkeypress="this.onclick;" class="btn_brd02 c06">쇼핑몰 보증보험서 발급신청</a>
+									</div>
+								</div>
+							</div>
+							<div class="pay_receipt">
+								<div class="tit">
+									<input type="checkbox" id="chk_receipt" checked="">
+									<label for="chk_receipt">현금 영수증 발급</label>
+								</div>
+
+								<div class="tab_list02">
+									<ul>
+										<li class="selected"><a href="#">개인 소득공제</a></li>
+										<li><a href="#">지출 증빙용</a></li>
+									</ul>
+								</div>
+								<div class="tab_con">
+									<!-- 개인 소득공제 -->
+									<div class="tax01">
+										<div class="inp_box">
+											<input type="radio" name="rdo_phone" id="rdo_phone01" checked="">
+											<label for="rdo_phone01">휴대폰 번호</label>
+											<input type="radio" name="rdo_phone" id="rdo_phone02" class="inp_rdo">
+											<label for="rdo_phone02">현금영수증 카드번호</label>
+										</div>
+										<!-- 휴대폰 번호 -->
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>02</option>
+												</select>
+											</li>
+											<li><input type="text" title="휴대전화 가운데자리" value="0000"></li>
+											<li><input type="text" title="휴대전화 세번째자리" value="0000"></li>
+										</ul>
+										<!-- 현금영수증 카드번호 -->
+										<ul class="inp_card01">
+											<li><input type="text" class="alC" title="현금영수증 카드번호"></li>
+											<li><input type="text" class="alC" title="현금영수증 카드번호"></li>
+											<li><input type="text" class="alC" title="현금영수증 카드번호"></li>
+											<li><input type="text" class="alC" title="현금영수증 카드번호"></li>
+										</ul>
+									</div>
+									<!-- 지출 증빙용 -->
+									<div class="tax02">
+										<div class="inp_box">사업자 등록번호</div>
+										<ul class="inp_tel01">
+											<li><input type="text" class="alC" title="사업자 등록번호"></li>
+											<li><input type="text" class="alC" title="사업자 등록번호"></li>
+											<li><input type="text" class="alC" title="사업자 등록번호"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="pay_insurance">
+								<div class="sel_bank">
+									<select class="w100">
+										<option>기업은행</option>
+									</select>
+								</div>
+								<ul class="pay_list">
+									<li>
+										<span class="pay_tit">예금주</span>
+										<span class="pay_txt">이랜드몰닷컴</span>
+									</li>
+									<li>
+										<span class="pay_tit">입금마감일</span>
+										<span class="pay_txt">2016-01-08 (수요일)</span>
+									</li>
+									<li>
+										<span class="pay_tit">입금자</span>
+										<span class="pay_txt">
+											<input type="text" class="w100" title="입금자명" value="홍길동">
+										</span>
+									</li>
+								</ul>
+								<div class="bank_box01">
+									<p>* 안전한 거래를 위해 현금결제시 <span class="fc01">"소비자피해보상보험서비스"</span>에 가입신청 하실 수 있습니다.</p>
+									<div class="btn_area">
+										<a href="#" onclick="fn_layer_open('mall_guarantee');return false;" onkeypress="this.onclick;" class="btn_brd02 c06">쇼핑몰 보증보험서 발급신청</a>
+									</div>
+								</div>
+							</div>
+							<div class="pay_receipt">
+								<div class="tit">
+									<input type="checkbox" id="chk_receipt2" checked="">
+									<label for="chk_receipt2">현금 영수증 발급</label>
+								</div>
+
+								<div class="tab_list02">
+									<ul>
+										<li class="selected"><a href="#">개인 소득공제</a></li>
+										<li><a href="#">지출 증빙용</a></li>
+									</ul>
+								</div>
+								<div class="tab_con">
+									<!-- 개인 소득공제 -->
+									<div class="tax01">
+										<div class="inp_box">
+											<input type="radio" name="rdo_phone" id="rdo_phone03" checked="">
+											<label for="rdo_phone03">휴대폰 번호</label>
+											<input type="radio" name="rdo_phone" id="rdo_phone04" class="inp_rdo">
+											<label for="rdo_phone04">현금영수증 카드번호</label>
+										</div>
+										<!-- 휴대폰 번호 -->
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>02</option>
+												</select>
+											</li>
+											<li><input type="text" class="alC" title="휴대전화 가운데자리" value="0000"></li>
+											<li><input type="text" class="alC" title="휴대전화 세번째자리" value="0000"></li>
+										</ul>
+										<!-- 현금영수증 카드번호 -->
+										<ul class="inp_card01">
+											<li><input type="text" class="alC" title="현금영수증 카드번호"></li>
+											<li><input type="text" class="alC" title="현금영수증 카드번호"></li>
+											<li><input type="text" class="alC" title="현금영수증 카드번호"></li>
+											<li><input type="text" class="alC" title="현금영수증 카드번호"></li>
+										</ul>
+									</div>
+									<!-- 지출 증빙용 -->
+									<div class="tax02">
+										<div class="inp_box">사업자 등록번호</div>
+										<ul class="inp_tel01">
+											<li><input type="text" class="alC" title="사업자 등록번호"></li>
+											<li><input type="text" class="alC" title="사업자 등록번호"></li>
+											<li><input type="text" class="alC" title="사업자 등록번호"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="pay_receipt">
+								<div class="tit">
+									<input type="checkbox" id="chk_refund">
+									<label for="chk_refund">환불 방법 선택 동의</label>
+								</div>
+
+								<div class="tab_list02">
+									<ul>
+										<li class="selected"><a href="#">입력계좌로 환불</a></li>
+										<li><a href="#">예치금으로 환불</a></li>
+									</ul>
+								</div>
+								<div class="tab_con">
+									<!-- 입력계좌로 환불 -->
+									<div class="tax01">
+										<!-- 환불계좌가 저장된 회원일 경우 -->
+										<div class="refund_box">
+											<span class="txt">주문취소나 품절 시</span>
+											<span class="bank">국민은행 11604137218106(홍길동)</span>
+											<span class="txt">으로 입금</span>
+											<a href="#" class="btn_line01 c01">새로 입력</a>
+										</div>
+										<!-- //환불계좌가 저장된 회원일 경우 -->
+
+										<!-- 은행선택, 예금주명, 계좌번호 입력 -->
+										<div class="pay_insurance">
+											<ul class="pay_list">
+												<li>
+													<span class="pay_tit">은행선택</span>
+													<span class="pay_txt">
+														<select class="w100">
+															<option>은행선택</option>
+														</select>
+													</span>
+												</li>
+												<li>
+													<span class="pay_tit">예금주명</span>
+													<span class="pay_txt">
+														<input type="text" class="w100" title="예금주명">
+													</span>
+												</li>
+												<li>
+													<span class="pay_tit">계좌번호</span>
+													<span class="pay_txt">
+														<input type="text" title="계좌번호" class="w100">
+														<span class="btn"><a href="#" class="btn_line01 c01">계좌 확인</a></span>
+													</span>
+												</li>
+												<li>
+													<span class="pay_tit">&nbsp;</span>
+													<span class="pay_txt">
+														<input type="checkbox" id="chk_refundSave">
+														<label for="chk_refundSave">환불계좌정보 저장하기</label>
+													</span>
+												</li>
+											</ul>
+										</div>
+										<!-- //은행선택, 예금주명, 계좌번호 입력 -->
+									</div>
+									<!-- 예치금으로 환불 -->
+									<div class="tax02">
+										<span class="ir">예치금으로 환불</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="pay_kakao">
+								<span class="ir">카카오페이 결제하기</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="pay_chk">
+						<input type="checkbox" id="chk_pay01" checked>
+						<label for="chk_pay01">지금 선택한 결제수단 다음에도 사용</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //결제수단 -->
+
+		<!-- 주문 동의 -->
+		<div class="ord_agree">
+			<div class="agree01">
+				<div class="ord_tit">
+					<div class="tit_order">
+						<input type="checkbox" id="chk_agree01" checked> <label for="chk_agree01">(필수) 주문 내역 확인 동의</label>
+					</div>
+					<a href="#" class="ico_open"><span>열기</span></a>
+				</div>
+				<div class="ord_con">
+					<p class="txt_agree">주문할 상품의 상품명, 가격, 배송정보에 동의 하십니까? (전자상거래법 제8조 2항)</p>
+				</div>
+			</div>
+			<div class="agree02">
+				<div class="ord_tit">
+					<div class="tit_order">
+						<input type="checkbox" id="chk_agree02"> <label for="chk_agree02">(필수)보석/명품 상품 청약철회 약관동의</label>
+					</div>
+					<a href="#" class="ico_open"><span>열기</span></a>
+				</div>
+				<div class="ord_con">
+					<p class="txt_agree">택(TAG)제거로 인하여 상품의 가치가 현저히 하락할 경우 교환/반품 기간 내라도 교환/반품이 제한 될 수 있으니 양해바랍니다. 이에 동의 하시겠습니까?  (단, 제품 자체에 하자가 있는 경우는 반품/교환이 가능하오며, 이 경우 제조사의 규정에 따라 처리됩니다.)</p>
+				</div>
+			</div>
+		</div>
+		<!-- //주문 동의 -->
+
+	</div>
+	<!-- //order_content -->
+
+	<div class="btn_order">
+		<a href="#" class="btn_bg03 c01"><strong>493,425원 결제하기</strong></a>
+	</div>
+
+</div>
+<!-- //CONTENT -->
+
+
+
+<!-- layer_popup : 나의 배송지 목록 -->
+<div id="addrList" class="layer_fix myaddr"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">나의 배송지 목록</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+
+			<table class="tbl_ship">
+				<caption>나의 배송지 목록의 전화번호, 휴대전화, 도로명주소를 표시합니다.</caption>
+				<colgroup>
+					<col style="width:45px;">
+					<col style="">
+				</colgroup>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship01" title="배송지 선택" checked></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동 <em>(기본 배송지)</em></strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship02" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship03" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship04" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship05" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship06" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship07" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+			</table>
+			
+			<!-- 160325 위치수정 -->
+			<div class="btn_ship">
+				<ul class="btn_list02">
+					<li><a href="#" class="btn_brd03 c01">취소</a></li>
+					<li><a href="#" class="btn_bg06 c01">확인</a></li>
+				</ul>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 매장 위치 보기 -->
+
+<!-- layer_popup : 주소찾기 -->
+<div id="addrFind" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">주소찾기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="pop_addr">
+				<ul class="tab_addr">
+					<li class="on"><span>도로명으로 찾기</span></li>
+					<li><span>지번으로 찾기</span></li>
+				</ul>
+
+				<div class="con_addr">
+					<!-- 도로명으로 찾기 -->
+					<div class="on">
+						<h3 class="ir">도로명으로 찾기</h3>
+						<div class="sch_box">
+							<div class="addr_info">
+								<p>찾고 싶으신 도로명 또는 건물번호를 입력해 주세요.</p>
+								<p>도로명과 건물번호를 함께 입력하면 보다 빠르게</p>
+								<p>결과를 확인할 수 있습니다.</p>
+								<p class="stxt">예) 반포대로 1, 세종대로 23, 수지로 11</p>
+							</div>
+							<ul class="sch01">
+								<li>
+									<select class="w100">
+										<option>시/도</option>
+									</select>
+								<li>
+								<li>
+									<select class="w100">
+										<option>시/군/구</option>
+									</select>
+								</li>
+							</ul>
+							<div class="sch02">
+								<input type="text" class="w100" title="도로명주소" value="가산디지털1로">
+								<a href="#" class="btn_brd02 c05">검색</a>
+							</div>
+						</div>
+
+						<!-- 검색결과 -->
+						<div class="sch_result">
+							<p>* 검색결과 중 해당 주소를 클릭하시면 자동 입력됩니다.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 도로명 주소 검색결과의 우편번호, 주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>우편번호</th>
+										<th>주소</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="alC">08593</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08592</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08591</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //검색결과 -->
+
+						<!-- 검색결과 없음 -->
+						<div class="txt_nodata">
+							<em>"본마을1길"</em> 에 대한 검색결과가 없습니다.<br>
+							도로명을 다시 입력해 주세요.
+						</div>
+						<!-- //검색결과 없음 -->
+
+						<!-- 상세주소 입력 -->
+						<div class="sch_result">
+							<p>나머지 상세 주소를 입력하신 후<br>주소입력 버튼을 눌러 주세요.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 상세주소 입력의 우편번호, 기본주소, 상세주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="col"><span class="fc02">우편번호</span></th>
+										<td>08593</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">기본주소</span></th>
+										<td>서울특별시 금천구 가산디지털2로 11 지식산업센타</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">상세주소</span></th>
+										<td>
+											<div class="addr_detail">
+												<input type="text" class="w100" title="상세주소" value="상세주소를 입력해 주세요">
+												<a href="#" class="btn_brd02 c05">입력완료</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="addr_result">
+								<div class="txt_info">자동 변환된 도로명 주소 입니다. 변환된 주소 정보를 확인해 주세요.</div>
+								<div class="result_box">
+									<dl>
+										<dt>도로명주소</dt>
+										<dd>[08593] 서울 금천구 가산디지털2로 11, 지식산업센터 302호 (가산동)</dd>
+									</dl>
+									<dl>
+										<dt>지번주소</dt>
+										<dd>[08593] 서울 금천구 가산동 343-8번지 지식산업센터 302호</dd>
+									</dl>
+									<!-- 지번주소가 여러개 일 경우 -->
+									<dl>
+										<dt>지번주소 <span class="stxt">(검색된 주소중 하나를 선택해 주세요)</span></dt>
+										<dd>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr01" name="rdo_addr">
+												<label for="rdo_addr01">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr02" name="rdo_addr">
+												<label for="rdo_addr02">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+										</dd>
+									</dl>
+									<!-- //지번주소가 여러개 일 경우 -->
+								</div>
+							</div>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //상세주소 입력 -->
+
+					</div>
+					
+					<!-- 지번으로 찾기 -->
+					<div>
+						<div class="sch_box">
+							<div class="addr_info">
+								<p class="stxt">찾고 싶으신 주소의<br>동(읍/면)이름을 입력해 주세요.</p>
+							</div>
+							<div class="sch03">
+								<ul>
+									<li class="absL"><label for="inp_add01">동(읍/면)</label></li>
+									<li class="inp_box"><input type="text" id="inp_add01" class="w100" value="가산디지털1로"></li>
+									<li class="absR"><a href="#" class="btn_brd02 c05">검색</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- 검색결과 -->
+						<div class="sch_result">
+							<p>* 검색결과 중 해당 주소를 클릭하시면 자동 입력됩니다.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 도로명 주소 검색결과의 우편번호, 주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>우편번호</th>
+										<th>주소</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="alC">08593</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08592</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08591</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //검색결과 -->
+
+						<!-- 검색결과 없음 -->
+						<div class="txt_nodata">
+							<em>"후인동"</em> 에 대한 검색결과가 없습니다.<br>
+							도로명을 다시 입력해 주세요.
+						</div>
+						<!-- //검색결과 없음 -->
+						
+
+						<!-- 상세주소 입력 -->
+						<div class="sch_result">
+							<p>나머지 상세 주소를 입력하신 후<br>주소입력 버튼을 눌러 주세요.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 상세주소 입력의 우편번호, 기본주소, 상세주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="col"><span class="fc02">우편번호</span></th>
+										<td>08593</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">기본주소</span></th>
+										<td>서울특별시 금천구 가산디지털2로 11 지식산업센타</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">상세주소</span></th>
+										<td>
+											<div class="addr_detail">
+												<input type="text" class="w100" title="상세주소" value="번지수를 포함한 상세주소를 입력해 주세요.">
+												<a href="#" class="btn_brd02 c05">입력완료</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="addr_result">
+
+								<div class="txt_info">자동 변환된 도로명 주소 입니다. 변환된 주소 정보를 확인해 주세요.</div>
+								<div class="result_box">
+									<dl>
+										<dt>도로명주소</dt>
+										<dd>[08593] 서울 금천구 가산디지털2로 11, 지식산업센터 302호 (가산동)</dd>
+									</dl>
+									<dl>
+										<dt>지번주소</dt>
+										<dd>[08593] 서울 금천구 가산동 343-8번지 지식산업센터 302호</dd>
+									</dl>
+									<!-- 지번주소가 여러개 일 경우 -->
+									<dl>
+										<dt>지번주소 <span class="stxt">(검색된 주소중 하나를 선택해 주세요)</span></dt>
+										<dd>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr03" name="rdo_addr">
+												<label for="rdo_addr03">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr04" name="rdo_addr">
+												<label for="rdo_addr04">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+										</dd>
+									</dl>
+									<!-- //지번주소가 여러개 일 경우 -->
+								</div>
+							</div>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //상세주소 입력 -->
+					</div>
+				</div>
+
+			</div>
+
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 주소찾기 -->
+
+<!-- layer_popup : 매장 위치 보기 -->
+<div id="pop_store" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">매장 위치 보기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="store">
+				<h3 class="tit">NC 강서점</h3>
+				<ul>
+					<li><span>- 주소 : </span>서울특별시 송파구 충민로66번지 </li>
+					<li><span>- 대표번호 : </span>02-2157-5000</li>
+					<li><span>- 영업시간 : </span>AM10 : 30 ~ PM10 : 00</li>
+					<li><span>- 매장위치 : </span>지상 2층 /  SPAO</li>
+				</ul>
+				<div class="store_api">
+					<img src="../images/mobile/temp/temp_store.jpg" alt="">
+				</div>
+				<div class="btn_area alC">
+					<a href="#" class="btn_line01 c02">닫기</a>
+				</div>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 매장 위치 보기 -->
+
+<!-- layer_popup : 카드혜택 -->
+<div id="pop_card" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">카드혜택</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+
+			<div class="card_tit"><strong>무이자할부 안내</strong></div>
+			<table class="tbl_address mt10">
+				<caption>무이자할부 안내 테이블 이며 카드사, 적용금액, 할부개월 ,기간순으로 제공합니다.</caption>
+				<colgroup>
+					<col style="width:25%;">
+					<col >
+				</colgroup>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-01.gif" alt="비씨카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-02.gif" alt="KB국민카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-03.gif" alt="외환카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-04.gif" alt="삼성카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-05.gif" alt="신한카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-08.gif" alt="현대카드"></span></td>
+					<td>
+						5만원 이상 (2,3,4,5 개월)
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+			</table>
+
+			<div class="card_tit mt20"><strong>부분 무이자할부 안내</strong></div>
+			<table class="tbl_address mt10">
+				<caption>부분 무이자할부 안내 테이블 이며 카드사, 적용금액, 할부개월, 고객 부담 수수료순으로 제공합니다.</caption>
+				<colgroup>
+					<col style="width:25%;">
+					<col >
+				</colgroup>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-09.gif" alt="롯데카드"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-11.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-12.gif" alt="수협"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-14.gif" alt="우리카드"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-15.gif" alt="NH농협카드"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><span class="card"><img src="../images/mobile/order/img_cardlogo-16.gif" alt="제주은행"></span></td>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5만원 이상 (6개월)
+						<p class="fc02">1회차 수수료 고객 부담</p>
+					</td>
+				</tr>
+			</table>
+
+			<div class="card_tit mt20"><strong>청구할인 프로모션</strong></div>
+			<table class="tbl_address mt10">
+				<caption>청구할인 프로모션 테이블 이며 카드사, 적용금액, 할인내역 ,기간순으로 제공합니다.</caption>
+				<colgroup>
+					<col style="width:25%;">
+					<col >
+				</colgroup>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-17.gif" alt="광주은행"></span></td>
+					<td>
+						3만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-18.gif" alt="전북은행"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-24.gif" alt="하나카드"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="card"><img src="../images/mobile/order/img_cardlogo-26.gif" alt="씨티뱅크"></span></td>
+					<td>
+						5만원 이상
+						<p>(5% 청구할인/1인1일1회/최대3천원)</p>
+						<p class="fc02">2015.10.19~2015.10.25(총7일)</p>
+					</td>
+				</tr>
+			</table>
+
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 카드혜택 -->
+
+<!-- layer_popup : 쇼핑몰 보증보험서 발급신청 -->
+<div id="mall_guarantee" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">소비자피해보상보험서비스</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="consumer_damages">
+				<div class="top_txt">
+					<p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한구매안전서비스 "<strong>소비자피해보상보험서비스</strong>"를 이용하실 수 있습니다.</p>
+					<p class="mt10">쇼핑몰 보증보험 증서 발급을 원하시는 경우 아래 선택사항을 확인해주세요.</p>
+				</div>
+				<div class="bg_box">
+					<p>“전자상거래 등에서의 소비자보호에 관한 법률”에 근거한 전자보증서비스는 서울보증보험(주)이 인터넷쇼핑몰에서의 상품주문(결제)시점에 소비자에게 보험증서를 발급하여 인터넷쇼핑몰 사고로 인한 소비자의 금전적 피해를 100%보상하는 서비스입니다.</p>
+					<ul>
+						<li>&middot; 보상대상 : 상품미배송, 환불거부(환불사유시), 반품거부(반품사유시), 쇼핑몰부도</li>
+						<li>&middot; 전자보증서 발급에는 별도의 수수료가 부과되지 않습니다.</li>
+						<li>&middot; 전자보증서 발급에 필요한 주문고객 개인정보는 증권 발급에만 사용되며, 다른 용도로 사용되지 않습니다.</li>
+					</ul>
+				</div>
+				<div class="consumer_apply">
+					<div class="tit">&middot; 서울보증보험 신청</div>
+					<div class="inp_chk">
+						<ul>
+							<li>
+								<input type="checkbox" id="inp_apply01">
+								<label for="inp_apply01">쇼핑몰 보증보험에 가입하시겠습니까?</label>	
+							</li>
+						</ul>
+					</div>
+					<div class="inp_birth">
+						<ul class="birth">
+							<li><span class="txt">생년월일</span></li>
+							<li class="year">
+								<select>
+									<option>1988</option>
+								</select>
+								<span class="stxt">년</span>
+							</li>
+							<li>
+								<select>
+									<option>00</option>
+								</select>
+								<span class="stxt">월</span>
+							</li>
+							<li>
+								<select>
+									<option>00</option>
+								</select>
+								<span class="stxt">일</span>
+							</li>
+						</ul>
+						<ul class="gender">
+							<li><span class="txt">성별</span></li>
+							<li>
+								<input type="radio" name="inp_gender" id="inp_gender01" checked="">
+								<label for="inp_gender01">남자</label>
+							</li>
+							<li>
+								<input type="radio" name="inp_gender" id="inp_gender02">
+								<label for="inp_gender02">여자</label>
+							</li>
+						</ul>
+					</div>
+					<div class="inp_chk2">
+						<ul>
+							<li>
+								<input type="checkbox" id="inp_apply02">
+								<label for="inp_apply02">보증보험 가입을 위한 개인정보를 제공 및 보험증권 이메일 수신에 동의하며 가입합니다.</label>	
+							</li>
+							<li>
+								<input type="checkbox" id="inp_apply03">
+								<label for="inp_apply03">보증보험을 SMS로도 받겠습니다.</label>	
+							</li>
+						</ul>
+					</div>
+					<dl class="consumer_info">
+						<dt>제공받는 자</dt>
+						<dd>(주) 서울 보증보험</dd>
+						<dt>제공하는 항목</dt>
+						<dd>구매자명, 구매자, 생년월일,구매자 성별,구매자연락처(일반전화 및 핸드폰) 구매자 이메일 , 주문번호, 배송지정보, 주문금액</dd>
+						<dt>제공목적</dt>
+						<dd>쇼핑몰 보증보험 가입및 보험가입 제반사항</dd>
+						<dt>보유 및 이용기간</dt>
+						<dd>개별서비스 제공기간</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="btn_fix_box">
+				<a href="#" class="btn_fix">쇼핑몰 보증보험서 발급신청</a>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 쇼핑몰 보증보험서 발급신청 -->
+
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

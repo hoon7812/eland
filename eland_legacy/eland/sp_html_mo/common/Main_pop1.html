@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no">
+<base href="../../" />
+<title>SHOOPEN</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap&subset=korean&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/mobile/sp_mobile/common.css" type="text/css">
+
+<link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/icon/icon_60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/icon/icon_76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/icon/icon_120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/icon/icon_152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/icon/icon_180.png">
+<link rel="apple-touch-icon-precomposed" href="images/icon/icon_192.png">
+<link rel="apple-touch-icon-precomposed" href="images/icon/icon_160.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="images/icon/icon_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="images/icon/icon_160.png">
+<script type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="mobile/js/jquery.plugin.mobile.sp.js"></script>
+<script type="text/javascript" src="mobile/js/ui.mobile.sp.js"></script>
+<script type="text/javascript" src="mobile/js/ui.mobile.old.js"></script>
+
+</head>
+<body>
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- MAIN POPUP 160707 -->
+<div class="layer_fix" style="display:block">
+	<div class="pop_con">
+		<!-- FULL POPUP 
+		<div class="fullpop">
+			<div class="p_box">
+				<div class="p_img">
+					<a href="#"><img src="images/mobile/temp/main_pop_full.jpg" width="2000" height="2000" alt="메인팝업"></a>
+				</div>
+				<div class="ch_today">
+					<button type="button" class="p_today"><span>오늘 하루 보지 않기</span></button>
+					<button type="button" class="p_close">닫기</button>
+				</div>
+			</div>
+		</div>
+		<!-- //FULL POPUP -->
+		<!-- BASIC POPUP --> 
+		<div class="basicpop">
+			<div class="p_box" style="opacity:0;filter:alpha(opacity=0)"">
+				<div class="p_img" id="noti_bn">
+					<div class="roll_wrap">
+						<div class="roll_indi">
+							<a href="#none" class="swiper-pagination-switch">공지사항 배너1번</a>
+							<a href="#none" class="swiper-pagination-switch">공지사항 배너2번</a>
+							<a href="#none" class="swiper-pagination-switch">공지사항 배너3번</a>
+							<a href="#none" class="swiper-pagination-switch">공지사항 배너4번</a>
+							<a href="#none" class="swiper-pagination-switch">공지사항 배너5번</a>
+						</div>
+					</div>
+					<div class="swiper_container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<img src="images/mobile/temp/main_pop_basic.jpg" alt="NB new balance" />
+							</li>
+							<li class="swiper-slide">
+								<a href="#none"><img src="images/mobile/temp/main_pop_basic.jpg" alt="NB new balance" /></a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#none"><img src="images/mobile/temp/main_pop_basic.jpg" alt="NB new balance" /></a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#none"><img src="images/mobile/temp/main_pop_basic.jpg" alt="NB new balance" /></a>
+							</li>
+							<li class="swiper-slide">
+								<img src="images/mobile/temp/main_pop_basic.jpg"  alt="NB new balance" />
+							</li>
+						</ul>
+					</div>
+					<div class="bp_btns">
+						<a href="#" class="bp_bt_prev d_prev">이전 공지 배너</a>
+						<a href="#" class="bp_bt_next d_next">다음 공지 배너</a>
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload=function(){
+						var $noti_wrapper = $("#noti_bn");
+						var $btns = $noti_wrapper.find(".bp_btns");
+						var noti_slds = $('#noti_bn .swiper-slide').length;
+						var $btns = {
+							prev : $btns.find(".d_prev")
+							,next : $btns.find(".d_next")
+						}
+						var notiWidth = [];
+						var notiHeight = [];
+						$noti_wrapper.find($('.swiper-slide img')).each(function(index){
+							notiWidth[index] = $(this).outerWidth();
+							notiHeight[index] = $(this).outerHeight();
+						})
+						$('#noti_bn, #noti_bn .swiper-slide ').css({
+							width:Math.max.apply(null, notiWidth),
+							height:Math.max.apply(null, notiHeight)
+						});
+						$noti_wrapper.css('opacity',1);
+						if(noti_slds > 1){
+							noti_bn = new Swiper('#noti_bn .swiper_container',{
+								loop: true,
+								speed : 1000,
+								autoplay: {
+								    delay: 3700,
+								    disableOnInteraction: false,
+							    },
+								simulateTouch : false,
+								pagination:{
+									el : '#noti_bn .roll_indi',
+									clickable : true
+								},
+								navigation: {
+								    nextEl: '.d_next',
+								    prevEl: '.d_prev',
+							    }
+							});
+						}
+						else{ // 2018.03.09 추가 -  등록 배너가 2개 이상일 때만.. 슬라이드
+							$btns.next.hide();
+							$btns.prev.hide();
+							$noti_wrapper.find('.roll_wrap').hide();
+						}
+						$noti_wrapper.parent().css({'opacity':100,'filter':'alpha(opacity=1)'});
+					}
+				</script>
+				<div class="ch_today">
+					<!-- 160826 삭제 <input type="checkbox" id="ch_today"><label for="ch_today">오늘 하루 보지 않기</label> -->
+					<button type="button" class="p_today"><span>오늘 하루 보지 않기</span></button> <!-- 160826 수정 -->
+					<button type="button" class="p_close">닫기</button>
+				</div>
+			</div>
+		</div>
+		<!-- //BASIC POPUP -->
+	</div>
+</div>
+<!-- //MAIN POPUP 160707 -->
+
+</body>
+</html>
+

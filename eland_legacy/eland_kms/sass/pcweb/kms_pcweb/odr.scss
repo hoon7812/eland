@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+@import "common";
+
+.steparea{padding:80px 0 30px 0;margin-bottom:0px;background:none;
+	ul{top:50px;
+		li{border-radius:90px;background:#ccc;font-weight:400;
+			span{font-weight:700;font-family:$font_kmsE;}
+		}
+	}
+	&.step_01_on ul li.step_01, &.step_02_on ul li.step_02, &.step_03_on ul li.step_03{background:$point_kms;color:$txt_kms4;}
+	.steparea_title{height:50px !important;padding:0 0 0 63px !important;line-height:50px;}
+	&.step_01_on .steparea_title{background-image:url($imgUrl+'odr/ico_odrTop0.png');}
+	&.step_02_on .steparea_title{background-image:url($imgUrl+'odr/ico_odrTop1.png');background-position: 0 center;}
+	&.step_03_on .steparea_title{background-image:url($imgUrl+'odr/ico_odrTop2.png');}
+}
+
+.no_data.cart{border-bottom:none;margin-top: 180px;
+	.no_data_txt {background: url($imgUrl+'odr/bg_nocart.png') no-repeat top center;font-weight:700;font-size:20px;padding: 75px 0 0 0px;}
+}
+.cart_tab {margin: 0 0 20px 0; height: 56px;
+	&:after{display:block;clear:both;content:"";}
+	.d_tab {margin-top: 0px;}
+	.bTabs{
+		button{float:left;width:50%;height:56px;line-height:56px;text-align:center;color:#505050;background:#F1F1F5;font-size:16px;border-bottom:1px solid #191919;border-top:1px solid #D4D4D8;outline: none;}
+		button[aria-selected='true'], button :hover {background:transparent;color:#191919;font-weight:400;border-bottom: 1px solid #fff;border-left:1px solid #191919;border-right:1px solid #191919;border-top:1px solid #191919;}
+	}
+}
+
+.cartTab{display:none;
+	.btn05{border:1px solid $point_kms3;background:$point_kms3;font-weight:400;
+		&.c01{border: 1px solid #ccc;background: #fff;}
+		span{font-weight:400;
+			strong{font-weight:400!important;}		
+		}
+	}
+	.chk{display: block;float: left;width:22px;margin-right:10px;padding:0;
+		label {position: relative;overflow: hidden;display: block;padding-left:0px;cursor: pointer;}
+		.chkbox {position: absolute;left: -9999em;width: 0;height: 0;}
+		.chkbox:checked+i {background-position: -88px -15px;}
+		.chkbox+i {display: block;float: left;margin: 0;width: 15px;height: 15px;text-indent: -9999em;background: url(../../../images/pcweb/kms_pcweb/common/checkbox.png) -88px 0 no-repeat;}
+		.chkbox:checked+i+span {font-weight:700;color: #000;text-decoration: none;}
+	}	
+}
+
+.odr{
+	.chk{display: block;float: left;width:235px;margin-right:10px;padding: 0;
+		label {position: relative;overflow: hidden;display: block;padding-left:0px;cursor: pointer;}
+		.chkbox {position: absolute;left: -9999em;width: 0;height: 0;}
+		.chkbox:checked+i {background-position: -88px -15px;}
+		.chkbox+i {display: block;float: left;margin: 0;width: 15px;height: 15px;text-indent: -9999em;background: url(../../../images/pcweb/kms_pcweb/common/checkbox.png) -88px 0 no-repeat;margin-right: 10px;}
+		.chkbox:checked+i+span {font-weight:700;color: #000;text-decoration: none;}
+	}		
+}
+
+.title.ord{height:28px;
+	.right span img{vertical-align:-7px;}
+}
+.cart_tab_content{display:none;}
+.table_title strong{font-weight:700 !important;}
+
+.tab_type02.full_size06 > ul li {width: 50%;}
+.lay_wrap.appdn .tab_type01, .tab_type02 {margin-top: 0px;}
+.tab_type02 > ul li a, .tab_type02 > ul li span {padding: 19px 5px;font-size:16px;font-weight:700;color: #505050;background: #F1F1F5;}
+.tab_type02 > ul li.on a {padding-top: 19px; border-top: 1px solid #191919;border-left: 1px solid #191919;border-right: 1px solid #191919;font-weight:700 !important;}
+.tab_type02 > ul li.on a, 
+.tab_type02 > ul li.on span,
+.table_title strong,
+.board02 thead th,
+.board02 .set_vbtn .btn05 strong,
+.board02 .goods_info .goods_txt01,
+.board02 .btn_txt02 span,
+.board02 .count_button_change,
+.btn06 span,
+.btn04 span,
+.btn03 span,
+.btn02 span,
+.btn_txt01 span,
+.round01 > span,
+.txt_c02,
+.order_opt .order_opt_tit,
+.order_opt .order_opt_goods,
+.opt_box.type02 strong.opt_box_title,
+.terms_chk_box label strong{font-weight:400 !important;}
+
+.board02 .goods_info .goods_txt_alert, 
+.board02 .goods_info .goods_txt_alert2, 
+.board02 .goods_info .goofs_txt_etc, 
+.tip_info .tip_txt strong,
+.total_wrap.c03 .total_area li:last-child,
+.total_wrap.c03 .total_area li:last-child .total_price,
+.total_wrap.c03 .total_area li:last-child .total_price strong,
+.fin_price_st{color:$point_kms;
+	strong{color:$point_kms;
+		em{font-weight:700;font-family:'Roboto';}
+	}
+}
+.total_wrap.c03 .total_area li{line-height:23px;}
+.board02 .btn_txt03 span{border-color:$point_kms;color:$point_kms;}
+.txt_c01{color:$point_kms !important;}
+
+.btn06.c02{border-color:$point_kms3;background:$point_kms3;
+	span{color:$txt_kms4;}
+}
+.board02.card01 thead th, .board02.card02 thead th, .data_table01{border-top:#494949 2px solid;}
+.btn_etc03{border-color:$point_kms;background:url($imgUrl+'odr/ico_doublecoupon.png') right center no-repeat;color:$point_kms;}
+.d_order_fixed.fixed{top:81px !important;}
+.order_right_wrap.over_foot{top:auto !important;}
+.type_img span img{vertical-align:text-bottom;}
+.board02 .tx_price{letter-spacing:0;}
+.total_wrap.c03 .total_area li.total_txt04 strong,
+.total_area li:last-child .total_price strong{font-family:'Roboto';}
+

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_kinder.css" /> <!-- 브랜드몰 kinder -->
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.onlycoding.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="kinder"><!-- 브랜드몰 class="kinder" -->
+
+		<div class="header_top_banner on" style="background-color:#fef6d2;">
+			<div class="btn_hdtb_img"><a href="#"><img src="../../images/pcweb/temp/_temp_1080x80_kinder.jpg" alt="아이들도 패션이 있다구요~ (기획전바로가기)" /></a></div>
+			<a href="#" class="btn_hdtb_close">베너 닫기</a>
+			<a href="#" class="btn_hdtb_open">
+				<span class="ir">베너 열기</span>
+				OPEN
+			</a>
+			<script>
+			$(".btn_hdtb_close").on("click",function(){
+				$(".header_top_banner").removeClass("on");
+				$(".btn_hdtb_open").focus();
+			})
+			$(".btn_hdtb_open").on("click",function(){
+				$(".header_top_banner").addClass("on");
+				$(".btn_hdtb_img").focus();
+			})
+			</script>
+		</div>
+		
+		<!-- HEADER  header_fix -->
+		<div id="header" class="header">
+			<div class="head">
+				<!-- LOGO -->
+				<h1>
+					<a href="#"><img src="../../images/pcweb/header/logo_kinder.png" alt="ELAND KIDS" /></a>
+				</h1>
+				<!-- //LOGO -->
+
+				<!-- MALL TAB -->
+				<div class="hd_mall">
+					<div class="tit">
+						<a href="#" class="btn_home"><img src="../../images/pcweb/header/logo_kinder_tab.png" alt="ELAND KIDS" /></a>
+					</div>
+				</div>
+
+				<div class="mall_select">
+					<ul>
+						<li class="el"><a href="#none" class="d_move_link">이랜드몰 <span class="ir">이동</span></a></li>
+						<li class="mh"><a href="#none" class="d_move_link">모던하우스몰 <span class="ir">이동</span></a></li>
+					</ul>
+				</div>
+				<div class="bs_selectbox d_bs_sel">
+					<div class="bs_sel_tit"><a href="#"><span>BRAND SITE</span></a></div>
+					<div class="brand_select">
+						<ul>
+							<li><a href="hm01_01.html"><span class="sel"><em>브랜드선택됨</em></span><img src="../../images/pcweb/header/bs_0000014.jpg" alt="E-LAND MALL" /></a></li>
+							<li><a href="hm01_02.html"><img src="../../images/pcweb/header/bs_0000013.jpg" alt="Mordern house" /></a></li>
+							<li><a href="hm_newbal.html"><img src="../../images/pcweb/header/bs_0000038.jpg" alt="new balance" /></a></li>
+							<li><a href="hm_roem.html"><img src="../../images/pcweb/header/bs_0000035.jpg" alt="Roem" /></a></li>
+							<li><a href="hm_lloyd.html"><img src="../../images/pcweb/header/bs_0000034.jpg" alt="LLOYD" /></a></li>
+							<li><a href="hm_mixxo.html"><img src="../../images/pcweb/header/bs_0000043.jpg" alt="MIXXO" /></a></li>
+							<li><a href="hm_spao.html"><img src="../../images/pcweb/header/bs_0000037.jpg" alt="SPAO" /></a></li>
+							<li><a href="hm_eblin.html"><img src="../../images/pcweb/header/bs_0000033.jpg" alt="EBLIN" /></a></li>
+							<li><a href="hm_ost.html"><img src="../../images/pcweb/header/bs_0000041.jpg" alt="ost" /></a></li>
+							<li><a href="hm_kinder.html"><img src="../../images/pcweb/header/bs_0000040.jpg" alt="E-LAND Kids" /></a></li>
+							<li><a href="hm_clue.html"><img src="../../images/pcweb/header/bs_0000036.jpg" alt="clue" /></a></li>
+							<li><a href="hm_folder.html"><img src="../../images/pcweb/header/bs_0000039.jpg" alt="FOLDER" /></a></li>
+							<li><a href="hm_whoau.html"><img src="../../images/pcweb/header/bs_0000042.jpg" alt="WHO.A.U" /></a></li>			
+						</ul>
+						<div class="ldeco"></div>
+						<div class="rdeco"></div>
+					</div>
+				</div>
+
+				<!-- TNB -->
+				<div class="hd_tnb">
+					<dl>
+						<dt class="ir">마이메뉴</dt>
+						<dd><a href="#">로그아웃</a></dd>
+						<dd><a href="#">회원가입</a></dd>
+						<dd><a href="#">장바구니<span class="num"><b>88</b></span></a></dd>
+						<dd><a href="#">마이페이지</a></dd>
+						<dd><a href="#">고객센터</a></dd>
+						<!-- <dd>바로방문<span class="off"><b>off</b></span></dd> -->
+						<dd>바로방문<span class="on"><b>ON</b></span></dd>
+					</dl>
+				</div>
+				<!-- //TNB -->
+
+				<!-- SEARCH -->
+				<div class="hd_sch" id="hd_sch">
+					<div class="sch_wrap">
+						<div class="sch_box">
+							<label class="ir" for="searchTerm">검색</label>
+							<input type="text" class="input d_searchTerm" name="sch" id="searchTerm" placeholder="겨울엔 스파오 패딩이 필수템" />
+						</div>
+
+						<!-- KEYWORD LAYER -->
+						<div id="sch_keyword" class="sch_keyword d_sch_keyword">
+							<dl class="f_keyword">
+								<dt><button type="button"  class="on">인기 검색어</button></dt>
+								<dd>
+									<ol>
+										<li>
+											<a href="#" class="d_links"><em class="num">1</em><span>아이폰 6S</span></a>
+											<div class="rl_pot"><span class="rl_up">213</span></div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">2</em><span>모던하우스</span></a>
+											<div class="rl_pot"><span class="rl_down">1</span></div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">3</em>패딩</a>
+											<div class="rl_pot"><span class="rl_down">2</span></div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">4</em>겨울잠바</a>
+											<div class="rl_pot">-</div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">5</em>스파오</a>
+											<div class="rl_pot">new</div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">6</em>여성 영클부츠</a>
+											<div class="rl_pot"><span class="rl_up">213</span></div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">7</em>코트</a>
+											<div class="rl_pot"><span class="rl_down">1</span></div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">8</em>암막커튼</a>
+											<div class="rl_pot"><span class="rl_down">2</span></div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">9</em>신상품</a>
+											<div class="rl_pot"><span class="rl_up">123</span></div>
+										</li>
+										<li>
+											<a href="#" class="d_links"><em class="num">10</em>가구</a>
+											<div class="rl_pot"><span class="rl_up">213</span></div>
+										</li>
+									</ol>
+								</dd>
+								<dt><button type="button" >최근 검색어</button></dt>
+								<dd>
+									<ul>
+										<li><a href="#" class="d_links"><span>키보드</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>인테리어</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>컴퓨터</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>코르그</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>양말</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>게임</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>하드</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>애완용품</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>침구</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>반팔 티셔츠</span></a><button type="button"  class="del">삭제</button></li>
+									</ul>
+									<div class="s_del"><button type="button" >최근검색어 전체삭제</button></div>
+									<!-- <div class="msg">최근 검색 기록이 없습니다.</div> -->
+								</dd>
+							</dl>
+						</div>
+						<!-- //KEYWORD LAYER -->
+
+						<!-- AUTO COMPLETE LAYER -->
+						<div id="sch_complete" class="sch_keyword d_sch_complete" >
+							<div class="s_keyword">
+								<ul>
+									<li><a href="#" class="d_links"><span>청<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>디젤청<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>등산<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span><b>바지</b>걸이</span></a></li>
+									<li><a href="#" class="d_links"><span>트레이닝<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>스파오청<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>기모<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span><b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>수면<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>치마<b>바지</b></span></a></li>
+								</ul>
+								<!-- <div class="msg">입력하신 단어가 들어가 있는 추천어가 없습니다.</div> -->
+							</div>
+							<div class="s_del"><button type="button" >닫기</button></div>
+						</div>
+						<!-- //AUTO COMPLETE LAYER -->
+
+						<button type="button"  id="sch_del" class="sch_del" title="삭제하기">삭제</button>
+						<button type="button"  id="sch_btn" class="sch_btn" title="검색하기">검색</button>
+					</div>
+				</div>
+				<!-- //SEARCH -->
+
+				<!-- CNB -->
+				<div class="hd_cnb">
+					<ul>
+						<li><a href="#"><span>NEW</span></a></li>
+						<li><a href="#"><span>BEST</span></a></li>
+						<li><a href="#"><span>EVENT</span></a></li>
+						<li><a href="#"><span>MD추천</span></a></li>
+						<li><a href="#"><span>SALE</span></a></li>
+					</ul>
+				</div>
+				<!-- CNB -->
+
+				<!-- CATG ALL -->
+				<div class="hd_catg" id="gnb">
+					<div class="catg_wrap">
+						<button type="button" id="catg_bt" class="catg_bt">카테고리</button>
+
+						<!-- LAYER -->
+						<div class="catg_lyr" id="catg_lyr">
+							<div class="catg_all">
+								<ul>
+									<li>
+										<dl>
+											<dt><a href="#">카테고리명</a></dt>
+											<dd><a href="#">중분류 명</a></dd>
+											<dd><a href="#">중분류 명</a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">카테고리명</a></dt>
+											<dd><a href="#">중분류 명</a></dd>
+											<dd><a href="#">중분류 명</a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">카테고리명</a></dt>
+											<dd><a href="#">중분류 명</a></dd>
+											<dd><a href="#">중분류 명</a></dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<button type="button"   id="catg_cls" class="bt_close">카테고리 전체보기 닫기</button>
+						</div>
+						<!-- //LAYER -->
+
+					</div>
+				</div>
+				<!-- //CATG ALL -->
+
+				<!-- DISP. MENU -->
+				<div class="hd_disp">
+					<dl>
+						<dt class="ir">전시메뉴</dt>
+						<dd><a href="#">브랜드</a>
+							<div class="depth2 b_menu"> <!-- 브랜드메뉴 .b_menu 추가 -->
+								<ul>
+									<li>
+										<div class="b_age">
+											<span class="age1">3~7세</span>
+											<div class="b_name">
+												<a href="#">포인트</a>
+												<a href="#">코코리타</a>
+												<a href="#">트리시</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="b_age">
+											<span class="age2">3~12세</span>
+											<div class="b_name">
+												<a href="#">헌트키즈</a>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<div class="b_age">
+											<span class="age3">7~9세</span>
+											<div class="b_name">
+												<a href="#">치크</a>
+												<a href="#">셀덴</a>
+												<a href="#">오후</a>
+												<a href="#">로엠걸즈</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="b_age">
+											<span class="age4">9~15세</span>
+											<div class="b_name">
+												<a href="#">유솔</a>
+												<a href="#">더데이걸즈</a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</dd>
+						<dd><a href="#">유아</a>
+							<div class="depth2">
+								<ul>
+									<li><a href="#">식기류</a></li>
+									<li><a href="#">커피/티/와인</a></li>
+									<li><a href="#">컵/머그</a></li>
+									<li><a href="#">테이블소품</a></li>
+								</ul>
+							</div>
+						</dd>
+						<dd><a href="#">토들러</a>
+							<div class="depth2">
+								<ul>
+									<li><a href="#">식기류</a></li>
+									<li><a href="#">커피/티/와인</a></li>
+									<li><a href="#">컵/머그</a></li>
+									<li><a href="#">테이블소품</a></li>
+								</ul>
+							</div>
+						</dd>
+						<dd><a href="#">키즈</a>
+							<div class="depth2">
+								<ul>
+									<li><a href="#">식기류</a></li>
+									<li><a href="#">커피/티/와인</a></li>
+									<li><a href="#">컵/머그</a></li>
+									<li><a href="#">테이블소품</a></li>
+								</ul>
+							</div>
+						</dd>
+						<dd><a href="#">쥬니어</a></dd>
+						<dd><a href="#">아우터</a></dd>
+						<dd><a href="#">탑/니트</a></dd>
+						<dd><a href="#">하의</a></dd>
+						<dd><a href="#">드레스/세트</a></dd>
+						<dd><a href="#">악세사리</a></dd>
+					</dl>
+				</div>
+				<!-- //DISP. MENU -->
+				<script type="text/javascript">
+					var gnbMenu = new commonUI.header.gnbCate('.hd_disp');
+				</script>
+			</div>
+		</div>
+		<!-- //HEADER -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li class="lct_txt"><span>오프라인 매장안내</span></li>
+					</ul>
+				</div>
+
+				<div class="store_visual_img">
+					<img src="../../images/pcweb/shop/img_store_info_kinder.jpg" alt="오프라인 매장안내" />
+				</div>
+				<div class="store_search_cmn">
+					<input type="text" class="ipt_sch" title="매장명 또는 주소 입력" placeholder="매장명 또는주소를 입력해 주세요." />
+					<button class="btn_shop_sch" type="submit">매장찾기</button>	
+				</div>
+				
+				<div class="cmn_tab_intro">
+					<ul class="d_intro_tab">
+						<li class="on"><a href="#">전체</a></li>
+						<li><a href="#">서울특별시</a></li>
+						<li><a href="#">인천광역시</a></li>
+						<li><a href="#">대전광역시</a></li>
+						<li><a href="#">부산광역시</a></li>
+						<li><a href="#">울산광역시</a></li>
+						<li><a href="#">대구광역시</a></li>
+						<li><a href="#">광주광역시</a></li>
+						<li><a href="#">경기도</a></li>
+						<li><a href="#">강원도</a></li>
+						<li><a href="#">충청도</a></li>
+						<li><a href="#">경상도</a></li>
+						<li><a href="#">전라도</a></li>
+						<li><a href="#">제주도</a></li>							
+					</ul>
+				</div>
+				
+				<div class="cmn_intro_cont">
+					<div class="store_info_list">
+						<ul>
+							<li>
+								<div class="store_name"><span>천호점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">서울시 강동구 천호동 563 이천일아울렛 5층</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-426-2001</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>천호점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>강서점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">강서구 등촌동 689번지 엔씨백화점 7층</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-2667-9000</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>강서점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>미아사거리점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">강북구 미아동 71-1 Y스퀘어 지하1층 모던하우스</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-6312-6271</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>미아사거리점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>구로점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">구로구 고척동 76-41 이천일아울렛 5층</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-2064-2001</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>구로점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>중계점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">노원구 동일로 204가길 46 이천일아울렛 7층</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-948-2001</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>중계점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>강남점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">서초구 잠원로 51 뉴코아강남점 4층 모던하우스</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-530-5000</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>강남점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>송파점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">송파구 문정동 516 가든파이브 영관 2층</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-2157-5000</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>송파점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>당산점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">서울특별시 영등포구 당산동5가 16-7 지하 1층</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-2068-2001</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>당산점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>타임스퀘어점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">영등포구 영등포동4가 441-10 타임스퀘어 3층</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-812-2001</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>타임스퀘어점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>불광점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">은평구 대조동 240 엔씨백화점 지하 1층</em></p>
+									<p>- 영업시간 : AM10:30~PM10:00</p>
+									<p>- 대표번호 : 02-3417-2001</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>불광점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="store_name"><span>용산점</span></div>
+								<div class="store_info">
+									<p class="adr"><span>- 지점주소 : </span><em class="d_addr">서울시 용산구 한강대로 23길 55 현대아이파크몰 리빙관 6</em></p>
+									<p>- 영업시간 : AM10:30~PM09:00</p>
+									<p>- 대표번호 : 02-2012-2500</p>
+									<button type="button" class="btn_map d_tooltip"><span>지도보기</span></button>
+									<div class="set_tooltip">
+										<div class="tip_info">
+											<div class="tip_title"><strong>용산점</strong></div>
+											<div class="store_api"><img src="../../images/pcweb/temp/_sample_301x242.jpg" alt="지점 안내 약도"></div>
+											<a href="#" class="tip_close">지도 닫기</a>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="store_no_data">검색된 매장이 없습니다.</div>
+					<!-- 페이징 -->
+					<div class="box_page">
+						<span class="num">
+							<a class="btn_paging_first" href="#"><img src="../../images/pcweb/common/btn_paging_first.gif" alt="처음페이지이동" /></a>
+							<a class="btn_paging_prev" href="#"><img src="../../images/pcweb/common/btn_paging_prev.gif" alt="이전페이지이동" /></a>
+							<a href="#" class="on">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">7</a>
+							<a href="#">8</a>
+							<a href="#">9</a>
+							<a href="#">10</a>
+							<a class="btn_paging_next" href="#"><img src="../../images/pcweb/common/btn_paging_next.gif" alt="다음페이지이동" /></a>
+							<a class="btn_paging_end" href="#"><img src="../../images/pcweb/common/btn_paging_end.gif" alt="마지막페이지이동" /></a>
+						</span>
+					</div>
+					<!-- //페이징 -->
+				</div>
+				
+				<div class="store_int_bn">
+					<a href="#"><img src="../../images/pcweb/shop/img_introbanner_kinder.jpg" alt="지점별 행사안내" /></a>
+				</div>				
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<div id="footer" class="foot_br"> <!-- 브랜드몰 푸터 .foot_br 클래스 추가했습니다 -->
+			<!-- 푸터배너 -->
+			<div class="footer_bnr" style="background:#e7e2e2">
+				<a href="#"><img src="../../images/pcweb/temp/kinder_1080x120.jpg" alt="오버핏 반팔기획전 10% OFF - 나만 입고싶은 스타일! 요기 다 있네~" /></a>
+			</div>
+			<!-- //푸터배너 -->
+			<div class="foot_section">
+				<div class="foot_opt_area">
+					<ul class="foot_opt_list">
+						<li><a href="#" target="_blank" title="새창">개인정보취급방침</a></li>
+						<li><a href="#" target="_blank" title="새창">영상정보처리기기운영, 관리방침</a></li>
+						<li><a href="#" target="_blank" title="새창">약관안내</a></li>
+						<li><a href="#" target="_blank" title="새창">윤리경영</a></li>
+						<li><a href="#" target="_blank" title="새창">전자세금 계산서</a></li>
+					</ul>
+				</div>
+				<div class="cont">
+					<div class="logo_footer">
+						<a href="#"><img src="../../images/pcweb/header/logo_kinder_ft.jpg" alt="E.LAND KIDS"></a>
+						<div class="logo_footer_qrcode"><img src="../../images/pcweb/header/qcode_kinder.gif" alt="E.LAND KIDS 모바일 QR CODE"></div>
+						<div class="foot_sns">
+							<a href="#" title="새창"><img src="../../images/pcweb/header/foot_blog.gif" alt="E.LAND blog" /></a>
+							<a href="#" title="새창"><img src="../../images/pcweb/header/foot_kakao.gif" alt="E.LAND kakao story" /></a>
+						</div>
+						<!-- 이동 : 2018.03.07 -->
+						<button type="button" class="foot_app_btn"><span class="ir">앱다운로드</span></button>
+					</div>
+					<div class="foot_context">
+						<div class="foot_view">
+							<dl>
+								<dt>(주)이랜드리테일</dt>
+								<dd>대표이사: 이광일/김연배</dd>
+								<dd>주소: 서울특별시 서초구 잠원동 70번지 2호 사업자등록번호: 114-81-01855</dd>
+								<dd>통신판매업 신고번호: 서초 제 09998호 <button type="button" class="btn07 c01 ico_arrow04"><span>사업자 정보확인</span></button></dd>
+								<dd>개인정보보호 책임자: 대표이사 김연배</dd>
+								<dd>email: <a href="mailto:webmaster@2001outlet.com">webmaster@2001outlet.com</a></dd>
+							</dl>
+							<dl>
+								<dt>㈜이랜드월드</dt>
+								<dd>대표이사 : 김광래/최종양/김연배</dd>
+								<dd>주소: 서울특별시 금천구 가산디지털 1로 159 사업자 등록번호 : 113-85-19030</dd>
+								<dd>통신판매업 신고번호 : 금천구청 제2005-01053호 <button type="button" class="btn07 c01 ico_arrow04"><span>사업자 정보확인</span></button></dd>
+								<dd>개인정보보호 책임자 : 대표이사 김광래</dd>
+								<dd>email: <a href="mailto:">미정</a></dd>
+							</dl>
+							<div class="copyright">Copyright © Eland Retail. All Rights Reserved.</div>
+						</div>
+					</div>
+					<div class="foot_side_opt">
+						<div class="fm_links">
+							<a class="btn_fm_site" href="#"><span>패밀리 사이트 바로가기</span></a>
+							<div class="list_fm_site">
+								<ul class="scroll">
+									<li><a href="#">이랜드 리테일</a></li>
+									<li><a href="#">모던하우스</a></li>
+									<li><a href="#">이랜드 그룹</a></li>
+									<li><a href="#">MIXXO</a></li>
+									<li><a href="#">SPAO</a></li>
+									<li><a href="#">패밀리 사이트 패밀리 사이트</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="foot_cs">
+							<strong class="foot_cs_tit">고객센터</strong>
+							<strong class="foot_csph">1899-9500</strong>
+							<span class="foot_cstxt">상담시간 : 오전9시~오후6시<br />(토요일, 공휴일은 쉽니다) </span>
+							<button type="button" class="auth_btn partner"><span>협력사 입직원 인증</span></button>
+							<button type="button" class="auth_btn"><span>임직원 회원가입 / 인증</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="foot_bot">
+					<p><strong>소비자피해보상보험</strong> 고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 구매 안전서비스를 이용하실 수 있습니다.</p>
+					<button type="button" class="btn07 c01 ico_arrow04"><span>서비스 가입사실 확인하기</span></button>
+					<ul class="foot_menus"> <!-- 2018.07.12 변경 : isms_info, norton 클래스 삽입 유의 -->
+						<li class="isms_info">
+							<a href="#" target="_blank" title="새창"><img src="../../images/pcweb/common/foot_menu04.png" alt="정보관리체계인증(ISMS) 마크">
+								<span>
+									정보보호관리체계 ISMS 인증 획득<br />	고객님의 소중한 정보는 안전하게 관리되고 있습니다.<br />유효기간 : 2017.11.27 ~ 2020.11.26
+								</span>
+							</a>
+						</li>
+						<li class="norton"><a href="#" target="_blank" title="새창"><img src="../../images/pcweb/common/foot_menu03.png" alt="Norton Secured"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

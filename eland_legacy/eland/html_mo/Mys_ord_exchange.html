@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//교환/반품 탭
+	$(function(){
+		tabEx = $(".tab_exchange li");
+		tabExCon = $(".order_content .exchange_con");
+
+		tabEx.click(function(){
+			exId = $(this).index();
+			tabEx.find("a").removeClass("on");
+			$(this).find("a").addClass("on");
+			tabExCon.removeClass("on");
+			tabExCon.hide();
+			tabExCon.eq(exId).show();
+		});
+	});
+	//취소 신청
+	$(function(){
+
+	    var ordTit = $(".order_content .ico_open");
+
+	    ordTit.bind("click", function(e){
+	        e.preventDefault();
+	        $(this).parent().find(".ico_open").toggleClass("selected");
+	        $(this).parent().find(".txt_order").toggleClass("on");
+	        $(this).parent().next().slideToggle(200);
+	        $(this).parent().find(".pay_noti").toggle();
+	    });
+	    $(".tab_list02 li").bind("click", function(e){
+	        e.preventDefault();
+	        tabId = $(this).index();
+
+	        $(this).parent().parent().parent().find(".tab_list02 li").removeClass("selected");
+	        $(this).addClass("selected");
+	        $(this).parent().parent().parent().find(".tab_con > div").hide();
+	        $(this).parent().parent().parent().find(".tab_con > div").eq(tabId).show();
+	    });
+	});
+	//교환,반품신청 체크
+	$(function(){
+		$(".prd_total05").hide();
+		$(".prd_group .cancel_chk input").click(function(){
+			var chkCancel = $(this).is(":checked");
+			if(chkCancel == true){
+				$(this).parent().parent().next(".prd_total05").slideDown(200);
+			}else{
+				$(this).parent().parent().next(".prd_total05").slideUp(200);
+			}
+		});
+	});
+	//선결제 반품 배송
+	$(function(){
+		preTab = $(".pre_return .tab li");
+		preCon = $(".pre_return .con > div");
+
+		preTab.click(function(e){
+			e.preventDefault();
+			preId = $(this).index();
+			$(this).parent().parent().find("a").removeClass("on");
+			$(this).find("a").addClass("on");
+			$(this).parent().parent().find(".payment").hide();
+			$(this).parent().parent().find(".payment").eq(preId).show();
+		});
+	});
+	//배송메세지 160307
+	$(function(){
+		$(".sel_box").change(function(){ 
+		    $(".sel_box option:selected").each(function(){
+			    msg = $(this).text();
+		        if(msg == "메시지 직접입력 (배송기사/매장 전달)"){
+		        	$(this).parent().parent().parent().find("select").hide();
+		        	$(this).parent().parent().parent().find(".msg_selected").hide();
+		        	$(this).parent().parent().append("<textarea cols='30' rows='2' class='w100'>배송 시 전달사항을 입력해주세요.</textarea>");
+		        }else{
+			        $(this).parent().parent().find(".msg_selected").show().find("span").text(msg);
+		        }
+		    });  
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>교환/반품 신청</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>	
+	<div class="order_content">
+		<!-- 교환/반품 탭 -->
+		<ul class="tab_exchange">
+			<li><a href="#" class="on">반품 신청</a></li>
+			<li><a href="#">교환 신청</a></li>
+		</ul>
+		<!-- //교환/반품 탭 -->
+
+		<!-- 반품 신청 -->
+		<div class="exchange_con on">
+			<!-- 상품선택 -->
+			<div class="step02">
+				<div class="ord_tit">
+					<h3 class="tit_order">1. 상품선택</h3>
+					<a href="#" class="ico_open"><span>열기</span></a>
+				</div>
+				<div class="ord_con">
+					<div class="tit_order2">
+						<div class="tit">주문 상품</div>
+					</div>
+					<div class="mypage_box">
+						<div class="tit_order">
+							<em>2016.12.01</em>
+							<span>(주문번호:M151116002268196)</span>
+						</div>
+
+						<!-- 1번 배송지 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<div class="cancel_chk">
+									<input type="checkbox" title="상품선택">
+								</div>
+								<div class="top_deli"><span class="addr"><em class="ico">1번</em> 배송지 </span>반품 배송비 <strong>2,500</strong>원</div>
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+							</div>
+							<!-- 반품사유 -->
+							<div class="prd_total05">
+								<div class="txt">
+									<strong class="stxt">반품사유</strong>
+								</div>
+								<div class="sel_box">
+									<select class="w100">
+										<option>반품사유 선택</option>
+									</select>
+								</div>
+								<div class="mt10">
+									<input type="text" class="w100" title="반품사유" placeholder="반품상세사유를 입력하여 주세요.">
+								</div>
+							</div>
+							<!-- //반품사유 -->
+						</div>
+						<!-- //1번 배송지 -->
+
+						<!-- 2번 배송지 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<div class="cancel_chk">
+									<input type="checkbox" title="상품선택">
+								</div>
+								<div class="top_deli"><span class="addr"><em class="ico">2번</em> 배송지 </span>반품 배송비 <strong>2,500</strong>원</div>
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+							</div>
+							<!-- 반품사유 -->
+							<div class="prd_total05">
+								<div class="txt">
+									<strong class="stxt">반품사유</strong>
+								</div>
+								<div class="sel_box">
+									<select class="w100">
+										<option>반품사유 선택</option>
+									</select>
+								</div>
+								<div class="mt10">
+									<input type="text" class="w100" title="반품사유" placeholder="반품상세사유를 입력하여 주세요.">
+								</div>
+							</div>
+							<!-- //반품사유 -->
+						</div>
+						<!-- //2번 배송지 -->
+					</div>
+				</div>
+			</div>
+			<!-- //상품선택 -->
+
+			<!-- 회수지 정보 -->
+			<div class="step02">
+				<div class="ord_tit">
+					<h3 class="tit_order">2. 회수지 정보</h3>
+					<a href="#" class="ico_open"><span>열기</span></a>
+				</div>
+				<div class="ord_con mypage_delivery">
+					<!-- 배송지가 복수일 경우 -->
+					<div class="sbox_delivery">
+						<select>
+							<option>1번 배송지</option>
+							<option>2번 배송지</option>
+							<option>3번 배송지</option>
+						</select>
+					</div>
+					<!-- //배송지가 복수일 경우 -->
+					<!-- 회수지 정보 -->
+					<div class="ord_box01">
+						<div class="tab_con">
+							<ul>
+								<li>
+									<div class="box_tit">주문자명</div>
+									<div class="box_con">홍길동
+										<a href="javascript:" onclick="fn_layer_open('addrList');return false;" onkeypress="this.onclick;" class="btn_brd02 c01 dlv_list">배송지 목록</a>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">보내시는 분</div>
+									<div class="box_con">
+										<div class="inp_txt"><input type="text" title="보내시는 분" value="홍길동"></div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">전화번호</div>
+									<div class="box_con">
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>02</option>
+												</select>
+											</li>
+											<li><input type="text" title="전화번호 가운데자리" value="0000"></li>
+											<li><input type="text" title="전화번호 세번째자리" value="0000"></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">휴대전화</div>
+									<div class="box_con">
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>010</option>
+												</select>
+											</li>
+											<li><input type="text" title="휴대전화 가운데자리" value="0000"></li>
+											<li><input type="text" title="휴대전화 세번째자리" value="0000"></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">배송주소</div>
+									<div class="box_con">
+										<div class="addr">
+											<input type="text" class="w100" title="우편번호" value="08506">
+											<div class="absR">
+												<a href="#" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+											</div>
+										</div>
+										<div class="addr_etc">
+											<div class="inp_txt"><input type="text" title="도로명주소" value="서울 금천구 가산디지털1로 151"></div>
+										</div>
+										<div class="addr_etc">
+											<div class="inp_txt"><input type="text" title="상세주소" value="신한이노플렉스 803호 (가산동)"></div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="btn_modify">
+								<div class="btn">
+									<a href="#" class="btn_brd03 c03">변경완료</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //회수지 정보 -->
+					<!-- 지점 수령상품의 반품 -->
+					<div class="pay_title mt20">
+						<h4 class="tit">반품방법 선택</h4>
+					</div>
+					<ul class="rdo_refund">
+						<li>
+							<input type="radio" name="rdo_excg" id="rdo_excg1" checked="">
+							<label for="rdo_excg1">택배 반품 신청</label>
+						</li>
+						<li>
+							<input type="radio" name="rdo_excg" id="rdo_excg2">
+							<label for="rdo_excg2">매장 직적 반품</label>
+						</li>
+					</ul>
+					<div class="txt_noreturn">
+						<p>매장 수령 상품은</p>
+						<p><strong>매장에서 직접 반품이 가능합니다.</strong></p>
+					</div>
+					<div class="my_tit">
+						<h4>배송지 정보</h4>
+					</div>
+					<div class="ord_box01">
+						<div class="tab_con">
+							<ul>
+								<li>
+									<div class="box_tit">주문자명</div>
+									<div class="box_con"><div class="stxt">홍길동</div></div>
+								</li>
+								<li>
+									<div class="box_tit">받으시는 분</div>
+									<div class="box_con">
+										<div class="stxt">
+											홍길동<br>
+											전화번호 : 02-1234-****<br>
+											휴대전화 : 010-1234-****
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">픽업장소</div>
+									<div class="box_con">
+										<div class="stxt">
+											<span class="pick">NC백화점 강서점 4층 SPAO매장</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">대표번호</div>
+									<div class="box_con">
+										<strong>02-2667-9214</strong>
+										<div class="btn_addr"><a href="#" onclick="fn_layer_open('pop_store');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">위치보기</a></div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- //지점 수령상품의 반품 -->
+				</div>
+			</div>
+			<!-- //회수지 정보 -->
+			<!-- 방문 시간 -->
+			<div class="step02">
+				<div class="ord_tit">
+					<h3 class="tit_order">3. 방문시간선택</h3>
+					<span class="txt_order blue">9/18(금) 10:00~13:00</span>
+					<a href="#" class="ico_open"><span>열기</span></a>
+				</div>
+				<div class="ord_con">
+					<span class="rsv_top_info">지점에서 배송기사가 직접 상품을 수거 및 배송할 예정입니다.</span>
+					<div class="sel_rsv_date">
+						<table summary="배송시간, 날짜, 시간으로 이루어진 예약배송시간 선택 테이블">
+							<caption>배송시간, 날짜 및 요일, 시간</caption>
+							<col width="87px" />
+							<col />
+							<col />
+							<col />
+							<thead>
+								<tr>
+									<th scope="col">배송시간</th>
+									<th scope="col">07/08(수)</th>
+									<th scope="col">07/09(목)</th>
+									<th scope="col">07/10(금)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">10:00 ~ 13:00</th>
+									<td>예약마감</td>
+									<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" /></td>
+									<td><span class="red">휴무</span></td>
+								</tr>
+								<tr>
+									<th scope="row">13:00 ~ 15:00</th>
+									<td>예약마감</td>
+									<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" /></td>
+									<td><span class="red">휴무</span></td>
+								</tr>
+								<tr>
+									<th scope="row">15:00 ~ 17:00</th>
+									<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" /></td>
+									<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" /></td>
+									<td><span class="red">휴무</span></td>
+								</tr>
+								<tr>
+									<th scope="row">17:00 ~ 19:00</th>
+									<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" /></td>
+									<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" /></td>
+									<td><span class="red">휴무</span></td>
+								</tr>
+								<tr>
+									<th scope="row">19:00 ~ 21:00</th>
+									<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" /></td>
+									<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" /></td>
+									<td><span class="red">휴무</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="srv_info">
+						<ul>
+							<li>선택 가능한 방문시간이 없는 경우 CS센터로 연락주세요. <span class="inbl">(1899-9500)</span>
+							<li>교환은 맞교환 방식으로 진행됩니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //방문 시간 -->
+
+			<!-- 환불정보 -->
+			<div class="step02 bn">
+				<div class="ord_tit">
+					<h3 class="tit_order">3. 환불정보</h3>
+					<a href="#" class="ico_open"><span>열기</span></a>
+				</div>
+				<div class="ord_con">
+					<div class="return_ship">
+						<h4 class="tit">반품 배송비</h4>
+						<p class="txt">상품을 반품하시면 아래와 같은 배송비가 발생합니다.<br>쿠폰 적용 후 반품비 계산을 해보세요.</p>
+						<div class="return_coupon">
+							<select class="w100">
+								<option>쿠폰 선택</option>
+							</select>
+							<div class="btn_return">
+								<a href="#" class="btn_brd02 c01">반품 배송비 계산</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="my_pay">
+						<ul class="ship_fee type2">
+							<li>
+								<span class="txt">최초 배송비</span>
+								<span class="pri"><em>2,500</em>원</span>
+							</li>
+							<li>
+								<span class="txt">반품 배송비</span>
+								<span class="pri"><em>2,500</em>원</span>
+							</li>
+						</ul>
+						<div class="pay_all">
+							<ul class="left">
+								<li>
+									<span class="txt">총 배송비</span>
+									<span class="pri"><em>5,000</em>원</span>
+								</li>
+								<li>
+									<span class="txt">반품 배송비 쿠폰</span>
+									<span class="pri"><em>-2,500</em>원</span>
+								</li>
+							</ul>
+							<div class="right">
+								<span class="txt">최종 배송비</span>
+								<span class="pri"><em>5,000</em>원</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="pay_title mt20">
+						<h4 class="tit">반품 배송비 결제 선택</h4>
+						<p class="txt">결제금액 차감 배송비 선택시 결제 금액에서 자동으로 반품 배송비를 결제금액 차감후 환불이 진행되고, 선결제 배송비 선택시 고객님께서 반품 배송비를 결제 하셔야 반품이 진행됩니다.</p>
+					</div>
+					<ul class="rdo_refund">
+						<li>
+							<input type="radio" name="rdo_ship" id="rdo_ship1" checked="">
+							<label for="rdo_ship1">결제금액 차감</label>
+						</li>
+						<li>
+							<input type="radio" name="rdo_ship" id="rdo_ship2">
+							<label for="rdo_ship2">선결제</label>
+						</li>
+					</ul>
+
+					<!-- 선결제 반품 배송 진행 -->
+					<div class="pre_return">
+						<!-- 2016-08-05 -->
+						<ul class="tab">
+							<li><a href="#" class="on">신용카드</a></li>
+							<li><a href="#">실시간 계좌이체</a></li>
+							<li><a href="#">예치금</a></li>
+						</ul>
+						<ul class="tab bt2">
+							<li><a href="#" class="on">신용카드</a></li>
+							<li><a href="#">실시간 계좌이체</a></li>
+						</ul>
+						<ul class="tab bt1">
+							<li><a href="#" class="on">신용카드</a></li>
+						</ul>
+						<!--// 2016-08-05 -->
+						<div class="con">
+							<div class="payment" style="display:block;">
+								<div class="sel_card">
+									<div class="card_name">
+										<select class="w100">
+											<option>신한카드</option>
+										</select>
+									</div>
+									<div class="card_num">
+										<select class="w100">
+											<option>일시불</option>
+										</select>
+									</div>
+								</div>
+								<!-- 삭제 <div class="btn_payment">
+									<a href="#" class="btn_brd02 c01">결제하기</a>
+								</div> -->
+							</div>
+							<div class="payment">
+								<div class="txt">
+									<p>실시간 계좌 이체는 <br>별도의 수수료가 부과되지 않습니다.</p>
+								</div>
+								<!-- 삭제 <div class="btn_payment2">
+									<a href="#" class="btn_brd02 c01">결제하기</a>
+								</div> -->
+							</div>
+							<div class="payment">
+								<div class="price">
+									<strong>25,000</strong>원 <span class="fc02">사용</span>
+									<span class="deposit">(예치금 <em>22,000</em>원 보류)</span>
+								</div>
+								<div class="txt">
+									<p>예치금 부족으로 사용하실 수 없습니다.  (예치금 <em>0</em>원 보유)</p>
+								</div>
+								<!-- 삭제 <div class="btn_payment2">
+									<a href="#" class="btn_brd02 c01">결제하기</a>
+								</div> -->
+							</div>
+						</div>
+					</div>
+					<!-- //선결제 반품 배송 진행 -->
+
+					<div class="return_ship brd">
+						<h4 class="tit">환불 예정 금액</h4>
+					</div>
+
+					<div class="my_pay">
+						<div class="pay_all">
+							<ul class="left">
+								<li>
+									<span class="txt">환불금액</span>
+									<span class="pri"><em>99,000</em>원</span>
+								</li>
+								<li>
+									<span class="txt">최종 배송비</span>
+									<span class="pri"><em>-2,500</em>원</span>
+								</li>
+							</ul>
+							<div class="right">
+								<span class="txt">총 환불금액</span>
+								<span class="pri"><em>99,999</em>원</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="pay_title mt20">
+						<h4 class="tit">환불방법 선택</h4>
+						<p class="txt">입력계좌로 환불 받기 원하실 경우, 빠르고 편리한 환불서비스를 위해 정확한 계좌정보를 입력해 주세요.</p>
+					</div>
+					<ul class="rdo_refund">
+						<li>
+							<input type="radio" name="rdo_ship2" id="rdo_ship2_1">
+							<label for="rdo_ship2_1">입력계좌로 환불 받기</label>
+						</li>
+						<li>
+							<input type="radio" name="rdo_ship2" id="rdo_ship2_2" checked="">
+							<label for="rdo_ship2_2">예치금으로 환불 받기</label>
+						</li>
+					</ul>
+					<!-- 저장된 환불계좌 있음 -->
+					<div class="refund_account">
+						<div class="txt">
+							<p>우리은행<br><em>1002941000000 (한동기)</em> 으로 입금</p>
+						</div>
+						<div class="btn_payment">
+							<a href="#" class="btn_brd02 c01">새로입력</a>
+						</div>
+					</div>
+					<!-- //저장된 환불계좌 있음 -->
+					<!-- 저장된 환불계좌 없음 -->
+					<div class="ord_box01 refund">
+						<div class="tab_con">
+							<ul>
+								<li>
+									<div class="box_tit">예금주</div>
+									<div class="box_con">
+										<div class="inp_txt"><input type="text" title="예금주" value="홍길동"></div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">은행</div>
+									<div class="box_con">
+										<select class="w100">
+											<option>우리은행</option>
+										</select>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">계좌번호</div>
+									<div class="box_con">
+										<div class="inp_txt"><input type="text" title="계좌번호" value="1002599769210"></div>
+										<p class="txt_refund">"-" 없이 숫자만 입력해 주세요</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="chk_refund">
+						<input type="checkbox" id="chk_refund_save" checked="">
+						<label for="chk_refund_save">환불계좌정보 저장하기</label>
+					</div>
+					<!-- //저장된 환불계좌 없음 -->
+
+					<div class="btn_return2">
+						<ul class="btn_list02">
+							<li><a href="#" class="btn_brd03 c04">목록으로</a></li>
+							<li><a href="#" class="btn_bg06 c01"><strong>신청</strong></a></li>
+						</ul>
+						<a href="#" class="btn_brd03 c04">목록으로</a>
+					</div>
+					<div class="my_noti brdN">
+						<ul>
+							<li>고객의 단순변심으로 인한 교환/반품은 상품 배송완료일 기준 7일 이내 가능합니다.</li>
+							<li>단, 사전에 반품기간을 달리 정하여 사용자에게 고지한 경우에는 해당 기간 내에 반품을 신청할 수 있습니다.</li>
+							<li>추가구매 상품만을 반품/교환하는 경우 추가비용이 발생할 수 있습니다.</li>
+							<li>사은품은 고객센터(1899-9500)를 통해 교환/반품 신청이 가능합니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //환불정보 -->
+
+		</div>
+		<!-- //반품 신청 -->
+
+		<!-- 교환 신청 -->
+		<div class="exchange_con">
+			<!-- 상품선택 -->
+			<div class="step02">
+				<div class="ord_tit">
+					<h3 class="tit_order">1. 상품선택</h3>
+					<a href="#" class="ico_open"><span>열기</span></a>
+				</div>
+				<div class="ord_con">
+					<div class="tit_order2">
+						<div class="tit">주문 상품</div>
+					</div>
+					<div class="mypage_box">
+						<div class="tit_order">
+							<em>2016.12.01</em>
+							<span>(주문번호:M151116002268196)</span>
+						</div>
+
+						<!-- 1번 배송지 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<div class="cancel_chk">
+									<input type="checkbox" title="상품선택">
+								</div>
+								<div class="top_deli"><span class="addr"><em class="ico">1번</em> 배송지 </span>교환 배송비 <strong>2,500</strong>원</div>
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+							</div>
+							<!-- 교환사유 -->
+							<div class="prd_total05">
+								<div class="txt">
+									<strong class="stxt">교환상품</strong>
+								</div>
+								<div class="sel_box">
+									<select class="w100">
+										<option>교환옵션 선택</option>
+									</select>
+								</div>
+								<div class="txt">
+									<strong class="stxt">교환사유</strong>
+								</div>
+								<div class="sel_box">
+									<select class="w100">
+										<option>교환사유 선택</option>
+									</select>
+								</div>
+								<div class="txt_exchange">
+									<input type="text" class="w100" title="교환사유" placeholder="교환상세사유를 입력하여 주세요.">
+									<p>* 재고 수량이 없는 상품일 경우에는 부득이 반품 처리 될 수 있습니다</p>
+								</div>
+							</div>
+							<!-- //교환사유 -->
+						</div>
+						<!-- //1번 배송지 -->
+
+						<!-- 2번 배송지 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<div class="cancel_chk">
+									<input type="checkbox" title="상품선택">
+								</div>
+								<div class="top_deli"><span class="addr"><em class="ico">2번</em> 배송지 </span>교환 배송비 <strong>2,500</strong>원</div>
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+							</div>
+							<!-- 교환사유 -->
+							<div class="prd_total05">
+								<div class="txt">
+									<strong class="stxt">교환상품</strong>
+								</div>
+								<div class="sel_box">
+									<select class="w100">
+										<option>교환옵션 선택</option>
+									</select>
+								</div>
+								<div class="txt">
+									<strong class="stxt">교환사유</strong>
+								</div>
+								<div class="sel_box">
+									<select class="w100">
+										<option>교환사유 선택</option>
+									</select>
+								</div>
+								<div class="txt_exchange">
+									<input type="text" class="w100" title="교환사유" placeholder="교환상세사유를 입력하여 주세요.">
+									<p>* 재고 수량이 없는 상품일 경우에는 부득이 반품 처리 될 수 있습니다</p>
+								</div>
+							</div>
+							<!-- //교환사유 -->
+						</div>
+						<!-- //2번 배송지 -->
+					</div>
+				</div>
+			</div>
+			<!-- //상품선택 -->
+
+			<!-- 배송지 정보 -->
+			<div class="step02">
+				<div class="ord_tit">
+					<h3 class="tit_order">2. 배송지 정보</h3>
+					<a href="#" class="ico_open"><span>열기</span></a>
+				</div>
+				<div class="ord_con mypage_delivery">
+					<!-- 배송지가 복수일 경우 -->
+					<div class="sbox_delivery">
+						<select>
+							<option>1번 배송지</option>
+							<option>2번 배송지</option>
+							<option>3번 배송지</option>
+						</select>
+					</div>
+					<!-- //배송지가 복수일 경우 -->
+					<!-- 배송지 정보 -->
+					<div class="my_tit">
+						<h4>배송지 정보</h4>
+					</div>
+					<div class="ord_box01">
+						<div class="tab_con">
+							<ul>
+								<li>
+									<div class="box_tit">주문자명</div>
+									<div class="box_con">홍길동</div>
+								</li>
+								<li>
+									<div class="box_tit">받으시는 분</div>
+									<div class="box_con">
+										<div class="inp_txt"><input type="text" title="받으시는 분" value="홍길동"></div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">전화번호</div>
+									<div class="box_con">
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>02</option>
+												</select>
+											</li>
+											<li><input type="text" title="전화번호 가운데자리" value="0000"></li>
+											<li><input type="text" title="전화번호 세번째자리" value="0000"></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">휴대전화</div>
+									<div class="box_con">
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>010</option>
+												</select>
+											</li>
+											<li><input type="text" title="휴대전화 가운데자리" value="0000"></li>
+											<li><input type="text" title="휴대전화 세번째자리" value="0000"></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">배송주소</div>
+									<div class="box_con">
+										<div class="addr">
+											<input type="text" class="w100" title="우편번호" value="08506">
+											<div class="absR">
+												<a href="#" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+											</div>
+										</div>
+										<div class="addr_etc">
+											<div class="inp_txt"><input type="text" title="도로명주소" value="서울 금천구 가산디지털1로 151"></div>
+										</div>
+										<div class="addr_etc">
+											<div class="inp_txt"><input type="text" title="주소 상세보기" value="신한이노플렉스 803호 (가산동)"></div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">배송메세지</div>
+									<div class="box_con">
+										<select class="sel_box w100">
+											<option>선택해 주세요</option>
+											<option>부재시 경비(관리)실에 맡겨주세요</option>
+											<option>빠른 배송 부탁드려요</option>
+											<option>부재시 문 앞에 놓아주세요</option>
+											<option>파손의 위험이 있는 상품이 있습니다.</option>
+											<option>배송전에 연락주세요</option>
+											<option>메시지 직접입력 (배송기사/매장 전달)</option>
+										</select>
+										<!-- 배송메세지 선택 -->
+										<div class="msg_selected">
+											<span>선택해 주세요</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">배송비</div>
+									<div class="box_con"><strong>2500</strong> 원</div>
+								</li>
+							</ul>
+							<div class="btn_modify">
+								<div class="btn">
+									<a href="#" class="btn_brd03 c03">변경완료</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //배송지 정보 -->
+					<!-- 회수지 정보 -->
+					<div class="my_tit">
+						<h4>회수지 정보</h4>
+					</div>
+					<div class="ord_box01">
+						<div class="tab_con">
+							<ul>
+								<li>
+									<div class="box_tit">주문자명</div>
+									<div class="box_con">홍길동</div>
+								</li>
+								<li>
+									<div class="box_tit">보내시는 분</div>
+									<div class="box_con">
+										<div class="inp_txt"><input type="text" title="보내시는 분" value="홍길동"></div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">전화번호</div>
+									<div class="box_con">
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>02</option>
+												</select>
+											</li>
+											<li><input type="text" title="전화번호 가운데자리" value="0000"></li>
+											<li><input type="text" title="전화번호 세번째자리" value="0000"></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">휴대전화</div>
+									<div class="box_con">
+										<ul class="inp_tel01">
+											<li>
+												<select>
+													<option>010</option>
+												</select>
+											</li>
+											<li><input type="text" title="휴대전화 가운데자리" value="0000"></li>
+											<li><input type="text" title="휴대전화 세번째자리" value="0000"></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">배송주소</div>
+									<div class="box_con">
+										<div class="addr">
+											<input type="text" class="w100" title="우편번호" value="08506">
+											<div class="absR">
+												<a href="#addrFind" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+											</div>
+										</div>
+										<div class="addr_etc">
+											<div class="inp_txt"><input type="text" title="도로명주소" value="서울 금천구 가산디지털1로 151"></div>
+										</div>
+										<div class="addr_etc">
+											<div class="inp_txt"><input type="text" title="주소 상세보기" value="신한이노플렉스 803호 (가산동)"></div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="btn_modify">
+								<div class="btn">
+									<a href="#" class="btn_brd03 c03">변경완료</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //회수지 정보 -->
+					<!-- 지점 수령상품의 반품 -->
+					<div class="txt_noreturn">
+						<p>매장 수령 상품은</p>
+						<p><strong>매장에서 직접 반품이 가능합니다.</strong></p>
+					</div>
+					<div class="my_tit">
+						<h4>배송지 정보</h4>
+					</div>
+					<div class="ord_box01">
+						<div class="tab_con">
+							<ul>
+								<li>
+									<div class="box_tit">주문자명</div>
+									<div class="box_con"><div class="stxt">홍길동</div></div>
+								</li>
+								<li>
+									<div class="box_tit">받으시는 분</div>
+									<div class="box_con">
+										<div class="stxt">
+											홍길동<br>
+											전화번호 : 02-1234-****<br>
+											휴대전화 : 010-1234-****
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">픽업장소</div>
+									<div class="box_con">
+										<div class="stxt">
+											<span class="pick">NC백화점 강서점 4층 SPAO매장</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="box_tit">대표번호</div>
+									<div class="box_con">
+										<strong>02-2667-9214</strong>
+										<div class="btn_addr"><a href="#" onclick="fn_layer_open('pop_store');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">위치보기</a></div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- //지점 수령상품의 반품 -->
+				</div>
+			</div>
+			<!-- //배송지 정보 -->
+
+			<!-- 결제 정보 -->
+			<div class="step02 bn">
+				<div class="ord_tit">
+					<h3 class="tit_order">3. 결제 정보</h3>
+					<a href="#" class="ico_open"><span>열기</span></a>
+				</div>
+				<div class="ord_con">
+					<div class="return_ship">
+						<h4 class="tit">교환 배송비</h4>
+						<p class="txt">상품을 교환하시면 아래와 같은 배송비가 발생합니다.</p>
+						<div class="return_coupon">
+							<div class="btn_return">
+								<a href="#" class="btn_brd02 c01">교환 배송비 계산</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="my_pay">
+						<div class="pay_all">
+							<ul class="left">
+								<li>
+									<span class="txt">교환 출하 배송비</span>
+									<span class="pri"><em>2,500</em>원</span>
+								</li>
+								<li>
+									<span class="txt">교환/반품 배송비</span>
+									<span class="pri"><em>2,500</em>원</span>
+								</li>
+							</ul>
+							<div class="right">
+								<span class="txt">총 배송비</span>
+								<span class="pri"><em>5,000</em>원</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="pay_title mt20">
+						<h4 class="tit">교환 배송비 결제 선택</h4>
+					</div>
+					
+					<!-- 150303 삭제
+					<div class="pre_return tab2">
+						<ul class="tab">
+							<li><a href="#" class="on">신용카드</a></li>
+							<li><a href="#">실시간 계좌이체</a></li>
+						</ul>
+						<div class="con">
+							<div class="payment" style="display:block;">
+								<div class="sel_card">
+									<div class="card_name">
+										<select class="w100">
+											<option>신한카드</option>
+										</select>
+									</div>
+									<div class="card_num">
+										<select class="w100">
+											<option>일시불</option>
+										</select>
+									</div>
+								</div>
+								삭제 <div class="btn_payment">
+									<a href="#" class="btn_brd02 c01">결제하기</a>
+								</div>
+							</div>
+							<div class="payment">
+								<div class="txt">
+									<p>실시간 계좌 이체는 <br>별도의 수수료가 부과되지 않습니다.</p>
+								</div>
+								삭제 <div class="btn_payment2">
+									<a href="#" class="btn_brd02 c01">결제하기</a>
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+					<!-- 선결제 반품 배송 진행 150303 추가 -->
+					<div class="pre_return">
+						<ul class="tab">
+							<li><a href="#" class="on">신용카드</a></li>
+							<li><a href="#">실시간 계좌이체</a></li>
+							<li><a href="#">예치금</a></li>
+						</ul>
+						<div class="con">
+							<div class="payment" style="display:block;">
+								<div class="sel_card">
+									<div class="card_name">
+										<select class="w100">
+											<option>신한카드</option>
+										</select>
+									</div>
+									<div class="card_num">
+										<select class="w100">
+											<option>일시불</option>
+										</select>
+									</div>
+								</div>
+								<!-- 삭제 <div class="btn_payment">
+									<a href="#" class="btn_brd02 c01">결제하기</a>
+								</div> -->
+							</div>
+							<div class="payment">
+								<div class="txt">
+									<p>실시간 계좌 이체는 <br>별도의 수수료가 부과되지 않습니다.</p>
+								</div>
+								<!-- 삭제 <div class="btn_payment2">
+									<a href="#" class="btn_brd02 c01">결제하기</a>
+								</div> -->
+							</div>
+							<div class="payment">
+								<div class="price">
+									<strong>25,000</strong>원 <span class="fc02">사용</span>
+									<span class="deposit">(예치금 <em>22,000</em>원 보류)</span>
+								</div>
+								<div class="txt">
+									<p>예치금 부족으로 사용하실 수 없습니다.  (예치금 <em>0</em>원 보유)</p>
+								</div>
+								<!-- 삭제 <div class="btn_payment2">
+									<a href="#" class="btn_brd02 c01">결제하기</a>
+								</div> -->
+							</div>
+						</div>
+					</div>
+					<!-- //선결제 반품 배송 진행 -->
+
+
+					<div class="btn_return2">
+						<ul class="btn_list02">
+							<li><a href="#" class="btn_brd03 c04">목록으로</a></li>
+							<li><a href="#" class="btn_bg06 c01" onclick="commonUI.lyrCnfmO(exchangeCnfm)" keypress="this.onclick"><strong>신청</strong></a></li>
+						</ul>
+						<a href="#" class="btn_brd03 c04">목록으로</a>
+					</div>
+					<div class="my_noti brdN">
+						<ul>
+							<li>고객의 단순변심으로 인한 교환/반품은 상품 배송완료일 기준 7일 이내 가능합니다.</li>
+							<li>단, 사전에 반품기간을 달리 정하여 사용자에게 고지한 경우에는 해당 기간 내에 반품을 신청할 수 있습니다.</li>
+							<li>추가구매 상품만을 반품/교환하는 경우 추가비용이 발생할 수 있습니다.</li>
+							<li>사은품은 고객센터(1899-9500)를 통해 교환/반품 신청이 가능합니다.</li>
+							<li>반짝배송(퀵상품) 주문의 경우 반품신청만 가능합니다.</li>
+							<li>반품상품의 수거는 택배로 수거가 됩니다. 택배사로의 수거접수는 이랜드몰에서 자동으로 접수되니, 별도로 신청하실 필요는 없습니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //결제 정보 -->
+		</div>
+		<!-- //교환 신청 -->
+
+	</div>
+</div>
+<!-- //CONTENT -->
+
+
+<!-- layer_popup : 매장 위치 보기 -->
+<div id="pop_store" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">매장 위치 보기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="store">
+				<h3 class="tit">NC 강서점</h3>
+				<ul>
+					<li><span>- 주소 : </span>서울특별시 송파구 충민로66번지 </li>
+					<li><span>- 대표번호 : </span>02-2157-5000</li>
+					<li><span>- 영업시간 : </span>AM10 : 30 ~ PM10 : 00</li>
+					<li><span>- 매장위치 : </span>지상 2층 /  SPAO</li>
+				</ul>
+				<div class="store_api">
+					<img src="../images/mobile/temp/temp_store.jpg" alt="">
+				</div>
+				<div class="btn_area alC">
+					<a href="#" class="btn_line01 c02">닫기</a>
+				</div>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 매장 위치 보기 -->
+
+
+<!-- layer_popup : 주소찾기 -->
+<div id="addrFind" class="layer_fix"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">주소찾기</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="pop_addr">
+				<ul class="tab_addr">
+					<li class="on"><span>도로명으로 찾기</span></li>
+					<li><span>지번으로 찾기</span></li>
+				</ul>
+
+				<div class="con_addr">
+					<!-- 도로명으로 찾기 -->
+					<section class="on">
+						<h3 class="ir">도로명으로 찾기</h3>
+						<div class="sch_box">
+							<div class="addr_info">
+								<p>찾고 싶으신 도로명 또는 건물번호를 입력해 주세요.</p>
+								<p>도로명과 건물번호를 함께 입력하면 보다 빠르게</p>
+								<p>결과를 확인할 수 있습니다.</p>
+								<p class="stxt">예) 반포대로 1, 세종대로 23, 수지로 11</p>
+							</div>
+							<ul class="sch01">
+								<li>
+									<select class="w100">
+										<option>시/도</option>
+									</select>
+								<li>
+								<li>
+									<select class="w100">
+										<option>시/군/구</option>
+									</select>
+								</li>
+							</ul>
+							<div class="sch02">
+								<input type="text" class="w100" title="도로명주소" placeholder="가산디지털1로">
+								<a href="#" class="btn_brd02 c05">검색</a>
+							</div>
+						</div>
+
+						<!-- 검색결과 -->
+						<div class="sch_result">
+							<p>* 검색결과 중 해당 주소를 클릭하시면 자동 입력됩니다.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 도로명 주소 검색결과의 우편번호, 주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>우편번호</th>
+										<th>주소</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="alC">08593</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08592</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08591</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //검색결과 -->
+
+						<!-- 검색결과 없음 -->
+						<div class="txt_nodata">
+							<em>"본마을1길"</em> 에 대한 검색결과가 없습니다.<br>
+							도로명을 다시 입력해 주세요.
+						</div>
+						<!-- //검색결과 없음 -->
+
+						<!-- 상세주소 입력 -->
+						<div class="sch_result">
+							<p>나머지 상세 주소를 입력하신 후<br>주소입력 버튼을 눌러 주세요.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 상세주소 입력의 우편번호, 기본주소, 상세주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="col"><span class="fc02">우편번호</span></th>
+										<td>08593</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">기본주소</span></th>
+										<td>서울특별시 금천구 가산디지털2로 11 지식산업센타</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">상세주소</span></th>
+										<td>
+											<div class="addr_detail">
+												<input type="text" class="w100" title="상세주소" placeholder="상세주소를 입력해 주세요">
+												<a href="#" class="btn_brd02 c05">입력완료</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="addr_result">
+
+								<div class="txt_info">자동 변환된 도로명 주소 입니다. 변환된 주소 정보를 확인해 주세요.</div>
+								<div class="result_box">
+									<dl>
+										<dt>도로명주소</dt>
+										<dd>[08593] 서울 금천구 가산디지털2로 11, 지식산업센터 302호 (가산동)</dd>
+									</dl>
+									<dl>
+										<dt>지번주소</dt>
+										<dd>[08593] 서울 금천구 가산동 343-8번지 지식산업센터 302호</dd>
+									</dl>
+									<!-- 지번주소가 여러개 일 경우 -->
+									<dl>
+										<dt>지번주소 <span class="stxt">(검색된 주소중 하나를 선택해 주세요)</span></dt>
+										<dd>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr01" name="rdo_addr">
+												<label for="rdo_addr01">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr02" name="rdo_addr">
+												<label for="rdo_addr02">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+										</dd>
+									</dl>
+									<!-- //지번주소가 여러개 일 경우 -->
+								</div>
+							</div>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //상세주소 입력 -->
+
+					</section>
+					
+					<!-- 지번으로 찾기 -->
+					<section>
+						<h3 class="ir">지번으로 찾기</h3>
+						<div class="sch_box">
+							<div class="addr_info">
+								<p class="stxt">찾고 싶으신 주소의<br>동(읍/면)이름을 입력해 주세요.</p>
+							</div>
+							<div class="sch03">
+								<ul>
+									<li class="absL"><label for="inp_add01">동(읍/면)</label></li>
+									<li class="inp_box"><input type="text" id="inp_add01" class="w100" placeholder="가산디지털1로"></li>
+									<li class="absR"><a href="#" class="btn_brd02 c05">검색</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- 검색결과 -->
+						<div class="sch_result">
+							<p>* 검색결과 중 해당 주소를 클릭하시면 자동 입력됩니다.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 도로명 주소 검색결과의 우편번호, 주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>우편번호</th>
+										<th>주소</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="alC">08593</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08592</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+									<tr>
+										<td class="alC">08591</td>
+										<td><a href="#">서울특별시 금천구 가산디지털2로 11 지식산업센타</a></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //검색결과 -->
+
+						<!-- 검색결과 없음 -->
+						<div class="txt_nodata">
+							<em>"후인동"</em> 에 대한 검색결과가 없습니다.<br>
+							도로명을 다시 입력해 주세요.
+						</div>
+						<!-- //검색결과 없음 -->
+						
+
+						<!-- 상세주소 입력 -->
+						<div class="sch_result">
+							<p>나머지 상세 주소를 입력하신 후<br>주소입력 버튼을 눌러 주세요.</p>
+							<table class="tbl_address">
+								<caption>이 테이블은 상세주소 입력의 우편번호, 기본주소, 상세주소를 포함하고 있습니다.</caption>
+								<colgroup>
+									<col style="width:25%;">
+									<col style="">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="col"><span class="fc02">우편번호</span></th>
+										<td>08593</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">기본주소</span></th>
+										<td>서울특별시 금천구 가산디지털2로 11 지식산업센타</td>
+									</tr>
+									<tr>
+										<th scope="col"><span class="fc02">상세주소</span></th>
+										<td>
+											<div class="addr_detail">
+												<input type="text" class="w100" title="상세주소" placeholder="번지수를 포함한 상세주소를 입력해 주세요.">
+												<a href="#" class="btn_brd02 c05">입력완료</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="addr_result">
+								<div class="txt_info">자동 변환된 도로명 주소 입니다. 변환된 주소 정보를 확인해 주세요.</div>
+								<div class="result_box">
+									<dl>
+										<dt>도로명주소</dt>
+										<dd>[08593] 서울 금천구 가산디지털2로 11, 지식산업센터 302호 (가산동)</dd>
+									</dl>
+									<dl>
+										<dt>지번주소</dt>
+										<dd>[08593] 서울 금천구 가산동 343-8번지 지식산업센터 302호</dd>
+									</dl>
+									<!-- 지번주소가 여러개 일 경우 -->
+									<dl>
+										<dt>지번주소 <span class="stxt">(검색된 주소중 하나를 선택해 주세요)</span></dt>
+										<dd>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr03" name="rdo_addr">
+												<label for="rdo_addr03">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+											<div class="inp_box">
+												<input type="radio" id="rdo_addr04" name="rdo_addr">
+												<label for="rdo_addr04">[08593] 서울 금천구 가산동 343-8번지 지식산업센터 1 302호</label>
+											</div>
+										</dd>
+									</dl>
+									<!-- //지번주소가 여러개 일 경우 -->
+								</div>
+							</div>
+
+							<ul class="btn_list02 btn_addr mt10">
+								<li><a href="#" class="btn_brd03 c01">다시검색</a></li>
+								<li><a href="#" class="btn_bg06 c01"><strong>주소사용</strong></a></li>
+							</ul>
+							<div class="btn_area alC">
+								<a href="#" class="btn_brd03 c01">다시검색</a>
+							</div>
+						</div>
+						<!-- //상세주소 입력 -->
+					</section>
+				</div>
+
+			</div>
+
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 주소찾기 -->
+
+<!-- layer_popup : 나의 배송지 목록 -->
+<div id="addrList" class="layer_fix myaddr"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">나의 배송지 목록</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+
+			<table class="tbl_ship">
+				<caption>나의 배송지 목록의 전화번호, 휴대전화, 도로명주소를 표시합니다.</caption>
+				<colgroup>
+				<col style="width:45px;">
+				<col style="">
+				</colgroup>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship01" title="배송지 선택" checked></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동 <em>(기본 배송지)</em></strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship02" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship03" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship04" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship05" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship06" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col"><input type="radio" name="rdo_ship" id="rdo_ship07" title="배송지 선택"></th>
+					<td>
+						<a href="#">
+							<strong>우리집 / 홍길동</strong>
+							<span>02-3000-0000 | 010-0000-0000</span>
+							<span>[08506] 서울 금천구 가산디지털1로 151, 신한이노플렉스 803호 (가산동)</span>
+						</a>
+					</td>
+				</tr>
+			</table>
+			<!-- 배송 불가 상품 -->
+			<div class="nolist">
+				<div class="txt">입력하신 주소로 <br><strong>배송 불가한 상품</strong>이 존재 합니다.</div>
+				<div class="stxt">장바구니에서 배송불가 상품을 제외하고<br>주문을 다시 시도하시겠습니까?</div>
+			</div>
+			<!-- //배송 불가 상품 -->
+
+			<!-- 160325 위치수정 -->
+			<div class="btn_ship">
+				<ul class="btn_list02">
+					<li><a href="#" class="btn_brd03 c01">취소</a></li>
+					<li><a href="#" class="btn_bg06 c01">확인</a></li>
+				</ul>
+			</div>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 나의 배송지 목록 -->
+
+
+<!-- 레이어 타입 confirm -->
+<div class="lyr_confirm" id="exchangeCnfm">
+	<div class="chk_txt_des">교환 신청 후, 재고 상황에 따라<br />요청하신 상품이 품절될 수 있습니다.<br />양해 부탁드리며, 품절된 상품은<br />품절 문자 안내 후 환불 진행됩니다.</div>
+	<div class="btns">
+		<button class="cancel" onclick="commonUI.lyrCnfmC(exchangeCnfm)" keypress="this.onclick"><em>취소</em></button>
+		<button class="cnfm" onclick="commonUI.lyrCnfmC(exchangeCnfm)" keypress="this.onclick"><em>확인</em></button>
+	</div>
+</div>
+<!-- //레이어 타입 confirm -->
+
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

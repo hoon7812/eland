@@ -1,0 +1,280 @@
+<script type="text/javascript">
+$(document).ready(function(){
+
+	fnCtgGoodsConrListLucky = function(conr_set_no, conr_set_cmps_no){
+		var idx = 1;
+		
+		$("#tab_info input:hidden[name=conr_set_no]").val(conr_set_no);
+		$("#tab_info input:hidden[name=conr_set_cmps_no]").val(conr_set_cmps_no);
+	
+
+		//카테고리별 상품 보기
+		handle.Manager.loadJson({
+			templNm 	:  l_templ_02,       		//템플릿 명 선언
+			targetId	: "lck_goods_list", 	//데이터를 렌더링 할 태그 아이디 선언
+			managerId	: "dummy01", 				//템플릿 매니저 아이디 선언
+			jsonPath 	: "/api/shop/initShopLuckyDeal.action",
+			params		: {list_only_yn:"Y" ,page_idx : idx , area_no : l_area_no, disp_ctg_no : l_disp_ctg_no ,rows_per_page : l_rows_per_page , conr_stock_grp_no :  l_conr_stock_grp_no ,conr_set_no : conr_set_no , conr_set_cmps_no : conr_set_cmps_no },
+			afterCallback : function(){
+				elandmall.lazyload();
+			} 	//데이터 렌더링 후 컬백함수
+		});
+		
+	};
+	
+	
+	//더보기
+	var prgs_yn = 'N';
+	
+	fnMoreListPageLucky = function() {
+		
+		if(prgs_yn == 'Y'){
+			return;
+		}else{
+			prgs_yn = 'Y';
+		}
+		
+		var idx = parseInt($("input:hidden[name=page_index]").val()) + 1;
+
+		
+		var conr_set_no = $("#tab_info input:hidden[name=conr_set_no]").val();
+		var conr_set_cmps_no = $("#tab_info input:hidden[name=conr_set_cmps_no]").val();
+		
+		//카테고리별 상품 보기
+		handle.Manager.loadJson({
+			templNm 	:  l_templ_02,       		//템플릿 명 선언
+			targetId	: "tempGoodsList", 	//데이터를 렌더링 할 태그 아이디 선언
+			managerId	: "dummy01", 				//템플릿 매니저 아이디 선언
+			jsonPath 	: "http://dev-m.elandmall.com/api/shop/initShopLuckyDeal.action",
+			params		: {list_only_yn:"Y" ,page_idx : idx , area_no : l_area_no, disp_ctg_no : l_disp_ctg_no ,rows_per_page : l_rows_per_page , conr_stock_grp_no :  l_conr_stock_grp_no ,conr_set_no : conr_set_no , conr_set_cmps_no : conr_set_cmps_no },
+			onError		: function (){
+				prgs_yn = 'N';
+			},
+			
+			afterCallback : function(){
+			
+				//페이지 인덱스 설정
+				$("#paging input:hidden[name=total_count]").val($("#tempGoodsList input:hidden[name=total_count]").val());
+				$("#paging input:hidden[name=page_index]").val($("#tempGoodsList input:hidden[name=page_index]").val());
+				
+				//페이지 인덱스 셋팅 후 임시 데이터 삭제
+				$("#tempGoodsList #paging").remove();
+				
+				//럭키딜 상품목록 추가
+				if(idx > 2){
+					$("#lck_goods_list .gList_2 ul").append($("#tempGoodsList .goods_list ul").html());
+				}else{
+					$("#lck_goods_list").append($("#tempGoodsList").html());
+				}
+				
+				// 더보기 숨김여부 체크
+				var p_idx = parseInt($("input:hidden[name=page_index]").val());
+			    var r_p_p = parseInt($("input:hidden[name=rows_per_page]").val());
+			    var g_total = parseInt($("input:hidden[name=total_count]").val());
+
+			    /*  if ( (p_idx*r_p_p) >= g_total ) {
+			    	$(".main_list_more").hide();
+			    }else{
+			    	$(".btn_current_count").text(p_idx*r_p_p);
+			    	$(".btn_total_count").text(g_total);
+			    } */
+			    
+				// 전체페이지 설정후 임시내용 삭제
+				$("#tempGoodsList").html("");
+				elandmall.lazyload();
+				_google_analytics();
+				
+				prgs_yn = 'N';
+			} 	
+		});
+
+	}
+	
+
+
+	$(window).scroll(function (){
+		var p_idx = parseInt($("input:hidden[name=page_index]").val());
+	    var r_p_p = parseInt($("input:hidden[name=rows_per_page]").val());
+	    var g_total = parseInt($("input:hidden[name=total_count]").val());
+	
+	    var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+		var body = document.body, html = document.documentElement;
+		var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+		var windowBottom = windowHeight + window.pageYOffset;
+	
+		if (windowBottom + 2000 >= docHeight) {
+			if ( (p_idx*r_p_p) < g_total ) {
+				fnMoreListPageLucky();
+			}
+		}
+		
+	});
+
+});
+
+
+</script>
+
+<script  id="templ_initShopLuckyDeal"  type="text/x-handlebars-template">
+
+<!-- SWIPER 1 -->
+<div class="slide_cont lucky" data-index="1">
+	<!-- HAPPY DEAL -->
+	<div class="main_lucky_deal bg_gray">
+		<h3><img src="//elandrs.com/images/mobile/main/lucky_deal_tit2.png" width="101" height="17" alt="" /></h3>
+		<div class="lucky_deal_new">
+			<ul>
+
+
+{{#each new_goods_list}}
+
+		<li id="goods_{{goods_no}}" data-ga-tag='MW_럭키딜||오늘의럭키딜||{{goods_nm}}'>
+			<div class="g_wrap">
+				<a href="javascript:;" onclick= "elandmall.goods.goDetail({goods_no:'{{goods_no}}', vir_vend_no:'{{vir_vend_no}}', sale_shop_divi_cd:'{{sale_shop_divi_cd}}', disp_ctg_no:'{{disp_ctg_no}}' ,sale_area_no:'{{sale_area_no}}', tr_yn:'N', conts_dist_no:'{{conts_dist_no}}', conts_divi_cd:'{{conts_divi_cd}}', rel_no:'{{rel_no}}', rel_divi_cd:'{{rel_divi_cd}}', brand_nm:'{{brand_nm}}', goods_nm:'{{goods_nm}}', cust_sale_price:{{cust_sale_price}},ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'럭키딜', dlp_category:'', no_layer:'N'});" class="g_link" data-ga-tag="MW_럭키딜||오늘의럭키딜||{{goods_nm}}">
+
+						<span class="g_img">
+							<span class="img">
+								<img class='lazyload' data-src="{{image_url}}"  width="640" height="320" src="{{no_image_url}}"  onError="this.src='{{no_image_url}}'" alt="{{goods_nm}}"/>
+							</span>
+						</span>
+
+						<span class="g_brd">{{brand_nm}}</span>
+
+						<span class="g_tit">{{goods_nm}}</span>
+
+						<span class="g_nor">
+
+								{{#ifCond sale_rate ">" 0}}
+								<span class="g_per"><em class="ir">할인률</em><b>{{sale_rate}}</b>%</span>
+								{{/ifCond}}
+
+								<span class="g_prc">
+								{{#ifCond market_price ">" cust_sale_price}}	
+									<span class="org"><em class="ir">정상가:</em><b>{{#toCurrency market_price}}{{/toCurrency}}</b>원</span>
+								{{else}}
+									<span class="org blnk"></span>
+								{{/ifCond}}
+									<span class="sale"><em class="ir">판매가:</em><b>{{#toCurrency cust_sale_price}}{{/toCurrency}}</b>원</span>
+								</span>
+					
+
+								<span class="g_bnf">
+								{{#ifCond sale_qty "<" 10 }}	
+									<span class="selp_new">new</span>
+								{{else}}
+									{{#ifCond sale_qty ">=" 10000}}
+										<span><span class="selp">{{#math sale_qty "/R" 10000}}{{/math}}만+</span>개 구매</span>
+									{{else}}
+										<span><span class="selp">{{sale_qty}}</span>개 구매</span>
+									{{/ifCond}}
+								{{/ifCond}}
+								</span>
+						</span>
+				</a>
+			</div>
+		</li>
+
+{{/each}}
+
+			</ul>
+		</div>
+	</div>
+ 
+
+    <div class="md_re_wrap lucky_cate">
+		<div class="md_re_bn swiper-container swiper-free-mode" id="md_re_bn">
+			<ul class="swiper-wrapper swiper-wp8-horizontal" style="width: 1028.57px;">
+
+{{#each disp_ctg_list}}
+	{{#ifCond @index "==" 0 }} 
+				<li class="swiper-slide all_view {{#classOn ../conr_set_no conr_set_no}}{{/classOn}}" style="width: 114.28px;" data-ga-tag="MW_럭키딜||카테고리||{{ctg_nm}}">
+					<a id="{{conr_set_no}}_lctg" onclick="fnCtgGoodsConrListLucky('{{conr_set_no}}','{{conr_set_cmps_no}}');" href="javascript:;">
+						<span>{{ctg_nm}}</span>
+					</a>
+				</li>
+	{{/ifCond }} 		
+	
+	{{#ifCond @index "!=" 0 }} 	
+					<li class="swiper-slide " style="width: 114.28px;" data-ga-tag="MW_럭키딜||카테고리||{{ctg_nm}}">
+						<a id="{{conr_set_no}}_lctg" onclick="fnCtgGoodsConrListLucky('{{conr_set_no}}','{{conr_set_cmps_no}}');" href="javascript:;">
+							<img onerror="this.src='//dev.elandrs.com/images/pcweb/temp/new_menu_no.png'" alt="{{ctg_nm}}" src="{{img}}">
+							<span>{{ctg_nm}}</span>
+						</a>
+					</li>
+	{{/ifCond }} 	
+{{/each}}			
+			
+			
+			
+			</ul>
+
+		</div>
+	</div>
+
+
+	
+	<div id="lck_goods_list" class="lck_goods_list"></div>
+
+	<div id="tab_info">
+		<input type="hidden" name="conr_set_no" value="{{conr_set_no}}">
+		<input type="hidden" name="conr_set_cmps_no" value="{{conr_set_cmps_no}}">
+	</div>
+
+
+</div>
+
+<!-- ajax 임시저장 -->
+<div id="tempGoodsList" style="display:none;"></div>
+
+
+</script>
+
+			<!-- //170310 서랍식메뉴 카테고리와 동일한 이미지사용으로 수정 -->
+			<script type="text/javascript">
+	
+				localCallback = function(){
+					//console.log("run localcallback!!");
+					var md_ReBn = new Swiper('#md_re_bn',{
+						loop: false,
+						freeMode: true,
+						freeModeFluid: true,
+						slidesPerView: 5.6,
+						calculateHeight: true,
+						createPagination : false,
+						simulateTouch : true,
+						momentumRatio:0.3
+					});
+					$(window).resize(function(){
+						md_ReBn.reInit();
+					})
+					mdTabOn();
+				
+					var star_bn0 = new Swiper('#md_re_list0',{
+						loop: false,
+						freeMode: true,
+						freeModeFluid: true,
+						slidesPerView: 2.25,
+						calculateHeight: true,
+						createPagination : false,
+						simulateTouch : true,
+						momentumRatio:0.3,
+					});
+
+				}
+				function mdTabOn(){
+					var mdTab = $('.md_re_bn > ul > li');
+					
+					mdTab.on('click',function(e){
+						e.preventDefault();
+						var mdId = $(this).index();
+				
+						mdTab.removeClass('on');
+						$(this).addClass('on');
+						$(".ax_cnt > li").hide();
+						$(".ax_cnt > li").eq(mdId).show();
+					});
+
+				}
+			</script>
+
+

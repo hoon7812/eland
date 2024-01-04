@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+	<style type="text/css"> /* 전달을 위한 css 입니다. 무시해주시고, 아래 레이어팝업 html 소스 만 참고 부탁드립니다. */
+	#content{min-height:auto;}
+	.layer_pop{position:relative;left:0;margin-left:0 !important;top:0;}
+	</style>
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div class="layer_pop_section">
+				<div>
+					<a href="javascript:;" id="btnQck1" onclick="DK_dim_Open('quickInfo1',this.id)" onkeypress="this.onclick()">일반 상품과 동시주문 케이스 레이어 띄우기</a> <br />
+					<a href="javascript:;" id="btnQck2" onclick="DK_dim_Open('quickInfo2',this.id)" onkeypress="this.onclick()">서비스 불가  케이스 레이어 띄우기</a>
+				</div>
+				<!-- 로이드 빠른 배송 안내 레이어 : 일반 상품과 동시주문 케이스-->
+				<div class="layer_pop d_layer_pop" id="quickInfo1">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>서비스 안내</strong></div>
+						<div class="lay_cont">
+							<div class="quick_dlv_lyr">
+								빠른배송 <span class="flag_icon c11">오늘출발</span> <span class="flag_icon c12">오늘도착</span> 상품과 <br />일반 택배배송 상품은 동시에 주문할수 없습니다.
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02" onclick="DK_dim_Close('quickInfo1')" onkeypress="this.onclick()"><span>확인</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close" onclick="DK_dim_Close('quickInfo1')" onkeypress="this.onclick()"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+				<!-- //로이드 빠른 배송 안내 레이어 -->
+
+				<!-- 로이드 빠른 배송 안내 레이어 -->
+				<div class="layer_pop d_layer_pop" id="quickInfo2">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>서비스 안내</strong></div>
+						<div class="lay_cont">
+							<div class="quick_dlv_lyr">
+								입력하신 배송지로는<br />빠른배송 <span class="flag_icon c12">오늘도착</span> 서비스가 불가한 지역입니다.<br />배송지를 변경해 주시거나,<br />다른 상품을 주문해주세요.
+								<span class="caution">※ 오늘도착 서비스는 현재 서울지역만 제공하고 있습니다.</span>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"  onclick="DK_dim_Close('quickInfo2')" onkeypress="this.onclick()"><span>확인</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"  onclick="DK_dim_Close('quickInfo2')" onkeypress="this.onclick()"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+				<!-- //로이드 빠른 배송 안내 레이어 -->
+
+				<!-- 방문시간 선택 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit02"><strong>방문시간 선택</strong></div>
+						<div class="lay_cont">
+							<div>
+								<div class="sel_rsv_date">
+									<table summary="배송시간, 날짜, 시간으로 이루어진 예약배송시간 선택 테이블">
+										<caption>배송시간, 날짜 및 요일, 시간</caption>
+										<col style="width:25%"/>
+										<col style="width:25%"/>
+										<col style="width:25%"/>
+										<col style="width:25%"/>
+										<thead>
+											<tr>
+												<th scope="col">배송시간</th>
+												<th scope="col">07/08(수)</th>
+												<th scope="col">07/09(목)</th>
+												<th scope="col">07/10(금)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">10:00 ~ 13:00</th>
+												<td>예약마감</td>
+												<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" id="rsvT1" /><label for="rsvT1" class="ir">예약가능</label></td>
+												<td><span class="red">휴무</span></td>
+											</tr>
+											<tr>
+												<th scope="row">13:00 ~ 15:00</th>
+												<td>예약마감</td>
+												<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" id="rsvT2" /><label for="rsvT2" class="ir">예약가능</label></td>
+												<td><span class="red">휴무</span></td>
+											</tr>
+											<tr>
+												<th scope="row">15:00 ~ 17:00</th>
+												<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" id="rsvT3" /><label for="rsvT3" class="ir">예약가능</label></td>
+												<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" id="rsvT4" /><label for="rsvT4" class="ir">예약가능</label></td>
+												<td><span class="red">휴무</span></td>
+											</tr>
+											<tr>
+												<th scope="row">17:00 ~ 19:00</th>
+												<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" id="rsvT5" /><label for="rsvT5" class="ir">예약가능</label></td>
+												<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" id="rsvT6" /><label for="rsvT6" class="ir">예약가능</label></td>
+												<td><span class="red">휴무</span></td>
+											</tr>
+											<tr>
+												<th scope="row">19:00 ~ 21:00</th>
+												<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" id="rsvT7" /><label for="rsvT7" class="ir">예약가능</label></td>
+												<td><input type="radio" name="rsv_dlv" value="" class="blue_radio" id="rsvT8" /><label for="rsvT8" class="ir">예약가능</label></td>
+												<td><span class="red">휴무</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="srv_info">
+									<ul>
+										<li>선택 가능한 방문시간이 없는 경우 CS센터로 연락주세요 (1899-9500)</li>
+										<li>교환은 맞교환 방식으로 진행됩니다.</li>
+									</ul>
+								</div>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>선택완료</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+				<!-- //회수지 변경 -->
+
+
+				<!-- NGCPO-5161 셀프 폴더링 기능 요청 : 짬 폴더 추가/수정 -->
+				<div class="layer_pop type04 d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>찜 폴더 추가/수정</strong></div>
+						<div class="lay_cont">
+							<p class="s_txt01">찜 상품 그룹은 최대 10개, 그룹명은 10자리까지 등록이 가능합니다. 그룹별 상품은 최대 50개까지 등록 가능합니다. </p>
+							<div class="folder_list">
+								<button type="button" class="btn03 c01 add_folder"><span>+ 폴더추가</span></button>
+								<ul>
+									<li class="basic">기본</li>
+									<li><span class="folder_name">원피스</span>
+										<div class="btn_set">
+											<button type="button"class="btn03 c06"><span>수정</span></button>
+											<button type="button" class="btn03 c01"><span>삭제</span></button>
+										</div>
+									</li>
+									<li><span class="folder_name">그룹명은최대열자까지</span>
+									<div class="btn_set">
+											<button type="button"class="btn03 c06"><span>수정</span></button>
+											<button type="button" class="btn03 c01"><span>삭제</span></button>
+										</div>
+									</li>
+									<li> <!-- 폴더 추가 버튼 클릭 시, 노출 -->
+										<input type="text" class="folder_input" placeholder="폴더명을 입력해 주세요" />
+										<div class="btn_set">
+											<button type="button"class="btn03"><span>확인</span></button>
+											<button type="button" class="btn03 c01"><span>삭제</span></button>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+				<!-- //NGCPO-5161 셀프 폴더링 기능 요청 : 짬 폴더 추가/수정 -->
+
+				<!-- NGCPO-5161 셀프 폴더링 기능 요청 : 찜 폴더 이동 레이어 -->
+				<div class="layer_pop type04 d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>찜 폴더 추가/수정</strong></div>
+						<div class="lay_cont">
+							<div class="folder_move">
+								선택한 상품을<br />
+								<label for="f_n" class="ir">폴더선택</label>
+								<select id="f_n">
+									<option value="1">그룹명은최대열자까지</option>
+								</select>
+								로 이동합니다. <button type="button"class="btn03"><span>확인</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+				<!-- //NGCPO-5161 셀프 폴더링 기능 요청 : 찜 폴더 이동 레이어 -->
+
+				<!-- NGCPO-4914 명품CD 구매대행 상품/주문처리 기능 추가 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>배송조회</strong></div>
+						<div class="lay_cont pt0">
+							<div class="box_ship_info">
+								<div class="bs_tit">기본정보</div>
+								<div class="board03">
+									<table>
+										<caption>배송조회에 관한 표이며 보내는 사람, 받는 사람, 수량순으로 제공합니다.</caption>
+										<colgroup>
+											<col /><col /><col style="width:20%" />
+										</colgroup>
+										<thead>
+										<tr>
+											<th scope="col">보내는 사람</th>
+											<th scope="col">받는 사람</th>
+											<th scope="col">수량</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td class="alig_c">홍길동</td>
+											<td class="alig_c">한동기</td>
+											<td class="alig_c">1</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bs_info">
+									<div class="list_dot02 type02">
+										<div class="s_tit">상품발송</div>
+										<ul>
+											<li>현지에서 상품 검수하여 이랜드리테일 물류센터로 배송중입니다.</li>
+											<li>통관 처리 및 국내 입고 후, 상품 검수 후, 발송하도록 하겠습니다.</li>
+											<li>검수 완료 후, 국내 택배 발송되면 배송조회 가능합니다</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>확인</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+				<!-- //NGCPO-4914 명품CD 구매대행 상품/주문처리 기능 추가 -->
+
+
+
+<!-- 지점 안내 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>NC 송파점</strong></div>
+						<div class="lay_cont">
+							<div>
+								<div class="txt_bul05">
+									<ul>
+										<li><em>주소</em><span class="txt_cro">:</span>서울특별시 송파구 충민로66번지</li>
+										<li><em>대표번호</em><span class="txt_cro">:</span>02.2157.5000 </li>
+										<li><em>영업시간</em><span class="txt_cro">:</span>AM.10:30~PM.10:00</li>
+										<li><em>매장위치</em><span class="txt_cro">:</span>지상 2층/ SPAO</li>
+									</ul>
+								</div>
+								<div class="map_area">
+									<img src="../../images/pcweb/temp/_temp404x266.gif" alt="" />
+								</div>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close" onClick="commonUI.popupClose('#layer04','#btns04');return false;"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //지점 안내 -->
+<!-- 회수지 변경 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit02"><strong>회수지 변경</strong></div>
+						<div class="lay_cont">
+							<div>
+								<div class="data_table01">
+									<table>
+										<caption>회수지 변경 표이며 주문자명, 보내시는 분, 전화번호, 휴대폰번호, 회수지 주소 순으로 제공합니다.</caption>
+										<colgroup><col style="width:25%" /><col /></colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">주문자명</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt" title="주문자 명" /></div>
+											</td>
+										</tr>
+
+										<tr>
+											<th scope="row">보내시는 분</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt" title="보내시는분" /></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">전화번호</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="지역번호 선택" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 두번째 자리" />
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 세번째 자리" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대폰번호</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="휴대폰번호 첫번째 자리" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 두번째 자리" />
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 세번째 자리" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">회수지 주소</th>
+											<td>
+												<ul class="txt_row03 no_tit">
+													<li>
+														<div class="zip_input">
+															<p><input type="text" class="input_txt col_30 readonly" readonly="readonly" title="우편번호" /> <button type="button" class="btn03 c01"><span>우편번호 찾기</span></button></p>
+															<p><input type="text" class="input_txt wide readonly" readonly="readonly" title="주소지 상세1" /></p>
+															<p><input type="text" class="input_txt wide" title="주소지 상세2" /></p>
+														</div>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="set_btn closed"><!-- closed 추가 -->
+								<button type="button" class="btn02"><span>등록</span></button>
+								<button type="button" class="btn02 c01"><span>취소</span></button>
+								<button type="button" class="btn02 c01"><span>초기화</span></button>
+								<button type="button" class="btn02 c01"><span>배송지 목록</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //회수지 변경 -->
+<!-- 현금 영수증 신청 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>현금 영수증 신청</strong></div>
+						<div class="lay_cont">
+							<div class="cash_receipt">
+								<p class="cr_info">현금 영수증 신청을 위해 정보를 입력해 주시기 바랍니다.</p>
+								<div class="tab_type01 mt20">
+									<ul class="d_tab">
+										<li class="on"><a href="#" onClick="commonUI.tab('.d_tab','0');return false;">소득공제용 (개인)</a></li>
+										<li><a href="#" onClick="commonUI.tab('.d_tab','1');return false;">지출증빙용 (사업자)</a></li>
+									</ul>
+									<div class="tab_cont">
+										<div class="d_tab_cont on">
+											<div class="box_cr">
+<!-- 개인소득공제 - 휴대폰번호 -->
+												<div class="parts">
+													<select class="col_30"><option value="">휴대폰번호</option></select>
+													<div class="phone_inputs ml10">
+														<select title="휴대폰번호 첫번째 자리" ><option value="">선택</option></select>
+														<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 두번째 자리" />
+														<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 세번째 자리" />
+													</div>
+												</div>
+<!-- 개인소득공제 - 현금영수증 카드번호 -->
+												<div class="parts">
+													<select class="col_30"><option value="">현금영수증 카드번호</option></select>
+													<div class="card_inputs ml10">
+														<input type="text" class="input_txt" title="현금영수증 카드번호 첫번째 자리" /><span class="cro">-</span>
+														<input type="text" class="input_txt" title="현금영수증 카드번호 두번째 자리" /><span class="cro">-</span>
+														<input type="text" class="input_txt" title="현금영수증 카드번호 세번째 자리" /><span class="cro">-</span>
+														<input type="text" class="input_txt" title="현금영수증 카드번호 네번째 자리" />
+													</div>
+												</div>
+											</div>
+											<p class="cr_info02">휴대폰 번호 / 현금영수증 카드번호를 입력해주시기 바랍니다.</p>
+										</div>
+										<div class="d_tab_cont">
+											<div class="box_cr">
+<!-- 지출 증빙용 - 사업자 등록번호 -->
+												<div class="parts">
+<!-- 160125 -->
+													<span class="parts_tit">사업자 등록번호</span>
+<!-- //160125 -->
+													<div class="card_inputs ml10">
+														<input type="text" class="input_txt" title="사업자 등록번호 첫번째 자리" /><span class="cro">-</span>
+														<input type="text" class="input_txt" title="사업자 등록번호 두번째 자리" /><span class="cro">-</span>
+														<input type="text" class="input_txt" title="사업자 등록번호 세번째 자리" />
+													</div>
+												</div>
+<!-- 지출 증빙용 - 현금영수증 카드번호 -->
+<!-- 160125 삭제 -->
+												<!-- <div class="parts">
+													<select class="col_30"><option value="">현금영수증 카드번호</option></select>
+													<div class="card_inputs ml10">
+														<input type="text" class="input_txt" title="현금영수증 카드번호 첫번째 자리" /><span class="cro">-</span>
+														<input type="text" class="input_txt" title="현금영수증 카드번호 두번째 자리" /><span class="cro">-</span>
+														<input type="text" class="input_txt" title="현금영수증 카드번호 세번째 자리" /><span class="cro">-</span>
+														<input type="text" class="input_txt" title="현금영수증 카드번호 네번째 자리" />
+													</div>
+												</div> -->
+<!-- //160125 -->
+											</div>
+<!-- 160125 -->
+											<p class="cr_info02">사업자 등록번호를 입력해주시기 바랍니다.</p>
+<!-- //160125 -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>신청</span></button>
+								<button type="button" class="btn02 c01"><span>취소</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close" onClick="commonUI.popupClose('#layer04','#btns04');return false;"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //현금 영수증 신청 -->
+<!-- 예치금 환불 신청 -->
+<!-- 160226 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>예치금 환불 신청</strong></div>
+						<div class="lay_cont">
+							<div class="box_balance">
+								<p class="s_txt01">한동기 님의 환불 가능한 예치금은 <span class="tx_price">99,999,900</span>원 입니다.</p>
+								<div class="data_table01 mt15">
+									<table>
+										<caption>예치금 환불 신청 표이며 환불 금액, 예금주, 은행, 계좌번호 순으로 제공합니다.</caption>
+										<colgroup><col style="width:25%" /><col /></colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">환불 금액</th>
+											<td>
+												<div class="row">
+													<input type="text" class="input_txt alig_r" title="환불 금액" /><span class="ml10">원</span>
+													<label for="chk_basic_ss"><input id="chk_basic_ss" type="checkbox" class="chkbox ml20"> 모두 선택</label>
+												</div>
+											</td>
+										</tr>
+
+										<tr>
+											<th scope="row">예금주</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt" title="예금주" /></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">은행</th>
+											<td>
+												<div class="row">
+													<select title="은행 선택" >
+														<option value="">선택</option>
+													</select>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">계좌번호</th>
+											<td>
+												<div class="row">
+													<input type="text" class="input_txt" title="환불 금액" />
+													<p class="row_txt_info">”-”없이 숫자만 입력해 주세요</p>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<p class="txt_bul03 mt15">예치금 환불은 2~3일 이내에 처리됨을 알려드립니다.</p>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>신청하기</span></button>
+								<button type="button" class="btn02 c01"><span>취소</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //예치금 전환 신청 -->
+<!-- //160226 -->
+
+<!-- 회수지 변경 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit02"><strong>배송지 등록</strong></div> <!-- 배송지 변경 텍스트 변경 사용 -->
+						<div class="lay_cont">
+							<div>
+								<div class="data_table01">
+									<table>
+										<caption>배송지 등록 표이며 배송지명, 받으시는 분, 전화번호, 휴대폰번호, 배송지 주소, 배송 메시지 순으로 제공합니다.</caption>
+										<colgroup><col style="width:25%" /><col /></colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">배송지명</th>
+											<td>
+												<div class="row">
+													<input type="text" class="input_txt" title="배송지명" />
+													<label for="chk_basic_ship"><input id="chk_basic_ship" type="checkbox" class="chkbox ml20"> 기본 배송지</label>
+												</div>
+											</td>
+										</tr>
+
+										<tr>
+											<th scope="row">받으시는 분</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt" title="받으시는 분" /></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">전화번호</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="지역번호 선택" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 두번째 자리" />
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 세번째 자리" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대폰번호</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="휴대폰번호 첫번째 자리" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 두번째 자리" />
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 세번째 자리" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송지 주소</th>
+											<td>
+												<ul class="txt_row03 no_tit">
+													<li>
+														<div class="zip_input">
+															<p><input type="text" class="input_txt col_30 readonly" readonly="readonly" title="우편번호" /> <button type="button" class="btn03 c01"><span>우편번호 찾기</span></button></p>
+															<p><input type="text" class="input_txt wide readonly" readonly="readonly" title="주소지 상세1" /></p>
+															<p><input type="text" class="input_txt wide" title="주소지 상세2" /></p>
+														</div>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송 메시지</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt wide" title="배송 메시지" /></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="set_btn closed"><!-- closed 추가 -->
+								<button type="button" class="btn02"><span>등록</span></button>
+								<button type="button" class="btn02 c01"><span>취소</span></button>
+								<button type="button" class="btn02 c01"><span>초기화</span></button>
+								<button type="button" class="btn02 c01"><span>배송지 목록</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //회수지 변경 -->
+
+<!-- 환불계좌 등록 -->
+				<div class="layer_pop type03 d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit02"><strong>환불계좌 등록</strong></div>
+						<div class="lay_cont">
+							<div class="box_ra">
+								<div class="data_table01 mt15">
+									<table>
+										<caption>환불계좌 등록 표이며 예금주, 은행, 계좌번호 순으로 제공합니다.</caption>
+										<colgroup><col style="width:30%" /><col /></colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">예금주</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt wide" title="예금주" /></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">은행</th>
+											<td>
+												<div class="row">
+													<select title="은행 선택" class="wide">
+														<option value="">선택</option>
+													</select>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">계좌번호</th>
+											<td>
+												<div class="row">
+													<input type="text" class="input_txt wide" title="전환 금액" />
+													<p class="row_txt_info">”-”없이 숫자만 입력해 주세요</p>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>등록</span></button>
+								<button type="button" class="btn02 c01"><span>취소</span></button>
+								<button type="button" class="btn02 c01"><span>초기화</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //환불계좌 등록 -->
+<!-- 160126 -->
+<!-- 구 주문조회 상품상세 -->
+				<div class="layer_pop type02 d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit02"><strong>상세내역</strong></div>
+						<div class="lay_cont">
+							<div class="my_old">
+								<ul class="my_old_info01">
+									<li>주문번호 : <a href="#" class="links">M151116002268196  ( PC주문 )</a></li>
+									<li>주문번호 : 2015-11-18</li>
+								</ul>
+								<div class="board02">
+									<table>
+										<caption>최근 주문내역 표이며 주문일, 주문번호, 상품명, 주문금액, 주문상태 순으로 제공합니다.</caption>
+										<colgroup>
+											<col />
+											<col style="width:8%" />
+											<col style="width:15%" />
+											<col style="width:10%" />
+											<col style="width:14%" />
+											<col style="width:10%" />
+											<col style="width:10%" />
+										</colgroup>
+										<thead>
+										<tr>
+											<th scope="col">상품명</th>
+											<th scope="col">수량</th>
+											<th scope="col">판매가</th>
+											<th scope="col">주문상태</th>
+											<th scope="col">상품평</th>
+											<th scope="col">포인트</th>
+											<th scope="col">쿠폰할인</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td class="vat alig_l">
+												<div class="list_detail_ord">
+													<div class="goods_imgs">
+														<a href="#"><img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 작은 이미지" /></a>
+													</div>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+											<td>1</td>
+											<td>1,111,111원</td>
+											<td>배송완료</td>
+											<td><button type="button" class="btn05 c01"><span><strong>상품평쓰기</strong></span></button></td>
+											<td>0</td>
+											<td>- 원</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="set_btn_down left">
+									샤바스(무료배송)
+								</div>
+								<div class="total_wrap c04 mini">
+									<ul class="total_area">
+										<li class="total_txt01">주문금액<span class="total_price"><strong>1,317,200</strong>원</span></li>
+										<li class="total_txt03">포인트<span class="total_price"><strong>2,500</strong>원</span></li>
+										<li class="total_txt02">할인금액<span class="total_price"><strong>25,000</strong>원</span></li>
+										<li class="total_txt02">무료배송할인<span class="total_price"><strong>2,500</strong>원</span></li>
+										<li class="total_txt04"><span>합계</span><span class="total_price"><strong>1,294,700</strong>원</span></li>
+									</ul>
+								</div>
+							</div>
+							<div class="title mt30">
+								<h3 class="h3_old_tit">주문 고객정보</h3>
+							</div>
+							<div class="data_table01">
+								<table>
+									<caption>주문 고객정보 표이며 주문 하신 분, 전화번호 순으로 제공합니다.</caption>
+									<colgroup><col style="width:18%"><col></colgroup>
+									<tbody>
+									<tr>
+										<th scope="row">주문 하신 분</th>
+										<td>한동기</td>
+									</tr>
+									<tr>
+										<th scope="row">전화번호</th>
+										<td>010-1234-5678</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="title mt30">
+								<h3 class="h3_old_tit">배송지 정보</h3>
+							</div>
+							<div class="data_table01">
+								<table>
+									<caption>배송지 정보 표이며 받으시는 분, 전화번호, 핸드폰 번호, 주소, 배송 요청사항 순으로 제공합니다.</caption>
+									<colgroup><col style="width:18%"><col><col style="width:18%"><col></colgroup>
+									<tbody>
+									<tr>
+										<th scope="row">받으시는분</th>
+										<td colspan="3">한동기</td>
+									</tr>
+									<tr>
+										<th scope="row">전화번호</th>
+										<td>02-6355-5678</td>
+										<th scope="row">핸드폰 번호</th>
+										<td>010-6355-5678</td>
+									</tr>
+									<tr>
+										<th scope="row">주소</th>
+										<td colspan="3">[07052] 서울시 구로구 구로3동 222-12번지 마리오타워 1102호</td>
+									</tr>
+									<tr>
+										<th scope="row">배송 요청사항</th>
+										<td colspan="3">1층 로비에 맡겨 주세요</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="title mt30">
+								<h3 class="h3_old_tit">결제 정보</h3>
+							</div>
+							<div class="data_table01">
+								<table>
+									<caption>결제 정보 표이며 결제방법, 주문금액, 쿠폰할인, 포인트사용, 결제금액 순으로 제공합니다.</caption>
+									<colgroup><col style="width:18%"><col></colgroup>
+									<tbody>
+									<tr>
+										<th scope="row">결제방법</th>
+										<td>현대카드 (일시불)</td>
+									</tr>
+									<tr>
+										<th scope="row">주문금액</th>
+										<td>5,900원</td>
+									</tr>
+									<tr>
+										<th scope="row">쿠폰할인</th>
+										<td>0원</td>
+									</tr>
+									<tr>
+										<th scope="row">포인트사용</th>
+										<td>0원</td>
+									</tr>
+									<tr>
+										<th scope="row">결제금액</th>
+										<td>5,900원</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+<!-- 임직원 결제정보 -->
+							<div class="title mt30">
+								<h3 class="h3_old_tit">결제 정보</h3>
+							</div>
+							<div class="data_table01">
+								<table>
+									<caption>결제 정보 표이며 할인정보, 할인금액, 결제수단, 결제금액, 통장 입금 정보, 입금기한 순으로 제공합니다.</caption>
+									<colgroup><col style="width:18%"><col><col style="width:18%"><col></colgroup>
+									<tbody>
+									<tr>
+										<th scope="row">할인정보</th>
+										<td>[포인트] 사용</td>
+										<th scope="row">할인금액</th>
+										<td><strong class="tx_num">160,000</strong>원</td>
+									</tr>
+									<tr>
+										<th scope="row">결제수단</th>
+										<td>가상계좌</td>
+										<th scope="row">결제금액</th>
+										<td><strong class="tx_num">0</strong>원</td>
+									</tr>
+									<tr>
+										<th scope="row">통장 입금 정보</th>
+										<td>포인트로 주문</td>
+										<th scope="row">입금기한</th>
+										<td>-</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+<!-- //임직원 결제정보 -->
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>영수증 프린트</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //구 주문조회 상품상세 -->
+
+<!-- 상품평 수정 팝업 - 패션 -->
+				<div class="layer_pop type02 d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>상품평 작성</strong></div>
+						<div class="lay_cont">
+							<div>
+								<p class="layer_msg01">
+									상품평 등록 시 30p 증정하며,
+									<br />매주 화요일 추첨을 통해 베스트 상품평으로 당첨되시면 3,000원 할인 쿠폰을 드립니다.
+									<br />(중복 상품평 제외, 직접 찍은 사진만 인정)
+								</p>
+								<div class="data_table01 card01">
+									<table>
+										<caption>상품평 작성 표이며 품질, 배송, 사이즈, 색상, 추천, 내용, 사진 등록 순으로 제공합니다.</caption>
+										<colgroup><col style="width:20%" /><col style="width:auto;" /></colgroup>
+										<tbody>
+										<tr>
+											<td colspan="2" class="vat">
+												<div class="gd_view_area">
+													<a href="#" class="goods_imgs">
+														<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지">
+													</a>
+													<div class="goods_info">
+														<a href="#" class="goods_link">
+															<span class="goods_txt01">BEALL</span>
+															<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+															<span class="goods_txt03">
+																상품 1 : 후드 야상형 경량점퍼 / 블루 / 100
+															</span>
+														</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">품질</th>
+											<td>
+												<div class="set_grade02"><span style="width:100%;">100점</span></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송</th>
+											<td>
+												<div class="set_grade02"><span style="width:60%;">60점</span></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">사이즈</th>
+											<td>
+												작아요
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">색상</th>
+											<td>
+												밝아요
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">추천</th>
+											<td>
+												<div class="row">
+													<span class="txt_c02">이 상품을 추천 하시겠습니까?</span>
+												</div>
+												<div class="row">
+													<span class="ico_likes_yes on"><span>네. 추천합니다.</span></span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">내용</th>
+											<td>
+												<div class="row"><textarea cols="50" rows="10" class="textarea h100 wide">다 좋아요~ 그런데 목부분이 헐거워서 자꾸 빠져요~그런거 빼고는다 좋습니다.</textarea></div>
+												<div class="row">
+													*상품평은 최소 10자 이상 입력해 주셔야 등록 가능 합니다.
+													<br />*상품평과 관계없는 판매관련이나 광고성 홍보글은 사전통보 없이 관리자에 의해 삭제될 수 있습니다.
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">사진 등록</th>
+											<td>
+												<div class="inputs_file_images">
+													<ul>
+														<li><span>모던하우스 구매상품 1.jpg</span><a href="#" class="btn_file_del">업로드 삭제</a></li>
+														<li><span>모던하우스 구매상품 2.jpg</span><a href="#" class="btn_file_del">업로드 삭제</a></li>
+														<li><span>모던하우스 구매상품 3.jpg</span><a href="#" class="btn_file_del">업로드 삭제</a></li>
+														<li><input type="file" id="file_up01a" class="input_file wide" title="상품이미지 업로드"><button type="button" class="btn03 c01"><span>삭제</span></button></li>
+														<li><input type="file" id="file_up02a" class="input_file wide" title="상품이미지 업로드"><button type="button" class="btn03 c01"><span>삭제</span></button></li>
+														<li><input type="file" id="file_up03a" class="input_file wide" title="상품이미지 업로드"><button type="button" class="btn03 c01"><span>삭제</span></button></li>
+													</ul>
+												</div>
+												<div class="row">* 사진 은 jpg, gif, png 포맷으로 최대 3장까지 등록 가능 합니다.</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>상품평 등록</span></button>
+								<button type="button" class="btn02 c01"><span>취소</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //상품평 수정 팝업 - 패션 -->
+<!-- 구 상품평 등록 팝업 -->
+				<div class="layer_pop type02 d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit02"><strong>상품평 작성</strong></div>
+						<div class="lay_cont pt0">
+							<div>
+								<div class="data_table01 card01">
+									<table>
+										<caption>상품평 작성 표이며 상품, 제목, 내용, 첨부 파일 순으로 제공합니다.</caption>
+										<colgroup><col style="width:20%" /><col style="width:auto;" /></colgroup>
+										<tbody>
+											<tr>
+												<td colspan="2" class="vat">
+													<div class="gd_view_area">
+														<a href="#" class="goods_imgs">
+															<img src="../../images/pcweb/temp/_temp_83x83.gif" alt="R빅무드 플라오 스카프 상품 썸네일 이미지">
+														</a>
+														<div class="goods_info">
+															<a href="#" class="goods_link">
+																<span class="goods_txt01">BEALL</span>
+																<span class="goods_txt02">R빅무드 플라오 스카프 </span>
+																<span class="goods_txt03">
+																	판매가 : <del class="tx_num">9,900</del>원
+																	<br />할인가 : <strong class="tx_num txt_c02">9,900</strong>원
+																</span>
+															</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<!-- 이전 타입 -->
+											<!-- <tr>
+												<th scope="row">상품</th>
+												<td>
+													<div class="set_grade_select d_gradeSelect">
+														<ul>
+															<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">디자인</th>
+												<td>
+													<div class="set_grade_select d_gradeSelect">
+														<ul>
+															<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">가격</th>
+												<td>
+													<div class="set_grade_select d_gradeSelect">
+														<ul>
+															<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">배송</th>
+												<td>
+													<div class="set_grade_select d_gradeSelect">
+														<ul>
+															<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+														</ul>
+													</div>
+												</td>
+											</tr> -->
+											<!-- <tr>
+												<th scope="row">배송</th>
+												<td>
+													<ul class="rnd_anc multi_li d_gradeSelect">
+														<li><a href="javascript:;">빨라요</a></li>
+														<li><a href="javascript:;">보통이예요</a></li>
+														<li><a href="javascript:;">느려요</a></li>
+													</ul>
+												</td>
+											</tr> -->
+											<tr>
+												<th scope="row">배송</th>
+												<td>
+													<div class="set_grade_select d_gradeSelect">
+														<ul>
+															<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">품질</th>
+												<td>
+													<div class="set_grade_select d_gradeSelect">
+														<ul>
+															<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+															<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">색상</th>
+												<td>
+													<ul class="rnd_anc multi_li d_gradeSelect">
+														<li><a href="javascript:;">밝아요</a></li>
+														<li><a href="javascript:;">화면과 같아요</a></li>
+														<li><a href="javascript:;">어두워요</a></li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">사이즈</th>
+												<td>
+													<ul class="rnd_anc multi_li d_gradeSelect">
+														<li><a href="javascript:;">작아요</a></li>
+														<li><a href="javascript:;">딱 맞아요</a></li>
+														<li><a href="javascript:;">커요</a></li>
+													</ul>
+												</td>
+											</tr>
+											<!--  삭제  -->
+											<!-- <tr>
+												<th scope="row">추천</th>
+												<td>
+													<div class="inp_rev">
+														<p class="q_text">이 상품을 추천 하시겠습니까?</p> 
+														<ul class="rnd_anc multi_li d_gradeSelect">
+															<li><a href="javascript:;">네, 추천합니다<em class="heart"><span class="ir">하트</span></em></a></li>
+															<li><a href="javascript:;">아니요, 추천하지 않습니다<em class="heart"><span class="ir">하트</span></em></a></li>
+														</ul>
+													</div>
+												</td>
+											</tr> -->
+											<tr>
+												<th scope="row">키</th>
+												<td>
+													<ul class="tbl_anc d_gradeSelect">
+														<li><a href="javascript:;">155~159 cm</a></li>
+														<li><a href="javascript:;">160~164 cm</a></li>
+														<li><a href="javascript:;">165~169 cm</a></li>
+														<li><a href="javascript:;">170~174 cm</a></li>
+														<li><a href="javascript:;">175~179 cm</a></li>
+														<li><a href="javascript:;">180~184 cm</a></li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">몸무게</th>
+												<td>
+													<ul class="tbl_anc d_gradeSelect">
+														<li><a href="javascript:;">44kg 이하</a></li>
+														<li><a href="javascript:;">45~47 kg</a></li>
+														<li><a href="javascript:;">48~50 kg</a></li>
+														<li><a href="javascript:;">51~53 kg</a></li>
+														<li><a href="javascript:;">54~56 cm</a></li>
+														<li><a href="javascript:;">57~59 cm</a></li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">평소사이즈</th>
+												<td>
+													<ul class="tbl_anc d_gradeSelect">
+														<li><a href="javascript:;">S</a></li>
+														<li><a href="javascript:;">M</a></li>
+														<li><a href="javascript:;">L</a></li>
+													</ul>
+												</td>
+											</tr>
+											<!-- 제목 항목 사용하는 지 않하는지 확인 필요, 기획서에 해당 내용 없음 -->
+											<!-- <tr>
+												<th scope="row">제목</th>
+												<td>
+													<div class="row"><input type="text" title="상품평 제목" class="input_txt wide" /></div>
+												</td>
+											</tr> -->
+											<tr>
+												<th scope="row">내용</th>
+												<td>
+													<div class="row"><textarea cols="50" rows="10" class="textarea h100 wide"></textarea></div>
+													<div class="row">
+														*상품평과 관계없는 판매관련이나 광고성 홍보글은 사전통보 없이 관리자에 의해 삭제될 수 있습니다.
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">첨부 파일</th>
+												<td>
+													<div class="inputs_file_thumb">
+														<ul>
+															<li class="on">
+																<button type="button" id="file_up01b" class="input_thumb" title="상품이미지 업로드"><em class="ir">상품 이미지 업로드</em></button>
+																<div class="thumb">
+																	<img src="../../images/pcweb/temp/sample_68x68.jpg" alt="썸네일" />
+																	<button class="del"><em class="ir">등록 이미지 삭제</em></button>
+																</div>
+															</li>
+															<li class="on">
+																<button type="button" id="file_up02b" class="input_thumb" title="상품이미지 업로드"><em class="ir">상품 이미지 업로드</em></button>
+																<div class="thumb">
+																	<img src="../../images/pcweb/temp/_sample_344x20_05.jpg" alt="썸네일" />
+																	<button class="del"><em class="ir">등록 이미지 삭제</em></button>
+																</div>
+															</li>
+															<li class="on">
+																<button type="button" id="file_up03b" class="input_thumb" title="상품이미지 업로드"><em class="ir">상품 이미지 업로드</em></button>
+																<div class="thumb">
+																	<img src="../../images/pcweb/temp/_sample_700x1000.jpg" alt="썸네일" />
+																	<button class="del"><em class="ir">등록 이미지 삭제</em></button>
+																</div>
+															</li>
+															<script type="text/javascript">
+																$(document).ready(function(){
+																	$('.inputs_file_thumb .thumb img').each(function(){
+																		var thumbW = $(this).outerWidth();
+																		var thumbH = $(this).outerHeight();
+																		thumbW > thumbH ? lineH($(this)) : false;
+																		thumbW < thumbH ? lineV($(this)) : false;
+																		thumbW == thumbH ? $(this).addClass('squa') : false;
+																	});
+																});
+																function lineH($target){
+																	$target.addClass('hori');
+																	$target.css('margin-left', (68-$target.outerWidth())/2);
+																}
+																function lineV($target){
+																	$target.addClass('verti');
+																	$target.css('margin-top', (68-$target.outerHeight())/2);
+																}
+															</script>
+														</ul>
+													</div>
+													<div class="row">
+														* <span>5MB</span> 이하의 이미지만 등록 가능합니다.<br />
+														* 사진은 jpg, gif, png 포맷으로 최대 3장까지 등록 가능 합니다.<br />
+														* 해당 상품은 포토상품평 작성 시 추가 적립금이 지급되지 않습니다. <!-- NGCPO-5663 상품평 포인트적립 로직 및 페이지 수정 -->
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>상품평 등록</span></button>
+								<button type="button" class="btn02 c01"><span>취소</span></button>
+							</div>
+							<div class="rv_lyr_info"> <!-- 하단으로 이동 -->
+									<dl class="list_dl01">
+										<dt>상품평 등록 및 혜택 안내</dt>
+										<dd>일반 상품평 100p, 포토상품평 500p 적립 됩니다.</dd>
+										<dd>판매가격 2,000원 이하 상품의 포토상품평은 100p 적립되며, 일부 금액권은 포토상품평 작성 시 포인트 적립이 되지 않을 수 있습니다.</dd>
+										<dd>베스트 상품평 당첨 시 5,000p 를 지급해드립니다.</dd>
+										<dd>상품평 포인트는 상품평 작성일 기준 7일 후 적립됩니다.</dd>
+										<dd>작성해주신 상품평 및 사진은 상업적 용도로 활용될 수 있습니다.</dd>
+										<dd>상품평은 결제완료 후 90일이내 작성 가능합니다.</dd>
+										<dd>e티켓상품(모바일이용권 등)의 경우 실물 이용권이나 실제 이용하는 사진을 올려주셔야 합니다.</dd>
+										<dt>상품평 포인트 유효기간 안내</dt>
+										<dd>상품평 포인트는 적립일로부터 6개월 이내 사용가능하며, 유효기간이 만료된 포인트는 복구 불가능합니다.</dd>
+										<dd>주문취소, 반품요청 등으로 인한 소멸 포인트는 복구 불가능합니다.</dd>
+										<dd>포인트를 획득하기 위해 악의적인 의도로 상품평을 여러 개 남길 경우 포인트가 지급되지 않습니다.<br>(예시 : 캡쳐사진, 상품과 관계없는 사진, 동일사진 등)</dd>
+									</dl>
+								</div>
+							<!-- <div class="title mt20">
+								<h3 class="h3_old_tit">항목별 평점</h3>
+							</div> -->
+							<!-- <div class="data_table01 card01">
+								<table>
+									<caption>항목별 평점 표이며 상품, 디자인, 가격, 배송 순으로 제공합니다.</caption>
+									<colgroup><col style="width:20%" /><col style="width:auto;" /></colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">상품</th>
+											<td>
+												<div class="set_grade_select d_gradeSelect">
+													<ul>
+														<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">디자인</th>
+											<td>
+												<div class="set_grade_select d_gradeSelect">
+													<ul>
+														<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">가격</th>
+											<td>
+												<div class="set_grade_select d_gradeSelect">
+													<ul>
+														<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송</th>
+											<td>
+												<div class="set_grade_select d_gradeSelect">
+													<ul>
+														<li><a href="#" class="on"><div class="set_grade03"><span style="width:100%;">100점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:80%;">80점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:60%;">60점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:40%;">40점</span></div></a></li>
+														<li><a href="#"><div class="set_grade03"><span style="width:20%;">20점</span></div></a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div> -->
+							
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //구 상품평 작성 팝업 -->
+<!-- 구 임직원 상품평 등록 팝업 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit02"><strong>상품평 작성</strong></div>
+						<div class="lay_cont pt0">
+							<div>
+								<div class="data_table01 card01">
+									<table>
+										<caption>상품평 작성 표이며 제목, 별점, 내용 순으로 제공합니다.</caption>
+										<colgroup><col style="width:20%" /><col style="width:auto;" /></colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">제목</th>
+											<td>
+												<div class="row"><input type="text" title="상품평 제목" class="input_txt wide" /></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">별점</th>
+											<td>
+												<select style="width:auto;">
+													<option value="">★★★★★</option>
+													<option value="">★★★★</option>
+													<option value="">★★★</option>
+													<option value="">★★</option>
+													<option value="">★</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">내용</th>
+											<td>
+												<div class="row"><textarea cols="50" rows="10" class="textarea h100 wide"></textarea></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>확인</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //구 임직원 상품평 작성 팝업 -->
+
+<!-- 160310_추가 -->
+<!-- 배송조회 레이어 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>배송조회</strong></div>
+						<div class="lay_cont pt0">
+							<div class="box_ship_info">
+								<div class="bs_tit">기본정보</div>
+								<div class="board03">
+									<table>
+										<caption>배송조회에 관한 표이며 보내는 사람, 받는 사람, 수량순으로 제공합니다.</caption>
+										<colgroup>
+											<col /><col /><col style="width:20%" />
+										</colgroup>
+										<thead>
+										<tr>
+											<th scope="col">보내는 사람</th>
+											<th scope="col">받는 사람</th>
+											<th scope="col">수량</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td class="alig_c">홍길동</td>
+											<td class="alig_c">한동기</td>
+											<td class="alig_c">1</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bs_info">
+									<div class="list_dot02 type02">
+										<div class="s_tit">상품발송</div>
+										<ul>
+											<li>이랜드몰 상품이 아닌 판매업체(배송업체)가 사용하는 발송방법은 이랜드몰<br />홈페이지를 통해 배송 추적서비스를 지원하지 않습니다.</li>
+											<li>상품의 배송상태 확인을 원하시는 경우 판매업체에 문의해 주시기 바랍니다. <br />(02-1234-5678)</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>확인</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //배송조회 레이어 -->
+<!-- //160310_추가 -->
+
+<!-- 160909 추가 -->
+<!-- 적용 제외 대상 레이어 -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>적용 제외 대상</strong></div>
+						<div class="cp_info">숙박/외식/e티켓 카테고리 상품은 해당 쿠폰을 <br />적용하실 수 없습니다.</div>
+						<div class="set_btn">
+							<button type="button" class="btn02"><span>확인</span></button>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+<!-- //적용 제외 대상 레이어 -->
+<!-- //160909 추가 -->
+			</div>
+<!-- //160126 -->
+	<script type="text/javascript">
+	$(window).ready(function(){
+		$(".d_gradeSelect").each(function(){
+			var $this = $(this);
+			var $links = $this.find("a");
+			$links.on("click",function(e){
+				$links.removeClass("on");
+
+				$(this).addClass("on");
+				e.preventDefault();
+			})
+		})
+	})
+	</script>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

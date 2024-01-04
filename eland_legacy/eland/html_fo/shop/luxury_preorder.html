@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>Luxury Gallery</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_luxury.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/pcweb/common/0000073.ico" /><!-- 브랜드몰 럭셔리갤러리 favicon -->
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery.plugin.js"></script>
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="javascript:;content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+		<a href="javascript:;d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="luxury"><!-- 브랜드몰 class="luxury" -->
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header_luxury.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing_luxury.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="javascript:;">HOME</a></li>
+						<li class="lct_txt"><span>PRE-ORDER</span></li>
+					</ul>
+				</div>
+			
+				<div class="tit_dp">
+					<h2>PRE-ORDER</h2>
+				</div>
+
+				<!-- 168024 상품 없을경우 -->
+				<!-- <div class="no_data ordlist mtm1">
+					<p class="no_data_txt">상품을 <strong class="txt_c05">준비중</strong>입니다.</p>
+				</div> -->
+				<!-- //168024 상품 없을경우 -->
+				
+				<div id="d_cate_list01" class="box_cate_link">
+					<div class="box_hidden">
+						<ul>
+							<li class="on"><a href="javascript:;"><span>전체</span></a></li>
+							<li><a href="javascript:;"><span>진행중인 프리오더</span></a></li>
+							<li><a href="javascript:;"><span>마감된 프리오더</span></a></li>
+							<li><a href="javascript:;"><span>예정된 프리오더</span></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="preo_wrap">
+					<div class="preo_list">
+						<ul>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_01.png" alt="" /></div>
+									<div class="info">									
+										<strong class="tit">메종 마르지엘라 UP TO 80% SALE</strong>
+										<span class="sub">스페셜 데이! 특별한 가격으로 만나보세요</span>
+										<!--<span class="date"><em>2019.01.17 ~ 2019.01.31</em>진행중</span>-->
+										<span class="time_count_ing">
+											<span class="flag">PRE-ORDER</span>
+											<span class="count" id="p_time"><em>99</em>일 <em>23</em>시간 <em>23</em>분 <em>59</em>초</span>
+										</span>											
+									</div>
+								</a>
+							</li>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#p_time').countdown('2999/12/31 23:59:59', function (e) {
+		var $this = $(this);
+		
+		var tims = "";
+		
+		if("00" != e.strftime('%D')){
+			tims += e.strftime('%D')+"일 ";
+		}else{
+			tims += "남은 시간  ";
+		}
+		
+		tims += e.strftime('%H시 ') + e.strftime('%M분 ') + e.strftime('%S초');
+
+		$this.html(tims);
+		
+	}).on('update.countdown', function(e) {
+		var day = parseInt(e.strftime('%w') * 7) + parseInt(e.strftime('%d'));
+		if( day < 1 && e.strftime('%H') < 24) {
+			if( $("#deadline_flag").is(":visible") == false){
+				$("#deadline_flag").show();
+			}
+			
+		}
+	});
+});
+</script>							
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_02.png" alt="" /></div>
+									<div class="info">											
+										<strong class="tit">AMI 20SS COLLECTION</strong>
+										<span class="sub">프렌치 시크와 캐주얼 사이의 밸런스를 녹여내 포멀한 컬렉션</span>
+										<span class="time_count_pre">
+											<span class="flag">PRE-ORDER</span>	
+											<span class="count">예정</span>										
+										</span>										
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_03.png" alt="" /></div>
+									<div class="info">											
+										<strong class="tit">메종 마르지엘라 20S/S ACC</strong>
+										<span class="sub">주얼리 라인업에 포함된 아이템 8종을 이번 프리오더에서 만나보세요.</span>
+										<span class="time_count_end">
+											<span class="flag">PRE-ORDER</span>	
+											<span class="count">종료</span>										
+										</span>	
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- 마감된 프리오더 -->
+					<!--<div class="preo_list_tile">
+						<ul>
+							<li class="active"> 진행중인 경우 : .active
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_01.png" alt="" /></div>
+									<div class="info">
+										<strong class="tit">메종 마르지엘라 UP TO 80% SALE</strong>
+										<span class="sub">스페셜 데이! 특별한 가격으로 만나보세요</span>
+										<span class="date"><em>2019.01.17 ~ 2019.01.31</em>진행중</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_02.png" alt="" /></div>
+									<div class="info">
+										<strong class="tit">AMI 20SS COLLECTION</strong>
+										<span class="sub">프렌치 시크와 캐주얼 사이의 밸런스를 녹여내 포멀한 컬렉션</span>
+										<span class="date pre"><em>2019.01.17 ~ 2019.01.31</em>마감</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_03.png" alt="" /></div>
+									<div class="info">
+										<strong class="tit">메종 마르지엘라 20S/S ACC</strong>
+										<span class="sub">주얼리 라인업에 포함된 아이템 8종을 이번 프리오더에서 만나보세요.</span>
+										<span class="date end"><em>2019.01.17 ~ 2019.01.31</em>마감</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_01.png" alt="" /></div>
+									<div class="info">
+										<strong class="tit">메종 마르지엘라 UP TO 80% SALE</strong>
+										<span class="sub">스페셜 데이! 특별한 가격으로 만나보세요</span>
+										<span class="date"><em>2019.01.17 ~ 2019.01.31</em>마감</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_02.png" alt="" /></div>
+									<div class="info">
+										<strong class="tit">AMI 20SS COLLECTION</strong>
+										<span class="sub">프렌치 시크와 캐주얼 사이의 밸런스를 녹여내 포멀한 컬렉션</span>
+										<span class="date pre"><em>2019.01.17 ~ 2019.01.31</em>마감</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_03.png" alt="" /></div>
+									<div class="info">
+										<strong class="tit">메종 마르지엘라 20S/S ACC</strong>
+										<span class="sub">주얼리 라인업에 포함된 아이템 8종을 이번 프리오더에서 만나보세요.</span>
+										<span class="date end"><em>2019.01.17 ~ 2019.01.31</em>마감</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_01.png" alt="" /></div>
+									<div class="info">
+										<strong class="tit">메종 마르지엘라 UP TO 80% SALE</strong>
+										<span class="sub">스페셜 데이! 특별한 가격으로 만나보세요</span>
+										<span class="date"><em>2019.01.17 ~ 2019.01.31</em>마감</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_02.png" alt="" /></div>
+									<div class="info">
+										<strong class="tit">AMI 20SS COLLECTION</strong>
+										<span class="sub">프렌치 시크와 캐주얼 사이의 밸런스를 녹여내 포멀한 컬렉션</span>
+										<span class="date pre"><em>2019.01.17 ~ 2019.01.31</em>마감</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:'">
+									<div class="img"><img src="../../images/pcweb/temp/lux_prelist_03.png" alt="" /></div>
+									<div class="info">
+										<strong class="tit">메종 마르지엘라 20S/S ACC</strong>
+										<span class="sub">주얼리 라인업에 포함된 아이템 8종을 이번 프리오더에서 만나보세요.</span>
+										<span class="date end"><em>2019.01.17 ~ 2019.01.31</em>마감</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>-->
+				</div>
+			
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer_luxury.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+	<script>
+
+
+	</script>
+</body>
+</html>

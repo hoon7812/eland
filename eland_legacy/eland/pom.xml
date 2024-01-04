@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.eland.ngcp</groupId>
+	<artifactId>fo_webroot</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	 <build>
+        <plugins>
+        	<!-- Sass compiler -->
+            <!-- <plugin>
+                <groupId>org.jasig.maven</groupId>
+                <artifactId>sass-maven-plugin</artifactId>
+                <version>1.1.1</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>update-stylesheets</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <resources>
+                        <resource>
+                            Set source and destination dirs
+                            <source>
+                                <directory>${project.basedir}/sass</directory>
+                            </source>
+                            <destination>${project.basedir}/css</destination>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin> -->
+            <plugin>
+		      <groupId>com.samaxes.maven</groupId>
+		      <artifactId>minify-maven-plugin</artifactId>
+		      <version>1.7.6</version>
+		      <executions>
+		        <execution>
+		          <id>default-minify</id>
+		          <configuration>
+		          	<webappSourceDir>${project.basedir}</webappSourceDir>		          	
+		            <charset>UTF-8</charset>
+		            <skipMerge>true</skipMerge>
+            		<nosuffix>true</nosuffix>
+		            <cssSourceDir>css</cssSourceDir>			            		           
+		            <cssTargetDir>css_min</cssTargetDir>
+		            <cssSourceIncludes>
+		            	<cssSourceInclude>**/*.css</cssSourceInclude>	       
+		            </cssSourceIncludes>     
+		          </configuration>
+		          <goals>
+		            <goal>minify</goal>
+		          </goals>
+		        </execution>
+		      </executions>
+		    </plugin>	
+        </plugins>
+      </build>
+</project>

@@ -1,0 +1,109 @@
+<script id="templ_initShopLuckyDealListOnly"  type="text/x-handlebars-template">
+ {{#initVar "bannerCnt" 0}}{{/initVar}}
+
+
+<div class="main_md_rec mdnew gList_{{goods_info.page_idx}}">
+<h4 class="ir">카테고리 상품리스트 : {{bannerCnt}}</h4>
+<ul class="goods_list">
+					
+
+
+ 
+
+{{#each goods_info.goods_list}}
+
+
+{{#onBanner ../goods_info.rows_per_page ../goods_info.page_idx @index }}
+			</ul>
+		</div>	
+
+
+			{{#ifCond ../banner_list.length ">" ../bannerCnt}}
+				
+
+				{{#each ../banner_list}}
+					{{!-- #conSole ../../bannerCnt}}{{/conSole --}}
+
+					{{#ifCond @index "==" ../../bannerCnt}}
+
+					<div class="main_evt_bn">
+						<a onclick="elandmall.disp.clickEvent({ {{#setEventPram this}} {{/setEventPram}} });" href="javascript:void(0);" data-ga-tag="MW_럭키딜||하단배너||{{rel_cont_nm}}"><img width="640" height="240" alt="{{rel_cont_nm}}" src="{{image_url}}"></a>			
+					</div>
+
+					{{/ifCond}}	
+				
+				{{/each}}
+
+					{{#setVar "bannerCnt" bannerCnt "add" }}{{/setVar}}				
+			{{/ifCond}}
+
+		<div class="main_md_rec mdnew gList_">
+			<h4 class="ir">카테고리 상품리스트</h4>
+			<ul class="goods_list">
+
+
+{{/onBanner}}
+
+	 <!-- history back id주기 -->
+     <li id="goods_{{goods_no}}" data-ga-tag='MW_럭키딜||상품리스트||_{{goods_nm}}'>
+     	<div class="g_wrap">
+     		<a href="javascript:;"
+     			onclick="elandmall.history.fnPageMovePrev({{goods_no}}, '1', {path_url:'searchHappyDealGoodsList', conr_set_no: 170800000001584, conr_set_cmps_no: 170800000014077});elandmall.goods.goDetail({goods_no:'1708007040', vir_vend_no:'VV17003253', sale_shop_divi_cd:'15', disp_ctg_no:'' ,sale_area_no:'D1601000354', tr_yn:'N', conts_dist_no:'1708007040', conts_divi_cd:'20', rel_no:'1708007040', rel_divi_cd:'10', brand_nm:'SJ홀릭', goods_nm:'풀무원 국산 콩두부 단단한 부침용 380g', cust_sale_price:3990,ga_ctg_nm:$('#_HEADER_TITLE').data('ga_ctg_nm'), dlp_list:'럭키딜', dlp_category:'', no_layer:'N'});"
+     			class="g_link"> 
+				<span class="g_img"> 
+					<span class="img"> 
+						<img class='lazyload' data-src="{{image_url}}" width="240" height="240" src="{{no_image_url}}" onError="this.src='{{no_image_url}}'" alt="{{goods_nm}}상세보기" /> 
+					</span>
+				</span>
+
+				<span class="g_brd">{{brand_nm}}</span>
+
+				<span class="g_tit">{{goods_nm}}</span>
+
+				<span class="g_nor"> 
+
+						{{#ifCond sale_rate ">" 0}}
+						<span class="g_per"><em class="ir">할인률</em><b>{{sale_rate}}</b>%</span>
+						{{/ifCond}}
+
+						<span class="g_prc">
+						{{#ifCond market_price ">" cust_sale_price}}	
+							<span class="org"><em class="ir">정상가:</em><b>{{#toCurrency market_price}}{{/toCurrency}}</b>원</span>
+						{{else}}
+							<span class="org blnk"></span>
+						{{/ifCond}}
+							<span class="sale"><em class="ir">판매가:</em><b>{{#toCurrency cust_sale_price}}{{/toCurrency}}</b>원</span>
+						</span>
+			
+
+						<span class="g_bnf">
+						{{#ifCond sale_qty "<" 10 }}	
+							<span class="selp_new">new</span>
+						{{else}}
+							{{#ifCond sale_qty ">=" 10000}}
+								<span><span class="selp">{{#math sale_qty "/R" 10000}}{{/math}}만+</span>구매</span>
+							{{else}}
+								<span><span class="selp">{{sale_qty}}</span>구매</span>
+							{{/ifCond}}
+						{{/ifCond}}
+						</span>
+				</span>
+     		</a>
+     	</div>
+     </li>
+
+{{/each}}
+
+</ul>
+</div>	
+
+<div id="paging">
+<input type="hidden" name="page_index" value="{{goods_info.page_idx}}">
+<input type="hidden" name="prev_page_index" value="{{goods_info.page_idx}}">
+<input type="hidden" name="rows_per_page" value="{{goods_info.rows_per_page}}">
+<input type="hidden" name="total_count" value="{{ goods_info.goods_Total_count }}"/>
+</div>
+
+
+</script>
+

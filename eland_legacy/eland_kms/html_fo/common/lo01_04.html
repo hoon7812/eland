@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/tour.css" /> <!-- 토파즈의 경우 추가  -->
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper">
+		<div id="header">
+			<div class="tour">
+				<h1><img src="../../images/pcweb/tour/h1_logo.png" alt="E-LAND MALL TOUR" /></h1>
+				<div class="quick_util">
+					<ul>
+						<li><a href="javascript:">이랜드몰 메인</a></li>
+						<li><a href="javascript:">공지사항</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- container -->
+		<div id="container">
+			<!-- content -->
+			<div id="content">
+				<div class="login_area">
+					<!-- <div class="title">
+						<h2 class="tit_h2">로그인</h2>
+					</div> 160816 타이틀 삭제 -->
+					<!-- 160816 타이틀 수정 -->
+					<div class="tit_dp">
+						<h2>로그인</h2>
+						<span class="s_dp"></span>
+					</div>
+					<!-- //160816 타이틀 수정 -->
+					<div class="box_login01">   <!-- 배너가 없는 경우 클래스 추가 .no_bnr  :  기존 통합몰 로그인 페이지과 동일한 방식 -->
+						<div class="l_cont">
+							<div class="tab_type01">
+								<div class="tab_cont">
+									<div class="d_tab_cont on">
+										<!-- 통합회원 -->
+										<div class="cont_login">
+											<p class="txt01"><b>통합회원</b>은 한 아이디로 이랜드몰닷컴의 모든 서비스를 이용할 수 있습니다.<br />아이디와 비밀번호는 대소문자를 구분합니다.</p>
+											<div class="scont">
+<!-- 160303 -->
+												<ul class="input_login">
+													<li><input type="text" class="input_txt wide d_input01 ph_bg_on" title="아이디" /></li>
+													<li><input type="password" id="pwd"  class="input_txt wide d_input02 ph_bg_on" title="비밀번호" /></li>
+												</ul>
+<!-- //160303 -->
+												<div class="set_save_opt">
+													<div class="opt01"><label for="id_save_chk01"><input id="id_save_chk01" type="checkbox" class="chkbox" /> <span>아이디 저장</span></label></div>
+													<div class="opt02"><a class="btn_txt01 c02" href="#"><span>아이디/비밀번호 찾기</span></a></div>
+												</div>
+												<a class="btn_login" href="#"><span>로그인</span></a>
+												<p class="txt_alert">아이디를 입력해 주세요.</p>
+											</div>
+											<div class="box_join">
+												<div class="l_scont">
+													<strong>이랜드몰 회원이 아니세요?</strong>
+													<span class="stxt01">회원으로 가입하시고 푸짐한 헤택을 누리세요</span>
+												</div>
+												<div class="r_scont">
+													<a class="btn02 c01" href="#"><span>회원가입</span></a>
+												</div>
+											</div>
+
+											<div class="box_sns">
+												<div class="tit">SNS계정으로 로그인 하기</div>
+												<ul class="list_sns">
+													<li><a href="#"><img src="../../images/pcweb/common/login_kakao.png" alt="카카오계정으로 로그인하기"></a></li>
+													<li><a href="#"><img src="../../images/pcweb/common/login_naver.png" alt="네이버계정으로 로그인하기"></a></li>
+													<li><a href="#"><img src="../../images/pcweb/common/login_facebook.png" alt="페이스북계정으로 로그인하기"></a></li>
+												</ul>
+											</div>
+
+											<!-- 7650::로그인 광고배너 -->
+											<div class="ad_bn">
+												<a href="#"><img src="../../images/pcweb/renewal/login_ad_bn.png" alt="로그인광고배너"></a>
+											</div>
+											<!-- //7650::로그인 광고배너 -->													
+											<!--div class="box_nonmember">
+												<div class="l_scont">
+													<strong>비회원 구매</strong>
+													비회원으로 구매 하시겠습니까?<br />
+													비회원은 포인트 적립/사용이 불가능합니다.
+												</div>
+												<div class="r_scont">
+													<div class="set_vbtn">
+														<a class="btn04 c01 full" href="#"><span>회원가입</span></a>
+														<a class="btn04 c01 full" href="#"><span>비회원 구매</span></a>
+													</div>
+												</div>
+											</div-->
+										</div>
+									</div>
+								</div>
+							</div>
+
+<!-- 160303 -->
+<script type="text/javascript">
+function login_input_placeholder( target ){
+	var $this = $(target);
+
+	$this.on("keydown keyup blur",eng)
+
+	function eng(){
+		if ( $this.val().length > 0 ) {
+			$this.removeClass("ph_bg_on");
+		}else{
+			$this.addClass("ph_bg_on");
+		}
+	}
+}
+$(window).ready(function(){
+	login_input_placeholder(".d_input01");
+	login_input_placeholder(".d_input02");
+	login_input_placeholder(".d_input03");
+	login_input_placeholder(".d_input04");
+	login_input_placeholder(".d_input05");
+})
+</script>
+<!-- //160303 -->
+						</div>
+						<div class="box_ad_bnr"><a href="#"><img src="../../images/pcweb/temp/_sample_268x303.jpg" alt="스파오 6주년 감사대전" /></a></div>
+					</div>
+				</div>
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<div class="footer_links">
+				<div class="cont"><img src="../../images/pcweb/temp/_sample_footer01.jpg" alt="샘플푸터"></div>
+			</div>
+			<div class="footer_info01"><img src="../../images/pcweb/temp/_sample_footer02.jpg" alt="샘플푸터" /></div>
+			<div class="footer_info02">
+				<div class="cont"><img src="../../images/pcweb/temp/_sample_footer03.jpg" alt="샘플푸터" /></div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+
+<link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon180.png">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon160.png">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon192.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon160.png">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="modern"><!-- MODERN HOUSE : CALSS -->
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open"><b class="ir">카테고리 전체메뉴 열기</b></button></div>
+		<h1><a href="Md_Main.html"><b class="ir">MODERN HOUSE 메인</b></a></h1>
+		<div class="hnb">
+			<ul>
+				<li class="sch"><button type="button"><b class="ir">검색 열기</b></button></li>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+		
+	</div>
+</header>
+<!-- //HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+
+
+
+		<!-- SWIPER 0 -->
+		<div class="slide_cont" data-index="0">
+			<!-- TOP_BN -->
+			<div class="main_bn_wrap" id="main_bn_wrap">
+				<div class="main_bn swiper-container" id="main_bn">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/bn_main_02.jpg" width="640" height="382" alt="배너1" /></a></li>
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/bn_main_01.jpg" width="640" height="382" alt="배너2" /></a></li>
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/bn_main_02.jpg" width="640" height="382" alt="배너3" /></a></li>
+					</ul>
+				</div>
+				<a href="#" class="swiper-bn-left"><b class="ir">이전 배너 보기</b></a>
+				<a href="#" class="swiper-bn-right"><b class="ir">다음 배너 보기</b></a>
+				<div class="pagination">
+					<a href="#" class="swiper-pagination-switch"><b class="ir">1번 이미지 보기</b></a>
+					<a href="#" class="swiper-pagination-switch"><b class="ir">2번 이미지 보기</b></a>
+					<a href="#" class="swiper-pagination-switch"><b class="ir">3번 이미지 보기</b></a>
+				</div>
+				<a href="#" class="bt_opa_lyr" onclick="OpacityLyrOpen('layer_main_bn');return false;" onkeypress="this.onclick;"><b class="ir">배너 전체 보기</b></a>
+			</div>
+			<script type="text/javascript">
+			$(document).ready(function() {
+				var myTop_bn = new Swiper('#main_bn',{
+					createPagination: false,
+					simulateTouch: true,
+					calculateHeight: true,
+					pagination: '#main_bn_wrap .pagination',
+					loop: true,
+					paginationClickable: true
+				});
+				$('#main_bn_wrap').find('.swiper-bn-left').on('click', function(e){
+					e.preventDefault();myTop_bn.swipePrev();
+				})
+				$('#main_bn_wrap').find('.swiper-bn-right').on('click', function(e){
+					e.preventDefault();myTop_bn.swipeNext();
+				});
+					
+				$(window).resize(function(){	
+					myTop_bn.reInit();
+				});
+			});
+			</script>
+			<!--// TOP_BN -->
+			
+			<!-- EVENT ALL LAYER -->
+			<div id="layer_main_bn" class="layer_opacity">
+				<h3 class="pop_tit">이벤트 전체</h3>
+				<div class="pop_con">
+					<div class="main_bn_lyr">
+						<ul>
+							<li><a href="#"><img src="../images/mobile/temp/bn_main_02.jpg" width="640" height="382" alt="배너1" /></a></li>
+							<li><a href="#"><img src="../images/mobile/temp/bn_main_01.jpg" width="640" height="382" alt="배너2" /></a></li>
+							<li><a href="#"><img src="../images/mobile/temp/bn_main_02.jpg" width="640" height="382" alt="배너3" /></a></li>
+						</ul>
+					</div>
+				</div>
+				<a href="#" class="btn_close" onclick="OpacityLyrCls('layer_main_bn');return false;" onkeypress="this.onclick;"><span class="ir">팝업 닫기</span></a>
+			</div>
+			<!-- //EVENT ALL LAYER -->
+
+			<!-- EVENT BANNER -->
+			<div class="main_evt_bn">
+				<a href="#"><img src="../images/mobile/temp/bn_md_01.jpg" width="640" height="382" alt="이벤트배너" /></a>
+			</div>
+			<!-- //EVENT BANNER -->
+
+			
+			<!-- CATG. BEST -->
+			<div class="main_best_ctg">
+				<h3>BEST CATEGORY</h3>
+				<div class="best_ctg">
+					<!-- 160311 삭제
+					<ul>
+						<li class="sf"><a href="#">소파</a></li>
+						<li class="bd"><a href="#">침대</a></li>
+						<li class="ds"><a href="#">식기</a></li>
+						<li class="br"><a href="#">욕실</a></li>
+						<li class="bc"><a href="#">침구</a></li>
+						<li class="ct"><a href="#">커텐</a></li>
+						<li class="wd"><a href="#">월데코</a></li>
+						<li class="df"><a href="#">데코/팬시</a></li>
+					</ul> -->
+					<!-- 160311 수정 -->
+					<ul>
+						<li><a href="#"><img src="../images/mobile/temp/bn_best_01.jpg" alt="소파"></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/bn_best_02.jpg" alt="침대"></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/bn_best_03.jpg" alt="식기"></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/bn_best_04.jpg" alt="욕실"></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/bn_best_05.jpg" alt="침구"></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/bn_best_06.jpg" alt="커텐"></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/bn_best_07.jpg" alt="월데코"></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/bn_best_08.jpg" alt="데코 팬시"></a></li>
+					</ul>
+					<!-- //160311 수정 -->
+				</div>
+			</div>
+			<!-- //CATG. BEST -->
+			
+			<!-- MD PICK -->
+			<div class="main_md_gd">
+				<h3><b>MD</b> PICK</h3>
+				<ul>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //MD PICK -->
+
+			<!-- STEADY_SELLER -->
+			<div class="main_md_gd">
+				<ul>
+					<li>
+						<span class="g_dt">
+							<a href="#" title="매장 바로가기"><img src="../images/mobile/main/h3_steady_seller.png" width="284" height="284" alt="STEADY_SELLER - LIKE IT! 인기있는상품"/></a>
+						</span>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_tit">WOW 우드박스 양식기세트 16P 브라운</span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_tit">WOW 우드박스 양식기세트 16P 브라운</span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_tit">WOW 우드박스 양식기세트 16P 브라운</span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //STEADY_SELLER -->
+
+			
+			<!-- BUTTER -->
+			<div class="shop_butter">
+				<h3><img src="../images/mobile/main/h3_butter.png" width="215" height="65" alt="BUTTER - 커피 한 잔 가격으로 시작하는 홈 스타일링!"/></h3>
+				<div class="swiper-container" id="butter_goods">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="#">
+								<span class="g_img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<span class="g_img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+								<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<span class="g_img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+								<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<span class="g_img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+								<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="btn">
+					<a href="#" title="BUTTER 매장 바로가기"><img src="../images/mobile/main/btn_butter.png" width="135" height="27" alt="더보고 싶다면?" /></a>
+				</div>
+			</div>
+			<script type="text/javascript">
+			$(document).ready(function() {
+				var myButterGoods = new Swiper('#butter_goods',{
+					slidesPerView : 'auto',
+					createPagination: false,
+					calculateHeight: true,
+					loop: false,
+					freeMode : true,
+					freeModeFluid : true
+				});
+
+				$(window).resize(function(){
+					myButterGoods.reInit();
+				})
+			});
+			</script>
+			<!-- BUTTER -->
+
+			<!-- FURNITURE SHOP -->
+			<div class="main_furn_shop" id="shop_goods_wrap">
+				<h3><b>FURNITURE</b> SHOP</h3>
+				<div class="swiper-container" id="shop_goods">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="#">
+								<span class="g_img"><img src="../images/mobile/temp/bn_590.jpg" width="590" height="490" alt="" /></span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<span class="g_img"><img src="../images/mobile/temp/bn_590.jpg" width="590" height="490" alt="" /></span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<span class="g_img"><img src="../images/mobile/temp/bn_590.jpg" width="590" height="490" alt="" /></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="pagination">
+					<a href="#" class="swiper-pagination-switch"><b class="ir">1번 이미지 보기</b></a>
+					<a href="#" class="swiper-pagination-switch"><b class="ir">2번 이미지 보기</b></a>
+					<a href="#" class="swiper-pagination-switch"><b class="ir">3번 이미지 보기</b></a>
+				</div>
+			</div>
+			<script type="text/javascript">
+			$(document).ready(function() {
+				var myShopGoods = new Swiper('#shop_goods',{
+					createPagination: false,
+					calculateHeight: true,
+					loop: true,
+					pagination: '#shop_goods_wrap .pagination',
+					paginationClickable: true
+				});
+
+				$(window).resize(function(){
+					myShopGoods.reInit();
+				})
+			});
+			</script>
+			<!-- FURNITURE SHOP -->	
+
+			<!-- WOW -->
+			<div class="main_md_gd m_wow">
+				<ul>
+					<li>
+						<span class="g_dt">
+							<a href="#" title="매장 바로가기"><img src="../images/mobile/main/h3_wow.png" width="284" height="284" alt="WOW! - surprize 가격파괴"/></a>
+						</span>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_tit">WOW 우드박스 양식기세트 16P 브라운</span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_tit">WOW 우드박스 양식기세트 16P 브라운</span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/img_480_02.jpg" width="480" height="480" alt="" /></span>
+							<span class="g_tit">WOW 우드박스 양식기세트 16P 브라운</span>
+							<span class="g_prc"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //WOW -->	
+			
+
+			<!-- PLAN BN. LIST -->
+			<div class="plan_bn_list">
+				<h3><b>MODERN</b> MAGAZINE</h3>
+				<ul>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/bn_plan_01.jpg" width="284" height="284" alt="" /></span>
+							<span class="g_tit">
+								<span class="tit">코지엠베스트 아이템<br/>2015 f/w 신상품 입고</span> 
+								<span class="txt">100개 한정판매</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/bn_plan_00.jpg" width="284" height="284" alt="" /></span>
+							<span class="g_tit">
+								<span class="tit">코지엠베스트 아이템<br/>2015 f/w 신상품 입고</span> 
+								<span class="txt">100개 한정판매</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/bn_plan_00.jpg" width="284" height="284" alt="" /></span>
+							<span class="g_tit">
+								<span class="tit">코지엠베스트 아이템<br/>2015 f/w 신상품 입고</span> 
+								<span class="txt">100개 한정판매</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/bn_plan_01.jpg" width="284" height="284" alt="" /></span>
+							<span class="g_tit">
+								<span class="tit">코지엠베스트 아이템<br/>2015 f/w 신상품 입고</span> 
+								<span class="txt">100개 한정판매</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //PLAN BN. LIST  -->
+
+
+	
+		</div>
+		<!-- //SWIPER 0 -->
+
+
+
+</div>
+<!-- //CONTENT -->
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<div class="ft_bn">
+		<a href="#"><img src="../images/mobile/temp/bn_foot_100.jpg" width="640" height="100" alt="이벤트배너" /></a>
+	</div>
+	<div class="ft_menu">
+		<ul>
+			<li><a href="#">로그아웃</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li><a href="#">장바구니</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div>
+	<div class="ft_info">
+		<p> 주식회사 엠에이치앤코  서울특별시 마포고 서강로 77, 5층</p>
+		<p>사업자등록번호 : 821-87-00617  <a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2017313020130201348&area1=&area2=&currpage=1&searchKey=01&searchVal=%BF%A5%BF%A1%C0%CC%C4%A1%BE%D8%C4%DA&stdate=&enddate=" target="_blank">사업자정보확인</a></p>
+		<p>통신판매업 신고번호 : 제2017-서울마포-1346</p>
+		<p>대표이사 : 여신애</p>
+		<p>개인정보 보호책임자 : 이희석</p>
+		<div class="ft_direct"> <!-- 2017.09.01 위치조정 -->
+			<!-- web에서는 off만 사용 <a href="#"><i class="on">APP방문ON</i></a> -->
+			<a href="#"><i class="off">APP방문OFF</i></a>
+		</div>
+	</div>
+	<div class="ft_info">
+		<p>주식회사 이랜드리테일  서울시 서초구 잠원동 70-2</p>
+		<p>대표이사 : 이광일/김연배</p>
+		<p>사업자등록번호 : 114-81-01855  <a href="#">사업자정보확인</a></p>
+		<p>통신판매업 신고번호 : 서초 제 09998호</p>
+		<p>고객센터 : <a href="tel:1899-9500">1899-9500</a></p>
+	</div>
+	<div class="ft_copy">COPYRICHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="ft_app">
+		<ul>
+			<li><a href="#">PC 버전보기</a></li>
+			<li><a href="#">APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>

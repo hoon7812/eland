@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no"><!-- 160829 ios 자동전화걸기 방지 태그추가 -->
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon180.png">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon160.png">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon192.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon160.png">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="renewal renewal2_brand"><!-- MODERN HOUSE : CALSS --><!-- 2018.01.03 xmas 클래스 삭제 -->
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INSTALL APP POPUP 160926 -->
+<div class="ins_app" style="display:none;">
+	<div class="cont">
+		<div class="pannel">
+			<a href="#" class="go_app">
+				<img src="../images/mobile/common/ins_app_md.png" alt="모던하우스몰 앱으로 보기">
+			</a>
+			<a href="#" class="pop_close"><strong>모바일웹으로 볼게요</strong></a>
+		</div>
+	</div>
+</div>
+<!-- //INSTALL APP POPUP 160926 -->
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" onClick="alert('aaa');"><b class="ir">카테고리 전체메뉴 열기</b></button></div>
+		<h1><a href="Md_Main.html"><b class="ir">MODERN HOUSE 메인</b></a></h1>
+		<div class="hnb">
+			<ul>
+				<li class="sch">
+					<button type="button" class="txt_btn"><b>검색어 입력검색어 입력검색어 입력검색어 입력</b></button> <!-- 1st ~ 2st : 예비용 class 추가 -->
+					<button type="button" class="sch_btn"><em class="ir">검색결과로 이동</em></button>
+				</li>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>		
+
+	</div>
+</header>
+<!-- //HEADER -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">				   
+	<div class="main_top" id="main_top">
+		<div id="gnb_wrap" class="gnb_wrap">
+			<div class="sul_tx"><a href="#"><img src="//www.elandrs.com/upload/dspl/banner/90/083/00/180400000060083.png" alt=""></a></div>
+			<div class="eland"><a href="#">E LAND</a></div> <!-- 170515 E LAND 바로가기 추가 -->
+			<div class="gnb" id="gnb">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><span>홈</span></li>
+					<li class="swiper-slide"><span>신상품</span></li>
+					<li class="swiper-slide"><span>베스트</span></li>
+					<li class="swiper-slide"><span>스토리쇼핑</span></li>
+					<li class="swiper-slide"><span>스토리쇼핑2</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var GNB_SCROLL;
+		var LOADING_HTML = '<div class="loading"><span>로딩중</span></div>';
+		
+		$(document).ready(function() {
+			//[v2_2] 브랜드몰 네비게이션 배너 자동 padding값 조절 추가
+			var $localMenuBnr = $('#main_top .sul_tx');//브랜드몰 네비게이션 메뉴 배너
+			var $localMenuBnrWrap = $('#main_top .gnb_wrap');//브랜드몰 네비게이션 wrapper
+			if($localMenuBnr.length>0) {
+				var localMenuBnrWid = $localMenuBnr.outerWidth();
+				$localMenuBnrWrap.css({'paddingLeft':localMenuBnrWid});
+			}
+			
+			GNB_SCROLL = new Swiper('#gnb',{
+				createPagination: false,
+				freeMode: true,
+				freeModeFluid: true,
+				slidesPerView: 'auto',
+				roundLengths: true,
+				onSlideClick: function(){
+					$(".gnb li").removeClass("on");
+					$('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);			
+					GNB_SCROLL.swipeTo(GNB_SCROLL.clickedSlideIndex);
+					call_slide(GNB_SCROLL.clickedSlideIndex);
+				}
+			});
+
+			$(window).resize(function(){	
+				GNB_SCROLL.reInit();
+			});
+			
+		});
+		
+		
+		$(window).load(function() {	
+			mainCate.prependSlide(LOADING_HTML, 'swiper-slide','li');					
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active').html(LOADING_HTML);			
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			mainCate.swipeTo(1, 0, true);
+			call_slide(0);
+		});
+		
+		function change_slide(idx) {
+			$('#m_cts').find('li:not(.swiper-slide-active)').remove();
+			mainCate.prependSlide( LOADING_HTML, 'swiper-slide','li');
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			$('#m_cts').find('.swiper-slide').removeClass('swiper-slide-active');
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active');			
+			if(	$('#m_cts').find('.swiper-slide').eq(1).hasClass('swiper-slide-active')){
+				$('#m_cts').find('.slide_cont').remove();
+				window.scrollTo(0, 0);
+				call_slide(idx);
+			}
+		}
+
+		function call_slide(idx){ 
+			$.ajax({
+				type : 'get',
+				isLocal: true,
+				headers: { "cache-control": "no-cache" },
+				url : 'md_main_'+ idx +'.html',
+				dataType : 'html',
+				success: function(data){	
+					setTimeout(function() { 
+						$('#m_cts').find('.swiper-slide').eq(1).html(data);						
+						mainCate.reInit();
+						setSlideHeight();
+					}, 100);
+					$('.gnb li').removeClass('on');
+					$('.gnb').find('li').eq(idx).addClass('on');	
+					mainCate.swipeTo(1, 0, true);
+				},
+				error: function(){
+					setTimeout(function() { call_slide(0) }, 100);
+					GNB_SCROLL.swipeTo(idx, 200);
+				}
+			});
+		}
+			
+		var mainCate = new Swiper('#m_cts',{
+			loop: false,
+			simulateTouch : true,
+			calculateHeight:true,
+			onSlideNext : function() {
+				var index = parseInt($('.gnb').find('li.on').index()) + 1;
+				var max_gnb = $('.gnb li').length;
+				if(index == max_gnb ){	
+					var idx = 0;
+					GNB_SCROLL.swipeTo(0, 200); 
+				}else{
+					var idx = index;
+					var w_width = $(window).width();
+					var	active_li = $('.gnb').find('li.on').next('li');
+					var active_left = active_li.offset().left + active_li.outerWidth();
+					if(active_left > w_width){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}
+				}
+				change_slide(idx);
+			},
+			onSlidePrev : function() {
+				var index = parseInt($('#m_cts' ).find('.slide_cont').attr('data-index'));
+				if(index == 0 ){	
+					var idx = $('.gnb li').length -1;
+						GNB_SCROLL.swipeTo(idx, 200);
+				}else{
+					var idx = index - 1;
+					var active_li = $('.gnb').find('li.on').prev('li');
+					var active_left = active_li.offset().left;
+					if(active_left <= 0){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}	
+				}	
+				change_slide(idx);
+			}
+		});
+		
+		$(window).resize(function(){
+			mainCate.reInit();
+			setSlideHeight();
+		});
+	</script>
+</div>
+<!-- //CONTENT -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+<div style="position:fixed;bottom:5px;left:0;right:0;z-index:999;">
+	<select id="mallSelect">
+		<option value="modern" selected="selected">모던하우스</option>
+		<option value="kims">킴스</option>
+		<option value="mixxo">믹쏘</option>
+		<option value="ost">오에스티</option>
+		<option value="newbal">뉴발란스</option>
+		<option value="roem">로엠</option>
+		<option value="lloyd">로이드</option>
+		<option value="spao">스파오</option>
+		<option value="shoopen">슈펜</option>
+		<option value="folder">폴더</option>
+		<option value="nbkids">뉴발키즈</option>
+		<option value="eblin">에블린</option>
+		<option value="clue">클루</option>
+		<option value="whoau">후아유</option>
+		<option value="kinder">킨더</option>
+	</select>
+</div>
+<script type="text/javascript">
+	var $body = $('body');
+	var currentBrandClass ='';
+	var $head = $('head');
+	currentBrandClass=$('#mallSelect option:selected').attr('value');
+	$body.addClass($('#mallSelect option:selected').attr('value'));
+	$('#mallSelect').on('change',function(e) {
+		var val = $(this).attr('value');
+		if(currentBrandClass) {
+			$('#css').remove();
+			$body.removeClass(currentBrandClass);
+		}
+		$body.addClass(val);
+		$head.append('<link id="css" rel="stylesheet" href="../css/mobile/main_'+val+'.css" type="text/css">')
+		currentBrandClass = val;
+
+		setTimeout(function(){
+			if($("div").hasClass("head")){
+				var lastScroll;
+				var top_bn;
+				var startScroll;
+				var _top;
+				var $contentsTit = $('.cts_tit').eq(0);
+				var $hdrTop = $('#header');
+				var $hdrMenu = $('#main_top');
+				var $hdrBnr = $('#header_bn');
+				var _hdrBnrHei = ($hdrBnr.length>0) ? $hdrBnr.height() : 0; //상단 배너 높이
+				var _hdrTopHei = ($hdrTop.length>0) ? $hdrTop.outerHeight() : 0; //상단 헤더 높이
+				var _hdrMenu = ($hdrMenu.length>0) ? $hdrMenu.outerHeight() : 0; //헤더 메뉴 높이
+				var _contentstitHei = ($contentsTit.length>0) ? $contentsTit.outerHeight() : 0; //컨텐츠 타이틀 높이
+				var _mainTopPadding = _hdrTopHei + _hdrMenu; //메인컨텐츠 상단 간격(상단헤더 + 메인메뉴)
+				var _mainTopPadding2 = _hdrTopHei + _hdrMenu + _hdrBnrHei; //메인컨텐츠 상단 간격(상단헤더 + 메인메뉴 + 배너)
+				var _contentsTopPadding = _hdrTopHei + _contentstitHei; //서브컨텐츠 상단 간격(상단헤더 + 컨텐츠 타이틀 높이)
+				var _contentsTopPadding2 = _hdrTopHei + _contentstitHei + _hdrBnrHei; //서브컨텐츠 상단 간격(상단헤더 + 컨텐츠 타이틀 높이 + 배너높이)
+				//170327 메인 리뉴얼 js 수정 start
+				if($("div").hasClass("header_bn")){
+					var img = $('#header_bn').find('a:not(.cls)').find('img');
+					lastScroll = 0;
+					top_bn= img.height(); //160930 수정
+					startScroll = top_bn-5;
+					_top = 50;
+					_mtop = $(".main_top").height();
+
+					$('body').addClass('head_bn');
+					$('#header_bn').addClass('ready');
+					img.css({'height':+top_bn+'px'});
+					startScroll = top_bn;
+					hd_dn()
+				}else{
+					_top = 50;
+					startScroll = _hdrTopHei;
+					_mtop = 0;
+					$('body').removeClass('head_bn');
+					if($("div").hasClass("cts_tit")){
+						$('.contents').css('padding-top',_contentsTopPadding);
+					}else{
+						$('.contents').css('padding-top',_mainTopPadding);
+					}
+					hd_dn()
+				}
+				function hd_dn(){
+					if($("div").hasClass("layer_detail")){
+						if($("div").hasClass("cts_tit")){
+							$('.cts_tit').css('top',0);
+						}else{
+							//$('.cts_tit').css('top',top_bn);
+						}
+					}else{
+						if($("div").hasClass("cts_tit")){//서브페이지 중 컨텐츠 타이틀이 있을 경우.
+							$('.contents').css('padding-top',_contentsTopPadding)
+							$('.header').css('top',_top-50)
+							$('.header_bn').css('top',_hdrTopHei + _contentstitHei)
+							//$('.main_top').css('top',_top + 45)
+							$('.cts_tit').css('top',_hdrTopHei)
+							if($("div").hasClass("header_bn")){
+								$('.contents').css('padding-top',_contentsTopPadding2)
+								$('.cts_tit').css('top',_hdrTopHei)
+							}else{
+								$('.contents').css('padding-top',_contentsTopPadding);
+								$('.cts_tit').css('top',_hdrTopHei);
+							}
+						}else{//메인홈일 경우 
+							//$('.contents').css('padding-top',_top + top_bn+38)
+							//$('.header_bn').css('top',_top + _mtop)
+							//$('.main_top').css('top',_hdrTopHei)
+							//$('.cts_tit').css('top',_top + top_bn)
+							$('.header').css('top',0);
+							$('.main_top').css('top',_hdrTopHei);
+							if($("div").hasClass("header_bn")){
+								$('.header_bn').css('top',_hdrTopHei + _hdrMenu);
+								$('.contents').css('padding-top',_mainTopPadding2);
+								//$('.cts_tit').css('top',_top + top_bn);
+							}else{
+								$('.contents').css('padding-top',_mainTopPadding);
+								//$('.cts_tit').css('top',_top);
+							}
+						}
+					}
+				}
+				function hd_up(){
+					var header_minus_gap = _hdrTopHei*-1;
+					if($("div").hasClass("layer_detail")){
+						if($("div").hasClass("cts_tit")){
+							$('.contents').css('padding-top',$('.cts_tit').outerHeight())
+							$('.header').css('top',_hdrTopHei*-1)
+							$('.header_bn').css('top','-'+_hdrTopHei-50)
+							$('.main_top').css('top',0)
+							$('.cts_tit').css('top',0)
+						}else{
+							$('.contents').css('padding-top',$('.cts_tit').outerHeight())
+							$('.header').css('top',header_minus_gap)
+							$('.header_bn').css('top','-'+_hdrTopHei-50)
+							$('.main_top').css('top',0)
+							//$('.cts_tit').css('top',0)
+						}
+					}else{
+						if($("div").hasClass("cts_tit")){//서브페이지 중 컨텐츠 타이틀이 있을 경우.
+							$('.contents').css('padding-top',_contentstitHei)
+							$('.header').css('top',header_minus_gap)
+							$('.header_bn').css('top','-'+_hdrBnrHei-50)
+							$('.main_top').css('top',0)
+							$('.cts_tit').css('top',0)
+						}else{//메인홈일 경우 
+							$('.contents').css('padding-top','44px')
+							$('.header').css('top',header_minus_gap)
+							$('.header_bn').css('top','-'+_hdrBnrHei-50)
+							$('.main_top').css('top',0)
+							//$('.cts_tit').css('top',0)
+						}
+					}
+				}
+				$('#header_bn').find('.cls').on("click", function(){
+					//_top = 50;
+					//startScroll = 45;
+					hd_dn()
+					if($("div").hasClass("cts_tit")){
+						$('.contents').css('padding-top',_contentsTopPadding);
+					}else{
+						$('.contents').css('padding-top',_mainTopPadding);
+					}
+					$('#header_bn').remove();
+					$('.cts_tit').css('top',_hdrTopHei);
+					$('#header_bn').removeClass('ready');
+				});
+				//170327 메인 리뉴얼 js 수정 end
+				$(window).scroll(function(){		/*상세에서 스크롤 움직일 시, 카테고리 네비도 같이 이동 - 16.08.14 이태영*/	
+					var st = $(this).scrollTop();
+					if (st > startScroll){
+						hd_up()
+						
+						$('body').addClass('head_up');
+						// [v2] css로 제어
+						// $("#catg_nav").css("top",_hdrTopHei+_contentstitHei);
+					}
+					else {
+						hd_dn()
+						$('body').removeClass('head_up');
+						// [v2] css로 제어
+						// if($("#header_bn").length > 0){
+						// 	$("#catg_nav").css("top", _hdrTopHei+_contentstitHei);
+						// }else{
+						// 	$("#catg_nav").css("top",_hdrTopHei+_contentstitHei);
+						// }
+					}
+					//lastScroll = st;
+				});
+			}
+		},400)
+
+	});
+
+</script>
+
+</body>
+</html>
+

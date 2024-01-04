@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no"><!-- 160829 ios 자동전화걸기 방지 태그추가 -->
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+
+<link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_icon180.png">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon160.png">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon192.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/mk_ad_icon160.png">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery-ui.js"></script> <!-- D: 추가 -->
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.ui.touch-punch.min.js"></script>  <!-- D : 추가 -->
+
+
+</head>
+<body class="renewal2 emall_main"><!-- 2021-12-27 addClass: emall_main -->  
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<div class="header_bn" id="header_bn" style="background-color: rgb(34, 34, 34);">
+	<a href="#"><img src="../images/mobile/temp/bn_head_100.jpg" alt="이벤트배너" style="height: 59px;"></a>
+	<a href="#" class="cls"><img src="../images/mobile/common/btn_bn_close.png" alt="닫기"></a>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" ><b class="ir">카테고리 전체메뉴 열기</b></button></div><!-- [v2] : onClick="left_lnb_open()" 제거 -->
+		<h1><a href="javascript:;"><b class="ir">E-LAND MALL 메인</b></a></h1>
+		<div class="hnb">
+			<ul>
+				<!-- NGCPO-5005 (모바일) 추천 검색어 있을 경우, 랜딩 페이지 변경 요청 -->
+				<li class="sch">
+					<button type="button" class="txt_btn"><b>검색어 입력검색어 입력검색어 입력검색어 입력</b></button> <!-- 1st ~ 2st : 예비용 class 추가 -->
+					<button type="button" class="sch_btn"><em class="ir">검색결과로 이동</em></button>
+				</li>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<!-- <li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li> -->
+			</ul>
+		</div>
+	</div>
+</header>
+<!-- //HEADER -->
+
+<!-- [v2] : LEFT MENU 삭제 -->
+<!-- //[v2] : LEFT MENU 삭제 -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">				   
+	<!-- <div class="cts_tit">
+		<h2>
+			<a href="#contents" class="ctg" id="ctab" onclick="fnToggleSlide('ctab', 'catg_nav');return false;" onkeypress="this.onclick;">상품상세<em class="ir">카테고리 열기</em></a>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>		
+			<a href="#" class="sns" onclick="fn_layer_open('sns_lyr');return false;" onkeypress="this.onclick;"><em class="ir">공유 하기</em></a>	
+		</h2>
+	</div> -->
+
+	<div class="main_top" id="main_top">
+		<div class="gnb_wrap">
+		<!-- <div class="gnb_wrap"> -->
+			<!-- <div class="sul_tx"><a href="#"><img src="//dev.elandrs.com/upload/dspl/banner/90/471/190900000007471.png" alt=""></a></div> -->
+			<div class="gnb" id="gnb">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><span>홈</span></li>
+					<li class="swiper-slide"><span>럭키딜<q>매일특가매일특가매일특가매일특가매일특가</q><em class="new_icon"></em></span></li>
+					<li class="swiper-slide"><span>베스트<em class="new_icon"></em></span></li>
+					<li class="swiper-slide"><span>시즌기획전<em class="new_icon"></em></span></li>
+					<li class="swiper-slide"><span>365아울렛<q>상시할인</q><em class="new_icon"></em></span></li>
+					<li class="swiper-slide"><span>스토어쇼핑<q>매장쇼핑</q></span></li>
+					<li class="swiper-slide"><span>홈-숏핑</span></li>
+					<li class="swiper-slide"><span>이벤트<q>쿠폰혜택</q></span></li>
+					<li class="swiper-slide"><span>글로벌샵<q>명품/스포츠</q></span></li>
+					<li class="swiper-slide"><span>오프라이스<q>PRICE 4U</q></span></li>
+					<li class="swiper-slide"><span>E키즈샵</span></li>
+					<li class="swiper-slide"><span>E#NOW<q>ON-TREND</q></span></li>
+					<li class="swiper-slide"><span>기획전상세</span></li>
+					<li class="swiper-slide"><span>이벤트상세</span></li>
+					<li class="swiper-slide"><span>브랜드관</span></li>
+					<li class="swiper-slide"><span>9월의 혜택</span></li>
+					<!-- <li class="swiper-slide"><span>홈</span></li>
+					<li class="swiper-slide"><span>HIT TODAY</span></li>
+					<li class="swiper-slide"><span>베스트</span></li>
+					<li class="swiper-slide"><span>기획전</span></li>
+					<li class="swiper-slide"><span>365 팩토리</span></li>
+					<li class="swiper-slide"><span>오프라인 쇼핑</span></li>
+					<li class="swiper-slide"><span>쇼핑 VJ</span></li>
+					<li class="swiper-slide"><span>이벤트</span></li> -->
+					<!-- li class="swiper-slide"><span>무료배송</span></li>
+					<li class="swiper-slide"><span>앳라이프</span></li -->
+				</ul>
+			</div>
+		</div>
+		<div id="gnb_wrap_dummy"></div>
+	</div>
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var GNB_SCROLL;
+		var LOADING_HTML = '<div class="loading"><span>로딩중</span></div>';
+		
+		$(document).ready(function() {
+			GNB_SCROLL = new Swiper('#gnb',{
+				createPagination: false,
+				freeMode: true,
+				freeModeFluid: true,
+				slidesPerView: 'auto',
+				roundLengths: true,
+				onSlideClick: function(){
+					$(".gnb li").removeClass("on");
+					$('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);
+					var idx = GNB_SCROLL.clickedSlideIndex;
+					GNB_SCROLL.swipeTo(GNB_SCROLL.clickedSlideIndex);
+					call_slide(idx);
+				}
+			});
+
+			$(window).resize(function(){	
+				GNB_SCROLL.reInit();
+			});
+		});
+		
+		
+		$(window).load(function() {	
+			mainCate.prependSlide(LOADING_HTML, 'swiper-slide','li');					
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active').html(LOADING_HTML);			
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			mainCate.swipeTo(1, 0, true);
+			call_slide(10);
+		});
+		
+		function change_slide(idx) {
+			$('#m_cts').find('li:not(.swiper-slide-active)').remove();
+			mainCate.prependSlide( LOADING_HTML, 'swiper-slide','li');
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			$('#m_cts').find('.swiper-slide').removeClass('swiper-slide-active');
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active');			
+			if(	$('#m_cts').find('.swiper-slide').eq(1).hasClass('swiper-slide-active')){
+				$('#m_cts').find('.slide_cont').remove();
+				window.scrollTo(0, 0);
+				call_slide(idx);
+			}
+		}
+
+		function call_slide(idx){ 
+			var htmlName='';
+			var imagine;
+			if(idx==0 || idx==3 || idx==5 || idx==6 || idx==8 || idx==9 || idx==10 || idx==11 || idx==12 || idx==13 || idx==14 || idx==15 || idx==16) {
+				htmlName = 'renewal_main_';
+			} else if(idx==1 || idx==2 || idx==4 || idx==7){
+				htmlName = 'new_main_';
+			} else {
+				htmlName = 'main_';
+			}
+			$.ajax({
+				type : 'get', // 퍼블리싱 확인용 . 개발측은 post
+				isLocal: true,
+				headers: { "cache-control": "no-cache" },
+				url : htmlName+ idx +'.html',
+				dataType : 'html',
+				success: function(data){
+					setTimeout(function() { 
+						$('#m_cts').find('.swiper-slide').eq(1).html(data);
+						mainCate.reInit();
+						setSlideHeight();
+					}, 100);
+					$('.gnb li').removeClass('on');
+					// if(idx==9) {
+					// 	idx=8;
+					// } else if(idx==10){
+					// 	idx=9;
+					// }
+					//  else if(idx==13){
+					// 	idx=10;
+					// }
+					$('.gnb').find('li').eq(idx).addClass('on');	
+					mainCate.swipeTo(1, 0, true);
+					/* 170607 추가 */
+					var gnbVal = $('.gnb').find('li.on span').text();
+					//console.log(gnbVal);
+					if(gnbVal == "상설샵"){
+						$(window).scroll(function () {
+							if ($(this).scrollTop() > 200) {
+								$(".btn_permanent").fadeIn(100);
+							} else {
+								$(".btn_permanent").fadeOut();
+							}
+						});
+					}
+					/* 170607 추가 */
+					commonUI.fixtop.reset();
+				},
+				error: function(){
+					setTimeout(function() {call_slide(0) }, 100);
+					GNB_SCROLL.swipeTo(idx, 200);
+				}
+			});
+		}
+
+		function pageView(pageUrl) {
+			$.ajax({
+				type : 'get', // 퍼블리싱 확인용 . 개발측은 post
+				isLocal: true,
+				headers: { "cache-control": "no-cache" },
+				url : pageUrl,
+				dataType : 'html',
+				success: function(data){
+					setTimeout(function() { 
+						$('#m_cts').find('.swiper-slide').eq(1).html(data);
+						mainCate.reInit();
+						setSlideHeight();
+					}, 100);
+					mainCate.swipeTo(1, 0, true);
+				},
+				error: function(){
+					setTimeout(function() {call_slide(0) }, 100);
+					GNB_SCROLL.swipeTo(idx, 200);
+				}
+			});
+		}
+			
+		var mainCate = new Swiper('#m_cts',{
+			loop: false,
+			touchRatio: 0.3,  //2016-10-31
+			simulateTouch : true,
+			calculateHeight:true,
+			onSlideNext : function() {
+				var index = parseInt($('.gnb').find('li.on').index()) + 1;
+				var max_gnb = $('.gnb li').length;
+				if(index == max_gnb ){	
+					var idx = 0;
+					GNB_SCROLL.swipeTo(0, 200); 
+				}else{
+					var idx = index;
+					var w_width = $(window).width();
+					var	active_li = $('.gnb').find('li.on').next('li');
+					var active_left = active_li.offset().left + active_li.outerWidth();
+					if(active_left > w_width){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}
+				}
+				change_slide(idx);
+			},
+			onSlidePrev : function() {
+				var index = parseInt($('#m_cts' ).find('.slide_cont').attr('data-index'));
+				if(index == 0 ){	
+					var idx = $('.gnb li').length -1;
+						GNB_SCROLL.swipeTo(idx, 200);
+				}else{
+					var idx = index - 1;
+					var active_li = $('.gnb').find('li.on').prev('li');
+					var active_left = active_li.offset().left;
+					if(active_left <= 0){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}	
+				}	
+				change_slide(idx);
+			}
+		});
+		
+		$(window).resize(function(){
+			mainCate.reInit();
+			setSlideHeight();
+		});
+	</script>
+</div>
+<!-- //CONTENT -->
+
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<div class="ft_bn" style="background-color:#ddd2f0">
+		<a href="#"><img src="../images/mobile/temp/bn_foot_100.jpg" width="640" height="100" alt="이벤트배너" /></a>
+	</div>
+	<div class="ft_menu">
+		<ul>
+			<li><a href="#">로그아웃</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li><a href="#">장바구니</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div>
+	<!-- D: 푸터 정보 변경 -->
+	<div class="ft_info">
+		<dl>
+			<dt>주식회사 이랜드리테일</dt>
+			<dd>고객센터 : <a href="tel:1899-9500">1899-9500</a></dd>
+			<dd>대표이사 : 김우섭<span class="part">|</span>사업자등록번호 : 114-81-01855  <a href="javascript:void(0);">사업자정보확인</a></dd>
+			<dd>통신판매업 신고번호 : 서초 제 09998호</dd>
+			<dd>서울시 서초구 잠원동 70-2</dd>
+			<dd>호스팅 서비스 제공자 : (주)이랜드리테일</dd>
+			<dd>개인정보 보호책임자 : 이동규</dd>
+			<dd class="ft_arg">
+				<a href="https://m.oneclick.elandretail.com/terms/privacyTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개||개인정보처리방침">개인정보처리방침</a><span class="part">|</span><a href="https://m.oneclick.elandretail.com/terms/memberShipClubTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개|| 약관안내">약관안내</a>
+			</dd>
+		</dl>
+		<!-- 160926 바로방문 추가 -->
+		<!-- 삭제  <div class="ft_direct">
+			<a href="#"><i class="on">APP방문ON</i></a>
+			<a href="#"><i class="off">APP방문OFF</i></a>
+		</div> -->
+		<!-- //160926 바로방문 추가 -->
+	</div>
+	<div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="foot_caution">Elandmall 내 판매 상품 중 일부는 개별 판매자의 상품이 포함되어있고, 이 경우 이랜드리테일은 통신판매의 당사자가 아니므로 해당 상품, 거래정보 및 거래에 대하여는 개별 판매자에 책임이 있습니다.</div>
+	<div class="ft_app">
+		<ul>
+			<!-- 160901 삭제 <li><a href="#">PC 버전보기</a></li> -->
+			<li><a href="#">APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- [v2] : 추가 -->
+<!-- LEFT FIXED BNR -->
+<div class="btn_left_fxed_bnr" id="btn_left_bnr"><a href="#"><img src="../images/mobile/renewal/@sample_left_bnr_124x124.png" alt="SUMMER SEASON OFF" /></a></div>
+<!-- //LEFT FIXED BNR -->
+
+<!-- 챗봇 버튼 -->
+<div class="btn_chat_bot" id="btn_chat_bot"><button type="button"><img src="../images/mobile/common/btn_chat.png" alt="톡톡챗" /></button></div>
+<!-- //챗봇 버튼 -->
+
+<!-- //[v2] : 추가 -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- INSTALL APP POPUP 160926 -->
+<div class="ins_app gate" style="display:none;">
+	<div class="cont">
+		<div class="pannel">
+			<a href="#" class="go_app">
+				<img src="../images/mobile/common/ins_app_gate.png" alt="이랜드몰 APP이 없으시네요? APP으로 이용하셔야 혜택을 받으실 수 있습니다." width="247" height="56" />
+			</a>
+			<a href="#none" class="go_store">APP 설치하러 가기<img src="../images/mobile/common/ico_download.png" alt="" width="16" height="15" /></a>
+			<a href="#none" class="go_store">이랜드몰 앱으로 보기</a>
+			<a href="#" class="pop_close"><strong>아니요, 지금은 모바일웹으로 볼게요</strong></a>
+		</div>
+	</div>
+</div>
+<!-- //INSTALL APP POPUP 160926 -->
+
+<div id="laySmartPick" class="layer_smartpick" tabindex="0">
+	<div class="title">
+		<strong><em>스마트픽</em> 지점</strong>
+		<span>당일 픽업에 눈으로 직접 확인까지!</span>
+	</div>
+	<div class="box_scroll">
+		<ul>
+			<li>							
+				<input type="radio" name="sp_rdos" id="spRdo01">
+				<label for="spRdo01">강남점</label>
+			</li>
+			<li>
+				<input type="radio" name="sp_rdos" id="spRdo02">
+				<label for="spRdo02">부천점</label>
+			</li>
+			<li>
+				<input type="radio" name="sp_rdos" id="spRdo03">
+				<label for="spRdo03">동수원점</label>
+			</li>
+			<li>
+				<input type="radio" name="sp_rdos" id="spRdo04">
+				<label for="spRdo04">강서점</label>
+			</li>
+			<li>
+				<input type="radio" name="sp_rdos" id="spRdo05">
+				<label for="spRdo05">고잔점</label>
+			</li>
+		</ul>
+	</div>
+	<a class="btn_lay_close" href="#" onclick="fixedSelectLayer('laySmartPick').layOff();">닫기</a>
+</div>
+
+<!-- layer_popup : 찜록록 -->
+<div class="layer_pop nodim pop_zzim">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<p class="ico"><em>찜 목록에</em></p>
+				<p>추가되었습니다.</p>
+				<p class="etc">마이페이지 <em>나의 찜록록</em>에서 <br>확인 하실 수 있습니다.</p>
+			</div>
+		</div>   
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //layer_popup : 찜록록 -->
+
+<!-- LAYER MSG. -->
+<div id="msg_lyr_cart" class="layer_pop nodim">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box alC">
+				<p><b>선택한 상품이</b><br/>장바구니에 담겼습니다. </p>
+				<p class="cbtn"><a href="#">장바구니 가기</a></p>
+			</div>  
+		</div>
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //LAYER MSG. -->
+
+<!-- LAYER SNS -->
+<div id="sns_lyr" class="layer_con">
+	<div class="pop_con">
+		<h3 class="pop_tit">SNS 공유하기</h3>
+		<div class="pop_txt">
+			<div class="sns">
+				<ul>
+					<li><a href="#" class="fb">페이스북</a></li>
+					<li><a href="#" class="ks">카카오<br/>스토리</a></li>
+					<li><a href="#" class="nb">네이버<br/>블로그</a></li>
+					<li><a href="#" class="ln">라인</a></li>
+					<li><a href="#" class="kt">카카오톡</a></li>
+					<li><a href="#" class="is">인스타그램</a></li>
+					<li><a href="#" class="ur">URL복사</a></li>
+				</ul>
+			</div>
+		</div>
+		<a href="#close" class="btn_close">닫기</a>
+	</div>
+</div>
+<!-- //LAYER SNS -->
+
+<!-- 단골 매장 선택-->
+<div id="favStore" class="layer_fix fav_store">
+	<h3 class="pop_tit">단골매장</h3>
+	<div class="pop_con">
+		<div class="fav_sch_wrap">
+			<div class="fav_sch">
+				<input type="text" placeholder="찾으시는 매장명을 입력하세요." />
+				<button class="del"><em class="ir">입력 검색어 삭제</em></button>
+				<button class="search"><em class="ir">검색</em></button>
+			</div>
+		</div>
+		<!-- 단골 매장 있을 경우-->
+		<!-- <div class="result_wrap fav_ul">
+			<div class="info_top">
+				<strong class="tit">등록된 단골매장 <em>5</em>개</strong>
+			</div>
+			<ul>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart" onclick="commonUI.wishTogDev($(this));fn_layer_open('msg_lyr_favstr');return false;" onkeypress="this.onclick;"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart" onclick="commonUI.wishTogDev($(this));fn_layer_open('msg_lyr_favstr');return false;" onkeypress="this.onclick;"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">2001 구로점 뉴발란스</a>
+					<a href="javascript:;" class="heart on" onclick="commonUI.wishTogDev($(this));fn_layer_open('msg_lyr_favstr');return false;" onkeypress="this.onclick;"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on" onclick="commonUI.wishTogDev($(this));fn_layer_open('msg_lyr_favstr');return false;" onkeypress="this.onclick;"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">지점명과 매장명이 길 경우 두줄로 표시됩니다.지점명과 매장명이 길 경우 두줄로 표시됩니다.</a>
+					<a href="javascript:;" class="heart on" onclick="commonUI.wishTogDev($(this));fn_layer_open('msg_lyr_favstr');return false;" onkeypress="this.onclick;"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+			</ul>
+		</div> -->
+		<!-- //단골 매장 있을 경우-->
+
+		<!-- 단골 매장 없을 경우-->
+		<!-- <div class="result_wrap">
+			<div class="info_top no_store">
+				<strong class="tit">등록된 단골매장 <em>0</em>개</strong>
+				<div class="info">
+					등록된 단골매장이 없습니다.
+				</div>
+			</div>
+			
+		</div> -->
+		<!-- //단골 매장 없을 경우-->
+
+		<!-- 검색 결과-->
+		<div class="result_wrap">
+			<div class="info_top">
+				<strong class="tit"><em>3</em>개의 매장이 검색되었습니다.</strong>
+				<span class="reg_info"><i><em class="ir">하트</em></i>버튼으로 단골매장을 등록하세요</span>
+			</div>
+			<ul>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 동수원점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">뉴코아 잠실점 나이키</a>
+					<a href="javascript:;" class="heart"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+				<li><a href="javascript:;" class="store_name">NC 수원터미널점 나이키</a>
+					<a href="javascript:;" class="heart on"><em class="ir">즐겨찾기 설정/해제</em></a>
+				</li>
+			</ul>
+		</div>
+		<div class="goto_list">
+			<button><em>단골매장 목록보기</em></button>
+		</div>
+		<!-- //검색 결과-->
+
+
+		<!-- 검색 결과 : 없을 경우-->
+		<!-- <div class="result_wrap">
+			<div class="no_result">
+				찾으시는 매장이 없습니다.
+			</div>
+		</div>
+		<div class="goto_list">
+			<button><em>단골매장 목록보기</em></button>
+		</div> -->
+		<!-- //검색 결과 : 없을 경우-->
+
+		<script>
+			$(document).ready(function() {
+				commonUI.favSch();
+			});
+		</script>
+
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //단골 매장 선택 -->
+
+<!-- 지점 바로가기 -->
+<div id="allStore" class="layer_fix all_store">
+	<h3 class="pop_tit">지점바로가기</h3>
+	<div class="pop_con">
+		<div class="store_list">
+			<ul>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 강남점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+				<li><a href="javascript:;"><span class="store_name">뉴코아 인천논현점</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //지점 바로가기 -->
+
+<!-- LAYER MSG. -->
+<div id="msg_lyr_favstr" class="layer_pop nodim timeout">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box favstr alC">
+				<p class="ico"><em>단골매장으로</em></p>
+				<p>등록되었습니다.</p>
+			</div>  
+		</div>
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //LAYER MSG. -->
+
+<!-- LAYER MSG. -->
+<div id="msg_lyr_favstr_del" class="layer_pop nodim timeout">
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="zzim_box favstr alC">
+				<p class="ico">해제되었습니다.</p>
+			</div>  
+		</div>
+		<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+	</div>
+</div>
+<!-- //LAYER MSG. -->
+
+<!-- layer_popup : 배송지 관리 -->
+<div id="addrManage" class="layer_fix qck_ship">
+	<h3 class="pop_tit">배송지 목록</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="ship_addr">
+				<!--
+				<div class="ship_btn">
+					<a href="#" class="btn_line01 c02">전체선택</a>
+					<a href="#" class="btn_line01 c01">선택삭제</a>
+				</div>
+				-->
+				<div class="my_nolist">
+					<div class="txt">등록된 배송지가 <strong>없습니다.</strong><br>배송지 등록 버튼을 통해<br>새로운 배송지를 입력해 주세요.</div>
+				</div>
+				<div class="addr_box">
+					<div class="tit">우리집 / 홍길동 <span>기본 배송지</span></div>
+					<span class="info">
+						02-3000-0000 | 010-0000-0000<br>
+						[08506] 서울 금천구 가산디지털1로 151,신한이노플렉스 903호 (가산동)
+					</span>
+					<span class="msg"><em>배송메세지 : </em>경비실에 맡겨 주세요</span>
+					<div class="btn">
+						<a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;" class="btn_line01 c01">수정</a>
+						<a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;" class="btn_line01 c01">삭제</a>
+					</div>
+				</div>
+				<div class="addr_box">
+					<div class="tit">
+						<input type="checkbox" id="chk_add1">
+						<label for="chk_add1">서울집 / 홍길동</label>
+						<a href="#" class="btn_del"><span>삭제</span></a>
+					</div>
+					<span class="info">
+						02-3000-0000 | 010-0000-0000<br>
+						[08506] 서울 금천구 가산디지털1로 151,신한이노플렉스 903호 (가산동)
+					</span>
+					<span class="msg"><em>배송메세지 : </em>경비실에 맡겨 주세요</span>
+					<div class="btn">
+						<a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;" class="btn_line01 c01">수정</a>
+						<a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;" class="btn_line01 c01">삭제</a>
+					</div>
+				</div>
+				<div class="addr_box">
+					<div class="tit">
+						<input type="checkbox" id="chk_add2">
+						<label for="chk_add2">엄마네집 / 홍길동</label>
+						<a href="#" class="btn_del"><span>삭제</span></a>
+					</div>
+					<span class="info">
+						02-3000-0000 | 010-0000-0000<br>
+						[08506] 서울 금천구 가산디지털1로 151,신한이노플렉스 903호 (가산동)
+					</span>
+					<div class="btn">
+						<a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;" class="btn_line01 c01">수정</a>
+						<a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;" class="btn_line01 c01">삭제</a>
+					</div>
+				</div>
+				<!-- <div class="default_del">
+					<a href="#">기본 배송지 변경</a>
+				</div> -->
+				<!-- 더보기 버튼 
+				<div class="btn_mymore">
+					<a href="#"><span class="ico">더보기 (20/27)</span></a>
+				</div>-->
+			</div>
+			<div class="btn_ship">
+				<ul class="btn_list02">
+					<li><a href="javascript:;" class="btn_brd03 c01" onclick="fn_layer_open('addrRegist');return false;">배송지 등록</a></li>
+					<li><a href="javascript:;" class="btn_bg06 c01" onclick="">기본배송지 변경</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:;" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 배송지 관리 -->
+
+<!-- layer_popup : 배송지 등록 -->
+<div id="addrRegist" class="layer_fix ship">
+	<h3 class="pop_tit">배송지 등록</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="ord_box04">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">배송지명</div>
+							<div class="box_con"><input type="text" class="w100" title="배송지명"></div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con"><input type="text" class="w100" title="받으시는 분"></div>
+						</li>
+						<li>
+							<div class="box_tit">전화번호<br>(선택)</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>02</option>
+										</select>
+									</li>
+									<li><input type="text" title="전화번호 가운데자리"></li>
+									<li><input type="text" title="전화번호 세번째자리"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">휴대전화</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>010</option>
+										</select>
+									</li>
+									<li><input type="text" title="휴대전화 가운데자리"></li>
+									<li><input type="text" title="휴대전화 세번째자리"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit vtop">주소</div>
+							<div class="box_con">
+								<div class="addr">
+									<input type="text" class="w100" title="우편번호" readonly="">
+									<div class="absR">
+										<a href="#" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+									</div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="도로명주소" readonly=""></div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="주소 상세보기" value="상세주소"></div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송메세지</div>
+							<div class="box_con">
+								<select class="sel_box w100">
+									<option>선택해 주세요</option>
+									<option>부재시 경비(관리)실에 맡겨주세요</option>
+									<option>빠른 배송 부탁드려요</option>
+									<option>부재시 문 앞에 놓아주세요</option>
+									<option>파손의 위험이 있는 상품이 있습니다.</option>
+									<option>배송전에 연락주세요</option>
+									<option>메시지 직접입력 (배송기사/매장 전달)</option>
+								</select>
+								<!-- 배송메세지 선택 -->
+								<div class="msg_selected">
+									<span>선택해 주세요</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="chk_basic">
+				<input type="checkbox" id="chk_bas">
+				<label for="chk_bas">기본배송지</label>
+			</div>				
+			<div class="default_del">
+				<a href="#">등록</a>
+			</div>	
+
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 배송지 등록 -->
+
+<!-- layer_popup : 배송지 수정 -->
+<div id="addrModify" class="layer_fix ship">
+	<h3 class="pop_tit">배송지 수정</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="ord_box04">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">배송지명</div>
+							<div class="box_con"><input type="text" class="w100" title="배송지명"></div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con"><input type="text" class="w100" title="받으시는 분"></div>
+						</li>
+						<li>
+							<div class="box_tit">전화번호<br>(선택)</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>02</option>
+										</select>
+									</li>
+									<li><input type="text" title="전화번호 가운데자리"></li>
+									<li><input type="text" title="전화번호 세번째자리"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">휴대전화</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>010</option>
+										</select>
+									</li>
+									<li><input type="text" title="휴대전화 가운데자리"></li>
+									<li><input type="text" title="휴대전화 세번째자리"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit vtop">주소</div>
+							<div class="box_con">
+								<div class="addr">
+									<input type="text" class="w100" title="우편번호" readonly="">
+									<div class="absR">
+										<a href="#" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+									</div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="도로명주소" readonly=""></div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="주소 상세보기" value="상세주소"></div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송메세지</div>
+							<div class="box_con">
+								<select class="sel_box w100">
+									<option>선택해 주세요</option>
+									<option>부재시 경비(관리)실에 맡겨주세요</option>
+									<option>빠른 배송 부탁드려요</option>
+									<option>부재시 문 앞에 놓아주세요</option>
+									<option>파손의 위험이 있는 상품이 있습니다.</option>
+									<option>배송전에 연락주세요</option>
+									<option>메시지 직접입력 (배송기사/매장 전달)</option>
+								</select>
+								<!-- 배송메세지 선택 -->
+								<div class="msg_selected">
+									<span>선택해 주세요</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="chk_basic">
+				<input type="checkbox" id="chk_bas">
+				<label for="chk_bas">기본배송지</label>
+			</div>				
+			<div class="default_del">
+				<a href="#">수정</a>
+			</div>	
+
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 배송지 수정 -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- [v2] : 추가 -->
+<script type="text/javascript">
+	commonUI.loadJs("../common/js/common.ui.video.js");
+</script>
+<!-- //[v2] : 추가 -->
+<!-- //UI.JS-->
+</body>
+</html>
+

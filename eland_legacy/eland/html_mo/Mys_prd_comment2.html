@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+//별점평점
+function StarGrade(id,initCnt) {
+	this.init(id,initCnt);
+}
+StarGrade.prototype = {
+	init : function(id,initCnt) {
+		this.$id = $(id);
+		this.$btns = this.$id.find('button');
+		this.currentClass = '';
+		this.initEvtL();
+		this.activeMotion(initCnt)
+	},
+	
+	initEvtL : function() {
+		var that = this;
+		this.$btns.on('click',function() {
+			var idx = that.$btns.index($(this));
+			that.activeMotion(idx);
+		});
+	},
+	activeMotion : function(idx) {
+		var mkClass = 's'+(idx+1)*10;
+		if(this.currentClass!='') {
+			this.$btns.removeClass('active');
+			this.$id.removeClass(this.currentClass);
+		}
+		this.$id.addClass(mkClass);
+		this.$btns.eq(idx).addClass('active');
+		this.currentClass = mkClass;
+	}
+}
+//탭평점
+function TabSel(id,initCnt) {
+	this.init(id,initCnt);
+}
+TabSel.prototype = {
+	init : function(id,initCnt) {
+		this.$id = $(id);
+		this.$btnsWrap = this.$id.find('.item');
+		this.$btns = this.$id.find('button');
+		this.currentClass = '';
+		this.initEvtL();
+		this.activeTabMotion(initCnt)
+	},
+	initEvtL : function() {
+		var that = this;
+		this.$btns.on('click',function() {
+			var idx = that.$btns.index($(this));
+			that.activeTabMotion(idx);
+		});
+	},
+	activeTabMotion : function(idx) {
+		this.$btnsWrap.removeClass('active');
+		this.$btnsWrap.eq(idx).addClass('active');
+	}
+}
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>상품평 작성</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>		
+	<div class="my_con gray">
+		
+		<div class="prd_cmt_wr">
+			<div class="basket_prd">
+				<div class="basket_txt">
+					<div class="pic">
+						<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+					</div>
+					<div class="no_link">
+						<span class="prodtit">포트메리온</span>
+						<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+						<span class="prodprice">77,200<span class="won">원</span></span>
+						<span class="prodopt">화이트 / 1개</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="prd_cmt_wr">
+			<div class="chs_kwd">
+				<div class="tit dlv"><em>배송</em>은 빨랐나요?</div>
+				<div id="lrv01" class="list_rv s50">
+					<button class=""><span class="ir">10점</span></button>
+					<button><span class="ir">20점</span></button>
+					<button><span class="ir">30점</span></button>
+					<button><span class="ir">40점</span></button>
+					<button class="active"><span class="ir">50점</span></button>
+				</div>
+				<script type="text/javascript">
+					var grd01 = new StarGrade('#lrv01',4);//id,초기점수값(0,1,2,3,4)
+				</script>
+			</div>
+			<div class="chs_kwd">
+				<div class="tit qlt"><em>품질</em>은 만족하셨나요?</div>
+				<div id="lrv02" class="list_rv s50">
+					<button class=""><span class="ir">10점</span></button>
+					<button><span class="ir">20점</span></button>
+					<button><span class="ir">30점</span></button>
+					<button><span class="ir">40점</span></button>
+					<button class="active"><span class="ir">50점</span></button>
+				</div>
+				<script type="text/javascript">
+					var grd02 = new StarGrade('#lrv02',4);//id,초기점수값(0,1,2,3,4)
+				</script>
+				
+			</div>
+			<div class="chs_kwd">
+				<div class="tit color"><em>색상</em>은 어땠나요?</div>
+				<ul class="ccl_anc d_gradeSelect">
+					<li><a href="javascript:;" class="">밝아요</a></li>
+					<li><a href="javascript:;" class="">화면과<br />같아요</a></li>
+					<li><a href="javascript:;" class="">어두워요</a></li>
+				</ul>
+			</div>
+			<div class="chs_kwd">
+				<div class="tit size"><em>사이즈</em>는 잘 맞았나요?</div>
+				<ul class="ccl_anc d_gradeSelect">
+					<li><a href="javascript:;" class="">작아요</a></li>
+					<li><a href="javascript:;" class="">딱 맞아요</a></li>
+					<li><a href="javascript:;" class="">커요</a></li>
+				</ul>
+			</div>
+			<div class="chs_kwd">
+				<div class="tit ruler"><em>추가정보</em>를 입력해주세요!</div>
+				<ul class="ccl_anc u_info">
+					<li><a href="javascript:;" onclick="fn_layer_open('lyr_info_reg');return false;" keypress="this.onclick" class="on"><span class="kwd"><strong>키(cm)</strong><em>165~170</em></span></a></li>
+					<li><a href="javascript:;" onclick="fn_layer_open('lyr_info_reg');return false;" keypress="this.onclick" class="on"><span class="kwd"><strong>몸무게(kg)</strong><em>56~60</em></span></a></a></li>
+					<li><a href="javascript:;" onclick="fn_layer_open('lyr_info_reg');return false;" keypress="this.onclick" class=""><span class="kwd"><strong>평소사이즈</strong><em>L</em></span></a></a></li>
+				</ul>
+			</div>
+			<script type="text/javascript">
+				$(window).ready(function(){
+					$(".d_gradeSelect").each(function(){
+						var $this = $(this);
+						var $links = $this.find("a");
+						$links.on("click",function(e){
+							$links.not($(this)).removeClass("on");
+
+							$(this).toggleClass("on");
+							e.preventDefault();
+						})
+					})
+				})
+			</script>
+			<div class="set_prd_wr">
+				<ul>
+					<li>
+						<b><strong>상품의 어떤 점에 만족</strong>하셨나요? <a href="#" onclick="fn_layer_open('infoMsg');return false;" onkeypress="this.onclick;" class="btn_excl01" title="다른지점선택 열기"><img src="../images/mobile/my/ico_excl01.png" alt="주의사항" /></a></b>
+						
+						<div class="txtarea">
+							<textarea cols="10" rows="10">주문하고 이틀만에 받았어요. 배송 엄청빨라요~디자인도 심플하고, 딱 제스타일이에요^^</textarea>
+						</div>
+						<span class="lmt_cnt"><strong>0</strong>/1000</span>
+						<!-- 모바일 앱-사진첨부 영역 -->
+						<div class="app_append">
+							<!-- 160322 삭제 
+							<label for="app_file" class="app_label">이미지 등록</label> 
+							<input type="file" title="이미지 등록" id="app_file"> -->
+							<!-- 160322 수정 -->
+							<button type="button" class="app_file">사진 등록</button>
+							<div class="photo_rv_bnf">사진 상품평 <em>최대 500p</em> 적립!</div>
+							<!-- //160322 수정 -->
+							<ul>
+								<li>
+									<div class="img_box">
+										<img src="../images/pcweb/temp/sample_68x68.jpg" alt="썸네일" />
+									</div>
+									<a href="#" class="del"><span class="ir">삭제</span></a>
+								</li>
+								<li>
+									<div class="img_box">
+										<img src="../images/pcweb/temp/_sample_344x20_05.jpg" alt="썸네일" />
+									</div>
+									<a href="#" class="del"><span class="ir">삭제</span></a>
+								</li>
+								<li>
+									<div class="img_box">
+										<img src="../images/pcweb/temp/_sample_700x1000.jpg" alt="썸네일" />
+									</div>
+									<a href="#" class="del"><span class="ir">삭제</span></a>
+								</li>
+							</ul>
+							<script type="text/javascript">
+								$(document).ready(function(){
+									$('.app_append .img_box img').each(function(){
+										var thumbW = $(this).outerWidth();
+										var thumbH = $(this).outerHeight();
+										thumbW > thumbH ? lineH($(this)) : false;
+										thumbW < thumbH ? lineV($(this)) : false;
+										thumbW == thumbH ? $(this).addClass('squa') : false;
+									});
+								});
+								function lineH($target){
+									$target.addClass('hori');
+									$target.css('margin-left', (85-$target.outerWidth())/2);
+								}
+								function lineV($target){
+									$target.addClass('verti');
+									$target.css('margin-top', (85-$target.outerHeight())/2);
+								}
+							</script>
+							<p class="tx_info">
+								5Mb 이하의 이미지만 등록 가능합니다.<br />
+								사진은 jpg, gif, png포맷으로 최대 3장까지 등록 가능 합니다.
+							</p>
+						</div>
+						<!-- //모바일 앱-사진첨부 영역 -->
+					</li>
+				</ul>
+			</div>
+
+			<!-- 2021-05-11 -->
+			<div class="bn_sel_info">
+				<a href="#"><img src="../images/mobile/temp/@bn_640x100_0.jpg" alt="환상의 포켓몬을 잡아라!"></a>
+			</div>
+			<!--// 2021-05-11 -->
+
+			<ul class="btn_list02 bg01">
+				<li><a href="#" class="btn_brd03 c01">이전으로</a></li>
+				<li><a href="#" class="btn_bg06 c01"><strong>상품평등록</strong></a></li>
+			</ul>
+		</div>
+
+		<!-- 스파오 싱글 페이지 경우 추가 -->
+		<div class="list_bar_gray int_m">
+	        <b class="semi_tit">상품평 등록 및 혜택 안내</b>
+	        <ul>
+	        	<li>일반 상품평 100p, 포토상품평 500p 적립 됩니다.</li>
+	        	<li>판매가격 2,000원 이하 상품의 포토상품평은 100p 적립되며, 일부 금액권은 포토상품평 작성 시 포인트 적립이 되지 않을 수 있습니다.</li>
+	        	<li>베스트 상품평 당첨 시 5,000p 를 지급해드립니다.<br />상품평 포인트는 상품평 작성일 기준 7일 후 적립됩니다.</li>
+	        	<li>작성해주신 상품평 및 사진은 상업적 용도로 활용될 수 있습니다.</li>
+	        	<li>상품평은 결제완료 후 90일이내 작성 가능합니다.</li>
+	        	<li>e티켓상품(모바일이용권 등)의 경우 실물 이용권이나 실제 이용하는 사진을 올려주셔야 합니다.</li>
+			</ul>
+			<b class="semi_tit">상품평 포인트 유효기간 안내</b>
+	        <ul>
+	        	<li>상품평 포인트는 적립일로부터 6개월 이내 사용가능하며, 유효기간이 만료된 포인트는 복구 불가능합니다.</li>
+	        	<li>주문취소, 반품요청 등으로 인한 소멸 포인트는 복구 불가능합니다.</li>
+	        	<li>포인트를 획득하기 위해 악의적인 의도로 상품평을 여러 개 남길 경우 포인트가 지급되지 않습니다. <br />(예시 : 캡쳐사진, 상품과 관계없는 사진, 동일사진 등)</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //my_con -->
+</div>
+<!-- //CONTENT -->
+
+<!-- 안내 레이어 -->
+<div id="infoMsg" class="layer_pop lay_wr_info">
+	<div class="winfo_cont">
+		<div class="tit"><h3>안내</h3></div>
+		<p class="txt01">상품평은 <strong>최소 10자 이상 입력</strong>해<br />주셔야 등록 가능합니다.</p>
+		<p class="txt02">상품평과 관계없는 판매관련이나 <br />
+		광고성 홍보글은<br />
+		사전통보없이 관리자에 의해<br />
+		삭제될 수 있습니다.</p>
+	</div>
+	<div class="winfo_cls"><a class="btn_close" href="#">닫기</a></div>
+</div>
+<!-- //안내 레이어 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<div id="lyr_info_reg" class="layer_fix btn_btm" style="display: none;">
+	<h3 class="pop_tit">추가정보입력</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="info_chs">
+				<dl>
+					<dt>키</dt>
+					<dd>
+						<ul class="tbl_anc d_gradeSelect">
+							<li><a href="javascript:;">155~159 cm</a></li>
+							<li><a href="javascript:;">160~164 cm</a></li>
+							<li><a href="javascript:;">165~169 cm</a></li>
+							<li><a href="javascript:;">170~174 cm</a></li>
+							<li><a href="javascript:;">175~179 cm</a></li>
+							<li><a href="javascript:;">180~184 cm</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>몸무게</dt>
+					<dd>
+						<ul class="tbl_anc d_gradeSelect">
+							<li><a href="javascript:;">44kg 이하</a></li>
+							<li><a href="javascript:;">45~47 kg</a></li>
+							<li><a href="javascript:;">48~50 kg</a></li>
+							<li><a href="javascript:;">51~53 kg</a></li>
+							<li><a href="javascript:;">54~56 cm</a></li>
+							<li><a href="javascript:;">57~59 cm</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>사이즈</dt>
+					<dd>
+						<ul class="tbl_anc d_gradeSelect">
+							<li><a href="javascript:;">S</a></li>
+							<li><a href="javascript:;">M</a></li>
+							<li><a href="javascript:;">L</a></li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<div class="uinfo_btn">
+				<button type="button">선택 초기화</button>
+				<button type="button">선택 완료</button>
+			</div>
+		</div>
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+</body>
+</html>
+

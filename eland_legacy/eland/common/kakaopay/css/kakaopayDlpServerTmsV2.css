@@ -1,0 +1,334 @@
+@charset "utf-8";
+
+/* reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code,
+	form, fieldset, legend, textarea, p, blockquote, th, td, input, select,
+	textarea, button {
+	margin: 0;
+	padding: 0
+}
+
+fieldset, img {
+	border: 0 none
+}
+
+dl, ul, ol, menu, li {
+	list-style: none
+}
+
+blockquote, q {
+	quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none
+}
+
+input, select, textarea, button {
+	vertical-align: middle
+}
+
+input::-ms-clear {
+	display: none
+}
+
+button {
+	border: 0 none;
+	background-color: transparent;
+	cursor: pointer
+}
+
+body {
+	background: transparent
+}
+
+body, th, td, input, select, textarea, button {
+	font-size: 12px;
+	line-height: 1.5;
+	font-family: Apple SD Gothic, 'Malgun Gothic', '맑은 고딕', '돋움', dotum,
+		sans-serif;
+	color: #333
+}
+
+a {
+	color: #333;
+	text-decoration: none
+}
+
+a:active, a:hover {
+	text-decoration: underline
+}
+
+a:active {
+	background-color: transparent
+}
+
+address, caption, cite, code, dfn, em, var {
+	font-style: normal;
+	font-weight: normal
+}
+
+html, body {
+	width: 100%;
+	height: 100%
+}
+
+/* global */
+.ir_pm {
+	display: block;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+	text-indent: -9999px
+}
+
+.screen_out {
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	text-indent: -9999px
+}
+
+.img_kakaopay {
+	display: block;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+	background-image: url(/common/kakaopay/images/img_kakaopay_160525.gif);
+	text-indent: -9999px;
+	vertical-align: top
+}
+
+/* layer */
+.dimmed_layer {
+	position: absolute; /*z-index:9999;*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.6;
+	filter: alpha(opacity = 60)
+}
+
+.kakaopay_layer {
+	overflow: hidden;
+	position: absolute; /*z-index:9999;*/
+	left: 50%;
+	width: 426px;
+	height: 550px;
+	margin-left: -213px
+}
+
+.inner_kakaopay {
+	background-color: #fff
+}
+
+.hidden {
+	display: none;
+}
+/* 2016-03-08 수정 시작 */
+.inner_kakaopay .layer_head {
+	overflow: hidden;
+	height: 165px;
+	padding: 0 34px;
+	background-color: #fdd835
+}
+
+.inner_kakaopay .logo_kakaopay {
+	width: 161px;
+	height: 20px;
+	margin: 33px 0 45px;
+	background-position: -260px -150px
+}
+
+.inner_kakaopay .txt_step {
+	width: 256px;
+	height: 37px;
+	background-position: 0 -190px
+}
+
+.inner_kakaopay .txt_step2 {
+	width: 188px;
+	height: 37px;
+	background-position: -180px -110px
+}
+/* 2016-03-08 수정 끝 */
+.inner_kakaopay .layer_body {
+	padding: 33px 35px
+}
+
+.inner_kakaopay .tit_data {
+	display: block;
+	overflow: hidden;
+	width: 100%
+}
+
+.inner_kakaopay .lab_phone {
+	float: left;
+	width: 55px;
+	height: 17px;
+	margin-top: 2px;
+	background-position: -310px -50px
+}
+
+.inner_kakaopay .lab_birthday {
+	float: left;
+	width: 41px;
+	height: 17px;
+	margin-top: 2px;
+	background-position: -330px 0
+}
+
+.inner_kakaopay .txt_emph {
+	display: none;
+	padding-left: 10px;
+	font-size: 13px;
+	color: #ff9100
+}
+
+.inner_kakaopay .tf_kakaopay {
+	display: block;
+	width: 100%;
+	height: 30px;
+	margin: 14px 0 6px;
+	border: 0 none;
+	font-size: 20px;
+	color: #222;
+	outline: 0;
+	outline-offset: 0
+}
+
+.inner_kakaopay .tf_kakaopay::-webkit-input-placeholder {
+	color: #bbb
+}
+
+.inner_kakaopay .tf_kakaopay:-moz-placeholder {
+	color: #bbb;
+	opacity: 1
+}
+
+.inner_kakaopay .tf_kakaopay::-moz-placeholder {
+	color: #bbb;
+	opacity: 1
+}
+
+.inner_kakaopay .tf_kakaopay:-ms-input-placeholder {
+	color: #bbb
+}
+
+.inner_kakaopay .tf_kakaopay:placeholder-shown {
+	color: #bbb
+}
+
+.inner_kakaopay .line_tf {
+	display: block;
+	overflow: hidden;
+	height: 2px;
+	margin-bottom: 21px;
+	background: url(/common/kakaopay/images/bg_line.gif) 0 0 repeat-x;
+	text-align: center
+}
+
+.inner_kakaopay .line_tf .inner_line {
+	display: inline-block;
+	width: 0;
+	height: 2px;
+	background-color: #ffc61c;
+	vertical-align: top;
+	-ms-transition-duration: .3s;
+	-moz-transition-duration: .3s;
+	-webkit-transition-duration: .3s;
+	-transition-duration: .3s
+}
+
+.inner_kakaopay .data_focus .txt_emph {
+	display: inline-block
+}
+
+.tf_kakaopay:focus+.line_tf .inner_line, .data_focus .line_tf .inner_line
+	{
+	width: 100%
+}
+
+.inner_kakaopay .info_count {
+	overflow: hidden;
+	padding: 13px 0 44px
+} /* 2016-03-08 수정 */
+.inner_kakaopay .info_count dt {
+	float: left;
+	width: 42px;
+	height: 12px;
+	margin-top: 18px;
+	background-position: -380px 0
+}
+
+.info_count dd {
+	float: left;
+	padding-left: 10px;
+	font-size: 44px;
+	font-weight: bold;
+	font-family: Helvetica, Apple SD Gothic, 'Malgun Gothic', '맑은 고딕', '돋움',
+		dotum, sans-serif;
+	line-height: 48px;
+	color: #1e1e1e
+}
+
+.inner_kakaopay .txt_info {
+	padding-bottom: 2px;
+	font-size: 16px;
+	letter-spacing: -1px;
+	line-height: 28px;
+	color: #1e1e1e
+} /* 2016-05-19 수정 */
+.inner_kakaopay .txt_info .emph_info {
+	padding-bottom: 1px;
+	border-bottom: 2px solid #222;
+	font-weight: bold
+}
+
+.inner_kakaopay .btn_submit {
+	display: block;
+	width: 100%;
+	height: 58px;
+	margin: 49px 0 33px;
+	font-size: 18px;
+	color: #222;
+	background-color: #fdd835
+} /* 2016-03-08 수정 */
+.inner_kakaopay .btn_submit:hover {
+	background-color: #f8d22d
+}
+
+.inner_kakaopay .btn_submit:disabled {
+	color: #bbb;
+	background-color: #ddd;
+	cursor: default
+}
+
+.inner_kakaopay .btn_submit:disabled:hover {
+	background-color: #ddd
+}
+
+.inner_kakaopay .link_help {
+	width: 152px;
+	height: 16px;
+	margin: 0 auto;
+	background-position: -110px 0
+}
+
+.inner_kakaopay .btn_close {
+	position: absolute;
+	top: 33px;
+	right: 32px;
+	width: 17px;
+	height: 17px;
+	background-position: -90px 0
+}
+
+.inner_kakaopay .info_data {
+	line-height: 1.1
+}

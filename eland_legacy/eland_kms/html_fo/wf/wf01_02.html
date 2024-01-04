@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li>
+							<select title="2뎁스 바로가기">
+								<option>주방</option>
+							</select>
+						</li>
+						<li>
+							<select title="3뎁스 바로가기">
+								<option>주방용품주방용품주방용품</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+
+				<div class="title">
+					<h2 class="tit_h2">자기계발(999)</h2>
+					<!--  NGCPO-5161 셀프 폴더링 기능 요청 : 삭제 <div class="right"><a class="btn03 type_img" href="#"><span><img src="../../images/pcweb/common/ico_heart.png" alt="" />카테고리 찜하기</span></a></div> -->
+				</div>
+				<div class="content_cate">
+
+					<!-- l_content -->
+					<div class="l_content">
+						<div class="cate_area02">
+							<div class="cate_tit">임직원 복지샵</div>
+							<div class="lnb_cate02">
+								<ul>
+									<li><a href="#"><span>자기계발</span></a>
+										<div class="depth2">
+											<ul>
+												<li><a href="#"><span>일반필독서 <em>(99,999)</em></span></a></li>
+												<li><a href="#"><span>일반도서 <em>(99,999)</em></span></a></li>
+												<li><a href="#"><span>건강 추천도서 <em>(99,999)</em></span></a></li>
+												<li><a href="#"><span>엘칸토 <em>(99,999)</em></span></a></li>
+												<li><a href="#"><span>켄싱턴 필수아이템 <em>(99,999)</em></span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="box_filter">
+
+							<div class="box_sch_save">
+								<button type="button" class="btn02 c04 type_img full"><span><img src="../../images/pcweb/common/ico_download01.png" alt="" />검색조건 저장</span></button>
+
+								<div class="txt"><strong>한동기</strong>님이 찜한 검색어</div>
+								<select class="wide">
+									<option>반바지</option>
+								</select>
+							</div>
+
+							<div class="set_replace">
+								<a class="btn04 full replace" href="#"><span>선택초기화</span></a>
+							</div>
+
+							<div class="set_list_filter">
+								<ul>
+									<li class="on">
+										<a href="#"><span>브랜드</span></a>
+										<div class="depth2">
+											<ul class="list_chkbox">
+												<li><label for="brand_chk01"><input id="brand_chk01" type="checkbox" class="chkbox" /> <span>GOLDMISS GOLDMISS GOLDMISS GOLDMISS</span></label></li>
+												<li><label for="brand_chk02"><input id="brand_chk02" type="checkbox" class="chkbox" /> <span>Glory Look</span></label></li>
+												<li><label for="brand_chk03"><input id="brand_chk03" type="checkbox" class="chkbox" /> <span>compagnia</span></label></li>
+												<li><label for="brand_chk04"><input id="brand_chk04" type="checkbox" class="chkbox" /> <span>CULTUR CALL</span></label></li>
+											</ul>
+
+											<div class="d_brand_lay">
+												<div class="set_btn"><button type="button" id="btn_brand_open" class="btn05 c01 ico_arrow04" onClick="commonUI.brandMenuOpen('#layer_brand')"><span>더보기</span></button></div>
+												<!-- 브랜드 더보기 팝업 -->
+												<div class="layer_pop laybrand" id="layer_brand">
+													<div class="lay_wrap">
+														<div class="lay_tit02"><strong>브랜드 전체보기</strong></div>
+														<div class="lay_cont">
+															<div class="brand_popup">
+																<div class="tab_type01 size02">
+																	<ul class="d_tab">
+																		<li class="on"><a href="#" onClick="commonUI.tab('.d_tab','0');return false;">상품수순</a></li>
+																		<li><a href="#" onClick="commonUI.tab('.d_tab','1');return false;">가나다순</a></li>
+																	</ul>
+																	<div class="box_scroll">
+																		<div class="tab_cont">
+																			<div class="d_tab_cont on">
+																				<ul class="list_chkbox">
+																					<li><label for="lay_shop_chk01"><input id="lay_shop_chk01" type="checkbox" class="chkbox" /> <span>GOLDMISS(99,999)</span></label></li>
+																					<li><label for="lay_shop_chk02"><input id="lay_shop_chk02" type="checkbox" class="chkbox" /> <span>토프(99,999)</span></label></li>
+																					<li><label for="lay_shop_chk03"><input id="lay_shop_chk03" type="checkbox" class="chkbox" /> <span>올리오(99,999)</span></label></li>
+																					<li><label for="lay_shop_chk04"><input id="lay_shop_chk04" type="checkbox" class="chkbox" /> <span>네오플램(99,999)</span></label></li>
+																					<li><label for="lay_shop_chk05"><input id="lay_shop_chk05" type="checkbox" class="chkbox" /> <span>엘룸(99,999)MISS</span></label></li>
+																					<li><label for="lay_shop_chk06"><input id="lay_shop_chk06" type="checkbox" class="chkbox" /> <span>에라토</span></label></li>
+																					<li><label for="lay_shop_chk07"><input id="lay_shop_chk07" type="checkbox" class="chkbox" /> <span>도호</span></label></li>
+																					<li><label for="lay_shop_chk08"><input id="lay_shop_chk08" type="checkbox" class="chkbox" /> <span>발렌티</span></label></li>
+																					<li><label for="lay_shop_chk09"><input id="lay_shop_chk09" type="checkbox" class="chkbox" /> <span>쓰임</span></label></li>
+																				</ul>
+																			</div>
+
+																			<div class="d_tab_cont">
+																				<ul class="list_chkbox">
+																					<li><label for="lay_shop_chk10"><input id="lay_shop_chk10" type="checkbox" class="chkbox" /> <span>GOLDMISS(99,999)</span></label></li>
+																					<li><label for="lay_shop_chk11"><input id="lay_shop_chk11" type="checkbox" class="chkbox" /> <span>토프(99,999)</span></label></li>
+																					<li><label for="lay_shop_chk12"><input id="lay_shop_chk12" type="checkbox" class="chkbox" /> <span>올리오(99,999)</span></label></li>
+																				</ul>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+														</div>
+														<button type="button" class="btn_lay_close" onClick="commonUI.brandMenuClose('#layer_brand','#btn_brand_open');return false;" ><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+													</div>
+												</div>
+												<!-- //브랜드 더보기 팝업 -->
+											</div>
+
+
+										</div>
+									</li>
+									<li>
+										<a href="#"><span>지점</span></a>
+										<div class="depth2">
+											<div class="box_filter_scroll">
+												<ul class="list_chkbox">
+													<li><label for="shop_chk01"><input id="shop_chk01" type="checkbox" class="chkbox" /> <span>강남점</span></label></li>
+													<li><label for="shop_chk02"><input id="shop_chk02" type="checkbox" class="chkbox" /> <span>범계점</span></label></li>
+													<li><label for="shop_chk03"><input id="shop_chk03" type="checkbox" class="chkbox" /> <span>안산점</span></label></li>
+													<li><label for="shop_chk04"><input id="shop_chk04" type="checkbox" class="chkbox" /> <span>평촌점</span></label></li>
+													<li><label for="shop_chk05"><input id="shop_chk05" type="checkbox" class="chkbox" /> <span>평촌점</span></label></li>
+													<li><label for="shop_chk06"><input id="shop_chk06" type="checkbox" class="chkbox" /> <span>산본점</span></label></li>
+													<li><label for="shop_chk07"><input id="shop_chk07" type="checkbox" class="chkbox" /> <span>안양점</span></label></li>
+													<li><label for="shop_chk08"><input id="shop_chk08" type="checkbox" class="chkbox" /> <span>안양점</span></label></li>
+													<li><label for="shop_chk09"><input id="shop_chk09" type="checkbox" class="chkbox" /> <span>안양점</span></label></li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#"><span>소재</span></a>
+										<div class="depth2">
+											<div class="box_filter_scroll">
+												<ul class="list_chkbox">
+													<li><label for="shop_chk10"><input id="shop_chk10" type="checkbox" class="chkbox" /> <span>면</span></label></li>
+													<li><label for="shop_chk11"><input id="shop_chk11" type="checkbox" class="chkbox" /> <span>폴리</span></label></li>
+													<li><label for="shop_chk12"><input id="shop_chk12" type="checkbox" class="chkbox" /> <span>레이온</span></label></li>
+													<li><label for="shop_chk13"><input id="shop_chk13" type="checkbox" class="chkbox" /> <span>나일론</span></label></li>
+													<li><label for="shop_chk14"><input id="shop_chk14" type="checkbox" class="chkbox" /> <span>소재명</span></label></li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#"><span>혜택</span></a>
+										<div class="depth2">
+											<div class="box_filter_scroll">
+												<ul class="list_chkbox">
+													<li><label for="bnenfit_chk01"><input id="bnenfit_chk01" type="checkbox" class="chkbox" /> <span>사은품</span></label></li>
+													<li><label for="bnenfit_chk02"><input id="bnenfit_chk02" type="checkbox" class="chkbox" /> <span>하나더(+1)</span></label></li>
+													<li><label for="bnenfit_chk03"><input id="bnenfit_chk03" type="checkbox" class="chkbox" /> <span>전단상품</span></label></li>
+													<li><label for="bnenfit_chk04"><input id="bnenfit_chk04" type="checkbox" class="chkbox" /> <span>혜택명</span></label></li>
+													<li><label for="bnenfit_chk05"><input id="bnenfit_chk05" type="checkbox" class="chkbox" /> <span>혜택명</span></label></li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#"><span>사이즈</span></a>
+										<div class="depth2">
+											<div class="list_size">
+												<ul>
+													<li><button type="button" class="btn_size on"><span>XS</span></button></li>
+													<li><button type="button" class="btn_size"><span>S</span></button></li>
+													<li><button type="button" class="btn_size"><span>M</span></button></li>
+													<li><button type="button" class="btn_size"><span>L</span></button></li>
+													<li><button type="button" class="btn_size"><span>XL</span></button></li>
+													<li><button type="button" class="btn_size"><span>F</span></button></li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#"><span>가격</span></a>
+										<div class="depth2">
+											<div class="set_range">
+												<div id="slider-range"></div>
+											</div>
+											<div class="input_range">
+												<input type="text" id="l_range" class="input_txt wide range_left" value="0" onKeyUp="slideRngChange();" title="최소 가격" />
+												<span>~</span>
+												<input type="text" id="r_range" class="input_txt wide range_right" value="10000" onKeyUp="slideRngChange();" title="최대 가격" />
+											</div>
+											<div class="btn_range">
+												<button type="button" class="btn07"><span>확인</span></button>
+											</div>
+<!-- 160404_수정 -->
+											<script>
+												$(function() {
+													$( "#slider-range" ).slider({
+														range: true,
+														min: 0,
+														max: 10000,
+														values: [ 0, 10000 ],
+														slide: function( event, ui ) {
+															$( "#l_range" ).val(ui.values[ 0 ]);
+															$( "#r_range" ).val(ui.values[ 1 ]);
+														}
+													});
+												});
+												
+												function slideRngChange() {
+													var min_val = $(".input_range #l_range").val();
+													var max_val = $(".input_range #r_range").val();
+													$( "#slider-range" ).slider('values',[ min_val , max_val ]);	
+												}
+											</script>
+<!-- //160404_수정 -->											
+										</div>
+									</li>
+									<li>
+										<a href="#"><span>색상</span></a>
+										<div class="depth2">
+											<div class="list_chip d_chip_over">
+												<ul>
+													<li><a href="#" class="chip on"><span class="ir">컬러1</span><img src="../../images/pcweb/temp/_sample_18x18-01.gif" alt="" /></a></li>
+													<li><a href="#" class="chip"><span class="ir">컬러2</span><img src="../../images/pcweb/temp/_sample_18x18-02.gif" alt="" /></a></li>
+													<li><a href="#" class="chip"><span class="ir">컬러3</span><img src="../../images/pcweb/temp/_sample_18x18-03.gif" alt="" /></a></li>
+													<li><a href="#" class="chip"><span class="ir">컬러4</span><img src="../../images/pcweb/temp/_sample_18x18-04.gif" alt="" /></a></li>
+													<li><a href="#" class="chip"><span class="ir">컬러5</span><img src="../../images/pcweb/temp/_sample_18x18-05.gif" alt="" /></a></li>
+												</ul>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+					</div>
+					<!-- //l_content -->
+					<!-- r_content -->
+					<div class="r_content">
+						<div class="box_evt_bnr02"><a href="#"><img src="../../images/pcweb/temp/_sample_890x100.jpg" alt="35% SALE 스팀으로 요리하고 진공으로 보관 이영애가 선택한 해피콜 플라즈마 IH 진공냄비" /></a></div>
+						<!-- 추천 BEST -->
+						<div class="box_recom_best">
+							<div class="tit_h3_bar02"><span>추천 <strong class="txt_en">BEST</strong></span></div>
+							<div class="list_product01 d_prd_over">
+								<ul class="list">
+									<li>
+										<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg"><!-- data-imgsrc : 오버시 이미지url -->
+											<div class="thumb"><span><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></span></div>
+											<div class="cont">
+												<span class="brand_nm">MODERN HOUSE</span>
+												<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+												<div class="box_price">
+													<span class="dis_percent"><strong>15</strong>%</span>
+													<div class="cont_price">
+														<del class="prime">99,999,999</del>
+														<span class="c_price">
+															<span class="price_nm">쿠폰가</span>
+															<strong>99,999,999</strong>원
+														</span>
+													</div>
+												</div>
+												<div class="box_flag">
+													<span class="flag_icon c02">무료배송</span>
+													<span class="flag_icon c01">N+1</span>
+												</div>
+											</div>
+										</a>
+<!-- 상품옵션 버튼 -->
+										<div class="box_opt_link">
+											<a class="opt_like" href="#"><span>찜하기</span></a>
+											<a class="opt01" href="#"><span>미리보기</span></a>
+											<a class="opt02" href="#"><span>새창열기</span></a>
+											<a class="opt03" href="#"><span>옵션보기</span></a>
+										</div>
+<!-- //상품옵션 버튼 -->
+<!-- 상품옵션 보기 레이어 -->
+										<div class="lay_lp_opt">
+											<div class="lay_lp_tit">상품옵션 보기</div>
+											<div class="lay_lp_cont">
+												<ul class="scroll">
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+												</ul>
+											</div>
+										</div>
+<!-- //상품옵션 보기 레이어 -->
+									</li>
+									<li>
+										<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg"><!-- data-imgsrc : 오버시 이미지url -->
+											<div class="thumb"><span><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></span></div>
+											<div class="cont">
+												<span class="brand_nm">MODERN HOUSE</span>
+												<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+												<div class="box_price">
+													<span class="dis_percent"><strong>15</strong>%</span>
+													<div class="cont_price">
+														<del class="prime">99,999,999</del>
+														<span class="c_price">
+															<span class="price_nm">쿠폰가</span>
+															<strong>99,999,999</strong>원
+														</span>
+													</div>
+												</div>
+												<div class="box_flag">
+													<span class="flag_icon c02">무료배송</span>
+													<span class="flag_icon c01">N+1</span>
+												</div>
+											</div>
+										</a>
+<!-- 상품옵션 버튼 -->
+										<div class="box_opt_link">
+											<a class="opt_like" href="#"><span>찜하기</span></a>
+											<a class="opt01" href="#"><span>미리보기</span></a>
+											<a class="opt02" href="#"><span>새창열기</span></a>
+											<a class="opt03" href="#"><span>옵션보기</span></a>
+										</div>
+<!-- //상품옵션 버튼 -->
+<!-- 상품옵션 보기 레이어 -->
+										<div class="lay_lp_opt">
+											<div class="lay_lp_tit">상품옵션 보기</div>
+											<div class="lay_lp_cont">
+												<ul class="scroll">
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+												</ul>
+											</div>
+										</div>
+<!-- //상품옵션 보기 레이어 -->
+									</li>
+									<li>
+										<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg"><!-- data-imgsrc : 오버시 이미지url -->
+											<div class="thumb"><span><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></span></div>
+											<div class="cont">
+												<span class="brand_nm">MODERN HOUSE</span>
+												<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+												<div class="box_price">
+													<span class="dis_percent"><strong>15</strong>%</span>
+													<div class="cont_price">
+														<del class="prime">99,999,999</del>
+														<span class="c_price">
+															<span class="price_nm">쿠폰가</span>
+															<strong>99,999,999</strong>원
+														</span>
+													</div>
+												</div>
+												<div class="box_flag">
+													<span class="flag_icon c02">무료배송</span>
+													<span class="flag_icon c01">N+1</span>
+												</div>
+											</div>
+										</a>
+<!-- 상품옵션 버튼 -->
+										<div class="box_opt_link">
+											<a class="opt_like" href="#"><span>찜하기</span></a>
+											<a class="opt01" href="#"><span>미리보기</span></a>
+											<a class="opt02" href="#"><span>새창열기</span></a>
+											<a class="opt03" href="#"><span>옵션보기</span></a>
+										</div>
+<!-- //상품옵션 버튼 -->
+<!-- 상품옵션 보기 레이어 -->
+										<div class="lay_lp_opt">
+											<div class="lay_lp_tit">상품옵션 보기</div>
+											<div class="lay_lp_cont">
+												<ul class="scroll">
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+													<li><span>GCASH607F046/00S</span></li>
+												</ul>
+											</div>
+										</div>
+<!-- //상품옵션 보기 레이어 -->
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //추천 BEST -->
+
+						<!-- 정렬 BOX -->
+						<div class="set_lp_option">
+							<ul class="lp_sch_type">
+								<li><a class="on" href="#">인기상품순</a></li>
+								<li><a href="#">신상품순</a></li>
+								<li><a href="#">낮은가격순</a></li>
+								<li><a href="#">높은가격순</a></li>
+								<li><a href="#">상품평순</a></li>
+							</ul>
+
+							<div class="r_cont">
+								<div class="btn_lp_type">
+									<ul>
+										<li><a class="lp_type01 on" href="#"><span>이미지 보기</span></a></li>
+										<li><a class="lp_type02" href="#"><span>리스트 보기</span></a></li>
+									</ul>
+								</div>
+								<select>
+									<option>60개씩보기</option>
+									<option>100개씩보기</option>
+								</select>
+							</div>
+						</div>
+						<!-- //정렬 BOX -->
+
+						<!-- 상품리스트 -->
+						<div class="list_product01 size05 d_prd_over">
+							<ul class="list">
+								<li>
+									<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg"><!-- data-imgsrc : 오버시 이미지url -->
+										<div class="thumb"><span><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></span></div>
+										<div class="cont">
+											<span class="brand_nm">MODERN HOUSE</span>
+											<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+											<div class="box_price">
+												<span class="dis_percent"><strong>15</strong>%</span>
+												<div class="cont_price">
+													<del class="prime">99,999,999</del>
+													<span class="c_price">
+														<span class="price_nm">쿠폰가</span>
+														<strong>99,999,999</strong>원
+													</span>
+												</div>
+											</div>
+											<div class="box_flag">
+												<span class="flag_icon c02">무료배송</span>
+												<span class="flag_icon c01">N+1</span>
+											</div>
+										</div>
+									</a>
+<!-- 상품옵션 버튼 -->
+									<div class="box_opt_link">
+										<a class="opt_like" href="#"><span>찜하기</span></a>
+											<a class="opt01" href="#"><span>미리보기</span></a>
+										<a class="opt02" href="#"><span>새창열기</span></a>
+										<a class="opt03" href="#"><span>옵션보기</span></a>
+									</div>
+<!-- //상품옵션 버튼 -->
+<!-- 상품옵션 보기 레이어 -->
+									<div class="lay_lp_opt">
+										<div class="lay_lp_tit">상품옵션 보기</div>
+										<div class="lay_lp_cont">
+											<ul class="scroll">
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+											</ul>
+										</div>
+									</div>
+<!-- //상품옵션 보기 레이어 -->
+								</li>
+								<li>
+									<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg"><!-- data-imgsrc : 오버시 이미지url -->
+										<div class="thumb"><span><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></span></div>
+										<div class="cont">
+											<span class="brand_nm">MODERN HOUSE</span>
+											<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+											<div class="box_price">
+												<span class="dis_percent"><strong>15</strong>%</span>
+												<div class="cont_price">
+													<del class="prime">99,999,999</del>
+													<span class="c_price">
+														<span class="price_nm">쿠폰가</span>
+														<strong>99,999,999</strong>원
+													</span>
+												</div>
+											</div>
+											<div class="box_flag">
+												<span class="flag_icon c02">무료배송</span>
+												<span class="flag_icon c01">N+1</span>
+											</div>
+										</div>
+									</a>
+<!-- 상품옵션 버튼 -->
+									<div class="box_opt_link">
+										<a class="opt_like" href="#"><span>찜하기</span></a>
+											<a class="opt01" href="#"><span>미리보기</span></a>
+										<a class="opt02" href="#"><span>새창열기</span></a>
+										<a class="opt03" href="#"><span>옵션보기</span></a>
+									</div>
+<!-- //상품옵션 버튼 -->
+<!-- 상품옵션 보기 레이어 -->
+									<div class="lay_lp_opt">
+										<div class="lay_lp_tit">상품옵션 보기</div>
+										<div class="lay_lp_cont">
+											<ul class="scroll">
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+											</ul>
+										</div>
+									</div>
+<!-- //상품옵션 보기 레이어 -->
+								</li>
+								<li>
+									<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg"><!-- data-imgsrc : 오버시 이미지url -->
+										<div class="thumb"><span><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></span></div>
+										<div class="cont">
+											<span class="brand_nm">MODERN HOUSE</span>
+											<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+											<div class="box_price">
+												<span class="dis_percent"><strong>15</strong>%</span>
+												<div class="cont_price">
+													<del class="prime">99,999,999</del>
+													<span class="c_price">
+														<span class="price_nm">쿠폰가</span>
+														<strong>99,999,999</strong>원
+													</span>
+												</div>
+											</div>
+											<div class="box_flag">
+												<span class="flag_icon c02">무료배송</span>
+												<span class="flag_icon c01">N+1</span>
+											</div>
+										</div>
+									</a>
+<!-- 상품옵션 버튼 -->
+									<div class="box_opt_link">
+										<a class="opt_like" href="#"><span>찜하기</span></a>
+											<a class="opt01" href="#"><span>미리보기</span></a>
+										<a class="opt02" href="#"><span>새창열기</span></a>
+										<a class="opt03" href="#"><span>옵션보기</span></a>
+									</div>
+<!-- //상품옵션 버튼 -->
+<!-- 상품옵션 보기 레이어 -->
+									<div class="lay_lp_opt">
+										<div class="lay_lp_tit">상품옵션 보기</div>
+										<div class="lay_lp_cont">
+											<ul class="scroll">
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+											</ul>
+										</div>
+									</div>
+<!-- //상품옵션 보기 레이어 -->
+								</li>
+								<li>
+									<a href="#" class="links" data-imgsrc="../../images/pcweb/temp/_sample_list_product02.jpg"><!-- data-imgsrc : 오버시 이미지url -->
+										<div class="thumb"><span><img src="../../images/pcweb/temp/_sample_list_product.jpg" alt="(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈" /></span></div>
+										<div class="cont">
+											<span class="brand_nm">MODERN HOUSE</span>
+											<span class="prod_nm">(N)(2015년신상)데일리 우드 와인랙 데일리 우드 실리즈</span>
+											<div class="box_price">
+												<span class="dis_percent"><strong>15</strong>%</span>
+												<div class="cont_price">
+													<del class="prime">99,999,999</del>
+													<span class="c_price">
+														<span class="price_nm">쿠폰가</span>
+														<strong>99,999,999</strong>원
+													</span>
+												</div>
+											</div>
+											<div class="box_flag">
+												<span class="flag_icon c02">무료배송</span>
+												<span class="flag_icon c01">N+1</span>
+											</div>
+										</div>
+									</a>
+<!-- 상품옵션 버튼 -->
+									<div class="box_opt_link">
+										<a class="opt_like" href="#"><span>찜하기</span></a>
+											<a class="opt01" href="#"><span>미리보기</span></a>
+										<a class="opt02" href="#"><span>새창열기</span></a>
+										<a class="opt03" href="#"><span>옵션보기</span></a>
+									</div>
+<!-- //상품옵션 버튼 -->
+<!-- 상품옵션 보기 레이어 -->
+									<div class="lay_lp_opt">
+										<div class="lay_lp_tit">상품옵션 보기</div>
+										<div class="lay_lp_cont">
+											<ul class="scroll">
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+												<li><span>GCASH607F046/00S</span></li>
+											</ul>
+										</div>
+									</div>
+<!-- //상품옵션 보기 레이어 -->
+								</li>
+							</ul>
+						</div>
+						<!-- //상품리스트 -->
+
+						<!-- 페이징 -->
+						<div class="box_page">
+							<span class="num">
+								<a class="btn_paging_first" href="#"><img src="../../images/pcweb/common/btn_paging_first.gif" alt="처음페이지이동" /></a>
+								<a class="btn_paging_prev" href="#"><img src="../../images/pcweb/common/btn_paging_prev.gif" alt="이전페이지이동" /></a>
+								<a href="#" class="on">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+								<a class="btn_paging_next" href="#"><img src="../../images/pcweb/common/btn_paging_next.gif" alt="다음페이지이동" /></a>
+								<a class="btn_paging_end" href="#"><img src="../../images/pcweb/common/btn_paging_end.gif" alt="마지막페이지이동" /></a>
+							</span>
+						</div>
+						<!-- //페이징 -->
+					</div>
+					<!-- //r_content -->
+				</div>
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

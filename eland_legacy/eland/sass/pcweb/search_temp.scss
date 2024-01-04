@@ -1,0 +1,344 @@
+@charset "utf-8";
+@import "color";
+
+
+// layout.scss에서 이관 ~~~
+
+// 검색 고도화 170717
+.hd_sch{top:76px;left:345px;height:50px;
+	.sch_keyword{
+		.k_planevt{margin:15px 20px 0;padding:20px 0 0;border-top:1px solid #ddd;
+			> div li{padding:0;height:30px;white-space:nowrap;word-wrap:normal;overflow:hidden;text-overflow:ellipsis;
+				a{margin:0!important;color:#666;white-space:nowrap;word-wrap:normal;overflow:hidden;
+					em{color:#ff7112;}
+				}
+				.ico{display:inline-block;width:46px;margin-right:5px;height:18px;line-height:20px;text-align:center;font-size:11px;font-weight:400;letter-spacing:-1px;font-family:dotum,'돋움';border:1px solid #ccc;}
+			}
+			.category li .ico{color:#333;background:#f4f4f4;border-color:#999;}
+			.plan li .ico{color:#333;}
+			.event li .ico{color:#fff;background:#ff7112;border-color:#ff7112;}
+		}
+		.s_del + .k_planevt{margin:0 20px 0;border-top:none;}
+		.s_keyword .sch_ing{margin:5px 0 -1px;padding:0 20px;
+			&:after{display:block;clear:both;content:'';}
+			li{float:left;width:calc(50% - 20px);height:30px;padding:0;
+				&:nth-child(2n){margin-left:20px;}
+				a{position:relative;display:block;
+					span{line-height:30px;color:#333;}
+					em{position:absolute;right:0;height:30px;line-height:30px;color:#999;font-size:11px;}
+				}
+			}
+		}
+	}
+	.d_sch_complete{padding:0 0 7px;
+		.k_planevt{padding-top:25px;}
+		.k_brand{
+			ul li{padding:0 20px;border-bottom:1px solid #ddd;
+				a{position:relative;display:block;padding:0 88px 0 0;height:39px;line-height:39px;color:#333;font-size:15px;font-weight:bold;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;
+					&:after{position:absolute;right:0;top:11px;width:28px;height:17px;background:url("../../images/pcweb/common/ico_sch_go.png") no-repeat;content:"";}
+				}
+			}
+		}
+	}
+}
+
+.renewal{
+	//  need to move to layout.scss : 검색
+	.hd_sch{top:76px;left:345px;height:50px;
+		.sch_wrap{width:390px;}
+		.sch_box{width:390px;height:50px;padding:0 57px 0 14px;border:none;background:#f4f5f7;border-radius:25px;}
+		.input{position:relative;z-index:1;width:283px;height:16px;margin:10px 0 0;padding:6px 11px;font-size:14px;color:#666;background:none;box-sizing:content-box;-webkit-box-sizing:content-box;}
+		.sch_btn{right:12px;width:45px;height:50px;background:none;
+			&:after{position:absolute;top:50%;left:50%;width:24px;height:26px;margin:-13px 0 0 -11px;background:url(../../images/pcweb/renewal/bg_main_v2.png) 0 -165px no-repeat;content:"";}
+		}
+		.sch_del{top:17px;right:55px;}
+		.sch_keyword{top:50px;width:386px;border:solid #000;border-width:0 2px;
+			.k_planevt{
+				>div li a em{color:$point_color_txt;}
+				.event li .ico{border-color:$point_color_bg;background:$point_color_txt;}
+			}
+			// common.scss로 이관
+			// .k_planbn{margin:14px 20px 0;padding:20px 0 0 0;border-top: 1px solid #ddd;
+			// 	.tit{display:block;margin-bottom:11px;font-size:13px;color:#333;letter-spacing:-0.05em;}
+			// 	ul{padding:0 3px;
+			// 		&:after{display:block;clear:both;content:"";}
+			// 		li{float:left;width:85px;height:120px;padding:0;
+			// 			a{display:block;width:100%;height:100%;
+			// 				img{display:block;margin:0 auto;}
+			// 				span{display:block;height:32px;margin-top:13px;padding:0 2px;line-height:16px;overflow:hidden;text-align:center;color:#666;letter-spacing:-0.05em;white-space:normal;}
+			// 			}
+			// 		}
+			// 	}
+			// }
+			.f_keyword dt{width:193px;left:193px;
+				&:first-child{left:0;width:192px;}
+				button{width:100%;}
+			}
+			.s_del{padding:14px 0 6px 0;margin:10px 20px 0;}
+			.f_keyword{padding:49px 0 39px 0;
+				dd li.rank a{color:$point_color_txt;
+					.num{color:inherit;}
+				}
+			}
+		}
+		.sch_keyword .s_keyword{padding:0;margin:9px 0 15px 0;
+			li a b{color:$point_color_txt;}
+		}
+		.d_sch_complete .k_brand{border-top:1px solid #ddd;}
+		&.on {
+			.sch_wrap:before{position:absolute;top:0;left:0;right:0;display:block;height:50px;content:'';border:2px solid #000;border-bottom:none;border-top-left-radius:27px;border-top-right-radius:27px;}
+			.sch_box{background:#fff;overflow:hidden;}
+		}
+	}
+	&.header_fix{
+		.hd_sch{position:static!important;float:left;width:390px;height:38px;margin:9px 0 0 0;
+			.sch_wrap{position:relative;}
+			.sch_box{/* width:319px; */height:38px;background:#fff;border-radius:19px;}
+			.input{width:283px;height:29px;margin-top:0;padding:5px 0 5px 13px;border:0;font-size:14px;line-height:29px;color:#666;}
+			.sch_keyword{}
+			.sch_del{top:14px;}
+			.sch_btn{height:38px;right:9px;}
+			&.on {
+				.sch_wrap:before{position:absolute;top:-2px;height:40px;border-top-left-radius:19px;border-top-right-radius:19px;background:#fff;content:"";}
+				.sch_box{background:#fff;}
+			}
+		}
+		.sch_keyword{top:40px;left:0;
+			.f_keyword dt{
+				button{width:100%;}
+				&:first-child{left:0;}
+			}
+		}
+		.sch_keyword .f_keyword dt:first-child button{width:100%;}
+	}
+}
+
+// header_fix
+.sch_keyword .f_keyword dt:first-child button{width:100%;}
+
+
+// HEADER - header search
+.hd_sch{position:absolute;left:348px;top:76px;width:384px;height:38px;z-index:4002;
+	.sch_wrap{position:relative;z-index:4004;}
+	.sch_box{width:382px;height:36px;border:1px solid #000;background:#fff;}
+	.input{width:347px;height:14px;padding:10px 0 10px 10px;border:0;font-size:13px;    /*line-height:34px;*/color:#666;
+		&::-ms-clear,&::-ms-reveal{display:none!important;width:0;height:0;}
+	}
+	.sch_del{display:none;position:absolute;right:47px;top:12px;width:14px;height:14px;text-indent:-9999px;cursor:pointer;background:url("../../images/pcweb/common/btn_sch_del.png") no-repeat 50% 50%;}
+	.sch_btn{position:absolute;right:0;top:0;display:block;width:45px;height:38px;border:0;cursor:pointer;text-indent:-9999px;background:url("../../images/pcweb/common/btn_hd_sch.png") no-repeat 50% 50%;}
+	.sch_keyword{display:none;position:absolute;top:35px;left:0;width:382px;padding-top:1px;border:1px solid #000;border-top:none;background:#fff url("../../images/pcweb/common/bg_sr_bdt.gif") 0 0 repeat-x;z-index:33;
+		&:after{display:block;clear:both;content:'';position: absolute;bottom: -20px;left: -2px;width: 100%;height: 20px;border: 2px solid #000;border-top: none;border-radius: 0 0 20px 20px;background: #fff;overflow: hidden;}
+		.f_keyword{position:relative;padding:49px 0 15px 0;
+			dt{position:absolute;top:0;left:192px;width:191px;height:40px;
+				button{display:block;width:191px;height:40px;border:0;border-bottom:1px solid #ddd;font-size:14px;line-height:40px;color:#666;cursor:pointer;background:#f4f4f4;
+					&.on{border-bottom:0;color:#333;font-weight:bold;background:#fff;}
+				}
+				&:first-child{left:0;width:191px;border-right:1px solid #ddd;color:#ff0000;font-weight:bold;
+					button{width:191px;}
+				}
+			}
+			dd{display:none;}
+			dt:nth-child(3) + dd{display:block;}
+			dd{
+				li{position:relative;height:30px;padding:0 20px;
+					a{display:block;margin-right:100px;overflow:hidden;height:30px;font-size:13px;line-height:30px;color:#333;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;
+						&:focus span{text-decoration:underline;}
+					}
+					.cnt{position:absolute;top:0;right:20px;display:inline-block;width:100px;text-align:right;font-family:"tahoma","Verdana","Nanum Gothic",sans-serif;font-style:italic;}
+					a .num{display:inline-block;width:15px;height:15px;margin:-4px 15px 0 0;font-size:13px;line-height:14px;color:#707070;text-align:center;vertical-align:middle;font-family:"tahoma","Verdana","Nanum Gothic",sans-serif;font-style:italic;}
+					&.rank a{color:#c9000b;
+						.num{color:#c9000b;}
+					}
+				}
+				ul li a{margin-right:30px;}
+				li .del{position:absolute;right:20px;top:6px;width:17px;height:17px;border:0;cursor:pointer;text-indent:-9999px;background:url("../../images/pcweb/common/btn_word_del3.png") no-repeat 0 0;}
+				.s_del{height:18px;margin:14px 20px 0;padding:9px 0 0 0;}
+			}
+			.msg{clear:both;width:346px;margin:0 auto;padding:107px 0 39px;font-size:13px;color:#666;text-align:center;background:url("../../images/pcweb/common/ico_no_data01.png") no-repeat center 31px;
+				&:first-child{border-bottom:1px solid #eee;}
+			}
+			// common.scss로 이관
+			// .k_recent{margin:15px 0 0;padding:0 20px;
+			// 	.tit{display:block;margin-bottom:11px;font-size:13px;color:#333;letter-spacing:-0.05em;}
+			// 	ul{
+			// 		&:after{display:block;clear:both;content:"";}
+			// 		li{float:left;width:115px;height:115px;margin:0;padding:0;
+			// 			a{width:100%;height:100%;margin:0;}
+			// 		}
+			// 	}
+			// 	.all_view{margin-top:13px;
+			// 		&:after{display:block;clear:both;content:"";}
+			// 		a{float:right;height:16px;line-height:16px;margin-left:auto;padding:0 12px 0 0;background:url("../../images/pcweb/common/ico_arrow36.png") no-repeat right 2px;}
+			// 	}
+			// }
+		}
+		.s_keyword{overflow:hidden;padding:9px 0 15px 0;
+			li{position:relative;height:30px;padding:0 20px;
+				a{display:block;overflow:hidden;height:30px;font-size:13px;line-height:30px;color:#666;
+					b{color:$point_color_txt;}
+				}
+			}
+		}
+		.s_del{height:18px;margin:0 20px;padding:20px 0 0 0;border-top:1px solid #ddd;text-align:right;
+			button{display:inline-block;height:17px;padding:0 0 0 10px;border:0;font-size:12px;line-height:17px;color:#707070;cursor:pointer;}
+		}
+		.s_keyword .msg{clear:both;padding:35px 20px;text-align:center;font-size:13px;line-height:18px;color:#666;}
+		.rl_pot{right:20px;}
+	}
+}
+
+//~~~ layout.scss에서 이관
+
+
+// common.scss에서 이관 ~~~
+// 검색결과
+.resch_wrap{height:212px;margin-bottom:40px;}
+.rsch_word{height:47px;font-size:18px;line-height:30px;color:#666;text-align:center;
+	strong{color:$point_color_txt;}
+}
+.rsch_box{position:relative;height:154px;padding:0 10px 11px 10px;background:#f3f3f3;}
+.rsch_bar{height:53px;padding:20px 0 0 25px;
+	dd{float:left;height:33px;}
+	.rdo{padding-top:7px;
+		.rdobox{margin:0 4px 0 0;}
+		label{margin-right:12px;font-size:13px;color:#333;vertical-align:middle;}
+	}
+	.bar{width:344px;
+		span{display:inline-block;width:260px;height:31px;padding:0 5px 0 10px;border:1px solid #e8e8e8;border-right:0;background:#fff;}
+		.input{width:260px;height:31px;border:0;line-height:31px;background:#fff;}
+		button{display:inline-block;width:67px;height:33px;font-size:14px;line-height:33px;color:#fff;font-weight:bold;text-align:center;background:#242424;}
+	}
+}
+.rsch_rank{position:absolute;right:2px;top:9px;width:264px;padding:20px;height:20px;
+	dt{float:left;height:20px;padding:0;font-size:13px;line-height:15px;color:#333;font-weight:bold;text-align:left;}
+	dd{position:absolute;right:10px;top:14px;overflow:hidden;width:140px;height:27px;
+		li{overflow:hidden;height:0;position:relative;
+			&.on{height:27px;}
+			a{display:inline-block;overflow:hidden;height:27px;font-size:13px;line-height:27px;color:#333;width:96px;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;
+				.num{display:inline-block;width:15px;height:15px;margin:-2px 10px 0 0;border:1px solid #ddd;font-size:10px;line-height:15px;color:#666;font-weight:800;text-align:center;vertical-align:middle;font-family:Verdana;background:#fff;letter-spacing:-1px;}
+			}
+		}
+	}
+	&.rank_pop{position:absolute;top:8px;right:1px;width:264px;height:300px;border:1px solid #000;background:#fff;z-index:10;
+		dl{
+			dt{padding-left:0;}
+			dd{top:54px;left:20px;right:20px;width:auto;height:auto;
+				li{display:block;height:27px;
+					a{width:200px;
+						&:hover{text-decoration:underline;}
+					}
+					&.on a{font-weight:bold;color:#000;}
+				}
+			}
+		}
+	}
+}
+.rl_pot{position:absolute;min-width:52px;right:10px;top:7px;font-family:"tahoma","Verdana","Nanum Gothic",sans-serif;font-style:italic;color:#666;font-size:12px;text-align:right;letter-spacing:0;
+	span{padding-left:10px;}
+	.new{color:#c9000b;font-size:11px;}
+	.rl_up{display:block;color:#c9000b;background:url('../../images/pcweb/common/ico_res_up.png') 0 center no-repeat;}
+	.rl_down{display:block;background:url('../../images/pcweb/common/ico_res_do.png') 0 center no-repeat;}
+}
+.rank_pop .rl_pot{right:0;}
+.rsch_kwd{height:67px;padding:14px 15px 0 15px;background:#fff;
+	dl{clear:both;height:31px;}
+	dt{float:left;width:86px;height:21px;padding-left:10px;font-size:12px;line-height:20px;color:#333;font-weight:bold;background:#fff url("../../images/pcweb/common/bg_rsch_dt.png") no-repeat 0 0;}
+	dd{overflow:hidden;max-width:730px;height:21px;margin-bottom:10px;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;
+		a{display:inline-block;padding-left:9px;font-size:12px;line-height:20px;color:#666;background:url("../../images/pcweb/common/bu_comma.png") no-repeat -2px 14px;
+			&:first-child{padding-left:0;background:none;}
+		}
+	}
+}
+.rsch_txt{padding:44px 0 20px 284px;background:url("../../images/pcweb/common/img_sch_none.png") no-repeat 73px 30px;
+	li{padding-left:12px;font-size:13px;line-height:20px;color:#666;background:url("../../images/pcweb/common/bu_dot2.gif") no-repeat 0 50%;}
+}
+
+//검색어 레이어 최근 본 상품- 추천 검색어- 브랜드 몰 통합을 위해 common.scss로 이관
+html body  .hd_sch{
+	// 검색어 레이어 오픈 시, 모든 사이트 동일하게 384px로 고정
+	&.on{width:390px;
+		.input{position:relative;width:283px;z-index:1;}
+		.sch_wrap{width:auto;
+			&:before{position:absolute;top:-2px;left:0;right:0;height:50px;content:'';border:2px solid #000;border-bottom:none;border-top-left-radius:20px;border-top-right-radius:20px;}
+			.sch_keyword{width:100%;box-sizing:border-box;
+				&:after{width:100%;}
+				.f_keyword dt{left:50%;width:50%;box-sizing:border-box;
+					&:first-child{left:0;}
+					button{width:100%;}
+				}
+			}
+		}
+		.sch_box{border-radius:20px 20px 0 0;}
+	}
+	.sch_box{width:100%;border-radius:20px;background:#fff;overflow:hidden;box-sizing:border-box;}
+	.sch_keyword{
+		.f_keyword .k_recent{width:346px;margin:15px auto 0;
+			.tit{display:block;margin-bottom:11px;font-size:13px;color:#333;letter-spacing:-0.05em;}
+			ul{
+				&:after{display:block;clear:both;content:"";}
+				li{float:left;width:115px;height:115px;margin:0;padding:0;
+					a{width:100%;height:100%;margin:0;
+						img{display:block;width:auto;height:100%;}
+					}
+				}
+			}
+			.all_view{margin-top:13px;
+				&:after{display:block;clear:both;content:"";}
+				a{float:right;height:16px;line-height:16px;margin-left:auto;padding:0 12px 0 0;background:url("../../images/pcweb/common/ico_arrow36.png") no-repeat right 2px;}
+			}
+		}
+
+		.k_planbn{width:346px;margin:14px auto 0;padding:20px 0 0 0;border-top: 1px solid #ddd;
+			.tit{display:block;margin-bottom:11px;font-size:13px;color:#333;letter-spacing:-0.05em;}
+			ul{padding:0 3px;
+				&:after{display:block;clear:both;content:"";}
+				li{float:left;width:85px;height:120px;padding:0;
+					a{display:block;width:100%;height:100%;
+						img{display:block;width:73px;height:73px;margin:0 auto;border-radius:8px;}
+						span{display:block;height:2.4em;margin-top:13px;padding:0 2px;line-height:1.2em;overflow:hidden;text-align:center;color:#666;letter-spacing:-0.05em;white-space:normal;}
+					}
+				}
+			}
+		}
+	}
+}
+
+html body .header_fix .hd_sch .sch_wrap{width:auto;}
+
+
+// 검색결과없음 - 인기검색어
+.rsch_int{border:1px solid #ccc;border-top:none;
+	> ul{padding:20px 15px 20px 20px;
+		> li{position:relative;margin-top:10px;
+			&:first-child{margin-top:0;}
+			.rl_pot{top:0;right:0;}
+			> a{display:block;font-size:13px;color:#333;overflow:hidden;width:104px;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;
+				> span > em{display:inline-block;font-family:"Verdana","Nanum Gothic",sans-serif;font-size:10px;letter-spacing:-1px;}
+			}
+			&.on > a span{border-bottom:1px solid #000;}
+			> a .num{display:inline-block;width:15px;height:15px;margin-right:10px;border:1px solid #ddd;font-size:10px;line-height:14px;color:#333;font-weight:800;text-align:center;font-family:"Verdana","Nanum Gothic",sans-serif;letter-spacing:-1px;}
+		}
+	}
+	.depth2{padding:4px 0 0 5px;
+		li{
+			a{display:block;
+				span{display:inline-block;padding:5px 0;
+					em{display:inline-block;font-family:"Verdana","Nanum Gothic",sans-serif;letter-spacing:-1px;}
+				}
+				&:hover span,&:focus span{color:#333;font-weight:800;}
+			}
+			&.on a span{padding-bottom:0;margin-bottom:4px;border-bottom:1px solid #333;color:#333;font-weight:800;}
+		}
+	}
+}
+
+//검색 결과 더보기 ( 브랜드 몰 -> 통합몰)
+.sch_more_brd{margin:25px 0 70px;text-align:right;
+	.sch_more_btn{display:inline-block;width:146px;height:34px;line-height:34px;color:#fff;text-align:center;background:#3e3e3e;
+		&:after{display:inline-block;width:8px;height:12px;margin-left:8px;vertical-align:-2px;background:url("../../images/pcweb/common/ico_arrow29.png") no-repeat;content:"";}
+	}
+}
+
+
+
+//  ~~~~  common.scss에서 이관

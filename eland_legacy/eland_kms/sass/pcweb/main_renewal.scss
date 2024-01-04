@@ -1,0 +1,904 @@
+@charset "UTF-8";
+@import "color";
+// footer
+.main.renewal{
+	#footer{margin:0;}
+	.foot_side_opt{width:180px;}
+	.wing_menu{top:516px;z-index:10000;}
+	&.header_fix .wing_menu{top:67px;}
+}
+
+// wing_menu
+.wing_menu .wm_adds a{margin-top:0;}
+.wl_btns{border:1px solid #eee;
+	.wl_cnt span{color:#333;}
+}
+
+// container
+.main.renewal{
+	#content{padding-bottom:100px;}
+	.new_title{width:1080px;margin:0 auto;
+		&:after{display:block;content:'';clear:both;}
+		h3{float:left;}
+	}
+}
+.renewal .new_title h4{float:left;}
+.main.renewal .new_title{
+	.txt{display:inline-block;height:23px;line-height:23px;margin-left:16px;padding-top:12px;color:#3e3e3e;font-size:20px;letter-spacing:-1px;}
+	h4 + .txt{height:23px;line-height:23px;margin-left:12px;color:#353535;font-size:15px;letter-spacing:-1px;}
+}
+
+// 빌보드 영역
+.renewal{
+	.billboard_section{height:496px;
+		&:hover .bp_btns a{
+			&.bp_bt_prev{background-position:-60px 0;}
+			&.bp_bt_next{background-position:-60px -60px;}
+		}
+	}
+	.box_promotion_bnr02{
+		.bp_cont{padding-top:495px;}
+		.bp_btns a{
+			&.bp_bt_stop,&.bp_bt_auto{display:block!important;height:48px;top:446px;border:1px solid #c9caca;}
+		}
+		.depth_tit{border-top:1px solid #c9cacb;border-bottom:1px solid #c9cacb;background:url(../../images/pcweb/renewal/bg_main_bp_tab.png) repeat;
+			span{height:48px;line-height:48px;color:#323231;font-size:14px;font-weight:600;}
+		}
+		.bp_list{
+			li:first-child .depth_tit{border-left:1px solid #c9cacb;}
+			.depth1.active .depth_tit{background:url(../../images/pcweb/renewal/bg_main_bp_tab.png) repeat;
+				span{color:$point_color_txt;}
+			}
+			&.menu02 .depth1{width:520px;}
+			&.menu03 .depth1{width:346px;
+				&:first-child{width:347px;}
+			}
+			&.menu04 .depth1{width:260px;}
+			&.menu05 .depth1{width:208px;}
+			&.menu06 .depth1{width:173px;
+				&:first-child{width:174px;}
+			}
+			&.menu07 .depth1{width:148px;
+				&:first-child{width:150px;}
+			}
+			&.menu08 .depth1{width:130px;}
+			&.menu09 .depth1,&.menu10 .depth1{width:auto;}
+		}
+		.bp_btns{position:absolute;top:0;left:0;width:100%;height:0;z-index:2;
+			a{}
+			.btn_prev_move,.btn_next_move{display:block;position:absolute;top:200px;width:47px;height:48px;margin:0;background:none;
+				&:before{position:absolute;top:0;left:0;width:24px;height:100%;background:url("../../images/pcweb/common/bg_paging2.png") no-repeat 0 0;z-index:0;opacity:0.3;filter:alpha(opacity = 30);content:"";z-index:0;transition:opacity 0.2s ease-in-out;}
+				&:after{position:absolute;top:0;right:0;width:24px;height:100%;background:url("../../images/pcweb/common/bg_paging2.png") no-repeat right top;z-index:0;opacity:0.3;filter:alpha(opacity = 30);content:"";z-index:0;transition:opacity 0.2s ease-in-out;}
+				&:hover{background:none;
+					&:before,&:after{opacity:0.8;filter:alpha(opacity = 80);}
+				}
+				.page{position:relative;display:none;height:48px;line-height:48px;font-size:16px;color:#fffffe;z-index:1;}
+				.ico{position:absolute;top:13px;left:17px;width:13px;height:21px;text-indent:-999em;z-index:1;}
+			}
+			.btn_prev_move{left:20px;
+				&:hover{width:auto;
+					&:before{width:100%;}
+					&:after{right:-23px;}
+					.page{display:block;margin-left:43px;}
+				}
+				.ico{background:url("../../images/pcweb/common/ico_arrow27.png") no-repeat;z-index:1;}
+			}
+			.btn_next_move{right:20px;
+				&:hover{width:auto;right:43px;padding-left:23px;
+					&:before{width:100%;}
+					&:after{right:-23px;}
+					.page{display:block;margin-right:18px;}
+					.ico{right:-8px;}
+				}
+				.ico{left:auto;right:15px;background:url("../../images/pcweb/common/ico_arrow28.png") no-repeat;}
+			}
+		}
+		.depth1.active .depth_tit:before{display:none;}
+		.depth2 li{
+			a.links{width:20px;height:20px;background:url('../../images/pcweb/renewal/ico_bn_indi_off.png') 0 0 no-repeat;}
+			&.on a.links{background:url('../../images/pcweb/renewal/ico_bn_indi_on_v2.png') 0 0 no-repeat;}
+			&:first-child a.links:before,&.depth2_last a.links:after{display:none;}
+		}
+		.bp_scont.type03 > div img{border:none;}
+	}
+	//비정형 띠 배너
+	.box_roll_evt{position:relative;width:1080px;height:90px;margin:48px auto 0;padding-top:0;overflow:hidden;
+		.roll_indi{position:absolute;top:10px;right:9px;z-index:10;}
+		.swiper-pagination-switch{width:12px;height:12px;padding:0;margin-left:2px;display:inline-block;background:url('../../images/pcweb/renewal/ico_indi02_off_v2.png') 0 0 no-repeat;font-size:0px;text-indent:-9999px;vertical-align:top;line-height:1;
+			&.swiper-active-switch{background:url('../../images/pcweb/renewal/ico_indi02_on_v2.png') 0 0 no-repeat;}
+		}
+		.swiper-wrapper li a{width:1080px;margin:0 auto;}
+		.swiper-container{height:90px;overflow:hidden;}
+		ul li img{width:1080px;height:90px;}
+	}
+	.coupon_brand{margin:15px auto 65px;width:1080px;
+		&:after{display:block;clear:both;content:'';}
+	}
+	.tcoupon{float:left;display:table;width:200px;height:105px;padding:80px 20px 50px;margin-right:14px;background:url(../../images/pcweb/renewal/bg_tcoupon.png) no-repeat;
+		ol{display:table-cell;width:100%;text-align:center;vertical-align:middle;
+			li span{position:relative;display:block;padding:0 5px;width:210px;height:32px;line-height:32px;color:#fff;font-size:17px;font-weight:bold;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;
+				&:before{content:'· ';}
+			}
+		}
+	}
+	.brandall{float:left;width:806px;height:231px;border-bottom:1px solid #bebebe;background:#e9e9e4;
+		ol{height:230px;
+			&:after{display:block;clear:both;content:'';}
+			li{float:left;width:115px;height:114px;border:1px solid #fff;margin:0 -1px -1px;
+				a{
+					.img_off,&:hover .img_on{display:block;}
+					.img_on,&:hover .img_off{display:none;}
+					img{width:100%;height:114px;}
+				}
+			}
+		}
+		.btn_brd{margin-top:10px;text-align:right;
+			a{color:#3e3e3e;font-size:16px;line-height:16px;font-weight:bold;padding-right:19px;background:url(../../images/pcweb/renewal/brandall_btn.jpg) right center no-repeat;}
+		}
+	}
+	.luckydeal{position:relative;width:1080px;margin:50px auto 0;
+		.more_btn{position:absolute;top:5px;right:0;width:110px;height:30px;line-height:30px;font-size:14px;text-align:center;color:#323232;letter-spacing:-0.1em;border:1px solid #dadada;
+			&:after{display:inline-block;width:9px;height:14px;margin-left:9px;vertical-align:-2px;background:url("../../images/pcweb/common/ico_arrow31.png") no-repeat;content:"";}
+		}
+		ul{margin:18px 0 0;width:1098px;
+			&:after{display:block;clear:both;content:'';}
+			li{float:left;width:256px;height:374px;margin:0 16px 16px 0;border:1px solid #bebebe;background:#fff;
+				&:hover,&:focus{border-color:#000;}
+				.thumb{padding:15px 15px 10px;
+					.img_f{position:relative;display:block;}
+					img{width:228px;height:228px;}
+				}
+				.cont{padding:0 19px 10px;color:#353535;
+					.brand_nm{display:block;overflow:hidden;font-size:18px;line-height:20px;font-weight:bold;white-space:nowrap;text-overflow:ellipsis;}
+					.prod_nm{display:block;margin-top:5px;height:30px;line-height:15px;font-size:14px;font-weight:400;overflow:hidden;}
+				}
+				.box_price{padding:0px 19px 18px;
+					.p_dis{display:block;height:16px;margin-bottom:6px;color:#8e8e8e;font-size:14px;font-weight:400;text-decoration:line-through;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+					.p_tot{display:inline-block;line-height:19px;color:$point_color_price;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+						em{font-size:14px;font-weight:400;}
+					}
+					.p_per{display:inline-block;margin:0 0 0 7px;padding:0 4px;height:19px;line-height:19px;color:#fff;font-size:15px;font-weight:bold;vertical-align:top;font-family:"Verdana","Nanum Gothic",sans-serif;background:$point_color_bg;
+						em{font-size:12px;font-weight:400;}
+					}
+					.p_tot2{display:inline-block;line-height:19px;color:#3e3e3e;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+						em{font-size:14px;font-weight:400;}
+					}
+				}
+				.info{position:relative;
+					.sale_cnt{position:absolute;bottom:19px;right:18px;text-align:center;font-size:12px;color:#8e8e8e;line-height:1.2em;
+						.tx_num{display:block;font-family:"Verdana","Nanum Gothic",sans-serif,'Nanum-Gothic';color:#666;}
+						.cnt_new{display:block;width:36px;height:36px;font-size:0;text-indent:-999em;background:url("../../images/pcweb/renewal/ico_new.png") no-repeat;}
+					}
+				}
+				&.ban01{position:relative;width:258px;height:768px;border:none;
+					a img{position:relative;width:258px;height:768px;}
+				}
+				&.ban02{width:532px;height:376px;border:none;
+					a img{width:532px;height:376px;}
+				}
+				&.ban03{width:256px;height:766px;border:none;
+					a img{width:256px;height:766px;}
+				}
+				&.ban01 a,&.ban02 a,&.ban03 a{position:relative;display:block;}
+				&.ban01:hover a:after{content:'';position:absolute;top:0;left:0;width:256px;height:766px;border:1px solid #000;}
+				&.ban02:hover a:after,&.ban03:hover a:after{content:'';position:absolute;top:0;left:0;width:530px;height:374px;border:1px solid #000;}
+			}
+		}
+		.lucky_case3 ul li.ban01{margin:0 16px 16px 0;}
+	}
+	.box_eyou{margin-top:50px;padding-bottom:34px;background:#f4f5f7;
+		.cont_eyou{position:relative;width:1080px;margin:0 auto;padding-top:50px;
+			.new_title{
+				h3{padding-bottom:17px;}
+				.txt{padding-top:10px;}
+			}
+			.more_btn{position:absolute;top:68px;right:0;width:auto;height:30px;padding:0 10px;line-height:30px;font-size:14px;text-align:center;color:#222222;letter-spacing:-0.1em;border:1px solid #dadada;
+				&:after{display:inline-block;width:9px;height:14px;margin-left:9px;vertical-align:-2px;background:url("../../images/pcweb/common/ico_arrow31.png") no-repeat;content:"";}
+			}
+		}
+		.list_eyou {overflow:hidden;position:relative;margin-top:15px;
+			&.isBnr{
+				li:first-child{margin-left:563px;}
+			}
+			.banner{position:absolute;top:0;left:0;z-index:1;}
+		}
+	}
+	.recomplan{position:relative;
+		.more_btn{position:absolute;top:46px;right:0;width:110px;height:30px;line-height:30px;font-size:14px;text-align:center;color:#323232;letter-spacing:-0.1em;border:1px solid #dadada;
+			&:after{display:inline-block;width:9px;height:14px;margin-left:9px;vertical-align:-2px;background:url("../../images/pcweb/common/ico_arrow31.png") no-repeat;content:"";}
+		}
+		.big_ban{position:relative;width:1080px;height:459px;margin:20px 0 0;
+			ul{position:absolute;top:179px;left:455px;
+				&:after{display:block;clear:both;content:"";}
+				li{float:left;width:155px;text-align:center;
+					+li{margin-left:30px;}
+					a:hover .thumb .img_f img{transform:scale(1.04)}
+					.thumb{width:155px;height:155px;overflow:hidden;
+						.img_f img{width:155px;height:155px;transform:inherit;transition:all 0.3s ease;}}
+					.cont{text-align:left;
+						.brand_nm{display:block;overflow:hidden;margin:13px 0 3px;color:#3e3e3e;font-size:12px;font-weight:bold;white-space:nowrap;text-overflow:ellipsis;}
+						.prod_nm{display:block;margin:3px 0;color:#3e3e3e;font-size:12px;height:28px;line-height:14px;overflow:hidden;}
+					}
+					.box_price{text-align:left;
+						.p_dis{display:block;height:12px;margin-bottom:5px;color:#8e8e8e;font-size:12px;font-weight:400;text-decoration:line-through;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+						.p_tot{display:inline-block;line-height:14px;color:#ff7112;font-size:14px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+							em{font-size:12px;font-weight:400;}
+						}
+						.p_per{display:inline-block;padding:0 4px;height:15px;line-height:15px;color:#fff;font-size:13px;font-weight:bold;vertical-align:top;background:#ff7112;
+							em{font-size:10px;font-weight:400;}
+						}
+						.p_tot2{display:inline-block;line-height:14px;color:#333;font-size:14px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+							em{font-size:12px;font-weight:400;}
+						}
+					}
+				}
+			}
+		}
+		.star_ban{width:1080px;position:relative;margin:0 auto;margin-top:11px;
+			ul{margin-left:-7px;
+				&:after{display:block;clear:both;content:'';}
+				li{float:left;width:355px;margin-left:7px;background-color:#f3f3f3;position:relative;
+					.pr_img{overflow:hidden;width:353px;height:250px;position:relative;border:1px solid #e7e6ec;
+						img{width:353px;height:250px;transform:inherit;transition:all 0.3s ease;}
+					}
+					a{display:block;
+						&:hover .pr_img img{transform:scale(1.04);}
+					}
+					.ed_tit{text-align:center;padding:15px 0 3px;width:100%;height:57px;line-height:22px;border-bottom:1px solid #e7e6ec;background:#fff;
+						em{font-size:17px;font-weight:bold;letter-spacing:-1px;color:#333333;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+						span{font-size:14px;color:#666666;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;letter-spacing:-1px;}
+					}
+					.prd{display:block;position:relative;height:90px;padding:16px 20px 20px 125px;background-color:#fff;
+						dd{position:absolute;left:20px;top:20px;}
+						dt{padding-top:12px;
+							em{display:block;overflow:hidden;font-size:13px;line-height:17px;height:34px;}
+						}
+					}
+					a:hover .prd dt em{text-decoration:underline;}
+					.prd dt span.er{display:block;margin:15px 0 0 0;color:#000;
+						b{font-size:11px;vertical-align:middle;margin:0px 3px 0 0;}
+						strong{font-family:"Verdana","Nanum Gothic",sans-serif;vertical-align:middle;}
+					}
+				}
+			}
+			.br_controll{position:absolute;top:0;left:0;right:0;z-index:2;
+				.btn_prev{display:block;position:absolute;top:106px;left:0px;width:28px;height:56px;
+					span{display:block;overflow:hidden;width:28px;height:56px;background:url(../../images/pcweb/header/header_nbkids.png) no-repeat -412px -93px;text-indent:-99999em;}
+					&.active span{background-position:-412px -149px;}
+				}
+				.btn_next{display:block;position:absolute;top:106px;right:0;width:28px;height:56px;
+					span{display:block;overflow:hidden;width:28px;height:56px;background:url(../../images/pcweb/header/header_nbkids.png) no-repeat -440px -93px;text-indent:-99999em;}
+					&.active span{background-position:-440px -149px;}
+				}
+			}
+			.bt_more{top:-20px;}
+		}
+	}
+	.sshop{margin-top:24px;
+		.sevt .new_title,.smatch .new_title,.always .new_title{padding-bottom:8px;border-bottom:4px solid #bebebe;}
+		.sevt{margin-top:39px;
+			ul{width:1080px;margin:10px auto 0;
+				&:after{display:block;clear:both;content:'';}
+				li{float:left;width:353px;margin-left:10px;
+					&:first-child{margin-left:0;}
+					a img{width:353px;height:180px;}
+				}
+			}
+		}
+		.smatch{margin-top:39px;
+			.div_html{width:1080px;margin:0 auto;padding-top:10px;}
+		}
+		.always{width:1080px;margin:40px auto 0;
+			&:after{display:block;clear:both;content:'';}
+			.box_ban{float:left;margin-top:10px;width:307px;height:374px;border:1px solid #656565;background:#3e3e3e;
+				img{width:307px;height:374px;}
+			}
+			.box_list{width:1080px;margin-top:10px;height:376px;background:#3e3e3e;}
+			ul{margin:18px 0 0;width:1096px;
+				&:after{display:block;clear:both;content:'';}
+				li{float:left;width:256px;height:374px;margin-left:-1px;border:1px solid #656565;
+					.thumb{padding:15px 15px 10px;
+						img{width:228px;height:228px;}
+					}
+					.cont{padding:0 19px 10px;color:#353535;
+						.brand_nm{display:block;font-size:18px;font-weight:bold;color:#fff;}
+						.prod_nm{display:block;margin-top:5px;height:30px;line-height:15px;font-size:14px;font-weight:400;overflow:hidden;color:#fff;}
+					}
+					.box_price{padding:0px 19px 18px;
+						.p_dis{display:block;height:16px;margin-bottom:6px;color:#8e8e8e;font-size:14px;font-weight:400;text-decoration:line-through;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+						.p_tot{display:inline-block;line-height:19px;color:#ff7112;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+							em{font-size:14px;font-weight:400;}
+						}
+						.p_per{display:inline-block;padding:0 4px;height:19px;line-height:19px;color:#fff;font-size:15px;font-weight:bold;vertical-align:top;background:#ff7112;
+							em{font-size:12px;font-weight:400;}
+						}
+						.p_tot2{display:inline-block;line-height:19px;color:#fff;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+							em{font-size:14px;font-weight:400;}
+						}
+					}
+				}
+			}
+		}
+		.store{margin-top:39px;}
+	}
+	.ban_left{position:relative;float:left;width:348px;height:587px;border:1px solid #dfdfdf;
+		.ctgLban,.swiper-container{height:587px;overflow:hidden;}
+		.ctgLban a img{width:348px;height:587px;}
+		.storeLban{position:relative;width:348px;height:587px;overflow:hidden;
+			li{height:587px;
+				a{position:relative;display:block;}
+				img{width:348px;height:587px;}
+			}
+			.storeLban_btns{position:absolute;top:50%;width:348px;z-index:9;
+				button{position:absolute;top:50%;margin-top:-47px;
+					&.d_prev{left:0;width:23px;height:47px;background:rgba(0,0,0,0.7);}
+					&.d_next{right:0;width:23px;height:47px;background:rgba(0,0,0,0.7);}
+				}
+			}
+			.storeLban_pagi{position:absolute;bottom:26px;left:0;width:100%;height:10px;text-align:center;z-index:9;
+				.swiper-pagination-switch{display:inline-block;float:inherit;width:10px;height:9px;padding:0;margin:0;background:url(../../images/pcweb/renewal/storeLban_pagi.png);
+					&.swiper-active-switch{background-position:0 -10px;}
+				}
+			}
+			li .txt{position:absolute;bottom:0;left:0;width:328px;padding:10px 10px 36px;text-align:center;color:#fff;font-size:18px;font-weight:bold;background:rgba(0,0,0,0.4);}
+		}
+		.btn_set{position:absolute;width:348px;z-index:9;
+			button{position:absolute;bottom:278px;width:23px;height:46px;background:url(../../images/pcweb/renewal/btn_md_ctg.png) no-repeat;
+				&.btn-prev{left:0;}
+				&.btn-next{right:-1px;background-position:-23px 0;}
+				&:hover{background-position-y:-46px;}
+			}
+		}
+		.ctgLban_pagi{position:absolute;bottom:26px;left:0;width:100%;height:10px;text-align:center;z-index:9;
+			.swiper-pagination-switch{display:inline-block;float:inherit;width:10px;height:9px;padding:0;margin:0;font-size:0;line-height:1;text-indent:-999em;background:url(../../images/pcweb/renewal/storeLban_pagi.png);
+				&.swiper-active-switch{background-position:0 -10px;}
+			}
+		}
+		.ctgLban{
+		}
+	}
+	.prd_right{float:left;width:729px;height:587px;border:1px solid #dfdfdf;border-left:0;}
+	.ctg_new, .ctg_best{position:relative;
+		.btn_set{position:absolute;bottom:0;width:680px;/*height:100%;*/z-index:8;
+			a{position:absolute;bottom:106px;width:32px;height:154px;z-index:10;
+				span{font-size:0;text-indent:-9999px;width:1px;height:1px;}
+				&.btn-prev{left:-32px;background:url(../../images/pcweb/renewal/nav_bt_prev.png) no-repeat;}
+				&.btn-next{right:-16px;background:url(../../images/pcweb/renewal/nav_bt_next.png) no-repeat;}
+				&:hover{background-position-y:-155px;}
+			}
+		}
+	}
+	.ctg_new{position:relative;padding:0 32px;height:310px;border-bottom:1px solid #dfdfdf;background:#efefef;
+		h4{padding:18px 0 8px;font-size:20px;color:#333;letter-spacing:-1px;}
+		a.btn_add{position:absolute;top:21px;right:31px;z-index:9;width:66px;height:20px;font-size:1px;text-indent:-9999px;background:url(../../images/pcweb/renewal/btn_add.jpg) no-repeat;}
+	}
+	.ctgbn{position:relative;width:670px;
+		.swiper-container{overflow:hidden;width:680px;height:245px;margin-left:-7px;}
+		ul li{width:169px;text-align:center;}
+		.thumb .img_f img{width:153px;height:153px;border:1px solid #bebebe;}
+		.cont{margin:0 7px 0 8px;text-align:left;
+			.brand_nm{display:block;margin:7px 0 3px;color:#3e3e3e;font-size:12px;font-weight:bold;height: 16px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+			.prod_nm{display:block;margin:3px 0;color:#3e3e3e;font-size:12px;height:28px;line-height:14px;overflow:hidden;}
+		}
+		.box_price{margin:0 7px 0 8px;text-align:left;
+			.p_dis{display:block;height:12px;margin-bottom:5px;color:#8e8e8e;font-size:12px;font-weight:400;text-decoration:line-through;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+			.p_tot{display:inline-block;line-height:14px;color:$point_color_price;font-size:14px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+				em{font-size:12px;font-weight:400;}
+			}
+			.p_per{display:inline-block;margin:0 0 0 2px;padding:0 4px;height:15px;line-height:15px;color:#fff;font-size:13px;font-weight:bold;vertical-align:top;background:$point_color_bg;
+				em{font-size:10px;font-weight:400;}
+			}
+			.p_tot2{display:inline-block;margin-top:17px;line-height:14px;color:#333;font-size:14px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+				em{font-size:12px;font-weight:400;}
+			}
+			.p_dis + .p_tot2{margin-top:0;}
+		}
+	}
+	.ctg_best{padding:15px 32px 0;height:261px;background:#fff;}
+	.store{position:relative;
+		.new_title{padding-bottom:9px;border-bottom:4px solid #bebebe;}
+		.store_con{position:relative;width:1080px;margin:0 auto;padding:11px 0 0;height:678px;
+			#ctgcon01,#ctgcon02,#ctgcon03,#ctgcon04,#ctgcon05,#ctgcon06,#ctgcon07,#ctgcon08,#ctgcon09,#ctgcon10,#ctgcon11,#ctgcon12,#ctgcon13,#ctgcon14,#ctgcon15,#ctgcon16,#ctgcon17,#ctgcon18,#ctgcon19,#ctgcon20{position:absolute;top:-136px;width:100%;height:1px;}
+			.sbox{height:619px;}
+		}
+		.store_pagi{text-align:center;
+			span{display:inline-block;width:20px;height:20px;margin:0 3px;padding:0;cursor:pointer;font-size:1px;text-indent:-9999px;background:url(../../images/pcweb/renewal/store_pagi.png) no-repeat;
+				&.on{background-position:0 -20px;}
+			}
+		}
+		.store-btn{position:absolute;top:0;left:0;height:0;width:1080px;
+			.snext{position:absolute;top:0;right:-43px;top:240px;width:43px;height:128px;cursor:pointer;background:url(../../images/pcweb/renewal/new_ctgbtn_next.png) 0 0 no-repeat;}
+			.sprev{position:absolute;top:0;left:-43px;top:240px;width:43px;height:128px;cursor:pointer;background:url(../../images/pcweb/renewal/new_ctgbtn_prev.png) 0 0 no-repeat;}
+			> div:hover{background-position-y:-128px;}
+		}
+	}
+	.today_shop{
+		.new_title .txt{padding-top:19px;color:#fff;}
+	}
+}
+
+.main.renewal{
+
+	// 옴니관
+	.omni{padding:47px 0 0;
+		.new_title .txt{color:#3e3e3e;}
+		.omni_box{position:relative;width:100%;margin:0 auto;
+			.omni_type{width:1080px;margin:0 auto;padding:18px 0 0;
+				.omni_wrap >.swiper-container{width:1080px;height:589px;}
+				>.btn_set{display:none;position:absolute;top:-32px;left:50%;width:1080px;height:32px;margin-left:-540px;z-index:9;
+					.btn-prev{position:absolute;top:0;right:76px;width:32px;height:32px;background:url(../../images/pcweb/renewal/omni_paging.png) 0 0 no-repeat;z-index:9;cursor:pointer;
+						span{display:block;overflow:hidden;text-indent:-999px;}
+					}
+					.btn-next{position:absolute;top:0;right:0;width:32px;height:32px;background:url(../../images/pcweb/renewal/omni_paging.png) -32px 0 no-repeat;z-index:9;cursor:pointer;
+						span{display:block;overflow:hidden;text-indent:-999px;}
+					}
+					.page{position:absolute;top:0;right:32px;width:44px;height:32px;line-height:32px;text-align:center;font-size:13px;color:#333;font-family:verdana;}
+				}
+			}
+		}
+		.omni-pagi{margin-top:29px;height:20px;text-align:center;z-index:9;
+			span{display:inline-block;padding:0;margin:0 4px;width:20px;height:20px;float:inherit;background:url(../../images/pcweb/renewal/store_pagi.png) no-repeat;cursor:pointer;
+				&.swiper-active-switch{background:url(../../images/pcweb/renewal/store_pagi.png) 0 -20px no-repeat;}
+			}
+		}
+	}
+
+
+	// 투데이샵
+	.today_shop{margin:50px 0 0;padding:47px 0 90px;background:#353535;
+		.today_box{position:relative;width:100%;margin:0 auto;
+			.today_type{width:1080px;height:810px;margin:0 auto;padding:20px 0 0;
+				.swiper-container{width:1080px;height:810px;}
+			}
+		}
+		.btn_set{display:none;position:absolute;top:-32px;left:50%;width:1080px;height:32px;margin-left:-540px;z-index:9;
+			.btn-prev{position:absolute;top:0;right:76px;width:32px;height:32px;background:url(../../images/pcweb/renewal/today_paging.png) 0 0 no-repeat;z-index:9;cursor:pointer;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+			.btn-next{position:absolute;top:0;right:0;width:32px;height:32px;background:url(../../images/pcweb/renewal/today_paging.png) -32px 0 no-repeat;z-index:9;cursor:pointer;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+			.page{position:absolute;top:0;right:32px;width:44px;height:32px;line-height:32px;text-align:center;font-size:13px;color:#fff;font-family:verdana;}
+		}
+		.today-pagi{margin-top:29px;height:20px;text-align:center;z-index:9;
+			span{display:inline-block;padding:0;margin:0 4px;width:20px;height:20px;float:inherit;background:url(../../images/pcweb/renewal/store_pagi.png) no-repeat;cursor:pointer;
+				&.swiper-active-switch{background:url(../../images/pcweb/renewal/store_pagi.png) 0 -20px no-repeat;}
+			}
+		}
+	}
+
+	.today_shop{
+		.prod{float:left;width:540px;background:#fff;
+			ul{
+				&:after{display:block;clear:both;content:'';}
+				li{float:left;width:269px;height:404px;border-left:1px solid #353535;border-bottom:1px solid #353535;
+					.thumb{padding:0;
+						img{width:269px;height:269px;}
+					}
+					.cont{padding:10px 20px;color:#353535;
+						.brand_nm{display:block;overflow:hidden;font-size:18px;line-height:20px;font-weight:bold;white-space:nowrap;text-overflow:ellipsis;}
+						.prod_nm{display:block;margin-top:5px;height:30px;line-height:15px;font-size:14px;font-weight:400;overflow:hidden;}
+					}
+					.box_price{padding:0px 19px 18px;
+						.p_dis{display:block;height:16px;margin-bottom:6px;color:#8e8e8e;font-size:14px;font-weight:400;text-decoration:line-through;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+						.p_tot{display:inline-block;line-height:19px;color:$point_color_price;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+							em{font-size:14px;font-weight:400;}
+						}
+						.p_per{display:inline-block;margin:0 0 0 2px;padding:0 4px;height:19px;line-height:19px;color:#fff;font-size:15px;font-weight:bold;vertical-align:top;background:$point_color_bg;
+							em{font-size:12px;font-weight:400;}
+						}
+						.p_tot2{display:inline-block;margin-top:22px;line-height:19px;color:#3e3e3e;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+							em{font-size:14px;font-weight:400;}
+						}
+						.p_dis+.p_tot2{margin-top:0;}
+					}
+				}
+			}
+		}
+		.type01{width:1080px;margin:0 auto;
+			&:after{display:block;clear:both;content:'';}
+			.ban{float:left;width:539px;
+				a img{width:539px;height:809px;}
+			}
+			.prod{width:540px;}
+		}
+		.type02 .prod{width:1080px;}
+		.type03 .ban{float:left;width:1080px;
+			a img{width:1080px;height:809px;}
+		}
+		.type04{width:1080px;margin:0 auto;
+			&:after{display:block;clear:both;content:'';}
+			.ban{float:right;width:539px;
+				a img{width:539px;height:809px;}
+			}
+			.prod{width:540px;}
+		}
+	}
+
+	// Oprice
+	.oprice{margin-top:50px;padding:47px 0 51px;background:#f5611b;
+		.new_title .txt{padding-top:30px;color:#fff;}
+		.oprice_box{position:relative;width:100%;margin:0 auto;
+			.oprice_type{width:1080px;margin:0 auto;padding:15px 0 0;
+				.swiper-container{width:1080px;height:788px;}
+			}
+		}
+		.btn_set{display:none;position:absolute;top:-32px;left:50%;width:1080px;height:32px;margin-left:-540px;z-index:9;
+			.btn-prev{position:absolute;top:0;right:76px;width:32px;height:32px;background:url(../../images/pcweb/renewal/today_paging.png) 0 0 no-repeat;z-index:9;cursor:pointer;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+			.btn-next{position:absolute;top:0;right:0;width:32px;height:32px;background:url(../../images/pcweb/renewal/today_paging.png) -32px 0 no-repeat;z-index:9;cursor:pointer;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+			.page{position:absolute;top:0;right:32px;width:44px;height:32px;line-height:32px;text-align:center;font-size:13px;color:#fff;font-family:verdana;}
+		}
+		.oprice-pagi{margin-top:29px;height:20px;text-align:center;z-index:9;
+			span{display:inline-block;padding:0;margin:0 4px;width:20px;height:20px;float:inherit;background:url(../../images/pcweb/renewal/store_pagi.png) no-repeat;cursor:pointer;
+				&.swiper-active-switch{background:url(../../images/pcweb/renewal/store_pagi.png) 0 -20px no-repeat;}
+			}
+		}
+		.list{height:788px;margin-right:-16px;
+			&:after{display:block;clear:both;content:'';}
+			li{float:left;width:258px;height:376px;margin:0 16px 20px 0;background:#fff;
+				.thumb{padding:15px 15px 10px;
+					img{width:228px;height:228px;}
+				}
+				.cont{padding:0 19px 10px;color:#353535;
+					.brand_nm{display:block;overflow:hidden;font-size:18px;line-height:20px;font-weight:bold;white-space:nowrap;text-overflow:ellipsis;}
+					.prod_nm{display:block;margin-top:5px;height:30px;line-height:15px;font-size:14px;font-weight:400;overflow:hidden;}
+				}
+				.box_price{padding:0px 19px 18px;
+					.p_dis{display:block;height:16px;margin-bottom:6px;color:#8e8e8e;font-size:14px;font-weight:400;text-decoration:line-through;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+					.p_tot{display:inline-block;line-height:19px;color:$point_color_price;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+						em{font-size:14px;font-weight:400;}
+					}
+					.p_per{display:inline-block;margin:0 0 0 7px;padding:0 4px;height:19px;line-height:19px;color:#fff;font-size:15px;font-weight:bold;vertical-align:top;font-family:"Verdana","Nanum Gothic",sans-serif;background:$point_color_bg;
+						em{font-size:12px;font-weight:400;}
+					}
+					.p_tot2{display:inline-block;line-height:19px;color:#3e3e3e;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+						em{font-size:14px;font-weight:400;}
+					}
+				}
+			}
+		}
+	}
+}
+
+// 추천 기획전
+.renewal{
+	.recomplan{width:1080px;margin:0 auto;padding:39px 0 0;
+		.ban{width:1095px;padding:22px 0 0;
+			&:after{display:block;clear:both;content:'';}
+			li{float:left;margin:0 15px 15px 0;
+				iframe{vertical-align:top;}
+			}
+		}
+		.ban_btn{margin-top:16px;height:20px;text-align:center;z-index:9;
+			span{display:inline-block;width:20px;height:20px;padding:0;margin:0 4px;width:20px;height:20px;float:inherit;background:url(../../images/pcweb/renewal/store_pagi.png) no-repeat;cursor:pointer;font-size:1px;text-indent:-9999px;
+				&.on{background:url(../../images/pcweb/renewal/store_pagi.png) 0 -20px no-repeat;}
+			}
+		}
+	}
+	.mdhouse{padding:44px 0 36px;background:#3a4a4f;
+		.new_title .txt{color:#fff;}
+		.md_ban{width:1079px;margin:0 auto;padding:18px 0 0;
+			img{width:1079px;height:404px;}
+		}
+		.md_prod{width:1079px;margin:0 auto;overflow:hidden;
+			.box_list{width:1080px;border-top:1px solid #3a4a4f;
+				&:after{display:block;clear:both;content:'';}
+				li{float:left;width:216px;height:216px;border:1px solid #3a4a4f;margin:-1px;}
+			}
+		}
+		ul li{position:relative;
+			.thumb img{width:215px;height:215px;}
+			.cont{padding:55px 20px 0;color:#fff;
+				.brand_nm{display:block;font-size:18px;font-weight:bold;}
+				.prod_nm{display:block;margin-top:5px;height:30px;line-height:15px;font-size:14px;font-weight:400;overflow:hidden;}
+			}
+			.info{display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:url(../../images/pcweb/renewal/bg_mdhouse.png) repeat;}
+			&:hover .info,&:focus .info{display:block;}
+			.box_price{padding:8px 20px 0;
+				.p_dis{display:block;height:16px;margin-bottom:5px;color:#8e8e8e;font-size:14px;font-weight:400;text-decoration:line-through;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+				.p_tot{display:inline-block;line-height:19px;color:#ff7112;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+					em{font-size:14px;font-weight:400;}
+				}
+				.p_per{display:inline-block;padding:0 4px;height:19px;line-height:19px;color:#fff;font-size:15px;font-weight:bold;vertical-align:top;background:#ff7112;
+					em{font-size:12px;font-weight:400;}
+				}
+				.p_tot2{display:inline-block;line-height:19px;color:#fff;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+					em{font-size:14px;font-weight:400;}
+				}
+			}
+		}
+	}
+	.btn_mdhous{margin-top:40px;text-align:center;
+		a{font-size:18px;color:#68918c;font-weight:bold;letter-spacing:-1px;
+			.ico{padding-right:19px;background:url(../../images/pcweb/renewal/ico_mdhouse.png) right center no-repeat;}
+		}
+	}
+	.kinders{padding:44px 0 36px;background:#033842;
+		.new_title .txt{color:#fff;}
+		.kd_ban{width:1079px;margin:0 auto;padding:18px 0 0;
+			img{width:1079px;height:404px;}
+		}
+		.kd_prod{width:1079px;margin:0 auto;overflow:hidden;
+			.box_list{width:1080px;border-top:1px solid #3a4a4f;
+				&:after{display:block;clear:both;content:'';}
+				li{float:left;width:216px;height:216px;border:1px solid #3a4a4f;margin:-1px;}
+			}
+		}
+		ul li{position:relative;
+			.thumb img{width:215px;height:215px;}
+			.cont{padding:55px 20px 0;color:#fff;
+				.brand_nm{display:block;font-size:18px;font-weight:bold;}
+				.prod_nm{display:block;margin-top:5px;height:30px;line-height:15px;font-size:14px;font-weight:400;overflow:hidden;}
+			}
+			.info{display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:url(../../images/pcweb/renewal/bg_kinders.png) repeat;}
+			&:hover .info,&:focus .info{display:block;}
+			.box_price{padding:8px 20px 0;
+				.p_dis{display:block;height:16px;margin-bottom:5px;color:#8e8e8e;font-size:14px;font-weight:400;text-decoration:line-through;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+				.p_tot{display:inline-block;line-height:19px;color:#ff7112;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+					em{font-size:14px;font-weight:400;}
+				}
+				.p_per{display:inline-block;padding:0 4px;height:19px;line-height:19px;color:#fff;font-size:15px;font-weight:bold;vertical-align:top;background:#ff7112;
+					em{font-size:12px;font-weight:400;}
+				}
+				.p_tot2{display:inline-block;line-height:19px;color:#fff;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+					em{font-size:14px;font-weight:400;}
+				}
+			}
+		}
+	}
+	.btn_kinders{margin-top:40px;text-align:center;
+		a{font-size:18px;color:#68918c;font-weight:bold;letter-spacing:-1px;
+			.ico{padding-right:19px;background:url(../../images/pcweb/renewal/ico_kinders.png) right center no-repeat;}
+		}
+	}
+	.kinder{padding:44px 0 36px;background:#edaa00;
+		.new_title .txt{color:#fff;}
+		.kd_ban{width:1079px;margin:0 auto;padding:18px 0 0;
+			img{width:1079px;height:404px;}
+		}
+		.kd_prod{width:1079px;margin:0 auto;overflow:hidden;
+			.box_list{width:1080px;border-top:1px solid #3a4a4f;
+				&:after{display:block;clear:both;content:'';}
+				li{float:left;width:216px;height:216px;border:1px solid #edaa00;margin:-1px;}
+			}
+		}
+		ul li{position:relative;
+			.thumb img{width:215px;height:215px;}
+			.cont{padding:55px 20px 0;color:#fff;
+				.brand_nm{display:block;font-size:18px;font-weight:bold;}
+				.prod_nm{display:block;margin-top:5px;height:30px;line-height:15px;font-size:14px;font-weight:400;overflow:hidden;}
+			}
+			.info{display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:url(../../images/pcweb/renewal/bg_kinders.png) repeat;}
+			&:hover .info,&:focus .info{display:block;}
+			.box_price{padding:8px 20px 0;
+				.p_dis{display:block;height:16px;margin-bottom:5px;color:#8e8e8e;font-size:14px;font-weight:400;text-decoration:line-through;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+				.p_tot{display:inline-block;line-height:19px;color:#ff7112;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+					em{font-size:14px;font-weight:400;}
+				}
+				.p_per{display:inline-block;padding:0 4px;height:19px;line-height:19px;color:#fff;font-size:15px;font-weight:bold;vertical-align:top;background:#ff7112;
+					em{font-size:12px;font-weight:400;}
+				}
+				.p_tot2{display:inline-block;line-height:19px;color:#fff;font-size:22px;font-weight:bold;letter-spacing:-1px;font-family:"Verdana","Nanum Gothic",sans-serif;
+					em{font-size:14px;font-weight:400;}
+				}
+			}
+		}
+	}
+	.btn_kinder{margin-top:40px;text-align:center;
+		a{font-size:18px;color:#fff;font-weight:bold;letter-spacing:-1px;
+			.ico{padding-right:19px;background:url(../../images/pcweb/renewal/ico_kinder.png) right center no-repeat;}
+		}
+	}
+	.mdrecom{position:relative;padding:40px 0 0;margin:0 auto;
+		.ctg_box{position:relative;z-index:10;
+			&.fixed{position:fixed;top:0;left:0;width:100%;padding-top:41px;}
+		}
+		.ctg_box_dim{display:none;height:0;width:100%;padding-top:145px;}
+		.ctg_tab{position:relative;width:1170px;margin:15px auto 0;
+			.swiper-container{position:relative;width:1080px;height:128px;border-left:1px solid #ccc;overflow:hidden;}
+			ul{position:absolute;top:0;left:0;width:9999px;
+				&:after{display:block;clear:both;content:'';}
+				li{position:relative;float:left;width:107px;height:126px;border:1px solid #afafaf;border-left:0;text-align:center;cursor:pointer;background:#fff;
+					a{display:block;height:126px;}
+					img{padding-top:12px;width:62px;height:62px;}
+					span{display:block;margin:6px 12px;height:32px;line-height:16px;color:#3f3f41;font-size:14px;overflow:hidden;font-weight:bold;}
+					&.on span:after{content:'';position:absolute;bottom:0;left:0;width:100%;height:7px;background:$point_color_bg;}
+				}
+			}
+		}
+		.ctg_btn{position:relative;width:1080px;margin:15px auto 0;z-index:10;
+			a{position:absolute;top:0;width:30px;height:110px;transition:left 0.3s,right 0.3s;-o-transition:left 0.3s,right 0.3s;-ms-transition:left 0.3s,right 0.3s;-moz-transition:left 0.3s,right 0.3s;-webkit-transition:left 0.3s,right 0.3s;}
+			.prev{left:-105px;width:45px;height:128px;background:url(../../images/pcweb/renewal/new_ctgbtn_prev.png) 0 0 no-repeat;}
+			.next{right:-105px;width:45px;height:128px;background:url(../../images/pcweb/renewal/new_ctgbtn_next.png) 0 0 no-repeat;}
+			a.active{background-position:0 -128px;}
+		}
+		.ctg_con{position:relative;width:1080px;margin:0 auto;padding:15px 0 0;height:589px;
+			#ctgcon1,#ctgcon2,#ctgcon3,#ctgcon4,#ctgcon5,#ctgcon6,#ctgcon7,#ctgcon8,#ctgcon9,#ctgcon10,#ctgcon11,#ctgcon12,#ctgcon13,#ctgcon14,#ctgcon15,#ctgcon16,#ctgcon17,#ctgcon18,#ctgcon19,#ctgcon20{position:absolute;top:-183px;width:100%;height:1px;}
+		}
+	}
+}
+
+// 비정형 배너
+.ban_fixed{position:fixed;bottom:0;left:50%;margin-left:-540px;z-index:100;
+	.btn_close{position:absolute;top:0;right:0;width:30px;height:30px;background:#333;}
+}
+
+ // 2017.08.16 리뉴얼 메인 레이아웃 수정
+.renewal{
+	.p_tot em,.p_tot2 em{vertical-align:2px;}
+	.ctgbn{
+		.p_tot em,.p_tot2 em{vertical-align:1px;}
+	}
+}
+
+
+// main promotion banner
+.billboard_section{position:relative;width:1080px;height:426px;margin:0 auto;
+	&:after{display:block;content:'';clear:both;}
+}
+
+.box_promotion_bnr02{height:496px;padding-right:40px;overflow:hidden;
+	.bp_btns{position:absolute;top:0;left:0;width:0;height:0;z-index:2;
+		a{
+			&.bp_bt_stop,&.bp_bt_auto{display:none;position:absolute;left:1038px;top:385px;width:40px;height:39px;border:1px solid #ddd;text-indent:-9999px;}
+			&.bp_bt_stop{background:#fff url('../../images/pcweb/common/ico_bill_stop.png') center center no-repeat;}
+			&.bp_bt_auto{background:#fff url('../../images/pcweb/common/ico_bill_auto.png') center center no-repeat;}
+			&.bp_bt_stop.on,&.bp_bt_auto.on{position:relative;display:block;z-index:2;}
+			&.bp_bt_prev,&.bp_bt_next{position:absolute;top:152px;width:40px;height:80px;text-indent:-9999px;}
+			&.bp_bt_prev{left:180px;background:url('../../images/pcweb/goods/bg_dt_ve_btn01.png') 0 0 no-repeat;
+				&:hover{background-position:-40px 0;}
+			}
+			&.bp_bt_next{left:1040px;background:url('../../images/pcweb/goods/bg_dt_ve_btn01.png') 0 -80px no-repeat;
+				&:hover{background-position:-40px -80px;}
+			}
+		}
+	}
+	.depth_tit{margin-top:-49px;display:block;position:relative;padding:0 6px;background:url('../../images/pcweb/main/bg_main_bp_tab.png') right 0 repeat-x;z-index:2;text-align:center;
+		span{display:block;overflow:hidden;font-size:14px;height:41px;color:#333;line-height:41px;white-space:nowrap;text-overflow:ellipsis;}
+	}
+	.depth1.active .depth_tit:before{position:absolute;left:50%;top:-10px;margin-left:-8px;width:16px;height:7px;background:url('../../images/pcweb/main/bg_depth_tail01.png') center center no-repeat;content:"";}
+	.bp_cont{padding-top:434px;}
+	.bp_list{*zoom:1;
+		&.menu02 .depth1{width:430px;}
+		&.menu03 .depth1{width:286px;
+			&:first-child{width:288px;}
+		}
+		&.menu04 .depth1{width:215px;}
+		&.menu05 .depth1{width:172px;}
+		&.menu06 .depth1{width:143px;
+			&:first-child{width:145px;width:145px;}
+		}
+		&.menu07 .depth1{width:123px;
+			&:first-child{width:121px;}
+		}
+		.depth1.depth1_last .depth_tit{background-position:left 0;}
+		&:after{display:block;clear:both;content:"";}
+	}
+	.depth2{display:none;margin-top:-70px;width:100%;text-align:center;
+		ol{text-align:center;font-size:0;line-height:0;}
+		li{display:inline-block;
+			a.links{position:relative;display:inline-block;width:12px;height:20px;background:url('../../images/pcweb/main/ico_bn_indi_off.png') 0 0 no-repeat;text-indent:-9999px;z-index:1;}
+		}
+	}
+}
+
+// main promotion banner contents
+.safari .box_promotion_bnr02 .depth2 li a.links{margin:0 -2px;}
+.box_promotion_bnr02{
+	.depth2 li{
+		&.on a.links{background:url('../../images/pcweb/main/ico_bn_indi_on.png') 0 0 no-repeat;}
+		&:first-child a.links:before{position:absolute;left:-10px;top:0;display:block;width:10px;height:20px;background:url('../../images/pcweb/main/bg_depth_tail02.png') center center no-repeat;content:"";z-index:1;}
+		&.depth2_last a.links:after{position:absolute;right:-10px;top:0;display:block;width:10px;height:20px;background:url('../../images/pcweb/main/bg_depth_tail03.png') center center no-repeat;content:"";z-index:1;}
+	}
+	.bp_scont{display:none;position:absolute;left:0;top:0;z-index:0;
+		&.type03 > div{float:left;
+			img{display:block;border-top:1px solid #ddd;}
+			a:first-child img{border-top:none;}
+			img{display:block;}
+		}
+		&.type02 img{float:left;}
+	}
+	.bp_list{
+		.lis.on .bp_scont{display:block;}
+		.depth1{float:left;height:40px;
+			&.active{
+				.depth_tit{background-image:url('../../images/pcweb/main/bg_main_bp_tab_on.png');
+					span{font-weight:800;color:#fff;}
+				}
+				.depth2{display:block;}
+			}
+			&.no_depth{
+				.links{visibility:hidden;}
+			}
+		}
+	}
+}
+
+//서브 배너
+.sub_bnr_v2{width:1080px;margin:20px auto 0;
+	ul{margin:-10px 0 0 -10px;
+		&:after{display:block;clear:both;content:""}
+		li{float:left;width:auto;height:auto;margin:10px 0 0 10px;overflow:hidden;
+			img{display:block;}
+			.set_vdo{position:relative;
+				// &:before{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:auto;background:none;content:"";}
+				&:hover , &.hover{
+					.btn_vdo_detail{opacity:1;filter:alpha(opacity = 100);border:1px}
+				}
+				.btn_vdo_play{position:absolute;top:50%;left:50%;width:80px;height:80px;margin:-40px 0 0 -40px;background:url("../../images/pcweb/renewal/main_vcom.png") no-repeat 0 0;}
+				.btn_vdo_pause{display:none;position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:auto;background:none;}
+				.btn_vdo_detail{position:absolute;bottom:15px;right:15px;width:112px;height:32px;line-height:32px;text-align:center;color:#fff;letter-spacing:-0.05em;background:#333;opacity:0;filter:alpha(opacity = 0);transition:opacity 0.5s ease-in-out;
+					&:after{display:inline-block;width:9px;height:14px;margin:0 0 0 7px;vertical-align:middle;background:url("../../images/pcweb/renewal/main_vcom.png") no-repeat 100% 0;content:"";}
+				}
+			}
+		}
+	}
+}
+
+// 브랜드 + 카테고리 배너 슬라이드
+.brd_cate_rolling{position:relative;width:1080px;margin:49px auto 0;
+	.d_rolling_brd{width:1008px;height:172px;margin:0 auto;overflow:hidden;
+		.swiper-wrapper{width:1000%;height:172px;
+			.swiper-slide{float:left;
+			}
+		}
+		.list_brd{/* padding:0 47px; */
+			li{float:left;width:144px;height:172px;
+				// +li{margin-left:22px;}
+				a{position:relative;display:block;width:120px;height:172px;margin:0 auto;
+					img{width:120px;height:120px;border-radius:60px;}
+					&:hover{
+						.img_off{display:none;}
+						.img_on{display:inline;}
+					}
+					.img_on{display:none;}
+					.list_name{position:absolute;left:50%;top:136px;width:120px;margin-left:-60px;text-align:center;color:#2f2f2f;font-size:16px;letter-spacing:-0.05em;line-height:18px;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+				}
+			}
+		}
+	}
+	.btn-prev,.btn-next{display:block;position:absolute;top:50%;width:34px;height:33px;margin-top:-31px;background:none;z-index:2;
+		&:before{position:absolute;top:0;left:0;width:17px;height:100%;background:url("../../images/pcweb/common/bg_paging.png") no-repeat 0 0;z-index:0;opacity:0.3;filter:alpha(opacity = 30);content:"";z-index:0;transition:opacity 0.2s ease-in-out;}
+		&:after{position:absolute;top:0;right:0;width:17px;height:100%;background:url("../../images/pcweb/common/bg_paging.png") no-repeat right top;z-index:0;opacity:0.3;filter:alpha(opacity = 30);content:"";z-index:0;transition:opacity 0.2s ease-in-out;}
+		&:hover{background:none;
+			&:before,&:after{opacity:0.8;filter:alpha(opacity = 80);}
+		}
+		.page{position:relative;display:none;height:33px;line-height:32px;color:#fffffe;z-index:1;}
+		.ico{position:absolute;top:8px;left:10px;width:11px;height:17px;text-indent:-999em;z-index:1;}
+	}
+	.btn-prev{left:0;
+		&:hover{width:17px;
+			&:before{width:100%;}
+			&:after{right:-17px;}
+			.page{display:block;margin-left:30px;}
+		}
+		.ico{background:url("../../images/pcweb/common/ico_arrow21.png") no-repeat;z-index:1;}
+	}
+	.btn-next{right:0;
+		&:hover{width:auto;right:17px;padding-left:17px;
+			&:before{width:100%;}
+			&:after{right:-17px;}
+			.page{display:block;margin-right:13px;}
+			.ico{right:-7px;}
+		}
+		.ico{left:auto;right:10px;background:url("../../images/pcweb/common/ico_arrow22.png") no-repeat;}
+	}
+}
+
+//확대배너
+.btm_fixed_adds{position:fixed;left:50%;bottom:0;margin-left:555px;opacity:1;filter:alpha(opacity = 100);z-index:100;
+	.open_bn img{width:66px;height:144px;}
+	&.zoom{
+		.big_zoom{position:absolute;right:0;bottom:0;width:66px;height:144px;transition-property:bottom,right,width,height;transition-duration: 0.4s,0.4s,0.6s,0.6s;transition-timing-function:ease-in-out;z-index:-10;
+			&.on{right:81px;bottom:0;width:550px;height:350px;
+				button.close{opacity:1;filter:alpha(opacity = 100);z-index:20;}
+			}
+			img{display:block;width:100%;height:100%;}
+			button.close{position:absolute;top:12px;right:12px;width:48px;height:48px;background:url('../../images/pcweb/renewal/close_zoom.png') no-repeat;opacity:0;filter:alpha(opacity = 0);transition:opacity 1s ease-in-out;z-index:-20;}
+		}
+	}
+}

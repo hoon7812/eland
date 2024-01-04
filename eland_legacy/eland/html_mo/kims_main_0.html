@@ -1,0 +1,1566 @@
+
+
+		<!-- SWIPER 0 -->
+		<div class="slide_cont" data-index="0">
+			<!-- TOP_BN -->
+			<div class="main_bn_wrap" id="main_bn_wrap">
+				<div class="main_bn swiper-container" id="main_bn">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/kims_bn_main_01.jpg" alt="킴스클럽한우데이. 오늘 저녁은 한우채끝 스테이크 어때요?" /></a></li>
+						<li class="swiper-slide"><a href="#"><img src="../images/mobile/temp/kims_bn_main_02.jpg" alt="킴스클럽한우데이. 오늘 저녁은 한우채끝 스테이크 어때요?" /></a></li>
+					</ul>
+				</div>
+				<a href="#" class="swiper-bn-left"><b class="ir">이전 배너 보기</b></a>
+				<a href="#" class="swiper-bn-right"><b class="ir">다음 배너 보기</b></a>
+				<div class="pg_num"><b>0</b>/<em>0</em></div>
+				<a href="#" class="bt_opa_lyr" onclick="OpacityLyrOpen('layer_main_bn');return false;" onkeypress="this.onclick;"><b class="ir">배너 전체 보기</b></a>
+			</div>
+			<script type="text/javascript">
+			$(document).ready(function() {
+				var myTop_bn = new Swiper('#main_bn',{
+					createPagination: false,
+					simulateTouch: true,
+					calculateHeight: true,
+					loop: true,
+					autoplay: 3000,
+					onSlideChangeEnd : function() {
+						loop_active_index();
+					}
+				});
+				 var slide_num = $('#main_bn_wrap').find('.swiper-slide').length;
+				 $('#main_bn_wrap').find('.pg_num em').text(slide_num - 2);
+				 loop_active_index();
+				function loop_active_index() {
+					$('#main_bn_wrap').find('.pg_num b').text(myTop_bn.activeLoopIndex+1);
+				}
+				$('#main_bn_wrap').find('.swiper-bn-left').on('click', function(e){
+					e.preventDefault();myTop_bn.swipePrev();
+				})
+				$('#main_bn_wrap').find('.swiper-bn-right').on('click', function(e){
+					e.preventDefault();myTop_bn.swipeNext();
+				});
+					
+				$(window).resize(function(){	
+					myTop_bn.reInit();
+				});
+			});
+			</script>
+			<!--// TOP_BN -->
+
+			<!-- EVENT ALL LAYER -->
+			<div id="layer_main_bn" class="layer_opacity">
+				<h3 class="pop_tit">이벤트 전체</h3>
+				<div class="pop_con">
+					<div class="main_bn_lyr">
+						<ul>
+							<li><a href="#"><img src="../images/mobile/temp/kims_bn_main_01.jpg" alt="킴스클럽한우데이. 오늘 저녁은 한우채끝 스테이크 어때요?" /></a></li>
+							<li><a href="#"><img src="../images/mobile/temp/kims_bn_main_02.jpg" alt="킴스클럽한우데이. 오늘 저녁은 한우채끝 스테이크 어때요?" /></a></li>
+						</ul>
+					</div>
+				</div>
+				<a href="#" class="btn_close" onclick="OpacityLyrCls('layer_main_bn');return false;" onkeypress="this.onclick;"><span class="ir">팝업 닫기</span></a>
+			</div>
+			<!-- //EVENT ALL LAYER -->
+
+			<!-- MAIN PLAN 150504 메인 템플릿 서브배너 삭제
+			<section class="main_rec_plan kims"><!-- kims 브랜드명 클래스 추가 
+				<h3 class="ir"><b>서브 프로모션 배너</b></h3>
+				<div class="rec_plan_bn">
+					<ul>
+						<li><a href="#"><img src="../images/mobile/temp/kims_main_640x260_01.jpg" alt="당도와 산도가 조화를 이룬 맛 제주 골드키위 17,900원" /></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/kims_main_640x260_02.jpg" alt="동해바다 해풍으로 말린 마른오징어 19,900원" /></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/kims_main_640x260_03.jpg" alt="유기농으로 건강하게 자란 유기농 현미 5kg 17,900원" /></a></li>
+						<li><a href="#"><img src="../images/mobile/temp/kims_main_640x260_04.jpg" alt="살이 꽉 찬 홍개의 계절 갓 잡은 홍개 1kg 29,900원" /></a></li>
+					</ul>
+				</div>
+			</section>
+			<!-- //MAIN PLAN -->
+
+			<!-- BRAND MAIN BANNER/HTML BANNER 170510 -->
+			<div class="brd_mainban">
+				<!-- 이미지 배너 등록 시 (최대15개 노출) -->
+				<ul>
+					<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_01.jpg" alt="BEDROOM. VIEW ALL" /></a></li>
+					<li>
+						<!-- HTML 등록 시 -->
+						<div class="bnr_html">
+							HTML 배너등록 영역입니다.<br>
+							<div style="text-align:center">
+								<iframe width="100%" src="https://www.youtube.com/embed/dISNgvVpWlo" frameborder="0" allowfullscreen=""></iframe>
+							</div>
+						</div>
+					</li>
+					<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_02.jpg" alt="LIVING ROOM. VIEW ALL" /></a></li>
+					<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_03.jpg" alt="DINNING ROOM. VIEW ALL" /></a></li>
+					<li><a href="#"><img src="../images/mobile/temp/bahus_main_640x240_04.jpg" alt="WORKSPACE. VIEW ALL" /></a></li>
+				</ul>
+			</div>
+			<!-- //BRAND MAIN BANNER/HTML BANNER 170510 -->
+
+			<!-- KIMS DEAL -->
+			<div class="main_lucky_deal">
+				<div class="title">
+					<h3>킴스딜</h3>
+					<span class="txt">단,7일간! 한정수량 인기상품을 초특가에 선보입니다.</span>
+				</div>
+				<!-- 전시순서 1~3위: 모바일 럭키딜 이미지 규격 -->
+				<div class="lucky_deal_new">
+					<ul>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/kims_deal_main_1.jpg" alt="[오늘만특가] 다향 훈제 오리 500g"></span>
+										<span class="dis_percent"><strong>5</strong>%</span>
+										<span class="cnt new">NEW</span>
+									</span>
+									<span class="g_brd">[오늘만특가] 다향 훈제 오리 500g</span>
+									<span class="g_tit"></span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+										<span class="g_prc">
+											<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<!-- flag -->
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+									<!-- //flag -->
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/kims_deal_main_2.jpg" alt="[오늘만특가] 다향 훈제 오리 500g"></span>
+										<span class="dis_percent"><strong>5</strong>%</span>
+										<span class="cnt"><em class="ir">판매수량</em>9,552개 판매</span>
+									</span>
+									<span class="g_brd">[오늘만특가] 다향 훈제 오리 500g</span>
+									<span class="g_tit"></span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+										<span class="g_prc">
+											<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>	
+									<!-- flag -->
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+									<!-- //flag -->
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/kims_deal_main_3.jpg" alt="[오늘만특가] 다향 훈제 오리 500g"></span>
+										<span class="dis_percent"><strong>5</strong>%</span>
+										<span class="cnt"><em class="ir">판매수량</em>9,552개 판매</span>
+									</span>
+									<span class="g_brd">[오늘만특가] 다향 훈제 오리 500g</span>
+									<span class="g_tit"></span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+										<span class="g_prc">
+											<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>	
+									<!-- flag -->
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+									<!-- //flag -->
+								</a>
+							</div>
+						</li> 
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/kims_deal_main_1.jpg" alt="[오늘만특가] 다향 훈제 오리 500g"></span>
+										<span class="dis_percent"><strong>5</strong>%</span>
+										<span class="cnt"><em class="ir">판매수량</em>9,552개 판매</span>
+									</span>
+									<span class="g_brd">[오늘만특가] 다향 훈제 오리 500g</span>
+									<span class="g_tit"></span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+										<span class="g_prc">
+											<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>	
+									<!-- flag -->
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+									<!-- //flag -->
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/kims_deal_main_2.jpg" alt="[오늘만특가] 다향 훈제 오리 500g"></span>
+										<span class="dis_percent"><strong>5</strong>%</span>
+										<span class="cnt"><em class="ir">판매수량</em>9,552개 판매</span>
+									</span>
+									<span class="g_brd">[오늘만특가] 다향 훈제 오리 500g</span>
+									<span class="g_tit"></span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+										<span class="g_prc">
+											<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>	
+									<!-- flag -->
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+									<!-- //flag -->
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/kims_deal_main_3.jpg" alt="[오늘만특가] 다향 훈제 오리 500g"></span>
+										<span class="dis_percent"><strong>5</strong>%</span>
+										<span class="cnt"><em class="ir">판매수량</em>9,552개 판매</span>
+									</span>
+									<span class="g_brd">[오늘만특가] 다향 훈제 오리 500g</span>
+									<span class="g_tit"></span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+										<span class="g_prc">
+											<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>	
+									<!-- flag -->
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+									<!-- //flag -->
+								</a>
+							</div>
+						</li> 
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/kims_deal_main_1.jpg" alt="[오늘만특가] 다향 훈제 오리 500g"></span>
+										<span class="dis_percent"><strong>5</strong>%</span>
+										<span class="cnt"><em class="ir">판매수량</em>9,552개 판매</span>
+									</span>
+									<span class="g_brd">[오늘만특가] 다향 훈제 오리 500g</span>
+									<span class="g_tit"></span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+										<span class="g_prc">
+											<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>	
+									<!-- flag -->
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+									<!-- //flag -->
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/kims_deal_main_2.jpg" alt="[오늘만특가] 다향 훈제 오리 500g"></span>
+										<span class="dis_percent"><strong>5</strong>%</span>
+										<span class="cnt"><em class="ir">판매수량</em>9,552개 판매</span>
+									</span>
+									<span class="g_brd">[오늘만특가] 다향 훈제 오리 500g</span>
+									<span class="g_tit"></span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+										<span class="g_prc">
+											<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<!-- flag -->
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+									<!-- //flag -->
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/kims_deal_main_3.jpg" alt="[오늘만특가] 다향 훈제 오리 500g"></span>
+										<span class="dis_percent"><strong>5</strong>%</span>
+										<span class="cnt"><em class="ir">판매수량</em>9,552개 판매</span>
+									</span>
+									<span class="g_brd">[오늘만특가] 다향 훈제 오리 500g</span>
+									<span class="g_tit"></span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>25</b>%</span>
+										<span class="g_prc">
+											<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>	
+									<!-- flag -->
+									<span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+										<span class="bnf9">온라인단독</span>
+										<span class="bnf10">품절</span>
+									</span>
+									<!-- //flag -->
+								</a>
+							</div>
+						</li> 
+					</ul>
+				</div>
+
+				<!-- 전시순서 4~9위: 기본 썸네일 이미지 규격 삭제 170322 -->
+				<!-- <div class="main_kims_wrap">
+					<div class="main_kims_bn">
+						<ul class="goods_list">
+							<li>
+								<div class="g_wrap">
+									<a href="#" class="g_link">
+										<span class="g_img">
+											<span class="img"><img src="../images/mobile/temp/kims_288x288_01.jpg" alt="풀무원 생가득단호박 영양밥 500g"></span>
+											<span class="dis_percent"><strong>5</strong>%</span>
+										</span>
+										<span class="g_brd">킴스클럽</span>
+										<span class="g_tit">풀무원 생가득단호박 영양밥 500g</span>
+										<span class="g_nor"> 
+											<span class="g_prc">
+												<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+												<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+											</span>
+										</span>	
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="g_wrap">
+									<a href="#" class="g_link">
+										<span class="g_img">
+											<span class="img"><img src="../images/mobile/temp/kims_288x288_02.jpg" alt="[타임특가] 아침이 든든한 영양바"></span>
+											<span class="dis_percent"><strong>55</strong>%</span>
+										</span>
+										<span class="g_brd">킴스클럽</span>
+										<span class="g_tit">[타임특가] 아침이 든든한 영양바</span>
+										<span class="g_nor"> 
+											<span class="g_prc">
+												<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>
+												<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+											</span>
+										</span>	
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="g_wrap">
+									<a href="#" class="g_link">
+										<span class="g_img">
+											<span class="img"><img src="../images/mobile/temp/kims_288x288_03.jpg" alt="[전단특가]아보카도 20과"></span>
+											<span class="dis_percent"><strong>5</strong>%</span>
+										</span>
+										<span class="g_brd">킴스클럽</span>
+										<span class="g_tit">[전단특가]아보카도 20과</span>
+										<span class="g_nor"> 
+											<span class="g_prc">
+												<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+												<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+											</span>
+										</span>	
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="g_wrap">
+									<a href="#" class="g_link">
+										<span class="g_img">
+											<span class="img"><img src="../images/mobile/temp/kims_288x288_04.jpg" alt="오늘은 한우 먹는 날! 안심한우"></span>
+											<span class="dis_percent"><strong>55</strong>%</span>
+										</span>
+										<span class="g_brd">킴스클럽</span>
+										<span class="g_tit">오늘은 한우 먹는 날! 안심한우</span>
+										<span class="g_land"> 
+											<span class="g_per">이랜드가</span> 
+											<span class="g_prc">
+												<span class="sale"><b>36,500</b>원</span>
+											</span>
+										</span>	
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="g_wrap">
+									<a href="#" class="g_link">
+										<span class="g_img">
+											<span class="img"><img src="../images/mobile/temp/kims_288x288_05.jpg" alt="산지직송! 제주 천혜양 선물세트"></span>
+											<span class="dis_percent"><strong>5</strong>%</span>
+										</span>
+										<span class="g_brd">킴스클럽</span>
+										<span class="g_tit">산지직송! 제주 천혜양 선물세트</span>
+										<span class="g_nor"> 
+											<span class="g_prc">
+												<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+												<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+											</span>
+										</span>	
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="g_wrap">
+									<a href="#" class="g_link">
+										<span class="g_img">
+											<span class="img"><img src="../images/mobile/temp/kims_288x288_06.jpg" alt="[전단특가] 스팸 클래식 3+1"></span>
+											<span class="dis_percent"><strong>5</strong>%</span>
+										</span>
+										<span class="g_brd">킴스클럽</span>
+										<span class="g_tit">[전단특가] 스팸 클래식 3+1</span>
+										<span class="g_nor"> 
+											<span class="g_prc">
+												<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>
+												<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+											</span>
+										</span>	
+									</a>
+								</div>
+							</li>
+						</ul>	
+					</div>
+				</div> -->
+			</div>
+			<!-- //KIMS DEAL -->
+
+			<!-- EVENT BANNER -->
+			<div class="main_evt_bn">
+				<a href="#" style="background-color:#878384"><img src="../images/mobile/temp/kims_main_640x100.jpg" alt="킴스에만 있는 통사과쥬스 100mlx10EA 일주일 특가 9900원"></a>
+			</div>
+			<!-- //EVENT BANNER -->
+
+
+			<!-- 산지직송 -->
+			<div class="direct_farm" style="background:#27231d url(../images/mobile/main/direct_farm_bg.png) top center no-repeat;background-size:100%;"><!-- BO에서 이미지 등록시 background 이미지 수정됩니다 -->
+				<h3 class="ir">산지직송</h3>
+
+				<div class="swiper-container" id="shop_farm01">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<!-- type01 -->
+							<div class="type01">
+								<a href="#">
+									<span class="g_img"><img src="../images/mobile/temp/kims_farm_02.jpg" alt=""></span>
+								</a>
+								<!-- 상품리스트 -->
+								<div class="main_kims_wrap">
+									<div class="main_kims_bn">
+										<ul class="goods_list">
+											<li>
+												<div class="g_wrap">
+													<a href="#" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/kims_288x288_03.jpg" alt="[전단특가]아보카도 20과"></span>
+															<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+														</span>
+														<span class="g_brd">킴스클럽</span>
+														<span class="g_tit">[전단특가]아보카도 20과</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="#" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/kims_288x288_04.jpg" alt="오늘은 한우 먹는 날! 안심한우"></span>
+															<!-- <span class="dis_percent"><strong>55</strong>%</span> -->
+														</span>
+														<span class="g_brd">킴스클럽</span>
+														<span class="g_tit">오늘은 한우 먹는 날! 안심한우</span>
+														<span class="g_land"> 
+															<span class="g_per">이랜드가</span> 
+															<span class="g_prc">
+																<span class="sale"><b>36,500</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- //type01 -->
+						</li>
+						<li class="swiper-slide">
+							<!-- type02 -->
+							<div class="type02">
+								<!-- 상품리스트 -->
+								<div class="main_kims_wrap">
+									<div class="main_kims_bn">
+										<ul class="goods_list">
+											<li>
+												<div class="g_wrap">
+													<a href="#" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/kims_288x288_01.jpg" alt="풀무원 생가득단호박 영양밥 500g"></span>
+															<span class="dis_percent"><strong>5</strong>%</span>
+														</span>
+														<span class="g_brd">킴스클럽</span>
+														<span class="g_tit">풀무원 생가득단호박 영양밥 500g</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="#" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/kims_288x288_02.jpg" alt="[타임특가] 아침이 든든한 영양바"></span>
+															<span class="dis_percent"><strong>55</strong>%</span>
+														</span>
+														<span class="g_brd">킴스클럽</span>
+														<span class="g_tit">[타임특가] 아침이 든든한 영양바</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="#" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/kims_288x288_03.jpg" alt="[전단특가]아보카도 20과"></span>
+															<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+														</span>
+														<span class="g_brd">킴스클럽</span>
+														<span class="g_tit">[전단특가]아보카도 20과</span>
+														<span class="g_nor"> 
+															<span class="g_prc">
+																<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+																<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="g_wrap">
+													<a href="#" class="g_link">
+														<span class="g_img">
+															<span class="img"><img src="../images/mobile/temp/kims_288x288_04.jpg" alt="오늘은 한우 먹는 날! 안심한우"></span>
+															<!-- <span class="dis_percent"><strong>55</strong>%</span> -->
+														</span>
+														<span class="g_brd">킴스클럽</span>
+														<span class="g_tit">오늘은 한우 먹는 날! 안심한우</span>
+														<span class="g_land"> 
+															<span class="g_per">이랜드가</span> 
+															<span class="g_prc">
+																<span class="sale"><b>36,500</b>원</span>
+															</span>
+														</span>	
+													</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- 상품리스트 -->
+							</div>
+							<!-- //type02 -->
+						</li>
+						<li class="swiper-slide">
+							<!-- type03 -->
+							<div class="type03">
+								<a href="#">
+									<span class="g_img"><img src="../images/mobile/temp/kims_farm_01.jpg" alt=""></span>
+								</a>
+							</div>
+							<!-- //type03 -->
+						</li>
+					</ul>
+					<a href="#" class="swiper-bn-left"><b>이전 상품리스트 보기</b></a>
+					<a href="#" class="swiper-bn-right"><b>다음 상품리스트 보기</b></a>
+					<div class="pagination">
+						<a href="#" class="swiper-pagination-switch"><b class="ir">1번 상품리스트 보기</b></a>
+						<a href="#" class="swiper-pagination-switch"><b class="ir">2번 상품리스트 보기</b></a>
+						<a href="#" class="swiper-pagination-switch"><b class="ir">3번 상품리스트 보기</b></a>
+					</div>
+					<script type="text/javascript">
+					$(document).ready(function() {
+						var mWid = $(window).width();
+						if(mWid >= 620){
+							var myShopGoods = new Swiper('#shop_farm01',{
+								slidesPerView: 2,
+								centeredSlides: true,
+								spaceBetween: 30,
+								createPagination: false,
+								calculateHeight: true,
+								loop: true,
+								pagination: '#shop_farm01 .pagination',
+								paginationClickable: true,
+								autoplay: 3000
+							});
+							$('#shop_farm01').find('.swiper-bn-left').on('click', function(e){
+								e.preventDefault();myShopGoods.swipePrev();
+							})
+							$('#shop_farm01').find('.swiper-bn-right').on('click', function(e){
+								e.preventDefault();myShopGoods.swipeNext();
+							});
+								
+							$(window).resize(function(){
+								myShopGoods.reInit();
+							});
+						}else{
+							var myShopGoods = new Swiper('#shop_farm01',{
+								centeredSlides: true,
+								spaceBetween: 30,
+								createPagination: false,
+								calculateHeight: true,
+								loop: true,
+								pagination: '#shop_farm01 .pagination',
+								paginationClickable: true
+							});
+							$('#shop_farm01').find('.swiper-bn-left').on('click', function(e){
+								e.preventDefault();myShopGoods.swipePrev();
+							})
+							$('#shop_farm01').find('.swiper-bn-right').on('click', function(e){
+								e.preventDefault();myShopGoods.swipeNext();
+							});
+								
+							$(window).resize(function(){
+								myShopGoods.reInit();
+							});
+						}
+					});
+					</script>
+				</div>
+
+				<a href="#" class="more"><span>산지직송 전체보기</span></a>
+			</div>
+			<!-- //산지직송 -->
+
+			<!-- 빠른 장보기 -->
+			<div class="q_market">
+				<div class="title">
+					<h3>빠른 장보기</h3>
+					<span class="txt">자주 사는 인기 카테고리, 한 눈에 확인하세요.</span>
+				</div>
+				<div class="q_list">
+					<ul>
+						<!-- no img -->
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/new_menu_no.png" alt="no img">
+								<span>청과청과청과청과청과청과청과청과청과</span>
+							</a>
+						</li>
+						<!-- //no img -->
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_01.jpg" alt="청과">
+								<span>청과청과청과청과청과청과청과청과청과</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_02.jpg" alt="채소">
+								<span>채소</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_03.jpg" alt="쌀/잡곡">
+								<span>쌀/잡곡</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_04.jpg" alt="수산">
+								<span>수산</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_05.jpg" alt="건식/견과">
+								<span>건식/견과</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_06.jpg" alt="정육">
+								<span>정육</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_07.jpg" alt="생수/음료">
+								<span>생수/음료</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_08.jpg" alt="커피/차">
+								<span>커피/차</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_09.jpg" alt="과자/간식">
+								<span>과자/간식</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_10.jpg" alt="면/통조림/즉석식품">
+								<span>면/통조림/즉석식품</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_11.jpg" alt="조미료/장류">
+								<span>조미료/장류</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_12.jpg" alt="유제품/아이스크림">
+								<span>유제품/아이스크림</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //빠른 장보기 -->
+
+			<!-- 기획전 -->
+			<div class="plan_bn_list">
+				<div class="title">
+					<h3>기획전</h3>
+					<span class="txt">지금 꼭 필요한 상품만 특가로 제안합니다.</span>
+				</div>
+				<ul>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/kims_288x288_07.jpg" alt="생활용품 실속세일전 생활용품 실속세일전"></span>
+							<span class="g_tit">
+								<span class="tit">생활용품 실속세일전 생활용품 실속세일전</span> 
+								<span class="txt">아비노, 리스테린, 존슨즈베이비로션, 아비노, 리스테린, 존슨즈베이비로션, 아비노, 리스테린, 존슨즈베이비로션,</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/kims_288x288_08.jpg" alt="금주의 전단 특가"></span>
+							<span class="g_tit">
+								<span class="tit">금주의 전단 특가</span> 
+								<span class="txt">킴스클럽에서 만나보세요!</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/kims_288x288_09.jpg" alt="알들한 장보기 균일가"></span>
+							<span class="g_tit">
+								<span class="tit">알들한 장보기 균일가</span> 
+								<span class="txt">마음껏 골라 담으세요~</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="g_img"><img src="../images/mobile/temp/kims_288x288_10.jpg" alt="온가족 삼겹살 파티"></span>
+							<span class="g_tit">
+								<span class="tit">온가족 삼겹살 파티</span> 
+								<span class="txt">맛도 영양도 만점!</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="more"><span>기획전 전체보기</span></a>
+			</div>
+			<!-- //기획전  -->
+
+			<!-- EVENT BANNER -->
+			<div class="main_evt_bn">
+				<a href="#" style="background-color:#f1f1f1"><img src="../images/mobile/temp/kims_main_640x100_02.jpg" alt="킴스클럽에서 만나는 신선한 야채"></a>
+			</div>
+			<!-- //EVENT BANNER -->
+
+			<!-- BEST -->
+			<div class="main_best_wrap">
+				<div class="title">
+					<h3>베스트</h3>
+					<span class="txt">한 주간의 베스트셀러 상품을 소개합니다.</span>
+				</div>
+				<div class="md_re_bn swiper-container" id="md_re_bn">
+					<ul class="swiper-wrapper">
+						<!-- 170711 전체보기 추가 -->
+						<li class="swiper-slide">
+							<a href="#">
+								<span class="all">전체보기</span>
+							</a>
+						</li>
+						<!-- //170711 전체보기 추가 -->
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/new_menu_no.png" alt="no img">
+								<span>의류의류</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_01.jpg" alt="의류">
+								<span>의류</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_02.jpg" alt="잡화/뷰티">
+								<span>잡화/뷰티</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_03.jpg" alt="가구/인테리어">
+								<span>가구/인테리어</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_04.jpg" alt="출산/유아동">
+								<span>출산/유아동</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_05.jpg" alt="가전/디지털">
+								<span>가전/디지털</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_06.jpg" alt="주방/생활수납">
+								<span>주방/생활수납</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_07.jpg" alt="팻용품/팬시">
+								<span>팻용품/팬시</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_08.jpg" alt="레저/스포츠">
+								<span>레저/스포츠</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_09.jpg" alt="해외/명품">
+								<span>해외/명품</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<img src="../images/mobile/temp/kims_catg_10.jpg" alt="숙박/외식티켓">
+								<span>숙박/외식티켓</span>
+							</a>
+						</li>
+					</ul>
+					<script type="text/javascript">
+						$(document).ready(function() {
+							var md_ReBn = new Swiper('#md_re_bn',{
+								loop: false,
+								freeMode: true,
+								slidesPerView: 5.5,
+								calculateHeight: true,
+								createPagination : false,
+								simulateTouch : true,
+								momentumRatio:0.3
+							});
+							$(window).resize(function(){
+								md_ReBn.reInit();
+							})
+							mdTabOn();
+						});
+						function mdTabOn(){
+
+							var mdTab = $('.md_re_bn > ul > li');
+							mdTab.on('click',function(e){
+								e.preventDefault();
+								var mdId = $(this).index();
+								console.log($(this).index());
+								mdTab.removeClass('on');
+								$(this).addClass('on');
+								$(".ax_cnt > li").hide();
+								$(".ax_cnt > li").eq(mdId).show();
+							});
+
+							mdTab.each(function(){
+								$(this).removeClass("on");
+								$('.ax_cnt > li').hide();
+							});
+							//베스트 상품 랜덤으로 보여줌
+							var min = 0;
+							var max = 5;
+							var randomLi = Math.floor(Math.random() * (max - min)) + min;
+							mdTab.eq(randomLi).addClass("on");
+							$('.ax_cnt > li').eq(randomLi).show();
+						}
+					</script>
+				</div>
+				<ul id="ax_wrap" class="ax_cnt">
+					<li>
+						<!-- MD ROCOMMAND 0 -->
+						<div class="main_kims_wrap">
+							<div class="main_kims_bn">
+								<ul class="goods_list">
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_01.jpg" alt="풀무원 생가득단호박 영양밥 500g"></span>
+													<span class="dis_percent"><strong>5</strong>%</span>
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">풀무원 생가득단호박 영양밥 500g</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_02.jpg" alt="[타임특가] 아침이 든든한 영양바"></span>
+													<span class="dis_percent"><strong>55</strong>%</span>
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[타임특가] 아침이 든든한 영양바</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_03.jpg" alt="[전단특가]아보카도 20과"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[전단특가]아보카도 20과</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_04.jpg" alt="오늘은 한우 먹는 날! 안심한우"></span>
+													<!-- <span class="dis_percent"><strong>55</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">오늘은 한우 먹는 날! 안심한우</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>36,500</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_01.jpg" alt="풀무원 생가득단호박 영양밥 500g"></span>
+													<span class="dis_percent"><strong>5</strong>%</span>
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">풀무원 생가득단호박 영양밥 500g</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_02.jpg" alt="[타임특가] 아침이 든든한 영양바"></span>
+													<span class="dis_percent"><strong>55</strong>%</span>
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[타임특가] 아침이 든든한 영양바</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_03.jpg" alt="[전단특가]아보카도 20과"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[전단특가]아보카도 20과</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_04.jpg" alt="오늘은 한우 먹는 날! 안심한우"></span>
+													<!-- <span class="dis_percent"><strong>55</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">오늘은 한우 먹는 날! 안심한우</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>36,500</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- MD ROCOMMAND 0 -->
+					</li>
+					<li>
+						<!-- MD ROCOMMAND 1 -->
+						<div class="main_kims_wrap">
+							<div class="main_kims_bn">
+								<ul class="goods_list">
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_11.jpg" alt="풀무원 생가득단호박 영양밥 500g"></span>
+													<span class="dis_percent"><strong>5</strong>%</span>
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">풀무원 생가득단호박 영양밥 500g</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_12.jpg" alt="[타임특가] 아침이 든든한 영양바"></span>
+													<span class="dis_percent"><strong>55</strong>%</span>
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[타임특가] 아침이 든든한 영양바</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_13.jpg" alt="[전단특가]아보카도 20과"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[전단특가]아보카도 20과</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_14.jpg" alt="오늘은 한우 먹는 날! 안심한우"></span>
+													<!-- <span class="dis_percent"><strong>55</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">오늘은 한우 먹는 날! 안심한우</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>36,500</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_11.jpg" alt="풀무원 생가득단호박 영양밥 500g"></span>
+													<span class="dis_percent"><strong>5</strong>%</span>
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">풀무원 생가득단호박 영양밥 500g</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_12.jpg" alt="[타임특가] 아침이 든든한 영양바"></span>
+													<span class="dis_percent"><strong>55</strong>%</span>
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[타임특가] 아침이 든든한 영양바</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_13.jpg" alt="[전단특가]아보카도 20과"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[전단특가]아보카도 20과</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_14.jpg" alt="오늘은 한우 먹는 날! 안심한우"></span>
+													<!-- <span class="dis_percent"><strong>55</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">오늘은 한우 먹는 날! 안심한우</span>
+												<span class="g_land"> 
+													<span class="g_per">이랜드가</span> 
+													<span class="g_prc">
+														<span class="sale"><b>36,500</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- MD ROCOMMAND 1 -->
+					</li>
+					<li>
+						<!-- MD ROCOMMAND 2 -->
+						<div class="main_kims_wrap">
+							<div class="main_kims_bn">
+								<ul class="goods_list">
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_15.jpg" alt="산지직송! 제주 천혜양 선물세트"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">산지직송! 제주 천혜양 선물세트</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_16.jpg" alt="[전단특가] 스팸 클래식 3+1"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[전단특가] 스팸 클래식 3+1</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_17.jpg" alt="산지직송! 제주 천혜양 선물세트"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span> 
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">산지직송! 제주 천혜양 선물세트</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_18.jpg" alt="[전단특가] 스팸 클래식 3+1"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[전단특가] 스팸 클래식 3+1</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_15.jpg" alt="산지직송! 제주 천혜양 선물세트"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">산지직송! 제주 천혜양 선물세트</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_16.jpg" alt="[전단특가] 스팸 클래식 3+1"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[전단특가] 스팸 클래식 3+1</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_17.jpg" alt="산지직송! 제주 천혜양 선물세트"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span> 
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">산지직송! 제주 천혜양 선물세트</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span> 
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="g_wrap">
+											<a href="#" class="g_link">
+												<span class="g_img">
+													<span class="img"><img src="../images/mobile/temp/kims_288x288_18.jpg" alt="[전단특가] 스팸 클래식 3+1"></span>
+													<!-- <span class="dis_percent"><strong>5</strong>%</span> -->
+												</span>
+												<span class="g_brd">킴스클럽</span>
+												<span class="g_tit">[전단특가] 스팸 클래식 3+1</span>
+												<span class="g_nor"> 
+													<span class="g_prc">
+														<span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>
+														<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+													</span>
+												</span>	
+											</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- MD ROCOMMAND 2 -->
+					</li>
+					<li>04</li>
+					<li>05</li>
+					<li>06</li>
+					<li>07</li>
+				</ul>
+				<a href="#" class="more"><span>베스트 전체보기</span></a>
+			</div>
+			<!-- //BEST -->
+
+			<!-- BOARD -->
+			<section class="kims_board">
+				<ul>
+					<li><a href="#"><img src="../images/mobile/main/kims_board01.png" alt="자주 묻는 질문"></a></li>
+					<li><a href="#"><img src="../images/mobile/main/kims_board02.png" alt="매장 안내"></a></li>
+					<li><a href="#"><img src="../images/mobile/main/kims_board03.png" alt="킴스클럽 소개"></a></li>
+				</ul>
+			</section>
+			<!-- //BOARD -->
+
+		</div>
+		<!-- //SWIPER 0 -->

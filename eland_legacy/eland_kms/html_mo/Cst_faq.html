@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//질문유형 탭
+	$(function(){
+		$(".faq_menu .tab li").click(function(){
+			tId = $(this).index();
+
+			$(this).parent().find("a").removeClass("on");
+			$(this).find("a").addClass("on");
+		});
+	});
+	//자주하는 질문 탭
+	$(function(){
+		$(".faq_list dt").click(function(e){
+			e.preventDefault();
+			if($(this).next().css("display") == "block"){
+				$(".faq_list dd").slideUp(200);
+			} else {
+				$(".faq_list dd").slideUp(200);
+				$(this).next().slideDown(200);
+			}
+		});
+		$(".faq_list dd .a_btn").click(function(e){
+			e.preventDefault();
+			$(this).parent().parent().parent().find("dd").slideUp(200);
+		});
+	});
+</script>
+
+
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>자주하는 질문</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+	</div>	
+	<div class="cst_con">
+		<div class="sch_code">
+			<div class="codebox">
+				<input type="text" title="자주하는 질문 검색" class="w100" placeholder="궁금하신 사항을 입력해 주세요.">
+				<a href="#" class="btn_sch">검색</a>
+			</div>
+		</div>
+
+		<div class="faq_menu">
+			<ul class="tab">
+				<li><a href="#" class="on"><span>회원정보</span></a></li> <!-- 선택시 .on 클래스 추가 -->
+				<li><a href="#"><span>상품상담</span></a></li>
+				<li><a href="#"><span>주문/결제/배송</span></a></li>
+				<li><a href="#"><span>취소/교환/반품</span></a></li>
+				<li><a href="#"><span>포인트/쿠폰/예치금</span></a></li>
+				<li><a href="#"><span>증명서류발급</span></a></li>
+				<li><a href="#"><span>모바일</span></a></li>
+				<li><a href="#"><span>서비스/기타</span></a></li>
+			</ul>
+		</div>
+
+		<div class="cst_faq best">
+			<div class="faq_tit">
+				<h3>자주하는 질문 BEST</h3>
+			</div>
+			<div class="faq_list">
+				<dl>
+					<dt>
+						<span class="ir">질문1</span>
+						<a href="#" class="faq_q">배송기간은 얼마나 걸리나요?</a>
+					</dt>
+					<dd>
+						<span class="ir">답변1</span>
+						<div class="faq_a">
+							<div class="txt">상품별로 배송 기간은 차이가 있으며 평균적으로 결제일을 포함하여 약 1~2일정도 소요됩니다. <br>
+							(주말/공휴일제외) 모든 상품은 상품 상세페이지에 배송기간이 표시되어 있고, 배송이 늦어질 경우 고객님께 SMS로 고예정일을 안내해 드리고 있으니 참고하시기 바랍니다.</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span class="ir">질문2</span>
+						<a href="#" class="faq_q">FAQ 답변 HTML 테스트입니다. </a>
+					</dt>
+					<dd>
+						<span class="ir">답변2</span>
+						<div class="faq_a">
+							<div class="txt">
+								<!-- 160803 html소스 -->
+								<div>
+								<p style="color:#f36f35;font-size:14px;">FAQ 답변 입니다.</p><br />
+								FAQ 답변 입니다.<br /><br />
+								FAQ 답변 입니다.<br /><br />
+								<a href="#">링크 case1 현재창으로 링크연결</a><br />
+								<a href="#" target="_blank">링크 case2 새창으로 링크연결</a><br /><br />
+								<img src="../images/pcweb/temp/_sample_faq01.jpg" alt="faq" />
+
+								<p style="margin-top:20px;"><strong>테이블 입니다.</strong></p>
+								<table class="tbl_address" style="width:100%">
+									<colgroup>
+										<col style="width:30%;">
+										<col style="">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>주소</th>
+											<th>우편번호</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>111</td>
+											<td>111</td>
+										</tr>
+										<tr>
+											<td>111</td>
+											<td>111</td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- 160803 html소스 -->
+							</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span class="ir">질문3</span>
+						<a href="#" class="faq_q">이랜드몰 적립금 사용은 어떻게 하나요?</a>
+					</dt>
+					<dd>
+						<span class="ir">답변3</span>
+						<div class="faq_a">
+							<div class="txt">상품별로 배송 기간은 차이가 있으며 평균적으로 결제일을 포함하여 약 1~2일정도 소요됩니다. <br>
+							(주말/공휴일제외) 모든 상품은 상품 상세페이지에 배송기간이 표시되어 있고, 배송이 늦어질 경우 고객님께 SMS로 고예정일을 안내해 드리고 있으니 참고하시기 바랍니다.</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span class="ir">질문4</span>
+						<a href="#" class="faq_q">장바구니에 보관하는 상품은 얼마나 저장되나요?</a>
+					</dt>
+					<dd>
+						<span class="ir">답변4</span>
+						<div class="faq_a">
+							<div class="txt">상품별로 배송 기간은 차이가 있으며 평균적으로 결제일을 포함하여 약 1~2일정도 소요됩니다. <br>
+							(주말/공휴일제외) 모든 상품은 상품 상세페이지에 배송기간이 표시되어 있고, 배송이 늦어질 경우 고객님께 SMS로 고예정일을 안내해 드리고 있으니 참고하시기 바랍니다.</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span class="ir">질문5</span>
+						<a href="#" class="faq_q">현금영수증 신청은 어떻게 하나요?</a>
+					</dt>
+					<dd>
+						<span class="ir">답변</span>
+						<div class="faq_a">
+							<div class="txt">상품별로 배송 기간은 차이가 있으며 평균적으로 결제일을 포함하여 약 1~2일정도 소요됩니다. <br>
+							(주말/공휴일제외) 모든 상품은 상품 상세페이지에 배송기간이 표시되어 있고, 배송이 늦어질 경우 고객님께 SMS로 고예정일을 안내해 드리고 있으니 참고하시기 바랍니다.</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span class="ir">질문5</span>
+						<a href="#" class="faq_q">현금영수증 신청은 어떻게 하나요?</a>
+					</dt>
+					<dd>
+						<span class="ir">답변</span>
+						<div class="faq_a">
+							<div class="txt">상품별로 배송 기간은 차이가 있으며 평균적으로 결제일을 포함하여 약 1~2일정도 소요됩니다. <br>
+							(주말/공휴일제외) 모든 상품은 상품 상세페이지에 배송기간이 표시되어 있고, 배송이 늦어질 경우 고객님께 SMS로 고예정일을 안내해 드리고 있으니 참고하시기 바랍니다.</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span class="ir">질문5</span>
+						<a href="#" class="faq_q">현금영수증 신청은 어떻게 하나요?</a>
+					</dt>
+					<dd>
+						<span class="ir">답변</span>
+						<div class="faq_a">
+							<div class="txt">상품별로 배송 기간은 차이가 있으며 평균적으로 결제일을 포함하여 약 1~2일정도 소요됩니다. <br>
+							(주말/공휴일제외) 모든 상품은 상품 상세페이지에 배송기간이 표시되어 있고, 배송이 늦어질 경우 고객님께 SMS로 고예정일을 안내해 드리고 있으니 참고하시기 바랍니다.</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span class="ir">질문5</span>
+						<a href="#" class="faq_q">현금영수증 신청은 어떻게 하나요?</a>
+					</dt>
+					<dd>
+						<span class="ir">답변</span>
+						<div class="faq_a">
+							<div class="txt">상품별로 배송 기간은 차이가 있으며 평균적으로 결제일을 포함하여 약 1~2일정도 소요됩니다. <br>
+							(주말/공휴일제외) 모든 상품은 상품 상세페이지에 배송기간이 표시되어 있고, 배송이 늦어질 경우 고객님께 SMS로 고예정일을 안내해 드리고 있으니 참고하시기 바랍니다.</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span class="ir">질문5</span>
+						<a href="#" class="faq_q">현금영수증 신청은 어떻게 하나요?</a>
+					</dt>
+					<dd>
+						<span class="ir">답변</span>
+						<div class="faq_a">
+							<div class="txt">상품별로 배송 기간은 차이가 있으며 평균적으로 결제일을 포함하여 약 1~2일정도 소요됩니다. <br>
+							(주말/공휴일제외) 모든 상품은 상품 상세페이지에 배송기간이 표시되어 있고, 배송이 늦어질 경우 고객님께 SMS로 고예정일을 안내해 드리고 있으니 참고하시기 바랍니다.</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span class="ir">질문5</span>
+						<a href="#" class="faq_q">현금영수증 신청은 어떻게 하나요?</a>
+					</dt>
+					<dd>
+						<span class="ir">답변</span>
+						<div class="faq_a">
+							<div class="txt">상품별로 배송 기간은 차이가 있으며 평균적으로 결제일을 포함하여 약 1~2일정도 소요됩니다. <br>
+							(주말/공휴일제외) 모든 상품은 상품 상세페이지에 배송기간이 표시되어 있고, 배송이 늦어질 경우 고객님께 SMS로 고예정일을 안내해 드리고 있으니 참고하시기 바랍니다.</div>
+							<div class="a_btn">
+								<a href="#" class="btn_close">닫기</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+
+	</div>
+	<!-- //cst_con -->
+
+</div>
+<!-- //CONTENT -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

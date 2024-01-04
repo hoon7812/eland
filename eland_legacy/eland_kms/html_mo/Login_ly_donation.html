@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+</head>
+<body>
+
+<div class="pop_con dona">
+	<div class="pop_txt">
+		<div class="ly_box">
+			<div class="img_cont">
+				<img src="../images/mobile/cs/donation.png" width="276" height="170"  alt="" />
+				<div class="ir">
+					<h6>쓰다 남은 잔여포인트 소멸 대신 기부하세요~</h6>
+					<p>
+						임직원 여러분의 작은 실천 하나로 연말 잔여포인트가 안타깝게 사라지는 대신 따뜻한 나눔으로 쓰일 수 있습니다. <strong>미리 복지재단 기부에 동의해주세요.</strong> 2018년 말, 사용하시고 남은 포인트가 있을 경우, 이웃에게 따뜻한 사랑으로 전해집니다.
+					</p>
+				</div>
+			</div>
+			<div class="agr_box">
+				<strong class="title"><img src="../images/mobile/cs/title_dona.png" width="215" height="15"  alt="연말 잔여 포인트 복지재단 기부 동의" /></strong>
+				<div class="choose">
+					<span class="radio"><input type="radio" id="arg" name="dona_arg" /><label for="arg">동의</label></span>
+					<span class="radio"><input type="radio" id="dis" name="dona_arg" /><label for="dis">미동의</label></span>
+				</div>
+			</div>
+			<hr class="dline" />
+			<div class="receipt">
+				<strong class="title">동의하신 분은 기부금 영수증 신청에 동의 해 주세요!</strong>
+				<div class="prv_info">
+					<span class="prv_title">개인정보 제 3자 정보 제공 동의<br />(이랜드 인사시스템 연동)</span>
+					<div class="choose">
+						<span class="radio"><input type="radio" id="p_arg" name="prv_arg" /><label for="p_arg">동의</label></span>
+						<span class="radio"><input type="radio" id="p_dis" name="prv_arg" /><label for="p_dis">미동의</label></span>
+					</div>
+				</div>
+				<dl>
+					<dt>*제3자 동의 세부사항</dt>
+					<dd>제공받는 자 : 사회복지법인 이랜드복지재단/이랜드 재단</dd>
+					<dd>제공하는 항목 : 자택주소, 연락처, 주민등록번호, 사내메일</dd>
+					<dd>이용 목적 : 기부금 영수증 발행 관련 업무처리</dd>
+					<dd>보유 및 이용기간 : 관련 업무 종료 시까지<br /> (단, 세법 등 관련법령에 따른 보존 의무가 있는 경우에는 그에 따름)</dd>
+				</dl>
+			</div>
+			<button class="cnfm" type="button"><img src="../images/mobile/cs/btn_cnfm.png" width="20" height="12" alt="확인" /></button>
+			<!-- 2018.01.02 확인 버튼 하단으로 이동 및 스크립트 추가 -->
+			<script>
+				$(".agr_box .radio").change(function(){
+					 $("#arg").attr('checked')=='checked' ? $(".receipt").show()  : $(".receipt").hide();
+				});
+			</script>
+		</div>
+	</div>
+</div>
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>

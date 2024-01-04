@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="KIM’S CLUB">
+<meta property="og:type" content="website">
+<base href="../../" />
+<title>KIM’S CLUB :: GLOBAL FRESH MARKET | 상품 Q&A</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean&family=Roboto:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/kms_mobile/common.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/kms_mobile/mys.css" type="text/css">
+
+<link rel="shortcut icon" href="images/mobile/kms_mobile/icon/ico_kms.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/mobile/kms_mobile/icon/icon_60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/mobile/kms_mobile/icon/icon_76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/mobile/kms_mobile/icon/icon_120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/mobile/kms_mobile/icon/icon_152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/mobile/kms_mobile/icon/icon_180.png">
+<link rel="apple-touch-icon-precomposed" href="images/mobile/kms_mobile/icon/icon_192.png">
+<link rel="apple-touch-icon-precomposed" href="images/mobile/kms_mobile/icon/icon_160.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="images/mobile/kms_mobile/icon/icon_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="images/mobile/kms_mobile/icon/icon_160.png">
+
+<script rel="preload" type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/kms.plugin.mobile.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/kms.ui.mobile.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/kms.ui.mobile.old.js"></script>
+
+<script type="text/javascript">
+//조회기간 선택
+	$(function(){
+		$(".sch_order li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+//탭 관련	
+	function Set_tab(objId,objContId) {
+		this.init(objId,objContId);
+	}
+	Set_tab.prototype.init = function(objId,objContId) {
+		this.$set_tab_controller = $('#'+objId).find('li[class!="not_tab_item"]');
+		this.$set_tab_controller_btn = this.$set_tab_controller.find('a');
+		this.$set_tab_content = $('#'+objContId).find(' > div');
+		this.contEvtBlock = (objContId==undefined || this.$set_tab_content.html()==undefined || objContId=='') ? false : true;//탭컨텐츠 none/block 막기
+		this.$set_tab_content.hide();
+		this.$set_tab_content.eq(0).show();
+		this.initEvtL();
+	}
+	Set_tab.prototype.initEvtL = function() {
+		var objThis = this;
+		this.$set_tab_controller_btn.on('click',function() {
+			var idx = objThis.$set_tab_controller.index($(this).parents('li'));
+			objThis.all_close();
+			objThis.select_open(idx);
+			return false;
+		});
+	}
+	Set_tab.prototype.all_close = function() {
+		this.$set_tab_controller.removeClass('on');
+		if(this.contEvtBlock) {
+			this.$set_tab_content.hide();
+		}
+	}
+	
+	Set_tab.prototype.select_open = function(idx) {
+		this.$set_tab_controller.eq(idx).addClass('on');
+		if(this.contEvtBlock) {
+			this.$set_tab_content.eq(idx).show();
+		}
+	}
+	
+// 1:1친절상담 내역
+$(function(){
+	$('.box_csel .csel_list').find('a').on("click", function(){
+		if($(this).parent().hasClass('on') == false){
+			$('.qna_list').find('>ul>li').removeClass('on');
+			$(this).parent().addClass('on');
+		}else{
+			$(this).parent().removeClass('on');
+		}
+		return false;
+	});
+	
+	$('.box_csel .btn_cls').on('click',function() {
+		$(this).parents('li').removeClass('on');
+		return false;
+	});
+});
+
+//나의 상품 Q&A
+$(function(){
+	$('.my_qna .qna_list02').find('a').on("click", function(){
+		if($(this).parent().hasClass('on') == false){
+			$('.qna_list').find('>ul>li').removeClass('on');
+			$(this).parent().addClass('on');
+		}else{
+			$(this).parent().removeClass('on');
+		}
+		return false;
+	});
+	
+	$('.my_qna .btn_cls').on('click',function() {
+		$(this).parents('li').removeClass('on');
+		return false;
+	});
+});
+</script>
+
+</head>
+
+<body>
+<!-- .wrapper -->
+<div class="wrapper">
+	<div class="accessibility"><a href="#skip_cont">본문 바로가기</a></div><!-- accessibility -->
+
+	<!-- .container -->
+	<div class="container">
+
+		<!-- HEADER -->
+		<div class="header_kms" role="banner">
+			<div class="head">
+				<h1>상품 Q&A</h1>
+				<span class="btH left">
+					<button type="button" class="prv" aria-label="이전페이지로 이동"></button>
+				</span>
+				<span class="btH right">
+					<button type="button" class="sch" aria-label="검색레이어 열기"></button>
+					<button type="button" class="crt" aria-label="장바구니로 이동"></button>
+				</span>
+			</div>
+		</div>
+		<!--// HEADER -->
+
+		<!-- CONTENT -->
+		<div class="contents" role="main">
+			<a id="skip_cont"></a><!-- accessibility -->
+
+			<div class="my_con">
+
+				<div class="sch_order">
+					<ul>
+						<li><a href="javascript:;" class="on">1주일</a></li>
+						<li><a href="javascript:;">1개월</a></li>
+						<li><a href="javascript:;">3개월</a></li>
+						<li><a href="javascript:;">6개월</a></li>
+						<li><a href="javascript:;" class="set">기간설정</a></li>
+					</ul>
+					<div class="sch_period">
+						<div class="inp_box">
+							<input type="date" value="2021.4.22" id="date_start" placeholder="예시)20160101">
+							<span class="dash">~</span>
+							<input type="date" value="2021.4.22" id="date_end" placeholder="예시)20160101">
+						</div>
+						<div class="btn">
+							<a href="#">조회</a>
+						</div>
+						<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+					</div>
+				</div>
+
+				<div class="cont_qa">
+					<div class="my_qna">
+						<ul class="qna_list02">
+							<li>
+								<a href="#">
+									<div class="q_ico on">답변완료</div>
+									<div class="q_usr">
+										<span class="date">2015.10.10</span>
+									</div>
+									<dl class="q_qst">
+										<dt class="ir">질문</dt>
+										<dd>
+											<div class="tit">[사이즈] 네이비 220 재입고 언제 되나요??</div>
+											<div class="txt">
+												네이비가 품절이네요.<br/>
+												네이비 220 재입고 언제 되는지 알려주세요. 
+											</div>
+											<div class="basket_prd">
+												<div class="basket_txt">
+													<div class="pic">
+														<img src="images/mobile/kms_mobile/temp/img_160x160_0.jpg" alt="상품 이미지">
+													</div>
+													<div class="no_link">
+														<span class="prodtit">킴스클럽</span>
+														<span class="prodname">[산지직송] 꿀 고구마 3KG (특,상) 달수고구마 베니하루카</span>
+														<span class="prodprice">77,200<span class="won">원</span></span>
+														<span class="prodopt">화이트 / 1개</span>
+													</div>
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<dl class="q_asw">
+										<dt class="ir">답변</dt>
+										<dd>
+											<div class="txt">
+												[상품담당자] 안녕하세요. 상품 담당자입니다.<br/>
+												우선 관심을 가져주셔서 감사 드리며, 고객님께서 문의하신 사항에 대해 답변드리겠습니다.<br/>
+												네, 고객님 죄송하게도 재입고 예정은 없습니다.
+											</div>
+											<!-- 160322 추가 -->
+											<div class="asw_date">
+												<span>2015.10.10 15:20</span>
+											</div>
+											<!-- //160322 추가 -->
+										</dd>
+									</dl>
+								</a>
+								<div class="q_btn">                              
+									<button type="button">삭제</button>
+									<button class="btn_cls" type="button">닫기</button>
+								</div>
+							</li>
+							<li>
+								<a href="#">
+									<div class="q_ico">답변대기</div>
+									<div class="q_usr">
+										<span class="date">2015.10.10</span>
+									</div>
+									<dl class="q_qst">
+										<dt class="ir">질문</dt>
+										<dd>
+											<div class="tit">[사이즈] 네이비 220 재입고 언제 되나요??</div>
+											<div class="txt">
+												네이비가 품절이네요.<br/>
+												네이비 220 재입고 언제 되는지 알려주세요. 
+											</div>
+											<div class="basket_prd">
+												<div class="basket_txt">
+													<div class="pic">
+														<img src="images/mobile/kms_mobile/temp/img_200x200_2.jpg" alt="상품 이미지">
+													</div>
+													<div class="no_link">
+														<span class="prodtit">킴스클럽</span>
+														<span class="prodname">[산지직송] 꿀 고구마 3KG (특,상) 달수고구마 베니하루카</span>
+														<span class="prodprice">77,200<span class="won">원</span></span>
+														<span class="prodopt">화이트 / 1개</span>
+													</div>
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<dl class="q_asw">
+										<dt class="ir">답변</dt>
+										<dd>
+											<div class="txt">
+												[상품담당자] 안녕하세요. 고객님.<br />
+												답변을 준비중에 있습니다.<br /> 
+												빠른 시일내 답변 드리도록 하겠습니다.
+											</div>
+											<!-- 160322 추가 -->
+											<div class="asw_date">
+												<span>2015.10.10 15:20</span>
+											</div>
+											<!-- //160322 추가 -->
+										</dd>
+									</dl>
+								</a>
+								<div class="q_btn">
+									<button class="btn_edt" type="button">수정</button>                                
+									<button type="button">삭제</button>
+									<button class="btn_cls" type="button">닫기</button>
+								</div>
+							</li>
+							<!-- MORE BUTTON -->
+							<li class="goods_list_more">
+								<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+							</li>
+							<!-- /MORE BUTTON -->
+						</ul>
+					</div>
+					
+					
+					<!-- no data -->
+					<div class="my_nolist"> 
+						<div class="txt">최근 1개월 내<br>문의 내역이 <strong>없습니다.</strong></div>
+					</div>
+					<!-- //no data -->
+				</div>
+
+			</div>
+
+		</div>
+		<!--// CONTENT -->
+
+		<!-- FOOTER -->
+		<script src="kms_html_mo/common/incFooter.js"></script>
+		<!-- UTILL_BAR -->
+		<div class="utilBar" role="navigation" aria-label="킴스클럽하단네비게이션">
+			<ul>
+				<li><a href="#"><em class="ct">카테고리</em></a></li>
+				<li><a href="#"><em class="ws">주문조회<b aria-label="조회 상품있음"></b></em></a></li>
+				<li><a href="#"><em class="hm">홈</em></a></li>
+				<li><a href="#"><em class="my" aria-current="page">마이페이지</em></a></li>
+				<li><a href="#"><em class="rc">최근본상품</em></a></li>
+			</ul>
+		</div>
+		<div class="btn_top"><button type="button" aria-label="맨위로 이동"></button></div>
+
+		<!-- layer_search -->
+		<script src="kms_html_mo/common/incSchLyr.js"></script>
+
+	</div>
+	<!-- //.container -->
+
+</div>
+<!-- // .wrapper -->
+
+
+</body>
+</html>

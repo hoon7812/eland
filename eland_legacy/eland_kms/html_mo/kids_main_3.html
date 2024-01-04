@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>kidikidi</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_kids.css" type="text/css"> <!-- kids add css -->
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="renewal renewal2_brand kids">
+
+<!-- CONTENT -->
+<div class="contents" id="contents"> 
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide">
+
+				<!-- SWIPER 0 -->
+				<div class="slide_cont" data-index="0">
+
+					<!-- 단독 상품 추천 -->
+					<div class="area_lv1">
+						<div class="onlypd_wrap ptb_vw">
+							<div class="kids_container">
+								<h3 class="kids_main_tit">단독 상품 추천</h3>
+							</div>
+							<div class="kids_container_l">
+								<div class="kids_slide02_wrap">
+									<div class="slide_onlypd kids_slide02 swiper-container">
+										<ul class="swiper-wrapper">
+											<li class="swiper-slide swiper-scrollbar">
+												<a href="#">
+													<div class="kids_slide_cont">
+														<img src="../images/mobile/temp/kids_pd_x380_01.jpg" alt="" />
+                                                        <div class="kid_pd_info">
+                                                            <p class="kid_brand">ZARA</p>
+                                                            <p class="kid_name">플라워 자카드 원피스</p>
+                                                            <p class="kid_price"><span class="kid_salePer">20%</span>25,000<span>원</span></p>
+                                                            <p class="kid_review">리뷰개수 <span>(19)</span></p>
+                                                        </div> 
+													</div>
+												</a>
+											</li>
+											<li class="swiper-slide swiper-scrollbar">
+												<a href="#">
+													<div class="kids_slide_cont">
+														<img src="../images/mobile/temp/kids_pd_x380_02.jpg" alt="" />
+														<div class="kid_pd_info">
+                                                            <p class="kid_brand">ZARA</p>
+                                                            <p class="kid_name">플라워 자카드 원피스</p>
+                                                            <p class="kid_price"><span class="kid_salePer">20%</span>25,000<span>원</span></p>
+                                                            <p class="kid_review">리뷰개수 <span>(19)</span></p>
+                                                        </div> 
+													</div>
+												</a>
+											</li>
+											<li class="swiper-slide swiper-scrollbar"> 
+												<a href="#">
+													<div class="kids_slide_cont">
+														<img src="../images/mobile/temp/kids_pd_x380_01.jpg" alt="" />
+														<div class="kid_pd_info">
+                                                            <p class="kid_brand">ZARA</p>
+                                                            <p class="kid_name">플라워 자카드 원피스</p>
+                                                            <p class="kid_price"><span class="kid_salePer">20%</span>25,000<span>원</span></p>
+                                                            <p class="kid_review">리뷰개수 <span>(19)</span></p>
+                                                        </div> 
+													</div>
+												</a>
+											</li>
+											<!-- <li class="swiper-slide swiper-scrollbar">
+												<a href="#">
+													<div class="kids_slide_cont">
+														<img src="../images/mobile/temp/kids_main_hashtag.jpg" alt="" />
+														<div class="kid_pd_info">
+                                                            <p class="kid_brand">ZARA</p>
+                                                            <p class="kid_name">플라워 자카드 원피스</p>
+                                                            <p class="kid_price"><span class="kid_salePer">20%</span>25,000<span>원</span></p>
+                                                            <p class="kid_review">리뷰개수 <span>(19)</span></p>
+                                                        </div> 
+													</div>
+												</a>
+											</li>
+											<li class="swiper-slide swiper-scrollbar">
+												<a href="#">
+													<div class="kids_slide_cont">
+														<img src="../images/mobile/temp/kids_main_hashtag.jpg" alt="" />
+														<div class="kid_pd_info">
+                                                            <p class="kid_brand">ZARA</p>
+                                                            <p class="kid_name">플라워 자카드 원피스</p>
+                                                            <p class="kid_price"><span class="kid_salePer">20%</span>25,000<span>원</span></p>
+                                                            <p class="kid_review">리뷰개수 <span>(19)</span></p>
+                                                        </div> 
+													</div>
+												</a>
+											</li> -->
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(document).ready(function() {
+								var gutter = $('.kids_container_l').width() * 0.065;
+								$('.slide_onlypd .swiper-slide').show();
+								var kidsSlideOnlypd = new Swiper('.slide_onlypd',{
+									slidesPerView: 2.5,
+									simulateTouch: true,
+									calculateHeight: true,
+									offsetPxBefore: gutter,
+									offsetPxAfter: gutter,
+									onTouchStart: function(){
+										unableSwiping()
+									},
+									onTouchEnd: function(){
+										enableSwiping()
+									},
+								});
+
+								// kidsSlideOnlypd.activeSlide()
+								
+								$(window).resize(function(){	
+									kidsSlideOnlypd.reInit();
+									kidsSlideOnlypd.resizeFix();
+									gutter = $('.kids_container_l').width() * 0.065;
+									kidsSlideOnlypd.params.offsetPxBefore=gutter;
+									kidsSlideOnlypd.params.offsetPxAfter=gutter;
+								});
+
+								function fixSwiperWidthOnlypd() {
+									var swiperWrapperWidth = Math.ceil($(".slide_onlypd .swiper-wrapper").outerWidth() + 2);
+									$(".slide_onlypd .swiper-wrapper").css("width", swiperWrapperWidth+"px");
+								}
+								fixSwiperWidthOnlypd();
+								$(window).resize(function(){
+									fixSwiperWidthOnlypd();
+								});
+								function unableSwiping(){
+									if(typeof mainCate !== "undefined"){
+									mainCate.params.onlyExternal=true;
+									}
+								}
+								function enableSwiping(){
+									if(typeof mainCate !== "undefined"){
+									mainCate.params.onlyExternal=false;
+									}
+								}
+								// 최상위 스와이퍼 mainCate 스와이프 제한 함수
+							});
+						</script>
+					</div>
+					<!-- //단독 상품 추천 -->
+
+				</div>
+				<!-- //SWIPER 0 -->				
+            </li>
+		</ul>
+    </div>
+    
+</div>
+<!-- //CONTENT -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

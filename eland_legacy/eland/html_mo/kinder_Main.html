@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>KINDER LEAGUE</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_kinder.css" type="text/css"><!-- kinder add css -->
+
+<link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000040_200.jpg">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000040_200.jpg">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000040_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000040_160.png">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="kinder renewal"><!-- brand kinder : CALSS -->
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" onClick="left_lnb_open()"><b class="ir">카테고리 전체메뉴 열기</b></button></div>
+		<h1><a href="kinder_Main.html"><b class="ir">ELAND Kids 메인</b></a></h1>
+		<div class="hnb">
+			<ul>
+				<li class="sch"><button type="button"><b class="">검색 열기검색 열기검색 열기검색 열기검색 열기검색 열기</b></button></li>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<!-- //HEADER -->
+
+<!-- LEFT MENU -->
+<div id="lnb" class="lnb_wrap">
+	<div class="lnb">
+		<div class="lnb_hd">
+			<div class="hd">
+				<a class="home" href="Md_Main.html"><b class="ir">메인 바로가기</b></a>
+				<!-- <a class="login" href="#">로그인</a> --> 
+				<a class="logout" href="#">로그아웃</a>
+			</div>
+		</div>
+		
+		<!-- LEFT CATG. -->
+		<div class="lnb_mn ctg_btn"><a href="#" class="on"><b class="ir">카테고리 열기</b></a></div>
+		<div class="lnb_cont">
+			<div class="lnb_log"><b>홍길동 님</b>
+				<em class="m0000005">Family</em>
+				<!--
+				<em class="m0000004">Bronze</em>
+				<em class="m0000003">Silver</em>
+				<em class="m0000002">Gold</em>
+				<em class="m0000001">Platinum</em>
+				-->
+			</div>
+			<div class="lnb_tnb">
+				<ul>
+					<li class="myp"><a href="#"><b>마이페이지</b></a></li>
+					<li class="drv"><a href="#"><b>주문배송조회</b></a></li>
+					<li class="wish"><a href="#"><b>나의 찜목록</b></a></li>
+					<!-- <li class="cs"><a href="#"><b>고객센터</b></a></li> -->
+					<li class="cpn"><a href="#"><b>쿠폰 12장</b></a></li> 
+				</ul>
+			</div>
+
+			<div  id="lnb_ctg" class="lnb_ctg scroller">
+				<div  class="lnb_scroll">
+					<!-- MENU -->
+					<div  class="menu" id="menu" tabindex="0">
+						<dl>
+							<dt>카테고리</dt>
+							<dd>  
+								<ul>  
+									<li><a href="#" class="tit">가구<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">가구 이동</em></a>
+										<ul>
+											<li><a href="#">거실가구</a></li>
+											<li><a href="#">주방소품</a></li>
+											<li><a href="#">주방가구 </a></li>
+											<li><a href="#">보관용기</a></li>
+											<li><a href="#">책상/책장/의자</a></li>
+											<li><a href="#">주방수납/잡화</a></li>
+										</ul>
+									</li>
+									<li><a href="#" class="tit">주방용품<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">주방용품 이동</em></a></li>
+									<li><a href="#" class="tit">주방식기<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">주방식기 이동</em></a></li>
+									<li><a href="#" class="tit">데코<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">데코 이동</em></a></li>
+									<li><a href="#" class="tit">욕실/생활<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">욕실/생활 이동</em></a></li>
+									<li><a href="#" class="tit">침구/수예<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">침구/수예 이동</em></a></li>
+									<li><a href="#" class="tit">커튼/매트<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">커튼/매트 이동</em></a></li>
+									<li><a href="#" class="tit">수납/정리<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">수납/정리 이동</em></a></li>	
+									<li><a href="#" class="tit">키즈용품<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">키즈용품 이동</em></a></li>
+									<li><a href="#" class="tit">SALE<em class="ir">메뉴 열기</em></a><a href="#" class="go"><em class="ir">SALE 이동
+									</em></a></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+					<!-- //MENU -->
+										
+					<div class="lnb_gd">
+						<dl>
+							<dt>최근 본 상품</dt>
+							<dd>
+								<ul>
+									<li><a href="#"><img src="../images/mobile/temp/img_154_01.jpg" width="154" height="154" alt="주방용품" /></a></li>
+									<li><a href="#"><img src="../images/mobile/temp/img_154_02.jpg" width="154" height="154" alt="소파쿠션" /></a></li>
+									<li><a href="#"><img src="../images/mobile/temp/img_154_03.jpg" width="154" height="154" alt="폴햄패딩" /></a></li>
+								</ul>
+							</dd>
+							<dd class="more"><a href="#" title="최근 본 상품 더보기">MORE</a></dd>
+						</dl>
+					</div>
+			
+					<div class="lnb_cn">
+						<ul>
+							<li><a href="#" class="ne">NEW</a></li>
+							<li><a href="#" class="bs">BEST</a></li>
+							<li><a href="#" class="sa">SALE</a></li>
+							<li><a href="#" class="md">MD추천</a></li>
+							<li><a href="#" class="ev">EVENT</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //LEFT CATG. -->
+	
+		<!-- LEFT MALL -->
+		<div class="lnb_mn brd_btn"><a href="#"><b class="ir">브랜드 열기</b></a></div>
+		<div class="lnb_cont">
+			<div class="lnb_brd">
+				<div class="brd_tit">브랜드</div>
+				<div id="lnb_brd" class="brd_cont scroller">
+					<div class="brd_scroll">
+						<div class="brd_word" id="brand">
+							<dl>
+								<dt class="tab1 on"><button type="button">ㄱㄴㄷ</button></dt>
+								<dd class="kor on">
+									<ul>
+										<li><button type="button" class="on">ㄱ</button></li>
+										<li><button type="button">ㄴ</button></li>
+										<li><button type="button">ㄷ</button></li>
+										<li><button type="button">ㄹ</button></li>
+										<li><button type="button">ㅁ</button></li>
+										<li><button type="button">ㅂ</button></li>
+										<li><button type="button">ㅅ</button></li>
+										<li><button type="button">ㅇ</button></li>
+										<li><button type="button" disabled="disabled">ㅈ</button></li>
+										<li><button type="button">ㅊ</button></li>
+										<li><button type="button">ㅋ</button></li>
+										<li><button type="button">ㅌ</button></li>
+										<li><button type="button">ㅍ</button></li>
+										<li><button type="button">ㅎ</button></li>
+										<li><button type="button">기타</button></li>
+									</ul>
+								</dd>
+								<dt class="tab2"><button type="button">ABC</button></dt>
+								<dd>
+									<ul>
+										<li><button type="button" class="on">A</button></li>
+										<li><button type="button">B</button></li>
+										<li><button type="button">C</button></li>
+										<li><button type="button">D</button></li>
+										<li><button type="button">E</button></li>
+										<li><button type="button">F</button></li>
+										<li><button type="button">G</button></li>
+										<li><button type="button">H</button></li>
+										<li><button type="button">I</button></li>
+										<li><button type="button">J</button></li>
+										<li><button type="button">K</button></li>
+										<li><button type="button">L</button></li>
+										<li><button type="button">M</button></li>
+										<li><button type="button">N</button></li>
+										<li><button type="button">O</button></li>
+										<li><button type="button">p</button></li>
+										<li><button type="button">Q</button></li>
+										<li><button type="button">R</button></li>
+										<li><button type="button">S</button></li>
+										<li><button type="button">T</button></li>
+										<li><button type="button">U</button></li>
+										<li><button type="button">V</button></li>
+										<li><button type="button">W</button></li>
+										<li><button type="button" disabled="disabled">X</button></li>
+										<li><button type="button" disabled="disabled">Y</button></li>
+										<li><button type="button" disabled="disabled">Z</button></li>
+										<li><button type="button">기타</button></li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+						<div class="brd_sch">
+							<div class="ir">브랜드 검색결과</div>
+							<dl>
+								<dt>ㄱ</dt>
+								<dd><a href="#" class="new">가고시마</a></dd>
+								<dd><a href="#">갤럭시라이프스타일</a></dd>
+								<dd><a href="#">게스</a></dd>
+								<dd><a href="#">게스슈즈</a></dd>
+								<dd><a href="#">고세</a></dd>
+								<dd><a href="#">가꾸이다</a></dd>
+								<dd><a href="#">갤럭시</a></dd>
+								<dd><a href="#" class="new">게스슈즈</a></dd>
+								<dd><a href="#">고세골든벨</a></dd>
+								<dd><a href="#">갤럭시 게스</a></dd>
+								<dt>ㄴ</dt>
+								<dd><a href="#">나이키</a></dd>
+								<dd><a href="#">나이스 클럽</a></dd>
+								<dd><a href="#" class="new">니나리찌</a></dd>
+								<dd><a href="#">니코보코</a></dd>
+							</dl>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //LEFT MALL -->
+			
+		<!-- LEFT MALL -->
+		<div class="lnb_mn mall_btn"><a href="#"><b class="ir">몰 열기</b></a></div>
+		<div class="lnb_cont">
+			<dl class="lnb_mall">
+				<dt>몰이동</dt>
+				<dd>
+					<div id="lnb_mlst" class="lnb_mlst scroller">
+						<ul>
+							<li class="selected"> <!-- 몰 선택시 .selected -->
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_00.jpg" alt="이랜드 통합몰">
+									<em>이랜드 통합몰</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_12.jpg" alt="모던하우스">
+									<em>모던하우스</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_04.jpg" alt="뉴발란스">
+									<em>뉴발란스</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_13.jpg" alt="뉴발란스 키즈">
+									<em>뉴발란스 키즈</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_14.jpg" alt="라템">
+									<em>라템</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_07.jpg" alt="로엠">
+									<em>로엠</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_08.jpg" alt="로이드">
+									<em>로이드</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_15.jpg" alt="루켄">
+									<em>루켄</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_16.jpg" alt="몰리">
+									<em>몰리</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_01.jpg" alt="미쏘">
+									<em>미쏘</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_17.jpg" alt="버터">
+									<em>버터</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_18.jpg" alt="슈펜">
+									<em>슈펜</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_11.jpg" alt="스파오">
+									<em>스파오</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_09.jpg" alt="에블린">
+									<em>에블린</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_19.jpg" alt="ENC">
+									<em>ENC</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_10.jpg" alt="킨더리그">
+									<em>킨더리그</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_02.jpg" alt="OST">
+									<em>OST</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_20.jpg" alt="클로비스">
+									<em>클로비스</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_05.jpg" alt="클루">
+									<em>클루</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_21.jpg" alt="태창">
+									<em>태창</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_22.jpg" alt="투미">
+									<em>투미</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_23.jpg" alt="티니위니">
+									<em>티니위니</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_03.jpg" alt="폴더">
+									<em>폴더</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_24.jpg" alt="헌트">
+									<em>헌트</em>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../images/mobile/common/m_lst_06.jpg" alt="후아유">
+									<em>후아유</em>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //LEFT MALL -->
+		<div class="lnb_cls"><button type="button" id="left_cls" class="left_cls"><b class="ir">카테고리 전체메뉴 닫기</b></button></div>
+	</div>
+</div>
+<div class="lnb_dim"></div>
+<!-- //LEFT MENU -->                         
+
+<!-- CONTENT -->
+<div class="contents" id="contents">				   
+	<div class="main_top" id="main_top">
+		<div class="gnb_wrap">
+			<div class="eland"><a href="#">E LAND</a></div> <!-- 170515 E LAND 바로가기 추가 -->
+			<div class="gnb" id="gnb">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><span>HOME</span></li>
+					<li class="swiper-slide"><span>NEW</span></li>
+					<li class="swiper-slide"><span>BEST</span></li>
+					<li class="swiper-slide"><span>MD추천</span></li>
+					<li class="swiper-slide"><span>EVENT</span></li>
+					<li class="swiper-slide"><span>SALE</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var GNB_SCROLL;
+		var LOADING_HTML = '<div class="loading"><span>로딩중</span></div>';
+		
+		$(document).ready(function() {
+			GNB_SCROLL = new Swiper('#gnb',{
+				createPagination: false,
+				freeMode: true,
+				freeModeFluid: true,
+				slidesPerView: 'auto',
+				roundLengths: true,
+				onSlideClick: function(){
+					$(".gnb li").removeClass("on");
+					$('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);			
+					GNB_SCROLL.swipeTo(GNB_SCROLL.clickedSlideIndex);
+					call_slide(GNB_SCROLL.clickedSlideIndex);
+				}
+			});
+
+			$(window).resize(function(){	
+				GNB_SCROLL.reInit();
+			});
+		});
+		
+		
+		$(window).load(function() {	
+			mainCate.prependSlide(LOADING_HTML, 'swiper-slide','li');					
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active').html(LOADING_HTML);			
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			mainCate.swipeTo(1, 0, true);
+			call_slide(0);
+		});
+		
+		function change_slide(idx) {
+			$('#m_cts').find('li:not(.swiper-slide-active)').remove();
+			mainCate.prependSlide( LOADING_HTML, 'swiper-slide','li');
+			mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+			$('#m_cts').find('.swiper-slide').removeClass('swiper-slide-active');
+			$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active');			
+			if(	$('#m_cts').find('.swiper-slide').eq(1).hasClass('swiper-slide-active')){
+				$('#m_cts').find('.slide_cont').remove();
+				window.scrollTo(0, 0);
+				call_slide(idx);
+			}
+		}
+
+		function call_slide(idx){ 
+			$.ajax({
+				type : 'get', // 퍼블리싱 확인용 . 개발측은 post
+				isLocal: true,
+				headers: { "cache-control": "no-cache" },
+				url : 'kinder_main_'+ idx +'.html',
+				dataType : 'html',
+				success: function(data){	
+					setTimeout(function() { 
+						$('#m_cts').find('.swiper-slide').eq(1).html(data);						
+						mainCate.reInit();
+						setSlideHeight();
+					}, 100);
+					$('.gnb li').removeClass('on');
+					$('.gnb').find('li').eq(idx).addClass('on');	
+					mainCate.swipeTo(1, 0, true);
+				},
+				error: function(){
+					setTimeout(function() { call_slide(0) }, 100);
+					GNB_SCROLL.swipeTo(idx, 200);
+				}
+			});
+		}
+			
+		var mainCate = new Swiper('#m_cts',{
+			loop: false,
+			simulateTouch : true,
+			calculateHeight:true,
+			onSlideNext : function() {
+				var index = parseInt($('.gnb').find('li.on').index()) + 1;
+				var max_gnb = $('.gnb li').length;
+				if(index == max_gnb ){	
+					var idx = 0;
+					GNB_SCROLL.swipeTo(0, 200); 
+				}else{
+					var idx = index;
+					var w_width = $(window).width();
+					var	active_li = $('.gnb').find('li.on').next('li');
+					var active_left = active_li.offset().left + active_li.outerWidth();
+					if(active_left > w_width){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}
+				}
+				change_slide(idx);
+			},
+			onSlidePrev : function() {
+				var index = parseInt($('#m_cts' ).find('.slide_cont').attr('data-index'));
+				if(index == 0 ){	
+					var idx = $('.gnb li').length -1;
+						GNB_SCROLL.swipeTo(idx, 200);
+				}else{
+					var idx = index - 1;
+					var active_li = $('.gnb').find('li.on').prev('li');
+					var active_left = active_li.offset().left;
+					if(active_left <= 0){
+						GNB_SCROLL.swipeTo(idx, 200);
+					}	
+				}	
+				change_slide(idx);
+			}
+		});
+		
+		$(window).resize(function(){
+			mainCate.reInit();
+			setSlideHeight();
+		});
+	</script>
+</div>
+<!-- //CONTENT -->
+
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<div class="ft_bn" style="background-color:#e7e2e2">
+		<a href="#"><img src="../images/mobile/temp/kinder_foot_100.jpg" width="640" height="100" alt="오버핏 반팔기획전 10% OFF" /></a>
+	</div>
+	<div class="ft_menu">
+		<ul>
+			<li><a href="#">로그아웃</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li><a href="#">장바구니</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드리테일</dt>
+		<dd>서울시 서초구 잠원동 70-2 대표이사 : 이광일/김연배</dd>
+		<dd>사업자등록번호 : 114-81-01855  <a href="#">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 서초 제 09998호</dd>
+		<dd>고객센터 : <a href="tel:1899-9500">1899-9500</a></dd>
+		<!-- 160927 바로방문 추가 -->
+		<!-- 삭제 <dd>
+			<div class="ft_direct">
+				<a href="#"><i class="on">APP방문ON</i></a>
+				<a href="#"><i class="off">APP방문OFF</i></a>
+			</div>
+		</dd> -->
+		<!-- //160927 바로방문 추가 -->
+	</dl>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드월드</dt>
+		<dd>서울특별시 금천구 가산디지털1로 159  대표이사 : 김광래/최종양/김연배</dd>
+		<dd>사업자등록번호 : 113-85-19030  <a href="#">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 금천구청 제 2005-01053호</dd>
+	</dl>	
+	<div class="ft_sns">
+		<ul>
+			<li><a href="#" class="bl"><em class="ir">블로그</em></a></li>
+			<li><a href="#" class="ks2"><em class="ir">카카오스토리</em></a></li>
+		</ul>
+	</div>
+	<div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="ft_app">
+		<ul>
+			<li><a href="#">PC 버전보기</a></li>
+			<li><a href="#">APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

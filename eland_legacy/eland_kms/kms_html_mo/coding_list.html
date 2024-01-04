@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no">
+
+    <title>KIM’S CLUB - Mobile Web</title>
+	<link rel="shortcut icon" href="../images/mobile/kms_mobile/icon/ico_kms.ico" type="image/x-icon">
+
+    <style>
+        body {margin:0;padding:0;color:#000;font-family:'Droid Sans','Malgun Gothic','Apple-Gothic','애플고딕','Tahoma',dotum,'돋움',gulim,'굴림',sans-serif;font-size:12px;font-weight:normal;letter-spacing:-1px;-webkit-text-size-adjust:none;}
+        div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,select,textarea,p,blockquote,th,td,legend{margin:0;padding:0;}
+        form,fieldset,img{border:0;}
+        table{border-spacing:0;border-collapse:collapse;}
+        hr,legend,caption{display:none;}
+        img,fieldset{border:0 none;}
+        ul,ol,li{list-style:none outside;}
+        img,input,select,textarea{vertical-align:middle;}
+        a{display:inline-block;text-decoration:none;color:#3b3b3b;}
+        a:link,a:hover,a:active{text-decoration:none;}
+        li,p,dt,dd,div,span,em{font-style:normal;font-weight:normal;word-break:break-all;}
+        header {display:block;min-width:320px;}
+        h1 a{display:block;min-width:320px;padding:5px;color:#fff;font-size:14px;font-weight:bold;line-height:32px;text-align:center;font-family:'Tahoma';background:#004C34;letter-spacing:1px;}
+        .codinglist{min-width:320px;border-bottom:1px solid #ccc;}
+        .codinglist li{overflow:hidden;width:100%;border-top:1px solid #ccc;font-size:14px;line-height:1.8;letter-spacing:0;}
+        .codinglist li a{display:block;position:relative;padding:10px 70px 10px 16px;color:#333;}
+        .codinglist li a[href^='#tg_']{padding-left:32px;font-weight:bold;color:#000;}
+        .codinglist li a[href^='#tg_']:before{content:'';position:absolute;top:50%;width:0;height:0;margin-top:-5px;margin-left:-16px;border-top:8px solid #aaa;border-left:4px solid transparent;border-right:4px solid transparent;-webkit-transition:0.5s;transition:0.5s;}
+        .codinglist ul{display:none;}
+        .codinglist ul{background:#f5f5f5}
+        .codinglist ul ul{background:#e8e8e8}
+        .codinglist ul ul ul{background:#dcdcdc}
+        .codinglist li li a{position:relative;padding-left:32px;font-size:14px;color:#000;}
+		.codinglist li li a span{display:block;position:absolute;right:16px;top:10px;line-height:12px;text-align:right;}
+		.codinglist li li a .date{display:block;font-size:11px;color:#888;}
+		.codinglist li li a .name{display:block;margin-top:3px;font-size:12px;color:#666;}
+		.codinglist li li .lyr{position:relative;right:0;top:0;margin:0 0 0 8px;text-align:left;}
+		.codinglist li li .lyr em{display:block;position:relative;margin-top:4px;padding-left:4px;font-size:11px;color:#888;}
+		.codinglist li li .lyr em:before{content:'';display:block;position:absolute;left:0;top:6px;width:2px;height:2px;background:#888;}
+        .codinglist li li a[href^='#tg_']{padding-left:48px;}
+        .codinglist li li li a{padding-left:48px;}
+        .codinglist li li li a[href^='#tg_']{padding-left:68px;}
+        .codinglist li li li li a{padding-left:68px;}
+        .codinglist .selected[href^='#tg_']:before{border-top-color:#333;-webkit-transform:scaleY(-1);transform:scaleY(-1);}
+        .codinglist > li > a.selected{color:#C2492E;}
+        .codinglist > li > a.selected[href^='#tg_']:before{border-top-color:#C2492E;}
+        .codinglist li a.v{background-color:#fdffef;}
+        .cGuide {background:#eee;text-align:right;}
+        .cGuide a{display:block;padding:10px;color:#333;letter-spacing:0;}
+		.cUrl{margin:10px 0 30px;font-size:12px;line-height:16px;color:#004C34;text-align:center;letter-spacing:0;}
+        li.del a, li.del a *{color:#999 !important;}
+        li.del a > div:before{content:'DEL ';color:#d58787;font-size:0.7em;letter-spacing:0;vertical-align:top;}
+        .new {color:#133db4 !important;}
+    </style>
+    <script src ="../common/js/jquery-1.12.4.min.js"></script>
+<body>
+<header>
+    <h1><a href="index.html">KIM’S CLUB</a></h1>
+</header>
+<section>
+    <ul class="codinglist">
+		<!-- 공통 -->
+        <li id="tg_common"><a href="#tg_common">공통</a>
+            <ul>
+                <li><a href="main/gnb.html" target="_blank">공통 UI</a></li>
+            </ul>
+        </li>
+		<!--// 공통 -->
+		<!-- 메인 -->
+        <li id="tg_main"><a href="#tg_main">메인</a>
+            <ul class="sub">
+            	<li><a href="main/main.html" target="_blank">홈</a></li>
+				<li><a href="main/layers.html" target="_blank">레이어</a></li>
+				<li><a href="main/main_loading.html" target="_blank">로딩</a></li>
+            </ul>
+        </li>
+		<!--// 메인 -->
+
+		<!-- 전시 -->
+         <li id="tg_disp"><a href="#tg_disp">전시</a>
+            <ul>
+         				<li id="tg_disp_ctg"><a href="#tg_disp_ctg">카테고리/검색결과</a>
+         					<ul>
+         						<li>
+         							<a href="disp/category.html" target="_blank">카테고리</a>
+         						</li>
+         						<li>
+         							<a href="disp/category_ws.html" target="_blank">즐겨찾는 카테고리</a>
+         						</li>
+         						<li>
+         							<a href="disp/category_pg.html" target="_blank">대분류</a>
+         						</li>
+         						<li>
+         							<a href="disp/category_sd.html" target="_blank">중소분류</a>
+         						</li>
+         						<li>
+         							<a href="disp/search_result.html" target="_blank">검색결과</a>
+         						</li>
+         						<li>
+         							<a href="disp/search_result_none.html" target="_blank">검색결과 없음</a>
+         						</li>
+         					</ul>
+         				</li>
+         				<li id="tg_disp_shop"><a href="#tg_disp_shop">매장</a>
+         					<ul>
+         						<li><a href="disp/shop_fresh.html" target="_blank">킴스프레시</a></li>
+								<li><a href="disp/shop_fresh_szn.html" target="_blank">제철식탁</a></li>
+								<li><a href="disp/shop_fresh_slt.html" target="_blank">미식발견</a></li>
+								<li><a href="disp/shop_fresh_tdy.html" target="_blank">갓따옴</a></li>
+								<li><a href="disp/shop_wife.html" target="_blank">뚝딱레시피</a></li>
+								<li><a href="disp/shop_wife_dtl.html" target="_blank">뚝딱레시피 - 상세</a></li>
+								<li><a href="disp/shop_best.html" target="_blank">베스트</a></li>
+								<li><a href="disp/shop_special.html" target="_blank">전문관</a></li>
+								<li><a href="disp/shop_special_dtl.html" target="_blank">전문관 - 상세</a></li>
+								<li><a href="disp/shop_oprice.html" target="_blank">전문관 - 오프라이스</a></li>
+								<li><a href="disp/shop_deal.html" target="_blank">킴스딜</a></li>
+								<li><a href="disp/shop_often.html" target="_blank">자주구매</a></li>
+								<li><a href="disp/shop_often_sub.html" target="_blank">자주구매 - GNB서브</a></li>
+								<li><a href="disp/shop_often_log.html" target="_blank">자주구매(로그인)</a></li>
+								<li><a href="disp/shop_today.html" target="_blank">오늘직송</a></li>
+         					</ul>
+         				</li>
+         				<li id="tg_disp_plnevt"><a href="#tg_disp_plnevt">기획전/이벤트</a>
+         					<ul>
+         						<li><a href="disp/plnevt_plan.html" target="_blank">기획전</a></li>
+         						<li><a href="disp/plnevt_plan_dtl.html" target="_blank">기획전 - 상세</a></li>
+								<li><a href="disp/plnevt_evt.html" target="_blank">이벤트</a></li>
+								<li><a href="disp/plnevt_evt_dtl_0.html" target="_blank">이벤트 - 단순클릭응모</a></li>
+								<li><a href="disp/plnevt_evt_dtl_1.html" target="_blank">이벤트 - 설문투표</a></li>
+								<li><a href="disp/plnevt_evt_dtl_2.html" target="_blank">이벤트 - 출석체크</a></li>
+								<li><a href="disp/plnevt_evt_dtl_3.html" target="_blank">이벤트 - 래플</a></li>
+								<li><a href="disp/plnevt_evt_dtl_4.html" target="_blank">이벤트 - 일반앵커</a></li>
+         					</ul>
+         				</li>
+            </ul>
+         </li>
+		<!--// 전시 -->
+
+		<!-- 장바구니/주문서 -->
+        <li id="tg_order"><a href="#tg_order">장바구니</a>
+            <ul>
+                <li><a href="odr/cart.html" target="_blank">장바구니</a></li>
+               <!--  
+			   <li><a href="/html/ko/odr/cart_none.html" target="_blank">장바구니 상품없음 - 비로그인</a></li>
+                <li><a href="/html/ko/odr/cart_none_log.html" target="_blank">장바구니 상품없음 - 로그인</a></li>
+                <li>
+        					<a href="/html/ko/odr/order.html" target="_blank">주문서
+        						<span class="lyr">
+        							<em>배송지 입력</em>
+        							<em>우편번호 검색</em>
+        							<em>결제수단 선택</em>
+        							<em>이용약관 동의 전문</em>
+        						</span>
+        					</a>
+                </li>
+        				<li><a href="/html/ko/odr/order_complete.html" target="_blank">주문완료</a></li>
+        				<li><a href="/html/ko/odr/order_gift_cer.html" target="_blank">선물받기 인증</a></li>
+        				<li><a href="/html/ko/odr/order_gift_dlv.html" target="_blank">선물 배송정보</a></li>
+        				<li><a href="/html/ko/odr/order_gift_accept.html" target="_blank">선물 수락 완료</a></li>
+						-->
+            </ul>
+        </li> 
+		<!--// 장바구니/주문서 -->
+
+		<!-- 상품상세 -->
+        <li id="tg_goods"><a href="#tg_goods">상품상세</a>
+            <ul>
+                <li><a href="gds/details.html" target="_blank">상품상세</a></li>
+				<li><a href="gds/details_bundle.html" target="_blank">상품상세-레이어타입</a></li>
+				<li><a href="gds/details_bundle_lyr.html" target="_blank">묶음상품-레이어</a></li>
+            </ul>
+        </li>
+		<!--// 상품상세 -->
+
+		<!-- 마이페이지 -->
+		<li id="tg_mys"><a href="#tg_mys">마이페이지</a>
+		    <ul class="sub">
+		        <li><a href="mys/mys_main.html" target="_blank">마이페이지 메인</a></li>
+				<li><a href="mys/mys_notice.html" target="_blank">공지사항</a></li>
+				<li><a href="mys/mys_odr_dlv.html" target="_blank">주문/배송조회</a></li>
+				<li><a href="mys/mys_qa.html" target="_blank">상품 Q&A</a></li>
+				<li><a href="mys/mys_rct.html" target="_blank">최근 본 쇼핑정보</a></li>
+				<li><a href="mys/mys_self.html" target="_blank">안심환불</a></li>
+				<li><a href="mys/mys_self_ok.html" target="_blank">안심환불 완료</a></li>
+				<li><a href="mys/mys_coupon.html" target="_blank">쿠폰조회</a></li>
+			</ul>
+		</li>
+		<!--// 마이페이지 -->
+
+
+		<!-- 기타 -->
+       <li id="tg_etc"><a href="#tg_etc">기타</a>
+            <ul class="sub">
+                <li><a href="etc/info_store.html" target="_blank">매장안내</a></li>
+                <li><a href="etc/info_store_dtl.html" target="_blank">매장안내 - 상세</a></li>
+				<li><a href="etc/info_about.html" target="_blank">킴스클럽 소개</a></li>
+				<li><a href="etc/err.html" target="_blank">앱스토어 안내</a></li>
+        	</ul>
+        </li>
+
+    </ul>
+	<div class="cUrl">KIM’S CLUB - Mobile Web</div>
+
+    <script>
+        (function($) {
+
+            var toggleList = (function() {
+                var depth = $('.codinglist a');
+
+                depth.each(function () {
+                    var self = $(this);
+
+                    self.on('click', function(e) {
+                        if(self.hasClass('selected') !== true){
+                            listOpen(self);
+                        } else {
+                            e.preventDefault();
+                            listClose(self);
+                        }
+                    });
+                });
+
+                var listOpen = function(item){
+                    var content = item.next();
+
+                    item.addClass('selected');
+                    content.slideDown(300);
+                }
+                var listClose = function(item){
+                    var content = item.next();
+
+                    item.removeClass('selected');
+                    content.slideUp(300);
+                    content.find('ul').hide();
+                    content.find('ul').prev().removeClass('selected');
+                }
+
+                var uiUrl = location.href,
+                    uiType = uiUrl.split('#')[1],
+                    firstItem,
+                    parentsItem;
+
+                if(uiType !== undefined){
+                    firstItem = $('#' + uiType).find('a:first');
+                    listOpen(firstItem);
+
+                    parentsItem = $('#' + uiType).parents('ul:not(.codinglist)');
+                    listOpen(parentsItem.prev());
+                }
+
+            }());
+		}(jQuery));
+
+    </script>
+</body>
+</html>

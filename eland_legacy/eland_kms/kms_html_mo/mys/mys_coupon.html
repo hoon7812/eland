@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="KIM’S CLUB">
+<meta property="og:type" content="website">
+<base href="../../" />
+<title>KIM’S CLUB :: GLOBAL FRESH MARKET | 쿠폰조회</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean&family=Roboto:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/kms_mobile/common.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/kms_mobile/mys.css" type="text/css">
+
+<link rel="shortcut icon" href="images/mobile/kms_mobile/icon/ico_kms.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/mobile/kms_mobile/icon/icon_60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/mobile/kms_mobile/icon/icon_76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/mobile/kms_mobile/icon/icon_120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/mobile/kms_mobile/icon/icon_152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/mobile/kms_mobile/icon/icon_180.png">
+<link rel="apple-touch-icon-precomposed" href="images/mobile/kms_mobile/icon/icon_192.png">
+<link rel="apple-touch-icon-precomposed" href="images/mobile/kms_mobile/icon/icon_160.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="images/mobile/kms_mobile/icon/icon_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="images/mobile/kms_mobile/icon/icon_160.png">
+
+<script rel="preload" type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/kms.plugin.mobile.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/kms.ui.mobile.js"></script>
+<script rel="preload" type="text/javascript" src="mobile/js/kms.ui.mobile.old.js"></script>
+
+<script type="text/javascript">
+	//조회기간 선택
+	$(function(){
+		$(".sch_order li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+</script>
+
+</head>
+
+<body>
+<!-- .wrapper -->
+<div class="wrapper">
+	<div class="accessibility"><a href="#skip_cont">본문 바로가기</a></div><!-- accessibility -->
+
+	<!-- .container -->
+	<div class="container">
+
+		<!-- HEADER -->
+		<div class="header_kms" role="banner">
+			<div class="head">
+				<h1>쿠폰조회</h1>
+				<span class="btH left">
+					<button type="button" class="prv" aria-label="이전페이지로 이동"></button>
+				</span>
+				<span class="btH right">
+					<button type="button" class="sch" aria-label="검색레이어 열기"></button>
+					<button type="button" class="crt" aria-label="장바구니로 이동"></button>
+				</span>
+			</div>
+		</div>
+		<!--// HEADER -->
+
+		<!-- CONTENT -->
+		<div class="contents" role="main">
+			<a id="skip_cont"></a><!-- accessibility -->
+
+			<div class="my_coupon">
+
+				<!-- top -->
+				<dl class="cpnTop">
+					<dt><b>김민수님</b> 보유쿠폰</dt>
+					<dd class="num"><b>16</b>장</dd>
+					<dd class="btm">
+						<label for="cpnTop_num0" class="ir">쿠폰번호</label>
+						<input type="number" id="cpnTop_num0" placeholder="쿠폰 번호를 입력해 주세요.">
+						<span class="bt"><button type="button"><em>쿠폰 등록</em></button></span>
+					</dd>
+				</dl>
+				<!--// top -->
+				<!-- coupon_box -->
+				<div class="coupon_box">
+					<div class="sch_order">
+						<ul>
+							<li><a href="javascript:;" class="on">1주일</a></li>
+							<li><a href="javascript:;">1개월</a></li>
+							<li><a href="javascript:;">3개월</a></li>
+							<li><a href="javascript:;">6개월</a></li>
+							<li><a href="javascript:;" class="set">기간설정</a></li>
+						</ul>
+						<div class="sch_period">
+							<div class="inp_box">
+								<input type="text" title="시작날짜" placeholder="예시)20160101">
+								<span class="dash">~</span>
+								<input type="text" title="종료날짜" placeholder="예시)20160101">
+							</div>
+							<div class="btn">
+								<a href="#">조회</a>
+							</div>
+							<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+						</div>
+					</div>
+					<div class="ktabs kor" id="cpn_tabs">
+						<div role="tablist">
+							<button type="button" id="cpn_0" role="tab" aria-controls="panel_cpn_0" aria-selected="true">사용가능쿠폰<em class="num">(120)</em></button>
+							<button type="button" id="cpn_1" role="tab" aria-controls="panel_cpn_1" aria-selected="false">전체 발급쿠폰<em class="num">(992)</em></button>
+						</div>
+					</div>
+					<!-- 사용가능쿠폰.tabs -->
+					<div class="cpnTabs" id="panel_cpn_0" role="tabpanel" aria-labelledby="cpn_0">
+						<div class="cpn_list">
+							<strong class="cpn_tit">스페셜 쿠폰</strong>
+							<ul>
+								<li>
+									<span class="disc kor">배송비쿠폰</span><!-- addClass:kor -->
+									<span class="cpn_name">
+										<span>1월 1주차 무료배송 쿠폰</span>
+										<em>1만원 이상 구매 시 사용 가능</em>
+									</span>
+									<span class="btm">
+										<span class="period">21.06.01~21.06.14</span>
+										<a href="#none" class="disc_inp">상세내용</a>
+									</span>
+								</li>
+								<li>
+									<span class="disc"><b>10%</b></span>
+									<span class="cpn_name">
+										<span>[킴스] 신년맞이 선착순 2021명 3000원 장바구니 쿠폰 증정</span>
+										<em>1만원 이상 구매 시 사용 가능</em>
+									</span>
+									<span class="btm">
+										<span class="period">21.06.01~21.06.14</span>
+										<a href="#none" class="disc_inp">상세내용</a>
+									</span>
+								</li>
+								<li>
+									<span class="disc"><b>3,000</b>원</span>
+									<span class="cpn_name">
+										<span>[APP전용] 플랫폼 전용 즉시할인 쿠폰 (A123456789)</span>
+										<em>1만원 이상 구매 시 사용 가능</em>
+									</span>
+									<span class="btm">
+										<span class="period">21.06.01~21.06.14</span>
+										<a href="#none" class="disc_inp">상세내용</a>
+									</span>
+								</li>
+							</ul>
+
+							<strong class="cpn_tit">기획전 쿠폰</strong>
+							<ul>
+								<li class="rd"><!-- addCass:rd -->
+									<span class="disc rd"><b>3,000</b>원</span>
+									<span class="cpn_name">
+										<span>3000원 장바구니 쿠폰 증정</span>
+										<em>1만원 이상 구매 시 사용 가능</em>
+									</span>
+									<span class="btm">
+										<span class="period">21.06.01~21.06.14</span>
+										<a href="#none" class="disc_inp">기획전 바로가기</a>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--// 사용가능쿠폰.tabs -->
+					<!-- 전체 발급쿠폰.tabs -->
+					<div class="cpnTabs" id="panel_cpn_1" role="tabpanel" aria-labelledby="cpn_1">
+						<div class="cpn_list">
+							<strong class="cpn_tit">스페셜 쿠폰</strong>
+							<ul>
+								<li>
+									<span class="out"><em>사용완료</em></span>
+									<span class="disc kor">배송비쿠폰</span><!-- addClass:kor -->
+									<span class="cpn_name">
+										<span>1월 1주차 무료배송 쿠폰</span>
+										<em>1만원 이상 구매 시 사용 가능</em>
+									</span>
+									<span class="btm">
+										<span class="period">21.06.01~21.06.14</span>
+										<a href="#none" class="disc_inp" aria-hidden="true">상세내용</a>
+									</span>
+								</li>
+								<li>
+									<span class="out"><em>사용완료</em></span>
+									<span class="disc"><b>10%</b></span>
+									<span class="cpn_name">
+										<span>[킴스] 신년맞이 선착순 2021명 3000원 장바구니 쿠폰 증정</span>
+										<em>1만원 이상 구매 시 사용 가능</em>
+									</span>
+									<span class="btm">
+										<span class="period">21.06.01~21.06.14</span>
+										<a href="#none" class="disc_inp" aria-hidden="true">상세내용</a>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--// 전체 발급쿠폰.tabs -->
+					<div class="ntcTx_lst">
+						<ul>
+							<li>APP전용 쿠폰은 APP으로 이용하실 때  사용할 수 있습니다.</li>
+							<li>기획전쿠폰은 “기획전 바로가기” 를 통해 쿠폰이 적용되는 상품을 확인하실 수 있습니다.</li>
+							<li>숙박/e티켓/외식/마트/가전/디지털/뉴발란스/뉴발란스키즈 카테고리를 포함한 일부 상품은 쿠폰적용이 제외될 수 있습니다.</li>
+							<li>더블쿠폰: 상품쿠폰과 중복으로 할인적용이 가능하고, 단품 구매시 사용 가능합니다. (단, 일부 조건에서 사용이 제한 될 수 있습니다.)</li>
+							<li>장바구니쿠폰: 장바구니 주문금액에 대한 할인이 적용되며, 일부조건에서 사용이 제한될 수 있습니다.</li>
+							<li>배송비쿠폰: 배송비를 절약할 수 있는 용도로 사용 가능합니다. 쿠폰을 사용한 주문을 취소한 경우에는 사용하신 쿠폰이 다시 발행됩니다. (단, 일부 조건에서 사용이 제한 될 수 있습니다.)</li>
+							<li>상품에 적용되는 즉시 할인 쿠폰, 더블쿠폰, 장바구니쿠폰은 중복사용이 가능 합니다.</li>
+						</ul>
+					</div>
+				</div>
+				<script type="text/javascript">
+				$(document).ready(function(){
+					gtTabs('#cpn_tabs', 'panel_cpn_', 0, false)
+				})
+				</script>
+				<!--// coupon_box -->
+
+			</div>
+
+		</div>
+		<!--// CONTENT -->
+
+		<!-- FOOTER -->
+		<script src="kms_html_mo/common/incFooter.js"></script>
+		<!-- UTILL_BAR -->
+		<div class="utilBar" role="navigation" aria-label="킴스클럽하단네비게이션">
+			<ul>
+				<li><a href="#"><em class="ct">카테고리</em></a></li>
+				<li><a href="#"><em class="ws">주문조회<b aria-label="조회 상품있음"></b></em></a></li>
+				<li><a href="#"><em class="hm">홈</em></a></li>
+				<li><a href="#"><em class="my" aria-current="page">마이페이지</em></a></li>
+				<li><a href="#"><em class="rc">최근본상품</em></a></li>
+			</ul>
+		</div>
+		<div class="btn_top"><button type="button" aria-label="맨위로 이동"></button></div>
+
+		<!-- layer_search -->
+		<script src="kms_html_mo/common/incSchLyr.js"></script>
+
+	</div>
+	<!-- //.container -->
+
+</div>
+<!-- // .wrapper -->
+
+
+</body>
+</html>

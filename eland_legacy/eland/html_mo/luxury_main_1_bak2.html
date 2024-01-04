@@ -1,0 +1,145 @@
+
+		<!-- SWIPER 1 -->
+		<div class="slide_cont" data-index="1">
+			<!-- 브랜드 -->
+			<div class="area_lv1">
+				<div class="brd_name_wrap">
+					<h2 class="ir">브랜드 찾기</h2>
+					<div class="brd_quick_bar">
+						<div class="bar_wrap">
+							<ul>
+								<li><a href="#brd_A">A</a></li>
+								<li><a href="#brd_B">B</a></li>
+								<li><a href="#brd_C">C</a></li>
+								<li><a href="#brd_D">D</a></li>
+								<li><a href="#brd_E">E</a></li>
+								<li><a href="#brd_F">F</a></li>
+								<li><a href="#brd_G">G</a></li>
+								<li><a href="#brd_H">H</a></li>
+								<li><a href="#brd_I">I</a></li>
+								<li><a href="#brd_J">J</a></li>
+								<li><a href="#brd_K">K</a></li>
+								<li><a href="#brd_L">L</a></li>
+								<li><a href="#brd_M">M</a></li>
+								<li><a href="#brd_N">N</a></li>
+								<li><a href="#brd_O">O</a></li>
+								<li><a href="#brd_P">P</a></li>
+								<li><a href="#brd_Q">Q</a></li>
+								<li><a href="#brd_R">R</a></li>
+								<li><a href="#brd_S">S</a></li>
+								<li><a href="#brd_T">T</a></li>
+								<li><a href="#brd_U">U</a></li>
+								<li><a href="#brd_V">V</a></li>
+								<li><a href="#brd_W">W</a></li>
+								<li><a href="#brd_X">X</a></li>
+								<li><a href="#brd_Y">Y</a></li>
+								<li><a href="#brd_Z">Z</a></li>
+								<li><a href="#brd_Sp">&num;</a></li> 
+							</ul>
+						</div>
+					</div>
+					<div class="brd_part_wrap">
+						<div id="brd_A" class="brd_part">
+							<h2>A</h2>
+							<ol>
+								<li><a href="luxury_brand.html">ABRAHAM MOON</a></li>
+								<li><a href="luxury_brand.html">ALEXANDERWANG</a></li>
+								<li><a href="luxury_brand.html">ALFRED SARGENT</a></li>
+								<li><a href="luxury_brand.html">ALLSAINT</a></li>
+								<li><a href="luxury_brand.html">ARCTERYX VEILANCE</a></li>
+								<li><a href="luxury_brand.html">ARMARNI EXCHANGE</a></li>
+								<li><a href="luxury_brand.html">AMOUAGE</a></li>
+								<li><a href="luxury_brand.html">AVEDA</a></li>
+								<li><a href="luxury_brand.html">ASHIANA JEWELLERY</a></li>
+								<li><a href="luxury_brand.html">AVOCADO ASHIANA JEWELLERY</a></li>
+								<li><a href="luxury_brand.html">A LONG BRAND NAME LONG BRAND NAME LONG BRAND NAME LONG BRAND NAME LONG BRAND NAME LONG BRAND NAME LONG BRAND NAME</a></li>
+							</ol>
+						</div>
+						<div id="brd_B" class="brd_part">
+							<h2>B</h2>
+							<ol>
+								<li><a href="javascript:;">BLACK SHEEP</a></li>
+								<li><a href="javascript:;">BRUNELLO CUCINELLI</a></li>
+								<li><a href="javascript:;">BURGUS PLUS</a></li>
+								<li><a href="javascript:;">BABY CENTAUR</a></li>
+								<li><a href="javascript:;">BURGUS PLUS</a></li>
+								<li><a href="javascript:;">BYREDO</a></li>
+							</ol>
+						</div>
+						<div id="brd_C" class="brd_part">
+							<h2>C</h2>
+							<ol>
+								<li><a href="javascript:;">CALVIN KLEIN</a></li>
+								<li><a href="javascript:;">CHACO</a></li>
+								<li><a href="javascript:;">CHAMPION</a></li>
+								<li><a href="javascript:;">CHIELEI</a></li>
+								<li><a href="javascript:;">CAMPER</a></li>
+								<li><a href="javascript:;">CARTIER</a></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //브랜드 -->
+			<script>
+				var partOfst = [];
+				var ofstCmpr = 0;
+				$(document).ready(function() {
+					// D : 우측 바를 Body바로 밑으로 이동시키는 스크립트 입니다. 개발시 우측 바 ( .brd_quick_bar )는 body 바로 하단에 나올 수 있도록 개발 부탁드립니다. ( 3 lines )
+					// var $quickBar = $(".brd_quick_bar")[0].outerHTML;
+					// $(".brd_quick_bar").remove();
+					// $("body").prepend($quickBar);
+					// 우측 바 관련 스크립트 3 lines 끝
+					var head = parseInt($('.contents').css('padding-top'));
+					$('.brd_quick_bar a').not('.brd_quick_bar.hide a').click(function(e){
+						e.preventDefault();
+						var target = $(this).attr('href');
+						head = parseInt($('.contents').css('padding-top'));
+						if($(target).length){
+							var targetOfst = $(target).offset().top - head;
+							if ($(this).parent('li')[0] == $('.bar_wrap ul li:first-child')[0]) {
+								$("html,body").animate({scrollTop: 0}, 300);
+							}else{
+								$("html,body").animate({scrollTop: targetOfst}, 300);
+							}
+						}
+					});
+					$('.brd_part').each(function(index){
+						partOfst[index] = $(this).offset().top + $(this).outerHeight();
+					});
+					$(partOfst).each(function(){
+						($(window).scrollTop() + head + ( $(window).outerHeight()/2 )) > this ? ofstCmpr++ : ofstCmpr == ofstCmpr;
+					});
+					$('.bar_wrap li').removeClass('active').eq(ofstCmpr).addClass('active');
+				});
+
+
+
+				var lastOfst;
+				$(window).scroll(function(){
+					var bodyH = $('body').outerHeight();
+					var windowH = $(window).outerHeight();
+					var footerH = $('footer').outerHeight();
+					var ulOfst = $('.brd_quick_bar .bar_wrap ul li:last-child').offset().top + $('.brd_quick_bar .bar_wrap ul li:last-child').outerHeight();
+					var ulOfstFix =/* $('footer').offset().top - */$('.brd_quick_bar .bar_wrap').outerHeight();
+					var head = 88/* parseInt($('.contents').css('padding-top'));*/
+					lastOfst = $(window).scrollTop()/* + parseInt($('.contents').css('padding-top'))*/;
+					limit = $('.contents').outerHeight() - head - ulOfstFix;
+					console.log(limit)
+					// var calc = bodyH - windowH - footerH;
+					ofstCmpr = 0;
+					$(partOfst).each(function(){
+						($(window).scrollTop() + head + ( $(window).outerHeight()/2 )) > this ? ofstCmpr++ : ofstCmpr == ofstCmpr;
+					});
+					$('.bar_wrap li').removeClass('active').eq(ofstCmpr).addClass('active');
+
+					if($(window).scrollTop()> limit){
+						$('.brd_quick_bar').css({'top':limit+'px'});
+					}
+					else{
+						$('.brd_quick_bar')/*.addClass('stickyBtm')*/.css({'top':10+lastOfst+'px'});
+					}
+				})
+			</script>
+		</div>
+		<!-- SWIPER 1 -->

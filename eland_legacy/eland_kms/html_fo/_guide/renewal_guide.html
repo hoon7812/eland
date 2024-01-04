@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>E랜드 통합몰 | RENEWAL 가이드</title>
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/common.css">
+	<link rel="stylesheet" type="text/css" href="./css/guide.css">
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<h1 class="guide-tit-h1">RENEWAL 가이드</h1>
+<div class="guide-section">
+	<h2 class="guide-tit-h2">환경</h2>
+	<ol class="guide-ol-list">
+		<li>
+			<strong>01. 크로스브라우징</strong>
+			<div class="cont"><span class="txt_c01">IE10이상</span>, 크롬, 사파리, 파이어폭스</div>
+		</li>
+	</ol>
+	<h2 class="guide-tit-h2">통합몰 class 분리 처리</h2>
+	<ol class="guide-ol-list">
+		<li>
+			<strong>01. PC</strong>
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>main_renewal.scss 추가</li>
+					<li><span class="txt_c01">renewal</span> 클래스 사용</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<strong>02. MO</strong>
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>main_new.scss 사용 (main_new.scss 에 브랜드몰 관련 스타일이 정의되어 있어, main_renewal.scss 사용 X)</li>
+					<li><span class="txt_c01">renewal2</span> 클래스 사용 (renewal 클래스를 브랜드몰에서도 사용하여 새로운 클래스 사용)</li>
+				</ul>
+			</div>
+		</li>
+	</ol>
+
+	<h2 class="guide-tit-h2">추가된 scss파일</h2>
+	<ol class="guide-ol-list">
+		<li>
+			<strong>01. PC</strong>
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>
+						color.scss 파일에 아래와 같은 변수 사용으로 통합몰 컬러값 지정<br />
+						<div class="cont">
+							$point_color_price : #ff0000; //상품가격 point-color<br />
+							$point_color_txt : #ff0000; // 상품명 point-color , 통합몰 컨텐츠 텍스트<br />
+							$point_color_bg : #ff0000; //상품 할인율 bg-color , 통합몰 컨텐츠 보더 , 통합몰 컨텐츠 BG
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<strong>02. MO</strong>
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>
+						color.scss 파일에 아래와 같은 변수 사용으로 통합몰 컬러값 지정<br />
+						<div class="cont">
+							$point_color_price : #ff0000; //상품가격 point-color<br />
+							$point_color_txt : #ff0000; // 상품명 point-color , 통합몰 컨텐츠 텍스트<br />
+							$point_color_bg : #ff0000; //상품 할인율 bg-color , 통합몰 컨텐츠 보더 , 통합몰 컨텐츠 BG
+						</div>
+					</li>
+					<li>
+						leftmenu.scss 레이어 서랍식 메뉴 -> 바닥 서랍식 메뉴
+					</li>
+					<li>
+						header.scss 브랜드몰 헤더영역(2차 예정)
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ol>
+
+	<h2 class="guide-tit-h2">상품리스트 공통 반영사항</h2>
+	<ol class="guide-ol-list">
+		<li>
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>2단(240px) : list_product04(기획전 사용)</li>
+					<li>3단(350px) : list_product01.size03(기획전 사용)</li>
+					<li>4단(259px) : list_product01(기획전 사용)</li>
+					<li>5단(200px) : list_product05(카테고리,검색 사용)</li>
+					<li class="txt_c01"><span>5단(205px) : list_product01.size05</span> <= 리뉴얼 버전부터 사용 안함</li>
+				</ul>
+			</div>		
+		</li>
+	</ol>
+
+	<h2 class="guide-tit-h2">Youtube 영상</h2>
+	<ol class="guide-ol-list">
+		<li>01. 플레이/스톱 디자인된 유투브 영상
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>디자인된 유투브 플레이어의 경우 다른 디자인된 유투브 플레이어 컨트롤 가능(** 현재 영상 play 다른 영상 stop **)
+<pre>
+&lt;div class="g_vdo"&gt;
+	&lt;img src="../images/mobile/renewal/bg_video_size.png" alt="" /&gt;
+	&lt;div class="set_vdo"&gt;
+		&lt;button class="btn_vdo_play" type="button" onclick="playYoutube(0);"&gt;&lt;span class="ir"&gt;Play&lt;/span&gt;&lt;/button&gt;
+		&lt;button class="btn_vdo_pause" type="button" onclick="pauseYoutube(0);"&gt;&lt;span class="ir"&gt;Pause&lt;/span&gt;&lt;/button&gt;
+		<span class="txt_c01">&lt;div id="vdo_iframe1"&gt;&lt;/div&gt;</span>
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="g_vdo"&gt;
+	&lt;img src="../images/mobile/renewal/bg_video_size.png" alt="" /&gt;
+	&lt;div class="set_vdo"&gt;
+		&lt;button class="btn_vdo_play" type="button" onclick="playYoutube(0);"&gt;&lt;span class="ir"&gt;Play&lt;/span&gt;&lt;/button&gt;
+		&lt;button class="btn_vdo_pause" type="button" onclick="pauseYoutube(0);"&gt;&lt;span class="ir"&gt;Pause&lt;/span&gt;&lt;/button&gt;
+		<span class="txt_c01">&lt;div id="vdo_iframe2"&gt;&lt;/div&gt;</span>
+	&lt;/div&gt;
+&lt;/div&gt;
+
+/* [v2] : 유투브 동영상 플레이 */
+var playerArr = [];
+var vdoCurrentIDX; //현재 선택된 동영상 index
+var playerState;//플레이 상태 
+var youtubeVdoArray = [
+	{
+		yId : 'vdo_iframe1', 
+		yOpt : {width: '100%', height: '100%', videoId: 'IHNzOHi8sJs'}
+	},
+	{
+		yId : 'vdo_iframe2',
+		yOpt : { width: '100%', height: '100%', videoId: '9bZkp7q19f0'}
+	}
+];
+var vdosLeng = youtubeVdoArray.length;
+
+$('html').find('script').filter(function(){
+    return $(this).attr('src') === 'https://s.ytimg.com/yts/jsbin/www-widgetapi-vfllLD3qZ/www-widgetapi.js'
+}).remove();
+commonUI.loadJs("https://s.ytimg.com/yts/jsbin/www-widgetapi-vfllLD3qZ/www-widgetapi.js");
+/* //[v2] : 유투브 동영상 플레이 */
+
+&lt;!-- UI.JS --&gt;
+&lt;script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"&gt;&lt;/script&gt;
+&lt;!-- [v2] : 추가 --&gt;
+&lt;script type="text/javascript"&gt;
+	commonUI.loadJs("../common/js/common.ui.video.js");
+&lt;/script&gt;
+&lt;!-- //[v2] : 추가 --&gt;
+</pre>	
+					</li>
+				</ul>
+			</div>
+		</li>	
+		<li>02. BO에서 html로 등록한 유투브 플레이어
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>다른 영상 컨트롤이 불가능</li>
+				</ul>
+			</div>
+		</li>
+		<li>03. 이슈
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>같은 화면에서 디자인된 영상이 노출된 후 새로운 디자인 영상이 추가되면 오류를 일으킴<br />
+						(EX:모바일 홈 메인 > 홈-숏핑 영상이 노출된 후 상품상세(레이어)에 영상이 노출될 경우 충돌나서 에러를 일으킴.)<br />
+						상품상세의 경우 디자인 안된 영상이 노출되도록 처리.
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ol>
+</div>
+</body>
+</html>

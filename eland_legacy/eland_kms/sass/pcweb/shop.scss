@@ -1,0 +1,3154 @@
+@charset "utf-8";
+
+@import  "color";
+
+// event
+.box_cate_link{position:relative;height:50px;margin-top:30px;border-top:2px solid #333;border-bottom:1px solid #333;
+	.btn_controller{position:absolute;top:0;left:0;right:0;
+		.btn_prev{display:none;position:absolute;top:0;left:0;z-index:1;
+			span{overflow:hidden;display:block;width:32px;height:50px;text-indent:-9999px;}
+			&.active{display:block;
+				span{background:url('../../images/pcweb/shop/ico_dp_prev_on.gif') 50% 50% no-repeat;}
+			}
+		}
+		.btn_next{display:none;position:absolute;top:0;right:0;z-index:1;
+			span{overflow:hidden;display:block;width:32px;height:50px;text-indent:-9999px;}
+			&.active{display:block;
+				span{background:url('../../images/pcweb/shop/ico_dp_next_on.gif') 50% 50% no-repeat;}
+			}
+		}
+	}
+	.box_hidden{overflow:hidden;position:relative;height:50px;margin:0 32px;
+		ul{position:absolute;top:11px;left:0;width:9999px;}
+		li{float:left;
+			&:first-child{
+				a{margin-left:4px;}
+			}
+			a{display:block;position:relative;height:28px;margin-left:4px;
+				> span{display:block;margin:0;padding:0 20px;line-height:28px;}
+			}
+			&.on a,&:hover a{display:block;position:relative;height:28px;}
+			&.on a:before,&:hover a:before{display:block;position:absolute;top:0;left:0;width:15px;height:28px;background:url('../../images/pcweb/common/bg_round02_l.png') 0 0 no-repeat;content:"";}
+			&.on a:after,&:hover a:after{display:block;position:absolute;top:0;right:0;width:15px;height:28px;background:url('../../images/pcweb/common/bg_round02_r.png') 0 0 no-repeat;content:"";}
+			&.on a > span,&:hover a > span{display:block;height:28px;margin:0 15px 0 15px;padding:0 5px;background:url('../../images/pcweb/common/bg_round02_c.png') 0 0 repeat-x;font-weight:800;color:$point_color_txt;line-height:28px;vertical-align:middle;}
+			.round02 > span{display:block;height:28px;padding:0 20px;margin:0;}
+		}
+	}
+}
+
+.main_evt{
+	.tit_evt{min-width:1080px;text-align:center;}
+	.list_thumb_txt01{width:1080px;margin:0 auto;}
+	.title{
+		.sel01{width:256px;}
+		.tit_h2_01{padding-right:350px;}
+	}
+	.tab_type02 > ul li a{overflow:hidden;white-space:nowrap;}
+}
+
+// common
+.tab_nav{padding:0 0 0 1px;
+	> ul{
+		&:after{display:block;content:'';clear:both;}
+		> li{float:left;position:relative;width:25%;
+			&.on{z-index:10;}
+		}
+	}
+	&.size05 > ul > li{width:20%;}
+	> ul > li{
+		> a{display:block;border:1px solid #ccc;margin:-1px 0 0 -1px;
+			span{overflow:hidden;display:block;position:relative;height:44px;padding:0 28px 0 15px;border:1px solid #fff;line-height:44px;
+				&:before{display:block;position:absolute;top:50%;right:15px;width:6px;height:9px;margin-top:-4px;background:url('../../images/pcweb/common/ico_arrow_anchor.png') 0 0 no-repeat;content:'';}
+			}
+		}
+		&.on > a{position:relative;border:1px solid #000;
+			span{border:1px solid #000;color:#333;font-weight:800;
+				&:before{display:block;position:absolute;top:50%;right:15px;width:6px;height:9px;margin-top:-4px;background:url('../../images/pcweb/common/ico_arrow_anchor_on.png') 0 0 no-repeat;content:'';}
+			}
+		}
+	}
+	.depth2{display:none;position:absolute;top:46px;left:-1px;right:0;z-index:1;padding:13px 0 18px;border:1px solid #333;background:#fff;
+		li{
+			a{display:block;padding:5px 16px;color:#999;
+				&:hover{color:#333;font-weight:800;}
+			}
+			&.on a span{padding-bottom:0;margin-bottom:2px;border-bottom:1px solid #333;color:#333;font-weight:800;}
+		}
+	}
+	> ul > li.on .depth2{display:block;}
+}
+.section_corner{margin-top:60px;
+	.list_product01{padding-bottom:0;border-bottom:none;}
+}
+
+// 라이벌매치
+.layout_wide02 .box_rival{text-align:center;}
+.box_rival{position:relative;
+	.l_sel{position:absolute;bottom:0;left:0;right:50%;margin-right:139px;text-align:right;}
+	.r_sel{position:absolute;bottom:0;left:50%;right:0;margin-left:139px;text-align:left;}
+	.l_sel .btn04{margin-left:24px;}
+	.r_sel .btn04{margin-right:24px;}
+	.btn04.suc{border:1px solid #ccc;
+		span{background:#ccc;}
+	}
+	strong{vertical-align:middle;font-size:16px;
+		span{font-size:24px;font-weight:800;color:#a40001;}
+	}
+}
+.box_html{
+	&:after{display:block;content:'';clear:both;}
+	.l_cont{float:left;}
+	.r_cont{float:right;}
+}
+
+// 베스트100
+.best100_wrap .box_cate_link{margin-top:-2px;}
+.tit_dp{margin-bottom:40px;text-align:center;
+	h2{position:relative;display:inline-block;color:#333;line-height:43px;font-size:40px;font-family:"Noto Sans CJK KR", "Noto Sans KR", "Noto Sans", "Noto", "Verdana","Nanum Gothic", sans-serif;font-weight:bold;vertical-align:top;}
+	.s_dp{display:block;margin-top:6px;color:#333;font-size:16px;letter-spacing:-1px;line-height:20px;}
+	.t_dp{margin-left:10px;font-size:33px;color:#333;line-height:40px;}
+}
+.section_popular_word{position:relative;margin-top:40px;padding-top:13px;
+	.flag_best{position:absolute;top:-13px;left:0;}
+	.title{position:relative;
+		.tit_underline{padding-left:59px;}
+	}
+	.list_product01{border-bottom:none;padding-bottom:0;}
+	.btn_more01{position:absolute;top:26px;right:0;}
+}
+.title .flag_best{display:block;width:50px;height:63px;background:url('../../images/pcweb/common/flag_best03.png') 0 0 no-repeat;
+	span{display:block;padding-top:8px;font-size:12px;font-family:"Verdana","Nanum Gothic",sans-serif;text-align:center;color:#fff;}
+	strong{display:block;font-size:18px;font-family:"Verdana","Nanum Gothic",sans-serif;font-weight:bold;text-align:center;color:#fff;}
+}
+
+// 실시간 검색어
+.box_rtsw{margin-top:-2px;
+	dl{position:relative;border-top:2px solid #333;border-bottom:1px solid #333;padding:5px 0 20px 160px;}
+	.stit{position:absolute;top:50%;left:19px;height:21px;margin-top:-10px;padding:3px 0 0 27px;background:url('../../images/pcweb/common/img_clock.gif') 0 0 no-repeat;font-weight:800;color:#333;}
+	.scont{
+		ol{
+			li{float:left;width:20%;margin-top:15px;color:#333;
+				> span{display:block;overflow:hidden;padding-right:10px;white-space:nowrap;text-overflow:ellipsis;}
+			}
+			&:after{display:block;content:'';clear:both;}
+		}
+		.no{display:inline-block;width:15px;height:15px;border:1px solid #ddd;font-family:"Verdana","Nanum Gothic",sans-serif;font-size:10px;vertical-align:1px;letter-spacing:-1px;line-height:15px;color:#a40001;font-weight:bold;text-align:center;}
+	}
+}
+
+// 0원 딜
+.zero_deals_wrap{
+	.list > li{height:445px;}
+	.list_product01{
+		.set_reivew{position:absolute;left:0;bottom:0;z-index:10;width:240px;}
+		.lay_review{display:none;position:absolute;top:41px;left:50%;margin-left:-160px;border:1px solid #333;background:#fff;
+			&:after{display:block;position:absolute;top:-7px;left:50%;width:13px;height:7px;margin-left:-6px;background:url('../../images/pcweb/common/ico_lp_review_arrow01.png') 0 0 no-repeat;content:'';}
+			&:before{display:block;position:absolute;top:-15px;left:0;right:0;height:15px;content:'';}
+			.scont{padding:15px;}
+		}
+	}
+	.scont .textarea{width:288px;height:141px;}
+}
+
+// 기획전 100% 대응
+#content.layout_wide02{
+	.location,.title,.tab_type02,.list_product01,.list_product02,.list_product03,.list_product04,.list_product05,.box_page,.box_cate_link,.section_evt,.detail_col,.box_html,.tab_anchor01,.tab_type04,.set_btn{width:1080px;margin-left:auto;margin-right:auto;}
+	//.detail_col .list_product01,
+	.detail_col .list_product05{width:9999px;}
+	.visual_evt{text-align:center;}
+}
+
+// happydeal detail
+.tit_evt_hdeal{position:relative;max-width:1440px;min-width:1080px;margin:0 auto;height:78px;background:url('../../images/pcweb/shop/bg_hdeal.jpg') center 0 no-repeat;z-index:10;}
+.tab_hdeal_area{position:relative;max-width:2560px;min-width:1080px;margin:0px auto;z-index:11;
+	.tab_hdeal_contents{position:relative;left:0;right:0;}
+	.tab_conts{position:relative;margin:0 auto;}
+	.tab_hdeal{width:1081px;margin:0 auto;
+		&:after{display:block;clear:both;content:'';}
+		> li{float:left;width:auto;
+			> a{display:block;width:540px;height:50px;background-image:url('../../images/pcweb/shop/bg_hdeal_tabs02.jpg');background-repeat:no-repeat;text-indent:-9999px;
+				.ir{display:none;}
+			}
+		}
+	}
+	.tab_1on > li > a .ir,.tab_2on > li > a .ir,.tab_3on > li > a .ir{display:block;}
+	&.tabs01 a{width:359px;}
+	&.tabs02 a,&.tabs03 a{width:361px;}
+	.tab_conts{display:none;}
+	&.tab_1on .tab_conts.tab01,&.tab_2on .tab_conts.tab02,&.tab_3on .tab_conts.tab03{display:block;}
+	.hdeal_ir_area{position:relative;width:1080px;height:140px;margin:0 auto;}
+	&.tab_1on{
+		.tabs01 a{background-position:0 0;}
+		.tabs02 a{background-position:-540px 0;}
+		.tabs03 a{background-position:-720px 0;}
+	}
+	&.tab_2on{
+		.tabs01 a{background-position:0 -50px;}
+		.tabs02 a{background-position:-540px -50px;}
+		.tabs03 a{background-position:-720px -50px;}
+	}
+	&.tab_3on{
+		.tabs01 a{background-position:0 -100px;}
+		.tabs02 a{background-position:-360px -100px;}
+		.tabs03 a{background-position:-720px -100px;}
+	}
+}
+
+.tab_hdeal_contents .tab_conts{
+	&.tab01{background:url('../../images/pcweb/shop/img_hdeal_tab01.png') center 0 no-repeat;}
+	&.tab02{background:url('../../images/pcweb/shop/img_hdeal_tab03.png') center 0 no-repeat;}
+	&.tab03{background:url('../../images/pcweb/shop/img_hdeal_tab02.png') center 0 no-repeat;}
+}
+
+.hdeal_user{position:absolute;top:36px;right:50px;font-size:14px;color:#333;max-width:250px;
+	strong{font-weight:bold;}
+}
+.hdeal_date{display:none;position:absolute;left:290px;top:75px;width:280px;font-size:22px;color:#6c6a6a;line-height:1.3em;letter-spacing:-1px;text-align:center;font-family:Verdana;}
+.hdeal_limit{position:absolute;top:60px;right:48px;width:387px;}
+.hdeal_days{float:left;padding-right:40px;background:url('../../images/pcweb/shop/bg_hdeal_days.png') right center no-repeat;}
+.hdeal_times{float:left;*zoom:1;
+	&:after{display:block;clear:both;content:"";}
+	li{float:left;padding-left:16px;background:url('../../images/pcweb/shop/bul_hdeal_colon.png') 3px center no-repeat;
+		&:first-child{padding-left:0;background:none;}
+	}
+}
+.hdeal_num{overflow:hidden;float:left;width:70px;height:50px;background:url('../../images/pcweb/shop/bg_hdeal_numbers.png') 0 0 repeat-x;color:#fff;font-family:Verdana;font-size:34px;font-weight:800;line-height:45px;vertical-align:middle;letter-spacing:14px;padding-left:8px;white-space:nowrap;}
+
+// happydeal contents
+#hdealSwiper{margin-left:0px;}
+.bg_hdeal_swiper{position:relative;padding-top:40px;border-bottom:1px solid #ddd;
+	.list_product01 .list .links:hover .thumb:before{display:none;}
+}
+// IE8
+@media \0screen{
+	.bg_hdeal_swiper .list_product01 .list .links:hover .thumb:before{display:none;}
+}
+
+.hdeal_swiper_area{position:relative;width:1080px;height:550px;margin:0 auto;}
+.hdeal_swiper{position:absolute;height:550px;width:1080px;overflow:hidden;
+	.list_product01{padding-bottom:0;border-bottom:none;overflow:hidden;height:490px;}
+	.swiper-wrapper{height:530px;overflow:hidden;margin:0 auto;border-bottom:none;}
+	.links{
+		.brand_nm,.prod_nm{font-size:16px;color:#333;font-weight:800;}
+		.box_price{margin-top:12px;}
+	}
+	.list{
+		> li{margin:0;width:340px;padding:0 15px;height:488px;
+			&.swiper-slide{
+				.links{width:340px;height:490px;border:2px solid #d0d0d0;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+				.img_flag_box{top:2px;left:17px;}
+				.cont{margin:0 25px;
+					.prod_nm{color:#666;line-height:1.3em;height:2.65em;}
+				}
+				.cont_price{float:left;margin-bottom:-5px;
+					.price01{overflow:hidden;}
+					.cur_price{display:block;float:left;font-family:"Verdana","Nanum Gothic",sans-serif;font-size:15px;color:#333;letter-spacing:-1px;}
+				}
+				.cont{
+					.c_price strong{font-size:24px;}
+					.prime{margin-right:20px;font-size:15px;}
+					.price_nm{font-size:21px;}
+					.dis_percent{display:block;float:left;width:75px;margin:9px 0 0 -4px;font-family:"Verdana","Nanum Gothic",sans-serif;font-size:13px;color:$point_color_price;
+						strong{margin-right:1px;font-size:40px;font-weight:400;letter-spacing:-3px;}
+					}
+				}
+				.box_opt_link{top:0;z-index:10;
+					.opt_like{right:22px;top:11px;}
+				}
+				.thumb img{width:336px;height:336px;border-bottom:1px solid #eee;}
+			}
+		}
+		.blind{position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;z-index:11;background:#fff;filter:alpha(opacity = 60);opacity:0.6;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";z-index:9;}
+	}
+	.set_indicator{position:absolute;bottom:14px;left:50%;margin-left:-100px;width:200px;text-align:center;
+		.d_indi{display:inline-block;
+			.swiper-pagination-switch{display:inline-block;float:inherit;}
+		}
+		.d_auto{display:inline-block;margin:-1px 0 0 0;}
+	}
+	.hdeal_prev,.hdeal_next{position:absolute;top:40%;margin-top:-25px;display:block;padding:0 28px 0 22px;height:50px;background:url('../../images/pcweb/shop/bg_grouplp_btn2.png') 0 0 repeat-x;text-align:center;z-index:10;letter-spacing:2.5px;}
+	.hdeal_prev span,.hdeal_next span{display:inline-block;margin:0 auto;font-size:12px;min-width:14px;color:#fff;line-height:50px;vertical-align:middle;text-indent:-9999px;}
+	.hdeal_prev span{background:url('../../images/pcweb/shop/ico_arrow10_l.png') left center no-repeat;}
+	.hdeal_next span{background:url('../../images/pcweb/shop/ico_arrow10_r.png') right center no-repeat;}
+	.hdeal_prev{left:0;}
+	.hdeal_next{right:1px;}
+	.hdeal_prev{
+		&:hover,&:focus{background:url('../../images/pcweb/shop/bg_grouplp_btn2_on.png') 0 0 repeat-x;}
+	}
+	.hdeal_next{
+		&:hover,&:focus{background:url('../../images/pcweb/shop/bg_grouplp_btn2_on.png') 0 0 repeat-x;}
+	}
+	.hdeal_prev{
+		&:hover span,&:focus span{padding-left:20px;text-indent:0;}
+	}
+	.hdeal_next{
+		&:hover span,&:focus span{padding-right:20px;text-indent:0;}
+	}
+}
+
+.hdeal_swiper_bn{width:1080px;}
+.hdeal_goods_list{width:1080px;margin:0 auto;padding-top:30px;
+	.list_product01 .list > li{width:240px;}
+}
+.list > li .thumb .sale_cnt{display:inline-block;padding-left:13px;position:absolute;right:0;bottom:0;z-index:10;background:url('../../images/pcweb/common/bg_sale_cnt.png') 0 0 no-repeat;
+	> span{display:inline-block;padding:0 10px;height:25px;line-height:25px;color:#fff;font-weight:800;font-size:12px;background:url('../../images/pcweb/common/bg_sale_cnt_mm.png') 0 0 repeat-x;}
+	.tx_num{font-size:13px;}
+}
+
+// 이벤트 템플릿
+.evt_template{min-width:1080px;}
+.evt_template_area{min-width:1080px;height:auto;text-align:center;
+	.evt_template_img{display:inline;visibility:hidden;}
+}
+.evt_template{
+	.right .sns_list{float:left;
+		li{float:left;margin:2px;}
+	}
+	.evt_temp_date{font-size:14px;font-weight:400;}
+}
+.evt_temp_inputarea{position:relative;width:1080px;margin:0 auto;
+	.evt_temp_text01{padding:20px 145px 20px 20px;background:#f3f3f3;
+		.textarea{width:100%;height:74px;}
+	}
+	.evt_temp_btn01{width:120px;height:74px;position:absolute;right:20px;top:20px;background:#333;color:#fff;font-weight:800;line-height:75px;vertical-align:middle;font-size:14px;text-align:center;}
+}
+.evt_temp_table{margin:40px auto 60px;width:1080px;}
+.evt_temp_inputarea{
+	.evt_temp_inputlist{background:#f4f4f4;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+		> ul{padding:10px 20px;
+			li{border-top:1px solid #ddd;padding:20px 0 18px;}
+			.evt_ques{display:block;margin-bottom:20px;font-size:16px;color:#333;font-weight:800;}
+			.evt_labels{padding-left:10px;
+				label{margin-right:25px;}
+			}
+			li{
+				&:first-child{border-top:none;}
+				.evt_labels textarea{height:120px;}
+			}
+		}
+	}
+	.set_btn{margin:20px 0 60px;
+		.evt_temp_btn02{display:inline-block;padding:0 80px;margin:0 auto;background:#333;text-align:center;
+			span{display:inline-block;padding-left:36px;width:auto;font-size:20px;line-height:60px;height:60px;background:url('../../images/pcweb/shop/ico_evt_temp_btn02.png') 0 center no-repeat;color:#fff;font-weight:800;}
+		}
+		.btn06{height:70px;
+			span{width:350px;height:68px;font-size:20px;line-height:68px;}
+			&.c01 span{border-color:#666;color:#666;}
+		}
+	}
+}
+.evt_temp_inputarea02{width:1080px;margin:0 auto 60px;padding:30px 0 31px;background:url('../../images/pcweb/shop/bg_evt_temp02.gif') 0 bottom repeat-x;*zoom:1;
+	&:after{display:block;clear:both;content:"";}
+	.evt_temp_text02{position:relative;float:left;width:740px;border:3px solid #999;background:url('../../images/pcweb/shop/bg_evt_temp02_in.gif') 578px 0 repeat-y;box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+	.input_txt{width:578px;margin:13px 0;padding-left:20px;font-size:16px;border:none;color:#666;line-height:28px;}
+}
+.evt_temp_btn03{position:absolute;width:160px;height:54px;right:0;top:0;text-align:center;
+	span{display:inline-block;padding-left:30px;line-height:54px;color:#333;font-size:20px;font-weight:800;background:url('../../images/pcweb/shop/ico_evt_temp_btn02.gif') 0 center no-repeat;}
+}
+.evt_temp_btn04{display:block;float:right;width:320px;height:60px;background:#db3801;text-align:center;
+	span{display:inline-block;padding-left:70px;line-height:60px;color:#fff;font-size:20px;font-weight:800;background:url('../../images/pcweb/shop/ico_evt_temp_btn03.png') 0 center no-repeat;}
+}
+
+// E-CORE 매장안내
+.ecore_store{
+	ul{margin:40px 8px 0 7px;*zoom:1;
+		&:after{display:block;clear:both;content:'';}
+	}
+	li{position:relative;float:left;width:340px;margin:0 7px 30px 8px;}
+	.store_name span{font-size:14px;color:#333;font-weight:bold;margin:0 0 0 10px;}
+	.store_info{margin:13px 0 0;padding:16px 0 0 20px;height:112px;border:2px solid #d8cec5;
+		p{font-size:13px;color:#666;line-height:18px;}
+		.adr{overflow:hidden;height:36px;padding-left:68px;
+			span{display:block;float:left;width:68px;margin-left:-68px;}
+		}
+		.btn04{position:absolute;bottom:0;right:0;}
+	}
+	.set_tooltip{position:absolute;right:-2px;bottom:-2px;width:24px;}
+}
+.store_api{margin:10px 0 0;width:301px;height:242px;}
+
+// MIX&MATCH
+.mix_wrap .no_data{margin-top:-1px;}
+.tit_h2_mix{padding:0 0 13px 10px;font-size:26px;color:#333;font-weight:800;line-height:1.3em;border-bottom:1px solid #333;
+	.txt_h2_mini{margin:0 0 0 10px;font-size:13px;vertical-align:bottom;line-height:1.7em;}
+}
+.list_mix{
+	ul{margin:26px 0 0;*zoom:1;
+		&:after{display:block;clear:both;content:'';}
+	}
+	li{width:340px;height:392px;float:left;margin:0 10px 30px;padding:0 0 2px;background:url(../../images/pcweb/shop/bg_mix_box.png) repeat;
+		.thumb_img2 a,.thumb_img3 a,.thumb_img4 a{display:block;}
+	}
+}
+.mix_box{position:relative;width:338px;height:390px;border:1px solid #ddd;background:#fff;
+	.thumb_img2{text-align:center;margin:16px 0 0;
+		span{position:relative;display:block;margin:6px 0 0;}
+	}
+	.thumb_img3{text-align:center;margin:16px 0 0;
+		> span,a > span{position:relative;display:inline-block;margin:6px 3px 0;}
+		span.first{display:block;margin:6px 0 0;}
+	}
+	.thumb_img4{text-align:center;margin:10px 0 0;
+		> span{position:relative;display:inline-block;margin:6px 2px 0;}
+	}
+	span a.btn_del{position:absolute;top:0;right:0;width:32px;height:32px;background:url(../../images/pcweb/shop/btn_mix_close.png) no-repeat;
+		span{display:block;overflow:hidden;text-indent:-999px;}
+	}
+	.thumb_img2 span a.btn_del,.thumb_img3 span.first a.btn_del{margin-right:140px;}
+	span > img{width:150px;height:150px;}
+	&.big span > img{width:240px;height:240px;}
+	.cont{margin:20px 0 0 16px;padding:0 91px 0 0;
+		.tx_id{display:block;font-size:13px;color:#333;}
+		.tx_num{display:block;font-size:13px;color:#666;}
+	}
+	.opt_like{position:absolute;top:10px;right:10px;display:block;width:26px;height:26px;background:url('../../images/pcweb/common/bg_opt_like.png') 0 0 no-repeat;
+		span{display:block;overflow:hidden;text-indent:-999px;}
+	}
+	.recom{position:absolute;bottom:20px;right:16px;width:75px;height:28px;cursor:pointer;
+		.recom_num{display:inline-block;padding:0 11px 0 26px;width:38px;height:28px;line-height:28px;font-size:13px;color:$point_color_txt;font-weight:bold;text-align:center;background:url('../../images/pcweb/shop/bg_recom.png') no-repeat;}
+		.recom_over{display:none;height:28px;background:url('../../images/pcweb/shop/bg_recom.png') 0 -28px no-repeat;
+			a{display:block;width:75px;height:28px;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+		}
+		&:hover{.recom_num{display:none;}
+			.recom_over{display:block;z-index:1;}
+		}
+	}
+	&.big{display:inline-block;text-align:center;width:518px;height:518px;background:#fff;
+		a img{width:240px;height:240px;}
+	}
+}
+.mix_big{position:relative;margin:0 auto 30px;width:1080px;height:668px;background:url(../../images/pcweb/shop/bg_mix.jpg) no-repeat;}
+.mix_bigbox{text-align:center;
+	.tit_mix{text-align:center;padding:60px 0 15px;font-size:18px;color:#333;font-weight:bold;
+		strong{color:$point_color_txt;}
+	}
+}
+.mix_big{
+	&.detail{width:520px;height:auto;margin:14px 0 0;background:none;}
+	.sns_list{position:absolute;top:-30px;right:0;
+		&:after{display:block;clear:both;content:'';}
+		li{float:left;margin:2px;}
+	}
+}
+.mix_making{margin:40px 0 65px;padding:0 0 50px;border-bottom:1px solid #ddd;
+	&:after{display:block;clear:both;content:'';}
+	.txt_step{height:20px;line-height:20px;font-size:13px;color:#333;background:url(../../images/pcweb/shop/bg_mix_step.png) no-repeat;
+		.ico_step{padding:0 15px 0 5px;color:#fff;font-size:11px;font-weight:bold;font-family:"Verdana","Nanum Gothic",sans-serif;}
+	}
+	.making_left{float:left;width:520px;margin:0 20px 0 0;
+		.making_item{margin:15px 0;
+			ul{margin:0 0 0 auto;width:175px;background:url(../../images/pcweb/shop/bg_making_item.png) no-repeat;
+				&:after{display:block;clear:both;content:'';}
+			}
+			li{float:left;width:58px;text-align:center;
+				&.item02{width:59px;}
+				a{display:block;width:100%;height:28px;line-height:28px;color:#999;font-size:13px;text-indent:15px;
+					&:hover,&:focus{color:#333;}
+				}
+				&.item02{a:hover,&.on a{background:url(../../images/pcweb/shop/bg_making_item.png) 0 -30px no-repeat;}
+				}
+				&.item03{a:hover,&.on a{width:59px;margin-left:-1px;background:url(../../images/pcweb/shop/bg_making_item.png) -58px -30px no-repeat;}
+				}
+				&.item04{a:hover,&.on a{width:59px;margin-left:-1px;background:url(../../images/pcweb/shop/bg_making_item.png) -116px -30px no-repeat;}
+				}
+			}
+		}
+	}
+}
+.list_chip.mix_chip{margin:26px 0 0 0;text-align:center;
+	li{display:inline-block;float:none;margin:6px 0 0 2px;}
+}
+.mix_making .making_right{float:left;width:520px;margin:0 0 0 20px;
+	.making_item_sel{position:relative;margin:15px 0;height:28px;
+		ul{position:absolute;right:0;
+			&:after{display:block;clear:both;content:'';}
+		}
+		li{float:left;margin:0 0 0 20px;height:28px;line-height:28px;}
+	}
+	.tab_cont{margin:20px 0 0;}
+	.mix_sel_box{margin:0 0 16px 27px;
+		ul:after{display:block;clear:both;content:'';}
+		li{float:left;width:139px;margin-left:9px;padding-left:14px;background:url('../../images/pcweb/common/ico_location.gif') 0 50% no-repeat;
+			&:first-child{margin-left:0;padding-left:0;background:none;}
+			select{width:100%;}
+		}
+	}
+}
+.mix_img_box{
+	ul{padding:4px;border:1px solid #ddd;
+		&:after{display:block;clear:both;content:'';}
+	}
+	li{float:left;margin:5px;
+		a{position:relative;display:block;border:1px solid #fff;}
+		&.selected a{border:1px solid #999;}
+		a{
+			&:hover,&:focus{border:1px solid #999;}
+			img{width:90px;height:90px;}
+			.item_sel{display:none;position:absolute;top:50%;left:50%;margin-top:-14px;margin-left:-14px;width:28px;height:28px;background:url(../../images/pcweb/shop/bg_mix_select.png) no-repeat;text-indent:-9999px;color:#fff;}
+			&:active .item_sel{display:block;}
+		}
+		&.selected a .item_sel{display:block;}
+	}
+	.no_list{padding:30px 0;}
+}
+.mix_making .mix_search{margin:0 0 20px;
+	.input_txt{width:433px;color:#666;}
+	.txt_info{padding:8px 0 0;}
+}
+
+// 이벤트 메인
+.evt_main_wrap .title{
+	.right{bottom:13px;}
+	&.mt60 .right{bottom:0;}
+}
+.tit_h2_evtmain{padding:0 0 13px 10px;font-size:26px;color:#333;font-weight:800;line-height:1.3em;border-bottom:1px solid #ddd;
+	span{margin-left:5px;font-size:13px;font-weight:400;}
+}
+.mb_grade{position:relative;width:100%;height:200px;
+	.mb_gd_subtit{position:absolute;left:20px;top:56px;width:327px;height:56px;background:url('../../images/pcweb/shop/tit_evtmain_sub01.jpg') 0 0 no-repeat;text-indent:-9999px;}
+	.mb_gd_medals{position:absolute;right:30px;top:56px;
+		li{float:left;margin-left:15px;
+			span{display:block;width:87px;height:93px;text-indent:-9999px;}
+		}
+	}
+	.btn04{position:absolute;top:135px;left:49px;}
+}
+.mb_gd_medals{
+	.medals01{background:url('../../images/pcweb/shop/img_medals0000001.jpg') center center no-repeat;}
+	.medals02{background:url('../../images/pcweb/shop/img_medals0000002.jpg') center center no-repeat;}
+	.medals03{background:url('../../images/pcweb/shop/img_medals0000003.jpg') center center no-repeat;}
+	.medals04{background:url('../../images/pcweb/shop/img_medals0000004.jpg') center center no-repeat;}
+	.medals05{background:url('../../images/pcweb/shop/img_medals0000005.jpg') center center no-repeat;}
+	&.gd_grade0000001 .medals01{background:url('../../images/pcweb/shop/img_medals0000001_on.jpg') center center no-repeat;}
+	&.gd_grade0000002 .medals02{background:url('../../images/pcweb/shop/img_medals0000002_on.jpg') center center no-repeat;}
+	&.gd_grade0000003 .medals03{background:url('../../images/pcweb/shop/img_medals0000003_on.jpg') center center no-repeat;}
+	&.gd_grade0000004 .medals04{background:url('../../images/pcweb/shop/img_medals0000004_on.jpg') center center no-repeat;}
+	&.gd_grade0000005 .medals05{background:url('../../images/pcweb/shop/img_medals0000005_on.jpg') center center no-repeat;}
+}
+
+// 이벤트 베너 롤링
+.box_mn_evtbanner{position:relative;width:1080px;margin:0 auto;overflow:hidden;
+	.swiper-container{position:relative;height:180px;margin-right:-10px;}
+	.swiper-wrapper{position:relative;width:9999px;}
+	ul{float:left;width:1080px;height:180px;margin-left:-10px;*zoom:1;
+		&:after{display:block;clear:both;content:"";}
+		li{float:left;width:353px;height:180px;padding-left:10px;
+			a,img{display:block;width:100%;}
+		}
+	}
+	a{
+		&.mn_prev,&.mn_next{position:absolute;top:50%;margin-top:-40px;z-index:10;width:40px;height:80px;text-indent:-9999px;}
+		&.mn_prev{left:0;background:url('../../images/pcweb/goods/bg_dt_ve_btn01.png') 0 0 no-repeat;
+			&:hover{background-position:-40px 0;}
+		}
+		&.mn_next{right:0;background:url('../../images/pcweb/goods/bg_dt_ve_btn01.png') 0 -80px no-repeat;
+			&:hover{background-position:-40px -80px;}
+		}
+	}
+}
+
+// 신규가입혜택안내
+.box_nw_evtbanner{position:relative;width:1080px;margin:0 auto;overflow:hidden;
+	.swiper-container{position:relative;height:250px;}
+	.swiper-wrapper{position:relative;width:9999px;}
+	ul li{float:left;width:1080px;height:250px;
+		a,img{display:block;width:100%;}
+	}
+	a{
+		&.mn_prev,&.mn_next{position:absolute;top:50%;margin-top:-40px;z-index:10;width:40px;height:80px;text-indent:-9999px;}
+		&.mn_prev{left:0;background:url('../../images/pcweb/goods/bg_dt_ve_btn01.png') 0 0 no-repeat;
+			&:hover{background-position:-40px 0;}
+		}
+		&.mn_next{right:0;background:url('../../images/pcweb/goods/bg_dt_ve_btn01.png') 0 -80px no-repeat;
+			&:hover{background-position:-40px -80px;}
+		}
+	}
+}
+
+// 쿠폰
+.coupon_area{margin-top:13px;border-top:1px solid #adadad;
+	.cp_group{padding:40px 0;border-top:1px solid #ddd;*zoom:1;
+		&:after{display:block;clear:both;content:"";}
+		&:first-child{border-top:none;}
+	}
+}
+.cp_group{
+	li{float:left;margin:0 13px;}
+	.cp_info01{display:block;padding:17px 0 0 20px;width:170px;height:78px;background:url('../../images/pcweb/shop/bg_coupon.jpg') 0 0 no-repeat;text-align:center;}
+	.cp_info02{display:block;margin-top:4px;font-family:Verdana;color:#999;text-align:center;letter-spacing:-1px;}
+	.cp_info03{display:block;margin-top:0px;color:#333;text-align:center;letter-spacing:-1px;min-height:15px;
+		strong.tx_num{font-weight:800;}
+	}
+	.cp_info04{display:block;overflow:hidden;width:190px;margin:3px 0;color:#000;text-align:center;letter-spacing:-1px;white-space:nowrap;text-overflow:ellipsis;}
+	.cp_btns{display:block;margin-top:16px;text-align:center;}
+}
+.cp_info01{
+	.cp_tit{display:block;overflow:hidden;height:14px;margin:0 25px 0 15px;color:#333;font-size:11px;white-space:nowrap;text-overflow:ellipsis;}
+	.cp_con{display:block;color:#333;font-size:34px;line-height:44px;font-family:Verdana;font-weight:800;letter-spacing:-2px;
+		span{display:inline-block;font-size:12px;line-height:44px;font-family:"Nanum Gothic",Dotum;
+			&.txt_en{font-size:32px;}
+		}
+	}
+}
+
+// 쿠폰 타입2
+.cp_group.type02{
+	.cp_info01{width:125px;height:58px;padding:15px 0 0 20px;background:url('../../images/pcweb/shop/bg_coupon02.png') 0 0 no-repeat;
+		.cp_tit{margin-left:5px;margin-right:5px;}
+		.cp_con{font-size:28px;line-height:30px;
+			span{line-height:10px;
+				&.txt_en{font-size:25px;font-weight:normal;line-height:28px;}
+			}
+		}
+	}
+	.cp_info03{overflow:hidden;height:16px;margin-top:10px;
+		strong.tx_num{color:#666;}
+	}
+	.cp_con03{display:block;padding-top:14px;font-size:20px;color:#333;font-weight:800;}
+	.cp_info01{
+		.cp_tit02{display:block;overflow:hidden;height:14px;margin:-8px 25px 0 15px;color:#333;font-size:11px;white-space:nowrap;text-overflow:ellipsis;}
+		.cp_con02{display:block;color:#333;font-size:28px;line-height:30px;font-family:Verdana;font-weight:800;letter-spacing:-2px;
+			span{display:inline-block;font-size:12px;line-height:14px;font-family:"Nanum Gothic",Dotum;}
+			em{display:block;margin-top:-5px;font-size:14px;color:#333;}
+		}
+	}
+}
+
+// 회원등급안내
+.mb_grade02{position:relative;padding:42px 0 0;
+	.gd_info01{max-width:400px;padding-left:214px;padding-bottom:60px;}
+}
+.gd_info01{
+	&.gd_grade0000001{background:url('../../images/pcweb/shop/img_medlas_b0000001.jpg') 48px 15px no-repeat;}
+	&.gd_grade0000002{background:url('../../images/pcweb/shop/img_medlas_b0000002.jpg') 48px 15px no-repeat;}
+	&.gd_grade0000003{background:url('../../images/pcweb/shop/img_medlas_b0000003.jpg') 48px 15px no-repeat;}
+	&.gd_grade0000004{background:url('../../images/pcweb/shop/img_medlas_b0000004.jpg') 48px 15px no-repeat;}
+	&.gd_grade0000005{background:url('../../images/pcweb/shop/img_medlas_b0000005.jpg') 48px 15px no-repeat;}
+	.gd_in01{font-size:18px;color:#333;}
+	.gd_in02{font-size:36px;font-weight:800;    /*font-family:Verdana;*/}
+}
+.gd_grade0000001 .gd_in02{color:#ccd1d2;}
+.gd_grade0000002 .gd_in02{color:#cca77d;}
+.gd_grade0000003 .gd_in02{color:#e0e1e2;}
+.gd_grade0000004 .gd_in02{color:#daccbf;}
+.gd_grade0000005 .gd_in02{color:#98d1cd;}
+.gd_info01 .gd_in03{margin-top:16px;padding-top:16px;border-top:1px solid #ddd;
+	li{margin-top:4px;font-size:14px;color:#333;padding-left:114px;
+		span{float:left;padding-left:16px;margin-left:-114px;background:url('../../images/pcweb/common/bul_li05.gif') 8px center no-repeat;font-weight:800;}
+	}
+}
+.mb_grade02 .gd_info02{position:absolute;right:0;top:42px;
+	dt{display:block;height:45px;padding:0 26px;background:#253639;
+		span{vertical-align:middle;line-height:45px;font-size:13px;color:#f3f3f3;
+			strong{font-size:18px;font-weight:800;}
+		}
+	}
+	dd{border:1px solid #ddd;border-top:none;padding:0 16px;
+		p{padding:24px 10px;color:#000;font-size:14px;
+			strong{font-family:Verdana;color:$point_color_txt;text-decoration:underline;}
+		}
+		.gd_msg{display:block;border-top:1px solid #eee;padding:14px;font-size:12px;color:#999;background:url('../../images/pcweb/shop/ico_gd_msg.png') 0 center no-repeat;}
+	}
+}
+.mb_grade_tbl{border-top:1px solid #adadad;border-bottom:1px solid #ddd;
+	table{width:100%;}
+	thead th{border-left:1px solid #ddd;font-size:14px;color:#333;}
+	tbody{
+		th,td{border-top:1px solid #ddd;border-left:1px solid #ddd;}
+		th{border-left:none;}
+	}
+	thead th:first-child{border-left:none;}
+	.gd_tit{font-size:18px;font-weight:normal;    /*font-family:Verdana, sans-serif;*/letter-spacing:-1px;color:#333;}
+	.th strong{color:#333;}
+	.th_gd{height:285px;
+		.gd_tit{display:block;padding:32px 0 0 0;}
+		.gd_tgt{display:none;margin-top:10px;font-size:16px;color:$point_color_txt;}
+	}
+	thead{
+		.gd_info01 .th_gd{background:url('../../images/pcweb/shop/img_medals_t01.png') no-repeat center 100px;}
+		.gd_info02 .th_gd{background:url('../../images/pcweb/shop/img_medals_t02.png') no-repeat center 103px;}
+		.gd_info03 .th_gd{background:url('../../images/pcweb/shop/img_medals_t03.png') no-repeat center 103px;}
+		.gd_info04 .th_gd{background:url('../../images/pcweb/shop/img_medals_t04.png') no-repeat center 103px;}
+		.gd_info05 .th_gd{background:url('../../images/pcweb/shop/img_medals_t05.png') no-repeat center 103px;}
+	}
+	&.gd_grade0000001 thead .gd_info01,&.gd_grade0000002 thead .gd_info02,&.gd_grade0000003 thead .gd_info03,&.gd_grade0000004 thead .gd_info04,&.gd_grade0000005 thead .gd_info05{box-sizing:border-box;border:4px solid #242424;background:#fff;}
+	&.gd_grade0000001 .gd_info01,&.gd_grade0000002 .gd_info02,&.gd_grade0000003 .gd_info03,&.gd_grade0000004 .gd_info04,&.gd_grade0000005 .gd_info05{background-color:#ededed;}
+	&.gd_grade0000001 .gd_info01 .gd_tit,&.gd_grade0000002 .gd_info02 .gd_tit,&.gd_grade0000003 .gd_info03 .gd_tit,&.gd_grade0000004 .gd_info04 .gd_tit,&.gd_grade0000005 .gd_info05 .gd_tit{font-size:16px;color:$point_color_txt;}
+	&.gd_grade0000001 .gd_info01 .gd_tgt,&.gd_grade0000002 .gd_info02 .gd_tgt,&.gd_grade0000003 .gd_info03 .gd_tgt,&.gd_grade0000004 .gd_info04 .gd_tgt,&.gd_grade0000005 .gd_info05 .gd_tgt{display:block;}
+	.td_term{height:30px;padding:5px 0;text-align:center;font-size:13px;
+		strong{font-family:"Verdana","Nanum Gothic",sans-serif;font-weight:bold;color:$point_color_txt;}
+		&.active{background-color:#ededed;}
+	}
+	.td_cpn_list{padding-bottom:90px;vertical-align:top;
+		&.active{background-color:#ededed;}
+	}
+	.cp_group{display:inline-block;width:145px;padding-bottom:30px;
+		li{float:none;margin:0;padding-top:30px;}
+	}
+	.td_cpn{text-align:center;}
+}
+.evt_temp_table .set_btn_up{position:relative;
+	.right{position:absolute;right:0;bottom:0;}
+}
+.evt_table_type01 td{
+	.tx_date{color:#333;font-size:13px;font-weight:800;}
+	.tx_ord_num{color:$point_color_txt;font-size:13px;font-weight:800;}
+	.goods_info{padding-left:20px;}
+	&.td_rows{border-left:1px solid #ddd;border-right:1px solid #ddd;}
+}
+.evt_temp_table{
+	.totals_table{position:relative;margin-top:-1px;border-top:2px solid #333;border-bottom:1px solid #333;z-index:100;
+		ul{padding:26px 0 24px;text-align:right;*zoom:1;
+			&:after{display:block;clear:both;content:"";}
+			li{display:inline-block;font-size:14px;margin-right:80px;color:#333;
+				em{margin-right:24px;color:#666;}
+				strong{font-family:Verdana;}
+				&.type03{color:#242424;font-weight:400;font-size:13px;
+					em{color:#242424;font-weight:800;font-size:14px;}
+					strong{font-size:18px;}
+				}
+			}
+		}
+	}
+	.evt_selects{margin:20px 0 30px;padding:24px 0;background:#f3f3f3;text-align:center;
+		strong{display:inline-block;font-weight:800;font-size:16px;}
+		ul{margin-left:30px;display:inline-block;color:#333;
+			li{display:inline-block;
+				label{font-size:16px;margin-left:40px;}
+			}
+		}
+	}
+}
+
+// magazine
+.mgz_list{overflow:hidden;position:relative;background:#f3f3f3 url(../../images/pcweb/main/bg_spao_star01.gif) 0 0 repeat-x;
+	&:after{content:'';display:block;width:100%;height:6px;position:absolute;left:0;bottom:0;background:url(../../images/pcweb/main/bg_spao_star02.gif) 0 0 repeat-x;}
+	.bx{overflow:hidden;width:1080px;margin:0 auto;padding:86px 0;}
+	ul{margin:0 0 0 -12px;
+		&:after{display:block;clear:both;content:'';}
+		li{float:left;width:258px;margin:0 0 0 12px;
+			+ li + li + li + li{margin-top:40px;}
+			a{display:block;
+				img{width:258px;height:265px;}
+			}
+			.info{display:block;height:60px;padding:28px 10px 30px;text-align:center;background:#fff;border-bottom:2px solid #e0e0e0;
+				span{display:block;letter-spacing:-1px;}
+				.tit{overflow:hidden;height:20px;font-size:18px;color:#4e4e4e;line-height:20px;font-weight:600;white-space:nowrap;text-overflow:ellipsis;}
+				.txt{overflow:hidden;height:40px;font-size:15px;line-height:20px;color:#95999d;margin-top:10px;}
+			}
+		}
+	}
+}
+
+// 매거진 이미지사이즈 고정
+// magazine veiw
+.evt_template.mgz{
+	.title{margin-top:30px;
+		&.top{padding:45px 0 9px 9px;margin:0 0 14px 9px;border-bottom:#333 1px solid;
+			.tit_h2_01{margin:0;}
+			.right{bottom:9px;
+				ul li{margin:0;
+					+ li{margin:0 0 0 9px;}
+				}
+				button{display:block;float:left;width:153px;height:30px;margin:1px 0 0 9px;border:none;background:url(../../images/pcweb/common/mgz_bt_bg.png) no-repeat 0 0;}
+			}
+		}
+	}
+	.evt_temp_inputarea{margin:22px auto 0;border-top:#666 1px solid;}
+	.tab_anchor01{margin-top:80px;}
+}
+
+// cmt_lst
+.mgz .cmt_lst{overflow:hidden;width:1080px;margin:0 auto;border-bottom:#666 1px solid;
+	li{position:relative;width:917px;padding:15px 147px 15px 16px;
+		+ li{border-top:#ddd 1px solid;}
+		.nm{display:block;overflow:hidden;
+			b{display:block;float:left;font-weight:400;line-height:1;color:#333;}
+			em{display:block;position:relative;float:left;padding:0 0 0 15px;margin:0 0 0 15px;line-height:1;color:#999;
+				&:before{content:'';display:block;width:1px;height:10px;position:absolute;left:0;top:2px;background:#dadada;}
+			}
+		}
+		.tx{display:block;margin:10px 0 0;line-height:18px;color:#666;}
+		.bt{position:absolute;right:15px;bottom:15px;
+			button{display:block;float:left;position:relative;line-height:1;color:#333;letter-spacing:-0.7px;
+				+ button{margin:0 0 0 10px;padding:0 0 0 10px;
+					&:before{content:'';display:block;width:1px;height:10px;position:absolute;left:0;top:2px;background:#e1e1e1;}
+				}
+				&.cls{color:#f7186a;padding:0 0 1px;border-bottom:#f7186a 1px solid;}
+			}
+		}
+	}
+	.re{width:883px;padding:15px 147px 15px 50px;background:url(../../images/pcweb/common/mgz_re_bg.png) no-repeat 27px 15px;}
+	li{
+		textarea{display:block;width:885px;height:62px;border:#ddd 1px solid;}
+		.re_btn{display:block;position:absolute;right:15px;top:15px;width:118px;height:62px;border:#8f8e8e 1px solid;
+			em{display:block;font-weight:700;font-size:14px;color:#666;letter-spacing:-0.7px;}
+		}
+	}
+	.mdf{
+		textarea{margin:13px 0 0;}
+		.re_btn{top:auto;bottom:15px;}
+		.bt{bottom:auto;top:15px;}
+	}
+	.tmp.mdf{
+		textarea{width:919px;}
+		.re_btn{background:#333;border:#333 1px solid;
+			em{color:#fff;}
+		}
+	}
+}
+
+// 0원찬스
+.visual_zero_deal{overflow:hidden;position:relative;
+	.date{position:absolute;top:268px;left:272px;
+		span{display:block;float:left;font-size:15px;line-height:22px;color:#fff;letter-spacing:-0.8px;
+			b{display:inline-block;margin:0 5px 0 0;text-indent:-9999px;vertical-align:middle;}
+			.trm{width:73px;height:23px;background:url(../../images/pcweb/shop/img_deal0_01.png) no-repeat 0 0;}
+			.win{width:81px;height:24px;background:url(../../images/pcweb/shop/img_deal0_02.png) no-repeat 0 0;}
+			+ span{margin:0 0 0 8px;}
+		}
+	}
+}
+
+// 공동구매
+.zero_sns{position:relative;height:24px;
+	.sns_list{position:absolute;right:0;top:-12px;
+		li{float:left;margin-left:5px;}
+	}
+}
+.visual_joint_deal{overflow:hidden;position:relative;margin-bottom:60px;
+	.date{position:absolute;top:391px;left:325px;
+		span{display:block;font-size:18px;line-height:18px;
+			b{display:inline-block;margin:0 18px 0 0;text-indent:-9999px;}
+			.trm{margin:0 25px 0 0;text-indent:0;font-weight:bold;}
+		}
+	}
+}
+
+// 진행중인 이벤트 new 2016-12-09
+.evtbanner_new{overflow:hidden;
+	ul{width:1090px;margin:0 0 0 -10px;
+		li{float:left;margin:0 0 0 10px;
+			+ li + li + li{margin:10px 0 0 10px;}
+			a{display:block;width:100%;height:100%;}
+		}
+	}
+}
+
+// 쿠폰&이벤트 2017-03-23
+.evt_ban{margin:40px 0 0 -10px;width:1090px;
+	ul{
+		&:after{display:block;clear:both;content:'';}
+		li{float:left;margin-left:10px;
+			.txt{padding:20px 0;width:353px;height:15px;letter-spacing:-1px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+		}
+	}
+}
+.evt_html{margin:0;}
+.evt_croll{position:relative;width:1080px;padding:60px 0 0;
+	.cp_controll{position:absolute;top:126px;left:0;right:0;z-index:2;}
+}
+.plan.evt_croll .cp_controll{top:106px;}
+.evt_croll{
+	.btn_prev{position:absolute;top:60px;left:0;width:20px;height:33px;
+		span{display:block;width:60px;height:60px;background:url("../../images/pcweb/renewal/bill_btn.png") no-repeat;background-position:-60px 0;text-indent:-9999px;}
+		&.active span{background-position:-120px 0;}
+	}
+	.btn_next{position:absolute;top:60px;right:0;width:60px;height:60px;
+		span{display:block;width:60px;height:60px;background:url("../../images/pcweb/renewal/bill_btn.png") no-repeat;background-position:-60px -60px;text-indent:-9999px;}
+		&.active span{background-position:-120px -60px;}
+	}
+}
+.list_coupon{margin:0 auto;width:1080px;height:300px;overflow:hidden;
+	.swiper-container{position:relative;width:1075px;height:300px;margin:0 0 0 5px;}
+	ul:after{display:block;clear:both;content:'';}
+	li{float:left;width:195px;padding:0 10px 0 10px;}
+	.cp_group{position:relative;height:300px;
+		.cp_info01{position:relative;width:160px;height:75px;margin:10px 0 0;padding:20px 0 0 20px;background:url(../../images/pcweb/shop/bg_coupon02.jpg) no-repeat;}
+		.cp_info02{margin:10px 0 0;}
+		.cp_info03{overflow:hidden;}
+		.cp_info04{width:180px;margin:10px 0 8px;color:#333;font-size:14px;font-weight:bold;}
+		.cp_btns{position:absolute;bottom:10px;left:0;width:180px;}
+	}
+	.cp_info01 .cp_tit{font-size:12px;margin:0 20px;}
+}
+.evt_normal{padding-top:60px;text-align:center;
+	ul{display:inline-block;margin:30px 0 0;
+		&:after{display:block;clear:both;content:'';}
+		li{float:left;margin-left:50px;
+			+ li + li + li + li,&:first-child{margin-left:0;}
+		}
+	}
+}
+.evt_ing{padding:60px 0 0;min-height:450px;
+	.tit_h3{color:#000;text-align:center;}
+}
+.evt_main_wrap{
+	.div_dim{display:none;width:1080px;height:105px;}
+	.evt_tab{padding-top:30px;}
+	.area_lv1{position:relative;}
+	#evt_tab01{position:absolute;top:-105px;left:0;width:1080px;height:1px;}
+	#evt_tab02,#evt_tab03,#evt_tab04{position:absolute;top:-80px;left:0;width:1080px;height:1px;}
+}
+.header_fix .evt_main_wrap #evt_tab01{top:-120px;}
+
+// 상설샵 PROMO_BANNER,CATE_MENU 170706
+.permanent_shop{position:relative;
+	.box_promotion_bnr{width:1080px;}
+	.d_promo_container ul.d_bnr_cont{width:1080px;height:426px;}
+	.box_promotion_bnr li{overflow:hidden;
+		a img{width:auto;height:auto;}
+		> div{float:left;}
+	}
+	.d_promo_container{
+		.btn_prev_move{width:70px;height:100px;left:170px;background:url('../../images/pcweb/common/btn_pshop_prev.png') 0 0 no-repeat;}
+		.btn_next_move{width:70px;height:100px;background:url('../../images/pcweb/common/btn_pshop_next.png') 0 0 no-repeat;}
+		.btn_prev_move:hover,.btn_next_move:hover{background-position-y:-100px;}
+	}
+	.set_indicator{left:170px;bottom:18px;width:910px;
+		ul{margin-right:3px;
+			li a{margin:3px 2px;width:10px;height:10px;background:url(../../images/pcweb/common/indi_pshop.png) 0 0 no-repeat;
+				&.on{background:url(../../images/pcweb/common/indi_pshop.png) 0 -10px no-repeat;}
+			}
+		}
+		.d_auto{
+			.d_play{background:url(../../images/pcweb/common/_ico_indi_play.png) center center no-repeat;}
+			.d_stop{background:url(../../images/pcweb/common/ico_indi_stop_.png) center center no-repeat;}
+		}
+	}
+	.cate_area01{position:absolute;top:0;left:0;z-index:10;}
+	.lnb_cate01{position:relative;padding:24px 0 0 12px;width:158px;height:402px;border:none;background:url(../../images/pcweb/common/expati_ctg_bg.png) repeat;
+		> ul > li{position:inherit;
+			> a{height:35px;line-height:35px;color:#fefefe;font-size:15px;font-weight:500;
+				&:hover{margin:0 -1px;padding-left:21px;background:#171717;color:#fffefe;}
+			}
+		}
+	}
+}
+.lnb_cate01 > ul > li.on > a{margin:0 -1px;padding-left:21px;background:#171717;color:#fffefe;}
+.permanent_shop .lnb_cate01{> ul > li.on > a{margin:0;padding-left:20px;}
+	.depth2{width:auto;min-width:178px;min-height:424px;border:1px solid #171717;box-shadow:2px 1px rgba(0,0,0,0.2);
+		a{display:block;height:26px;line-height:26px;
+			span{color:#999;font-weight:400;}
+			&:hover span{color:#333;font-weight:400;text-decoration:underline;}
+		}
+		ul{padding:18px 10px 15px 20px;}
+		li a span{padding:0;}
+	}
+}
+
+// 상설샵 띠배너 170706
+.box_roll_evt{position:relative;width:1080px;padding-top:22px;margin:0 auto;
+	.roll_indi{position:absolute;top:0;right:0;}
+	.swiper_container{position:relative;overflow:hidden;height:100px;}
+	.swiper-wrapper{position:relative;height:100px;}
+	ul li{
+		a{display:block;}
+		img{width:1080px;height:100px;}
+	}
+}
+.swiper-pagination-switch{display:block;float:left;width:12px;height:12px;padding:2px;margin-left:3px;background:url('../../images/pcweb/common/ico_indi02.png') center center no-repeat;font-size:1px;line-height:1px;text-indent:-9999px;
+	&.swiper-active-switch{background-image:url('../../images/pcweb/common/ico_indi02_on.png');}
+}
+
+// 상설샵 카테고리 170706
+.permanent_ctg{position:relative;margin:40px 0;padding:0 0 40px;
+	&:before{content:'';position:absolute;top:0;left:-3000px;width:6000px;height:100%;background:#f1f1f1;}
+	.title{padding:30px 0 0;text-align:center;
+		h3{color:#333;font-size:26px;font-weight:600;}
+	}
+}
+.per_dim{display:none;padding-top:400px;}
+.permanet_croll{position:relative;width:1080px;margin:25px 0;
+	.cp_controll{position:absolute;top:-15px;left:0;right:0;}
+	.btn_prev{position:absolute;top:0;left:0;width:30px;height:125px;
+		span{display:block;width:30px;height:125px;background:url(../../images/pcweb/renewal/new_ctgbtn_prev.png) 0 0 no-repeat;text-indent:-9999px;}
+		&.active span{background-position:0 -128px;}
+	}
+	.btn_next{position:absolute;top:0;right:0;width:30px;height:125px;
+		span{display:block;width:30px;height:125px;background:url(../../images/pcweb/renewal/new_ctgbtn_next.png) -20px 0 no-repeat;text-indent:-9999px;}
+		&.active span{background-position:-20px -128px;}
+	}
+	.list_ctg{margin:0 auto;width:1020px;height:115px;overflow:hidden;
+		.swiper-container{position:relative;left:0;width:1020px;height:115px;}
+		ul:after{display:block;clear:both;content:'';}
+		li{float:left;width:145px;text-align:center;
+			a{display:block;height:115px;}
+		}
+		.cp_group{position:relative;height:265px;
+			.cp_info01{width:160px;height:75px;padding:20px 0 0 20px;background:url(../../images/pcweb/shop/bg_coupon02.jpg) no-repeat;}
+			.cp_info02{margin:10px 0 0;}
+			.cp_info03{overflow:hidden;}
+			.cp_info04{width:180px;margin:10px 0 8px;color:#333;font-size:14px;font-weight:bold;}
+			.cp_btns{position:absolute;bottom:10px;left:0;width:180px;}
+		}
+		.cp_info01 .cp_tit{font-size:12px;margin:0 20px;}
+		a .txt_only{display:block;height:100%;line-height:115px;font-size:15px;color:#3f3f41;font-weight:600;}
+	}
+}
+.permanent_ctg li{
+	.ico{display:block;
+		img{width:70px;height:70px;}
+	} 
+	.txt{display:block;margin:10px auto 0;width:70px;height:35px;line-height:17px;color:#3f3f41;font-size:15px;font-weight:600;text-align:center;overflow:hidden;}
+	a{
+		&:hover .txt,&.selected .txt{color:$point_color_txt;text-decoration:underline;}
+	}
+}
+.permanet_croll .list_ctg a:hover .txt_only{color:$point_color_txt;text-decoration:underline;}
+.permanent_ctg .no_swiper{position:relative;text-align:center;margin:25px auto;
+	ul li{display:inline-block;text-align:center;width:70px;margin:0 auto;padding:0 37px;
+		a{display:block;width:70px;}
+	}
+}
+.permanent_filter{position:relative;margin-top:25px;border:1px solid #c8c8c8;box-shadow:0 2px #e3e3e3;
+	.filter_tab{background:#fff;
+		&:after{display:block;clear:both;content:'';}
+		li{float:left;width:180px;
+			&:first-child{width:177px;}
+			a{display:block;margin:0 10px 0 0;height:53px;line-height:53px;color:#666;font-size:15px;text-indent:15px;border-left:1px solid #e3e3e3;background:url(../../images/pcweb/common/ico_permanent_filter.jpg) right center no-repeat;}
+			&:first-child a{border:none;}
+			&.selected a,a:hover{color:$point_color_txt;font-weight:600;text-decoration:underline;}
+		}
+	}
+}
+
+// 레이어 팝업
+.permanent_layer{display:none;position:fixed;top:50%;left:50%;margin:-281px 0 0 -540px;width:1076px;border:2px solid #000;min-height:345px;max-height:725px;background:#fff;z-index:1000;
+	.title{position:relative;padding:20px 0;margin:0 20px;width:auto;border-bottom:1px solid #ccc;
+		h3{height:20px;line-height:20px;font-size:20px;color:#1e1e1e;font-weight:bold;}
+		.btn_close{position:absolute;top:0;right:-20px;width:60px;height:60px;background:url(../../images/pcweb/common/btn_laypop_close.gif) center center no-repeat;}
+	}
+	.button{padding:20px 0 30px;text-align:center;
+		a{margin:0 2px;
+			&.btn02{border-color:#242424;background:#242424;
+				&.c01{border-color:#242424;background:#fff;}
+				span{font-size:15px;}
+			}
+		}
+	}
+	.filter_ctg{padding:10px;height:320px;overflow-y:scroll;
+		> ul{margin-left:20px;overflow:hidden;
+			&:after{display:block;clear:both;content:'';}
+			li{position:relative;display:inline-block;margin:20px 16px 0 0;width:125px;vertical-align:top;
+				a{display:block;height:104px;padding:15px 16px;border:1px solid #ddd;text-align:center;
+					.ico img{width:64px;height:64px;margin:0 auto;}
+					.txt{width:100%;margin:10px auto 0;padding:0 0 1px;color:#3f3f41;font-size:14px;font-weight:400;height:32px;line-height:16px;letter-spacing:-1px;}
+					.txt_only{display:table-cell;width:90px;height:105px;color:#3f3f41;font-size:14px;font-weight:400;line-height:20px;letter-spacing:-1px;vertical-align:middle;}
+					&.selected{padding:14px 16px;border:2px solid #333;
+						> .txt,.txt_only{text-decoration:none;font-weight:800;letter-spacing:-1px;}
+					}
+				}
+			}
+		}
+		.selected .ctg_more .btn_more{width:24px;height:24px;bottom:0;right:2px;}
+		.ctg_more .btn_more{position:absolute;top:110px;right:1px;width:25px;height:25px;background:#ccc url(../../images/pcweb/common/ctg_more_btn.gif) 0 0 no-repeat;
+			&.on{right:2px;width:24px;height:24px;}
+			&.plus{background:#ccc url(../../images/pcweb/common/ctg_more_btn.gif) 0px -24px no-repeat;}
+		}
+		.sctg{display:none;width:1030px;min-height:80px;margin-left:-16px;
+			&:after{display:block;clear:both;content:'';}
+			.list{position:relative;display:inline-block;width:103px;height:32px;margin:20px 0 0 16px;padding:10px 10px 12px;border:1px solid #d1d0d0;background:#f6f6f6;cursor:pointer;
+				&:before{content:'';position:absolute;left:-21px;top:50%;width:21px;height:1px;background:#ccc;}
+				&.selected:before{left:-22px;width:20px;}
+				span{display:block;line-height:15px;height:15px;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+				.name{font-size:13px;color:#666;}
+				.num{font-size:12px;color:#999;}
+				&.selected{padding:9px 9px 11px;border:2px solid #333;background:#fff;
+					.name{font-weight:bold;color:#242424;}
+				}
+			}
+		}
+		> ul li{
+			&.ctg1 .sctg{background:url(../../images/pcweb/common/ctg_more_bg01.gif) -910px -3px no-repeat;}
+			&.ctg2 .sctg{margin-left:-161px;background:url(../../images/pcweb/common/ctg_more_bg01.gif) -765px -3px no-repeat;}
+			&.ctg3 .sctg{margin-left:-305px;background:url(../../images/pcweb/common/ctg_more_bg01.gif) -620px -3px no-repeat;}
+			&.ctg4 .sctg{margin-left:-450px;background:url(../../images/pcweb/common/ctg_more_bg01.gif) -475px -3px no-repeat;}
+			&.ctg5 .sctg{margin-left:-595px;background:url(../../images/pcweb/common/ctg_more_bg01.gif) -330px -3px no-repeat;}
+			&.ctg6 .sctg{margin-left:-739px;background:url(../../images/pcweb/common/ctg_more_bg01.gif) -186px -3px no-repeat;}
+			&.ctg7 .sctg{margin-left:-884px;background:url(../../images/pcweb/common/ctg_more_bg01.gif) -40px -3px no-repeat;}
+		}
+	}
+	.brand_popup{padding:20px 30px 0;}
+	.box_scroll{overflow:auto;overflow-x:hidden;min-height:150px;max-height:323px;height:348px;margin-right:-20px;padding-right:20px;scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-highlight-color:#ccc;scrollbar-shadow-color:#ccc;scrollbar-face-color:#fff;scrollbar-arrow-color:#ccc;scrollbar-track-color:#fff;}
+	.brand_popup .list_chkbox li{padding:14px 0 0;}
+	.list_chkbox label input + span{color:#666;font-size:13px;}
+	.list_size{padding:30px 50px 0;min-height:150px;overflow:auto;overflow-x:hidden;max-height:429px;
+		.list_tit{display:block;height:15px;margin:15px 0 10px;line-height:14px;font-size:15px;color:#333;letter-spacing:-0.05em;}
+		ul{margin:0;}
+		li{margin:0 2px 10px;}
+		.btn_size{border:none;
+			span{padding:0 10px;height:28px;line-height:28px;border:1px solid #ddd;font-size:13px;color:#333;}
+			&.on span{color:#fff;font-weight:bold;border:1px solid #333;background:#333;}
+		}
+	}
+	.list_chip{padding:30px 50px 0;min-height:150px;overflow:auto;overflow-x:hidden;max-height:429px;
+		> ul{margin:0;}
+		li{margin:0 5px 10px 0;
+			.chip{width:58px;height:26px;border:2px solid #ccc;
+				&.on{border:2px solid #000;}
+				img{width:56px;height:24px;}
+			}
+		}
+	}
+	.list_price{padding:30px 75px 19px;min-height:150px;overflow:auto;overflow-x:hidden;max-height:429px;
+		&:after{display:block;clear:both;content:'';}
+		.range_box{float:left;width:335px;padding:30px 50px 30px;background:#f8f8f8;}
+		.input_range{width:275px;margin:0 auto;text-align:center;
+			input{width:98px;color:#333;font-weight:600;text-align:center;}
+			span{float:inherit;color:#333;font-weight:600;}
+		}
+	}
+	.ui-slider-horizontal{height:10px;}
+	.ui-slider .ui-slider-handle{width:10px;height:22px;border:none;background:url(../../images/pcweb/common/range_handle.png) no-repeat;}
+	.ui-slider-handle{top:-6px;}
+	.list_price .quick_box{float:left;margin:0 0 0 50px;width:435px;
+		.quick_btn{
+			&:after{display:block;clear:both;content:'';}
+			li{float:left;width:126px;height:36px;margin:0 10px 10px 0;
+				a{display:block;text-align:center;font-size:13px;font-weight:600;color:#333;line-height:34px;border:1px solid #ddd;
+					&.on{border:1px solid #333;color:#fff;background:#333;}
+				}
+			}
+		}
+	}
+}
+
+
+// 상설샹 MD 추천
+.perm_tit{height:106px;line-height:128px;font-size:30px;font-weight:bold;font-family:"Noto Sans CJK KR", "Noto Sans KR", "Noto Sans", "Noto", "Verdana","Nanum Gothic", sans-serif;color:#333;text-align:center;letter-spacing:-0.05em;}
+.perm_tab{height:54px;margin:0 0 35px;border:solid #ddd;border-width:1px 0;font-size:0;text-align:center;
+	li{position:relative; display:inline-block;min-width:116px;height:54px;padding:0 10px;line-height:54px;color:#333;font-size:15px;
+		a{color:inherit;}
+		&.on{font-weight:bold;
+			&:after{position:absolute;bottom:0;left:0;width:100%;height:2px;background:#333;content:"";}
+		}
+	}
+}
+.TYPE{overflow:hidden;position:relative;  //.type : mian.scss에 존재. main.scss는 통합몰에서 사용되고 있지 않아 shop.scss로 복사.
+	li{float:left;
+		a{display:block;overflow:hidden;position:relative;}
+		dl{position:relative;
+			dt{padding:12px 0 0 0;text-align:center;
+				em{display:none;letter-spacing:-0.5px;color:#ba9d7f;font-weight:800;}
+				span{display:block;overflow:hidden;height:32px;font-size:13px;line-height:20px;color:#333;}
+			}
+			.prc{text-align:left;padding-left:3px;
+				div{display:inline-block;
+					span{display:block;}
+					.rm{float:left;margin:0 10px 0 0;color:#df3434;
+						strong{display:block;float:left;font-weight:normal;font-size:30px;line-height:1;font-family:"Verdana","Nanum Gothic",sans-serif;letter-spacing:-1.3px;}
+						em{display:block;float:left;margin:12px 0 0 0;font-size:15px;line-height:1;font-family:"Verdana","Nanum Gothic",sans-serif;}
+					}
+					.wm{float:left;text-align:center;
+						.or{font-size:11px;line-height:12px;color:#999;font-family:"Verdana","Nanum Gothic",sans-serif;text-decoration:line-through;}
+						.er{margin:22px 0 0 0;font-size:13px;line-height:1;color:#333;letter-spacing:-0.8px;
+							b{margin:0 8px 0 0;vertical-align:middle;}
+							strong{font-size:14px;font-family:"Verdana","Nanum Gothic",sans-serif;vertical-align:middle;}
+							em{margin:0 0 0 1px;font-size:12px;vertical-align:bottom;}
+						}
+					}
+					.rm + .wm{text-align:left;}
+				}
+			}
+			.tag{margin:5px 0 0 0;text-align:center;}
+		}
+		.img{display:block;overflow:hidden;position:absolute;left:0;top:0;z-index:0;}
+		a:hover dl dt span{text-decoration:underline;}
+	}
+}
+
+.bn_permanent{position:relative;width:1100px;margin-left:-20px;overflow:hidden;z-index:2;}
+.permanent_btn{position:relative;width:100%;height:321px;margin:-321px 0 0;
+	a{z-index:2;}
+}
+.TYPE.permanent{width:1080px;height:321px;
+	li{width:200px;
+		a{width:200px;height:321px;margin-left:20px;
+			&:focus .img{width:200px;left:1px;top:1px;}
+		}
+		.img{
+			img{width:200px;height:200px;}
+			.ico_storepick{position:absolute;bottom:3px;left:8px;overflow:hidden;display:block;width:58px;height:65px;background:url('../../images/pcweb/common/ico_store.png') 0 0 no-repeat;text-indent:-999em;font-size:1px;
+				+.ico_qck_dlv{bottom:70px;}
+			}
+			.ico_qck_dlv{position:absolute;bottom:9px;left:9px;overflow:hidden;display:block;width:52px;height:52px;background:url('../../images/pcweb/shop/ico_qck_dlv.png') 0 0 no-repeat;text-indent:-999em;font-size:1px;
+				&.off{background-image:url("../../images/pcweb/shop/ico_qck_dlv_off.png");}
+			}
+		}
+		dl{top:200px;
+			dt{height:32px;padding:13px 0 0;
+				span{width:187px;height:32px;padding:0 10px 0 3px;line-height:16px;text-align:left;color:#666;}
+			}
+			.prc div{
+				.wm .er{
+					strong{font-size:13px;}
+					em{font-size:12px;}
+				}
+				.rm{display:none;}
+			}
+			.tag{display:none;}
+			.prc div .wm{
+				.or,.er b{display:none;}
+			}
+		}
+	}
+}
+// Slide_Btns Common
+.permanent_btn.bw{
+	.bn-left{display:block;position:absolute;top:75px;left:0;width:50px;height:50px;background:url('../../images/pcweb/common/arr_set01.png') 0 0 no-repeat;text-indent:-99999em;
+		&:hover{background-position-y:-50px}
+	}
+	.bn-right{display:block;position:absolute;top:75px;right:0;width:50px;height:50px;background:url('../../images/pcweb/common/arr_set01.png') -50px 0 no-repeat;text-indent:-99999em;
+		&:hover{background-position-y:-50px}
+	}
+}
+// layout.scss
+#wrapper.bg_gray{background:#f4f5f7;}
+#footer .footer_bnr a{margin-bottom:0;}
+// layout.scss/
+
+.tit_dp{margin-top:-20px;
+	&.spc{margin-bottom:27px;}
+	.s_dp2{display:block;margin-top:3px;color:#555;font-size:16px;letter-spacing:-0.05em;line-height:20px;}
+}
+
+.today_deal_bn{position:relative;
+	.swiper_container{height:346px;}
+	ul{width:10000%;
+		&:after{display:block;content:"";clear:both;}
+		li{float:left;padding:0 10px;
+			a{position:relative;display:block;width:1054px;height:320px;padding:12px;border:1px solid #bebebe;background:#fff;
+				.thumb{width:640px;height:320px;
+					.img_f{position:relative;display:block;}
+				}
+				.info{position:absolute;width:403px;height:247px;top:70px;left:675px;
+					.cont{padding:0 18px 64px 0;color:#353535;
+						.brand_nm{display:block;font-size:24px;font-weight:bold;line-height:27px;}
+						.prod_nm{display:block;margin-top:2px;height:54px;line-height:27px;font-size:24px;font-weight:bold;overflow:hidden;letter-spacing:-0.05em;}
+					}
+					.box_price{padding:0px 18px 21px 0;
+						.p_dis{display:block;height:16px;margin-bottom:6px;color:#8e8e8e;font-size:20px;line-height:20px;text-decoration:line-through;font-family:"Verdana","Nanum Gothic",sans-serif;
+							em{font-size:18px;line-height:20px;vertical-align:top;}
+						}
+						.p_tot{display:inline-block;color:$point_color_price;font-size:30px;line-height:30px;font-weight:bold;letter-spacing:-0.05em;font-family:"Verdana","Nanum Gothic",sans-serif;
+							em{font-size:28px;font-weight:400;vertical-align:top;line-height:30px;font-family:'Nanum Gothic',sans-serif;}
+						}
+						.p_per{display:inline-block;padding:0 4px;height:26px;line-height:26px;color:#fff;font-size:24px;font-weight:bold;font-family:"Verdana","Nanum Gothic",sans-serif;vertical-align:2px;background:$point_color_bg;
+							em{font-size:18px;font-weight:400;font-family:'Nanum Gothic',sans-serif;}
+						}
+					}
+					.box_flag{
+						&:after{display:block;content:"";clear:both;}
+						.flag{float:left;width:89px;height:26px;line-height:26px;font-size:18px;color:#8e8e8e;text-align:center;background:url("../../images/pcweb/shop/ico_flag.png") no-repeat 0 0;
+							+ .flag{margin-left:3px;}
+						}
+					}
+					.sale_cnt{position:absolute;bottom:0;right:20px;font-size:18px;color:#8e8e8e;
+						.tx_num{color:#666;}
+						.cnt_new{display:block;width:59px;height:59px;font-size:0;text-indent:-999em;background:url("../../images/pcweb/shop/ico_new.png") no-repeat;}
+					}
+				}
+			}
+		}
+	}
+	.bp_btns{position:absolute;top:0;left:50%;width:1080px;margin-left:-540px;height:0;z-index:2;
+		a{
+			&.bp_bt_prev,&.bp_bt_next{position:absolute;top:143px;width:60px;height:60px;text-indent:-9999em;}
+		}
+		.d_prev{left:0;background:url(../../images/pcweb/renewal/bill_btn.png) no-repeat;background-position:-60px 0;}
+		.d_next{left:1020px;right:0;background:url(../../images/pcweb/renewal/bill_btn.png) no-repeat;background-position:-60px -60px;}
+		a{
+			&.bp_bt_prev:hover{background-position:-120px 0;}
+			&.bp_bt_next:hover{background-position:-120px -60px;}
+		}
+	}
+	.pg_bt{text-align:center;
+		.pg{display:inline-block;
+			&:after{display:block;clear:both;content:"";}
+		}
+	}
+	.swiper-pagination-switch{width:16px;height:16px;margin:18px 0 0;padding:0;background:url('../../images/pcweb/common/ico_indi07.png') center center no-repeat;
+		+ .swiper-pagination-switch{margin-left:8px;}
+		&.swiper-active-switch{background-image:url('../../images/pcweb/common/ico_indi07_on.png');}
+	}
+}
+.ctg_tab{position:relative;margin:30px auto 0;background:#fff;
+	&.bottom{margin:20px 0 13px;}
+	ul{
+		&:after{display:block;clear:both;content:'';}
+		li{position:relative;float:left;width:89px;height:106px;border:1px solid #afafaf;border-left:0;text-align:center;cursor:pointer;background:#fff;
+			&.view_all{width:88px;font-size:18px;border-left:1px solid #afafaf;
+				a{display:table;width:100%;height:100%;}
+				span{display:table-cell;width:100%;height:100%;vertical-align:middle;font-size:18px;letter-spacing:-0.05em;}
+			}
+			a{display:block;height:106px;}
+			img{padding-top:4px;width:62px;height:62px;}
+			span{display:block;margin:0 2px;height:32px;line-height:16px;color:#3f3f41;font-size:14px;letter-spacing:-0.05em;overflow:hidden;font-weight:bold;}
+			&.on span:after{content:'';position:absolute;bottom:0;left:0;width:100%;height:7px;background:$point_color_bg;}
+		}
+	}
+}
+.ctg_btn{position:relative;width:1080px;margin:15px auto 0;z-index:10;
+	a{position:absolute;top:0;width:30px;height:110px;}
+	.prev{left:-45px;width:45px;height:128px;background:url(../../images/pcweb/renewal/new_ctgbtn_prev.png) 0 0 no-repeat;}
+	.next{right:-45px;width:45px;height:128px;background:url(../../images/pcweb/renewal/new_ctgbtn_next.png) 0 0 no-repeat;}
+	a.active{background-position:0 -128px;}
+}
+.ctg_con #ctgcon1{position:absolute;top:-183px;width:100%;height:1px;}
+.renewal .mdrecom .ctg_con{#ctgcon2,#ctgcon3,#ctgcon4,#ctgcon5,#ctgcon6,#ctgcon7,#ctgcon8,#ctgcon9,#ctgcon10,#ctgcon11,#ctgcon12,#ctgcon13,#ctgcon14,#ctgcon15,#ctgcon16,#ctgcon17,#ctgcon18,#ctgcon19,#ctgcon20{position:absolute;top:-183px;width:100%;height:1px;}
+}
+.ctg_con{position:relative;width:1080px;margin:0 auto;padding:15px 0 0;height:589px;}
+
+// 럭키딜(투데이 딜)
+.luckydeal{width:1080px;margin:0 auto;
+	ul{margin:0;width:1096px;
+		&:after{display:block;clear:both;content:'';}
+		li{float:left;width:256px;height:374px;margin:15px 16px 0 0;border:1px solid #bebebe;background:#fff;
+			&:hover{border-color:#000;}
+		}
+	}
+}
+.renewal .luckydeal ul li:focus{border-color:#000;}
+.luckydeal ul li{
+	.thumb{padding:15px 15px 10px;
+		img{width:228px;height:228px;}
+	}
+	.cont{padding:0 19px 10px;color:#353535;
+		.brand_nm{display:block;font-size:18px;font-weight:bold;}
+		.prod_nm{display:block;margin-top:5px;height:30px;line-height:15px;font-size:14px;font-weight:400;overflow:hidden;}
+	}
+	.box_price{padding:0px 19px 18px;
+		.p_dis{display:block;height:16px;margin-bottom:6px;color:#8e8e8e;font-size:14px;font-weight:400;text-decoration:line-through;letter-spacing:-0.05em;font-family:"Verdana","Nanum Gothic",sans-serif;
+			em{font-size:13px;font-family:"Nanum Gothic";vertical-align:top;}
+		}
+		.p_tot{display:inline-block;line-height:19px;color:#ff7112;font-size:22px;font-weight:bold;letter-spacing:-0.05em;font-family:"Verdana","Nanum Gothic",sans-serif;
+			em{font-size:15px;font-weight:400;font-family:"Nanum Gothic";line-height:22px;vertical-align:top;}
+		}
+		.p_per{display:inline-block;padding:0 4px;height:19px;line-height:19px;color:#fff;font-size:15px;font-weight:bold;vertical-align:top;background:#ff7112;
+			em{font-size:12px;font-weight:400;}
+		}
+		.p_tot2{display:inline-block;line-height:19px;color:#3e3e3e;font-size:22px;font-weight:bold;letter-spacing:-0.05em;font-family:"Verdana","Nanum Gothic",sans-serif;
+			em{font-size:15px;font-weight:400;font-family:"Nanum Gothic";line-height:22px;vertical-align:top;}
+		}
+	}
+	&.ban01{position:relative;width:258px;height:768px;border:none;
+		a img{position:relative;width:258px;height:768px;}
+	}
+	&.ban02{width:532px;height:376px;border:none;
+		a img{width:532px;height:376px;}
+	}
+	&.ban03{width:256px;height:766px;border:none;
+		a img{width:256px;height:766px;}
+	}
+	&.ban01 a{position:relative;display:block;}
+}
+.renewal .luckydeal ul li{
+	&.ban02 a,&.ban03 a{position:relative;display:block;}
+}
+.luckydeal{
+	ul li{
+		&.ban01:hover a:after{content:'';position:absolute;top:0;left:0;width:256px;height:766px;border:1px solid #000;}
+		&.ban02:hover a:after,&.ban03:hover a:after{content:'';position:absolute;top:0;left:0;width:530px;height:374px;border:1px solid #000;}
+	}
+	.lucky_case3 ul li.ban01{margin:0 16px 16px 0;}
+}
+
+ // Best_100 / 추후 상품 공통리스트 변경 시 통합 고려
+.best100_wrap .ctg_tab{margin:18px 0 15px;}
+.best100{width:1080px;margin:0 auto;background:#fff;
+	h3{height:79px;font-size:30px;line-height:79px;color:#3e3e3e;padding:0 0 0 24px;border:solid #bebebe;border-width:1px 1px 0;}
+	ul{margin:0;padding:0 17px 30px;border:solid #bebebe;border-width:0px 1px 1px;
+		&:after{display:block;clear:both;content:'';}
+		li{float:left;width:246px;height:417px;margin:15px 0 0 0;padding:0 7px 0 8px;
+			&:hover{border-color:#000;}
+		}
+	}
+}
+.renewal .luckydeal ul li:focus{border-color:#000;}
+.best100{
+	ul li{
+		.thumb{padding:12px 0;
+			.flag_best{display:block;margin-bottom:3px;font-size:23px;color:#3e3e3e;line-height:24px;}
+			img{width:244px;height:244px;}
+		}
+		.cont{padding:0 19px 5px 0;color:#353535;
+			.brand_nm{display:block;font-size:18px;font-weight:bold;}
+			.prod_nm{display:block;margin-top:5px;height:34px;font-size:14px;font-weight:400;line-height:17px;overflow:hidden;}
+		}
+		.box_price{padding:0px 19px 18px 0;
+			.p_dis{display:block;height:16px;margin-bottom:4px;color:#8e8e8e;font-size:14px;font-weight:400;text-decoration:line-through;letter-spacing:-0.05em;
+				em{font-size:14px;font-family:"Verdana","Nanum Gothic",sans-serif;}
+			}
+			.p_tot{display:inline-block;line-height:19px;color:$point_color_price;font-size:22px;font-weight:bold;font-family:"Verdana","Nanum Gothic",sans-serif;letter-spacing:-0.05em;
+				em{font-size:14px;font-weight:400;line-height:22px;font-family:"Nanum Gothic";vertical-align:top;}
+			}
+			.p_per{display:inline-block;padding:0 4px;height:19px;line-height:19px;color:#fff;font-size:15px;font-weight:bold;vertical-align:top;background:$point_color_bg;font-family:"Verdana","Nanum Gothic",sans-serif;
+				em{font-size:12px;font-weight:400;}
+			}
+			.p_tot2{display:inline-block;line-height:19px;color:#3e3e3e;font-size:22px;font-weight:bold;font-family:"Verdana","Nanum Gothic",sans-serif;letter-spacing:-0.05em;
+				em{font-size:14px;font-weight:400;line-height:22px;font-family:"Nanum Gothic";vertical-align:top;}
+			}
+		}
+	}
+	.best3 ul{padding:0 12px 30px;border-width:1px;
+		li{width:327px;height:490px;padding:0 12px;
+			.thumb{position:relative;padding-top:14px;padding-bottom:20px;
+				.flag_best{position:absolute;width:64px;height:78px;padding:0 0 0 15px;font-size:32px;line-height:40px;color:#fff;background:url("../../images/pcweb/shop/bg_best_top3.png") no-repeat 0 0;}
+				img{width:327px;height:327px;border:0;}
+			}
+			.cont{padding-left:4px;padding-bottom:10px;
+				.brand_nm{font-size:20px;line-height:20px;}
+				.prod_nm{height:44px;margin-top:7px;font-size:18px;line-height:22px;}
+			}
+			.box_price{padding-left:4px;
+				.p_dis{margin-bottom:9px;font-size:18px;font-family:"Verdana","Nanum Gothic",sans-serif;
+					em{font-size:16px;line-height:18px;font-family:"Nanum Gothic";vertical-align:top;}
+				}
+				.p_tot{font-size:24px;line-height:24px;
+					em{font-size:20px;line-height:24px;font-family:"Nanum Gothic";vertical-align:top;}
+				}
+				.p_tot2{font-size:24px;line-height:24px;}
+				.p_per{height:25px;line-height:24px;font-size:22px;
+					em{font-size:18px;}
+				}
+			}
+		}
+	}
+}
+
+// 상설샵 : 카테고리 아이콘 없는 경우 2017.08.28
+.best100_wrap .ctg_tab ul li{width:82px;
+	&.view_all{width:82px;}
+}
+
+// 비고 : 운영시 아이콘이 전부 없거나, 전부 아이콘이 있는 케이스로 사용할 것으로 정함
+.permanent_layer{z-index:4005;
+	.lay_cont.brand_sch{border-top:0;}
+	.btn_lay_close{position:absolute;top:17px;right:20px;}
+	.lay_cont .box_scroll>.init_cont{width:auto;}
+	&.laybrand .lay_wrap{border:0;}
+	&.laybrand .init_cont .list_chkbox_sch li{width:20%;}
+	.brd_sch_inp{position:relative;
+		&:before{position:absolute;top:0;right:0;width:34px;height:34px;background:url("../../images/pcweb/common/ico_sch4.png") center center no-repeat;content:"";}
+		input{width:162px;height:32px;padding:0 34px 0 10px;line-height:34px;border:1px solid #ddd;}
+	}
+	.filter_ctg{
+		> ul li a{height:auto;max-height:104px;min-height:36px;
+			.txt_only{height:36px;}
+		}
+		.ctg_more{position:relative;
+			.btn_more{top:0;margin-top:-25px;
+				&.on{margin-top:-26px;}
+			}
+		}
+	}
+}
+
+.user_grade{position:relative;width:838px;min-height:210px;margin:20px 0 0;padding:0 0 0 238px;border:2px solid #e4e4e4;
+	.ico_grd{position:absolute;top:46px;left:79px;width:106px;height:114px;background:url("../../images/pcweb/shop/benefit_set.png") no-repeat -460px 0;}
+	.info{position:relative;margin:40px 0 0;
+		.tit{display:block;margin:0 0 10px;font-size:20px;color:#333;line-height:20px;letter-spacing:0;
+			.name{font-weight:bold;}
+			.grade{font-weight:bold;color:#20b791;}
+		}
+		.nxt_info{font-size:15px;line-height:24px;letter-spacing:-0.05em;color:#333;
+			.nxt_grd{font-weight:bold;color:#20b791;}
+			.num{font-family:Verdana;}
+			.chk_btn{position:absolute;bottom:46px;margin:0 0 0 20px;
+				span{color:#666!important;}
+			}
+			.caution{display:block;margin-top:10px;color:#999;font-size:13px;line-height:20px;
+				&+.caution{margin-top:0;}
+			}
+		}
+	}
+	&.vip{
+		.ico_grd{background-position:0 0;}
+		.info{.tit .grade,.nxt_info .nxt_grd{color:#ff7112;}
+		}
+	}
+	&.gld{
+		.ico_grd{background-position:-115px 0;}
+		.info{.tit .grade,.nxt_info .nxt_grd{color:#e5b116;}
+		}
+	}
+	&.slv{
+		.ico_grd{background-position:-230px 0;}
+		.info{.tit .grade,.nxt_info .nxt_grd{color:#a0a0a0;}
+		}
+	}
+	&.brz{
+		.ico_grd{background-position:-345px 0;}
+		.info{.tit .grade,.nxt_info .nxt_grd{color:#b38574;}
+		}
+	}
+	&.no_login{position:relative;width:1080px;height:60px;min-height:auto;padding:280px 0 0;border-width:0;text-align:center;background:url("../../images/pcweb/shop/bg_bnft_nolog.png") bottom left repeat-x #f3f3f3;
+		&:before{position:absolute;top:26px;left:50%;width:848px;height:215px;margin-left:-424px;background:url("../../images/pcweb/shop/benefit_set.png") no-repeat 0 -458px;content:"";}
+		.tit{color:#333;font-size:16px;letter-spacing:0;line-height:28px;vertical-align:middle;
+			.name{font-weight:bold;}
+		}
+		.chk_btn{display:inline-block;width:109px;height:28px;margin:0 0 0 13px;font-size:13px;line-height:28px;letter-spacing:-0.04em;font-weight:bold;color:#222;vertical-align:middle;border:1px solid #666;background:#fff;}
+	}
+}
+.benfit_grade{
+	.bnf_tabl{position:relative;width:100%;padding:30px 0 0;overflow:hidden;
+		table{width:100%;
+			thead th{height:44px;border:1px solid #dcdcdc;border-width:1px 0 1px 1px;color:#666;background:#f3f3f3;font-weight:800;
+				&:first-child{border-left-width:0;}
+			}
+			tbody td{height:20px;padding:30px 0;text-align:center;border-top:1px dashed #ddd;line-height:0;
+				+ td{padding:58px 0 0;line-height:20px;vertical-align:top;
+					em{color:#000;font-weight:bold;}
+					+ td{position:relative;padding:30px 188px 30px 0;text-align:left;vertical-align:middle;
+						.new_cpn{float:left;
+							+ .new_cpn{margin-left:29px;}
+						}
+						.cpn_btn{position:absolute;top:57px;right:11px;width:176px;height:50px;line-height:50px;text-align:center;border:1px solid $point_color_bg;background:#fff;
+							em{color:$point_color_txt;font-size:16px;letter-spacing:-0.1em;}
+							&:after{display:inline-block;width:21px;height:17px;margin-left:8px;background:url("../../images/pcweb/shop/benefit_set.png") no-repeat -404px -261px;content:"";}
+							&.fin{border-color:#d1d1d1;background:#f4f4f4;cursor:default;
+								em{color:#bababa;}
+								&:after{display:none;}
+							}
+						}
+					}
+				}
+				tr:first-child td{border-top:0;}
+			}
+		}
+		&.off{
+			&.vip tbody tr{display:table-row;
+				+ tr{display:none;}
+			}
+			&.gld tbody tr{display:none;
+				+ tr{display:table-row;
+					+ tr{display:none;
+						+ tr{display:none;}
+					}
+				}
+			}
+			&.slv tbody tr{display:none;
+				+ tr + tr{display:table-row;
+					+ tr{display:none;}
+				}
+			}
+			&.brz tbody tr{display:none;
+				+ tr + tr + tr{display:table-row;}
+			}
+		}
+		.ico_grd{display:inline-block;width:84px;height:110px;background:url("../../images/pcweb/shop/benefit_set.png") no-repeat -306px -126px;
+			&.vip{background-position:0 -126px;}
+			&.gld{background-position:-101px -126px;}
+			&.slv{background-position:-202px -126px;}
+		}
+	}
+	.bnf_tog{position:relative;display:block;width:289px;height:56px;margin:6px auto -28px;background:url("../../images/pcweb/shop/benefit_set.png") -107px -244px no-repeat;z-index:2;
+		&.open{background-position:-107px -390px;}
+		&.off{display:none;}
+	}
+}
+.new_cpn{position:relative;display:block;padding:10px 0 0 28px;width:142px;height:75px;background:url('../../images/pcweb/shop/benefit_set.png') 0 -302px no-repeat;text-align:center;
+	.cp_tit{display:block;height:13px;margin:0 0 4px;color:#333;font-size:13px;letter-spacing:-0.05em;font-weight:bold;white-space:nowrap;text-overflow:ellipsis;}
+	.cp_con{display:block;margin-bottom:3px;color:#333;font-size:32px;line-height:32px;font-family:Verdana;font-weight:800;letter-spacing:-0.075em;}
+	.req{font-size:12px;line-height:12px;color:#999;letter-spacing:-0.05em;}
+}
+.for_app{position:absolute;top:-10px;right:-20px;width:50px;height:50px;background:url('../../images/pcweb/shop/benefit_set.png') -55px -250px no-repeat;cursor:pointer;}
+.bnf_cuation{width:1080px;padding:64px 0 57px 0;border:1px solid #ccc;border-width:1px 0;background:#f3f3f3;
+	img{margin:0 0 0 29px;}
+}
+.evt_croll.plan{margin-top:29px;padding-top:40px;border-top:1px dashed #dcdcdc;}
+.tit_h3.tit_bnft{width:138px;height:21px;margin:0 0 0 10px;text-indent:-9999em;
+	&.s_cpn{margin:0 0 18px;background:url('../../images/pcweb/shop/benefit_set.png') -181px -313px no-repeat;}
+	&.p_cpn{margin:0 0 18px;background:url('../../images/pcweb/shop/benefit_set.png') -181px -343px no-repeat;}
+	&.t_cpn{margin:0 0 18px;background:url('../../images/pcweb/shop/benefit_set.png') -507px -314px no-repeat;}
+	&.a_evnt{background:url('../../images/pcweb/shop/benefit_set.png') -330px -313px no-repeat;}
+	&.i_evnt{background:url('../../images/pcweb/shop/benefit_set.png') -330px -343px no-repeat;}
+}
+.cp_btns{
+	.cpn_btn{width:138px;height:38px;line-height:38px;text-align:center;border:1px solid $point_color_bg;background:#fff;
+		em{color:$point_color_txt;font-size:13px;letter-spacing:-0.04em;}
+		&:after{display:inline-block;width:17px;height:19px;margin:8px 0 0 8px;vertical-align:top;background:url("../../images/pcweb/shop/benefit_set.png") no-repeat -433px -258px;content:"";}
+		&.fin{border-color:#d1d1d1;background:#f4f4f4;cursor:default;
+			em{color:#bababa;}
+			&:after{display:none;}
+		}
+	}
+	.btn_etc02.c01{width:138px;margin-top:10px;border-color:#666;font-size:12px;color:#666;}
+}
+// 리비전 34008 ( SSAS + MAP) 추가하기
+
+//스토어 쇼핑
+.renewal .nc_wrap{
+	//타이틀
+	.nc_tit{position:relative;
+		h3{height:30px;line-height:30px;font-size:30px;text-align:center;color:#111;letter-spacing:-0.02em;font-weight:normal;font-family:"Noto Sans CJK KR", "Noto Sans KR", "Noto Sans", "Noto", "Verdana","Nanum Gothic", sans-serif;}
+		.all_store{position:absolute;top:0;right:0;width:89px;height:30px;padding-left:28px;line-height:30px;color:#3e3e3e;font-size:13px;letter-spacing:-0.02em;border:1px solid #ddd;border-radius:15px;
+			&:before{position:absolute;top:9px;left:12px;width:11px;height:11px;background:url("../../images/pcweb/shop/ico_plus.gif") no-repeat;content:"";}
+		}
+		.find_store{position:absolute;top:0;right:0;width:66px;height:30px;padding-left:32px;line-height:30px;color:#3e3e3e;font-size:13px;letter-spacing:-0.02em;border:1px solid #ddd;border-radius:15px;
+			&:before{position:absolute;top:8px;left:12px;width:14px;height:13px;background:url("../../images/pcweb/shop/ico_sch.png") no-repeat;content:"";}
+		}
+		.sub_tit{display:block;height:15px;margin-top:20px; line-height:15px;font-size:15px;text-align:center;color:#666;}
+	}
+
+	//배송지 설정
+	.qck_dest{position:relative;height:110px;margin-bottom:50px;line-height:110px;font-size:0;background:#f8fbff;
+		.dest_dscrn{position:relative;display:inline-block;height:110px;padding:0 20px 0 23px;line-height:110px;font-size:15px;letter-spacing:-0.02em;color:#f5b300;font-weight:bold;vertical-align:top;background:url("../../images/pcweb/shop/ico_place2.png") no-repeat left center;
+			&:after{position:absolute;top:50%;right:0;width:1px;height:15px;margin-top:-7px;background:#ddd;content:"";}
+			&.dis{color:#666;background-image:url("../../images/pcweb/shop/ico_place3.png")}
+		}
+		.dest_addr{position:relative;display:inline-block;height:110px;line-height:110px;
+			.addr{display:inline-block;max-width:450px;height:100%;padding:0 0 0 20px;font-size:14px;letter-spacing:-0.02em;color:#111;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;}
+			.set_addr{display:inline-block;width:56px;height:33px;margin-left:15px;line-height:33px;color:#fff;font-size:13px;letter-spacing:-0.02em;text-align:center;background:#babcbf;border-radius:17px;}
+			&.dis{
+				.addr{color:#666;}
+			}
+		}
+		.discern{display:inline-block;height:70px;margin-left:20px;line-height:70px;font-size:15px;letter-spacing:-0.02em;color:#666;vertical-align:top;
+			i{display:inline-block;width:24px;height:24px;margin-right:7px;font-size:0;text-indent:-999em;background:url("../../images/pcweb/shop/ico_lightning.png") no-repeat;vertical-align:middle;}
+			em{color:#f7b70f;font-weight:bold;}
+			&.dis{
+				i{background-image:url("../../images/pcweb/shop/ico_lightning_off.png");}
+				em{color:$point_color_txt;}
+			}
+		}
+		.goto{display:inline-block;width:160px;height:110px;margin:0 82px 0 96px;line-height:110px;
+			img{vertical-align:middle;}
+		}
+		.info_txt{display:inline-block;padding-left:28px;color:#111;font-size:14px;letter-spacing:-0.02em;font-weight:bold;background:url("../../images/pcweb/shop/ico_place.png") no-repeat left center;}
+		.goto_set{display:inline-block;width:110px;height:32px;margin:0 0 0 20px;color:#333;letter-spacing:-0.04em;line-height:32px;font-size:13px;text-align:center;background:#fff;border:1px solid #ddd;border-radius:16px;
+			em{margin-left:3px;}
+		}
+	}
+
+	//전체 보기
+	.all_prd{position:relative;margin-top:40px;text-align:center;
+		a{position:relative;display:inline-block;height:48px;padding:0 50px;line-height:48px;font-size:15px;color:#111;border:1px solid #f1f1f1;background:#f8f8f8;border-radius:24px;z-index:1;
+			em{font-weight:bold;}
+			&:after{display:inline-block;width:18px;height:13px;margin-left:10px;vertical-align:-1px;background:url("../../images/pcweb/shop/ico_arrow01.png") no-repeat;content:"";}
+		}
+		&:after{position:absolute;top:50%;left:0;width:100%;height:1px;background:#f1f1f1;content:"";z-index:0;}
+	}
+
+	//상단 빌보드 배너
+	.box_promotion_bnr{position:relative;margin-bottom:40px;
+		.set_controll{position:relative;width:1194px;margin:0 auto;}
+		&.wide{
+			.d_promo_container.type02 ul.d_bnr_cont{width:100%;min-width:1080px;height:426px;}
+			.d_bnr_cont li{width:100%;position:absolute;top:0;left:0;right:0;bottom:0;background-repeat:no-repeat;background-position:center center;z-index:1;opacity:0;filter:alpha(opacity = 0);
+				a{display:block;width:1250px;height:100%;margin:0 auto;text-align:center;text-indent:-9999px;
+					img{display:inline;}
+				}
+			}
+		}
+
+		.d_promo_container{
+			&.type02{
+				ul.d_bnr_cont{position:relative;display:block;overflow:hidden;width:650px;height:470px;z-index:8;
+					li{opacity:0;filter:alpha(opacity = 0);}
+				}
+				.set_controll{width:1080px;}
+			}
+			.page_btn_box {
+				.btn_prev_move{left:10px;
+					&:hover{width:auto;
+						&:before{width:100%;}
+						&:after{right:-23px;}
+						.page{display:block;margin-left:43px;font-weight:normal;
+							em {font-weight:bold;}
+						}
+					}
+					.ico{left:15px;background:url("../../images/pcweb/common/ico_arrow27.png") no-repeat;z-index:1;}
+				}
+				.btn_next_move{right:10px;
+					&:hover{width:auto;right:33px;padding-left:23px;
+						&:before{width:100%;}
+						&:after{right:-23px;}
+						.page{display:block;margin-right:18px;font-weight:normal;
+							em {font-weight:bold;}
+						}
+						.ico{right:-8px;}
+					}
+					.ico{left:auto;right:15px;background:url("../../images/pcweb/common/ico_arrow28.png") no-repeat;}
+				}
+			}
+		}
+	}
+
+	// 추천지점
+	.brd_cate_rolling{margin-top:28px;
+		&.on{
+			.btn_set{display:block;}
+		}
+		.btn_set{display:none;}
+	}
+
+	//배너
+	.box_roll_evt{margin-top:40px;}
+
+	//나의 단골 매장
+	.fav_wrap{margin-top:50px;
+		.fav_tab{margin:20px 0 30px;
+			ul{text-align:center;font-size:0;
+				li{display:inline-block;max-width:333px;height:15px;line-height:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+					a{font-size:15px;color:#666;letter-spacing:-0.02em;}
+					+li{margin-left:40px;}
+					&.on{
+						a{color:#c9000b;font-weight:bold;}
+					}
+				}
+			}
+		}
+		.tab_cont{
+			.list_product05{position:relative;width:1100px;height:370px;margin-left:-20px;padding:0;border:0;overflow:hidden;
+				ul{width:2180px;
+					li{float:left;margin:0;
+						.links{width:200px;padding:0 0 0 20px;}
+					}
+				}
+				.bp_btns{display:none;position:absolute;top:0;left:50%;width:1080px;margin-left:-530px;height:0;z-index:2;
+					a{
+						&.bp_bt_prev,&.bp_bt_next{position:absolute;top:75px;width:60px;height:60px;text-indent:-9999em;}
+					}
+					.d_prev{left:0;background:url(../../images/pcweb/renewal/bill_btn.png) no-repeat;background-position:-60px 0;}
+					.d_next{left:1020px;right:0;background:url(../../images/pcweb/renewal/bill_btn.png) no-repeat;background-position:-60px -60px;}
+					a{
+						&.bp_bt_prev:hover{background-position:-120px 0;}
+						&.bp_bt_next:hover{background-position:-120px -60px;}
+					}
+				}
+			}
+			//상품 없는 케이스
+			.no_prd{height:198px;border:solid #e4e4e4;border-width:1px 0;
+				span{display:block;padding:150px;font-size:14px;line-height:14px;text-align:center;background:url("../../images/pcweb/shop/no_prd.png") center 34px no-repeat;}
+			}
+		}
+		//등록된 매장 없는 케이스
+		.no_reg{width:100%;height:203px;margin-top:30px;text-align:center;background:#f8f8f8;
+			strong{display:block;height:15px;padding-top:50px;color:#111;font-size:15px;line-height:15px;letter-spacing:-0.02em;}
+			span{display:block;height:15px;padding-top:14px;color:#666;font-size:15px;line-height:15px;letter-spacing:-0.02em;}
+			.go_btn{position:relative;display:block;width:94px;height:38px;margin:22px auto 0;padding-left:64px;line-height:38px;text-align:left;font-size:14px;font-weight:bold;color:#111;background:#fff;border:1px solid #d0d0d0;border-radius:19px;
+				&:before{position:absolute;top:10px;left:33px;width:20px;height:20px;background:url("../../images/pcweb/shop/ico_sch2.png") no-repeat;content:"";}
+			}
+		}
+	}
+
+	//스토어픽
+	.nc_storepick{margin-top:50px;
+		.list_omni_smartpick {position:relative;margin-top:30px;padding:0 0 20px;
+			ul {overflow:hidden;height:44px;
+				li {position:relative;float:left;width:175px;height:42px;margin:0 0 0 -1px;border:1px solid #eee;
+					&.active, &:hover {border-color:#c9000b;background:#c9000b;z-index:2;
+						a{color:#fff;font-weight:bold;}
+					}
+					a {display:block;height:42px;line-height:42px;text-align:center;}
+					&:nth-of-type(6n){padding-right:23px;}
+					&:nth-of-type(n+7){margin-top:-1px;}
+					&:nth-of-type(6n+1){margin-left:0;}
+				}
+			}
+
+			.btn_cont_all{position:absolute;top:3px;left:auto;right:3px;width:36px;height:36px;margin:0;text-indent:-999em;border:1px solid #ddd;background:url('../../images/pcweb/shop/ico_arrow02.png') center center no-repeat #f9f9f9;z-index:3;
+				&.active{background:url('../../images/pcweb/shop/ico_arrow03.png') center center no-repeat #f9f9f9;}
+			}
+			&.more_cont {
+				ul{height:auto;}
+			}
+		}
+		.list_product01{border-bottom:0;}
+		.list_product02{
+			.all_prd{margin-top:40px;}
+		}
+	}
+
+	//카테고리별 베스트 상품
+	.nc_best{margin-top:50px;
+		.list_product01{border-bottom:0;}
+	}
+
+	.tab_downarrow_type{margin-top:30px;
+		> ul{margin:0;*zoom:1;
+			&:after{display:block;clear:both;content:"";}
+			li{position:relative;width:50%;float:left;background:#f3f3f3;
+				&:first-child a{}
+				a,span{overflow:hidden;display:block;border-top:1px solid #ededed;border-bottom:1px solid #ededed;height:48px;font-size:16px;line-height:48px;color:#999;text-align:center;white-space:nowrap;text-overflow:ellipsis;}
+				&.on{
+					a,span{border-top:1px solid #525252;border-bottom:1px solid #525252;background:#525252;color:#fff;font-weight:800;}
+					&:after {display:block;content:'';position:absolute;bottom:-7px;left:50%;width:14px;height:7px;margin-left:-7px;background:url("../../images/pcweb/common/tab_down_arrow.png") 0 0 no-repeat;}
+				}
+			}
+		}
+		&.full_size03 > ul li{width:33%;
+			&:first-child{width:34%;}
+		}
+		&.full_size04 > ul li{width:25%;}
+		&.full_size05 > ul li{width:20%;}
+	}
+
+	.nc_cate_wrap {position:relative;margin-bottom:35px;
+		.omni_controll {position:absolute;top:0;left:0;right:0;
+			.btn_prev{position:absolute;top:0;left:0;width:30px;
+				span{display:block;width:30px;height:81px;background:url(../../images/pcweb/renewal/new_ctgbtn_prev.png) 0 -24px no-repeat;text-indent:-9999px;}
+				&.active span{background-position:0 -152px;}
+			}
+			.btn_next{position:absolute;top:0;right:0;width:30px;
+				span{display:block;width:30px;height:81px;background:url(../../images/pcweb/renewal/new_ctgbtn_next.png) -20px -24px no-repeat;text-indent:-9999px;}
+				&.active span{background-position:-20px -152px;}
+			}
+		}
+
+		.nc_cate_list {margin-top:40px;
+			.cont {width:994px;height:110px;margin:0 auto;}
+			li {float:left;text-align:center;
+				a {display:block;width:141px;
+					img {width:80px;height:80px;}
+					> span {display:block;color:#666;margin-top:14px;}
+				}
+				&.hover , &.selected {
+					a span {color:$point_color_txt;}
+				}
+			}
+		}
+	}
+}
+
+//[v2_2] 시즌 기획전
+.tab_type04 + .main_4thumb_plan {margin-top:10px;}
+.main_4thumb_plan {width:1080px;margin:0 auto;
+	.scont_plan {position:relative;float:left;width:530px;height:549px;padding:20px 0 40px;
+		&:first-child:after {display:none;}
+		&:after {display:block; position:absolute;top:0;left:0;right:0;content:'';margin-right:-550px;border-bottom:1px solid #ededed;}
+	}
+	.scont_plan:nth-of-type(2n) {padding-left:20px;
+		&:after {display:none;}
+	}
+	.big_thumb {
+		a {display:block;
+			img {width:530px;height:300px;}
+		}
+	}
+	.list_small_thumb{padding:13px 0 0 0;
+		&:after{display:block;content:'';clear:both;}
+		> li{position:relative;float:left;width:168px;margin-right:13px;}
+		> li:last-child{margin-right:0;}
+		.links{display:block;width:168px;}
+		> li .thumb{position:relative;z-index:1;margin-bottom:10px;
+			img{display:block;width:168px;height:168px;}
+		}
+		.over .thumb:before,.links:hover .thumb:before{display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:1;border:2px solid #d0d0d0;content:'';}
+		> li .cont{display:block;}
+		.prd_chip{margin-top:10px;width:186px;
+			ul{height:33px;overflow:hidden;
+				li{float:left;width:14px;height:14px;margin:0 3px 3px 0;
+					&:first-child{margin-left:0;}
+				}
+			}
+		}
+		.prod_nm{display:block;overflow:hidden;height:34px;margin-bottom:3px;color:#666;}
+		.cont_price{float:left;
+			.price01{overflow:hidden;height:15px;margin-top:-5px;font-size:13px;}
+			.cur_price{display:block;float:left;font-family:Verdana,sans-serif;color:#333;letter-spacing:-1px;}
+		}
+		.box_price{
+			.prime{display:block;float:left;margin-right:9px;font-family:Verdana,sans-serif;color:#999;letter-spacing:-1px;}
+			.c_price{display:block;margin-top:5px;clear:both;font-family:'Nanum Gothic',sans-serif;font-size:13px;font-weight:600;color:#333;
+				.price_nm{margin-right:5px;font-weight:800;}
+				strong{margin-right:2px;font-family:Verdana,sans-serif;letter-spacing:-2px;vertical-align:-1px;}
+			}
+			&:after{display:block;content:'';clear:both;}
+		}
+	}
+	&:after{display:block;content:'';clear:both;}
+	&+.set_btn{margin-top:20px;}
+}
+//[v2_2] 해외관
+.box_foreign {
+	.tab_foregin {background:#333;
+		ul {text-align:center;}
+		li {position:relative;display:inline-block;
+			a {display:block;width:214px;height:50px;font-size:16px;line-height:50px;color:#999;}
+			&.on a {color:#fff;font-weight:bold;
+				&:after {position:absolute;bottom:0;left:50%;display:block;content:'';width:11px;height:6px;margin-left:-5px;background:url('../../images/pcweb/shop/bg_foreign.png') no-repeat 0 0;}
+			}
+			&:after{position:absolute;top:50%;right:0;display:block;content:'';width:1px;height:14px;margin-top:-7px;background:#5c5c5c;}
+			&:last-child:after{display:none;}
+		}
+	}
+	.foreign_main_bnr {text-align:center;
+		//&.type2{margin-top:10px;}
+	}
+	.foreign_evt_bnr {margin-top:30px;text-align:center;
+		a {display:block;}
+	}
+	.box_theme_plan{position:relative;width:1080px;margin:40px auto 0;
+		.big_thumb{position:absolute;top:58px;left:50%;margin-left:-250px;
+			a{display:block;}
+			img {width:500px;height:646px;}
+		}
+		.small_thumb{margin-top:-38px;
+			li{float:left;width:255px;height:329px;margin-top:38px;
+				&:nth-of-type(2n) {float:right;margin-left:570px;}
+			}
+			img {width:255px;height:329px;}
+			&:after {display:block;content:'';clear:both;}
+		}
+	}
+	.box_theme_plan2{position:relative;width:1080px;margin:30px auto 0;
+		.big_thumb{
+			li {float:left;width:525px;margin-left:29px;
+				&:first-child{margin-left:0;}
+				a {display:block;
+					.txt{display:block;overflow:hidden;margin-top:16px;font-size:20px;line-height:1.25em;color:#333;text-align:center;white-space:nowrap;text-overflow:ellipsis;}
+				}
+				img {width:525px;height:297px;}
+			}
+			&:after {display:block;content:'';clear:both;}
+		}
+		.small_thumb{margin-top:50px;
+			li{float:left;width:340px;margin-left:29px;
+				&:first-child{margin-left:0;}
+				a{display:block;}
+				.txt{display:block;overflow:hidden;margin-top:16px;font-size:18px;line-height:1.25em;color:#333;text-align:center;white-space:nowrap;text-overflow:ellipsis;}
+			}
+			img {width:340px;height:192px;}
+			&:after {display:block;content:'';clear:both;}
+		}
+	}
+	.box_md_pick {
+		margin-top:42px;
+		.list_product01 {border-bottom:none;}
+	}
+	.cate_foregin {position:relative;width:1080px;margin:0 auto;text-align:center;
+		.btn_brands{position:relative;display:inline-block;margin-right:19px;vertical-align:middle;
+			a {display:block;height:35px;padding:19px 40px 0 0;
+				&:after{display:block;content:'';width:89px;height:19px;background:url('../../images/pcweb/shop/bg_foreign.png') no-repeat 0 -79px;}
+				&:before{position:absolute;top:50%;right:0;display:block;content:'';width:1px;height:16px;margin:-8px 0 0;background:#dedede;}
+				&.on{
+					&:after{display:block;content:'';background-position:0 -98px;}
+				}
+			}
+		}
+		.set_menu{height:54px;background:#fff;
+			dl{display:inline-block;vertical-align:middle;}
+			dd{position:relative;display:inline-block;
+				> a{display:block;width:128px;height:54px;font-size:15px;line-height:54px;text-align:center;font-weight:400;color:#333;letter-spacing:-1px;}
+			}
+			.depth2{display:none;position:absolute;top:54px;left:50%;margin-left:-79px;z-index:33;}
+			dd.active{
+				.depth2{display:block;width:158px;border:1px solid #000;border-top:2px solid #000;background:#fff;text-align:left;
+					ul{padding:15px 29px 17px;}
+					li a{display:block;padding:10px 0 7px;color:#666;font-size:14px;font-weight:400;
+						&:hover{text-decoration:underline;}
+					}
+				}
+				> a{font-weight:800;}
+			}
+		}
+	}
+
+	.box_tab_foregin + .box_bnr_foreign{
+		.foreign_main_bnr{margin-top:10px;}
+	}
+	.box_bnr_foreign + .box_cate_foregin{
+		.cate_foregin{margin-top:30px;width:1078px;border:1px solid #ddd;
+			.btn_brands{padding-left:49px;margin-right:0;}
+			.set_menu{height:54px;background:#fff;
+				dd {
+					> a{position:relative;width:176px;
+						&:after{position:absolute;top:50%;right:0;display:block;content:'';width:1px;height:16px;margin:-8px 0 0;background:#dedede;}
+					}
+					&:last-child > a:after{display:none;}
+				}
+
+			}
+		}
+	}
+
+	.wrap_best_brands {position:relative;margin-top:98px;
+		&:after{display:block;position:absolute;bottom:0;left:0;right:0;height:460px;content:'';background: #f3f3f3;}
+	}
+	.box_best_brands {position:relative;z-index:1;width:1080px;margin:-66px auto 0;
+		.box_cate_link2{position:relative;height:73px;border-top:1px solid #eaeaea;background:#fff;
+			.btn_controller{position:absolute;top:0;left:0;right:0;
+				.btn_prev{position:absolute;top:14px;left:14px;z-index:1;
+					span{overflow:hidden;display:block;width:55px;height:45px;background:#f3f3f3;text-indent:-9999px;
+						&:after{position:absolute;top:50%;left:50%;display:block;content:'';width:9px;height:15px;margin:-7px 0 0 -6px;background:url('../../images/pcweb/shop/bg_foreign.png') no-repeat 0 -28px;}
+					}
+					&.active span{
+						&:after{background-position:0 -12px;}
+					}
+				}
+				.btn_next{position:absolute;top:14px;right:14px;z-index:1;
+					span{overflow:hidden;display:block;width:55px;height:45px;background:#f3f3f3;text-indent:-9999px;
+						&:after{position:absolute;top:50%;left:50%;display:block;content:'';width:9px;height:15px;margin:-7px 0 0 -3px;background:url('../../images/pcweb/shop/bg_foreign.png') no-repeat -12px -28px;}
+					}
+					&.active span{
+						&:after{background-position:-12px -12px;}
+					}
+				}
+			} 
+			.box_hidden{overflow:hidden;position:relative;height:73px;margin:0 100px;
+				ul{position:absolute;top:0;left:0;width:9999px;}
+				li{float:left;
+					&:first-child{padding-left:0;
+						a {padding-left:0;}
+					}
+					a{display:block;height:73px;padding:0 25px;
+						> span{position:relative;display:block;margin:0;padding:0 12px;font-size:14px;line-height:73px;color:#333;}
+					}
+					
+					&:hover a{display:block;position:relative;height:73px;font-weight:800;}
+					&.on a{display:block;position:relative;height:73px;font-weight:800;}
+					&.on a > span:before{position:absolute;top:0;left:0;right:0;display:block;height:4px;background-color:#000;content:"";}
+				}
+			}
+		}
+		.list_product05.size05 {padding-top:20px;border-bottom:none;
+			.list{margin-bottom:0;padding-bottom:50px;
+				>li{margin-left:20px;
+					&:first-child{margin-left:0}
+				}
+			}
+		}
+	}
+}
+
+.lay_brands{top:0;
+	width:1080px;margin-left:-540px;
+	.lay_wrap{padding-bottom:0;}
+	.box_scroll>*{width:auto;}
+	.foregin_list_brnad {
+		ul{
+			&:after{display:block;content:'';clear:both;}
+		}
+		li{float:left;margin:0 0 20px 19px;}
+		a{display:block;width:150px;
+			img{width:150px;height:90px;}
+			.img{display:block;}
+			.img_active{display:none;}
+			&:hover .img{display:none;}
+			&:hover .img_active{display:block;}
+			.txt{display:block;overflow:hidden;height:16px;margin-top:11px;white-space:nowrap;text-overflow:ellipsis;text-align:center;}
+		}
+	}
+	.btn_lay_close{position:absolute;right:20px;top:22px;}
+}
+//오프라이스
+body .oprice_wrap{
+	//슬라이드 좌우 버튼
+	.btn_set{display:none;
+		&.active{display:block;}
+	}
+	.btn-prev2,.btn-next2{display:none;position:absolute;top:50%;width:40px;height:40px;margin-top:-20px;background:none;z-index:2;
+		&.on{display:block;}
+		&:hover{background-position:0 -40px;}
+		.ico{display:none;}
+	}
+	.btn-prev2{left:0;background:url("../../images/pcweb/shop/left_btn_set.png") no-repeat 0 0;
+		&.on{display:block;}
+		.ico{display:none;}
+	}
+	.btn-next2{right:0;background:url("../../images/pcweb/shop/right_btn_set.png") no-repeat 0 0;
+		&:hover{}
+		.ico{display:none;}
+	}
+	//rolling category
+	.brd_cate_rolling{overflow:hidden;
+		.d_rolling_brd{width:1116px;height:180px;margin-left:-36px;
+			&.no_swipe{
+				.swiper-wrapper{width:auto;text-align:center;font-size:0;
+					.swiper-slide{display:inline-block;float:none;width:auto;}
+				}
+			}
+			.list_brd li{height:180px;
+				a{width:128px;height:180px;margin:0 11px 0 47px;
+					img{width:128px;height:128px;border-radius:64px;}
+					.list_name{top:144px}
+				}
+			}
+		}
+		.btn-prev2,.btn-next2{margin-top:-44px;}
+	}
+	//상단 슬라이드 배너
+	.box_promotion_bnr{position:relative;
+		.set_controll{position:relative;width:1194px;margin:0 auto;}
+		&.wide{
+			&.kims_qck ul.d_bnr_cont{margin:0 auto;}
+			.d_promo_container.type02 ul.d_bnr_cont{width:100%;min-width:1080px;height:470px;}
+			.d_bnr_cont li{width:100%;position:absolute;top:0;left:0;right:0;bottom:0;background-repeat:no-repeat;background-position:center center;z-index:1;opacity:0;filter:alpha(opacity = 0);
+				a{display:block;width:1250px;height:100%;margin:0 auto;text-align:center;text-indent:-9999px;
+					img{display:inline;}
+				}
+			}
+		}
+
+		.d_promo_container{
+			&.type02{
+				ul.d_bnr_cont{position:relative;display:block;overflow:hidden;width:650px;height:470px;z-index:8;
+					li{opacity:0;filter:alpha(opacity = 0);}
+				}
+				.set_controll{width:1080px;}
+			}
+			.page_btn_box {
+				.btn_prev_move{left:10px;
+					&:hover{width:auto;
+						&:before{width:100%;}
+						&:after{right:-23px;}
+						.page{display:block;margin-left:43px;font-weight:normal;
+							em {font-weight:bold;}
+						}
+					}
+					.ico{left:15px;background:url("../../images/pcweb/common/ico_arrow27.png") no-repeat;z-index:1;}
+				}
+				.btn_next_move{right:10px;
+					&:hover{width:auto;right:33px;padding-left:23px;
+						&:before{width:100%;}
+						&:after{right:-23px;}
+						.page{display:block;margin-right:18px;font-weight:normal;
+							em {font-weight:bold;}
+						}
+						.ico{right:-8px;}
+					}
+					.ico{left:auto;right:15px;background:url("../../images/pcweb/common/ico_arrow28.png") no-repeat;}
+				}
+			}
+		}
+	}
+
+	//스페셜딜
+	.special_deal{width:1080px;margin:53px auto 0;
+		.swiper-container{position:relative;width:1112px;margin-left:-16px;height:194px;
+			.btn-prev2, .btn-next2{/* margin-top:-16px; */}
+			.btn-prev2{left:26px;}
+			.btn-next2{right:16px;}
+			.swiper-wrapper{
+				li{float:left;
+					a{display:block;overflow:hidden;position:relative;}
+					dl{position:relative;
+						dt{padding:12px 0 0 0;text-align:center;
+							em{display:none;letter-spacing:-0.5px;color:#ba9d7f;font-weight:800;}
+							span{display:block;overflow:hidden;height:32px;font-size:13px;line-height:20px;color:#333;}
+						}
+						.prc{text-align:center;
+							div{display:inline-block;
+								span{display:block;}
+								.rm{float:left;margin:0 10px 0 0;color:#df3434;
+									strong{display:block;float:left;font-weight:normal;font-size:40px;line-height:28px;font-family:"Verdana","Nanum Gothic",sans-serif;letter-spacing:-0.07em;}
+									em{display:block;float:left;margin:12px 0 0 0;font-size:15px;line-height:1;font-family:"Verdana","Nanum Gothic",sans-serif;}
+								}
+								.wm{float:left;text-align:center;
+									.or{font-size:11px;line-height:12px;color:#999;font-family:"Verdana","Nanum Gothic",sans-serif;text-decoration:line-through;}
+									.er{margin:5px 0 0 0;font-size:13px;line-height:1;color:#333;letter-spacing:-0.8px;
+										b{margin:0 8px 0 0;vertical-align:middle;}
+										strong{font-size:14px;font-family:"Verdana","Nanum Gothic",sans-serif;vertical-align:middle;}
+										em{margin:0 0 0 1px;font-size:12px;vertical-align:bottom;}
+									}
+								}
+								.rm + .wm{text-align:left;}
+							}
+						}
+						.tag{margin:5px 0 0 0;text-align:center;}
+					}
+					.img{display:block;overflow:hidden;position:absolute;left:0;top:0;z-index:0;}
+					a:hover dl dt span{text-decoration:underline;}
+				}
+				li{float:left;width:530px;height:162px;
+					a{position:relative;width:528px;height:160px;margin:16px 0 16px 16px;border:1px solid #ddd;box-shadow:0 0 7px -2px #ddd;
+						&:focus .img{width:160px;left:1px;top:1px;}
+						.img img{width:160px;height:160px;}
+						&:hover{box-shadow:0 0 7px -2px #aaa;border-color:#aaa;}
+					}
+					dl{padding:0 0 0 190px;
+						.prc{margin:10px 0 0;text-align:left;}
+						dt{padding:44px 30px 0 0;text-align:left;
+							span{height:30px;font-size:13px;line-height:15px;}
+						}
+						.tag{margin:8px 0 0;text-align:left;}
+						.prc div{
+							.rm{margin:0 8px 0 0px;
+								strong{}
+								em{margin:13px 0 0 2px;font-size:20px;line-height:20px;/* font-family:'Nanum Gothic'; */}
+							}
+							.wm{
+								.or{margin:0 0 5px;font-size:12px;}
+								.er{
+									strong{float:left;font-size:14px;}
+									em{float:left;font-size:13px;}
+									b{display:none;}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//MD'S PICK
+	.opr_mdpick{width:1080px;margin:0 auto;
+		.title{margin-top:71px;border-bottom:3px solid #000;
+			.tit_h3_03{}
+		}
+		.tab_mds{width:1080px;margin:19px 0 0;
+			ul{
+				&:after{display:block;clear:both;content:"";}
+				li{float:left;width:270px;height:44px;line-height:44px;
+					&.on{
+						a{color:#fff;font-weight:bold;background:#000;}
+					}
+					a{display:block;width:100%;height:100%;text-align:center;color:#828282;font-size:15px;letter-spacing:-0.02em;}
+				}
+			}
+		}
+		.cont_mdpick{display:none;
+			.pk_sld_wrap{position:relative;
+				.md_sld{width:1080px;height:494px;overflow:hidden;
+					.list_product01{width:1096px !important;height:494px;border:0;margin-left:-16px !important;
+						.list{height:419px;
+							&:first-child{margin-top:40px;}
+							li{width:275px;height:419px;margin:0;
+								.thumb img{width:258px;height:258px;}
+								.links{position:relative;width:258px;padding-left:16px;}
+								.box_opt_link{right:auto;width:258px;}
+							}
+						}
+					}
+				}
+				.btn_set{display:none;
+					&.active{display:block;}
+					.btn-prev2, .btn-next2{display:none;top:148px;margin-top:0;
+						&.on{display:block;}
+					}
+					.btn-prev2{/* left:-17px; */}
+					.btn-next2{/* right:-17px; */}
+				}
+			}
+		}
+	}
+
+	.opr_best_rv{padding:64px 0 80px;background:#ebeff2;overflow:hidden;
+		.title{
+			.tit_h3{margin-bottom:36px;}
+		}
+		.rv_wrap{position:relative;left:-7px;width:1095px;height:540px;margin:0 auto;//overflow:visible;
+			ul{height:540px;
+				&:after{display:block;clear:both;content:"";}
+				li{width:365px;height:540px;
+					&.swiper-slide-visible{
+						.r_wrap{box-shadow:0 0 7px -2px #ccc;
+							&:hover{box-shadow:0 0 7px -2px #aaa;
+								a{
+									&:before{position:absolute;width:348px;height:538px;border:1px solid #aaa;content:"";}
+								}
+							}
+						}
+					}
+					.r_wrap{position:relative;;width:350px;height:540px;margin:0 0 0 15px;background:#fff;//box-shadow:0 0 7px -2px #ccc;
+						// &:hover{box-shadow:0 0 7px -2px #aaa;
+						// 	a{
+						// 		&:before{position:absolute;width:348px;height:538px;border:1px solid #aaa;content:"";}
+						// 	}
+						// }
+						a{position:relative;display:block;
+							.r_img{width:350px;height:350px;
+								img{display:block;width:100%;height:100%;}
+							}
+							.r_pinfo, .box_grade, .r_con{margin:0 25px;}
+							.r_pinfo{height:44px;padding-top:5px;font-size:15px;line-height:44px;color:#828282;font-family:"Noto Sans CJK KR", "Noto Sans KR", "Noto Sans", "Noto", "Nanum Gothic", sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-0.05em;}
+							.r_con{height:80px;color:#333;letter-spacing:-0.05em;line-height:20px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;}
+							.box_grade{margin-top:10px;font-size:0;
+								.set_grade01{display:inline-block;}
+								.set_conunt_review{margin-left:3px;font-size:12px;}
+							}
+						}
+					}
+				}
+			}
+			.btn_set{
+				.btn-prev2{left:25px;}
+				.btn-next2{right:10px;}
+			}
+		}
+	}
+
+	.opr_best, .opr_new{width:1080px;margin:0 auto;
+		.title{margin-top:71px;border-bottom:3px solid #000;
+			.tit_h3_03{}
+		}
+		.more_btn{top:0;width:60px;height:30px;line-height:30px;border-color:#ddd;border-radius:15px;color:#999;letter-spacing:-0.02em;
+			span{margin-left:7px;}
+			&:after{width:7px;height:11px;margin-left:7px;vertical-align:-1px;background-image:url("../../images/pcweb/common/ico_arrow39.png");}
+			&:hover{border-color:#666;border-radius:15px;color:#fff;letter-spacing:-0.02em;background:#666;
+				&:after{width:7px;height:11px;margin-left:7px;vertical-align:-1px;background-image:url("../../images/pcweb/common/ico_arrow38.png");}
+			}
+		}
+		.list_product01{border:0;
+			.list:first-child{margin-top:31px;}
+		}
+	}
+
+	.kims_main_bnr{width:1080px;margin:0 auto;}
+	.big_thumb_plan{width:1080px;margin:0 auto;
+		ul{
+			&:after{display:block;content:'';clear:both;}
+		}
+		li {float:left;margin-left:20px;
+			&:first-child{margin-left:0;}
+			img{width:530px;height:300px;}
+		}
+	}
+	.small_thumb_plan{width:1080px;margin:20px auto 0;
+		ul{
+			&:after{display:block;content:'';clear:both;}
+		}
+		li {float:left;width:255px;margin-left:20px;
+			&:first-child{margin-left:0;}
+			a{display:block;}
+			img{width:255px;height:255px;}
+			.plan_nm{display:block;overflow:hidden;max-height:42px;margin-top:17px;padding:0 5px;font-size:17px;line-height:1.25em;color:#333;font-weight:bold;text-align:center;display:-webkit-box;display:-ms-box;display:box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+			.stxt{display:block;overflow:hidden;margin-top:6px;padding:0 5px;font-size:14px;white-space:nowrap;text-overflow:ellipsis;text-align:center;}
+		}
+	}
+	.set_btn{margin-top:35px;}
+	.btn_buy_history{width:1080px;margin:50px auto 0;}
+	.box_kims_deal {width:1080px;position:relative;margin:60px auto 0;
+		.swiper-wrapper{
+			&:after{display:block;content:'';clear:both;}
+		}
+		.btn_set{position:absolute;top:8px;right:0;height:32px;margin-left:-540px;z-index:9;
+			.btn-prev2{position:absolute;top:0;right:76px;width:32px;height:32px;background:url(../../images/pcweb/renewal/omni_paging.png) 0 0 no-repeat;z-index:9;cursor:pointer;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+			.btn-next2{position:absolute;top:0;right:0;width:32px;height:32px;background:url(../../images/pcweb/renewal/omni_paging.png) -32px 0 no-repeat;z-index:9;cursor:pointer;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+			.page{position:absolute;top:0;right:32px;width:44px;height:32px;line-height:32px;text-align:center;font-size:13px;color:#333;font-family:verdana;}
+		}
+	}
+	
+	.hpd_lp03{position:relative;padding:0;
+		&:after{position:absolute;top:0;left:0;right:0;bottom:0;display:block;border:1px dashed #bebebe;content:'';}
+		ul{
+			&:after{display:block;clear:both;content:'';}
+		}
+		li{position:relative;z-index:1;float:left;width:360px;margin:0;height:524px;border:none;
+			&:before{position:absolute;top:0;left:0;right:0;bottom:0;display:block;border-bottom:1px dashed #bebebe;border-right:1px dashed #bebebe;content:'';}
+			&:hover:after{display:block;position:absolute;top:0;left:-1px;right:0;bottom:0;border:1px solid #666;content:'';}
+			&:nth-of-type(3n-2):hover:after{left:0;}
+			&:first-child:before{border-left:none;}
+			.links{position:relative;z-index:2;display:block;}
+			.cont{height:auto;padding:0 30px 20px;}
+		}
+		.thumb{text-align:center;padding:17px 0 24px;
+			img{width:328px;height:328px;}
+		}
+		.brand_nm{display:block;overflow:hidden;height:20px;margin-bottom:4px;padding-right:39px;font-size:16px;line-height:1.3em;color:#333;font-weight:800;}
+		.prod_nm{display:block;overflow:hidden;height:40px;margin-bottom:7px;font-size:15px;line-height:1.3em;color:#666;}
+		.box_price:after{display:block;content:'';clear:both;}
+		.dis_percent{display:block;float:left;width:64px;margin:9px 0 0 -3px;font-family:Verdana,sans-serif;font-size:18px;color:$point_color_price;letter-spacing:-2px;
+			strong{margin-right:1px;font-size:32px;font-weight:400;letter-spacing:-3px;}
+		}
+		.cont_price{float:left;
+			.price01{overflow:hidden;height:15px;margin-top:-5px;font-size:13px;}
+			.cur_price{display:block;float:left;font-family:Verdana,sans-serif;color:#333;letter-spacing:-1px;}
+		}
+		.box_price{
+			.prime{display:block;float:left;margin-right:9px;font-family:Verdana,sans-serif;font-size:13px;color:#999;letter-spacing:-1px;}
+			.c_price{display:block;margin-top:5px;clear:both;font-family:'Nanum Gothic',sans-serif;font-size:15px;font-weight:600;color:#333;
+				.price_nm{margin-right:5px;font-weight:800;}
+				strong{margin-right:2px;font-family:Verdana,sans-serif;font-size:22px;letter-spacing:-2px;vertical-align:-1px;}
+			}
+		}
+		.box_flag{overflow:hidden;height:17px;margin-top:10px;
+			.bf_cont{position:relative;display:inline-block;margin:0;
+				div{height:24px;padding-top:6px;
+					span{padding:0px 5px 0px 19px;background:url('../../images/pcweb/common/ico_bar01.gif') no-repeat 0 50%;color:#666;font-size:14px;letter-spacing:-1px;
+						&:first-child{padding:0px 5px 0px 0;background-image:none;}
+					}
+				}
+			}
+		}
+		.btn_opt_like{position:absolute;top:365px;right:23px;z-index:2;
+			.opt_like{display:block;width:26px;height:26px;background:url('../../images/pcweb/common/bg_opt_like.png') 0 0 no-repeat;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+		}
+	}
+
+	.more_btn{position:absolute;top:46px;right:0;height:30px;padding:0 10px;line-height:30px;font-size:14px;text-align:center;color:#323232;letter-spacing:-0.1em;white-space:nowrap;border:1px solid #dadada;
+		&:after{display:inline-block;width:9px;height:14px;margin-left:9px;vertical-align:-2px;background:url("../../images/pcweb/common/ico_arrow31.png") no-repeat;content:"";}
+	}
+	
+	.box_kims_best{position:relative;width:1080px;margin:52px auto 0;
+		.list_product01{border-bottom:none;}
+		.tit_h3_03{margin-bottom:26px;}
+		.more_btn{top:9px;}
+		.tab_kims_best{margin-bottom:26px;
+			ul{border:1px solid #ededed;
+				&:after{display:block;content:'';clear:both;}
+			}
+			li{position:relative;float:left;
+				&:first-child a{border-left:none;}
+				a{display:block;height:122px;padding:11px 5px 0;border-left:1px solid #ededed;text-align:center;
+					img{width:70px;height:70px;}
+					.txt{display:block;overflow:hidden;height:32px;font-size:13px;line-height:1.28em;}
+					&:hover{
+						.txt{font-weight:bold;color:#333;}
+					}
+				}
+				&.on {z-index:1;
+					a:before{display:block;position:absolute;top:-1px;left:-1px ;right:-1px;bottom:-1px;content:'';border:2px solid #333;}
+					a:after{display:block;position:absolute;left:50%;bottom:-9px;content:'';width:15px;height:10px;margin-left:-7px;background:url('../../images/pcweb/renewal/ico_kims_best_arrow.png') no-repeat 0 0;}
+					.txt{font-weight:bold;color:#333;}
+				}
+			}
+			@for $i from 8 through 11 {
+			  &.size#{$i} li {width: 100% / $i;}
+			}
+		}
+		.box_no_result{display:table;width:100%;height:310px;margin-bottom:80px;border-bottom:1px solid #ddd;
+			.txt{display:table-cell;font-size:18px;color:#999;vertical-align:middle;text-align:center;}
+		}
+		.cont_kims_best{min-height:958px;}
+	}
+	.box_oprice{position:relative;width:1080px;margin:52px auto 0;
+		.list_product01{border-bottom:none;}
+		.tit_h3_03{margin-bottom:26px;}
+		.more_btn{top:9px;}
+		.hpd_lp04 li:first-child{margin-left:270px;}
+		.cont_oprice{position:relative;min-height:438px;
+			&.nonBnr{
+				.bnr_oprice{display:none;}
+				.hpd_lp04 {
+					li{
+						&:first-child{margin-left:0;}
+						&:first-child:hover:before{left:0;border-left:1px solid #666;}
+					}
+				}
+			}
+			.bnr_oprice{position:absolute;top:0;left:0;z-index:1;
+				&:after{position:absolute;top:0;right:0;bottom:0;display:block;content:'';border-right:1px solid #ddd;}
+			}
+		}
+	}
+	
+	.hpd_lp04{position:relative;padding:0;
+		&:after{position:absolute;top:0;left:0;right:0;bottom:0;display:block;border:1px solid #ddd;content:'';}
+		ul{
+			&:after{display:block;clear:both;content:'';}
+		}
+		li{position:relative;z-index:1;float:left;width:270px;margin:0;border:none;
+			&:hover:before{display:block;position:absolute;top:0;left:-1px;right:0;bottom:0;z-index:5;border:1px solid #666;content:'';}
+			&:before{position:absolute;top:0;left:0;right:0;bottom:0;display:block;border-bottom:1px solid #ddd;border-right:1px solid #ddd;content:'';}
+			&:first-child:before{border-left:none;}
+			.links{position:relative;z-index:6;display:block;height:438px;}
+			.cont{height:auto;padding:0 30px 20px;}
+		}
+		.thumb{position:relative;padding:17px 0 20px;text-align:center;
+			img{width:228px;height:228px;}
+		}
+		.brand_nm{display:block;overflow:hidden;height:16px;margin-bottom:10px;padding-right:39px;color:#333;font-weight:800;}
+		.prod_nm{display:block;overflow:hidden;height:34px;margin-bottom:10px;color:#666;}
+
+		.box_price:after{display:block;content:'';clear:both;}
+		.dis_percent{display:block;float:left;width:55px;margin:9px 0 0 -3px;font-family:Verdana,sans-serif;font-size:13px;color:$point_color_price;letter-spacing:-2px;
+			strong{margin-right:1px;font-size:34px;font-weight:400;letter-spacing:-3px;}
+		}
+		.cont_price{float:left;
+			.price01{overflow:hidden;height:15px;margin-top:-5px;font-size:13px;}
+			.cur_price{display:block;float:left;font-family:Verdana,sans-serif;color:#333;letter-spacing:-1px;}
+		}
+		.box_price{
+			.prime{display:block;float:left;margin-right:9px;font-family:Verdana,sans-serif;color:#999;letter-spacing:-1px;}
+			.c_price{display:block;margin-top:5px;clear:both;font-family:'Nanum Gothic',sans-serif;font-size:15px;font-weight:600;color:#333;
+				.price_nm{margin-right:5px;font-weight:800;}
+				strong{margin-right:2px;font-family:Verdana,sans-serif;letter-spacing:-2px;vertical-align:-1px;}
+			}
+		}
+		.box_flag{overflow:hidden;height:17px;margin-top:10px;
+			.bf_cont{position:relative;display:inline-block;margin:0;
+				div{height:24px;padding-top:6px;
+					span{padding:0px 5px 0px 19px;background:url('../../images/pcweb/common/ico_bar01.gif') no-repeat 0 50%;color:#666;font-size:14px;letter-spacing:-1px;
+						&:first-child{padding:0px 5px 0px 0;background-image:none;}
+					}
+				}
+			}
+		}
+		.box_grade{overflow:hidden;margin-top:11px;
+			.set_grade01{float:left;}
+			.set_conunt_review{float:left;margin:-2px 0 0 3px;font-size:12px;font-weight:400;font-family:Verdana,sans-serif;color:#000;}
+		}
+		.btn_opt_like{position:absolute;top:256px;right:21px;z-index:6;
+			.opt_like{display:block;width:26px;height:26px;background:url('../../images/pcweb/common/bg_opt_like.png') 0 0 no-repeat;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+		}
+	}
+}
+
+//[v2_2] 킴스 장보기
+.box_kims_shop{
+	.kims_main_bnr{width:1080px;margin:0 auto;}
+	.big_thumb_plan{width:1080px;margin:0 auto;
+		ul{
+			&:after{display:block;content:'';clear:both;}
+		}
+		li {float:left;margin-left:20px;
+			&:first-child{margin-left:0;}
+			img{width:530px;height:300px;}
+		}
+	}
+	.small_thumb_plan{width:1080px;margin:20px auto 0;
+		ul{
+			&:after{display:block;content:'';clear:both;}
+		}
+		li {float:left;width:255px;margin-left:20px;
+			&:first-child{margin-left:0;}
+			a{display:block;}
+			img{width:255px;height:255px;}
+			.plan_nm{display:block;overflow:hidden;max-height:42px;margin-top:17px;padding:0 5px;font-size:17px;line-height:1.25em;color:#333;font-weight:bold;text-align:center;display:-webkit-box;display:-ms-box;display:box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+			.stxt{display:block;overflow:hidden;margin-top:6px;padding:0 5px;font-size:14px;white-space:nowrap;text-overflow:ellipsis;text-align:center;}
+		}
+	}
+	.set_btn{margin-top:35px;}
+	.btn_buy_history{width:1080px;margin:50px auto 0;}
+	.box_kims_deal {width:1080px;position:relative;margin:60px auto 0;
+		.swiper-wrapper{
+			&:after{display:block;content:'';clear:both;}
+		}
+		.btn_set{position:absolute;top:8px;right:0;height:32px;margin-left:-540px;z-index:9;
+			.btn-prev{position:absolute;top:0;right:76px;width:32px;height:32px;background:url(../../images/pcweb/renewal/omni_paging.png) 0 0 no-repeat;z-index:9;cursor:pointer;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+			.btn-next{position:absolute;top:0;right:0;width:32px;height:32px;background:url(../../images/pcweb/renewal/omni_paging.png) -32px 0 no-repeat;z-index:9;cursor:pointer;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+			.page{position:absolute;top:0;right:32px;width:44px;height:32px;line-height:32px;text-align:center;font-size:13px;color:#333;font-family:verdana;}
+		}
+	}
+	
+	.hpd_lp03{position:relative;padding:0;
+		&:after{position:absolute;top:0;left:0;right:0;bottom:0;display:block;border:1px dashed #bebebe;content:'';}
+		ul{
+			&:after{display:block;clear:both;content:'';}
+		}
+		li{position:relative;z-index:1;float:left;width:360px;margin:0;height:524px;border:none;
+			&:before{position:absolute;top:0;left:0;right:0;bottom:0;display:block;border-bottom:1px dashed #bebebe;border-right:1px dashed #bebebe;content:'';}
+			&:hover:after{display:block;position:absolute;top:0;left:-1px;right:0;bottom:0;border:1px solid #666;content:'';}
+			&:nth-of-type(3n-2):hover:after{left:0;}
+			&:first-child:before{border-left:none;}
+			.links{position:relative;z-index:2;display:block;}
+			.cont{height:auto;padding:0 30px 20px;}
+		}
+		.thumb{text-align:center;padding:17px 0 24px;
+			img{width:328px;height:328px;}
+		}
+		.brand_nm{display:block;overflow:hidden;height:20px;margin-bottom:4px;padding-right:39px;font-size:16px;line-height:1.3em;color:#333;font-weight:800;}
+		.prod_nm{display:block;overflow:hidden;height:40px;margin-bottom:7px;font-size:15px;line-height:1.3em;color:#666;}
+		.box_price:after{display:block;content:'';clear:both;}
+		.dis_percent{display:block;float:left;width:64px;margin:9px 0 0 -3px;font-family:Verdana,sans-serif;font-size:18px;color:$point_color_price;letter-spacing:-2px;
+			strong{margin-right:1px;font-size:32px;font-weight:400;letter-spacing:-3px;}
+		}
+		.cont_price{float:left;
+			.price01{overflow:hidden;height:15px;margin-top:-5px;font-size:13px;}
+			.cur_price{display:block;float:left;font-family:Verdana,sans-serif;color:#333;letter-spacing:-1px;}
+		}
+		.box_price{
+			.prime{display:block;float:left;margin-right:9px;font-family:Verdana,sans-serif;font-size:13px;color:#999;letter-spacing:-1px;}
+			.c_price{display:block;margin-top:5px;clear:both;font-family:'Nanum Gothic',sans-serif;font-size:15px;font-weight:600;color:#333;
+				.price_nm{margin-right:5px;font-weight:800;}
+				strong{margin-right:2px;font-family:Verdana,sans-serif;font-size:22px;letter-spacing:-2px;vertical-align:-1px;}
+			}
+		}
+		.box_flag{overflow:hidden;height:17px;margin-top:10px;
+			.bf_cont{position:relative;display:inline-block;margin:0;
+				div{height:24px;padding-top:6px;
+					span{padding:0px 5px 0px 19px;background:url('../../images/pcweb/common/ico_bar01.gif') no-repeat 0 50%;color:#666;font-size:14px;letter-spacing:-1px;
+						&:first-child{padding:0px 5px 0px 0;background-image:none;}
+					}
+				}
+			}
+		}
+		.btn_opt_like{position:absolute;top:365px;right:23px;z-index:2;
+			.opt_like{display:block;width:26px;height:26px;background:url('../../images/pcweb/common/bg_opt_like.png') 0 0 no-repeat;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+		}
+	}
+
+	.more_btn{position:absolute;top:46px;right:0;height:30px;padding:0 10px;line-height:30px;font-size:14px;text-align:center;color:#323232;letter-spacing:-0.1em;white-space:nowrwap;border:1px solid #dadada;
+		&:after{display:inline-block;width:9px;height:14px;margin-left:9px;vertical-align:-2px;background:url("../../images/pcweb/common/ico_arrow31.png") no-repeat;content:"";}
+	}
+	
+	.box_kims_best{position:relative;width:1080px;margin:52px auto 0;
+		.list_product01{border-bottom:none;}
+		.tit_h3_03{margin-bottom:26px;}
+		.more_btn{top:9px;}
+		.tab_kims_best{margin-bottom:26px;
+			ul{border:1px solid #ededed;
+				&:after{display:block;content:'';clear:both;}
+			}
+			li{position:relative;float:left;
+				&:first-child a{border-left:none;}
+				a{display:block;height:122px;padding:11px 5px 0;border-left:1px solid #ededed;text-align:center;
+					img{width:70px;height:70px;}
+					.txt{display:block;overflow:hidden;height:32px;font-size:13px;line-height:1.28em;}
+					&:hover{
+						.txt{font-weight:bold;color:#333;}
+					}
+				}
+				&.on {z-index:1;
+					a:before{display:block;position:absolute;top:-1px;left:-1px ;right:-1px;bottom:-1px;content:'';border:2px solid #333;}
+					a:after{display:block;position:absolute;left:50%;bottom:-9px;content:'';width:15px;height:10px;margin-left:-7px;background:url('../../images/pcweb/renewal/ico_kims_best_arrow.png') no-repeat 0 0;}
+					.txt{font-weight:bold;color:#333;}
+				}
+			}
+			@for $i from 8 through 11 {
+			  &.size#{$i} li {width: 100% / $i;}
+			}
+		}
+		.box_no_result{display:table;width:100%;height:310px;margin-bottom:80px;border-bottom:1px solid #ddd;
+			.txt{display:table-cell;font-size:18px;color:#999;vertical-align:middle;text-align:center;}
+		}
+		.cont_kims_best{min-height:958px;}
+	}
+	.box_oprice{position:relative;width:1080px;margin:52px auto 0;
+		.list_product01{border-bottom:none;}
+		.tit_h3_03{margin-bottom:26px;}
+		.more_btn{top:9px;}
+		.hpd_lp04 li:first-child{margin-left:270px;}
+		.cont_oprice{position:relative;min-height:438px;
+			&.nonBnr{
+				.bnr_oprice{display:none;}
+				.hpd_lp04 {
+					li{
+						&:first-child{margin-left:0;}
+						&:first-child:hover:before{left:0;border-left:1px solid #666;}
+					}
+				}
+			}
+			.bnr_oprice{position:absolute;top:0;left:0;z-index:1;
+				&:after{position:absolute;top:0;right:0;bottom:0;display:block;content:'';border-right:1px solid #ddd;}
+			}
+		}
+	}
+	
+	.hpd_lp04{position:relative;padding:0;
+		&:after{position:absolute;top:0;left:0;right:0;bottom:0;display:block;border:1px solid #ddd;content:'';}
+		ul{
+			&:after{display:block;clear:both;content:'';}
+		}
+		li{position:relative;z-index:1;float:left;width:270px;margin:0;border:none;
+			&:hover:before{display:block;position:absolute;top:0;left:-1px;right:0;bottom:0;z-index:5;border:1px solid #666;content:'';}
+			&:before{position:absolute;top:0;left:0;right:0;bottom:0;display:block;border-bottom:1px solid #ddd;border-right:1px solid #ddd;content:'';}
+			&:first-child:before{border-left:none;}
+			.links{position:relative;z-index:6;display:block;height:438px;}
+			.cont{height:auto;padding:0 30px 20px;}
+		}
+		.thumb{position:relative;padding:17px 0 20px;text-align:center;
+			img{width:228px;height:228px;}
+		}
+		.brand_nm{display:block;overflow:hidden;height:16px;margin-bottom:10px;padding-right:39px;color:#333;font-weight:800;}
+		.prod_nm{display:block;overflow:hidden;height:34px;margin-bottom:10px;color:#666;}
+
+		.box_price:after{display:block;content:'';clear:both;}
+		.dis_percent{display:block;float:left;width:55px;margin:9px 0 0 -3px;font-family:Verdana,sans-serif;font-size:13px;color:$point_color_price;letter-spacing:-2px;
+			strong{margin-right:1px;font-size:34px;font-weight:400;letter-spacing:-3px;}
+		}
+		.cont_price{float:left;
+			.price01{overflow:hidden;height:15px;margin-top:-5px;font-size:13px;}
+			.cur_price{display:block;float:left;font-family:Verdana,sans-serif;color:#333;letter-spacing:-1px;}
+		}
+		.box_price{
+			.prime{display:block;float:left;margin-right:9px;font-family:Verdana,sans-serif;color:#999;letter-spacing:-1px;}
+			.c_price{display:block;margin-top:5px;clear:both;font-family:'Nanum Gothic',sans-serif;font-size:15px;font-weight:600;color:#333;
+				.price_nm{margin-right:5px;font-weight:800;}
+				strong{margin-right:2px;font-family:Verdana,sans-serif;letter-spacing:-2px;vertical-align:-1px;}
+			}
+		}
+		.box_flag{overflow:hidden;height:17px;margin-top:10px;
+			.bf_cont{position:relative;display:inline-block;margin:0;
+				div{height:24px;padding-top:6px;
+					span{padding:0px 5px 0px 19px;background:url('../../images/pcweb/common/ico_bar01.gif') no-repeat 0 50%;color:#666;font-size:14px;letter-spacing:-1px;
+						&:first-child{padding:0px 5px 0px 0;background-image:none;}
+					}
+				}
+			}
+		}
+		.box_grade{overflow:hidden;margin-top:11px;
+			.set_grade01{float:left;}
+			.set_conunt_review{float:left;margin:-2px 0 0 3px;font-size:12px;font-weight:400;font-family:Verdana,sans-serif;color:#000;}
+		}
+		.btn_opt_like{position:absolute;top:256px;right:21px;z-index:6;
+			.opt_like{display:block;width:26px;height:26px;background:url('../../images/pcweb/common/bg_opt_like.png') 0 0 no-repeat;
+				span{display:block;overflow:hidden;text-indent:-999px;}
+			}
+		}
+	}
+}
+//[v2_2]나의 구매내역
+.lay_buy_history{
+	.txt_chk01{margin-top:20px;padding-bottom:20px;}
+	.board02{border-top:1px solid #adadad;
+		tr:first-child td{border-top:none;}
+	}
+	.box_scroll{max-height:644px;}
+	.lay_cont{padding-top:0;margin-bottom:-20px;
+		.list_detail_ord {
+			.goods_imgs {width:85px;height:85px;text-align:center;
+				img{width:83px;height:83px;}
+				.disabled_txt{top:1px;left:1px;width:83px;height:83px;}
+			}
+			.goods_info{
+				padding-left:100px;
+			}
+		}
+		.set_btn{width:auto !important;padding-left:12px;padding-bottom:20px;}
+		.no_result{padding-top:50px;padding-bottom:50px;text-align:center;
+			a{margin-top:20px;}
+			p{font-size:14px;color:#333;}
+		}
+	}
+	.cont_price{display:block;}
+	.dis_percent{float:left;width:55px;padding:8px 0 0;font-family:"Verdana","Nanum Gothic",sans-serif;font-size:13px;color:$point_color_txt;vertical-align:middle;
+		strong{margin-right:1px;font-size:30px;font-weight:400;letter-spacing:-3px;}
+	}
+	.box_cont_price{display:table-cell;width:220px;vertical-align:middle;}
+	.cont_price{
+		.price01{overflow:hidden;
+			&:after{display:block;clear:both;content:"";}
+		}
+		.prime{display:block;float:left;margin-right:9px;font-family:"Verdana","Nanum Gothic",sans-serif;font-size:11px;color:#999;letter-spacing:-1px;}
+		.cur_price{display:block;float:left;font-family:"Verdana","Nanum Gothic",sans-serif;font-size:11px;color:#333;letter-spacing:-1px;}
+		.c_price{display:block;font-family:'Nanum Gothic',sans-serif;font-weight:800;color:#333;text-align:left;
+			.price_nm{margin-right:2px;}
+			strong{font-family:"Verdana","Nanum Gothic",sans-serif;font-size:14px;font-weight:800;letter-spacing:-1px;vertical-align:-1px;}
+		}
+	}
+}
+
+//[v2_2]이키즈샵
+.box_ekids_shop{width:100%;margin:0 auto;
+	//프로모션 배너
+	.box_promotion_bnr{position:relative;
+		.set_controll{position:relative;width:1194px;margin:0 auto;}
+		&.wide{
+			.d_promo_container.type02 ul.d_bnr_cont{width:100%;min-width:1080px;height:470px;}
+			.d_bnr_cont li{width:100%;position:absolute;top:0;left:0;right:0;bottom:0;background-repeat:no-repeat;background-position:center center;z-index:1;opacity:0;filter:alpha(opacity = 0);
+				a{display:block;width:1250px;height:100%;margin:0 auto;text-align:center;text-indent:-9999px;
+					img{display:inline;}
+				}
+			}
+		}
+
+		.d_promo_container{
+			&.type02{
+				ul.d_bnr_cont{position:relative;display:block;overflow:hidden;width:650px;height:470px;z-index:8;
+					li{opacity:0;filter:alpha(opacity = 0);}
+				}
+				.set_controll{width:1080px;}
+			}
+			.page_btn_box {
+				.btn_prev_move{left:10px;
+					&:hover{width:auto;
+						&:before{width:100%;}
+						&:after{right:-23px;}
+						.page{display:block;margin-left:43px;font-weight:normal;
+							em {font-weight:bold;}
+						}
+					}
+					.ico{left:15px;background:url("../../images/pcweb/common/ico_arrow27.png") no-repeat;z-index:1;}
+				}
+				.btn_next_move{right:10px;
+					&:hover{width:auto;right:33px;padding-left:23px;
+						&:before{width:100%;}
+						&:after{right:-23px;}
+						.page{display:block;margin-right:18px;font-weight:normal;
+							em {font-weight:bold;}
+						}
+						.ico{right:-8px;}
+					}
+					.ico{left:auto;right:15px;background:url("../../images/pcweb/common/ico_arrow28.png") no-repeat;}
+				}
+			}
+		}
+	} 
+	//브랜드롤링
+	.brand_rolling{position:relative;margin:60px auto 0;padding:0 0 20px 80px;width:1000px;
+		.d_rolling_brd{width:950px;height:162px;margin:0;overflow:hidden;
+			.swiper-wrapper{width:1000%;height:160px;
+				.swiper-slide{float:left;
+				}
+			}
+			.list_brd{
+				li{float:left;width:128px;
+					a{position:relative;display:block;width:128px;height:160px;transition:border 0.2s ease-in-out;
+						.img_wrap{width: 128px;height: 128px;text-align: center;background: #f7f7f7;border-radius: 80px;
+							img{display:inline-block;width:auto;height:auto;margin-top: 40px;}
+						}												
+						.list_name{display:block;width:128px;margin-top:15px;text-align:center;font-size:16px;letter-spacing:-0.5px;color:#666;font-family: "Noto Sans CJK KR", sans-serif;
+						}
+						img + .list_name{margin:10px 0 0;}
+						&:hover{
+							.img_wrap{background:#f1f1f1;}
+							.list_name{color:#000;}
+						}
+					}
+				}
+				&:after{display:block;content:'';clear:both;}
+			}
+		}
+		.btn-prev,.btn-next{display:block;position:absolute;top:45%;width:34px;height:26px;margin-top:-31px;background:none;z-index:2;
+			/*&:before{position:absolute;top:0;left:0;width:17px;height:100%;background:url("../../images/pcweb/common/bg_paging.png") no-repeat 0 0;z-index:0;opacity:0.3;filter:alpha(opacity = 30);content:"";z-index:0;transition:opacity 0.2s ease-in-out;}
+			&:after{position:absolute;top:0;right:0;width:17px;height:100%;background:url("../../images/pcweb/common/bg_paging.png") no-repeat right top;z-index:0;opacity:0.3;filter:alpha(opacity = 30);content:"";z-index:0;transition:opacity 0.2s ease-in-out;}*/
+			&:hover{background:none;
+				&:before,&:after{opacity:0.8;filter:alpha(opacity = 80);}
+			}
+			.page{position:relative;display:none;height:33px;line-height:32px;color:#fffffe;z-index:1;}
+			.ico{position:absolute;top:0px;left:13px;width:14px;height:26px;text-indent:-999em;z-index:1;}
+		}
+		.btn-prev{left:12px;
+			&:hover{width:17px;
+				&:before{width:100%;}
+				&:after{right:-17px;}
+				.page{display:block;margin-left:30px;}
+			}
+			.ico{background:url("../../images/pcweb/common/ico_arrow40.png") no-repeat;z-index:1;			
+				&:hover{background:url("../../images/pcweb/common/ico_arrow41.png") no-repeat;z-index:1;transform: rotate( 180deg );}
+			}
+		}
+		.btn-next{right:12px;
+			&:hover{width:auto;padding-left:17px;right:29px;
+				&:before{width:100%;}
+				&:after{right:-17px;}
+				.page{display:block;margin-right:13px;}
+				.ico{right:-7px;}
+			}
+			.ico{left:auto;right:10px; background:url("../../images/pcweb/common/ico_arrow40.png") no-repeat;z-index:1;transform: rotate( 180deg );			
+				&:hover{background:url("../../images/pcweb/common/ico_arrow41.png") no-repeat;z-index:1;transform: rotate( 0deg );}
+			}
+		}
+	}
+	//반응형서브배너
+	.ekids_sub_bn {clear: both;overflow: hidden;width: 1080px;margin: 60px auto 0;   
+		ul{display: flex;width: 1080px;margin: 0 auto;height:180px;	
+			li{width: 100%;display: flex;vertical-align: middle;text-align: center;margin-right: 10px;  
+				a{width: 100%;height:180px;display: block;
+					img{display: block;margin: 0 auto;	width: 100%;max-width: 100%;height: auto;max-height: 180px;					
+					}
+				}
+				&:last-child{ margin-right: 0px;}
+			}	
+		}
+	}
+	//스페셜딜
+	.ekids_special_deal{width:1080px;margin:100px auto 0;
+		.swiper-container{position:relative;width:1080px;margin-left:0px;height:220px;
+			//슬라이드 좌우 버튼
+			.btn_set{display:none;
+				&.active{display:block;}
+				.btn-prev2,.btn-next2{display:none;position:absolute;top:50%;width:40px;height:40px;margin-top:-20px;background:none;z-index:2;
+					&.on{display:block;}
+					&:hover{background-position:0 -40px;}
+					.ico{display:none;}
+				}
+				.btn-prev2{left:5px;background:url("../../images/pcweb/shop/left_btn_set.png") no-repeat 0 0;
+					&.on{display:block;}
+					.ico{display:none;}
+				}
+				.btn-next2{right:5px;background:url("../../images/pcweb/shop/right_btn_set.png") no-repeat 0 0;
+					&:hover{}
+					.ico{display:none;}
+				}			
+			}
+			.swiper-wrapper{
+				li{float:left;
+					a{display:block;overflow:hidden;position:relative;}
+					dl{position:relative;
+						dt{padding:12px 0 0 0;text-align:center;
+							em{display:block;letter-spacing:-0.5px;color:#444;font-weight:800;font-size:13px;margin:0 0 10px 0;}
+							span{display:block;overflow:hidden;height:32px;font-size:13px;line-height:20px;color:#a9a9a9;}
+						}
+						.prc{text-align:center;
+							div{display:inline-block;
+								span{display:block;}
+								.rm{float:left;margin:0 10px 0 0;color:#df3434;
+									strong{display:block;float:left;font-weight:normal;font-size:20px;line-height:20px;font-family:"Verdana","Nanum Gothic",sans-serif;letter-spacing:-0.07em;}
+									em{display:block;float:left;margin:12px 0 0 0;font-size:15px;line-height:1;font-family:"Verdana","Nanum Gothic",sans-serif;}
+								}
+								.wm{float:left;text-align:center;
+									.or{font-size:11px;line-height:12px;color:#999;font-family:"Verdana","Nanum Gothic",sans-serif;text-decoration:line-through;}
+									.er{margin:5px 0 0 0;font-size:13px;line-height:1;color:#333;letter-spacing:-0.8px;
+										b{margin:0 8px 0 0;vertical-align:middle;}
+										strong{font-size:14px;font-family:"Verdana","Nanum Gothic",sans-serif;vertical-align:middle;}
+										em{margin:0 0 0 1px;font-size:12px;vertical-align:bottom;}
+									}
+								}
+								.rm + .wm{text-align:left;}
+							}
+						}
+						.tag{margin:5px 0 0 0;text-align:center;}
+					}
+					.img{display:block;overflow:hidden;position:absolute;left:0;top:0;z-index:0;}
+					a:hover dl dt span{text-decoration:underline;}
+				}
+				li{float:left;width:530px;height:220px;
+					a{position:relative;width:540px;height:220px;margin:0;
+						&:focus .img{width:160px;left:1px;top:1px;}
+						.img img{width:220px;height:220px;}
+						&:hover{/*box-shadow:0 0 7px -2px #aaa;border-color:#aaa;*/}
+					}
+					dl{padding:0 0 0 250px;
+						.prc{margin:30px 0 0;text-align:left;padding:0 30px 0 0;}
+						dt{padding:33px 70px 0 0;text-align:left;
+							span{height:30px;font-size:13px;line-height:15px;}
+						}
+						.tag{margin:8px 0 0;text-align:left;}
+						.prc div{
+							.rm{margin:0 13px 0 0px;
+								strong{}
+								em{margin:0;font-size:20px;line-height:20px;/* font-family:'Nanum Gothic'; */}
+							}
+							
+							.or{margin: 0 5px 0 0;font-size: 13px;float: left;line-height: 25px;color: #a9a9a9;}
+							.er{float: left;
+								strong{float: left;font-size: 20px;color: #333;line-height: 20px;}
+								em{display:none;float:left;font-size:13px;}
+								b{display:none;}
+							}
+							
+						}
+						.buying{margin:25px 0 0 0;
+							&.icon{height:12px;
+								div{height:12px;
+									img{height:100%;}
+								}								
+							}
+							div{font-size:13px;color:#a9a9a9;
+								em{font-size:13px;}
+							}
+
+						}
+					}
+				}
+			}
+			.ico_new_wrap {
+				.ico_new.str {width: 106px;background-size: 100%;display: block;}
+				.ico_new.qck {width: 106px;background-size: 100%;display: block;}
+			}
+
+		}
+		.tit_h3_03 {margin: 0 0 40px;}
+	}
+	.inst_collage{width:1080px;margin:50px auto 0;}
+	//엠디추천
+	.ekids_md{width:1080px;margin:100px auto 0;
+		.ekids_depth1_tab{margin: 40px 0 30px 0;
+			@for $i from 2 through 8 {
+			  &.size#{$i} li {width: 100% / $i;}
+			}
+			ul{position:relative;width: 880px;margin: 0 auto;text-align:center;
+				&:after{display:block;content:'';clear:both;}
+			}
+			li {position:relative;display: inline-block;margin-bottom:10px;
+				/*&:before{position:absolute;top:0;left:0;right:0;display:block;content:'';border-top:1px solid #ddd;}
+				&:after{position:absolute;bottom:0;left:0;right:0;display:block;content:'';border-top:1px solid #ddd;}*/
+				a{display:block;height:44px;background:#fff;text-align:center;margin: 0 4px;border: 1px solid #444;border-radius: 25px;padding:0 20px;
+					img{width:57px;height:57px;padding-top:14px;}
+					.txt{display:block;overflow:hidden;height:44px;line-height:44px;font-size:15px;padding-top:0px;white-space:nowrap;text-overflow:ellipsis;}
+					img + .txt{padding-top:8px;}
+					&:hover{
+						.txt{font-weight:bold;color:#333;}
+					}
+				}
+				&.on{
+					&:before{border-top:none;height:3px;background:#333;}
+					&:after{display:none;}
+					a{background:#444;
+						.txt{font-weight:bold;color:#fff;}
+					}
+				}
+			}
+		}
+		.box_no_result{display:table;width:100%;height:310px;margin-bottom:50px;
+			.txt{display:table-cell;font-size:18px;color:#999;vertical-align:middle;text-align:center;}
+		}
+		.list_product01{border-bottom:none}
+		.cont_ekids_md{
+			.list_product01{
+				.list{width:1094px;margin:0px;
+					li{min-height:420px;margin: 0 14px 0 0;margin-bottom: 60px;}
+				}
+			}
+			.ekids_prd{height: 2400px;min-height: 2400px;overflow: hidden;}
+			.d_tab_cont{
+				.btn_more{position: relative;padding-bottom: 0px;text-align: center;height: 44px;
+					button{position: absolute;top: 0px;left: 50%;margin-left: -60px;width: 116px;height: 44px;border: 1px solid #ddd;border-radius: 30px;
+						span {display: inline-block;margin: 0px;color: #444;font-size: 15px;font-weight: 600;background: url(../../images/pcweb/main/btn_more_ekids.png) no-repeat;background-position: 100%;width: 75px;margin-left: -10px;}
+						&.btn_close {display: none;
+							span{background: url(../../images/pcweb/main/btn_close_ekids.png) no-repeat;background-position: 100%;}
+						}
+
+					}
+				}
+			}
+
+		}
+	}
+	//브랜드스토리
+	.ekids_brand_story{margin:70px 0 0 0;background: #fafafa;padding:100px 0;
+		.swiper-container{position:relative;width:1080px;height:365px;margin: 0 auto;
+			//슬라이드 좌우 버튼
+			.btn_set{display:none;
+				&.active{display:block;}
+				.btn-prev2,.btn-next2{display:none;position:absolute;top:43%;width:40px;height:40px;margin-top:-20px;background:none;z-index:2;
+					&.on{display:block;}
+					&:hover{background-position:0 -40px;}
+					.ico{display:none;}
+				}
+				.btn-prev2{left:7px;background:url("../../images/pcweb/shop/left_btn_set.png") no-repeat 0 0;
+					&.on{display:block;}
+					.ico{display:none;}
+				}
+				.btn-next2{right:13px;background:url("../../images/pcweb/shop/right_btn_set.png") no-repeat 0 0;
+					&:hover{}
+					.ico{display:none;}
+				}			
+			}
+			.swiper-wrapper{
+				li{float:left;width:208px;height:365px;
+					a{display:block;overflow:hidden;position:relative;width:208px;height:365px;margin:0;}
+					.img{display:block;overflow:hidden;position:absolute;left:0;top:0;z-index:0;}
+					.band_name{margin-top: 20px;display: block;font-size: 16px;color: #444;font-family: "Noto Sans CJK KR", sans-serif;height: 35px;overflow: hidden;line-height: 17px;text-align:center;}
+				}
+			}
+		}
+	}
+	.ekids_best_cate{background:#f9f9f9;
+		.title{padding-top:42px;margin-bottom:42px;}
+		.title .tit_h3_03 .txt_deco{position:relative;display:inline-block;
+			> em{position:relative;z-index:1;}
+			&:after{position:absolute;bottom:-4px;left:0;right:0;display:block;content:'';height:9px;background:#fde67f;}
+		}
+		.ekids_depth2_tab{
+			ul{padding:0 20px 23px 50px;
+				&:after{display:block;content:'';clear:both;}
+			}
+			li{float:left;width:20%;margin-bottom:20px;
+				a{display:block;padding-right:30px;
+					&:after{display:block;content:'';clear:both;}
+					img{width:52px;height:52px;float:left;}
+					.txt{display:block;overflow:hidden;height:52px;padding-left:10px;line-height:52px;white-space:nowrap;text-overflow:ellipsis;color:#333;}
+					&:hover{
+						 .txt{text-decoration:underline;font-weight:bold;color:#333;}
+					}
+				}
+			}
+		}
+	}
+	//신규상품
+	.ekids_new{width:1080px;margin:100px auto 0;
+		.ekids_depth1_tab{margin: 40px 0 30px 0;
+			@for $i from 2 through 8 {
+			  &.size#{$i} li {width: 100% / $i;}
+			}
+			ul{position:relative;width: 880px;margin: 0 auto;text-align:center;
+				&:after{display:block;content:'';clear:both;}
+			}
+			li {position:relative;display: inline-block;margin-bottom:10px;
+				/*&:before{position:absolute;top:0;left:0;right:0;display:block;content:'';border-top:1px solid #ddd;}
+				&:after{position:absolute;bottom:0;left:0;right:0;display:block;content:'';border-top:1px solid #ddd;}*/
+				a{display:block;height:44px;background:#fff;text-align:center;margin: 0 4px;border: 1px solid #444;border-radius: 25px;padding:0 20px;
+					img{width:57px;height:57px;padding-top:14px;}
+					.txt{display:block;overflow:hidden;height:44px;line-height:44px;font-size:15px;padding-top:0px;white-space:nowrap;text-overflow:ellipsis;}
+					img + .txt{padding-top:8px;}
+					&:hover{
+						.txt{font-weight:bold;color:#333;}
+					}
+				}
+				&.on{
+					&:before{border-top:none;height:3px;background:#333;}
+					&:after{display:none;}
+					a{background:#444;
+						.txt{font-weight:bold;color:#fff;}
+					}
+				}
+			}
+		}
+		.box_no_result{display:table;width:100%;height:310px;margin-bottom:50px;
+			.txt{display:table-cell;font-size:18px;color:#999;vertical-align:middle;text-align:center;}
+		}
+		.list_product01{border-bottom:none}
+		.cont_ekids_new{
+			.list_product01{
+				.list{width:1094px;margin:0px;
+					li{min-height:420px;margin: 0 14px 0 0;margin-bottom: 60px;}
+				}
+			}
+			.ekids_prd{height: 2400px;min-height: 2400px;overflow: hidden;}
+			.d_tab_cont{
+				.btn_more{position: relative;padding-bottom: 0px;text-align: center;height: 44px;
+					button{position: absolute;top: 0px;left: 50%;margin-left: -60px;width: 116px;height: 44px;border: 1px solid #ddd;border-radius: 30px;
+						span {display: inline-block;margin: 0px;color: #444;font-size: 15px;font-weight: 600;background: url(../../images/pcweb/main/btn_more_ekids.png) no-repeat;background-position: 100%;width: 70px;margin-left: -10px;}
+						&.btn_close {display: none;
+							span{background: url(../../images/pcweb/main/btn_close_ekids.png) no-repeat;background-position: 100%;}
+						}
+
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+//퀵배송
+.quick_dlv{
+	.box_promotion_bnr{position:relative;
+		.set_controll{position:relative;width:1194px;margin:0 auto;}
+		&.wide{
+			.d_promo_container.type02 ul.d_bnr_cont{width:100%;min-width:1080px;height:470px;}
+			.d_bnr_cont li{width:100%;position:absolute;top:0;left:0;right:0;bottom:0;background-repeat:no-repeat;background-position:center center;z-index:1;opacity:0;filter:alpha(opacity = 0);
+				a{display:block;width:1250px;height:100%;margin:0 auto;text-align:center;text-indent:-9999px;
+					img{display:inline;}
+				}
+			}
+		}
+
+		.d_promo_container{
+			&.type02{
+				ul.d_bnr_cont{position:relative;display:block;overflow:hidden;width:650px;height:470px;z-index:8;
+					li{opacity:0;filter:alpha(opacity = 0);}
+				}
+				.set_controll{width:1080px;}
+			}
+			.page_btn_box {
+				.btn_prev_move{left:10px;
+					&:hover{width:auto;
+						&:before{width:100%;}
+						&:after{right:-23px;}
+						.page{display:block;margin-left:43px;font-weight:normal;
+							em {font-weight:bold;}
+						}
+					}
+					.ico{left:15px;background:url("../../images/pcweb/common/ico_arrow27.png") no-repeat;z-index:1;}
+				}
+				.btn_next_move{right:10px;
+					&:hover{width:auto;right:33px;padding-left:23px;
+						&:before{width:100%;}
+						&:after{right:-23px;}
+						.page{display:block;margin-right:18px;font-weight:normal;
+							em {font-weight:bold;}
+						}
+						.ico{right:-8px;}
+					}
+					.ico{left:auto;right:15px;background:url("../../images/pcweb/common/ico_arrow28.png") no-repeat;}
+				}
+			}
+		}
+	}
+}

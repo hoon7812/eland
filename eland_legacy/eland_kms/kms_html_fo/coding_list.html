@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>KIMS - PC WEB</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/pcweb/kms_pcweb/common/ico_kms.ico" />
+<script src="../common/js/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+@charset "utf-8";
+/* reset */
+*{margin:0; padding:0;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+body{line-height:1;line-height:16px;}
+h1, h2, h3, h4, h5, h6, input, select, textarea, option, label, button{font-size:100%; font-weight:normal;}
+fieldset, img, abbr, acronym{border:0 none;}
+ol, ul{list-style:none;}
+table{border-collapse:collapse; border-spacing:0;}
+em{font-style:normal;color:#A00327 !important;}
+img, a, input, select, textarea, label, button, span, em, strong{vertical-align:baseline;}
+hr{display:none;}
+
+/* common */
+html, body{width:100%; height:100%; font-size:12px; font-family:"나눔고딕", NanumGothic, "돋움", Dotum;}
+html{overflow-y:scroll;}
+body{min-width:1000px; background:#F3F3F3;}
+a{color:#000; text-decoration:none;}
+caption, legend{overflow:hidden; width:0; height:0; font-size:0; line-height:0; visibility:0;}
+.red {color:#ff6600;}
+
+/* 본문스타일 */
+.overlay{position:absolute; top:0; left:0; display:none; width:100%; height:auto !important; height:100%; min-height:100%; background-color: rgba(0, 0, 0, 0.5); z-index:1; zoom:1;}
+.wrapper{padding:10px 20px 20px 20px;}
+h1{margin-bottom:10px;text-align:center;}
+h1 span{display:inline-block; padding:10px 50px; -webkit-border-radius:5px; border-radius:5px; font-weight:bold;font-size:20px; color:#fff; background:#000;}
+.menuWrap{position:relative;padding-top:34px;}
+.menu, .menu table{width:100%;}
+.menu>dt{position:absolute; top:0; width:10%;}
+.menu>dt a{display:block; margin-top:2px; padding:8px 0 7px 0; border:1px solid #CCC; border-bottom:0; border-left:0;font-size:13px;text-align:center; cursor:pointer;font-weight:bold;background:#fff;}
+.menu>dt a.selected{margin-top:0; padding:9px 0; background:#333; color:#fff; border-color:#333;}
+.menu>dt a.tm.selected{border-color:#333;}
+.menu>dt a.tm{border-left:1px solid #CCC;}
+.menu>dt.tm1 a{border-left:1px solid #CCC;}
+.menu>dt.tm1 a.selected{border-left:1px solid #333;}
+.tm2{left:10%;}
+.tm3{left:20%;}
+.tm4{left:30%;}
+.tm5{left:40%;}
+.tm6{left:50%;}
+.tm7{left:60%;}
+.tm8{left:70%;}
+.tm9{left:80%;}
+.tm10{left:90%;}
+.viewAll{right:0;}
+.menu>dd{padding:20px 0; border-top:1px solid #ccc;}
+.menu>dd>p:first-child{padding-bottom:5px;}
+.menu.allV dd thead{display:none;}
+.menu.allV .tm2 + dd thead{display:table-header-group;}
+
+.menu_link{overflow:hidden;}
+.menu_link li{float:left;padding:7px 5px;}
+.menu_link li a{color:#333;}
+.menu_link li a:hover{text-decoration:underline;}
+table{border-bottom:1px solid #ccc;}
+tr{background:#fff;}
+tr:hover {background:#888;color:#fff;}
+tr:hover td a{color:#fff;}
+tr:hover td a:hover{text-decoration:underline;color:orange;}
+tr:hover .lyr{color:#b5e8fd;}
+tr.tit{border-top:2px solid #222;}
+th{padding:5px 0; color:#ececec; background:#999; border-top:1px solid #ccc;border-left:1px solid #ccc;font-weight:normal;line-height:13px;}
+td{padding:7px 5px; border-top:1px solid #ccc;border-left:1px solid #ccc;line-height:16px;}
+th:first-child, td:first-child{border-left:0;}
+th a{color:#fff;}
+table tr td.aCenter,table tr td.ct {text-align:center;}
+tr.launch{background:#e1e1e1;}
+tr.launch:hover{background:#666;color:#fff;}
+td .ck1{color:#1f8504;font-weight:600;}
+td .ck2{color:#ed4545;font-weight:600;}
+td .ck3{color:#4574ed;font-weight:600;}
+td .ck4{color:#eda845;font-weight:600;}
+td .lyr{display:block;padding-left:3px;line-height:18px;color:#305ed2;}
+td:hover .lyr{color:#b5e8fd;}
+.hold td, .hold{background:#DDC8DA}
+.del td, .del{background:#999; text-decoration:line-through;}
+.ing td, .ing{background:#FC6;}
+.link td, .link {background:#b7cedf;}
+.noHtml td, .noHtml{background:#bad8ba;}
+.sIcon{display:inline-block; width:20px; height:13px;vertical-align:middle;}
+.line{border-left:1px solid #f6f6f6 !important;}
+.hisWrap{position:relative; zoom:1; }
+.hisList li{display:none; padding:1px 0;}
+.hisList .on{display:block;}
+.btn{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#1A5599; color:#fff;}
+.btn1{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#000; color:#fff;}
+.btn2{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#53056a; color:#fff;}
+.btn3{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#275d06; color:#fff;}
+.btn4{display:inline-block;min-width:25px;padding:3px 5px; -webkit-border-radius:3px; border-radius:3px; font-size:11px;text-align:center;background:#b50000; color:#fff;}
+.btn.ex{background:#eeab24;}
+.btnHis{position:absolute; top:0; right:10px; cursor:pointer;}
+.tip{position:relative; display:inline-block; cursor:pointer;}
+.tip span{display:none; position:absolute; z-index:1; top:17px; left:0; min-width:120px; margin-left:-60px; padding:3px; font-weight:normal; font-size:11px; background:#FF0; -webkit-border-radius:3px; border-radius:3px; border:1px solid #F90; color:#000; line-height:17px;}
+tbody .tip span{width:200px; margin-left:-80px;}
+.notice{display:table; width:100%;}
+.notice dl{position:relative;width:33%; float:left;}
+.notice dt, .notice dd{width:100%; padding:5px 0;}
+.notice dd{position:absolute;top:25px;left:0;width:80%;padding:5px 5%;border:1px solid #666;background:#fff;z-index:1;}
+.notice li{width:90%; position:relative; padding:0 0 3px 8px; font-size:11px; line-height:14px; color:#767676;}
+.notice .bul{position:absolute; top:5px; left:0; width:2px; height:2px; background:#626262;}
+.dNotice{display:none; position:absolute; top:50%; left:50%; z-index:2; padding:20px; width:680px; margin:-300px 0 0 -361px; border:1px solid #999; background:#F9F9F9;}
+.dNotice li{width:100%; padding-bottom:10px;}
+.siteInfo{display:table; width:100%;}
+.siteInfo dt{display:table-cell; width:10%; min-width:120px;  padding:5px; border:1px solid #999; background:#555; color:#fff;text-align:center; vertical-align:middle;}
+.siteInfo dd{display:table-cell;  padding:5px 10px; border:1px solid #ccc; border-right:0; border-left:0;}
+.tabIntab{padding:10px 0;}
+.tabIntab li{display:inline; padding:0 10px; border-left:1px solid #ccc;}
+.tabIntab li:first-child{border-left:0; padding-left:0;}
+#toTop{display:none; position:fixed; bottom:0; width:100%;}
+#toTop a{display:block; padding:9px 10px; background:#333; color:#FFF; text-align:center;}
+</style>
+<!-- urlOpen -->
+<script type="text/javascript">
+function urlOpen(url,width,height, scrollbars) {
+	window.open(url,'', 'width='+width+', height='+height+', left=0, top=0, statusbar=0, scrollbars='+scrollbars);
+}
+function fnToggle(targetId){
+	$("#"+targetId).toggle();
+	$("#"+targetId).parent().siblings().children("dd").hide();
+}
+
+$(function($){
+
+	// 전체페이지 및 수정완료 수량 체크
+	var TotalBtn1 = $("td.button").length;
+	var TotalBtn2 = $("td").find(".btn2").length;
+	var TotalEnd = $(".button").find(".btn").length;
+	var TotalStand = TotalBtn1 - TotalEnd;
+	var TotalRate = (TotalEnd/TotalBtn1)*100;
+		TotalRate = TotalRate.toFixed(2) + " %";
+
+	$(".cntadd").html(TotalBtn1);
+	$(".cntadd2").html(TotalBtn2);
+	$(".count1").html(TotalEnd);
+	$(".count2").html(TotalStand);
+	$(".count3").html(TotalRate);
+
+	$('.hisList li:first-child').addClass('on');
+
+	$('.hisList').each(function(){
+		$(this).wrap('<div class="hisWrap" />');
+		var nodes=$(this).children();
+		if(nodes.length>1){
+			$('<a class="btn off btnHis" />').prependTo($(this).parent('div')).text('수정이력');
+		}
+	});
+	$('.tm').click(function(){
+		$(this).addClass('selected');
+		$('.menu>dd').show().siblings('dt').children('a').removeClass('selected');
+		return false;
+	});
+
+	$('.menu>dt a').click(function(){
+		$('.tm').removeClass('selected');
+		$(this).addClass('selected').parent('dt').siblings('dt').children('a').removeClass('selected');
+		$(this).parent('dt').next('dd').show().siblings('dd').hide();
+		//if($(this).hasClass('tm')){
+		//	$('.menu').addClass('allV')
+		//}else{
+		//	$('.menu').removeClass('allV')
+		//}
+		return false;
+	});
+	$('.btnHis').click(function(){
+		$(this).toggleClass('off');
+		$(this).next('.hisList').children('li:not(.on)').toggle();
+		return false;
+	});
+	$('.tip').hover(function(){
+		$(this).children('span').toggle();
+	});
+	$('.notice li').append('<span class="bul"></span>');
+	// to top
+	var scrollDiv = document.createElement('div');
+	$(scrollDiv).attr('id', 'toTop').html('<a href="#nohref">↑ 처음으로 이동</a>').appendTo('body');
+	$(window).scroll(function(){
+		if ($(this).scrollTop() != 0) {
+			$('#toTop').fadeIn();
+		} else {
+			$('#toTop').fadeOut();
+		}
+	});
+	$('#toTop').click(function(){
+		$('body,html').animate({scrollTop: 0},	600);
+		return false;
+	});
+	$('.overlay').click(function(){
+		$('.dNotice').hide(200); $('.overlay').fadeOut();
+	});
+
+});
+</script>
+</head>
+
+<body>
+<div class="overlay"></div>
+<div class="wrapper">
+	<h1><span>KIMS - PC WEB</span></h1>
+	<!--<p style="text-align:center; color:#ccc;">※ 코딩맵은 크롬, 파이어폭스, ie9이상, 사파리등 표준 브라우저에 최적화되어있습니다.</p> -->
+	<dl class="siteInfo">
+		<dt>Infomation</dt>
+		<dd><a href=""></a></dd>
+		<dt>진행상황</dt>
+		<dd>전체페이지 : <span class="button btn1 cntadd"></span></dd>
+		<dd>완료 페이지 : <b class="btn btn count1"></b></dd>
+		<dd>수정 페이지 : <span class="btn btn2 cntadd2"></span></dd>
+		<dd>대기 페이지 : <span class="btn btn3 count2"></span></dd>
+		<dd>진척율 : <b class="btn btn4 count3"></b></dd>
+	</dl>
+	<div class="notice">
+		<dl>
+			<dt><a href="#none" onclick="fnToggle('noti1');return false;">개발자 알림 ▼</a></dt>
+			<dd id="noti1" style="display:none">
+				<ul>
+					<li> html을 클릭하시면 html 페이지를 보실수있습니다 .</li>
+					<li>퍼블리싱이 완료된 기본 레이아웃은 수정해야할 경우 퍼블리셔와 상의해주세요.</li>
+					<li>내부 링크일 경우 수정 이력은 원본 파일에만 표기합니다.</li>
+					<li>마크업 변경 안내 : 해당 HTML페이지내, &lt;-- 07.15 --&gt; 으로 주석처리 표시함.</li>
+				</ul>
+			</dd>
+		</dl>
+		<dl>
+			<dt><a href="#none" onclick="fnToggle('noti2');return false;">퍼블리셔 알림 ▼</a></dt>
+			<dd id="noti2" style="display:none">
+				<ul>
+					<li>페이지 완료시 퍼블리싱 체크후 담당자 이름과 완료일을 기재해주세요</li>
+					<li>w3c, 크로스브라우징, 자체 접근성 체크 후 ○ 표시</li>
+					<li>크로스브라우징 범위 : IE10, 11, edge, 크롬, 파이어폭스</li>
+					<li><strong class="red">jQuery 스크립트 부분은 각 담당자분들께서 스크립트를 삽입합니다.</strong></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl>
+			<dt><a href="#none" onclick="fnToggle('noti3');return false;">작업 안내▼</a></dt>
+			<dd id="noti3" style="display:none">
+				<ul>
+					<li>페이지 완료시 퍼블리싱 체크후 담당자 이름과 완료일을 기재해주세요</li>
+					<li>완료일 : 페이지 처음 완료된 날 기입. <b style="color:blue">파란색bg</b>로 표시하기로 함 </li>
+					<li>수정완료일 : 페이지 마지막으로 완료된 날 기입. <b style="color:red">빨간색 bg</b>로 표시하기로 함</li>
+					<li>퍼블진행상태 :아래와 같이 상태를 구분지도록 함. 다음 아래 안내 참고해주세요.</li>
+					<li> ○ : 작업완료 &nbsp;&nbsp;&nbsp;인 상태</li>
+					<li> ▲ : 검수중 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;인 상태</li>
+					<li> ★ : 수정중 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;인 상태
+						<br/>
+						<br/>
+					</li>
+					<li>안내 : 검수나 수정이 완료되면, 꼭 동그라미로 바꾸어주세요!!!</li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+	<br>
+	<div class="menuWrap">
+		<dl class="menu">
+
+			<dt class="tm1"><a class="tm selected">전체보기</a></dt>
+
+			<dt class="tm2"><a class="">공통/메인</a></dt>
+			<dd>
+				<table>
+					<colgroup>
+						<col width="160" />
+						<col width="260" />
+						<col width="300" />
+						<col width="auto" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="3" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">적용 페이지</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 메인 -->
+						<tr>
+							<td><strong>공통</strong></td>
+							<td>헤더 - 와이드형 1200px</td>
+							<td>메인·전시(GNB) 페이지에서 사용</td>
+							<td><a href="common/incHeaderW.html" target="_blank">common/incHeaderW.html</a></td>
+						</tr>						
+						<tr>
+							<td></td>
+							<td>헤더 - 기본형 1080px</td>
+							<td>메인·전시(GNB) 제외한 전체페이지에서 사용</td>
+							<td><a href="common/incHeader.html" target="_blank">common/incHeader.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>푸터</td>
+							<td></td>
+							<td><a href="common/incFooter.html" target="_blank">common/incFooter.html</a></td>
+						</tr>						
+						<tr class="tit">
+							<td><strong>메인</strong></td>
+							<td>홈</td>
+							<td></td>
+							<td><a href="main/main.html" target="_blank">main/main.html</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm3"><a class="">카테고리/검색/상세</a></dt>
+			<dd>
+				<table>
+					<colgroup>
+						<col width="160" />
+						<col width="260" />
+						<col width="220" />
+						<col width="40" />
+						<col width="40" />
+						<col width="auto" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>카테고리</strong></td>
+							<td>대분류</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/category.html" target="_blank">dp_p/category.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>중/소분류</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/category_sd.html" target="_blank">dp_p/category_sd.html</a></td>
+						</tr>
+						<tr class="tit">
+							<td><strong>검색</strong></td>
+							<td>검색결과</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/search_result.html" target="_blank">dp_p/search_result.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>검색결과 없음</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/search_none.html" target="_blank">dp_p/search_none.html</a></td>
+						</tr>
+						<tr class="tit">
+							<td><strong>상세</strong></td>
+							<td>상품상세</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/details.html" target="_blank">dp_p/details.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>상품상세 - 레이어</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/details_layer.html" target="_blank">dp_p/details_layer.html</a></td>
+						</tr>					
+						<tr>
+							<td></td>
+							<td>퀵뷰</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/quickview.html" target="_blank">dp_p/quickview.html</a></td>
+						</tr>								
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm4"><a class="">전시(GNB)</a></dt>
+			<dd>
+				<table>
+					<colgroup>
+						<col width="160" />
+						<col width="260" />
+						<col width="220" />
+						<col width="40" />
+						<col width="40" />
+						<col width="auto" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>전시 (GNB) </strong></td>
+							<td>킴스프레쉬</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_fresh.html" target="_blank">dp_p/shop_fresh.html</a></td>
+						</tr> 
+						<tr>
+							<td></td>
+							<td>미식발견</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_choice.html" target="_blank">dp_p/shop_choice.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>제철상회</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_season.html" target="_blank">dp_p/shop_season.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>갓따옴</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_god.html" target="_blank">dp_p/shop_god.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>전문관 레고</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_specialLEGO.html" target="_blank">dp_p/shop_specialLEGO.html</a></td>
+						</tr>																							
+						<tr>
+							<td></td>
+							<td>전문관</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_special.html" target="_blank">dp_p/shop_special.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>베스트</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_best.html" target="_blank">dp_p/shop_best.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>킴스딜</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_kimsDeal.html" target="_blank">dp_p/shop_kimsDeal.html</a></td>
+						</tr>												
+						<tr>
+							<td></td>
+							<td>뚝딱레시피</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_wTable.html" target="_blank">dp_p/shop_wTable.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>뚝딱레시피-상세</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_wTableDetail.html" target="_blank">dp_p/shop_wTableDetail.html</a></td>
+						</tr>																						
+						<tr>
+							<td></td>
+							<td>자주구매 - 일반</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_repurchase.html" target="_blank">dp_p/shop_repurchase.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>자주구매 - 로그인전/구매이력 없는경우</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_repurchaseNodata.html" target="_blank">dp_p/shop_repurchaseNodata.html</a></td>
+						</tr>						
+						<tr>
+							<td></td>
+							<td>오늘직송</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_delivery.html" target="_blank">dp_p/shop_delivery.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>오프라이스</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/shop_oprice.html" target="_blank">dp_p/shop_oprice.html</a></td>
+						</tr>						
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm4"><a href="#">장바구니/주문</a></dt>
+			<dd>
+				<table>
+					<colgroup>
+						<col width="160" />
+						<col width="260" />
+						<col width="220" />
+						<col width="40" />
+						<col width="40" />
+						<col width="auto" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>장바구니</strong></td>
+							<td>장바구니</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="odr/cart.html" target="_blank">odr/cart.html</a></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td>장바구니 - 장바구니 상품 없는 경우</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="odr/cartNodata.html" target="_blank">odr/cartNodata.html</a></td>
+						</tr>						
+						<tr>
+							<td></td>
+							<td>상품 옵션 선택 팝업</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter">O</td>
+							<td><a href="odr/cart_lyrs.html" target="_blank">odr/cart_lyrs.html</a></td>
+						</tr>
+						<tr class="tit">
+							<td><strong>주문서</strong></td>
+							<td>주문/결제</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="odr/order.html" target="_blank">odr/order.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>주문완료</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter"></td>
+							<td><a href="odr/order_ok.html" target="_blank">odr/order_ok.html</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>		
+
+			<dt class="tm5"><a href="#">마이페이지</a></dt>
+			<dd>
+				<table>
+					<colgroup>
+						<col width="160" />
+						<col width="260" />
+						<col width="220" />
+						<col width="40" />
+						<col width="40" />
+						<col width="auto" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>마이페이지</strong></td>
+							<td>메인 - 주문이력 있는 경우</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_main.html" target="_blank">mypage/mys_main.html</a></td>
+						</tr>
+						<tr>
+							<td><strong></strong></td>
+							<td>메인 - 주문이력 없는 경우</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_main_nodata.html" target="_blank">mypage/mys_main_nodata.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>주문배송조회</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_odr_list.html" target="_blank">mypage/mys_odr_list.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>상세주문배송</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_odr_list_detail.html" target="_blank">mypage/mys_odr_list_detail.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>쿠폰조회</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_cpn.html" target="_blank">mypage/mys_cpn.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>셀프환불 신청</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_self_refund_ing.html" target="_blank">mypage/mys_self_refund_ing.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>셀프환불 완료</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_self_refund_complete.html" target="_blank">mypage/mys_self_refund_complete.html</a></td>
+						</tr>																																	
+						<tr>
+							<td></td>
+							<td>최근 본 쇼핑정보</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_recent.html" target="_blank">mypage/mys_recent.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>공지사항</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/notice.html" target="_blank">mypage/notice.html</a></td>
+						</tr>						
+						<tr>
+							<td></td>
+							<td>상품문의</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_qna.html" target="_blank">mypage/mys_qna.html</a></td>
+						</tr>						
+						<!-- <tr>
+							<td></td>
+							<td>내 문의/답변 팝업</td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td class="aCenter">O</td>
+							<td><a href="mypage/mys_lyrs.html" target="_blank">mypage/mys_lyrs.html</a></td>
+						</tr>
+
+						<tr>
+							<td></td>
+							<td>쿠폰조회</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_cpn.html" target="_blank">mypage/mys_cpn.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>내 댓글</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_review.html" target="_blank">mypage/mys_review.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>이벤트 응모내역</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage//mys_evt.html" target="_blank">mypage/mys_evt.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>추가쿠폰 받기</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_cpn_add.html" target="_blank">mypage/mys_cpn_add.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>등급혜택</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="mypage/mys_grade.html" target="_blank">mypage/mys_grade.html</a></td>
+						</tr> -->
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm6"><a href="#">기획전/이벤트</a></dt>
+			<dd>
+				<table>
+					<colgroup>
+						<col width="160" />
+						<col width="260" />
+						<col width="220" />
+						<col width="40" />
+						<col width="40" />
+						<col width="auto" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>기획전</strong></td>
+							<td>기획전 - 일반형</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/plan.html" target="_blank">dp_p/plan.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기획전 상세 - 앵커형</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/plan_dtl_ank.html" target="_blank">dp_p/plan_dtl_ank.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>기획전 상세 - 탭형</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/plan_dtl_tab.html" target="_blank">dp_p/plan_dtl_tab.html</a></td>
+						</tr>											
+						<tr>
+							<td></td>
+							<td>기획전 - 기획전 없는 경우</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/planNodata.html" target="_blank">dp_p/planNodata.html</a></td>
+						</tr>	
+						<tr class="tit">
+							<td><strong>이벤트/쿠폰</strong></td>
+							<td>이벤트/쿠폰 - 기본형</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/evt_evt.html" target="_blank">dp_p/evt_evt.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>이벤트/쿠폰 - 게시형</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/evt_evt_1.html" target="_blank">dp_p/evt_evt_1.html</a></td>
+						</tr>		
+						<tr>
+							<td></td>
+							<td>이벤트/쿠폰 - 단순클릭형/선착순/즉석당첨</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/evt_evt_2.html" target="_blank">dp_p/evt_evt_2.html</a></td>
+						</tr>		
+						<tr>
+							<td></td>
+							<td>이벤트/쿠폰 - 댓글</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/evt_evt_3.html" target="_blank">dp_p/evt_evt_3.html</a></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>이벤트/쿠폰 - 설문투표</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/evt_evt_4.html" target="_blank">dp_p/evt_evt_4.html</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>이벤트/쿠폰 - 래플상세</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/evt_evt_5.html" target="_blank">dp_p/evt_evt_5.html</a></td>
+						</tr>																														
+						<tr>
+							<td></td>
+							<td>이벤트/쿠폰 - 이벤트 없는 경우</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="dp_p/evtNodata.html" target="_blank">dp_p/evtNodata.html</a></td>
+						</tr>						
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm7"><a href="#">기타페이지</a></dt>
+			<dd>
+				<table>
+					<colgroup>
+						<col width="160" />
+						<col width="260" />
+						<col width="220" />
+						<col width="40" />
+						<col width="40" />
+						<col width="auto" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="5" scope="col">DEPTH</th>
+							<th scope="col" rowspan="2">URL</th>
+						</tr>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">팝업(win)</th>
+							<th scope="col">팝업(layer)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>기타페이지</strong></td>
+							<td>매장안내</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="etc/shop_info.html" target="_blank">etc/shop_info.html</a></td>
+						</tr>
+						<tr >
+							<td></td>
+							<td>킴스클럽 소개</td>
+							<td></td>
+							<td></td>
+							<td class="aCenter"></td>
+							<td><a href="etc/shop_intro.html" target="_blank">etc/shop_intro.html</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</dd>
+
+			<dt class="tm8"><a href="#">수정</a></dt>
+			<dd>
+				<table>
+					<colgroup>
+						<col width="160" />
+						<col width="260" />
+						<col width="220" />
+						<col width="auto" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="tabIntab">요청</th>
+							<th scope="col" class="tabIntab">영역</th>
+							<th scope="col" class="tabIntab">진행상황</th>
+							<th scope="col" class="tabIntab">파일</th>
+						</tr>
+					</thead>
+					<tbody>		
+						<tr>
+							<td><strong>기획수정</strong></td>
+							<td>메인 1차</td>
+							<td class="aCenter">완료</td>
+							<td><a href="http://publish.elandmall.com/kims/modify/퍼블확인요청20210202.xlsx" target="_blank">파일다운로드 - 퍼블확인요청20210202.xlsx</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>메인 2차</td>
+							<td class="aCenter">완료</td>
+							<td><a href="http://publish.elandmall.com/kims/modify/[퍼블수정]_PC_메인_210202.pptx" target="_blank">파일다운로드 - [퍼블수정]_PC_메인_210202.pptx</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>메인 3차</td>
+							<td class="aCenter">완료</td>
+							<td><a href="http://publish.elandmall.com/kims/modify/PC_메인_UI수정사항_210325.pptx" target="_blank">파일다운로드 - PC_메인_UI수정사항_210325.pptx</a></td>
+						</tr>							
+						<tr>
+							<td></td>
+							<td>메인 외 페이지 전부</td>
+							<td class="aCenter">완료</td>
+							<td><a href="http://publish.elandmall.com/kims/modify/[퍼블수정] 킴스클럽_PC 퍼블리싱 수정사항_210305.pptx" target="_blank">파일다운로드 - [퍼블수정] 킴스클럽_PC 퍼블리싱 수정사항_210305.pptx</a></td>
+						</tr>		
+						<tr>
+							<td><strong>개발수정</strong></td>
+							<td>전체 페이지</td>
+							<td class="aCenter">상시 진행중</td>
+							<td><a href="" target="_blank">개발자소통 / 구글시트QC</a></td>
+						</tr>												
+						<tr>
+							<td><strong>디자인수정</strong></td>
+							<td>전체 1차</td>
+							<td class="aCenter">완료</td>
+							<td><a href="http://publish.elandmall.com/kims/modify/디자인수정210315완료.pptx" target="_blank">파일다운로드 - 디자인수정210315완료.pptx</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>전체 2차</td>
+							<td class="aCenter">완료</td>
+							<td><a href="http://publish.elandmall.com/kims/modify/디자인수정210324완료.pptx" target="_blank">파일다운로드 - 디자인수정210324완료.pptx</a></td>
+						</tr>			
+						<tr>
+							<td></td>
+							<td>전체 3차</td>
+							<td class="aCenter">완료</td>
+							<td><a href="http://publish.elandmall.com/kims/modify/디자인수정3차_0329.pptx" target="_blank">파일다운로드 - 디자인수정3차_0329.pptx</a></td>
+						</tr>																
+					</tbody>
+				</table>
+			</dd>
+		</dl>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<title>kidikidi</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_kids.css" type="text/css"> <!-- kids add css -->
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript" src="../common/js/jQuery-FontSpy.js"></script>
+<!-- <style>
+
+	/* 검색 화면 시 헤더 및 전체 패딩 조절 */
+	.renewal2_brand.sch_part.head_up .header.kids_hasSch{top:-221px!important}
+	.renewal.kids .header.kids_hasSch .head .hnb{height: 134px!important;}
+	.renewal2.sch_part.kids.head_up .contents, .renewal2_brand.kids.sch_part.head_up .contents{padding-top:131px!important;}
+	.renewal.kids .header.kids_hasSch,	.renewal.kids .header.kids_hasSch .head{height:131px}
+
+	/* 헤더 검색창 */
+	.kids_header_schWrap{width: 74%; margin:0 auto; display: none;}
+	.kids_hasSch .kids_header_schWrap{display: block;}
+	.kids_header_schBtn{width:100%; text-align: center; background: url(../images/mobile/common/kids_ico_sch.png) no-repeat; background-position: 10px center; background-size: 15px; border:2px solid #1a3f66; border-radius: 20px;}
+	.kids_header_schBtn b{line-height: 23px; font-size:2.8vw; font-weight: 400;}
+
+	/* 헤더 추천 검색어 */
+	.kids_header_relateKwdWrapper{height:34px; padding-left: 24px; margin-top:17px; border-top:2px solid #ccc; display: none;}
+	.kids_hasSch .kids_header_relateKwdWrapper{display: block;}
+	.renewal .header .head .hnb .kids_header_relateKwdWrapper dt, .kids_header_relateKwdWrapper dd{float: left; line-height: 34px;}
+	.renewal .header .head .hnb .kids_header_relateKwdWrapper dt{padding-right: 13px;  background: url('../images/mobile/kids/kids_relatekwd.png') no-repeat; background-size:35px 17.1px; background-position: left center; color: #fff; width:35px; text-indent: 1px; font-size: 2.8vw;}
+	.renewal .header .head .hnb .kids_header_relateKwdWrapper dd{width: calc(100% - 48px);}
+	.renewal .header .head .hnb .kids_header_relateKwdWrapper dd .swiper-wrapper{height: auto; background: none;}
+	.renewal .header .head .hnb .kids_header_relateKwdWrapper dd li{width: auto; height:auto}
+	.renewal .header .head .hnb .kids_header_relateKwdWrapper dd a{line-height: 34px; font-size: 2.8vw; color: #838383; margin-right: 13px;}
+
+	/* 조건에 맞는 상품 없음 */
+	.renewal2.sch_part.kids .search_wrap .sch_none_msg, .renewal2_brand.sch_part.kids .search_wrap .sch_none_msg{margin-top: 0;}
+
+	/* 많이 본 상품 */
+	.kids_search_leftTit{font-size: 4vw;}
+
+	/* 소트 */
+	.renewal2.sch_part.kids .cts_tit, .renewal2_brand.sch_part.kids .cts_tit{border-top:1px solid #eee}
+	.renewal2_brand.sch_part .kids_search_wrap .sch_sort.fixed{top:40px; z-index: 99;}
+	.kids_search_wrap .s_catg select, .kids_search_wrap .s_sort{display: block;}
+	.renewal2.sch_part.kids .sch_sort .s_filter a, .renewal2_brand.sch_part.kids .sch_sort .s_filter a{font-weight: 400;}
+	
+	/* 검색 결과 리스트 */
+	.kids_search_wrap .goods_list li{border:0; background: none;}
+	.kids_search_wrap .goods_list .glist li{ width: 47.9%;margin-right: 4.2%;margin-top: 6.5vw;}
+	.kids_search_wrap .goods_list .glist li:nth-child(2n){margin-right: 0;}
+	.kids_search_wrap .goods_list .glist li .g_wrap{padding:0;}
+	.kids_search_wrap .goods_list li .g_brd{font-family: "Jost Medium", 'Noto Sans KR', sans-serif; font-size: 2.8vw; font-weight: 600; line-height: 1.2; color:#333!important; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; height: auto; margin:0; margin-top:2vw;}
+	.kids_search_wrap .goods_list li .g_tit{font-size: 2.8vw; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; height:auto; margin:0; margin-top:0.5vw;}
+	.kids_search_wrap .goods_list li .g_nor{padding-left: 0; min-height: auto; height: auto; line-height: 0; display: block; margin-top:0.3vw}
+	.kids_search_wrap .goods_list li .g_per{position: static; display: inline-block; height: auto; line-height: 1.2; font-size: 2.8vw; color:#f53d41;font-family: 'Jost Medium', sans-serif;}
+	.kids_search_wrap .goods_list li .g_per b{font-size: 2.8vw; }
+	.kids_search_wrap .goods_list li .g_prc{display: inline-block; line-height: 0;}
+	.kids_search_wrap .goods_list li .g_prc .sale b{font-size: 2.8vw; font-weight: 400; font-family: "Jost Book", sans-serif; color:#838383; vertical-align: middle;}
+	.kids_search_wrap .goods_list li .g_prc .sale{display: inline-block; line-height: 1.2; font-size: 2.8vw;  color: #838383; font-weight: 200; height: auto;}
+	.kids_search_wrap .goods_list li .g_rv{height: auto; margin-top:0.7vw;}
+	.kids_search_wrap .goods_list li .g_rv .cnt{font-size: 2vw; line-height: 1; display: block;}
+	.kids_search_wrap .goods_list .blist li .g_wrap{padding:20px 22px;}
+	.kids_search_wrap .goods_list .blist li .g_rv{position: static; float: none;}
+	.kids_search_wrap .goods_list .tlist li .g_rv{position: static; width: auto; height: auto;}
+	.kids_search_wrap .kids_search_wrap .goods_list .tlist li .g_nor{margin:0;}
+	.kids_search_wrap .goods_list li .g_img, .kids_search_wrap .goods_list .blist li .g_img{padding:0;}
+
+	@media screen and (min-width:640px){
+		/* 검색 화면 시 헤더 및 전체 패딩 조절 */
+		.renewal2.sch_part.kids.head_up .contents, .renewal2_brand.kids.sch_part.head_up .contents{padding-top:221px!important;}
+		.renewal.kids .header.kids_hasSch .head .hnb{height: 221px;}
+		.renewal.kids .header.kids_hasSch,	.renewal.kids .header.kids_hasSch .head{height:221px}
+
+		/* 헤더 검색창 */
+		.kids_header_schBtn{background-position: 10px center; background-size: 27px;}
+		.kids_header_schBtn b{line-height: 40px;}
+
+		/* 헤더 추천 검색어 */
+		.renewal .header .head .hnb .kids_header_relateKwdWrapper{height:59px; padding-left: 42px; margin-top:30px;}
+		.renewal .header .head .hnb .kids_header_relateKwdWrapper dt, .kids_header_relateKwdWrapper dd{line-height: 59px;}
+		.renewal .header .head .hnb .kids_header_relateKwdWrapper dd{width: calc(100% - 82px);}
+		.renewal .header .head .hnb .kids_header_relateKwdWrapper dt{padding-right: 23px; background-size:59px 29.5px; width:59px; text-indent: 8px;}
+		.renewal .header .head .hnb .kids_header_relateKwdWrapper dd a{line-height: 59px; margin-right: 23px;}
+
+		/* 검색 결과 리스트 */
+		.renewal2_brand.sch_part .kids_search_wrap .sch_sort.fixed{top:70px;}
+		.kids_search_wrap .goods_list .glist li{margin-top: 6.5vw; margin-top: 41px;}
+		.renewal .kids_search_wrap .goods_list li .g_brd{margin-top:13px}
+		.renewal .kids_search_wrap .goods_list li .g_tit{margin-top:3px}
+		.kids_search_wrap .goods_list li .g_rv{margin-top:4px}
+		.kids_search_wrap .goods_list li .g_nor{margin-top:1px}
+
+		/* 4vw */
+		.kids_search_leftTit{font-size: 40px;}
+		/* 2.8vw */
+		.renewal .kids_search_wrap .goods_list li .g_brd, .renewal .kids_search_wrap .goods_list li .g_tit, .kids_search_wrap .goods_list li .g_per, .kids_search_wrap .goods_list li .g_prc .sale b, .kids_search_wrap .goods_list li .g_prc .sale, .kids_search_wrap .goods_list li .g_per b, .kids_header_schBtn b, .renewal .header .head .hnb .kids_header_relateKwdWrapper dt, .renewal .header .head .hnb .kids_header_relateKwdWrapper dd a{font-size: 18px;}
+		/* 2vw */
+		.kids_search_wrap .goods_list li .g_rv .cnt{font-size: 13px;}
+	}
+</style> -->
+</head>
+<body class="renewal sch_part renewal2_brand kids">
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+<!-- <div class="header_bn" id="header_bn" style="background-color: rgb(34, 34, 34);">
+	<a href="javascript:;"><img src="../images/mobile/temp/bn_head_100.jpg" alt="이벤트배너" style="height: 59px;"></a>
+	<a href="javascript:;" class="cls"><img src="../images/mobile/common/btn_bn_close.png" alt="닫기"></a>
+</div> --> 
+<!-- HEADER -->
+<header class="header kids_hasSch" id="header"> <!-- kids_hasSch 부여시 검색창, 추천 검색어 노출 -->
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" ><b class="ir">카테고리 전체메뉴 열기</b></button></div><!-- [v2] : onClick="left_lnb_open()" 제거 -->
+		<h1><a href="http://www.google.com"><b class="ir">E-LAND MALL 메인</b></a></h1>
+		<div class="hnb sch_bcd"> <!-- 앱 에서만 sch_bcd 사용 -->
+			<ul>
+				<!-- NGCPO-5005 (모바일) 추천 검색어 있을 경우, 랜딩 페이지 변경 요청 -->
+				<li class="sch">
+					<button type="button" class="txt_btn"><b>검색어 입력검색어 입력검색어 입력검색어 입력</b></button> <!-- 1st ~ 2st : 예비용 class 추가 -->
+					<button type="button" class="sch_btn"><em class="ir">검색결과로 이동</em></button>
+				</li>
+				<li class="cart"><a href="javascript:;"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="javascript:;"><b class="ir">마이페이지 이동</b></a></li>
+				<li class="bcd"><a href="javascript:;"><b class="ir">바코드로 이동</b></a></li>
+			</ul>
+			<div class="kids_header_schWrap">
+				<button class="kids_header_schBtn">
+					<b class="kids_header_keyword">검색어</b>
+				</button>
+			</div>
+			<div class="kids_header_relateKwdWrapper">
+				<dl class="clearfix">
+					<dt>추천</dt>
+					<dd class="swiper-container kids_header_relateKwdSlide">
+						<ul class="swiper-wrapper clearfix">
+							<li class="swiper-slide kids_header_relateKwd"><a href="#">후드</a></li>
+							<li class="swiper-slide kids_header_relateKwd"><a href="#">원피스</a></li>
+							<li class="swiper-slide kids_header_relateKwd"><a href="#">미르미르</a></li>
+							<li class="swiper-slide kids_header_relateKwd"><a href="#">반팔티</a></li>
+							<li class="swiper-slide kids_header_relateKwd"><a href="#">반팔 티셔츠</a></li>
+							<li class="swiper-slide kids_header_relateKwd"><a href="#">운동화</a></li>
+							<li class="swiper-slide kids_header_relateKwd"><a href="#">구두</a></li>
+							<li class="swiper-slide kids_header_relateKwd"><a href="#">Eng Word Test</a></li>
+						</ul>
+					</dd>
+
+				</dl>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(window).load(function(){
+			var kids_header_relateKwdSlide = new Swiper('.kids_header_relateKwdSlide', {
+				slidesPerView: 'auto',
+				calculatedHeight: true,
+				roundLengths: true,
+				simulateTouch: true,
+				momentumRatio: 0.3,
+				roundLengths: true,
+			});
+			$(window).resize(function(){
+				kids_header_relateKwdSlide.reInit()
+			})
+		})
+	</script>
+</header>	
+<!-- //HEADER -->
+<!-- LEFT MENU -->
+<div id="lnb" class="lnb_wrap">
+	<div class="lnb">
+		<div class="lnb_hd">
+			<div class="hd">
+				<a class="home" href="Md_Main.html"><b class="ir">메인 바로가기</b></a>
+				<!-- <a class="login" href="#">로그인</a> --> 
+				<a class="logout" href="#">로그아웃</a>
+			</div>
+		</div>
+		<!-- LEFT CATG. -->
+		<div class="lnb_mn ctg_btn"><a href="javascript:;" class="on"><b class="ir">카테고리 열기</b></a></div>
+		<div class="lnb_cont">
+			<div class="lnb_log"><b>홍길동 님</b>
+				<em class="m0000005">Family</em>
+				<!--
+				<em class="m0000004">Bronze</em>
+				<em class="m0000003">Silver</em>
+				<em class="m0000002">Gold</em>
+				<em class="m0000001">Platinum</em>
+				-->
+			</div>
+			<div class="lnb_tnb">
+				<ul>
+					<li class="myp"><a href="javascript:;"><b>마이페이지</b></a></li>
+					<li class="drv"><a href="javascript:;"><b>주문배송조회</b></a></li>
+					<li class="wish"><a href="javascript:;"><b>나의 찜목록</b></a></li>
+					<!-- <li class="cs"><a href="javascript:;"><b>고객센터</b></a></li> -->
+					<li class="cpn"><a href="javascript:;"><b>쿠폰 12장</b></a></li> 
+				</ul>
+			</div>
+			<div  id="lnb_ctg" class="lnb_ctg scroller">
+				<div  class="lnb_scroll">
+					<!-- MENU -->
+					<div  class="menu" id="menu" tabindex="0">
+						<dl>
+							<dt>카테고리</dt>
+							<dd>  
+								<ul>  
+									<li><a href="javascript:;" class="tit">가구<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">가구 이동</em></a>
+										<ul>
+											<li><a href="javascript:;">거실가구</a></li>
+											<li><a href="javascript:;">주방소품</a></li>
+											<li><a href="javascript:;">주방가구 </a></li>
+											<li><a href="javascript:;">보관용기</a></li>
+											<li><a href="javascript:;">책상/책장/의자</a></li>
+											<li><a href="javascript:;">주방수납/잡화</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:;" class="tit">주방용품<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">주방용품 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">주방식기<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">주방식기 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">데코<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">데코 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">욕실/생활<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">욕실/생활 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">침구/수예<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">침구/수예 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">커튼/매트<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">커튼/매트 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">수납/정리<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">수납/정리 이동</em></a></li>	
+									<li><a href="javascript:;" class="tit">키즈용품<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">키즈용품 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">SALE<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">SALE 이동
+									</em></a></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+					<!-- //MENU -->
+					<div class="lnb_gd">
+						<dl>
+							<dt>최근 본 상품</dt>
+							<dd>
+								<ul>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/img_154_01.jpg" width="154" height="154" alt="주방용품" /></a></li>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/img_154_02.jpg" width="154" height="154" alt="소파쿠션" /></a></li>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/img_154_03.jpg" width="154" height="154" alt="폴햄패딩" /></a></li>
+								</ul>
+							</dd>
+							<dd class="more"><a href="javascript:;" title="최근 본 상품 더보기">MORE</a></dd>
+						</dl>
+					</div>
+					<div class="lnb_cn">
+						<ul>
+							<li><a href="javascript:;" class="wi">WITH STAR</a></li>
+							<li><a href="javascript:;" class="bs">BEST</a></li>
+							<li><a href="javascript:;" class="sa">SALE</a></li>
+							<li><a href="javascript:;" class="fo">Follow</a></li>
+							<li><a href="javascript:;" class="sp">기획전</a></li>
+							<li><a href="javascript:;" class="ev">이벤트</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //LEFT CATG. -->
+		<!-- LEFT MALL -->
+		<div class="lnb_mn mall_btn"><a href="javascript:;"><b class="ir">몰 열기</b></a></div>
+		<div class="lnb_cont">
+			<dl class="lnb_mall">
+				<dt>몰이동</dt>
+				<dd>
+					<div id="lnb_mlst" class="lnb_mlst scroller">
+						<ul>
+							<li class="selected"> <!-- 몰 선택시 .selected -->
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_00.jpg" alt="이랜드 통합몰">
+									<em>이랜드 통합몰</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_12.jpg" alt="모던하우스">
+									<em>모던하우스</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_04.jpg" alt="뉴발란스">
+									<em>뉴발란스</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_13.jpg" alt="뉴발란스 키즈">
+									<em>뉴발란스 키즈</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_14.jpg" alt="라템">
+									<em>라템</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_07.jpg" alt="로엠">
+									<em>로엠</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_08.jpg" alt="로이드">
+									<em>로이드</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_15.jpg" alt="루켄">
+									<em>루켄</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_16.jpg" alt="몰리">
+									<em>몰리</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_01.jpg" alt="미쏘">
+									<em>미쏘</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_17.jpg" alt="버터">
+									<em>버터</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_18.jpg" alt="슈펜">
+									<em>슈펜</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_11.jpg" alt="스파오">
+									<em>스파오</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_09.jpg" alt="에블린">
+									<em>에블린</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_19.jpg" alt="ENC">
+									<em>ENC</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_10.jpg" alt="킨더리그">
+									<em>킨더리그</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_02.jpg" alt="OST">
+									<em>OST</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_20.jpg" alt="클로비스">
+									<em>클로비스</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_05.jpg" alt="클루">
+									<em>클루</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_21.jpg" alt="태창">
+									<em>태창</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_22.jpg" alt="투미">
+									<em>투미</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_23.jpg" alt="티니위니">
+									<em>티니위니</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_03.jpg" alt="폴더">
+									<em>폴더</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_24.jpg" alt="헌트">
+									<em>헌트</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_06.jpg" alt="후아유">
+									<em>후아유</em>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //LEFT MALL -->
+		<div class="lnb_cls"><button type="button" id="left_cls" class="left_cls"><b class="ir">카테고리 전체메뉴 닫기</b></button></div>
+	</div>
+</div>
+<div class="lnb_dim"></div>
+<!-- //LEFT MENU -->       
+<!-- CONTENT -->
+<div class="contents" id="contents"> 
+
+	<div class="cts_tit">
+		<h2 id="cts_tit_sub">
+            <b>'내추럴'</b> 검색결과
+		    <button type="button" class="back"><em class="ir">이전페이지</em></button>
+		</h2>
+	</div>
+	<div class="search_wrap kids_search_wrap">
+		<!-- SORT -->	
+		<div class="sch_sort">
+			<div class="sch_ea">
+				<em>97,789</em>개
+			</div>
+			<div class="sort_wrap">
+				<div class="s_catg">
+					<label for="s_catg" class="ir">카테고리 선택</label>
+					<select id="s_catg">
+						<option selected="selected">카테고리</option>
+						<option>주방용품</option>
+						<option>침장</option>
+						<option>가구</option>
+						<option>수납/욕실/생활</option>
+						<option>데코/팬시</option>
+						<option>가전/휴대폰</option>
+						<option>유아동</option>
+						<option>여성패션</option>
+						<option>캐주얼/남성/스포츠</option>
+						<option>패션잡화/명품</option>
+						<option>긴텍스트긴텍스트긴텍스트긴텍스트긴텍스트긴텍스트긴텍스트</option>
+					</select>
+				</div>
+				<div class="s_sort">
+					<label for="s_sort" class="ir">상품정렬 순서 선택</label>
+					<select id="s_sort">
+						<option selected="selected">추천순</option>
+						<option>신상품순</option>
+						<option>낮은가격순</option>
+						<option>높은가격순</option>
+						<option>상품평순</option>
+						<option>할인율높은순</option>
+					</select>
+				</div>
+			</div>
+			<div class="s_filter">
+				<a href="#" onclick="fn_layer_open('sch_detail');return false;" onkeypress="this.onclick;">상세<em class="ir">열기</em></a>
+			</div>
+			<div class="s_type">
+				<ul>
+					<li class="t1 on"><button type="button" data-type="glist"><em class="ir">이미지형 보기</em></button></li>
+					<li class="t2"><button type="button" data-type="tlist"><em class="ir">리스트형  보기</em></button></li>
+					<li class="t3"><button type="button" data-type="blist"><em class="ir">큰이미지형 보기</em></button></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //SORT -->
+
+		<!-- MSG 160309 -->
+		<div class="sch_none_msg">
+			<div class="kids_container">
+				<div class="msg">선택한 조건의 상품이 <b>없습니다.</b><br> 다시 선택해주세요.</div>
+			</div>
+		</div>
+		<!-- //MSG 160309 -->
+
+		<!-- 많이 본 상품 -->
+		<div class="ptb_vw">
+			<div class="kids_container">
+				<p class="kids_search_leftTit">이 검색 결과에서 많이 본 상품</p>
+			</div>
+			<div class="kids_container_l kids_slide02_wrap">
+				<div class="search_frq_slide kids_slide02 swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide swiper-scrollbar">
+							<a href="#">
+								<div class="kids_slide_cont">
+									<img src="../images/mobile/temp/kids_pd_x380_09.jpg" alt="" />
+										<div class="kid_pd_info">
+												<p class="kid_brand">ZARA</p>
+												<p class="kid_name">플라워 자카드 원피스</p>
+										</div> 
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide swiper-scrollbar">
+							<a href="#">
+								<div class="kids_slide_cont">
+									<img src="../images/mobile/temp/kids_pd_x380_08.jpg" alt="" />
+									<div class="kid_pd_info">
+											<p class="kid_brand">ZARA</p>
+											<p class="kid_name">플라워 자카드 원피스</p>
+									</div> 
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide swiper-scrollbar"> 
+							<a href="#">
+								<div class="kids_slide_cont">
+									<img src="../images/mobile/temp/kids_pd_x380_07.jpg" alt="" />
+									<div class="kid_pd_info">
+											<p class="kid_brand">ZARA</p>
+											<p class="kid_name">플라워 자카드 원피스</p>
+									</div> 
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function(){
+					var gutter = $('.kids_container_l').width() * 0.065;
+					var search_frq_slide = new Swiper('.search_frq_slide',{
+						slidesPerView: 2.5,
+						simulateTouch: true,
+						calculateHeight: true,
+						roundLengths: true,
+						offsetPxBefore: gutter,
+						offsetPxAfter: gutter,
+						onTouchStart: function(){
+							unableSwiping()
+						},
+						onTouchEnd: function(){
+							enableSwiping()
+						},
+					});
+
+					$(window).resize(function(){	
+						gutter = $('.kids_container_l').width() * 0.065;
+						search_frq_slide.reInit();
+						search_frq_slide.params.offsetPxBefore=gutter; 
+						search_frq_slide.params.offsetPxAfter=gutter; 
+					});
+
+					function unableSwiping(){
+						if(typeof mainCate !== "undefined"){
+						mainCate.params.onlyExternal=true;
+						}
+					}
+					function enableSwiping(){
+						if(typeof mainCate !== "undefined"){
+						mainCate.params.onlyExternal=false;
+						}
+					}
+					// 최상위 스와이퍼 mainCate 스와이프 제한 함수
+						})
+			</script>
+		</div>
+		<!-- /많이 본 상품 -->
+
+		<!-- 추천 기획전 -->
+		<div class="ptb_vw">
+			<div class="kids_container">
+				<h3 class="kids_main_tit">추천 기획전</h3>
+			</div>
+			<div class="kids_container_l kids_slide02_wrap">
+				<div class="search_rec_slide kids_slide02 swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide swiper-scrollbar">
+							<a href="#">
+								<div class="kids_slide_cont">
+									<img src="../images/mobile/temp/kids_pd_x380_09.jpg" alt="" />
+									<div class="kids_thumbTit">
+										<p class="kids_thumbTit_brand">KIDIKIDI</p>
+										<p class="kids_thumbTit_desc">오픈 1주년 이벤트</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide swiper-scrollbar">
+							<a href="#">
+								<div class="kids_slide_cont">
+									<img src="../images/mobile/temp/kids_pd_x380_08.jpg" alt="" />
+									<div class="kids_thumbTit">
+										<p class="kids_thumbTit_brand">KIDIKIDI</p>
+										<p class="kids_thumbTit_desc">1+1 이벤트</p>
+								</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide swiper-scrollbar"> 
+							<a href="#">
+								<div class="kids_slide_cont">
+									<img src="../images/mobile/temp/kids_pd_x380_07.jpg" alt="" />
+									<div class="kids_thumbTit">
+										<p class="kids_thumbTit_brand">KIDIKIDI</p>
+										<p class="kids_thumbTit_desc">콜라보 페스티벌</p>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function(){
+					var gutter = $('.kids_container_l').width() * 0.065;
+					var search_rec_slide = new Swiper('.search_rec_slide',{
+						slidesPerView: 2.5,
+						simulateTouch: true,
+						calculateHeight: true,
+						roundLengths: true,
+						offsetPxBefore: gutter,
+						offsetPxAfter: gutter,
+						onTouchStart: function(){
+							unableSwiping()
+						},
+						onTouchEnd: function(){
+							enableSwiping()
+						},
+					});
+
+					$(window).resize(function(){	
+						gutter = $('.kids_container_l').width() * 0.065;
+						search_rec_slide.reInit();
+						search_rec_slide.params.offsetPxBefore=gutter; 
+						search_rec_slide.params.offsetPxAfter=gutter; 
+					});
+
+					function unableSwiping(){
+						if(typeof mainCate !== "undefined"){
+						mainCate.params.onlyExternal=true;
+						}
+					}
+					function enableSwiping(){
+						if(typeof mainCate !== "undefined"){
+						mainCate.params.onlyExternal=false;
+						}
+					}
+					// 최상위 스와이퍼 mainCate 스와이프 제한 함수
+						})
+			</script>
+		</div>
+		<!-- /추천 기획전 -->
+
+		<!-- LIST -->
+		<div class="ptb_vw ">
+			<div class="kids_container">
+				<div class="goods_list ptb_vw" id="goods_list">
+					<h3 class="ir">상품리스트</h3>
+					<ul class="glist">
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+						<li>
+							<div class="g_wrap">
+								<a href="#" class="g_link">
+									<span class="g_img">
+										<span class="img"><img src="../images/mobile/temp/img_480_01.jpg" width="480" height="480" alt=""></span>
+									</span>
+									<span class="g_brd">ZARA</span>
+									<span class="g_tit">플라워 자카드 원피스</span>
+									<span class="g_nor"> 
+										<span class="g_per"><em class="ir">할인율</em><b>20</b>%</span> 
+										<span class="g_prc">
+											<!-- <span class="org"><em class="ir">정상가:</em><b>1,250,000</b>원</span>  -->
+											<span class="sale"><em class="ir">판매가:</em><b>1,236,000</b>원</span>
+										</span>
+									</span>
+									<span class="g_rv">
+										<!-- <span class="scr s45"><em class="ir">별점평균:90</em></span> -->
+										<span class="cnt">리뷰개수 <span>(19)</span></span>
+									</span>
+									<!-- <span class="g_bnf">
+										<span class="bnf1">마감임박</span>
+										<span class="bnf2">무료배송</span>
+										<span class="bnf3">최저가</span>
+										<span class="bnf4">BEST</span>
+										<span class="bnf5">HIT</span>
+										<span class="bnf">SMS</span>
+										<span class="bnf6">SALE</span>
+										<span class="bnf">N+1</span>
+										<span class="bnf">세트할인</span>
+										<span class="bnf">즉시할인</span>
+										<span class="bnf">사은품</span>
+										<span class="bnf7">매장수령</span>
+										<span class="bnf">재입고</span>
+										<span class="bnf8">착불</span>
+									</span> -->
+								</a>
+								<!-- <a href="#" class="g_wish"><em class="ir">상품 찜하기</em></a> -->
+								<!-- <a href="#" class="g_cart"><em class="ir">장바구니 담기</em></a> -->
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //LIST -->
+		
+		<div class="kids_container">
+			<!-- MORE BUTTON -->
+			<div class="goods_list_more">
+				<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+			</div>
+			<!-- /MORE BUTTON -->
+
+			<!--  2018-07-25  검색 결과 더보기  :   브랜드 몰 검색결과에만 사용합니다. -->
+			<div class="sch_more_brd">
+				<a href="javascript:" class="sch_more_btn">검색결과 더보기</a>
+			</div>
+			<!--  //2018-07-25  검색 결과 더보기  :   브랜드 몰 검색결과에만 사용합니다. -->
+		</div>
+	</div>
+
+
+</div>
+<!-- //CONTENT -->
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<!-- <div class="ft_bn" style="background-color:#5aa9ca">
+		<a href="javascript:;"><img src="../images/mobile/temp/spao_foot_100.jpg" width="640" height="100" alt="LIVE YOUR LIFE - 콜라보 X SEOLHYUN" /></a>
+	</div> -->
+	<div class="ft_menu">
+		<ul>
+			<li><a href="javascript:;">로그아웃</a></li>
+			<li><a href="javascript:;">마이페이지</a></li>
+			<li><a href="javascript:;">장바구니</a></li>
+			<li><a href="javascript:;">고객센터</a></li>
+		</ul>
+	</div>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드리테일</dt>
+		<dd>서울시 서초구 잠원동 70-2 대표이사 : 이광일/김연배</dd>
+		<dd>사업자등록번호 : 114-81-01855  <a href="javascript:;">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 서초 제 09998호</dd>
+		<dd>고객센터 : <a href="tel:1899-9500">1899-9500</a></dd>
+		<!-- 160927 바로방문 추가 -->
+		<dd>
+			<div class="ft_direct">
+				<!-- web에서는 off만 사용 <a href="javascript:;"><i class="on">APP방문ON</i></a> -->
+				<a href="javascript:;"><i class="off">APP방문OFF</i></a>
+			</div>
+		</dd>
+		<!-- //160927 바로방문 추가 -->
+	</dl>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드월드</dt>
+		<dd>서울특별시 금천구 가산디지털1로 159  대표이사 : 김광래/최종양/김연배</dd>
+		<dd>사업자등록번호 : 113-85-19030  <a href="javascript:;">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 금천구청 제 2005-01053호</dd>
+	</dl>	
+	<div class="ft_sns">
+		<ul>
+			<li><a href="javascript:;" class="fb"><em class="ir">페이스북</em></a></li>
+			<li><a href="javascript:;" class="bl"><em class="ir">블로그</em></a></li>
+			<li><a href="javascript:;" class="is"><em class="ir">인스타그램</em></a></li>
+		</ul>
+	</div>
+	<div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="ft_app">
+		<ul>
+			<!-- <li><a href="javascript:;">PC 버전보기</a></li> -->
+			<li><a href="javascript:;">SPAO APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+<script>
+    var GNB_SCROLL;
+    var LOADING_HTML = '<div class="loading"><span>로딩중</span></div>';
+    
+    $(document).ready(function() {
+        GNB_SCROLL = new Swiper('#gnb',{
+            createPagination: false,
+            freeMode: true,
+            freeModeFluid: true,
+            slidesPerView: 'auto',
+            roundLengths: true,
+            onSlideClick: function(){
+                $(".gnb li").removeClass("on");
+                $('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);			
+                GNB_SCROLL.swipeTo(GNB_SCROLL.clickedSlideIndex);
+                call_slide(GNB_SCROLL.clickedSlideIndex);
+            }
+        });
+
+        $(window).resize(function(){	
+            GNB_SCROLL.reInit();
+        });
+    });
+
+	$(window).resize(function(){
+		headerControl();
+	});
+</script>
+</body>
+</html>

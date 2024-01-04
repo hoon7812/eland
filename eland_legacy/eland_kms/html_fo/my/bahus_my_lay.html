@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<!--<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_bahus.css" /> bahus add -->
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<style type="text/css"> /* 전달을 위한 css 입니다. 무시해주시고, 아래 레이어팝업 html 소스 만 참고 부탁드립니다. */
+	#content{min-height:auto;}
+	.layer_pop{position:relative;left:0;margin-left:0 !important;top:0;}
+	</style>
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper">
+		<div id="header">
+			<div class="header_gnb"></div>
+			<div class="header_cont"><img style="display:block; margin-top:-34px;" src="../../images/pcweb/temp/_sample_head.jpg" alt="샘플헤더" /></div>
+		</div>
+
+		<!-- container -->
+		<div id="container">
+			<!-- content -->
+			<div class="layer_pop_section">
+
+<!-- 배송지 변경 bahus add -->
+				<div class="layer_pop d_layer_pop on">
+					<div class="lay_wrap">
+						<div class="lay_tit"><strong>배송지 변경</strong></div>
+						<div class="lay_cont">
+							<div class="box_scroll bahus_ladd"> <!-- scroll팝업 시 -->
+								<div class="data_table01">
+									<table>
+										<caption>배송지 등록 표이며 배송지명, 받으시는 분, 전화번호, 휴대폰번호, 배송지 주소, 배송 메시지 순으로 제공합니다.</caption>
+										<colgroup><col style="width:25%" /><col /></colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">배송지명</th>
+											<td>
+												<div class="row">
+													<input type="text" class="input_txt" title="배송지명" value="우리집" />
+													<label for="chk_basic_ship"><input id="chk_basic_ship" type="checkbox" class="chkbox ml20" /> 기본 배송지</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">받으시는 분</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt" title="받으시는 분" value="한동기" /></div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">전화번호</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="지역번호 선택" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 두번째 자리" value="1234" />
+													<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 세번째 자리" value="1234" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대폰번호</th>
+											<td>
+												<div class="phone_inputs type02">
+													<select title="휴대폰번호 첫번째 자리" ><option value="">선택</option></select>
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 두번째 자리" value="1234" />
+													<span class="cro">-</span><input type="text" class="input_txt" title="휴대폰번호 세번째 자리" value="1234" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송지 주소</th>
+											<td>
+												<ul class="txt_row03 no_tit">
+													<li>
+														<div class="zip_input">
+															<p><input type="text" class="input_txt col_30 readonly" readonly="readonly" title="우편번호" /> <button type="button" class="btn03 c01"><span>우편번호 찾기</span></button></p>
+															<p><input type="text" class="input_txt wide readonly" readonly="readonly" title="주소지 상세1" /></p>
+															<p><input type="text" class="input_txt wide" title="주소지 상세2" /></p>
+														</div>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송 메시지</th>
+											<td>
+												<div class="row"><input type="text" class="input_txt wide" title="배송 메시지" value="메시지를 입력해 주세요" /></div>
+											</td>
+										</tr>
+										
+								<tr>
+									<th scope="row">사다리차<br>이용에 대한 동의
+										<div class="bahus_odr_b"><b>(고객부담)</b></div>
+									</th>
+									<td>
+										<span class="bahus_odr">
+											<em class="tx">
+												2층 이상의 주택 구조상 엘리베이터를 통한 가구운반 불가 시 사다리차 사용 비용은 고객님이 부담해야<br />
+												합니다. 사다리차 사용 거부 시 반품 처리되며, 판매가의 10%의 반품비가 발생합니다.
+											</em>
+											<em class="ntx">이에 동의 하십니까? </em>
+											<label for="chk_ladder"><input class="chkbox" id="chk_ladder" type="checkbox"> <strong class="txt_c02">(필수) 동의합니다.</strong></label>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">엘리베이터 유무</th>
+									<td>
+										<span class="bahus_odr">
+											<label for="elve_01"><input name="elve_rdo" class="rdobox" id="elve_01" type="radio" checked="checked"> 있음</label>
+											<label for="elve_02"><input name="elve_rdo" class="rdobox" id="elve_02" type="radio"> 없음</label>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">벽고정 설치</th>
+									<td>
+										<span class="bahus_odr fixed_w">
+											<label for="fixed_w_01"><input name="fixed_w_rdo" class="rdobox" id="fixed_w_01" type="radio" checked="checked"> 벽고정 필요 없음</label>
+											<label for="fixed_w_02"><input name="fixed_w_rdo" class="rdobox" id="fixed_w_02" type="radio"> 벽고정 필요</label>
+										</span>
+									</td>
+								</tr>
+								<tr class="bahus_fixwall">
+									<th scope="row">벽고정 설치에 대한 동의</th>
+									<td>
+										<span class="bahus_odr">
+											<em class="tx">
+												앞 쏠림 위험이 있는 가구(3단이상 서랍장, 철제책장, 드레스룸 등)에 대해서는 반드시 벽 타공을 통해 진행되는 벽 고정 장치 시공을 해야 하며, 구매 고객님께서는 안전을 위해 이에 협조해주셔야 합니다. <br />부득이한 경우 고객님 요청에 의해 동의서 작성 후 벽 고정 시공을 생략할 수 있으나, 이 경우 앞 쏠림 현상으로 인한 제반 사유에 대해 이랜드리테일 모던하우스는 일체 책임을 지지 않습니다.
+											</em>
+											<em class="ntx">이에 동의 하십니까? </em>
+											<label for="chk_fixed"><input class="chkbox" id="chk_fixed" type="checkbox"> <strong class="txt_c02">(필수) 동의합니다.</strong></label>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">가구 배송약관에 대한 동의</th>
+									<td>
+										<span class="bahus_odr">
+											<ol>
+												<li>1. 가구 설치 전 사전 설치할 공간 마련의 의무는 고객님에게 있습니다. 배송기사가 고객님이 구입한 가구를 설치 할 수 있게 고객님이 <em>사전 공간준비를 하셔야 합니다.</em></li>
+												<li>2. 상기 1항에 대해 고객님이 공간 마련 없이 설치할 배송기사에게 갑작스런 폐 가구(또는 타 집기)  할 수 없으며, 부득이 이동 요청해야 할 경우 가구 구입 시 판매점 통해서만 의사소통 되어야 <em>이동비용은 고객님이 부담</em>하셔야 합니다.</li>
+												<li>3. 설치된 상품의 경우 고객님의 요구에 의해 재 이동 설치 시 추가비용을 청구할 수 있습니다.  설치 전 반드시 설치위치를 지정해 주시길 바랍니다.</li>
+												<li>4. 조립 상품일 경우 최대 3시간 소요될 수 있습니다.(개당)</li>
+												<li>5. 천재지변, 노사분규, 수입통관의 지연 기타 특수한 사정으로 상품의 제조 및 납품이 지연되는 경우 즉시 고객님에게 통보하고 당해 사유의 종료 시까지 납품기한을 연장할 수 있습니다.</li>
+												<li>6. 고객님은 배송 및 설치 완료 후에는 배송된 상품의 이상 유무와 바닥재, 벽지 기타 등 부주의에 의한 피해는 없는지 확인 후, 배송확인서에 서명하시길 바랍니다. 이와 관련된 어떤 사항이라도 배송 확인서 서명 완료 후 피해보상 요구에 대하여 당사는 책임을 지지 않습니다.</li>
+											</ol>
+											<em class="ntx">이에 동의 하십니까? </em>
+											<label for="chk_bahus_odr"><input class="chkbox" id="chk_bahus_odr" type="checkbox"> <strong class="txt_c02">(필수) 동의합니다.</strong></label>
+										</span>
+									</td>
+								</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="set_btn">
+								<button type="button" class="btn02"><span>변경</span></button>
+								<button type="button" class="btn02 c01"><span>취소</span></button>
+								<button type="button" class="btn02 c01"><span>초기화</span></button>
+							</div>
+						</div>
+						<button type="button" class="btn_lay_close"><img src="../../images/pcweb/common/btn_laypop_close.gif" alt="레이어 팝업 닫기" /></button>
+					</div>
+				</div>
+				<!-- bahus add script -->
+				<script type="text/javascript">
+					$(".bahus_fixwall").hide();
+					$("#fixed_w_01").click(function(){
+						$(".bahus_fixwall").hide();
+					});
+					$("#fixed_w_02").click(function(){
+						$(".bahus_fixwall").show();
+					});
+				</script>
+				<!-- //bahus add script -->
+<!-- //배송지 변경 bahus add -->
+
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<!-- 푸터배너 -->
+			<div class="footer_bnr" style="background:#2b2c30">
+				<a href="#"><img src="../../images/pcweb/temp/_sample_1080x120.jpg" alt="SPEACIAL BRAND DAY 미리 준비하는 겨울 아이템" /></a>
+			</div>
+			<!-- //푸터배너 -->
+			<div class="footer_links">
+				<div class="cont"><img src="../../images/pcweb/temp/_sample_footer01.jpg" alt="샘플푸터"></div>
+			</div>
+			<div class="footer_info01"><img src="../../images/pcweb/temp/_sample_footer02.jpg" alt="샘플푸터" /></div>
+			<div class="footer_info02">
+				<div class="cont"><img src="../../images/pcweb/temp/_sample_footer03.jpg" alt="샘플푸터" /></div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

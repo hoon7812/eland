@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li class="lct_txt"><span>단체구매</span></li>
+					</ul>
+				</div>
+				<div class="mall_partner">
+					<!-- 160812 삭제
+					<div class="title">
+						<h2 class="tit_h2">단체구매</h2>
+						<div class="right">
+							<span class="font_14">주는 이는 만족하고 받는 이에게는 감동을 선사 하세요.</span>
+						</div>
+					</div> -->
+					<!-- 160812 타이틀 변경 -->
+					<div class="title">
+						<div class="tit_dp">
+							<h2>단체구매</h2>
+							<span class="s_dp">주는 이는 만족하고 받는 이에게는 감동을 선사 하세요.</span>
+						</div>
+					</div>
+					<!-- //160812 타이틀 변경 -->
+					<div class="box_bg01">
+						<ul class="box_stp buy">
+							<li class="fir"><span class="ico stp01">STEP1</span>상담신청/접수</li>
+							<li><span class="ico stp02">STEP2</span>접수검토</li>
+							<li><span class="ico stp03">STEP3</span>진행여부 결정</li>
+							<li><span class="ico stp04">STEP4</span>결제확인</li>
+							<li><span class="ico stp05">STEP5</span>납품</li>
+						</ul>
+					</div>
+
+					<div class="title alig_r txt_c04">* 표시는 필수 입력 사항 입니다.</div>
+					<div class="data_table01">
+						<table>
+							<caption>단체구매 작성 항목 표이며 주문자명, 연락처, 주소, 이메일, 상품 선택, 사용목적/기타문의, 사용일자, 개인정보보호 동의 순으로 제공합니다.</caption>
+							<colgroup><col style="width:15%" /><col /><col style="width:35%" /></colgroup>
+							<tbody>
+							<tr>
+								<th scope="row">*주문자명</th>
+								<td>
+									<input type="text" title="회사명" class="input_txt col_60">
+									<label for="partner_chk01" class="ml10"><input id="partner_chk01" type="checkbox" class="chkbox " /> 개인</label>
+									<label for="partner_chk02" class="ml10"><input id="partner_chk02" type="checkbox" class="chkbox" /> 단체</label>
+								</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th scope="row">*연락처</th>
+								<td>
+									<div class="phone_inputs">
+										<select title="지역번호 선택"><option value="">선택</option></select>
+										<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 두번째 자리" />
+										<span class="cro">-</span><input type="text" class="input_txt" title="전화번호 세번째 자리" />
+									</div>
+								</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th scope="row">*주소</th>
+								<td>
+									<div class="zip_input">
+										<p><input type="text" class="input_txt col_30 readonly" title="우편번호" readonly="readonly" /> <button type="button" id="btns02" class="btn03 c01" onClick="commonUI.popupOpen('#layer02');return false;"><span>주소 찾기</span></button></p>
+										<p><input type="text" class="input_txt wide readonly" title="주소입력창" readonly="readonly" /></p>
+									</div>
+								</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th scope="row">*이메일</th>
+								<td>
+									<div class="email_inputs">
+										<input type="text" class="input_txt" title="이메일주소" placeholder="이메일주소 입력" />
+										<span class="cro">@</span>
+										<input type="text" class="input_txt" title="이메일 도메인 주소" />
+										<select title="이메일 도메인 선택">
+											<option value="">naver.com</option>
+											<option value="">daum.net</option>
+											<option value="">직접입력</option>
+										</select>
+									</div>
+								</td>
+								<td>
+									<span class="txt_c04">상담결과 확인을 위해 정확한 이메일을 입력해 주세요.</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">*상품 선택</th>
+								<td colspan="2">
+									<div class="f_item_slt">
+										<div class="top_btn">
+											<a class="btn03 c01 disabled" href="#"><span>상품검색으로 찾기</span></a><!-- disabled : 버튼 비활성화 -->
+											<span class="ml10 txt_c06">* 품목당 100개 이상 구매시 대량구매의 혜택을 누리실 수 있습니다. </span>
+										</div>
+										<div class="f_item_box">
+											<div class="f_item_list">
+												<div class="name_box">
+													<div class="name">[파란들](20조한정)프라임 3단 와이드 서랍장 프라임 3단 와이드 서랍장(전국착불)</div>
+													<div class="price"><strong class="tx_price">77,200</strong>원</div>
+												</div>
+												<div class="num_box">
+													수량 <input type="text" class="input_txt" value="900" title="수량입력" /> 개
+												</div>
+											</div>
+											<div class="f_item_list">
+												<div class="name_box">
+													<div class="name">R빅무드 플라오 스카프 플라오 스카프 플라오 스카프</div>
+													<div class="price"><strong class="tx_price">77,200</strong>원</div>
+												</div>
+												<div class="num_box">
+													수량 <input type="text" class="input_txt" value="900" title="수량입력"  /> 개
+												</div>
+											</div>
+											<div class="f_item_list">
+												<div class="name_box">
+													<div class="name">R빅무드 플라오 스카프 플라오 스카프 플라오 스카프 [파란들](20조한정)프라임 3단 와이드 서랍장 프라임 3단 와이드 서랍장(전국착불)</div>
+													<div class="price"><strong class="tx_price">1,577,200</strong>원</div>
+												</div>
+												<div class="num_box">
+													수량 <input type="text" class="input_txt" value="900" title="수량입력"  /> 개
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">사용목적/기타문의</th>
+								<td colspan="2">
+									<textarea cols="50" rows="10" class="textarea wide" title="상담내용"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">사용일자</th>
+								<td colspan="2">
+									<select title="연도" class="col_10">
+										<option value="2015">2015</option>
+									</select> -
+									<select title="월" class="col_7">
+										<option value="01">01</option>
+									</select> -
+									<select title="일" class="col_7">
+										<option value="01">01</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">*개인정보보호 동의</th>
+								<td>
+									<label for="partner_agree_chk"><input id="partner_agree_chk" type="checkbox" class="chkbox" /> 약관에 동의합니다.</label>
+								</td>
+								<td>
+									<div class="alig_r"><a class="btn_txt01 c02" href="#"><span>개인정보 보호를 위한 이용자 동의사항</span></a></div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="set_btn mt30">
+						<a class="btn01" href="#"><span>단체구매 신청</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

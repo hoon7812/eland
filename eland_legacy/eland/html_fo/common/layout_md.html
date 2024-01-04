@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_main_md.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.onlycoding.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="modern"><!-- class="modern" -->
+
+		<div class="header_top_banner on" style="background-color:#f35d6b;">
+			<div class="btn_hdtb_img"><a href="#"><img src="../../images/pcweb/temp/_temp_1080x80.jpg" alt="2016 병신년 KB국민카드 최대할인 7% + 포인트최대 5만포인트" /></a></div>
+			<a href="#" class="btn_hdtb_close">베너 닫기</a>
+			<a href="#" class="btn_hdtb_open">
+				<span class="ir">베너 열기</span>
+				OPEN
+			</a>
+			<script>
+			$(".btn_hdtb_close").on("click",function(){
+				$(".header_top_banner").removeClass("on");
+				$(".btn_hdtb_open").focus();
+			})
+			$(".btn_hdtb_open").on("click",function(){
+				$(".header_top_banner").addClass("on");
+				$(".btn_hdtb_img").focus();
+			})
+			</script>
+		</div>
+
+		<!-- HEADER header_fix -->
+		<div id="header" class="header">
+			<div class="head">
+				<!-- LOGO -->
+				<h1>
+					<a href="#"><img src="../../images/pcweb/common/logo_eland_md.jpg" alt="모던하우스 쇼핑몰 - MODERN HOUSE MALL" /></a>
+				</h1>
+				<!-- //LOGO -->
+
+				<!-- MALL TAB -->
+				<div class="hd_mall">
+<!-- 160302_수정 -->
+					<div class="tit">
+						<a href="#" class="btn_home"><img src="../../images/pcweb/common/tit_modern.png" alt="MODERN HOUSE MALL" /></a>
+						<a href="#" class="btn_mall_sel d_main_logo"><strong class="ir">몰 선택</strong></a>
+					</div>
+<!-- //160302_수정 -->
+					<div class="mall_select">
+						<ul>
+							<li class="el"><a href="#none" class="d_move_link">이랜드몰 <span class="ir">이동</span></a></li>
+							<li class="mh"><a href="#none" class="d_move_link">모던하우스몰 <span class="ir">이동</span></a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- //MALL TAB -->
+
+				<!-- TNB -->
+				<div class="hd_tnb">
+					<dl>
+						<dt class="ir">마이메뉴</dt>
+						<dd><a href="#">로그아웃</a></dd>
+						<dd><a href="#">회원가입</a></dd>
+						<dd><a href="#">장바구니<span class="num"><b>88</b></span></a></dd>
+						<dd><a href="#">마이페이지</a></dd>
+						<dd><a href="#">고객센터</a></dd>
+						<!-- <dd>바로방문<span class="off"><b>off</b></span></dd> -->
+						<dd>바로방문<span class="on"><b>ON</b></span></dd>
+					</dl>
+				</div>
+				<!-- //TNB -->
+				<!-- CNB -->
+				<div class="hd_cnb">
+					<ul>
+						<li class="m01"><a href="#"><span>신상품</span></a></li>
+						<li class="m02"><a href="#"><span>베스트셀러</span></a></li>
+						<li class="m03"><a href="#"><span>SALE</span></a></li>
+					</ul>
+				</div>
+				<!-- CNB -->
+
+				<!-- SEARCH -->
+				<div class="hd_sch" id="hd_sch">
+					<div class="sch_wrap">
+						<div class="sch_box">
+							<label class="ir" for="searchTerm">검색</label>
+							<input type="text" class="input d_searchTerm" name="sch" id="searchTerm" placeholder="겨울엔 스파오 패딩이 필수템" />
+						</div>
+
+						<!-- KEYWORD LAYER -->
+						<div id="sch_keyword" class="sch_keyword d_sch_keyword">
+							<dl class="f_keyword">
+								<dt><button type="button"  class="on">인기 검색어</button></dt>
+								<dd>
+									<ol>
+										<li class="rank"><a href="#" class="d_links"><em class="num">1</em><span>아이폰 6S</span><em class="cnt">100,022회</em></a></li>
+										<li class="rank"><a href="#" class="d_links"><em class="num">2</em><span>모던하우스</span><em class="cnt">100,022회</em></a></li>
+										<li class="rank"><a href="#" class="d_links"><em class="num">3</em><span>패딩</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">4</em><span>겨울잠바</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">5</em><span>스파오</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">6</em><span>여성 영클부츠</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">7</em><span>코트</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">8</em><span>암막커튼</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">9</em><span>신상품</span><em class="cnt">100,022회</em></a></li>
+										<li><a href="#" class="d_links"><em class="num">10</em><span>가구</span><em class="cnt">100,022회</em></a></li>
+									</ol>
+								</dd>
+								<dt><button type="button" >최근 검색어</button></dt>
+								<dd>
+									<ul>
+										<li><a href="#" class="d_links"><span>키보드</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>인테리어</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>컴퓨터</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>코르그</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>양말</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>게임</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>하드</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>애완용품</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>침구</span></a><button type="button"  class="del">삭제</button></li>
+										<li><a href="#" class="d_links"><span>반팔 티셔츠</span></a><button type="button"  class="del">삭제</button></li>
+									</ul>
+									<div class="s_del"><button type="button" >최근검색어 전체삭제</button></div>
+									<!-- <div class="msg">최근 검색 기록이 없습니다.</div> -->
+								</dd>
+							</dl>
+						</div>
+						<!-- //KEYWORD LAYER -->
+
+						<!-- AUTO COMPLETE LAYER -->
+						<div id="sch_complete" class="sch_keyword d_sch_complete" >
+							<div class="s_keyword">
+								<ul>
+									<li><a href="#" class="d_links"><span>청<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>디젤청<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>등산<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span><b>바지</b>걸이</span></a></li>
+									<li><a href="#" class="d_links"><span>트레이닝<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>스파오청<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>기모<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span><b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>수면<b>바지</b></span></a></li>
+									<li><a href="#" class="d_links"><span>치마<b>바지</b></span></a></li>
+								</ul>
+								<!-- <div class="msg">입력하신 단어가 들어가 있는 추천어가 없습니다.</div> -->
+							</div>
+							<div class="s_del"><button type="button" >닫기</button></div>
+						</div>
+						<!-- //AUTO COMPLETE LAYER -->
+
+						<button type="button"  id="sch_del" class="sch_del" title="삭제하기">삭제</button>
+						<button type="button"  id="sch_btn" class="sch_btn" title="검색하기">검색</button>
+					</div>
+				</div>
+				<!-- //SEARCH -->
+
+				<!-- CATG ALL -->
+				<div class="hd_catg" id="gnb">
+					<div class="catg_wrap">
+						<button type="button"  id="catg_bt" class="catg_bt">전체보기</button>
+						<!-- LAYER -->
+						<div class="catg_lyr" id="catg_lyr">
+							<div class="catg_all">
+								<ul>
+									<li>
+										<dl>
+											<dt><a href="#">주방용품</a></dt>
+											<dd><a href="#"><span>보관용기</span></a></dd>
+											<dd><a href="#"><span>식기류</span></a></dd>
+											<dd><a href="#"><span>조리도구</span></a></dd>
+											<dd><a href="#"><span>조리용품</span></a></dd>
+											<dd><a href="#"><span>주방소품</span></a></dd>
+											<dd><a href="#"><span>주방수납/잡화</span></a></dd>
+											<dd><a href="#"><span>컵/머그/텀블러</span></a></dd>
+											<dd><a href="#"><span>홈베이킹/커피/티/와인용품</span> <em class="flag_new">NEW</em></a></dd>									
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">침구/패브릭</a></dt>
+											<dd><a href="#"><span>매트 /카페트</span></a></dd>
+											<dd><a href="#"><span>유/아동침구</span></a></dd>
+											<dd><a href="#"><span>침구단품</span></a></dd>
+											<dd><a href="#"><span>침구세트(신규)</span></a></dd>
+											<dd><a href="#"><span>커튼/블라인드</span></a></dd>
+											<dd><a href="#"><span>패브릭 소품</span></a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">가구/DIY</a></dt>
+											<dd><a href="#"><span>거실가구</span></a></dd>
+											<dd><a href="#"><span>침실가구</span></a></dd>
+											<dd><a href="#"><span>주방가구</span></a></dd>
+											<dd><a href="#"><span>유아동/주니어 가구</span></a></dd>
+											<dd><a href="#"><span>책상/책장/의자</span></a></dd>
+											<dd><a href="#"><span>DIY 가구</span></a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">수납/욕실/생활</a></dt>
+											<dd><a href="#"><span>다용도수납</span></a></dd>
+											<dd><a href="#"><span>생활잡화</span></a></dd>
+											<dd><a href="#"><span>세제/청소용품</span></a></dd>
+											<dd><a href="#"><span>애견용품</span></a></dd>
+											<dd><a href="#"><span>욕실/세탁</span></a></dd>
+											<dd><a href="#"><span>자동차용품</span></a></dd>
+											<dd><a href="#"><span>주방수납</span></a></dd>
+											<dd><a href="#"><span>캠핑용품</span></a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">데코/팬시</a></dt>
+											<dd><a href="#"><span>DIY 용품/목재/손잡이</span></a></dd>
+											<dd><a href="#"><span>가드닝/조화</span></a></dd>
+											<dd><a href="#"><span>데코소품</span></a></dd>
+											<dd><a href="#"><span>디자인문구</span></a></dd>
+											<dd><a href="#"><span>생활잡화</span></a></dd>
+											<dd><a href="#"><span>아로마/캔들</span></a></dd>
+											<dd><a href="#"><span>액자/앨범</span></a></dd>
+											<dd><a href="#"><span>취미용품</span></a></dd>
+											<dd><a href="#"><span>컴퓨터용품</span></a></dd>
+											<dd><a href="#"><span>타일/페인트/벽지</span></a></dd>
+											<dd><a href="#"><span>포장용품</span></a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">가전/휴대폰</a></dt>
+											<dd><a href="#"><span>계절가전</span></a></dd>
+											<dd><a href="#"><span>기타가전</span></a></dd>
+											<dd><a href="#"><span>디지털카메라/악세서리</span></a></dd>
+											<dd><a href="#"><span>생활가전</span></a></dd>
+											<dd><a href="#"><span>주방가전</span></a></dd>
+											<dd><a href="#"><span>컴퓨터/주변기기/프린터</span></a></dd>
+											<dd><a href="#"><span>핸드폰/스마트폰</span></a></dd>
+										</dl>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<dl>
+											<dt><a href="#">유아동관</a></dt>						
+											<dd><a href="#"><span>소품/매트</span></a></dd>
+											<dd><a href="#"><span>시즌/테마의류</span></a></dd>
+											<dd><a href="#"><span>신발/가방/잡화</span></a></dd>
+											<dd><a href="#"><span>신생아용품</span></a></dd>
+											<dd><a href="#"><span>아동의류</span></a></dd>
+											<dd><a href="#"><span>완구/악기/도서</span></a></dd>
+											<dd><a href="#"><span>침구/가구</span></a></dd>
+											<dd><a href="#"><span>캐릭터관</span></a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">여성패션</a></dt>										
+											<dd><a href="#"><span>가디건</span></a></dd>
+											<dd><a href="#"><span>니트</span></a></dd>
+											<dd><a href="#"><span>셔츠/블라우스</span></a></dd>
+											<dd><a href="#"><span>스커트</span></a></dd>
+											<dd><a href="#"><span>원피스</span></a></dd>
+											<dd><a href="#"><span>재킷</span></a></dd>
+											<dd><a href="#"><span>점퍼/베스트</span></a></dd>
+											<dd><a href="#"><span>코트</span></a></dd>
+											<dd><a href="#"><span>티셔츠</span></a></dd>
+											<dd><a href="#"><span>팬트</span></a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">캐주얼/남성/스포츠</a></dt>
+											<dd><a href="#"><span>남성 상의</span></a></dd>
+											<dd><a href="#"><span>남성 정장</span></a></dd>
+											<dd><a href="#"><span>남성 하의</span></a></dd>
+											<dd><a href="#"><span>스포츠/레저/캠핑</span></a></dd>
+											<dd><a href="#"><span>아웃도어</span></a></dd>
+											<dd><a href="#"><span>자전거의류</span></a></dd>
+											<dd><a href="#"><span>캐주얼 가디건/스웨터/니트</span></a></dd>
+											<dd><a href="#"><span>캐주얼 아우터/베스트</span></a></dd>
+											<dd><a href="#"><span>캐주얼 티셔츠/셔츠</span></a></dd>
+											<dd><a href="#"><span>캐주얼 팬츠</span></a></dd>
+											<dd><a href="#"><span>트레이닝복</span></a></dd>
+
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">패션잡화/뷰티</a></dt>
+											<dd><a href="#"><span>가방</span></a></dd>
+											<dd><a href="#"><span>남성구두</span></a></dd>
+											<dd><a href="#"><span>뷰티 / 화장품 / 바디용품</span></a></dd>
+											<dd><a href="#"><span>스니커즈/운동화</span></a></dd>
+											<dd><a href="#"><span>여성구두</span></a></dd>
+											<dd><a href="#"><span>쥬얼리</span></a></dd>
+											<dd><a href="#"><span>지갑/벨트</span></a></dd>
+											<dd><a href="#"><span>패션소품</span></a></dd>
+											<dd><a href="#"><span>해외명품</span></a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt><a href="#">언더웨어</a></dt>
+											<dd><a href="#"><span>남성속옷</span></a></dd>
+											<dd><a href="#"><span>아동/쥬니어 속옷</span></a></dd>
+											<dd><a href="#"><span>양말/스타킹/레깅스</span></a></dd>
+											<dd><a href="#"><span>여성 속옷</span></a></dd>
+											<dd><a href="#"><span>잠옷/이지웨어/슬립</span></a></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>전문관</dt>
+											<dd><a href="#"><span>임직원 복지샵</span></a></dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<button type="button"   id="catg_cls" class="bt_close">카테고리 전체보기 닫기</button>
+						</div>
+						<!-- //LAYER -->
+					</div>
+				</div>				
+				<!-- //CATG ALL -->
+
+				<!-- DISP. MENU -->
+				<div class="hd_disp">
+					<dl>
+						<dt class="ir">전시메뉴</dt>
+						<dd><a href="#">가구</a>
+							<div class="depth2">
+								<ul>
+									<li><a href="#">키즈 주니어가구</a></li>
+									<li><a href="#">책상/책장/의자</a></li>
+									<li><a href="#">거실가구</a></li>
+									<li><a href="#">침실가구</a></li>
+								</ul>
+							</div>
+						</dd>
+						<dd><a href="#">주방용품</a></dd>
+						<dd><a href="#">주방식기</a>
+							<div class="depth2">
+								<ul>
+									<li><a href="#">식기류</a></li>
+									<li><a href="#">커피/티/와인</a></li>
+									<li><a href="#">컵/머그</a></li>
+									<li><a href="#">테이블소품</a></li>
+								</ul>
+							</div>
+						</dd>
+						<dd><a href="#">데코</a></dd>
+						<dd><a href="#">욕실/생활</a></dd>
+						<dd><a href="#">침구/수예</a></dd>
+						<dd><a href="#">커튼/매트</a></dd>
+						<dd><a href="#">수납/정리</a></dd>
+						<dd><a href="#">팬시용품</a></dd>
+						<dd><a href="#">키즈용품</a></dd>
+						<dd class="season"><a href="#"><img src="../../images/pcweb/common/bg_butter.png" alt="" />BUTTER</a></dd>
+					</dl>
+				</div>
+				<!-- //DISP. MENU -->
+				<script type="text/javascript">
+					var gnbMenu = new commonUI.header.gnbCate('.hd_disp');
+				</script>
+			</div>
+		</div>
+		<!-- //HEADER -->
+
+		<!-- container -->
+		<div id="container">
+
+			<div class="wing_menu">
+				<div class="wm_left">
+					<ul class="wm_list">
+						<li><a href="#" class="wm_l01">시작페이지</a></li>
+						<li><a href="#" class="wm_l02">즐겨찾기</a></li>
+						<li><a href="#" class="wm_l03">앱다운로드</a></li>
+					</ul>
+					<div class="wm_adds">
+						<a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="" /></a>
+					</div>
+				</div>
+				<div class="wm_right">
+					<div class="wm_user">
+						<strong><span>홍길동</span>님</strong>
+						<span>
+<!-- 160129 -->
+							<a href="#" class="tx_num">1,243P</a><br />
+							쿠폰 <a href="#">43</a>장
+<!-- //160129 -->
+						</span>
+					</div>
+					<ul class="wm_list">
+						<li><a href="#" class="wm_r01">찜리스트<br/>(3)</a></li>
+						<li><a href="#" class="wm_r02">최근본상품</a></li>
+					</ul>
+					<div class="wm_goods_wrap" tabindex="0">
+						<div class="wm_goods" id="wmGoods">
+							<ul class="d_wg_slider">
+								<li>
+									<a href="#" class="wm_gd_links" data-index="0">
+										<img src="../../images/pcweb/temp/_temp_64x64.gif" alt="" />
+										<span class="wm_gd_info">
+											<strong>11111(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="1">
+										<img src="../../images/pcweb/temp/_temp_64x64.gif" alt="" />
+										<span class="wm_gd_info">
+											<strong>22222(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="2">
+										<img src="../../images/pcweb/temp/_temp_64x64.gif" alt="" />
+										<span class="wm_gd_info">
+											<strong>33333(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="3">
+										<img src="../../images/pcweb/temp/_temp_64x64.gif" alt="" />
+										<span class="wm_gd_info">
+											<strong>44444(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="4">
+										<img src="../../images/pcweb/temp/_temp_64x64.gif" alt="" />
+										<span class="wm_gd_info">
+											<strong>55555(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="5">
+										<img src="../../images/pcweb/temp/_temp_64x64.gif" alt="" />
+										<span class="wm_gd_info">
+											<strong>666666(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="6">
+										<img src="../../images/pcweb/temp/_temp_64x64.gif" alt="" />
+										<span class="wm_gd_info">
+											<strong>77777(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+								<li>
+									<a href="#" class="wm_gd_links" data-index="7">
+										<img src="../../images/pcweb/temp/_temp_64x64.gif" alt="" />
+										<span class="wm_gd_info">
+											<strong>88888(2015년신상) 캐시 아크릴 라운드 풀오버</strong>
+											34,132,000원
+										</span>
+									</a>
+									<a href="#delete" class="wm_btn_del">상품 삭제</a>
+								</li>
+							</ul>
+							<div class="nodata">
+								최근<br />본 상품이<br />없습니다.
+							</div>
+						</div>
+						<div class="wm_btns">
+							<a href="#" class="wm_bt_next d_wm_next" tabindex="-1">이전목록</a>
+							<a href="#" class="wm_bt_prev d_wm_prev" tabindex="-1">다음목록</a>
+						</div>
+					</div>
+					<script>
+						function wbGoods(){
+							var $target = $(".wm_goods_wrap");
+							if ( commonUI.isTarget( $target ) ) return ;
+
+							var $wrapper, $links, $btns, $lastOnItems, $itemWrap ,$tabItems;
+							var _lastIDX = 0;
+							var _IDX = 0;
+							var _pageIDX = 0;
+							function wbInit(){
+								$wrapper = $target.find(".wm_goods");
+								$liItems = $target.find("li");
+								$links = $target.find(".wm_gd_links");
+								$itemWrap = $target.find(".d_wg_slider");
+								$btns = {
+									prev : $target.find(".d_wm_prev")
+									,next :  $target.find(".d_wm_next")
+									,del :  $target.find(".wm_btn_del")
+								}
+
+								if ( setInit() ) {
+									function _bodyClickFn(e){ // body click func
+										if (!$wrapper.is(e.target) && $wrapper.has(e.target).length < 1){
+											$wrapper.removeClass("active");
+											$liItems.removeClass("on");
+											commonUI.bodyClickOffFunc( "d_wbGoods" );
+
+											e.preventDefault();
+										}
+									}
+
+									commonUI.bodyClickFunc( "d_wbGoods" , _bodyClickFn );
+
+									wbEventHanlder();
+								};
+							}
+
+							function wbEventHanlder(){
+								$wrapper.on("mouseenter", ".wm_gd_links" , function(e) {
+									var $this = $(this);
+
+									$(this).parent().addClass("on");
+								})
+
+								$wrapper.on("mouseleave", "li" , function(e) {
+									var $this = $(this);
+									$wrapper.removeClass("active");
+									$this.removeClass("on");
+								})
+
+								$wrapper.on("focusin mouseenter" , "li" , function(e) {
+									var $this = $(this);
+
+									_lastIDX = $wrapper.find("li.on .wm_gd_links").attr("data-index");
+									_IDX = $this.index();
+
+									wbEngine();
+									commonUI.bodyClickOnFunc( "d_wbGoods" );
+								})
+
+								$btns.del.on("click" , function(e) {
+									e.preventDefault();
+									wbDelete();
+								})
+
+								$btns.prev.on("click" , function(e) {
+									e.preventDefault();
+									wbPrev();
+								})
+
+								$btns.next.on("click" , function(e) {
+									e.preventDefault();
+									wbNext();
+								})
+
+								$tabItems = $wrapper.find("li .wm_gd_links");
+
+								$tabItems.on("focus" , function(e) {
+									e.preventDefault();
+									var _vi = Math.floor($(this).attr("data-index")/3);
+									_pageIDX = _vi;
+									wbAni();
+								})
+							}
+
+							function _tabEvent(){
+								var _$tabItems  = $wrapper.find("li:not(.off)");
+
+								_$tabItems.each(function(idx){
+									$(this).find(".wm_gd_links").attr("data-index",idx);
+								})
+							}
+
+							function wbDelete(){
+								var $this = $liItems.eq(_IDX);
+								$(".wm_goods_wrap").focus();
+								$this.addClass("off");
+								setInit();
+								wbDeleteChk();
+								_tabEvent();
+							}
+
+							function wbDeleteChk(){
+								var chksItemLength = $wrapper.find("li:visible").length;
+								if ( (_pageIDX*3) >= chksItemLength ){
+									wbPrev();
+								}
+							}
+
+							function setInit(){
+								var chksItemLength = $wrapper.find("li:visible").length;
+
+								if ( chksItemLength < 1  ) {
+									$wrapper.removeClass("active").off("mouseenter");
+									$itemWrap.hide();
+									$(".nodata").addClass("on");
+									$wrapper.height(70);
+
+									return false;
+								}else if ( chksItemLength < 4 ) {
+									$wrapper.height(chksItemLength*70);
+
+									$(".wm_btns").remove();
+									return true;
+								}
+
+								return true;
+							}
+
+							function wbPrev(){
+								var chksItemLength = parseInt($wrapper.find("li:visible").length/3);
+								_pageIDX = ( _pageIDX > 0 )? _pageIDX -1: chksItemLength ;
+
+								wbAni();
+							}
+
+							function wbNext(){
+								var chksItemLength = parseInt($wrapper.find("li:visible").length/3);
+								_pageIDX = ( _pageIDX < chksItemLength )? _pageIDX+1: 0 ;
+
+								wbAni();
+							}
+
+							function wbAni(){
+								var _css = { "top" : "-"+_pageIDX*207+"px" }
+								$itemWrap.css(_css);
+							}
+
+							function wbEngine(){
+								$wrapper.addClass("active");
+
+								$liItems.removeClass("on");
+								$liItems.eq(_IDX).addClass("on");
+
+								$lastOnItems = $liItems.eq(_IDX);
+							}
+
+							wbInit();
+						}
+						$(window).ready(function(){
+							wbGoods();
+						})
+					</script>
+					<span class="wm_top"><a href="#">TOP</a></span><!-- 160805 ie8에서 버튼이 보이지 않아 태그수정 -->
+<!-- 160309_추가 -->
+					<div class="btm_fixed_adds">
+						<a href="#"><img src="../../images/pcweb/temp/_temp_wm_l01.gif" alt="" /></a>
+					</div>
+<!-- //160309_추가 -->
+				</div>
+			</div>
+
+			<!-- content -->
+			<div id="content">
+
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+		<!-- footer -->
+		<div id="footer">
+			<!-- 푸터배너 -->
+			<div class="footer_bnr" style="background:#2b2c30">
+				<a href="#"><img src="../../images/pcweb/temp/_sample_1080x120.jpg" alt="SPEACIAL BRAND DAY 미리 준비하는 겨울 아이템" /></a>
+			</div>
+			<!-- //푸터배너 -->
+			<div class="foot_section">
+				<div class="foot_opt_area">
+					<ul class="foot_opt_list">
+						<li><a href="#" target="_blank" title="새창">이랜드 리테일 소개</a></li>
+						<li><a href="#" target="_blank" title="새창">이랜드 상품권 소개</a></li>
+						<li><a href="#" target="_blank" title="새창">개인정보취급방침</a></li>
+						<li><a href="#" target="_blank" title="새창">영상정보처리기기운영, 관리방침</a></li>
+						<li><a href="#" target="_blank" title="새창">약관안내</a></li>
+						<li><a href="#" target="_blank" title="새창">윤리경영</a></li>
+						<li><a href="#" target="_blank" title="새창">전자세금 계산서</a></li>
+<!-- 160219 -->
+						<li><a href="#" target="_blank" title="새창">단체구매 상담</a></li>
+<!-- //160219 -->
+					</ul>
+				</div>
+				<div class="cont">
+<!-- 160414_수정 -->
+					<div class="logo_footer">
+						<a href="#"><img src="../../images/pcweb/common/logo_footer_md.gif" alt="이랜드 쇼핑포털 ELAND MALL"></a>
+						<div class="logo_footer_qrcode"><img src="../../images/pcweb/common/logo_footer_qrcode_md.gif" alt="모던하우스 모바일 QR CODE"></div>
+					</div>
+<!-- //160414_수정 -->					
+					<div class="foot_context">
+						<ul class="foot_view">
+							<li>상호명 : 주식회사 이랜드 리테일</li>
+							<li>대표이사 : 이광일/김연배</li>
+							<li>서울특별시 서초구 잠원동 7c0번지 2호</li>
+							<li>사업자등록번호 : 114-81-01855</li>
+							<li>통신판매업 신고번호 : 서초 제 09998호 <button type="button" class="btn07 c01 ico_arrow04"><span>사업자 정보확인</span></button></li>
+							<li>모던하우스 상표등록번호 : 0013946호</li>
+							<li>개인정보보호정책 : 대표이사 김연배</li>
+							<li>EMAIL : <a href="mailto:;">webmaster@2001outlet.com</a></li>
+						</ul>
+<!-- 160226_삭제 -->
+						<!--p>
+							<button type="button" class="btn07 c01 ico_arrow04"><span>이메일 주소 무단수집 거부</span></button>
+						</p-->
+<!-- //160226_삭제 -->
+						<div class="foot_sns">
+							<ul>
+								<li><a href="#" title="새창"><img src="../../images/pcweb/common/btn_facebook_md.gif" alt="모던하우스 facebook" /></a></li>
+								<li><a href="#" title="새창"><img src="../../images/pcweb/common/btn_n_blog_md.gif" alt="모던하우스 네이버블로그" /></a></li>
+							</ul>
+						</div>
+						<div class="copyright">Copyright@ELAND MALL all right reserved.</div>
+					</div>
+					<div class="foot_side_opt">
+<!-- 160408_수정 -->					
+						<div class="fm_links">
+							<a class="btn_fm_site" href="#"><span>FAMILY SITE</span></a>
+							<div class="list_fm_site">
+								<ul class="scroll">
+									<li><a href="#">이랜드 리테일</a></li>
+									<li><a href="#">모던하우스</a></li>
+									<li><a href="#">이랜드 그룹</a></li>
+									<li><a href="#">MIXXO</a></li>
+									<li><a href="#">SPAO</a></li>
+									<li><a href="#">패밀리 사이트 패밀리 사이트</a></li>
+								</ul>
+							</div>
+						</div>
+<!-- //160408_수정 -->	
+						<div class="foot_cs">
+							<strong class="foot_cs_tit">고객센터</strong>
+							<strong class="foot_csph">1899-9500</strong>
+							<span>상담시간 : 오전9시~오후6시(토요일, 공휴일은 쉽니다) </span>
+							<!-- <button type="button" class="foot_cs_btn type01"><span>단체구매 상담</span></button>
+							<button type="button" class="foot_cs_btn type02"><span>임직원 몰</span></button> -->
+							<!-- 이동 : 2018.03.07 <button type="button" class="foot_cs_btn type04"><span>앱다운로드</span></button> -->
+							<button type="button" class="auth_btn partner"><span>협력사 입직원 인증</span></button>
+							<button type="button" class="auth_btn"><span>임직원 회원가입 / 인증</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="foot_bot">
+					<p><strong>소비자피해보상보험</strong> 고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 구매 안전서비스를 이용하실 수 있습니다.</p>
+					<button type="button" class="btn07 c01 ico_arrow04"><span>서비스 가입사실 확인하기</span></button>
+					<ul class="foot_menus"> <!-- 2018.07.12 변경 : isms_info, norton 클래스 삽입 유의 -->
+						<li class="isms_info">
+							<a href="#" target="_blank" title="새창"><img src="../../images/pcweb/common/foot_menu04.png" alt="정보관리체계인증(ISMS) 마크">
+								<span>
+									인증범위 : 온라인 서비스 운영 (이랜드몰, 이랜드리테일)<br />유효기간 : 2017.11.27 ~ 2020.11.26
+								</span>
+							</a>
+						</li>
+						<li class="norton"><a href="#" target="_blank" title="새창"><img src="../../images/pcweb/common/foot_menu03.png" alt="Norton Secured"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

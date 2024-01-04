@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//옵션 수량
+    $(document).ready(function() {
+        $(".basket_prd .sel .opt").bind("click", function() {
+            $(this).toggleClass("on");
+            $(this).parent().parent().find(".opt_open").slideToggle(200);
+        });
+    });
+	//주소찾기
+	$(function(){
+		var tabAddr = $(".pop_addr .tab_addr > li");
+		var conAddr = $(".pop_addr .con_addr section");
+
+		tabAddr.bind("click", function(){
+			addrId = $(this).index();
+
+			tabAddr.removeClass("on");
+			tabAddr.eq(addrId).addClass("on");
+			conAddr.removeClass("on");
+			conAddr.eq(addrId).addClass("on");
+		});
+	});
+
+	//배송메세지 160307
+	$(function(){
+		$(".sel_box").change(function(){ 
+		    $(".sel_box option:selected").each(function(){
+			    msg = $(this).text();
+		        if(msg == "메시지 직접입력 (배송기사/매장 전달)"){
+		        	$(this).parent().parent().parent().find("select").hide();
+		        	$(this).parent().parent().parent().find(".msg_selected").hide();
+		        	$(this).parent().parent().append("<textarea cols='30' rows='2' class='w100'>배송 시 전달사항을 입력해주세요.</textarea>");
+		        }else{
+			        $(this).parent().parent().find(".msg_selected").show().find("span").text(msg);
+		        }
+		    });  
+		});
+	});
+
+	//조회기간 선택
+	$(function(){
+		$(".sch_order li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+
+	//진행상태 및 배송정보
+	$(function(){
+		$(".progress").bind("click", function(){
+			$(".mypage_box .basket_prd .sel .opt").removeClass("on");
+			$(".opt_open").slideUp();
+			$(this).find(".ico").toggleClass("on");
+			$(this).parent().parent().find(".prd_total03").slideToggle(200);
+		});
+		$(".mypage_box .basket_prd .sel .opt").bind("click", function(){
+			$(".progress .ico").removeClass("on");
+			$(".prd_total03").slideUp();
+		});
+	});
+
+	//총 결제금액
+	$(function(){
+		$(".my_pay .pay_all .btn_total a").bind("click", function(e){
+			e.preventDefault();
+			$(this).toggleClass("on");
+			$(this).parents().find(".pay_list").slideToggle(200);
+			if($(this).children("span").text() == '닫기'){
+				$(this).children("span").text('자세히');
+			} else {
+				$(this).children("span").text('닫기');
+			}
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>상세주문내역</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>		
+	<div class="my_con">
+		<div class="my_title">
+			<h3>주문 상품</h3>
+		</div>
+		<div class="mypage_content">
+			<div class="mypage_box">
+				<div class="tit_order">
+					<em>2016.12.01</em>
+					<span>(주문번호:M151116002268196)</span>
+				</div>
+
+				<!-- 1번 배송지 -->
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="top_deli"><em class="ico">1번</em> 배송지</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+						<div class="sel ord">
+							<div class="progress">
+								<em class="ico">입금확인중</em>
+								<span>(입금기한 2015-12-10)</span>
+							</div>
+							<div class="opt"><span>옵션 변경</span></div>
+						</div>
+						<!-- 옵션 변경 -->
+						<div class="opt_open">
+							<dl>
+								<dt>옵션명</dt>
+								<dd>
+									<select class="w100">
+										<option>옵션명</option>
+									</select>
+								</dd>
+							</dl>
+							<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+						</div>
+						<!-- //옵션 변경 -->
+						<!-- 진행현황 버튼 -->
+						<div class="prd_total03">
+							<ul class="btn">
+								<li><a href="#" class="gray">주문취소</a></li>
+								<li><a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;" class="dark">배송지 변경</a></li>
+							</ul>
+						</div>
+						<!-- 진행현황 버튼 -->
+					</div>
+				</div>
+				<!-- //1번 배송지 -->
+
+				<!-- 2번 배송지 -->
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="top_deli"><em class="ico">2번</em> 배송지</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+						<div class="sel ord">
+							<div class="progress">
+								<em class="ico">결제완료</em>
+							</div>
+							<div class="opt"><span>옵션 변경</span></div>
+						</div>
+						<!-- 옵션 변경 -->
+						<div class="opt_open">
+							<dl>
+								<dt>옵션명</dt>
+								<dd>
+									<select class="w100">
+										<option>옵션명</option>
+									</select>
+								</dd>
+							</dl>
+							<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+						</div>
+						<!-- //옵션 변경 -->
+						<!-- 진행현황 버튼 -->
+						<div class="prd_total03">
+							<ul class="btn">
+								<li><a href="#" class="gray">주문취소</a></li>
+								<li><a href="#" class="dark">배송지 변경</a></li>
+							</ul>
+						</div>
+						<!-- //진행현황 버튼 -->
+					</div>
+				</div>
+				<!-- //2번 배송지 -->
+			</div>
+		</div>
+
+		<div class="my_title">
+			<h3>배송 정보</h3>
+		</div>
+		<div class="mypage_delivery">
+			<!-- 배송지가 복수일 경우 -->
+			<div class="sbox_delivery">
+				<select>
+					<option>1번 배송지</option>
+					<option>2번 배송지</option>
+					<option>3번 배송지</option>
+				</select>
+			</div>
+			<!-- //배송지가 복수일 경우 -->
+			<div class="ord_box01">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">주문자명</div>
+							<div class="box_con">홍길동</div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con">
+								<div class="inp_txt"><input type="text" title="받으시는 분" value="홍길동"></div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">전화번호<br>(선택)</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>02</option>
+										</select>
+									</li>
+									<li><input type="text" title="전화번호 가운데자리" value="0000"></li>
+									<li><input type="text" title="전화번호 세번째자리" value="0000"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">휴대전화</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>010</option>
+										</select>
+									</li>
+									<li><input type="text" title="휴대전화 가운데자리" value="0000"></li>
+									<li><input type="text" title="휴대전화 세번째자리" value="0000"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">주소</div>
+							<div class="box_con">
+								<div class="addr">
+									<input type="text" class="w100" title="우편번호" value="08506">
+									<div class="absR">
+										<a href="#" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+									</div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="도로명주소" value="서울 금천구 가산디지털1로 151"></div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="주소 상세보기" value="신한이노플렉스 803호 (가산동)"></div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송메세지</div>
+							<div class="box_con">
+								<select class="sel_box w100">
+									<option>선택해 주세요</option>
+									<option>부재시 경비(관리)실에 맡겨주세요</option>
+									<option>빠른 배송 부탁드려요</option>
+									<option>부재시 문 앞에 놓아주세요</option>
+									<option>파손의 위험이 있는 상품이 있습니다.</option>
+									<option>배송전에 연락주세요</option>
+									<option>메시지 직접입력 (배송기사/매장 전달)</option>
+								</select>
+								<!-- 배송메세지 선택 -->
+								<div class="msg_selected">
+									<span>선택해 주세요</span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송비</div>
+							<div class="box_con"><strong>2500</strong> 원</div>
+						</li>
+					</ul>
+					<div class="btn_modify">
+						<div class="btn">
+							<a href="#" class="btn_brd03 c03">변경완료</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="my_title">
+			<h3>결제정보</h3>
+		</div>
+		<div class="my_pay">
+			<div class="pay_all">
+				<ul class="left">
+					<li>
+						<span class="txt">상품금액</span>
+						<span class="pri"><em>9,999,000</em>원</span>
+					</li>
+					<li>
+						<span class="txt">총 할인금액</span>
+						<span class="pri dis"><em>-2,500</em>원</span>
+					</li>
+					<li>
+						<span class="txt">총 배송비</span>
+						<span class="pri"><em>0</em>원</span>
+					</li>
+				</ul>
+				<div class="right">
+					<span class="txt">총 결제금액</span>
+					<span class="pri"><em>999,999</em>원</span>
+					<div class="btn_total">
+						<a href="#" class="btn_close"><span class="ico">자세히</span></a>
+					</div>
+				</div>
+			</div>
+			<dl class="pay_list">
+				<dt>상품 할인쿠폰</dt>
+				<dd><span class="pit">-1,075원</span></dd>
+				<dt>장바구니 할인쿠폰</dt>
+				<dd><span class="pit">-1,000원</span></dd>
+				<dt>카드 할인</dt>
+				<dd><span class="pit">-1,075원</span></dd>
+				<dt>포인트</dt>
+				<dd><span class="pit">-150원</span></dd>
+				<dt>배송비 쿠폰</dt>
+				<dd><span class="pit">-0원</span></dd>
+				<dt>예치금</dt>
+				<dd><span class="pit">-67,175원</span></dd>
+				<dt>복지 포인트</dt>
+				<dd><span class="pit">-67,175P</span></dd>
+				<dt>직원 자기계발 포인트</dt>
+				<dd><span class="pit">0P</span></dd>
+			</dl>
+			<!-- 무통장 입금 결제 : 결제예정 -->
+			<dl class="pay_tool">
+				<dt>무통장 입금</dt>
+				<dd>
+					<em>999,999원</em><br>
+					<span>우리은행[11604807018069]</span><br>
+					<span>예금주 : 이랜드몰닷컴(~2015.11.20까지</span>
+				</dd>
+			</dl>
+			<!-- //무통장 입금 결제 : 결제예정 -->
+			<!-- 무통장 입금 결제 : 결제완료 -->
+			<dl class="pay_tool">
+				<dt>무통장 입금</dt>
+				<dd>
+					<em>999,999원</em><br>
+					<span>우리은행[11604807018069]</span><br>
+				</dd>
+			</dl>
+			<!-- //무통장 입금 결제 : 결제완료 -->
+			<!-- 실시간 계좌이체 -->
+			<dl class="pay_tool">
+				<dt>실시간 계좌이체</dt>
+				<dd><em>999,999원</em></dd>
+			</dl>
+			<!-- //실시간 계좌이체 -->
+			<!-- 신용카드 -->
+			<dl class="pay_tool">
+				<dt>신용카드</dt>
+				<dd><span>BC 카드 일시불</span><em>999,999원</em></dd>
+			</dl>
+			<!-- //신용카드 -->
+			<!-- 할인 혜택 -->
+			<dl class="pay_tool">
+				<dt>결제금액</dt>
+				<dd><em>0원</em></dd>
+			</dl>
+			<!-- //할인 혜택 -->
+			<!-- 복수결제 -->
+			<dl class="pay_tool">
+				<dt>신용카드</dt>
+				<dd><span>BC 카드 일시불</span><em>999,999원</em></dd>
+				<dt>실시간 계좌이체</dt>
+				<dd><em>999,999원</em></dd>
+			</dl>
+			<!-- //복수결제 -->
+			<!-- 전체 즉시 취소 -->
+			<dl class="pay_tool">
+				<dt>신용카드</dt>
+				<dd><span>BC 카드 일시불 취소</span><em>0원</em></dd>
+			</dl>
+			<!-- //전체 즉시 취소 -->
+		</div>
+
+		<!-- 환불 방법 선택 20170113 추가 -->
+		<div class="pay_title mt20">
+			<h4 class="tit">환불방법 선택</h4>
+			<p class="txt">입력계좌로 환불 받기 원하실 경우, 빠르고 편리한 환불서비스를 위해 정확한 계좌정보를 입력해 주세요.</p>
+		</div>
+		<ul class="rdo_refund">
+			<li>
+				<input type="radio" name="rdo_ship2" id="rdo_ship2_1">
+				<label for="rdo_ship2_1">입력계좌로 환불 받기</label>
+			</li>
+			<li>
+				<input type="radio" name="rdo_ship2" id="rdo_ship2_2" checked="">
+				<label for="rdo_ship2_2">예치금으로 환불 받기</label>
+			</li>
+		</ul>
+		<!-- 저장된 환불계좌 있음 -->
+		<div class="refund_account">
+			<div class="txt">
+				<p>우리은행<br><em>1002941000000 (한동기)</em> 으로 입금</p>
+			</div>
+			<div class="btn_payment">
+				<a href="#" class="btn_brd02 c01">새로입력</a>
+			</div>
+		</div>
+		<!-- //저장된 환불계좌 있음 -->
+		<!-- 저장된 환불계좌 없음 -->
+		<div class="ord_box01 refund">
+			<div class="tab_con">
+				<ul>
+					<li>
+						<div class="box_tit">예금주</div>
+						<div class="box_con">
+							<div class="inp_txt"><input type="text" title="예금주" value="홍길동"></div>
+						</div>
+					</li>
+					<li>
+						<div class="box_tit">은행</div>
+						<div class="box_con">
+							<select class="w100">
+								<option>우리은행</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<div class="box_tit">계좌번호</div>
+						<div class="box_con">
+							<div class="inp_txt"><input type="text" title="계좌번호" value="1002599769210"></div>
+							<p class="txt_refund">"-" 없이 숫자만 입력해 주세요</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="chk_refund">
+			<input type="checkbox" id="chk_refund_save" checked="">
+			<label for="chk_refund_save">환불계좌정보 저장하기</label>
+		</div>
+		<!-- //저장된 환불계좌 없음 -->
+
+		<div class="btn_return2">
+			<ul class="btn_list02">
+				<li><a href="#" class="btn_brd03 c04">목록으로</a></li>
+				<li><a href="#" class="btn_bg06 c01"><strong>신청</strong></a></li>
+			</ul>
+		</div>
+		<div class="my_noti">
+			<ul>
+				<li>주문취소는 “상품준비중" 및 이전 단계에서만 가능합니다.</li>
+				<li>주문 취소 시에는 상품구입시 제공되는 모든 사은품(상품 구입시 제공되는 사은품, 구매금액별 제공되는 사은품)의 주문도 자동으로 취소됩니다. </li>
+				<li>단, 주문상품 중 일부만 취소하실 경우 취소하지 않은 상품의 사은품만 제공됩니다. (구매금액별 사은품은 제공되지 않을 수 있습니다.)</li>
+				<li>부분 취소를 지원하지 않는 카드 사용시 고객센터로 연락 주세요. (1899-9500)</li>
+			</ul>
+		</div>
+		<!-- 환불 방법 선택 20170113 추가 -->
+
+		<!-- 즉시 취소가 가능한 상품 -->
+		<div class="my_dcancel">
+			<div class="box">
+				<p class="top">현재 <em>주문 전체 즉시 취소가 가능</em>합니다. <br>취소하시겠습니까?</p>
+				<p class="txt">주문 전체 즉시 취소는 주문 후 전체 주문상품이<br>상품 준비중 단계 혹은 이전 단계일 경우 전체 주문에 <br>대해 즉시취소가 가능합니다. </p>
+				<div class="btn">
+					<a href="#">주문 전체 즉시 취소</a>
+				</div>
+			</div>
+		</div>
+		<!-- //즉시 취소가 가능한 상품 -->
+
+		<!-- 20170113 삭제
+		<div class="my_noti">
+			<p class="stxt">* 증빙서류 발급은 PC 웹 화면을 이용해 주시기 바랍니다.</p>
+			<div class="btn_list">
+				<a href="#">목록으로</a>
+			</div>
+		</div> -->
+		<!-- //주문배송 안내문구 -->
+
+	</div>
+
+</div>
+<!-- //CONTENT -->
+
+<!-- layer_popup : 배송지 변경 -->
+<div id="addrModify" class="layer_fix ship">
+	<h3 class="pop_tit">배송지 변경</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="ord_box04">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_tit">배송지명</div>
+							<div class="box_con">
+								<div class="addr2">
+									<input type="text" class="w100" title="배송지명">
+									<div class="absR">
+										<a href="#" onclick="fn_layer_open('addrList');return false;" onkeypress="this.onclick;" class="btn_brd02 c01 list">배송지목록</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">받으시는 분</div>
+							<div class="box_con"><input type="text" class="w100" title="받으시는 분"></div>
+						</li>
+						<li>
+							<div class="box_tit">전화번호<br>(선택)</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>02</option>
+										</select>
+									</li>
+									<li><input type="text" title="전화번호 가운데자리"></li>
+									<li><input type="text" title="전화번호 세번째자리"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">휴대전화</div>
+							<div class="box_con">
+								<ul class="inp_tel01">
+									<li>
+										<select>
+											<option>010</option>
+										</select>
+									</li>
+									<li><input type="text" title="휴대전화 가운데자리"></li>
+									<li><input type="text" title="휴대전화 세번째자리"></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit vtop">주소</div>
+							<div class="box_con">
+								<div class="addr">
+									<input type="text" class="w100" title="우편번호" readonly="">
+									<div class="absR">
+										<a href="#" onclick="fn_layer_open('addrFind');return false;" onkeypress="this.onclick;" class="btn_brd02 c01">주소찾기</a>
+									</div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="도로명주소" readonly=""></div>
+								</div>
+								<div class="addr_etc">
+									<div class="inp_txt"><input type="text" title="주소 상세보기" value="상세주소"></div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box_tit">배송메세지</div>
+							<div class="box_con">
+								<select class="sel_box w100">
+									<option>선택해 주세요</option>
+									<option>부재시 경비(관리)실에 맡겨주세요</option>
+									<option>빠른 배송 부탁드려요</option>
+									<option>부재시 문 앞에 놓아주세요</option>
+									<option>파손의 위험이 있는 상품이 있습니다.</option>
+									<option>배송전에 연락주세요</option>
+									<option>메시지 직접입력 (배송기사/매장 전달)</option>
+								</select>
+								<!-- 배송메세지 선택 -->
+								<div class="msg_selected">
+									<span>선택해 주세요</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="chk_basic">
+				<input type="checkbox" id="chk_bas">
+				<label for="chk_bas">기본배송지</label>
+			</div>				
+			<div class="default_del">
+				<a href="#">변경</a>
+			</div>	
+
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 배송지 변경 -->
+
+<!-- layer_popup : 나의배송지목록 -->
+<div id="addrList" class="layer_fix ship">
+	<h3 class="pop_tit">나의배송지목록</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="ship_addr">
+				<!--
+				<div class="my_nolist">
+					<div class="txt">등록된 배송지가 <strong>없습니다.</strong><br>배송지 등록 버튼을 통해<br>새로운 배송지를 입력해 주세요.</div>
+				</div>
+				-->
+				<div class="addr_box">
+					<div class="tit">우리집 / 홍길동 <span>기본 배송지</span></div>
+					<span class="info">
+						02-3000-0000 | 010-0000-0000<br>
+						[08506] 서울 금천구 가산디지털1로 151,신한이노플렉스 903호 (가산동)
+					</span>
+					<span class="msg"><em>배송메세지 : </em>경비실에 맡겨 주세요</span>
+				</div>
+				<div class="addr_box">
+					<div class="tit">
+						<input type="checkbox" id="chk_add1">
+						<label for="chk_add1">서울집 / 홍길동</label>
+					</div>
+					<span class="info">
+						02-3000-0000 | 010-0000-0000<br>
+						[08506] 서울 금천구 가산디지털1로 151,신한이노플렉스 903호 (가산동)
+					</span>
+					<span class="msg"><em>배송메세지 : </em>경비실에 맡겨 주세요</span>
+				</div>
+				<div class="addr_box">
+					<div class="tit">
+						<input type="checkbox" id="chk_add2">
+						<label for="chk_add2">엄마네집 / 홍길동</label>
+					</div>
+					<span class="info">
+						02-3000-0000 | 010-0000-0000<br>
+						[08506] 서울 금천구 가산디지털1로 151,신한이노플렉스 903호 (가산동)
+					</span>
+				</div>
+				<div class="default_del">
+					<a href="#">주소사용</a>
+				</div>
+			</div>			
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 나의배송지목록 -->
+
+<!-- layer_popup : 주소찾기 -->
+<div id="addrFind" class="layer_fix">
+</div>
+<!-- //layer_popup : 주소찾기 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

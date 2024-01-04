@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>KIMS CLUB</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean&family=Roboto:wght@400;700&display=swap">
+  <!--파비콘 <link rel="shortcut icon" type="image/x-icon" href="../ico.ico" /> -->
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/kms_pcweb/odr.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/kms_pcweb/main.css" />
+  <script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/jquery.elevatezoom.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/kms_ui.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+</head>
+<body>
+
+<!-- wrapper -->
+<div id="wrapper" class="kims">  
+  
+  <!-- HEADER -->
+  <script src="../common/incHeader.js"></script>
+  <script type="text/javascript">
+    //gnb
+    $(document).ready(function(){
+      cateSwiper('gnbScroll',9,1)
+    })
+    //gnbAllCate
+    $('.catg_lyr .lnb_cate_main ul li').on('focusin mouseover', function(){
+      $(this).addClass('on').siblings('li').removeClass('on');
+    })
+    .on('mouseleave', function() {
+      $(this).removeClass('on');
+    });   
+    //topBn
+    $(document).ready (function(){
+      $(".btn_hdtb_close").on("click",function(){
+        $(".header_top_banner").removeClass("on");
+        $(".btn_hdtb_open").focus();
+      });
+      $(".btn_hdtb_open").on("click",function(){
+        $(".header_top_banner").addClass("on");
+        $(".btn_hdtb_img").focus();
+      });
+    });
+  </script> 
+  <!-- //HEADER -->
+
+	<!-- container -->
+	<div id="container">	
+		<!-- content -->
+		<div id="content" class="content">
+
+			<!-- 현재 주문스탭 -->
+			<div class="steparea step_01_on">
+				<strong class="steparea_title">장바구니</strong>
+				<ul>
+					<li class="step_01"><strong class="ir">현재 페이지</strong><span>01</span>장바구니</li>
+					<li class="step_02"><span>02</span>주문/결제</li>
+					<li class="step_03"><span>03</span>주문완료</li>
+				</ul>
+			</div>
+			<!-- //현재 주문스탭 -->
+
+			<!-- 장바구니 탭메뉴 -->
+			<div class="cart_tab">
+				<div class="tab_type02 full_size06">
+					<ul class="d_tab" id="tGoods">
+						<li class="on"><a href="#tGoods">일반배송 (11)</a></li>
+						<li><a href="#qckDlv">오늘직송 (3)</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //장바구니 탭메뉴 -->
+			
+			<!-- 장바구니 - 상품없음 -->
+			<div class="no_data cart">
+				<div class="no_data_txt">
+					장바구니에 담긴 상품이 없습니다.
+				</div>
+			</div>
+			<!-- //
+			<div class="set_btn mt20">
+				<div class="r_cont">
+					<button type="button" class="btn06 c01"><span>계속 쇼핑하기</span></button>
+				</div>
+			</div>
+			장바구니 - 상품없음 -->
+
+		</div>
+		<!-- content -->
+		<!-- layer popup -->
+		<div class="layer_pop_section">
+		</div>
+		<!-- //layer popup -->
+
+	</div>
+	<!--- //container -->
+
+	<!-- FOOTER -->
+	<script src="../common/incFooter.js"></script>
+	<!-- //FOOTER -->
+
+</div>
+<!-- //wrapper -->
+
+</body>
+</html>

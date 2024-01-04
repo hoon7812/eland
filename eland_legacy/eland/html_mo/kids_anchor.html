@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>kidikidi</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_kids.css" type="text/css"> <!-- kids add css -->
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<!-- <style>
+	.bAnchor_headerPic img{width:100%;}
+	.bAnchor_headerDesc{font-size: 3vw; text-align: center; color:#666; margin:3% 0 5%;}
+	.bAnchor_brand{position: absolute; display: inline-block; background: #000; color:#fff; padding: 1.2vw 5.6vw; left:0.3%; bottom:9.2%; border-bottom-left-radius:3vw; border-top-right-radius:3vw; font-size: 3.2vw; max-width:80%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; box-sizing: border-box;}
+	.bAnchor_list li{position: relative;}
+	.bAnchor_wrap.brand_anchor_wrap .bAnchor_list{margin-top:6.6vw}
+</style> -->
+</head>
+<body class="renewal renewal2_brand kids">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- <div class="header_bn" id="header_bn" style="background-color: rgb(34, 34, 34);">
+	<a href="javascript:;"><img src="../images/mobile/temp/bn_head_100.jpg" alt="이벤트배너" style="height: 59px;"></a>
+	<a href="javascript:;" class="cls"><img src="../images/mobile/common/btn_bn_close.png" alt="닫기"></a>
+</div> -->
+
+<!-- HEADER -->
+<header class="header" id="header">
+	<div class="head">
+		<div class="ctg"><button type="button" id="left_open" class="left_open" ><b class="ir">카테고리 전체메뉴 열기</b></button></div><!-- [v2] : onClick="left_lnb_open()" 제거 -->
+		<h1><a href="http://www.google.com"><b class="ir">E-LAND MALL 메인</b></a></h1>
+		<div class="hnb sch_bcd"> <!-- 앱 에서만 sch_bcd 사용 -->
+			<ul>
+				<!-- NGCPO-5005 (모바일) 추천 검색어 있을 경우, 랜딩 페이지 변경 요청 -->
+				<li class="sch">
+					<button type="button" class="txt_btn"><b>검색어 입력검색어 입력검색어 입력검색어 입력</b></button> <!-- 1st ~ 2st : 예비용 class 추가 -->
+					<button type="button" class="sch_btn"><em class="ir">검색결과로 이동</em></button>
+				</li>
+				<li class="cart"><a href="javascript:;"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="javascript:;"><b class="ir">마이페이지 이동</b></a></li>
+				<li class="bcd"><a href="javascript:;"><b class="ir">바코드로 이동</b></a></li>
+			</ul>
+		</div>
+	</div>
+</header>	
+<!-- //HEADER -->
+
+<!-- LEFT MENU -->
+<div id="lnb" class="lnb_wrap">
+	<div class="lnb">
+		<div class="lnb_hd">
+			<div class="hd">
+				<a class="home" href="Md_Main.html"><b class="ir">메인 바로가기</b></a>
+				<!-- <a class="login" href="#">로그인</a> --> 
+				<a class="logout" href="#">로그아웃</a>
+			</div>
+		</div>
+		
+		<!-- LEFT CATG. -->
+		<div class="lnb_mn ctg_btn"><a href="javascript:;" class="on"><b class="ir">카테고리 열기</b></a></div>
+		<div class="lnb_cont">
+			<div class="lnb_log"><b>홍길동 님</b>
+				<em class="m0000005">Family</em>
+				<!--
+				<em class="m0000004">Bronze</em>
+				<em class="m0000003">Silver</em>
+				<em class="m0000002">Gold</em>
+				<em class="m0000001">Platinum</em>
+				-->
+			</div>
+			<div class="lnb_tnb">
+				<ul>
+					<li class="myp"><a href="javascript:;"><b>마이페이지</b></a></li>
+					<li class="drv"><a href="javascript:;"><b>주문배송조회</b></a></li>
+					<li class="wish"><a href="javascript:;"><b>나의 찜목록</b></a></li>
+					<!-- <li class="cs"><a href="javascript:;"><b>고객센터</b></a></li> -->
+					<li class="cpn"><a href="javascript:;"><b>쿠폰 12장</b></a></li> 
+				</ul>
+			</div>
+
+			<div  id="lnb_ctg" class="lnb_ctg scroller">
+				<div  class="lnb_scroll">
+					<!-- MENU -->
+					<div  class="menu" id="menu" tabindex="0">
+						<dl>
+							<dt>카테고리</dt>
+							<dd>  
+								<ul>  
+									<li><a href="javascript:;" class="tit">가구<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">가구 이동</em></a>
+										<ul>
+											<li><a href="javascript:;">거실가구</a></li>
+											<li><a href="javascript:;">주방소품</a></li>
+											<li><a href="javascript:;">주방가구 </a></li>
+											<li><a href="javascript:;">보관용기</a></li>
+											<li><a href="javascript:;">책상/책장/의자</a></li>
+											<li><a href="javascript:;">주방수납/잡화</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:;" class="tit">주방용품<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">주방용품 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">주방식기<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">주방식기 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">데코<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">데코 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">욕실/생활<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">욕실/생활 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">침구/수예<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">침구/수예 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">커튼/매트<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">커튼/매트 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">수납/정리<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">수납/정리 이동</em></a></li>	
+									<li><a href="javascript:;" class="tit">키즈용품<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">키즈용품 이동</em></a></li>
+									<li><a href="javascript:;" class="tit">SALE<em class="ir">메뉴 열기</em></a><a href="javascript:;" class="go"><em class="ir">SALE 이동
+									</em></a></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+					<!-- //MENU -->
+										
+					<div class="lnb_gd">
+						<dl>
+							<dt>최근 본 상품</dt>
+							<dd>
+								<ul>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/img_154_01.jpg" width="154" height="154" alt="주방용품" /></a></li>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/img_154_02.jpg" width="154" height="154" alt="소파쿠션" /></a></li>
+									<li><a href="javascript:;"><img src="../images/mobile/temp/img_154_03.jpg" width="154" height="154" alt="폴햄패딩" /></a></li>
+								</ul>
+							</dd>
+							<dd class="more"><a href="javascript:;" title="최근 본 상품 더보기">MORE</a></dd>
+						</dl>
+					</div>
+			
+					<div class="lnb_cn">
+						<ul>
+							<li><a href="javascript:;" class="wi">WITH STAR</a></li>
+							<li><a href="javascript:;" class="bs">BEST</a></li>
+							<li><a href="javascript:;" class="sa">SALE</a></li>
+							<li><a href="javascript:;" class="fo">Follow</a></li>
+							<li><a href="javascript:;" class="sp">기획전</a></li>
+							<li><a href="javascript:;" class="ev">이벤트</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //LEFT CATG. -->
+		
+		<!-- LEFT MALL -->
+		<div class="lnb_mn mall_btn"><a href="javascript:;"><b class="ir">몰 열기</b></a></div>
+		<div class="lnb_cont">
+			<dl class="lnb_mall">
+				<dt>몰이동</dt>
+				<dd>
+					<div id="lnb_mlst" class="lnb_mlst scroller">
+						<ul>
+							<li class="selected"> <!-- 몰 선택시 .selected -->
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_00.jpg" alt="이랜드 통합몰">
+									<em>이랜드 통합몰</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_12.jpg" alt="모던하우스">
+									<em>모던하우스</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_04.jpg" alt="뉴발란스">
+									<em>뉴발란스</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_13.jpg" alt="뉴발란스 키즈">
+									<em>뉴발란스 키즈</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_14.jpg" alt="라템">
+									<em>라템</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_07.jpg" alt="로엠">
+									<em>로엠</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_08.jpg" alt="로이드">
+									<em>로이드</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_15.jpg" alt="루켄">
+									<em>루켄</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_16.jpg" alt="몰리">
+									<em>몰리</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_01.jpg" alt="미쏘">
+									<em>미쏘</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_17.jpg" alt="버터">
+									<em>버터</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_18.jpg" alt="슈펜">
+									<em>슈펜</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_11.jpg" alt="스파오">
+									<em>스파오</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_09.jpg" alt="에블린">
+									<em>에블린</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_19.jpg" alt="ENC">
+									<em>ENC</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_10.jpg" alt="킨더리그">
+									<em>킨더리그</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_02.jpg" alt="OST">
+									<em>OST</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_20.jpg" alt="클로비스">
+									<em>클로비스</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_05.jpg" alt="클루">
+									<em>클루</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_21.jpg" alt="태창">
+									<em>태창</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_22.jpg" alt="투미">
+									<em>투미</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_23.jpg" alt="티니위니">
+									<em>티니위니</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_03.jpg" alt="폴더">
+									<em>폴더</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_24.jpg" alt="헌트">
+									<em>헌트</em>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../images/mobile/common/m_lst_06.jpg" alt="후아유">
+									<em>후아유</em>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //LEFT MALL -->
+		<div class="lnb_cls"><button type="button" id="left_cls" class="left_cls"><b class="ir">카테고리 전체메뉴 닫기</b></button></div>
+	</div>
+</div>
+<div class="lnb_dim"></div>
+<!-- //LEFT MENU -->       
+<!-- CONTENT -->
+<div class="contents" id="contents"> 
+
+	<div class="main_top" id="main_top">
+		<div class="gnb_wrap">
+			<div class="eland"><a href="javascript:;">E LAND</a></div>
+			<div class="gnb" id="gnb">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><span>홈</span></li>
+					<li class="swiper-slide"><span>가치공구</span></li>
+					<li class="swiper-slide"><span>팝업샵</span></li>
+					<li class="swiper-slide on"><span>키디추천</span></li> <!-- 20200303 수정 -->
+					<li class="swiper-slide"><span>스타일뷰</span></li>
+					<li class="swiper-slide"><span>키디옷장</span></li>
+					<li class="swiper-slide"><span>라이프</span></li>
+					<li class="swiper-slide"><span>키디키디 이벤트</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide">
+
+				<!-- SWIPER 3 -->
+				<div class="slide_cont" data-index="3">
+
+					<!-- 데일리 키디 초이스 -->
+					<div class="area_lv1">
+						<div class="brand_anchor_wrap bAnchor_wrap ptb_vw">
+							<div class="kids_container">
+								<h3 class="kids_main_tit">데일리 키디 초이스</h3> <!-- 20200303 수정 -->
+								<p class="bAnchor_headerDesc">키디키디가 자신있게 추천하는 <br>따뜻한 스토리를 담은 브랜드를 만나보세요!</p>
+							</div>
+							<div class="kids_container_l">
+								<p class="bAnchor_headerPic"><img src="../images/mobile/temp/kids_bAnchor_sample01.jpg"></p>
+							</div>
+							<div class="kids_container">
+								<div class="brand_anchor_list bAnchor_list">
+									<ul>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_anchor.jpg" alt="">
+													<p class="bAnchor_brand">ZARA</p>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_anchor_02.jpg" alt="">
+													<p class="bAnchor_brand">캐리마켓</p>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_anchor_03.jpg" alt="">
+													<p class="bAnchor_brand">KARYMARKETKARYMARKETKARYMARKETKARYMARKET KARYMARKETKARYMARKETKARYMARKET</p>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_anchor_04.jpg" alt="">
+													<p class="bAnchor_brand">NUNUNU</p>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_anchor.jpg" alt="">
+													<p class="bAnchor_brand">FLUF</p>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_anchor_02.jpg" alt="">
+													<p class="bAnchor_brand">ZARA</p>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_anchor_03.jpg" alt="">
+													<p class="bAnchor_brand">ZARA</p>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_anchor_04.jpg" alt="">
+													<p class="bAnchor_brand">ZARA</p>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_anchor.jpg" alt="">
+													<p class="bAnchor_brand">ZARA</p>
+												</a>
+											</li>
+										</ul>
+								</div>
+							</div>
+							<div class="kids_container pt_vw">
+								<a href="#" class="kids_btn_wide">더보기</a>
+							</div>
+						</div>
+					</div>
+					<!-- //데일리 키디 초이스 -->
+
+				</div>
+				<!-- //SWIPER 3 -->	
+							
+            </li>
+		</ul>
+    </div>
+	<script type="text/javascript">
+		var GNB_SCROLL;
+		var LOADING_HTML = '<div class="loading"><span>로딩중</span></div>';
+		
+		$(document).ready(function() {
+			GNB_SCROLL = new Swiper('#gnb',{
+				createPagination: false,
+				freeMode: true,
+				freeModeFluid: true,
+				slidesPerView: 'auto',
+				roundLengths: true,
+				onSlideClick: function(){
+					$(".gnb li").removeClass("on");
+					$('#m_cts').find('.swiper-slide').eq(1).html(LOADING_HTML);			
+					GNB_SCROLL.swipeTo(GNB_SCROLL.clickedSlideIndex);
+					call_slide(GNB_SCROLL.clickedSlideIndex);
+				}
+			});
+
+			$(window).resize(function(){	
+				GNB_SCROLL.reInit();
+			});
+		});
+		
+		
+		// $(window).load(function() {	
+		// 	mainCate.prependSlide(LOADING_HTML, 'swiper-slide','li');					
+		// 	$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active').html(LOADING_HTML);			
+		// 	mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+		// 	mainCate.swipeTo(1, 0, true);
+		// 	call_slide(0); //2016-11-15 스피닝 메뉴 순서변경
+		// });
+		
+		// function change_slide(idx) {
+		// 	$('#m_cts').find('li:not(.swiper-slide-active)').remove();
+		// 	mainCate.prependSlide( LOADING_HTML, 'swiper-slide','li');
+		// 	mainCate.insertSlideAfter(1, LOADING_HTML, 'swiper-slide','li');
+		// 	$('#m_cts').find('.swiper-slide').removeClass('swiper-slide-active');
+		// 	$('#m_cts').find('.swiper-slide').eq(1).addClass('swiper-slide-active');			
+		// 	if(	$('#m_cts').find('.swiper-slide').eq(1).hasClass('swiper-slide-active')){
+		// 		$('#m_cts').find('.slide_cont').remove();
+		// 		window.scrollTo(0, 0);
+		// 		call_slide(idx);
+		// 	}
+		// }
+
+		// function call_slide(idx){ 
+		// 	$.ajax({
+		// 		type : 'get', // 퍼블리싱 확인용 . 개발측은 post
+		// 		isLocal: true,
+		// 		headers: { "cache-control": "no-cache" },
+		// 		url : 'spao_main_'+ idx +'.html',
+		// 		dataType : 'html',
+		// 		success: function(data){	
+		// 			setTimeout(function() { 
+		// 				$('#m_cts').find('.swiper-slide').eq(1).html(data);						
+		// 				mainCate.reInit();
+		// 				setSlideHeight();
+		// 			}, 100);
+		// 			$('.gnb li').removeClass('on');
+		// 			$('.gnb').find('li').eq(idx).addClass('on');	
+		// 			mainCate.swipeTo(1, 0, true);
+		// 		},
+		// 		error: function(){
+		// 			setTimeout(function() { call_slide(0) }, 100);
+		// 			GNB_SCROLL.swipeTo(idx, 200);
+		// 		}
+		// 	});
+		// }
+			
+		// var mainCate = new Swiper('#m_cts',{
+		// 	loop: false,
+		// 	simulateTouch : true,
+		// 	calculateHeight:true,
+		// 	onSlideNext : function() {
+		// 		var index = parseInt($('.gnb').find('li.on').index()) + 1;
+		// 		var max_gnb = $('.gnb li').length;
+		// 		if(index == max_gnb ){	
+		// 			var idx = 0;
+		// 			GNB_SCROLL.swipeTo(0, 200); 
+		// 		}else{
+		// 			var idx = index;
+		// 			var w_width = $(window).width();
+		// 			var	active_li = $('.gnb').find('li.on').next('li');
+		// 			var active_left = active_li.offset().left + active_li.outerWidth();
+		// 			if(active_left > w_width){
+		// 				GNB_SCROLL.swipeTo(idx, 200);
+		// 			}
+		// 		}
+		// 		change_slide(idx);
+		// 	},
+		// 	onSlidePrev : function() {
+		// 		var index = parseInt($('#m_cts' ).find('.slide_cont').attr('data-index'));
+		// 		if(index == 0 ){	
+		// 			var idx = $('.gnb li').length -1;
+		// 				GNB_SCROLL.swipeTo(idx, 200);
+		// 		}else{
+		// 			var idx = index - 1;
+		// 			var active_li = $('.gnb').find('li.on').prev('li');
+		// 			var active_left = active_li.offset().left;
+		// 			if(active_left <= 0){
+		// 				GNB_SCROLL.swipeTo(idx, 200);
+		// 			}	
+		// 		}	
+		// 		change_slide(idx);
+		// 	}
+		// });
+		
+		// $(window).resize(function(){
+		// 	mainCate.reInit();
+		// 	setSlideHeight();
+		// });
+	</script>
+
+</div>
+<!-- //CONTENT -->
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+	<!-- <div class="ft_bn" style="background-color:#5aa9ca">
+		<a href="javascript:;"><img src="../images/mobile/temp/spao_foot_100.jpg" width="640" height="100" alt="LIVE YOUR LIFE - 콜라보 X SEOLHYUN" /></a>
+	</div> -->
+	<div class="ft_menu">
+		<ul>
+			<li><a href="javascript:;">로그아웃</a></li>
+			<li><a href="javascript:;">마이페이지</a></li>
+			<li><a href="javascript:;">장바구니</a></li>
+			<li><a href="javascript:;">고객센터</a></li>
+		</ul>
+	</div>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드리테일</dt>
+		<dd>서울시 서초구 잠원동 70-2 대표이사 : 이광일/김연배</dd>
+		<dd>사업자등록번호 : 114-81-01855  <a href="javascript:;">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 서초 제 09998호</dd>
+		<dd>고객센터 : <a href="tel:1899-9500">1899-9500</a></dd>
+		<!-- 160927 바로방문 추가 -->
+		<dd>
+			<div class="ft_direct">
+				<!-- web에서는 off만 사용 <a href="javascript:;"><i class="on">APP방문ON</i></a> -->
+				<a href="javascript:;"><i class="off">APP방문OFF</i></a>
+			</div>
+		</dd>
+		<!-- //160927 바로방문 추가 -->
+	</dl>
+	<dl class="ft_info2">
+		<dt>(주) 이랜드월드</dt>
+		<dd>서울특별시 금천구 가산디지털1로 159  대표이사 : 김광래/최종양/김연배</dd>
+		<dd>사업자등록번호 : 113-85-19030  <a href="javascript:;">사업자정보확인</a></dd>
+		<dd>통신판매업 신고번호 : 금천구청 제 2005-01053호</dd>
+	</dl>	
+	<div class="ft_sns">
+		<ul>
+			<li><a href="javascript:;" class="fb"><em class="ir">페이스북</em></a></li>
+			<li><a href="javascript:;" class="bl"><em class="ir">블로그</em></a></li>
+			<li><a href="javascript:;" class="is"><em class="ir">인스타그램</em></a></li>
+		</ul>
+	</div>
+	<div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+	<div class="ft_app">
+		<ul>
+			<!-- <li><a href="javascript:;">PC 버전보기</a></li> -->
+			<li><a href="javascript:;">SPAO APP 다운로드</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- //FOOTER -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+<script>
+	$(window).resize(function(){
+		headerControl();
+	});
+</script>
+
+</body>
+</html>
+

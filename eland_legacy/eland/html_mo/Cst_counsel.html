@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+	//조회기간 선택
+	$(function(){
+		$(".sch_order li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+</script>
+
+
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>1:1 친절상담</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="myp"><a href="#"><b class="ir">마이페이지 이동</b></a></li>
+			</ul>
+		</div>
+	</div>		
+	<div class="cst_con">
+		<div class="counsel_box">
+			<div class="cs_eland">
+				<div class="cs_msg">
+					<p>안녕하세요. <span class="stxt">한동기 고객님</span><br>이랜드몰 고객센터 입니다.</p>
+				</div>
+				<div class="cs_msg">
+					<p>상담하실 유형과 상품을 선택해 주세요.</p>
+				</div>
+				<span class="cs_date">오후 3:10</span>
+			</div>
+			<!-- //cs_eland -->
+
+			<div class="cs_my">
+				<div class="cs_msg">
+					<div class="cs_type">
+						<div class="tit">상담 유형</div>
+						<ul>
+							<li>
+								<select class="w100">
+									<option>상담유형 선택</option>
+								</select>
+							</li>
+							<li>
+								<select class="w100">
+									<option>선택</option>
+								</select>
+							</li>
+						</ul>
+					</div>
+					<div class="cs_type">
+						<div class="tit mt20">상담 상품 선택</div>
+						<ul>
+							<li><a href="#" class="on" onclick="fn_layer_open('ly_schprod');return false;" onkeypress="this.onclick;">주문상품</a></li>
+							<li><a href="#" onclick="fn_layer_open('ly_cart');return false;" onkeypress="this.onclick;">장바구니</a></li>
+							<li><a href="#" onclick="fn_layer_open('ly_like');return false;" onkeypress="this.onclick;">찜 목록</a></li>
+							<li><a href="#" onclick="fn_layer_open('ly_code');return false;" onkeypress="this.onclick;">상품코드입력</a></li>
+							<li><a href="#">선택 안함</a></li>
+						</ul>
+					</div>
+				</div>
+				<span class="cs_date">오후 3:10</span>
+
+				<div class="cs_msg">
+					<div class="basket_prd">
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodopt">옵션명/1개</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="cs_msg">
+					<p>외 4개 상품을 선택하셨습니다.</p>
+				</div>
+				<span class="cs_date">오후 3:10</span>
+			</div>
+			<!-- //cs_my -->
+
+			<div class="cs_eland">
+				<div class="cs_msg">
+					<p>고객님의 정보를 확인해 주세요.</p>
+				</div>
+				<div class="cs_msg">
+					<div class="cs_list">
+						<div class="info">고객명 : <span class="stxt">한동기</span></div>
+						<div class="info">아이디 : <span class="stxt">dongki1234</span></div>
+						<div class="info">휴대전화
+							<ul class="inp_tel01">
+								<li>
+									<select>
+										<option>010</option>
+									</select>
+								</li>
+								<li><input type="text" title="휴대전화 가운데자리" value="0000"></li>
+								<li><input type="text" title="휴대전화 세번째자리" value="0000"></li>
+							</ul>
+						</div>
+						<div class="info">이메일 주소
+							<ul class="inp_mail">
+								<li><input type="text" class="w100" title="이메일"></li>
+								<li class="at"><span>@</span></li>
+								<li><input type="text" class="w100" title="이메일"></li>
+							</ul>
+							<div class="mail_sel">
+								<select class="w100">
+									<option>직접입력</option>
+								</select>
+							</div>
+						</div>
+						<div class="answer">
+							<span class="txt">답변 받기</span>
+							<ul class="btn">
+								<li><a href="#" class="on"><span>이메일 답변</span></a></li>
+								<li><a href="#"><span>문자 답변</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<span class="cs_date">오후 3:10</span> <!-- 160418 수정 -->
+			</div>
+			<!-- //cs_eland -->
+
+			<!-- cs_eland 160418 수정 -->
+			<div class="cs_eland">
+				<div class="cs_msg">
+					<p>상담 제목 및 내용을 입력해 주세요.</p>
+				</div>
+			</div>
+			<!-- //cs_eland 160418 수정 -->
+
+			<div class="cs_my">
+				<div class="cs_msg">
+					<div class="cs_upload">
+						<input type="text" title="제목" class="w100" placeholder="제목을 입력해주세요.">
+						<textarea title="내용" class="w100" placeholder="내용을 입력해주세요."></textarea>
+						<!-- 모바일 앱-사진첨부 영역 -->
+						<div class="app_append">
+							<!-- 160322 삭제
+							<label for="app_file" class="app_label">이미지 등록</label> 
+							<input type="file" title="이미지 등록" id="app_file"> -->
+							<!-- 160322 수정 -->
+							<button type="button" class="app_file">이미지 등록</button>
+							<!-- //160322 수정 -->
+							<ul>
+								<li>
+									<div class="img_box">
+										<img src="../images/mobile/temp/app_upload1.jpg" alt="등록 이미지">
+									</div>
+									<a href="#" class="del"><span class="ir">삭제</span></a>
+								</li>																													
+								<!-- 160323 삭제
+								<li>
+									<div class="img_box">
+										<img src="../images/mobile/temp/app_upload2.jpg" alt="등록 이미지">
+									</div>
+									<a href="#" class="del"><span class="ir">삭제</span></a>
+								</li>
+								<li>
+									<div class="img_box">
+										<img src="../images/mobile/temp/app_upload3.jpg" alt="등록 이미지">
+									</div>
+									<a href="#" class="del"><span class="ir">삭제</span></a>
+								</li> -->
+							</ul>
+							<!-- 160323 삭제 <span class="txt">*이미지 등록은 최대 3개까지 가능합니다.</span> -->
+						</div>
+						<!-- //모바일 앱-사진첨부 영역 -->
+						<span class="txt">* 첨부파일은 모바일 앱에서 등록해 주세요.</span>
+						<!-- D:150223 삭제 <div class="chk_box">
+							<input type="checkbox" id="chk_csagree" title="약관동의">
+							<label for="chk_csagree">약관에 동의합니다.</label>
+							<a href="#"><span>개인정보보호를 위한 이용자 동의사항</span></a>
+						</div> -->
+						<div class="btn"><a href="#" onclick="commonUI.lyrCnfmO(exchangeCnfm)" keypress="this.onclick">확인</a></div>
+						<!-- 20200108 개인정보수집동의항목추가 -->
+						<div class="privacy_chk_area">
+							<div class="left">
+								<label for="privacy_chk_m"></label>
+								<input type="checkbox" id="privacy_chk_m" title="개인정보수집동의">
+							</div>
+							<div class="right">
+								<p class="title">개인정보 수집동의</p>
+								<p class="des">① 항목:ID,이름,휴대폰,이메일,상담내용</p>
+								<p class="des">② 보관기간:수집 후 3년</p>
+								<p class="des">③ 목적:고객상담</p>
+								<p class="des">※ 미 동의시 1:1상담불가</p>									
+							</div>
+						</div>
+						<!-- //20200108 개인정보수집동의항목추가 -->
+					</div>
+				</div>
+				<span class="cs_date">오후 3:10</span>
+			</div>
+			<!-- //cs_my -->
+
+			<div class="cs_eland">
+				<div class="cs_msg">
+					<p>상담이 정상적으로 접수 되었습니다.<br>상담내역은 <span class="stxt">&lt;나의 문의/답변&gt;</span> 에서 <br>확인하실 수 있습니다.</p>
+					<div class="btn_cslist">
+						<a href="#">목록으로</a>
+					</div>
+				</div>
+				<span class="cs_date">오후 3:10</span>
+			</div>
+			<!-- //cs_eland -->
+		</div>
+	</div>
+	<!-- //cst_con -->
+
+</div>
+<!-- //CONTENT -->
+
+<!-- layer_popup : 주문상품 검색 -->
+<div id="ly_schprod" class="layer_fix popup_cs"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">주문상품 검색</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<div class="sch_order">
+				<ul>
+					<li><a href="#" class="on">1주일</a></li>
+					<li><a href="#">1개월</a></li>
+					<li><a href="#">3개월</a></li>
+					<li><a href="#">6개월</a></li>
+					<li><a href="#" class="set">기간설정</a></li>
+				</ul>
+				<div class="sch_period">
+					<div class="inp_box">
+						<input type="text" title="시작날짜" placeholder="예시)20160101">
+						<span class="dash">~</span>
+						<input type="text" title="종료날짜" placeholder="예시)20160101">
+					</div>
+					<div class="btn">
+						<a href="#">조회</a>
+					</div>
+					<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+				</div>
+			</div>
+
+			<!-- 검색결과 없음 -->
+			<div class="my_nolist">
+				<div class="txt">최근 1개월 내 주문내역이 <strong>없습니다.</strong><br><br>조회기간은 상단의 기간 선택을 통해<br>다시 조회하실 수 있습니다.</div>
+			</div>
+			<!-- 160405 삭제 <div class="btn_ship">
+				<ul class="btn_list02">
+					<li class="w100"><a href="#" class="btn_brd03 c01">닫기</a></li>
+				</ul>
+			</div> -->
+			<!-- //검색결과 없음 -->
+
+			<!-- 검색결과 리스트 -->
+			<div class="sch_result">
+				<span class="stxt">* 최대 5개 상품까지 선택 가능합니다.</span>
+			</div>
+
+			<div class="mypage_box">
+				<div class="tit_order">
+					<em>2016.12.01</em>
+					<span>(주문번호:M151116002268196)</span>
+				</div>
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="mypage_box">
+				<div class="tit_order">
+					<em>2016.12.01</em>
+					<span>(주문번호:M151116002268196)</span>
+				</div>
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="mypage_box">
+				<div class="tit_order">
+					<em>2016.12.01</em>
+					<span>(주문번호:M151116002268196)</span>
+				</div>
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="mypage_box">
+				<div class="tit_order">
+					<em>2016.12.01</em>
+					<span>(주문번호:M151116002268196)</span>
+				</div>
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">화이트 / 1개</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- 더보기 버튼 -->
+			<div class="btn_mymore">
+				<a href="#"><span class="ico">더보기 (20/27)</span></a>
+			</div>
+
+			<!-- 160405 삭제 <div class="btn_ship">
+				<ul class="btn_list02">
+					<li><a href="#" class="btn_brd03 c01">취소</a></li>
+					<li><a href="#" class="btn_bg06 c01"><strong>상품선택</strong></a></li>
+				</ul>
+			</div> -->
+			<!-- //검색결과 리스트 -->
+		</div>   
+	</div>
+	<!-- 160405 버튼위치 변경 -->
+	<div class="btn_ship">
+		<ul class="btn_list02">
+			<li class="w100"><a href="#" class="btn_brd03 c01">닫기</a></li>
+		</ul>
+	</div>
+	<div class="btn_ship">
+		<ul class="btn_list02">
+			<li><a href="#" class="btn_brd03 c01">취소</a></li>
+			<li><a href="#" class="btn_bg06 c01"><strong>상품선택</strong></a></li>
+		</ul>
+	</div>
+	<!-- //160405 버튼위치 변경 -->
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 주문상품 검색 -->
+
+<!-- layer_popup : 장바구니 상품 선택 -->
+<div id="ly_cart" class="layer_fix popup_cs"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">장바구니 상품 선택</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<!-- 장바구니 상품 없음 -->
+			<div class="my_nolist">
+				<div class="txt">장바구니에 담긴 상품이 <strong>없습니다.</strong></div>
+			</div>
+			<!-- 160405 삭제 <div class="btn_ship">
+				<ul class="btn_list02">
+					<li class="w100"><a href="#" class="btn_brd03 c01">닫기</a></li>
+				</ul>
+			</div> -->
+			<!-- //장바구니 상품 없음 -->
+
+			<!-- 검색결과 리스트 -->
+			<div class="sch_result cart">
+				<span class="stxt">* 최대 5개 상품까지 선택 가능합니다.</span>
+			</div>
+
+			<div class="mypage_box">
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">BK(89) / M / 1개</span>
+								<span class="prodopt">GY(34) / M / 1개</span>
+							</div>
+						</a>
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">BK(89) / M / 1개</span>
+								<span class="prodopt">GY(34) / M / 1개</span>
+							</div>
+						</a>
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">BK(89) / M / 1개</span>
+							</div>
+						</a>
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">BK(89) / M / 1개</span>
+							</div>
+						</a>
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">BK(89) / M / 1개</span>
+							</div>
+						</a>
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+								<span class="prodopt">BK(89) / M / 1개</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- 더보기 버튼 -->
+			<div class="btn_mymore">
+				<a href="#"><span class="ico">더보기 (20/27)</span></a>
+			</div>
+
+			<!-- 160405 삭제 <div class="btn_ship">
+				<ul class="btn_list02">
+					<li><a href="#" class="btn_brd03 c01">취소</a></li>
+					<li><a href="#" class="btn_bg06 c01"><strong>상품선택</strong></a></li>
+				</ul>
+			</div> -->
+			<!-- //검색결과 리스트 -->
+		</div>   
+	</div>
+	<!-- 160405 버튼위치 변경 -->
+	<div class="btn_ship">
+		<ul class="btn_list02">
+			<li class="w100"><a href="#" class="btn_brd03 c01">닫기</a></li>
+		</ul>
+	</div>
+	<div class="btn_ship">
+		<ul class="btn_list02">
+			<li><a href="#" class="btn_brd03 c01">취소</a></li>
+			<li><a href="#" class="btn_bg06 c01"><strong>상품선택</strong></a></li>
+		</ul>
+	</div>
+	<!-- //160405 버튼위치 변경 -->
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 장바구니 상품 선택 -->
+
+<!-- layer_popup : 찜한 상품 선택 -->
+<div id="ly_like" class="layer_fix popup_cs"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">찜한 상품 선택</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+			<!-- 찜한 상품 없음 -->
+			<div class="my_nolist">
+				<div class="txt">찜한 상품이 <strong>없습니다.</strong></div>
+			</div>
+			<!-- 160405 삭제 <div class="btn_ship">
+				<ul class="btn_list02">
+					<li class="w100"><a href="#" class="btn_brd03 c01">닫기</a></li>
+				</ul>
+			</div> -->
+			<!-- //찜한 상품 없음 -->
+
+			<!-- 검색결과 리스트 -->
+			<div class="sch_result cart">
+				<span class="stxt">* 최대 5개 상품까지 선택 가능합니다.</span>
+			</div>
+
+			<div class="mypage_box">
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+							</div>
+						</a>
+						<!-- 2016-12-20 -->
+						<label for="slt_prd_05" class="ir">상품선택</label>
+						<select id="slt_prd_05" class="prodslt">
+							<option>상품을 선택하세요</option>
+						</select>
+						<!--// 2016-12-20 -->
+					</div>
+
+					<!-- 품절 판매종료 상품 -->
+					<!-- <div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<div class="basket_txt">
+							<div class="pic">
+								<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+								<div class="ico_soldout"><span>판매종료</span></div>
+							</div>
+							<span class="prodtit">포트메리온</span>
+							<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+							<span class="prodprice">77,200<span class="won">원</span></span>
+							<span class="soldout">상품이 <em>판매종료</em> 되었습니다.</span>
+						</div>
+					</div> -->
+
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+							</div>
+						</a>
+						<!-- 2016-12-20 -->
+						<label for="slt_prd_06" class="ir">상품선택</label>
+						<select id="slt_prd_06" class="prodslt">
+							<option>상품을 선택하세요</option>
+						</select>
+						<!--// 2016-12-20 -->
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+							</div>
+						</a>
+						<!-- 2016-12-20 -->
+						<label for="slt_prd_07" class="ir">상품선택</label>
+						<select id="slt_prd_07" class="prodslt">
+							<option>상품을 선택하세요</option>
+						</select>
+						<!--// 2016-12-20 -->
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+							</div>
+						</a>
+						<!-- 2016-12-20 -->
+						<label for="slt_prd_08" class="ir">상품선택</label>
+						<select id="slt_prd_08" class="prodslt">
+							<option>상품을 선택하세요</option>
+						</select>
+						<!--// 2016-12-20 -->
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+							</div>
+						</a>
+						<!-- 2016-12-20 -->
+						<label for="slt_prd_09" class="ir">상품선택</label>
+						<select id="slt_prd_09" class="prodslt">
+							<option>상품을 선택하세요</option>
+						</select>
+						<!--// 2016-12-20 -->
+					</div>
+				</div>
+			</div>
+			<!-- 더보기 버튼 -->
+			<div class="btn_mymore">
+				<a href="#"><span class="ico">더보기 (20/27)</span></a>
+			</div>
+
+			<!-- 160405 삭제 <div class="btn_ship">
+				<ul class="btn_list02">
+					<li><a href="#" class="btn_brd03 c01">취소</a></li>
+					<li><a href="#" class="btn_bg06 c01"><strong>상품선택</strong></a></li>
+				</ul>
+			</div> -->
+			<!-- //검색결과 리스트 -->
+		</div>   
+	</div>
+	<!-- 160405 버튼위치 변경 -->
+	<div class="btn_ship">
+		<ul class="btn_list02">
+			<li class="w100"><a href="#" class="btn_brd03 c01">닫기</a></li>
+		</ul>
+	</div>
+	<div class="btn_ship">
+		<ul class="btn_list02">
+			<li><a href="#" class="btn_brd03 c01">취소</a></li>
+			<li><a href="#" class="btn_bg06 c01"><strong>상품선택</strong></a></li>
+		</ul>
+	</div>
+	<!-- //160405 버튼위치 변경 -->
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 찜한 상품 선택 -->
+
+<!-- layer_popup : 상품 코드 검색 -->
+<div id="ly_code" class="layer_fix popup_cs"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">상품 코드 검색</h3>
+	<div class="pop_con">
+		<div class="pop_txt">
+
+			<div class="sch_code">
+				<div class="codebox">
+					<input type="text" title="상품코드" class="w100" placeholder="상품코드를 입력해 주세요.">
+					<a href="#" class="btn_sch">검색</a>
+				</div>
+				<span class="txt">* 상품코드는 상품 상세페이지에서 확인 가능합니다. </span>
+			</div>
+
+			<!-- 검색결과 없음 -->
+			<div class="my_nolist">
+				<div class="txt">검색된 결과가 <strong>없습니다.</strong><br>다시 검색해 주시기 바랍니다.</div>
+			</div>
+			<!-- 160405 삭제 <div class="btn_ship">
+				<ul class="btn_list02">
+					<li class="w100"><a href="#" class="btn_brd03 c01">닫기</a></li>
+				</ul>
+			</div> -->
+			<!-- //검색결과 없음 -->
+
+			<!-- 검색결과 리스트 -->
+			<div class="mypage_box">
+				<div class="prd_group">
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+							</div>
+						</a>
+						<!-- 2016-12-20 -->
+						<label for="slt_prd_01" class="ir">상품선택</label>
+						<select id="slt_prd_01" class="prodslt">
+							<option>상품을 선택하세요</option>
+						</select>
+						<!--// 2016-12-20 -->
+					</div>
+					<div class="basket_prd">
+						<div class="cancel_chk">
+							<input type="checkbox" title="상품선택">
+						</div>
+						<a href="#">
+							<div class="basket_txt">
+								<div class="pic"><img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+								<span class="prodtit">포트메리온</span>
+								<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+								<span class="prodprice">77,200<span class="won">원</span></span>
+							</div>
+						</a>
+						<!-- 2016-12-20 -->
+						<label for="slt_prd_02" class="ir">상품선택</label>
+						<select id="slt_prd_02" class="prodslt">
+							<option>상품을 선택하세요</option>
+						</select>
+						<!--// 2016-12-20 -->
+					</div>
+				</div>
+			</div>
+
+			<!-- 160405 삭제 <div class="btn_ship">
+				<ul class="btn_list02">
+					<li><a href="#" class="btn_brd03 c01">취소</a></li>
+					<li><a href="#" class="btn_bg06 c01"><strong>상품선택</strong></a></li>
+				</ul>
+			</div> -->
+			<!-- //검색결과 리스트 -->
+		</div>   
+	</div>
+	<!-- 160405 버튼위치 변경 -->
+	<div class="btn_ship">
+		<ul class="btn_list02">
+			<li class="w100"><a href="#" class="btn_brd03 c01">닫기</a></li>
+		</ul>
+	</div>
+	<div class="btn_ship">
+		<ul class="btn_list02">
+			<li><a href="#" class="btn_brd03 c01">취소</a></li>
+			<li><a href="#" class="btn_bg06 c01"><strong>상품선택</strong></a></li>
+		</ul>
+	</div>
+	<!-- //160405 버튼위치 변경 -->
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 상품 코드 검색 -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

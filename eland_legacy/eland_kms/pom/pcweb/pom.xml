@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.eland.ngcp</groupId>
+	<artifactId>fo_webroot</artifactId>
+	<version>${ngcp-version}</version>
+	<packaging>pom</packaging>
+
+	
+	 <build>
+	 	<!-- Sass compiler -->
+        <plugins>
+        	<plugin>
+                <groupId>nl.geodienstencentrum.maven</groupId>
+                <artifactId>sass-maven-plugin</artifactId>
+                <version>3.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>update-stylesheets</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <resources>
+                        <!-- <resource>
+                            <source>
+                                <directory>${project.basedir}/sass/mobile</directory>
+                                <includes>                      
+               						 <include>*.scss</include>
+               						 </includes>
+                            </source>
+                            <destination>${project.basedir}/../../build/css/mobile</destination>
+                        </resource> -->
+                        <resource>
+                            <!-- Set source and destination dirs -->
+                            <source>
+                                <directory>${project.basedir}/sass/pcweb</directory>
+                                <includes>                      
+               						 <include>*.scss</include>
+               						 </includes>
+                            </source>
+                            <destination>${project.basedir}/../build/css/pcweb</destination>
+                        </resource>
+                    </resources>
+                    <sassOptions>
+				        <style>:compressed</style>						
+				    </sassOptions>
+                </configuration>
+            </plugin> 
+        	
+		    <!--js minify_pcweb -->
+			<plugin>
+				<groupId>com.samaxes.maven</groupId>
+				<artifactId>minify-maven-plugin</artifactId>                   
+	      		<version>1.7.6</version>
+	      		<executions>
+	        		<execution>
+		          		<id>common-js-minify</id>
+		          		<phase>process-resources</phase>
+		          		<goals>
+		            		<goal>minify</goal>
+		          		</goals>
+		          		<configuration>
+		            		<charset>utf-8</charset>                            
+		            		<skipMerge>true</skipMerge>
+		            		<nosuffix>true</nosuffix>
+		            		<jsEngine>CLOSURE</jsEngine>
+		            		<closureWarningLevels>
+    							<es5Strict>OFF</es5Strict>
+							</closureWarningLevels>
+		            		<webappSourceDir>${project.basedir}</webappSourceDir>
+		           			<jsSourceDir>/common/js/</jsSourceDir>
+		           			<jsTargetDir>../../../build/common/js/</jsTargetDir>
+		            		<jsSourceIncludes>
+		            			<jsSourceInclude>**/*.js</jsSourceInclude>
+		            		</jsSourceIncludes>                                                               		
+		          		</configuration>
+	        		</execution>
+	    		</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.samaxes.maven</groupId>
+				<artifactId>minify-maven-plugin</artifactId>                   
+	      		<version>1.7.6</version>
+	      		<executions>
+	        		<execution>
+		          		<id>pcweb-js-minify</id>
+		          		<phase>process-resources</phase>
+		          		<goals>
+		            		<goal>minify</goal>
+		          		</goals>
+		          		<configuration>
+		            		<charset>utf-8</charset>                            
+		            		<skipMerge>true</skipMerge>
+		            		<nosuffix>true</nosuffix>
+		            		<jsEngine>CLOSURE</jsEngine>
+		            		<closureWarningLevels>
+    							<es5Strict>OFF</es5Strict>
+							</closureWarningLevels>
+		            		<webappSourceDir>${project.basedir}</webappSourceDir>
+		           			<jsSourceDir>/pcweb/js/</jsSourceDir>
+		            		<jsTargetDir>../../../build/pcweb/js/</jsTargetDir>
+		            		<jsSourceIncludes>
+		            			<jsSourceInclude>*.js</jsSourceInclude>
+		            		</jsSourceIncludes>                                                                 		
+		          		</configuration>
+	        		</execution>
+	    		</executions>
+			</plugin>
+		    <!--js minify -->
+        </plugins>
+      </build>
+</project>

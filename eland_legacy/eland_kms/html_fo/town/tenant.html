@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/town.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+		<a href="#gnb" onClick="document.getElementById('gnb').tabIndex = -1;document.getElementById('gnb').focus();return false;">메뉴바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+	
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li class="lct_txt"><a href="#none"><span>이랜드 타운힐스 입주자 인증신청</span></a></li>
+					</ul>
+				</div>
+
+				<h2><img src="../../images/pcweb/town/title.png" alt="이랜드 타운힐스 입주자 인증신청  E-LAND TOWNHILLS" /></h2>
+
+				<div class="step first">
+					<h3><img src="../../images/pcweb/town/title_01.png" alt="STEP 01 - 분양계약서 업로드" /></h3>
+					<div class="upload_box">
+						<label for="img_up">분양 계약서 업로드</label>
+						<div class="form_box">
+							<input type="file" id="img_up" class="inp_file" />
+							<input type="text" class="inp_txt" readonly="readonly" />
+							<button type="button" class="find_img" onclick="$('.inp_file').click();">파일찾기</button>
+							<button type="button" class="img_clear" onclick="clearFile()">이미지 업로드 취소</button>
+							<span class="caution">*업로드 가능한 이미지 크기는 최대 10MB입니다.( JPG, JPEG, PNG, GIF, BMP, PDF )</span>
+						</div>
+						<script>
+							$('.inp_file').change(function(){
+								if(window.FileReader){	// modern browser
+									if($(this)[0].files[0]){
+										var filename = $(this)[0].files[0].name;
+										$('.img_clear').show();
+									}
+								}
+								else {	// old IE
+									var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+									$('.img_clear').show();
+								}
+
+								$('.inp_txt').val(filename); 	//대입
+							});
+
+							function clearFile(){	// input-file reset
+								$('.inp_file').replaceWith($('.inp_file').clone( true ) );	 // old IE
+								$('.inp_file').val('').change();
+								$('.img_clear').hide();
+							}
+						</script>
+					</div>
+				</div>
+				<div class="caution_box">
+					<h4><img src="../../images/pcweb/town/title_caution.png" alt="유의사항" /></h4>
+					<ul>
+						<li>- 계약 동, 호수와 계약자 정보가 명시된 분양계약서를 업로드 해 주세요. (계약서 샘플 참조)</li>
+						<li>- 업로드 된 계약서의 개인정보는 암호화 되어 안전하게 관리 됩니다.</li>
+						<li>- 계약자와 신청자가 상이할 경우, 입주자 인증이 추후 취소될 수 있습니다.</li>
+						<li>- 신청 후, 승인까지 최대 3일이 소요 됩니다.</li>
+						<li>- 공휴일은 입주자 인증이 불가합니다.</li>
+					</ul>
+					<img src="../../images/pcweb/town/sample.png" alt="계약서 샘플(이랜드 타운힐스 계약서와 무관)" class="sample_img" />
+				</div>
+				<div class="step">
+					<h3><img src="../../images/pcweb/town/title_02.png" alt="STEP 02 - 입주자 인증 신청하기" /></h3>
+					<button type="button" class="confirm">입주자 인증 신청</button>
+				</div>
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

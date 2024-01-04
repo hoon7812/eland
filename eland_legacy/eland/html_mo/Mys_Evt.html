@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+//조회기간 선택
+	$(function(){
+		$(".sch_order li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+//탭 관련	
+	function Set_tab(objId,objContId) {
+		this.init(objId,objContId);
+	}
+	Set_tab.prototype.init = function(objId,objContId) {
+		this.$set_tab_controller = $('#'+objId).find('li[class!="not_tab_item"]');
+		this.$set_tab_controller_btn = this.$set_tab_controller.find('a');
+		this.$set_tab_content = $('#'+objContId).find(' > div');
+		this.contEvtBlock = (objContId==undefined || this.$set_tab_content.html()==undefined || objContId=='') ? false : true;//탭컨텐츠 none/block 막기
+		this.$set_tab_content.hide();
+		this.$set_tab_content.eq(0).show();
+		this.initEvtL();
+	}
+	Set_tab.prototype.initEvtL = function() {
+		var objThis = this;
+		this.$set_tab_controller_btn.on('click',function() {
+			var idx = objThis.$set_tab_controller.index($(this).parents('li'));
+			objThis.all_close();
+			objThis.select_open(idx);
+			return false;
+		});
+	}
+	Set_tab.prototype.all_close = function() {
+		this.$set_tab_controller.removeClass('on');
+		if(this.contEvtBlock) {
+			this.$set_tab_content.hide();
+		}
+	}
+	
+	Set_tab.prototype.select_open = function(idx) {
+		this.$set_tab_controller.eq(idx).addClass('on');
+		if(this.contEvtBlock) {
+			this.$set_tab_content.eq(idx).show();
+		}
+	}
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>이벤트 참여 현황</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>		
+	<div class="my_con">
+		
+		<div class="sch_order">
+			<ul>
+				<li><a href="#" class="on">1주일</a></li>
+				<li><a href="#">1개월</a></li>
+				<li><a href="#">3개월</a></li>
+				<li><a href="#">6개월</a></li>
+				<li><a href="#" class="set">기간설정</a></li>
+			</ul>
+			<div class="sch_period">
+				<div class="inp_box">
+					<input type="text" title="시작날짜" placeholder="예시)20160101">
+					<span class="dash">~</span>
+					<input type="text" title="종료날짜" placeholder="예시)20160101">
+				</div>
+				<div class="btn">
+					<a href="#">조회</a>
+				</div>
+				<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+			</div>
+		</div>
+		<div class="my_evt">
+			
+			<!-- <div id="tab_evt" class="set_tab">
+				<ul>
+					<li class="on"><a href="#">이벤트 참여현황</a></li>
+					<li><a href="#">0원딜/체험단</a></li>
+				</ul>
+			</div> -->
+			
+			<div id="tab_evt_cont" class="tab_evt_cont">
+				<!-- 이벤트 참여현황 -->
+				<div class="cont_evt01">
+					
+					<a class="btn_arrow01" href="#"><span>이벤트 존 바로가기</span></a>
+					<ul class="list_evt01">
+						<li>
+							<span class="suc"><span class="ir">축하합니다.</span></span>
+							<span class="tx_period">2016.01.28 - 2016.01.31</span>
+							<span class="stit">[연말기념] 영화예매권 당첨 이벤트</span> <!-- 160323 a태그 삭제 -->
+							<ul class="list_bul">
+								<li>경품 : 스파오 후드티</li>
+								<li>지급일 : 2016.01.29</li>
+							</ul>
+						</li>
+						<li>
+							<span class="fail"><span class="ir">다음 기회에</span></span>
+							<span class="tx_period">2016.01.28 - 2016.01.31</span>
+							<span class="stit">[연말기념] 영화예매권 당첨 이벤트</span> <!-- 160323 a태그 삭제 -->
+						</li>
+						<li>
+							<span class="fail"><span class="ir">다음 기회에</span></span>
+							<span class="tx_period">2016.01.28 - 2016.01.31</span>
+							<span class="stit">[연말기념] 영화예매권 당첨 이벤트</span>
+						</li>
+						<li>
+							<span class="fail"><span class="ir">다음 기회에</span></span>
+							<span class="tx_period">2016.01.28 - 2016.01.31</span>
+							<span class="stit">[연말기념] 영화예매권 당첨 이벤트</span>
+						</li>
+						<!-- MORE BUTTON -->
+						<li class="goods_list_more">
+							<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+						</li>
+						<!-- /MORE BUTTON -->
+					</ul>
+					
+
+					<!-- no data -->
+					<div class="my_nolist">
+						<div class="txt">최근 1개월 내<br>이벤트 참여 현황이 <strong>없습니다.</strong></div>
+					</div>
+					<!-- //no data -->
+				</div>
+				<!-- //이벤트 참여현황 -->
+				
+				<!-- 0원딜/체험단 -->
+				<!-- <div class="cont_evt02">
+					<div class="lnk_evt">
+						<a href="#"><img src="../images/mobile/my/img_evt01.jpg" alt="0원 DEAL 미리 만나보는 폭풍 칭찬 릴레이" /></a>
+						<a href="#"><img src="../images/mobile/my/img_evt02.jpg" alt="모던 하우스 체험단 REVIEW 직접 사용하고 작성한 생생한 후기ㄴ" /></a>
+					</div>
+					
+					<ul class="list_evt02">
+						<li>
+							<span class="stit">
+								<span class="suc"><span class="ir">축하합니다.</span></span>
+								<em>[연말기념] 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 이벤트 영화예매권 당첨 이벤트 </em>
+							</span>
+							<div class="set_suc">
+								<div class="btns">
+									<a class="my_btn01" href="#"><span>상품평작성</span></a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="stit">
+								<span class="suc"><span class="ir">축하합니다.</span></span>
+								<em>[연말기념] 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 이벤트 영화예매권 당첨 이벤트 </em>
+							</span>
+							<div class="set_suc">
+								<div class="btns">
+									<a class="my_btn01 c01" href="#"><span>배송현황조회</span></a>
+									<a class="my_btn01" href="#"><span>상품평작성</span></a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="stit">
+								<span class="fail"><span class="ir">다음 기회에</span></span>
+								<em>[연말기념] 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨</em>
+							</span>
+						</li>
+						<li>
+							<span class="stit">
+								<span class="fail"><span class="ir">다음 기회에</span></span>
+								<em>[연말기념] 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨</em>
+							</span>
+						</li>
+						<li>
+							<span class="stit">
+								<span class="fail"><span class="ir">다음 기회에</span></span>
+								<em>[연말기념] 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨 영화예매권 당첨 이벤트 영화예매권 당첨 이벤트 영화예매권 당첨</em>
+							</span>
+						</li>
+						<li class="goods_list_more">
+							<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>
+						</li>
+					</ul>
+					
+					<div class="my_nolist">
+						<div class="txt">최근 1개월 내<br>0원딜/체험단 참여 현황이 <strong>없습니다.</strong></div>
+					</div>
+				</div> -->
+			</div>
+			<!-- <script type="text/javascript">
+				var tab_pcomt = new Set_tab('tab_evt','tab_evt_cont');
+			</script> -->
+		</div>
+	</div>
+	<!-- //my_con -->
+
+</div>
+<!-- //CONTENT -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li>
+							<select title="2뎁스 바로가기">
+								<option>주방용품</option>
+							</select>
+						</li>
+						<li>
+							<select title="3뎁스 바로가기">
+								<option>주방용품</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+
+				<div class="title">
+					<h3 class="tit_h2">켄싱턴 둘러보기</h3>
+				</div>
+				<div class="wf_viewer">
+					<div class="wf_ve_contents">
+						<div class="wf_ve_wideview">
+							<img class="wf_ve_ct_img" src="../../images/pcweb/wf/sto_01.jpg" alt="" />
+						</div>
+						<div class="wf_ve_thumnail" id="wfView">
+							<a href="#" class="wf_tn_prev d_prev on" tabindex="-1">이미지 이전 목록</a>
+							<a href="#" class="wf_tn_next d_next on" tabindex="-1">이미지 다음 목록</a>
+							<div class="wf_tn_list">
+<!-- 160329_수정 -->
+								<ul class="d_slide">
+									<li><a href="#"><img src="../../images/pcweb/wf/sto_01.jpg" alt="" /></a></li>
+									<!--li><a href="#"><img src="../../images/pcweb/wf/sto_02.jpg" alt="" /></a></li-->
+									<li><a href="#"><img src="../../images/pcweb/wf/sto_03.jpg" alt="" /></a></li>
+									<li><a href="#"><img src="../../images/pcweb/wf/sto_04.jpg" alt="" /></a></li>
+									<li><a href="#"><img src="../../images/pcweb/wf/sto_05.jpg" alt="" /></a></li>
+									<li><a href="#"><img src="../../images/pcweb/wf/sto_06.jpg" alt="" /></a></li>
+									<li><a href="#"><img src="../../images/pcweb/wf/sto_07.jpg" alt="" /></a></li>
+									<li><a href="#"><img src="../../images/pcweb/wf/sto_08.jpg" alt="" /></a></li>
+								</ul>
+<!-- //160329_수정 -->								
+							</div>
+						</div>
+					</div>
+				</div>
+<!-- 160318 -->
+				<dl class="wf_info">
+					<dt>가산 켄싱턴 매장 오픈시간</dt>
+					<dd>
+						<ul>
+							<li><strong>오전 9시30분 ~ 오후 6시30분까지</strong> (Break Time 1~2시)</li>
+							<li>매주 월~금 운영 / 토일 공휴일 휴무</li>
+						</ul>
+					</dd>
+				</dl>
+<!-- //160318 -->
+				<script>
+				function wfDescription( ids ){
+					var $target = $(ids);
+
+					if ( commonUI.isTarget( $target ) ) return;
+					var $wapper, $wideImg,  $slider, $links, $btns, $LastItemLi, linksLength;
+
+					function _init(){
+						$wapper = $target.parents(".wf_ve_contents");
+						$wideImg = $wapper.find(".wf_ve_ct_img");
+						$slider = $wapper.find(".d_slide");
+						$links = $slider.find("a");
+						linksLength = parseInt($links.length);
+
+						$btns = {
+							prev : $wapper.find(".d_prev")
+							,next : $wapper.find(".d_next")
+						}
+
+						$LastItemLi = $links.eq(0);
+
+						_eventInit();
+					}
+
+					function _eventInit(){
+						$links.on("mouseenter , focus",function(e){
+							_itemsOn( $(this) );
+							_positionSet();
+							_btnsSet();
+						})
+
+						$links.on("click",function(e){
+							e.preventDefault();
+						})
+
+						$btns.prev.on("click",function(e){
+							e.preventDefault();
+
+							_sliderEngine("+=490");
+							_sliderPartFunc();
+							_btnsSet();
+						})
+
+						$btns.next.on("click",function(e){
+							e.preventDefault();
+
+							_sliderEngine("-=490");
+							_sliderPartFunc();
+							_btnsSet();
+						})
+
+						$LastItemLi.triggerHandler("mouseenter");
+					}
+
+					function _sliderEngine( lef ){
+						if ( $slider.is(":animated") ) return;
+
+						$slider.css({"top": lef });
+					}
+
+					function _sliderPartFunc(){
+						var chkSilderIDX = Math.abs(parseInt($slider.css("top")))/490;
+						if ( chkSilderIDX == 0 ) {
+							chkSilderIDX = 0;
+						}else{
+							chkSilderIDX = (chkSilderIDX*6)+1;
+						}
+
+						_itemsOn($links.eq(chkSilderIDX));
+					}
+
+					function _btnsSet(){
+						var chkOnItemIDX = $slider.find("li.on").index(); // wide btn chk
+						var chkSliderLeft = Math.abs(parseInt($slider.css("top")))/70; // slider 위치 chk
+						var pageIDX = parseInt((chkOnItemIDX)/7);
+
+						_sliderEngine("-"+(490*pageIDX)+"px");
+
+						if ( linksLength <= 7) { /* 160329_수정 */
+							$btns.prev.removeClass("on");
+							$btns.next.removeClass("on");
+						}else{
+							if ( chkSliderLeft > 0 && chkSliderLeft < linksLength-7 ) {
+								$btns.next.addClass("on");
+								$btns.prev.addClass("on");
+							}else{
+								if ( chkSliderLeft <= 0 ) {
+									$btns.next.addClass("on");
+									$btns.prev.removeClass("on");
+								}else if ( chkSliderLeft > 0 && chkSliderLeft >= linksLength-7 ) {
+									$btns.prev.addClass("on");
+									$btns.next.removeClass("on");
+								}
+							}
+						}
+
+						if ( chkOnItemIDX <= 0 ) {
+							//$btns.widePrev.removeClass("on");
+						}else if ( chkOnItemIDX >= linksLength-1 ) {
+							//$btns.widePrev.addClass("on");
+						}
+					}
+
+					function _next(){
+						var _idx = $slider.find("li.on").index();
+
+						_idx = ( _idx  < linksLength-1 ) ? _idx+1 : 0 ;
+						var _$target = $links.eq(_idx);
+
+						_itemsOn(_$target);
+					}
+
+					function _prev(){
+						var _idx = $slider.find("li.on").index();
+
+						_idx = ( _idx  > 0 ) ? _idx-1 : linksLength-1 ;
+						var _$target = $links.eq(_idx);
+
+						_itemsOn(_$target);
+					}
+
+					function _itemsOn( $target ){
+						$LastItemLi.parent().removeClass("on");
+						$target.parent().addClass("on");
+						$LastItemLi = $target;
+
+						var _imgSrc = {src : $target.find("img").attr("src")};
+						$wideImg.attr(_imgSrc);
+					}
+
+					function _positionSet(){
+						var chkOnItemIDX = $slider.find("li.on").index(); // wide btn chk
+						var chkSliderLeft = Math.abs(parseInt($slider.css("left")))/70; // slider 위치 chk
+						var pageIDX = parseInt((chkOnItemIDX)/7);
+
+						_sliderEngine("-"+(490*pageIDX)+"px");
+					}
+					_init();
+				}
+
+				$(window).ready(function(){
+					wfDescription("#wfView");
+				})
+				</script>
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>E-LAND MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript">
+//조회기간 선택
+	$(function(){
+		$(".sch_order li a").bind("click", function(){
+			$(this).parent().parent().find("li a").removeClass("on");
+			$(this).addClass("on");
+			$(this).parent().parent().parent().find(".sch_period").hide();
+		});
+		$(".sch_order li a.set").bind("click", function(){
+			$(this).parent().parent().parent().find(".sch_period").show();
+		});
+	});
+//탭 관련	
+	function Set_tab(objId,objContId) {
+		this.init(objId,objContId);
+	}
+	Set_tab.prototype.init = function(objId,objContId) {
+		this.$set_tab_controller = $('#'+objId).find('li[class!="not_tab_item"]');
+		this.$set_tab_controller_btn = this.$set_tab_controller.find('a');
+		this.$set_tab_content = $('#'+objContId).find(' > div');
+		this.contEvtBlock = (objContId==undefined || this.$set_tab_content.html()==undefined || objContId=='') ? false : true;//탭컨텐츠 none/block 막기
+		this.$set_tab_content.hide();
+		this.$set_tab_content.eq(0).show();
+		this.initEvtL();
+	}
+	Set_tab.prototype.initEvtL = function() {
+		var objThis = this;
+		this.$set_tab_controller_btn.on('click',function() {
+			var idx = objThis.$set_tab_controller.index($(this).parents('li'));
+			objThis.all_close();
+			objThis.select_open(idx);
+			return false;
+		});
+	}
+	Set_tab.prototype.all_close = function() {
+		this.$set_tab_controller.removeClass('on');
+		if(this.contEvtBlock) {
+			this.$set_tab_content.hide();
+		}
+	}
+	
+	Set_tab.prototype.select_open = function(idx) {
+		this.$set_tab_controller.eq(idx).addClass('on');
+		if(this.contEvtBlock) {
+			this.$set_tab_content.eq(idx).show();
+		}
+	}
+	
+	$(function() {
+		var $list_pcomt = $('#list_pcomt li');
+		var $link_pcomt = $list_pcomt.find('.pcomt_cont .txt');
+		var $close_pcomt = $list_pcomt.find('.pcomt_close');
+		
+		$link_pcomt.on('click',function() {
+			var $obj = $(this).parents('li');
+			if($obj.hasClass('on')) {
+				$list_pcomt.removeClass('on');	
+				return false;
+			}
+			$list_pcomt.removeClass('on');
+			$obj.addClass('on');
+			$currentObj =  $obj
+			return false;
+		});
+		
+		$close_pcomt.on('click',function() {
+			var $obj = $(this).parents('li');
+			$list_pcomt.removeClass('on');
+			return false;
+		});
+	});
+</script>
+</head>
+
+<!-- .hd_del : header del / back / title / navi : NGCPO-7179 -->
+<body class="renewal2 hd_del">
+
+<!-- ACCESSIBILITY -->
+<div class="accessibility">
+	<a href="#skip_cont">본문 바로가기</a>
+</div>
+<!--// ACCESSIBILITY -->
+
+<!-- INC_HEADER NGCPO-7179
+<script type="text/javascript" src="inc/ui.inc.header.js"></script>
+-->
+
+<!-- CONTENT -->
+<div class="contents" id="contents">
+	<div class="cts_tit">
+		<h2>
+			<b>나의 상품평</b>
+			<button type="button" class="back"><em class="ir">이전페이지</em></button>			
+		</h2>
+		<!-- icon navi : NGCPO-7179 -->
+		<div class="hnb">
+			<ul>
+				<li class="cart"><a href="#"><em>88</em><b class="ir">장바구니 이동</b></a></li>
+				<li class="home"><a href="#"><b class="ir">홈 이동</b></a></li>
+			</ul>
+		</div>
+	</div>	
+	<div class="my_con">
+		
+		<div class="sch_order">
+			<ul>
+				<li><a href="#" class="on">1주일</a></li>
+				<li><a href="#">1개월</a></li>
+				<li><a href="#">3개월</a></li>
+				<li><a href="#">6개월</a></li>
+				<li><a href="#" class="set">기간설정</a></li>
+			</ul>
+			<div class="sch_period">
+				<div class="inp_box">
+					<input type="text" title="시작날짜" placeholder="예시)20160101">
+					<span class="dash">~</span>
+					<input type="text" title="종료날짜" placeholder="예시)20160101">
+				</div>
+				<div class="btn">
+					<a href="#">조회</a>
+				</div>
+				<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+			</div>
+		</div>
+			
+		<div class="my_prd_comt">
+			<div id="tab_pcomt" class="set_tab">
+				<ul>
+					<li class="on"><a href="#">작성 가능한 상품평</a></li>
+					<li><a href="#">작성한 상품평</a></li>
+				</ul>
+			</div>
+			
+			<div id="tab_pcomt_cont" class="tab_pcomt_cont">
+				<!-- 작성가능한 상품평 -->
+				<div class="cont_pcomt01">
+					<ul class="list_pcomt01">
+						<li>
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic">
+											<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+										</div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="set_pcomt">
+									<span class="buy_date">구매일 : 2016.02.02</span>
+									<a href="#" class="my_btn01"><span>상품평작성</span></a>
+								</div>
+							</div>		
+						</li>
+						<li>
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic">
+											<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+										</div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="set_pcomt">
+									<span class="buy_date">구매일 : 2016.02.02</span>
+									<a href="#" class="my_btn01"><span>상품평작성</span></a>
+								</div>
+							</div>		
+						</li>
+						<li>
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic">
+											<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+										</div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="set_pcomt">
+									<span class="buy_date">구매일 : 2016.02.02</span>
+									<a href="#" class="my_btn01"><span>상품평작성</span></a>
+								</div>
+							</div>		
+						</li>
+						<!-- MORE BUTTON -->
+						<li class="goods_list_more">
+							<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>	
+						</li>
+						<!-- //MORE BUTTON -->
+					</ul>
+					
+					<!-- no data -->
+					<div class="my_nolist"> 
+						<div class="txt">최근 1개월 내<br>문의 내역이 <strong>없습니다.</strong></div>
+					</div>
+					<!-- //no data -->
+				</div>
+				<!-- //작성가능한 상품평 -->
+				
+				<!-- 작성한 상품평 -->
+				<div class="cont_pcomt02">
+					<ul id="list_pcomt" class="list_pcomt01">
+						<li>
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic">
+											<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+										</div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="set_pcomt">
+									<span class="buy_date">상품평 작성일 : 2016.02.02</span>
+									<a href="#" class="my_btn01"><span>상품평수정</span></a>
+								</div>
+							</div>
+							<div class="pcomt_detail">
+								<div class="pcomt_top">
+									<span class="scr s5"><b class="ir">10점</b></span>
+									<!--span class="scr s10"><b class="ir">20점</b></span>
+									<span class="scr s15"><b class="ir">30점</b></span>
+									<span class="scr s20"><b class="ir">40점</b></span>
+									<span class="scr s25"><b class="ir">50점</b></span>
+									<span class="scr s30"><b class="ir">60점</b></span>
+									<span class="scr s35"><b class="ir">70점</b></span>
+									<span class="scr s40"><b class="ir">80점</b></span>
+									<span class="scr s45"><b class="ir">90점</b></span>
+									<span class="scr s50"><b class="ir">100점</b></span-->
+									<span class="pic"><img src="../images/mobile/my/ico_pic.png" alt="사진표시" /></span>
+									<div class="side02">
+										<span class="usr_id">USERID****</span>
+										<span class="reg_date">2015.10.10</span>
+									</div>
+								</div>
+								
+								<div class="pcomt_cont">
+									<div class="opt">BK(89) / M / 1개</div>
+									<a class="txt" href="#">완전 이쁜 상품 좋은가격에 구매했어요! 직접 보지 않아서 구입을 망설이게 되는데, 소재믿고 주문 해봤어요~ 맘에 쏙 드네요!
+										<div class="img"><img src="../images/mobile/temp/img_592.jpg" alt="" /></div>
+									</a>
+									<div class="pcomt_close"><a href="#" class="btn_line01 c02">닫기</a></div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic">
+											<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+										</div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="set_pcomt">
+									<span class="buy_date">상품평 작성일 : 2016.02.02</span>
+									<a href="#" class="my_btn01"><span>상품평수정</span></a>
+								</div>
+							</div>
+							<div class="pcomt_detail">
+								<div class="pcomt_top">
+									<span class="scr s5"><b class="ir">10점</b></span>
+									<!--span class="scr s10"><b class="ir">20점</b></span>
+									<span class="scr s15"><b class="ir">30점</b></span>
+									<span class="scr s20"><b class="ir">40점</b></span>
+									<span class="scr s25"><b class="ir">50점</b></span>
+									<span class="scr s30"><b class="ir">60점</b></span>
+									<span class="scr s35"><b class="ir">70점</b></span>
+									<span class="scr s40"><b class="ir">80점</b></span>
+									<span class="scr s45"><b class="ir">90점</b></span>
+									<span class="scr s50"><b class="ir">100점</b></span-->
+									<div class="side02">
+										<span class="usr_id">USERID****</span>
+										<span class="reg_date">2015.10.10</span>
+									</div>
+								</div>
+								
+								<div class="pcomt_cont">
+									<div class="opt">BK(89) / M / 1개</div>
+									<a class="txt" href="#">완전 이쁜 상품 좋은가격에 구매했어요! 직접 않아서 구입을 망설이게 되는데, 소재믿고 주문 해봤어요~ 맘에 쏙 드네요!</a>
+									<div class="pcomt_close"><a href="#" class="btn_line01 c02">닫기</a></div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic">
+											<img src="../images/mobile/temp/@temp_80x80.gif" alt="상품 이미지">
+											<div class="ico_soldout"><span>판매종료</span></div>
+										</div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="gd_end">판매가 <em>종료된 상품</em>입니다.<br />상품평을 수정하실 수 없습니다.</div>
+							</div>
+							<div class="pcomt_detail">
+								<div class="pcomt_top">
+									<span class="scr s5"><b class="ir">10점</b></span>
+									<!--span class="scr s10"><b class="ir">20점</b></span>
+									<span class="scr s15"><b class="ir">30점</b></span>
+									<span class="scr s20"><b class="ir">40점</b></span>
+									<span class="scr s25"><b class="ir">50점</b></span>
+									<span class="scr s30"><b class="ir">60점</b></span>
+									<span class="scr s35"><b class="ir">70점</b></span>
+									<span class="scr s40"><b class="ir">80점</b></span>
+									<span class="scr s45"><b class="ir">90점</b></span>
+									<span class="scr s50"><b class="ir">100점</b></span-->
+									<div class="side02">
+										<span class="usr_id">USERID****</span>
+										<span class="reg_date">2015.10.10</span>
+									</div>
+								</div>
+								
+								<div class="pcomt_cont">
+									<div class="opt">BK(89) / M / 1개</div>
+									<a class="txt" href="#">완전 이쁜 상품 좋은가격에 구매했어요! 직접 않아서 구입을 망설이게 되는데, 소재믿고 주문 해봤어요~ 맘에 쏙 드네요!</a>
+									<div class="pcomt_close"><a href="#" class="btn_line01 c02">닫기</a></div>
+								</div>
+							</div>	
+						</li>
+						<!-- MORE BUTTON -->
+						<li class="goods_list_more">
+							<button type="button" title="리스트 더보기"><em>더보기 (20/27)</em></button>	
+						</li>
+						<!-- //MORE BUTTON -->
+					</ul>
+					<!-- no data -->
+					<div class="my_nolist"> 
+						<div class="txt">최근 1개월 내<br>상품평 내역이 <strong>없습니다.</strong></div>
+					</div>
+					<!-- //no data -->
+				</div>
+				<!-- //작성한 상품평 -->
+			</div>
+
+			<!-- 170321 상품평 배너 추가 -->
+			<div class="bn_corner">
+				<a href="http://m.elandmall.com/event/initEventDtl.action?event_no=E161201213"><img src="../images/mobile/temp/bn_corner.png" alt="리뷰 하나로 포인트 득템"></a>
+			</div>
+			<!-- //170321 상품평 배너 추가 -->
+			
+			<!-- NGCPO-4833 [FO][MO][이메일] 상품평 소멸안내 전시 : 텍스트 변경 -->
+			<div class="list_bar_gray">
+		        <b class="semi_tit">상품평 등록 및 혜택 안내</b>
+		        <ul>
+		        	<li>일반 상품평 100p, 포토상품평 500p 적립 됩니다.</li>
+		        	<li>판매가격 2,000원 이하 상품의 포토상품평은 100p 적립되며, 일부 금액권은 포토상품평 작성 시 포인트 적립이 되지 않을 수 있습니다.</li>
+		        	<li>베스트 상품평 당첨 시 5,000p 를 지급해드립니다.<br />상품평 포인트는 상품평 작성일 기준 7일 후 적립됩니다.</li>
+		        	<li>작성해주신 상품평 및 사진은 상업적 용도로 활용될 수 있습니다.</li>
+		        	<li>상품평은 결제완료 후 90일이내 작성 가능합니다.</li>
+		        	<li>e티켓상품(모바일이용권 등)의 경우 실물 이용권이나 실제 이용하는 사진을 올려주셔야 합니다.</li>
+				</ul>
+				<b class="semi_tit">상품평 포인트 유효기간 안내</b>
+		        <ul>
+		        	<li>상품평 포인트는 적립일로부터 6개월 이내 사용가능하며, 유효기간이 만료된 포인트는 복구 불가능합니다.</li>
+		        	<li>주문취소, 반품요청 등으로 인한 소멸 포인트는 복구 불가능합니다.</li>
+		        	<li>포인트를 획득하기 위해 악의적인 의도로 상품평을 여러 개 남길 경우 포인트가 지급되지 않습니다. <br />(예시 : 캡쳐사진, 상품과 관계없는 사진, 동일사진 등)</li>
+				</ul>
+			</div>
+			<!-- //NGCPO-4833 [FO][MO][이메일] 상품평 소멸안내 전시 : 텍스트 변경 -->
+			<script type="text/javascript">
+				var tab_pcomt = new Set_tab('tab_pcomt','tab_pcomt_cont');
+			</script>
+		</div>
+	</div>
+	<!-- //my_con -->
+
+</div>
+<!-- //CONTENT -->
+
+<!-- INC_FOOTER -->
+<script type="text/javascript" src="inc/ui.inc.footer.js"></script>
+<!-- //INC_FOOTER -->
+
+<!-- BACK BTN. -->
+<div class="btn_back" id="btn_back"><a href="#"><b class="ir">이전페이지</b></a></div>
+<!-- //BACK BTN. -->
+
+<!-- TOP BTN. -->
+<div class="btn_top" id="btn_top"><a href="#"><b class="ir">상단으로 이동</b></a></div>
+<!-- //TOP BTN. -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+</body>
+</html>
+

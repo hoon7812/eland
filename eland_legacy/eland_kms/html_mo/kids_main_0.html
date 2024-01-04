@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>kidikidi</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_kids.css" type="text/css"> <!-- kids add css -->
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+<script type="text/javascript" src="../common/js/jQuery-FontSpy.js"></script>
+
+
+</head>
+<body class="renewal renewal2_brand kids">
+
+<!-- CONTENT -->
+<div class="contents" id="contents"> 
+
+	<div class="m_cts" id="m_cts">
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide">
+
+				<!-- SWIPER 0 -->
+				<div class="slide_cont" data-index="0">
+
+					<!-- 마침 이맘때 -->
+					<div class="area_lv1">
+						<div class="curating_wrap ptb_vw">
+							<div class="kids_container_l"> <!-- 20200309 클래스 수정 -->
+							<h3 class="kids_main_tit">마침 이맘때</h3>
+								<div class="kids_tab">
+									<!-- 20200309 수정 // -->
+									<div class="kids_tab_list swiper-container">
+										<ul class="swiper-wrapper">
+											<!-- [D] :: 활성화 시, on 클래스 추가 -->
+											<li class="swiper-slide on"><a href="#">크리스마스</a></li>
+											<li class="swiper-slide"><a href="#">외출</a></li>
+											<li class="swiper-slide"><a href="#">학업</a></li>
+											<li class="swiper-slide"><a href="#">긴 텍스트텍스트</a></li>
+											<li class="swiper-slide"><a href="#">슬라이드 추가</a></li>
+											<li class="swiper-slide"><a href="#">슈즈</a></li>
+											<li class="swiper-slide"><a href="#">일</a></li>
+										</ul>
+									</div>
+									<!-- // 20200309 수정 -->
+									<div class="kids_tab_cont kids_container"> <!-- 20200309 클래스 추가 -->
+										<ul>
+											<li class="half">
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_curating.jpg" alt="">
+												</a>
+											</li>
+											<li class="half">
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_curating_02.jpg" alt="">
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_curating_03.jpg" alt="">
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_curating_04.jpg" alt="">
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../images/mobile/temp/kids_main_curating_05.jpg" alt="">
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div> 
+						<!-- 20200309 추가 // -->
+						<script>
+							var gutter = $('.kids_container_l').width() * 0.065;
+							var kidsTabSlide = new Swiper('.kids_tab_list', {
+								slidesPerView : 'auto',
+								calculateHeight : true,
+								roundLengths: true,
+								offsetPxBefore: gutter,
+								offsetPxAfter: gutter,
+								onTouchStart: function(){
+									unableSwiping()
+								},
+								onTouchEnd: function(){
+									enableSwiping()
+								},
+							});
+							$(window).resize(function(){	
+								gutter = $('.kids_container_l').width() * 0.065;
+								kidsTabSlide.reInit();
+								kidsTabSlide.params.offsetPxBefore = gutter;
+								kidsTabSlide.params.offsetPxAfter = gutter;
+							});
+							fontSpy('Noto Sans KR', {
+									success: function () {
+										kidsTabSlide.reInit();
+									}
+								});
+							function unableSwiping(){
+								if(typeof mainCate !== "undefined"){
+								mainCate.params.onlyExternal=true;
+								}
+							}
+							function enableSwiping(){
+								if(typeof mainCate !== "undefined"){
+								mainCate.params.onlyExternal=false;
+								}
+							}
+						</script>
+						<!-- // 20200309 추가 -->
+					</div>
+					<!-- //마침 이맘때 -->
+
+				</div>
+				<!-- //SWIPER 0 -->				
+            </li>
+		</ul>
+    </div>
+    
+</div>
+<!-- //CONTENT -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

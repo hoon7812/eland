@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>NC MALL</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_nc.css" type="text/css"><!-- spao add css -->
+
+<link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000037_200.jpg">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000037_200.jpg">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000037_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000037_160.png">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="renewal renewal2_brand nc"><!-- [v2] : renewal2 클래스 변경 -->
+<!-- layer_popup : 배송지 설정 -->
+<div id="config_addr" class="layer_fix ship land">
+	<h3 class="pop_tit">배송지 설정
+		<button type="button" class="back"><em class="ir">이전페이지</em></button>
+	</h3>
+	<div class="pop_con">
+		<div class="pop_txt fix_btn">
+			<div class="ship_addr">
+				<div class="qck_regi_btn">
+					<button type="button" onclick="fn_layer_open('addrRegist');return false;" onkeypress="this.onclick;">신규 등록</button>
+				</div>
+				<div class="qckship_tit">
+					<h3>배송지 목록</h3>
+				</div>
+				<div class="my_nolist">
+					<div class="txt">등록된 배송지가 <strong>없습니다.</strong><br>신규 등록 버튼을 통해<br>새로운 배송지를 입력해 주세요.</div>
+				</div>
+				<!-- <div class="ship_btn">
+					<a href="#" class="btn_line01 c02">전체선택</a>
+					<a href="#" class="btn_line01 c01">선택삭제</a>
+				</div> -->
+
+
+				<div class="addr_box hide_chk checked">
+					<a href="javascript:;" class="box">
+						<div class="tit">
+							<input type="radio" name="qck_dest" id="chk_add1" checked="checked">
+							<label for="chk_add1">배송지명<b>(받으시는 분)</b></label>
+							<span class="dft_dest">기본배송지</span>
+						</div>
+						<span class="info">
+							<em class="post">[08506]</em>
+							서울 금천구 가산디지털1로 151,신한이노플렉스 903호 (가산동)<br />
+							<em class="tel">02-3000-0000 / 010-0000-0000</em>
+						</span>
+					</a>
+					<div class="btn">
+						<a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;">수정하기</a>
+					</div>
+				</div>
+				<div class="addr_box hide_chk">
+					<a href="javascript:;" class="box">
+						<div class="tit">
+							<input type="radio" name="qck_dest" id="chk_add2" checked="checked">
+							<label for="chk_add1">서울집 / 홍길동</label>
+						</div>
+						<span class="info">
+							<em class="post">[08506]</em>
+							서울 금천구 가산디지털1로 151,신한이노플렉스 903호 (가산동)<br />
+							<em class="tel">02-3000-0000 / 010-0000-0000</em>
+						</span>
+					</a>
+					<div class="btn">
+						<a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;">수정하기</a>
+					</div>
+					<button type="button" class="btn_del"><span>삭제</span></button>
+				</div>
+				<div class="addr_box hide_chk">
+					<a href="javascript:;" class="box">
+						<div class="tit">
+							<input type="radio" name="qck_dest" id="chk_add3">
+							<label for="chk_add2">엄마네집 / 홍길동</label>
+						</div>
+						<span class="info">
+							<em class="post">[08506]</em>
+							서울 금천구 가산디지털1로 151,신한이노플렉스 903호 (가산동)<br />
+							<em class="tel">02-3000-0000 / 010-0000-0000</em>
+						</span>
+					</a>
+					<div class="btn">
+						<a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;">수정하기</a>
+					</div>
+					<button type="button" class="btn_del"><span>삭제</span></button>
+				</div>
+				<div class="use_info">
+					<span>선택하신 배송지가 자동으로 기본배송지로 변경이 되며<br />설정 완료 버튼을 누르시면 배송지가 적용됩니다.</span>
+				</div>
+			</div>
+		
+			<ul class="btn_list01">
+				<li><a href="#" class="btn_bg07"><strong>설정완료</strong></a></li>
+			</ul>
+		</div>   
+	</div>
+	<script>
+		$('document').ready(function(){
+			$('.hide_chk a.box').click(function(e){
+				e.preventDefault();
+				$(this).find('input').prop('checked', true);
+				$('.hide_chk').removeClass('checked');
+				$(this).parent('.hide_chk').addClass('checked');
+			});
+		});
+	</script>
+	<!-- <a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a> -->
+</div>
+<!-- //layer_popup : 배송지 설정 -->
+
+<!-- layer_popup : 배송지 등록 -->
+<div id="addrRegist" class="layer_fix ship"><!-- 160315 타이틀,닫기 위치 수정 -->
+	<h3 class="pop_tit">배송지 등록</h3>
+	<div class="pop_con">
+		<div class="pop_txt fix_btn">
+			<div class="qckship_tit">
+				<h3>등록 정보 입력</h3>
+			</div>
+			<div class="qck_box01">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_con"><span class="ico nick"></span><input type="text" class="w100" title="배송지명" placeholder="배송지명"></div>
+						</li>
+						<li>
+							<div class="box_con"><span class="ico name"></span><input type="text" class="w100" title="받으시는 분" placeholder="받으시는 분"></div>
+						</li>
+						<!-- 주소 입력 전-->
+						<li>
+							<div class="box_con adr_btn" onclick="console.log('여기에...')"><span class="ico place"></span><input type="text" class="w100" title="주소 검색" placeholder="주소 검색"></div> <!-- onclick div에 걸어주세요 -->
+						</li>
+						<!-- //주소 입력 전-->
+
+						<!-- 주소 입력 후-->
+						<li>
+							<div class="box_con addr_fin">
+								<span class="ico place"></span>
+								<div class="like_tab">
+									<input type="text" title="우편번호" value="08613">
+									<input type="text" title="도로명 주소" value="서울 금천구 가산디지털1로 151, 신한이노플렉스 신한이노플렉스 신한이노플렉스 신한이노플렉스">
+									<input type="text" title="상세주소" placeholder="상세주소 직접 입력">
+								</div>
+							</div>
+						</li>
+						<!-- //주소 입력 후-->
+					</ul>
+				</div>
+			</div>
+			<div class="qckship_tit">
+				<h3>연락처 입력</h3>
+			</div>
+			<div class="qck_box01">
+				<div class="tab_con">
+					<ul>
+						<li>
+							<div class="box_con"><span class="ico phone1"></span><input type="text" title="연락처1 (필수)" placeholder="연락처1 (필수)"></div>
+						</li>
+						<li>
+							<div class="box_con"><span class="ico phone2"></span><input type="text" title="연락처2 (선택)" placeholder="연락처2 (선택)"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<ul class="btn_list01">
+				<li><a href="#" class="btn_bg07"><strong>등록하기</strong></a></li>
+			</ul>
+		</div>   
+	</div>
+	<a href="#close" class="btn_close"><span class="ir">팝업 닫기</span></a>
+</div>
+<!-- //layer_popup : 배송지 등록 -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

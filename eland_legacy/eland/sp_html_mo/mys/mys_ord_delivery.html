@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no">
+<base href="../../" />
+<title>SHOOPEN | 주문/배송 조회</title>
+<link rel="stylesheet" href="css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/sp_mobile/common.css" type="text/css">
+<link rel="stylesheet" href="css/mobile/sp_mobile/mys.css" type="text/css">
+
+<link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/icon/icon_60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/icon/icon_76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/icon/icon_120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/icon/icon_152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/icon/icon_180.png">
+<link rel="apple-touch-icon-precomposed" href="images/icon/icon_192.png">
+<link rel="apple-touch-icon-precomposed" href="images/icon/icon_160.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="images/icon/icon_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="images/icon/icon_160.png">
+<script type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="mobile/js/jquery.plugin.mobile.sp.js"></script>
+<script type="text/javascript" src="mobile/js/ui.mobile.sp.js"></script>
+
+
+
+</head>
+<body>
+<!-- .wrapper -->
+<div class="wrapper">
+	<div class="accessibility"><a href="#skip_cont">본문 바로가기</a></div><!-- accessibility -->
+	
+	<!-- .container -->
+	<div class="container">
+		<!-- .contents -->
+		<div class="sub_contents">
+			<h1 class="ir">Shoopen</h1>
+			<div class="top_tit">
+				<h2>
+					<b>주문/배송 조회</b>
+					<button type="button" class="back"><em class="ir">이전페이지</em></button>
+				</h2>
+				<div class="hnb">
+					<ul>
+						<li class="sch"><a href="javascript:;"><b class="ir">검색레이어</b></a></li>
+						<li class="cart"><a href="javascript:;" aria-label="장바구니 이동"><span class="num" role="status"><em class="ir">장바구니 담긴수</em>99</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- .my_con -->
+			<div class="my_con">
+
+				<div class="sch_order">
+					<ul>
+						<li><a href="javascript:;" class="on">1주일</a></li>
+						<li><a href="javascript:;">1개월</a></li>
+						<li><a href="javascript:;">3개월</a></li>
+						<li><a href="javascript:;">6개월</a></li>
+						<li><a href="javascript:;" class="set">기간설정</a></li>
+					</ul>
+					<div class="sch_period">
+						<div class="inp_box">
+							<input type="text" title="시작날짜" placeholder="예시)20160101">
+							<span class="dash">~</span>
+							<input type="text" title="종료날짜" placeholder="예시)20160101">
+						</div>
+						<div class="btn">
+							<a href="javascript:;">조회</a>
+						</div>
+						<p>- 최대 6개월 이내로 조회하실 수 있습니다.</p>
+					</div>
+				</div>
+
+				<div class="order_srt"> <!--주문/배송 현황 sorting -->
+					<ul>
+						<li class="total on"><a href="javascript:">전체<em>10</em></a></li>
+						<li><a href="javascript:">입금확인중<em>2</em></a></li>
+						<li><a href="javascript:">결제완료<em>1</em></a></li>
+						<li><a href="javascript:">상품준비중<em>1</em></a></li>
+						<li><a href="javascript:">배송중<em>2</em></a></li>
+						<li><a href="javascript:">배송완료<em>4</em></a></li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+					// 예시용 스크립트  : 퍼블리싱 페이지에서만 사용합니다.
+					$('.order_srt li a').click(function(){
+						$('.order_srt li').removeClass('on');
+						$(this).parent('li').addClass('on');
+					});
+				</script>
+
+				<div class="mypage_content">
+					
+					<div class="myOdrNone">
+						<p>
+							<em>최근 2020-02-12 ~ 2020-08-12 내<br>주문내역이 없습니다.</em>
+							<span>슈펜 리뉴얼 이전 구매상품은<br><a href="#">이랜드몰 마이페이지</a>에서 확인 가능합니다.</span>
+						</p>
+					</div>
+
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>2016.12.01</em>
+								<span>(<em>주문번호:M151116002268196</em>)</span>
+							</a>
+						</div>
+
+						<!-- 일반상품 : 결제완료 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">결제완료</em>
+										<!--퀵배송 상품 안내 -->
+										<span class="info_c1"><em>NC강서점 나이키</em>에서<br />반짝배송되는 상품입니다.</span>
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<div class="rsv_time">
+									배송예약시간 : 07.07(수) 13:00~ 15:00
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //일반상품 : 결제완료 -->
+
+						<!-- 세트상품 : 입금대기 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">
+											<span class="set">세트상품1 : </span>선택1) 폼폼이케이스 / 아이폰6S / REDRED <br>
+											<span class="set">세트상품2 : </span>선택2) 폼폼이케이스 / 아이폰6S / REDRED <br>
+											<span class="set">사은품 : </span>방탄 케이스 + 아이폰Xs + 고속무선충전기
+										</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">상품준비중</em>
+										<span>(2019-07-21까지 발송 예정 / 재고부족)</span>
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<p class="set">세트상품1 : 선택1) 폼폼이케이스</p>
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									
+									<p class="set">세트상품2 : 선택3) 폼폼이케이스</p>
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+							<div class="gift_box">
+								<strong class="tit">주문사은품</strong>
+								<span class="gift_name">세일러문 반판티셔츠2_스웨이드볼캡_SPREK2/(19)Black,FREE</span>
+								<span class="stat">(상품 준비중)</span>
+							</div>
+						</div>
+						<!-- //세트상품 : 입금대기 -->
+					</div>
+
+
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>2016.12.01</em>
+								<span>(<em>주문번호:M151116002268196</em>)</span>
+							</a>
+						</div>
+
+
+						<!-- NGCPO-4914 명품CD 구매대행 상품/주문처리 기능 추가 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">해외배송중</em>
+									</div>
+									<div class="overseas">
+										<em>해외배송</em>
+										<span>[온라인센터]</span>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03 cut3"> <!-- 3등분 class cut3 -->
+									<ul class="btn">
+										<li><a href="#" class="dark"  onclick="fn_layer_open('pop_deli2');return false;" onkeypress="this.onclick;">배송조회</a></li>
+										<li><a href="#" class="dark">상품평작성</a></li>
+										<li><a href="#" class="dark">교환/반품신청</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //NGCPO-4914 명품CD 구매대행 상품/주문처리 기능 추가 -->
+
+						<!-- 일반상품 (입금대기) -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">입금확인중</em>
+										<!-- <button type="button" class="wr">상품평</button>  -->
+										<span>(입금기한 2015-12-10)</span>
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" onclick="fn_layer_open('addrModify');return false;" onkeypress="this.onclick;" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- 진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //일반상품 (입금대기) -->
+
+						<!-- 일반상품 : 결제완료 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">결제완료</em>
+										<!-- <button type="button" class="wr">상품평</button>  --><!-- 2016-10-27 -->
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //일반상품 : 결제완료 -->
+
+						<!-- 일반상품 : 출고지시, 집하중 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">상품준비중</em>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<div class="btn">
+										<a href="#" class="dark">주문취소</a> <!-- 2018.04.05  class 변경 -->
+									</div>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //일반상품 : 출고지시, 집하중 -->
+
+						<!-- 일반상품 : 배송중 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">배송중</em>
+									</div>
+									<div class="tracking">
+										<!-- NGCPO-5082 'FO''MO' 배송업체명 수정 件 :  배송 업체 추가  -->
+										<div class="dlv_comp">
+											<span>발송업체:</span><span>매장배송(충장로점)</span>
+										</div>
+										<span class="company">경동택배</span>
+										<a href="javascript:" class="invoice_num">3134050700136</a>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03 cut3"> <!-- 3등분 class cut3 -->
+									<ul class="btn">
+										<li><a href="#" class="dark">배송조회</a></li>
+										<li><a href="#" class="dark">상품평작성</a></li>
+										<li><a href="#" class="dark">교환/반품신청</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //일반상품 : 배송중 -->
+
+						<!-- 업체 직배송 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">배송중</em>
+									</div>
+									<div class="tracking">
+										<span class="company">업체 직배송</span>
+										<span >[(주)이소품]</span>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03 cut3"> <!-- 3등분 class cut3 -->
+									<ul class="btn">
+										<li><a href="#" class="dark">배송조회</a></li>
+										<li><a href="#" class="dark">상품평작성</a></li>
+										<li><a href="#" class="dark">교환/반품신청</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //업체 직배송 -->
+
+						<!-- 일반상품 : 배송완료 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">배송완료</em>
+									</div>
+									<div class="tracking">
+										<!-- NGCPO-5082 'FO''MO' 배송업체명 수정 件 :  배송 업체 추가  -->
+										<div class="dlv_comp">
+											<span>발송업체:</span><span>매장배송(충장로점)</span>
+										</div>
+										<span class="company">경동택배</span>
+										<a href="javascript:" class="invoice_num">3134050700136</a>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03 cut3"> <!-- 3등분 class cut3 -->
+									<ul class="btn">
+										<li><a href="#" class="dark">배송조회</a></li>
+										<li><a href="#" class="dark">상품평작성</a></li>
+										<li><a href="#" class="dark">교환/반품신청</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //일반상품 : 배송완료 -->
+					</div>
+
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>2016.12.01</em>
+								<span>(주문번호:M151116002268196)</span>
+							</a>
+						</div>
+
+						<!-- 일반상품 : 입금대기 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">입금확인중</em>
+										<span>(입금기한 2015-12-10)</span>
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //일반상품 : 입금대기 -->
+
+						<!-- 일반상품 : 결제완료 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">결제완료</em>
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //일반상품 : 결제완료 -->
+					</div>
+
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>묶음상품: 입금대기</em>
+							</a>
+						</div>
+
+						<!-- 묶음상품 : 입금대기 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">입금확인중</em>
+										<span>(입금기한 2015-12-10)</span>
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">입금확인중</em>
+										<span>(입금기한 2015-12-10)</span>
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //묶음상품 : 입금대기 -->
+					</div>
+
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>세트상품: 입금대기</em>
+							</a>
+						</div>
+
+						<!-- 세트상품 : 입금대기 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">
+											<span class="set">세트상품1 : </span>선택1) 폼폼이케이스 / 아이폰6S / REDRED <br>
+											<span class="set">세트상품2 : </span>선택2) 폼폼이케이스 / 아이폰6S / REDRED
+										</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">입금확인중</em>
+										<span>(입금기한 2015-12-10)</span>
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<p class="set">세트상품1 : 선택1) 폼폼이케이스</p>
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									
+									<p class="set">세트상품2 : 선택3) 폼폼이케이스</p>
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //세트상품 : 입금대기 -->
+					</div>
+
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>주문취소</em>
+							</a>
+						</div>
+
+						<!-- 주문취소 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total04">
+									<span class="cancel"><em>취소완료</em>(2015-11-18)</span>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //주문취소 -->
+					</div>
+
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>반품</em>
+							</a>
+						</div>
+
+						<!-- 반품처리중 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">반품처리중</em>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">신청철회</a></li>
+										<li><a href="#" class="dark">배송지변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //반품처리중 -->
+						<!-- 반품완료 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total04">
+									<span class="cancel"><em>반품완료</em>(2015-11-18)</span>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //반품완료 -->
+					</div>
+
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>교환</em>
+							</a>
+						</div>
+
+						<!-- 교환준비중 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">교환준비중</em>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 160317 수정 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">신청철회</a></li>
+										<li><a href="#" class="dark">배송지변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 160317 수정 -->
+							</div>
+						</div>
+						<!-- //교환준비중 -->
+
+						<!-- 교환상품발송 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">교환상품발송</em>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03 cut3"> <!-- 3등분 class cut3 -->
+									<ul class="btn">
+										<li><a href="#" class="dark">교환/반품신청</a></li>
+										<li><a href="#" class="dark">상품평작성</a></li>
+										<li><a href="#" class="dark">배송조회</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //교환상품발송 -->
+
+						<!-- 교환완료 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt">화이트 / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">교환완료</em>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03 cut3"> <!-- 3등분 class cut3 -->
+									<ul class="btn">
+										<li><a href="#" class="dark">교환/반품신청</a></li>
+										<li><a href="#" class="dark">상품평작성</a></li>
+										<li><a href="#" class="dark">배송조회</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //교환완료 -->
+					</div>
+
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>지점상품</em>
+							</a>
+						</div>
+
+						<!-- 픽업완료 전 상태 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt"><em>[NC 평촌점]</em> BK(89)/M / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">결제완료</em>
+										<!-- <span>(매장수령예정일 2015-12-28)</span> -->
+									</div>
+									<div class="opt"><span>옵션 변경</span></div>
+								</div>
+								<!-- 옵션,수량 변경 -->
+								<div class="opt_open">
+									<dl>
+										<dt>옵션명</dt>
+										<dd>
+											<select class="w100">
+												<option>옵션명</option>
+											</select>
+										</dd>
+									</dl>
+									<div class="btnbox"><a href="#" class="btn_line01 c02">변경</a></div>
+								</div>
+								<!-- //옵션,수량 변경 -->
+								<div class="prd_total">
+									<div class="store line01">
+										<span class="stxt">매장수령예정일</span>
+									</div>
+									<select class="sel_store">
+										<option>2015-12-31(목요일)</option>
+									</select>
+									<span class="btn">
+										<a href="#" class="btn_brd02 c01">확인</a>
+									</span>
+								</div>
+								<!-- //매장수령예정일 -->
+								<!-- 160812 희망배송일 추가 -->
+								<div class="prd_total">
+									<div class="store line01">
+										<span class="stxt">희망배송일</span>
+									</div>
+									<span class="day">2016-08-12(금요일)</span>
+								</div>
+								<!-- //160812 희망배송일 추가 -->
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">배송지 변경</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+							<!-- 매장수령예정일 -->
+						</div>
+						<!-- //픽업완료 전 상태 -->
+
+						<!-- 매장수령예정일 변경 완료 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt"><em>[NC 평촌점]</em> BK(89)/M / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">교환권발급</em><span class="store_pick">(매장수령예정일 2015-12-28)</span> <!-- 매장수령 예정일 : .store_pick -->
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">주문취소</a></li>
+										<li><a href="#" class="dark">교환권발송</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+						<!-- //매장수령예정일 변경 완료 -->
+
+						<!-- 픽업완료 -->
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">포트메리온</span>
+										<span class="prodname">포트메리온 베리에이션 벨머그벨머그 벨머그벨머그벨머그 벨머그벨머그벨머그벨머그벨머그벨머그</span>
+										<span class="prodprice">77,200<span class="won">원</span></span>
+										<span class="prodopt"><em>[NC 평촌점]</em> BK(89)/M / 1개</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">픽업완료</em><span class="store_pick">(매장수령일 2015-12-28)</span>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 160317 수정 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">교환반품신청</a></li>
+										<li><a href="#" class="dark">상품평작성</a></li>
+									</ul>
+									<span class="add">* 매장수령 상품은 <b>매장에서 직접 반품이 가능</b>합니다.</span>
+								</div>
+								<!-- //진행현황 버튼 160317 수정 -->
+							</div>
+						</div>
+						<!-- //픽업완료 -->
+					</div>
+
+					<!-- 디지털 상품권,입장권 160624 -->
+					<div class="mypage_box">
+						<div class="tit_order">
+							<a href="#">
+								<em>디지털 상품권,입장권</em>
+							</a>
+						</div>
+
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">Cindy</span>
+										<span class="prodname">POLHAM 배색 스웨이드 후드 탈부 POLHAM 배색 스웨이드 후드 탈부</span>
+										<span class="prodprice">87,200<span class="won">원</span></span>
+										<span class="prodopt">A-1 OO호텔 예약권 / 1개</span>
+										<span class="prodnum">(<em>0</em>개 사용 완료)</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">발송완료</em>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<ul class="btn">
+										<li><a href="#" class="dark">반품신청</a></li>
+										<li><a href="#" class="dark">상품평작성</a></li>
+									</ul>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+
+						<div class="prd_group">
+							<div class="basket_prd">
+								<a href="#">
+									<div class="basket_txt">
+										<div class="pic"><img src="images/mobile/temp/@temp_80x80.gif" alt="상품 이미지"></div>
+										<span class="prodtit">Cindy</span>
+										<span class="prodname">POLHAM 배색 스웨이드 후드 탈부 POLHAM 배색 스웨이드 후드 탈부</span>
+										<span class="prodprice">87,200<span class="won">원</span></span>
+										<span class="prodopt">A-1 OO호텔 예약권 / 1개</span>
+										<span class="prodnum">(<em>1</em>개 사용 완료)</span>
+									</div>
+								</a>
+								<div class="sel ord">
+									<div class="progress">
+										<em class="ico">발송완료</em>
+									</div>
+								</div>
+								<!-- 진행현황 버튼 -->
+								<div class="prd_total03">
+									<div class="btn">
+										<a href="#" class="dark">상품평작성</a> <!-- w40 클래스 제거 -->
+									</div>
+								</div>
+								<!-- //진행현황 버튼 -->
+							</div>
+						</div>
+					</div>
+					<!-- //디지털 상품권,입장권 160624 -->
+
+					<!-- 더보기 버튼 -->
+					<div class="btn_mymore">
+						<a href="#"><span class="ico">더보기 (20/27)</span></a>
+					</div>
+				</div>
+				<!-- //mypage_content -->
+
+
+		<!-- 주문배송 안내문구 -->
+		<div class="my_noti">
+			<ul>
+				<li>입금 확인중~상품 준비중 단계에서는 상품 취소가 가능하고, 배송중~배송완료 단계에서는 상품 취소가 불가능 합니다. <br>(단, 주문 제작 상품의 경우 상품준비 중 단계에서 취소가 불가능 할 수 있습니다.)</li>
+				<li>상품의 위치추적은 배송현황조회를 통해 조회가 가능합니다.</li>
+				<li>상세주문내역을 통해 주문 상세 내역을 확인하실 수 있습니다.</li>
+			</ul>
+		</div>
+		<!-- //주문배송 안내문구 -->
+
+
+
+				<script type="text/javascript">
+					//조회기간 선택
+					$(function(){
+						$(".sch_order li a").bind("click", function(){
+							$(this).parent().parent().find("li a").removeClass("on");
+							$(this).addClass("on");
+							$(this).parent().parent().parent().find(".sch_period").hide();
+						});
+						$(".sch_order li a.set").bind("click", function(){
+							$(this).parent().parent().parent().find(".sch_period").show();
+						});
+					});
+					//탭 관련	
+						function Set_tab(objId,objContId) {
+							this.init(objId,objContId);
+						}
+						Set_tab.prototype.init = function(objId,objContId) {
+							this.$set_tab_controller = $('#'+objId).find('li[class!="not_tab_item"]');
+							this.$set_tab_controller_btn = this.$set_tab_controller.find('a');
+							this.$set_tab_content = $('#'+objContId).find(' > div');
+							this.contEvtBlock = (objContId==undefined || this.$set_tab_content.html()==undefined || objContId=='') ? false : true;//탭컨텐츠 none/block 막기
+							this.$set_tab_content.hide();
+							this.$set_tab_content.eq(0).show();
+							this.initEvtL();
+						}
+						Set_tab.prototype.initEvtL = function() {
+							var objThis = this;
+							this.$set_tab_controller_btn.on('click',function() {
+								var idx = objThis.$set_tab_controller.index($(this).parents('li'));
+								objThis.all_close();
+								objThis.select_open(idx);
+								return false;
+							});
+						}
+						Set_tab.prototype.all_close = function() {
+							this.$set_tab_controller.removeClass('on');
+							if(this.contEvtBlock) {
+								this.$set_tab_content.hide();
+							}
+						}
+						
+						Set_tab.prototype.select_open = function(idx) {
+							this.$set_tab_controller.eq(idx).addClass('on');
+							if(this.contEvtBlock) {
+								this.$set_tab_content.eq(idx).show();
+							}
+						}
+						
+						$(function() {
+							var $list_pcomt = $('#list_pcomt li');
+							var $link_pcomt = $list_pcomt.find('.pcomt_cont .txt');
+							var $close_pcomt = $list_pcomt.find('.pcomt_close');
+							
+							$link_pcomt.on('click',function() {
+								var $obj = $(this).parents('li');
+								if($obj.hasClass('on')) {
+									$list_pcomt.removeClass('on');	
+									return false;
+								}
+								$list_pcomt.removeClass('on');
+								$obj.addClass('on');
+								$currentObj =  $obj
+								return false;
+							});
+							
+							$close_pcomt.on('click',function() {
+								var $obj = $(this).parents('li');
+								$list_pcomt.removeClass('on');
+								return false;
+							});
+						});
+						var tab_pcomt = new Set_tab('tab_pcomt','tab_pcomt_cont');
+				</script>
+
+
+			</div>
+			<!-- //.my_con -->
+		</div>
+		<!-- //.contents -->
+	</div>
+	<!-- //.container -->
+
+</div>
+<!-- // .wrapper -->
+
+<footer class="footer" id="footer">
+	<div class="ft_menu">
+	    <ul>
+	        <li><a href="javascript:;">로그아웃</a></li>
+	        <li><a href="javascript:;">마이페이지</a></li>
+	        <li><a href="javascript:;">고객센터</a></li>
+			<li><a href="javascript:;">공지사항</a></li>
+	    </ul>
+	</div>
+    <div class="ft_info">
+		<p><strong class="cop">(주)이랜드리테일</strong></p>
+		<p>사업자등록번호 : 114-81-01855 <a href="javascript:;">사업자정보확인</a></p>
+		<p>통신판매업 신고번호 : 서초 제 09998호</p>
+        <p>서울시 서초구 잠원동70-2</p>
+        <p>대표이사 : 김우섭/석창현</p>
+        <p class="foot_link">
+        	<a href="https://m.oneclick.elandretail.com/terms/privacyTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개||개인정보처리방침">개인정보처리방침</a>
+        	<a href="https://m.oneclick.elandretail.com/terms/memberShipClubTerms" target="_blank" title="새창" data-ga-tag="MW_푸터||푸터 리테일소개|| 약관안내">약관안내</a>
+        	<a href="javascript:;">브랜드비전</a>
+        	<a href="javascript:;">대량구매/협업문의</a>
+        </p>
+    </div>
+    <div class="ft_copy">COPYRIGHT 2016@ELAND RETAIL ALL RIGHT RESERVED</div>
+</footer>
+
+<nav>
+	<ul>
+		<li class="home on"><a href="javascript:;"><span>홈</span></a></li>
+		<li class="cura"><a href="javascript:;"><span>큐레이션</span></a></li>
+		<li class="coll"><a href="javascript:;"><span>카테고리</span></a></li>
+		<li class="wish"><a href="javascript:;"><span>찜목록</span></a></li>
+		<li class="mys"><a href="javascript:;"><span>마이슈펜</span></a></li>
+	</ul>
+</nav>
+
+<div class="btn_top" id="btn_top"><a href="javascript:;"><b class="ir">상단으로 이동</b></a></div>
+
+
+</body>
+</html>

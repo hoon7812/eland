@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+
+<title>kidikidi</title>
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_kids.css" type="text/css"> <!-- kids add css -->
+<!-- <link rel="stylesheet" href="../css/mobile/main_spao.css" type="text/css">  -->
+
+<!-- <link rel="apple-touch-icon" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000037_200.jpg">
+<link rel="apple-touch-icon-precomposed" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000037_200.jpg">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000037_192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="http://design.overpass.co.kr/eland/images/mobile/icon/0000037_160.png"> -->
+
+<style>
+    .style_wrap {padding-top: 6.5vw; padding-bottom: 6.5vw; position: relative;}
+    .style_container {max-width: 1080px;margin: 0 auto;padding-left: 5vw;padding-right: 5vw; box-sizing: border-box;}
+    .style_tab {margin-top: 6vw; padding-bottom: 9vw;  border-bottom:2px solid #ececec; position:relative;overflow: hidden;}
+    .style_tab .depth1::after {content: ""; display: block; clear: both;}
+    .style_tab .depth1 > li {float: left; width: 20%;}
+    .style_tab .depth1 > li > a {display: block; padding-bottom: 2vw; border-bottom: 2px solid #cfcfcf; text-align: center; padding: 0 15%;}
+    .style_tab .depth1 > li > a > i {display: block; width: 8vw; height: 8vw; margin: 0 auto;}
+    .style_tab .depth1 > li > a img {width:50%}
+    /*.style_tab .depth1 > li > a > i img.off {display: block;}*/
+    /*.style_tab .depth1 > li > a > i img.on {display: none;}*/
+    .style_tab .depth1 > li > a > span {display: block; margin:2vw 0; font-size: 2vw; color: #000;}
+    .style_tab .depth1 > li.on > a {border-bottom-color: #f53d41;}
+    .style_tab .depth1 > li.on > a > span {color: #f53d41;}
+    .style_tab .depth2 {opacity:0; position: absolute; left: 0; bottom:0; width:100%;}
+    .style_tab .depth1 > li.on .depth2 {opacity: 1;}
+    .style_tab .depth2:after {display: block;clear: both; content: '';}
+    .style_tab .depth2 ul li {width:auto !important; float:left; text-align: center; padding:0 20px;}    
+    .style_tab .depth2 ul li a {display:inline-block; font-size:3vw; color:#838383; padding:2vw 0;}    
+    
+    .style_tab .depth2 .paging_btns {display:none; position: absolute;bottom: 0;left: 0;width: 100%;height: 34px;z-index: 1;}
+
+    
+    .group_tab .depth2 .paging_btns .left, .group_tab .depth2 .paging_btns .right {
+    position: absolute;
+    bottom: 10px;
+    width: 17px;
+    height: 20px;
+}
+    .group_tab .depth2 .paging_btns .left {left:9px;}
+    .group_tab .depth2 .paging_btns .right {right:9px;}
+</style>
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+
+</head>
+<body class="renewal renewal2_brand kids"><!-- [v2] : renewal2 클래스 변경 -->
+
+<!-- CONTENT -->
+<div class="contents" id="contents"> 
+
+	<div class="m_cts" id="m_cts"> 
+		<ul class="swiper-wrapper">			
+			<li class="swiper-slide">
+
+				<!-- SWIPER 0 -->
+				<div class="slide_cont" data-index="0">					
+					<!-- 스타일 바로가기 -->
+                    <div class="area_lv1">
+                        <div class="style_wrap">
+                            <div class="style_container">
+                                <h3 class="kids_main_tit">스타일 바로가기</h3>
+                                <div class="style_tab group_tab">
+                                    <ul class="depth1">
+                                        <li><a href="javascript:;"><img src="../images/mobile/main/kids_ico_style_01.png" alt="kids_ico" /><span>컨셉보기</span></a>
+                                            <div class="depth2">
+                                                <div class="inner swiper-container">
+                                                    <ul class="swiper-wrapper">
+                                                        <li class="swiper-slide"><a href="javascript:;">ALL1</a></li>
+                                                        <li class="swiper-slide on"><a href="javascript:;">OUTER</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">TOP</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">BOTTOM</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="paging_btns">
+                                                    <button class="left"><em class="ir">왼쪽으로 슬라이드</em></button>
+                                                    <button class="right"><em class="ir">오른쪽으로 슬라이드</em></button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li><a href="javascript:;"><img src="../images/mobile/main/kids_ico_style_02.png" alt="kids_ico" /><span>아동복</span></a>
+                                            <div class="depth2">
+                                                <div class="inner swiper-container">
+                                                    <ul class="swiper-wrapper">
+                                                        <li class="swiper-slide"><a href="javascript:;">ALL2</a></li>
+                                                        <li class="swiper-slide on"><a href="javascript:;">OUTER</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">TOP</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">BOTTOM</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">DRESS</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="paging_btns">
+                                                    <button class="left"><em class="ir">왼쪽으로 슬라이드</em></button>
+                                                    <button class="right"><em class="ir">오른쪽으로 슬라이드</em></button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li><a href="javascript:;"><img src="../images/mobile/main/kids_ico_style_03.png" alt="kids_ico" /><span>엄마리빙</span></a>
+                                            <div class="depth2">
+                                                <div class="inner swiper-container">
+                                                    <ul class="swiper-wrapper">
+                                                        <li class="swiper-slide"><a href="javascript:;">ALL3</a></li>
+                                                        <li class="swiper-slide on"><a href="javascript:;">OUTER</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">TOP</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">BOTTOM</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">DRESS</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="paging_btns">
+                                                    <button class="left"><em class="ir">왼쪽으로 슬라이드</em></button>
+                                                    <button class="right"><em class="ir">오른쪽으로 슬라이드</em></button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li><a href="javascript:;"><img src="../images/mobile/main/kids_ico_style_04.png" alt="kids_ico" /><span>앵커관</span></a>
+                                            <div class="depth2">
+                                                <div class="inner swiper-container">
+                                                    <ul class="swiper-wrapper">
+                                                        <li class="swiper-slide"><a href="javascript:;">ALL4</a></li>
+                                                        <li class="swiper-slide on"><a href="javascript:;">OUTER</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">TOP</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">BOTTOM</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">DRESS</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                        <li class="swiper-slide on"><a href="javascript:;">OUTER</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">TOP</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">BOTTOM</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">DRESS</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">ACC</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="paging_btns">
+                                                    <button class="left"><em class="ir">왼쪽으로 슬라이드</em></button>
+                                                    <button class="right"><em class="ir">오른쪽으로 슬라이드</em></button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li><a href="javascript:;"><img src="../images/mobile/main/kids_ico_style_05.png" alt="kids_ico" /><span>BEST</span></a>
+                                            <div class="depth2">
+                                                <div class="inner swiper-container">
+                                                    <ul class="swiper-wrapper">
+                                                        <li class="swiper-slide"><a href="javascript:;">ALL5</a></li>
+                                                        <li class="swiper-slide on"><a href="javascript:;">OUTER</a></li>
+                                                        <li class="swiper-slide"><a href="javascript:;">TOP</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="paging_btns">
+                                                    <button class="left"><em class="ir">왼쪽으로 슬라이드</em></button>
+                                                    <button class="right"><em class="ir">오른쪽으로 슬라이드</em></button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <script type="text/javascript">
+                            $(window).load(function() {
+                                var random_on = Math.floor(Math.random() * $('.group_tab .depth1 >  li').length);
+                                $('.group_tab .depth1 >  li').eq(random_on).addClass('on');
+                                //var $r = $('.group_tab .depth1 >  li').eq(random_on);
+                                //$r.attr("src", $r.attr("src").replace(".png", "_on.png"));
+                                
+                                $('.group_tab li > a').click(function() {
+                                    groudSlide[$(this).parent().index()].reInit();
+                                    
+                                    var $parent = $(this).parent();
+                                    var $child = $(this).children('img');
+                                    $parent.siblings('li').removeClass('on');
+                                    var $parentSiblings = $parent.siblings('li').find('img'); //$parentSiblings.attr("src",$parentSiblings.attr("src").replace('_on.png','.png')); 
+                                    //var idx = $('.depth1').children('li').index();
+                                    var $list =$('.depth1').children('li');
+                                    var $listNum = $('.depth1').children('li').length;
+                                    $list.each(function(index){ 
+                                        var idx = index+1;
+                                        for(var i=0; i<$listNum; i++){
+                                            var $s = $list.eq(i).find('img');
+                                            $s.attr("src", $s.attr("src").replace("_on.png", ".png")); 
+                                        }
+                                    });
+                                    
+                                    $parent.addClass('on');   
+                                    $child.attr("src", $child.attr("src").replace(".png", "_on.png"));
+                                    
+                                });
+                                var groudSlide=[];
+                                $('.group_tab .depth2 .inner').each(function(index){
+                                    groudSlide[index] = new Swiper($(this)[0],{
+                                        loop: false,
+                                        // freeMode: true,
+                                        // freeModeFluid: true,
+                                        slidesPerView: 'auto',
+                                        calculateHeight: true,
+                                        createPagination : false,
+                                        simulateTouch : true,
+                                        momentumRatio:0.3,
+                                        //observer: true,
+                                        //observeParents: true,
+                                    });
+                                    if(groudSlide[index].slides.length<5){
+                                        $(this).siblings('.paging_btns').hide();
+                                    }			
+                                    $(this).siblings('.paging_btns').find('.left').click(function(){
+                                        groudSlide[index].swipePrev();
+                                    });
+                                    $(this).siblings('.paging_btns').find('.right').click(function(){
+                                        groudSlide[index].swipeNext();
+                                    });
+                                });
+
+                            });
+		
+                        </script>
+                    </div>
+                    <!-- //스타일 바로가기  -->
+
+				</div>
+				<!-- //SWIPER 0 -->				
+            </li>
+		</ul>
+    </div>
+    
+</div>
+<!-- //CONTENT -->
+
+<!-- UI.JS -->
+<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<!-- //UI.JS-->
+
+</body>
+</html>
+

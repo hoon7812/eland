@@ -1,0 +1,1356 @@
+@charset "utf-8";
+@mixin cssMinus($xBtnWid,$xBtnHei,$xBtnColor) {
+	$_width:$xBtnWid;
+	$_height:$xBtnHei;
+	&:after{display:block;content:'';position:absolute;top:0;bottom:0;right:24px;width:$_width;height:$_height;margin:auto 0;transform:rotate(90deg);-webkit-transform:rotate(90deg);background:$xBtnColor;}
+}
+@mixin brandMallHdr($brandName) {
+	/* HEADER-RENEWAL */
+	.renewal2_brand {
+		@if($brandName=="modern") {
+			//MODERN
+			&.modern {
+				$hdrBgColor : #666565;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 148px;//로고 너비
+				$logoHei : 44px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_md_v2.png';//브랜드몰 Bg sprite
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#333;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#242424;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#242424;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #ccc;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:10px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:43px;height:49px;background:none;
+							&:after {position:absolute;top:16px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:17px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:22px;height:23px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:42px;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:9px;right:3px;z-index:1;width:16px;height:16px;background:#231916;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:8px;display:block;content:'';width:24px;height:22px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="folder") {
+			//FOLDER
+			&.folder {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #000;//gnb메뉴BG 컬러
+				$logoWid : 57px;//로고 너비
+				$logoHei : 30px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_folder_v2.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_white.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;font-weight:bold;letter-spacing:-1px;line-height:16px;color:#fff;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#fff;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#fff;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #000;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:10px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:40px;height:49px;background:none;
+							&:after {position:absolute;top:18px;left:12px;display:block;content:'';overflow:hidden;width:16px;height:13px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;
+										&:after {position:absolute;top:50%;left:4px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;border-bottom:1px solid #000;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:43px;height:48px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:15px;right:12px;display:block;content:'';width:21px;height:17px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:43px;width:38px;height:48px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:13px;right:-3px;z-index:1;overflow:visible;width:16px;height:11px;background:#000;color:#fff;font-size:11px;line-height:11px;
+											&:before {position:absolute;bottom:-4px;left:50%;z-index:2;display:block;content:'';margin:0 0 0 -2px;border:2px solid #000;border-bottom:2px solid transparent;border-right:2px solid transparent;}
+										}
+										&:after {position:absolute;top:14px;right:9px;display:block;content:'';width:19px;height:19px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="ost") {
+			//OST
+			&.ost {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 80px;//로고 너비
+				$logoHei : 24px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_ost_v2_N.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#333;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#73c8cb;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#73c8cb;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #ccc;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:12px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 7px 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:43px;height:50px;background:none;
+							&:after {position:absolute;top:17px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:17px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;border:1px solid #73c8cb;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:22px;height:23px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:42px;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:9px;right:3px;z-index:1;width:16px;height:16px;background:#73c8cb;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:8px;display:block;content:'';width:24px;height:22px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="newbal") {
+			//NEW BALANCE
+			&.newbal {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #232323;//gnb메뉴BG 컬러
+				$logoWid : 110px;//로고 너비
+				$logoHei : 20px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_newbal_v2.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_white.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#aaa;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#fff;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {display:none;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#aaa;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:15;display:block;content:'';border-bottom:1px solid #282828;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					&:before {position:absolute;bottom:0;left:0;right:0;z-index:15;display:block;content:'';border-top:2px solid #e21836;}
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:13px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:43px;height:50px;background:none;
+							&:after {position:absolute;top:17px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:17px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{overflow:hidden;height:27px;margin:45px 35px 0;padding:0 13px;background:transparent;border-radius:0;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {position:relative;border-radius:0;background-image:none;
+										&:before{display:block;position:absolute;top:0;left:-14px;z-index:1;content:'';width:0;height:0;border-bottom:28px solid #efefef;border-left:14px solid transparent;border-right:14px solid transparent;}
+										&:after{display:block;position:absolute;bottom:0;right:-14px;z-index:1;content:'';width:0;height:0;border-top:28px solid #efefef;border-left:14px solid transparent;border-right:14px solid transparent;}
+										.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+										.txt_btn{position:relative;z-index:2;width:100%;text-align:left;padding:0;height:27px;background:#efefef;border:1px solid #efefef;
+										&:after {position:absolute;top:50%;left:4px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;/*overflow:hidden;*/padding:0 0 0 25px;margin-right:27px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:20px;height:21px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:38px;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:21px;right:1px;z-index:1;width:16px;height:16px;background:#e21836;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:10px;display:block;content:'';width:18px;height:23px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@else if($brandName=="mixxo") {
+			//mixxo
+			&.mixxo {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 69px;//로고 너비
+				$logoHei : 25px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_mixxo_v2.png';//브랜드몰 Bg sprite
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 20px 0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#333;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+										&:before {position:absolute;top:0;right:-17px;display:block;padding-top:10px;content:'/';font-size:15px;color:#d0d0d0;font-weight:normal;}
+									}
+									&:last-child {
+										span{margin-right:12px;}
+										span:before{display:none;}
+									} 
+									&.on span{border:none;color:#242424;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#1f1a1c;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #383436;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:14px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:48px;height:49px;background:none;
+							&:after {position:absolute;top:17px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:16px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border:1px solid #ededed;border-radius:0;background:#f3f3f3;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:41px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:19px;height:21px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:41px;width:39px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:22px;right:3px;z-index:1;width:16px;height:16px;background:#df3434;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:10px;display:block;content:'';width:20px;height:20px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="nbkids") {
+			//NEW BALANCE KIDS
+			&.nbkids {
+				$hdrBgColor : #ec123b;//헤더BG 컬러
+				$gnbMenuBgColor : #242424;//gnb메뉴BG 컬러
+				$logoWid : 125px;//로고 너비
+				$logoHei : 24px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_nbkids_v2.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_white.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#999;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#fff;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {display:none;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #242424;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:12px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:43px;height:46px;background:none;
+							&:after {position:absolute;top:17px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:17px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:44px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:14px;display:block;content:'';width:22px;height:23px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:44px;width:40px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:14px;right:0;z-index:1;width:16px;height:16px;background:#242424;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:8px;display:block;content:'';width:24px;height:22px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="roem") {
+			//ROEM
+			&.roem {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 78px;//로고 너비
+				$logoHei : 24px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_roem_v2.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#808080;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#222;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#000;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#808080;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #000;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:12px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:43px;height:48px;background:none;
+							&:after {position:absolute;top:16px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:17px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;border:1px solid #dfdfdf;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:44px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:24px;height:21px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:44px;width:38px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:10px;right:2px;z-index:1;width:16px;height:16px;background:#f7a4c2;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:16px;right:8px;display:block;content:'';width:22px;height:19px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="shoopen") {
+			//SHOOPEN
+			&.shoopen {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 73px;//로고 너비
+				$logoHei : 31px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_shoopen_v2.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#000;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#000;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#000;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #fff;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:6px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:40px;height:46px;background:none;
+							&:after {position:absolute;top:17px;left:12px;display:block;content:'';overflow:hidden;width:16px;height:13px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border:1px solid #ededed;border-radius:0;background:#f3f3f3;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:44px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:23px;height:20px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:44px;width:36px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:24px;right:0;z-index:1;width:16px;height:16px;background:#c9000b;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:8px;display:block;content:'';width:19px;height:20px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="spao") {
+			//spao
+			&.spao {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 80px;//로고 너비
+				$logoHei : 23px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_spao_v2.png';//브랜드몰 Bg sprite
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#333;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#c41e20;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#c41e20;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #ccc;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:10px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:43px;height:45px;background:none;
+							&:after {position:absolute;top:16px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:16px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:26px;margin:46px 38px 0 38px;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:26px;border-bottom:0;border-radius:20px;border:2px solid #c31d1f;box-sizing:border-box;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:22px;border-radius:20px;background:#fff;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:24px;line-height:24px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:18px;height:18px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:35px;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:9px;right:1px;z-index:1;width:16px;height:16px;background:#c31d1f;color:#fff;border:1px solid #fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:8px;display:block;content:'';width:24px;height:20px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+								&.bcd{display:none;position:absolute;top:49px;right:38px;width:22px;height:22px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:0;left:0;display:block;content:'';width:22px;height:22px;background:url($bgUrl) no-repeat -119px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+							&.sch_bcd{
+								ul{margin:46px 68px 0 38px}
+								li{
+									&.bcd{display:block;}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="kims") {
+			//KIMS CLUB
+			&.kims {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #242424;//gnb메뉴BG 컬러
+				$logoWid : 109px;//로고 너비
+				$logoHei : 16px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_kims_v2.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_white.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{display:flex;overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;flex:1;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#fff;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;white-space:nowrap;}
+									&.on span{border:none;color:#fff;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {display:none;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#fff;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #242424;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:16px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:44px;height:46px;background:none;
+							&:after {position:absolute;top:17px;left:12px;display:block;content:'';overflow:hidden;width:20px;height:15px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border:1px solid #ededed;border-radius:0;background:#f3f3f3;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:43px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:19px;height:21px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:41px;width:41px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:8px;right:0;z-index:1;width:16px;height:16px;background:#404041;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:8px;display:block;content:'';width:23px;height:21px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@else if($brandName=="lloyd") {
+			//LLOYD
+			&.lloyd {
+				$hdrBgColor : #00381d;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 84px;//로고 너비
+				$logoHei : 21px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_lloyd_v2.png';//브랜드몰 Bg sprite
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#333;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#00371c;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#00371c;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #ddd;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:15px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:43px;height:49px;background:none;
+							&:after {position:absolute;top:16px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:17px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:45px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:15px;right:12px;display:block;content:'';width:23px;height:22px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:45px;width:39px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:22px;right:3px;z-index:1;width:16px;height:16px;background:#f8de8b;color:#00371c;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:15px;right:10px;display:block;content:'';width:18px;height:20px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="eblin") {
+			//EBLIN
+			&.eblin {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 98px;//로고 너비
+				$logoHei : 23px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_eblin_v2.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#333;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#222;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#222;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #222;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:14px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:43px;height:48px;background:none;
+							&:after {position:absolute;top:16px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:16px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;border:1px solid #dfdfdf;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:41px;height:45px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:16px;right:12px;display:block;content:'';width:19px;height:18px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:41px;width:42px;height:45px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:10px;right:2px;z-index:1;width:16px;height:16px;background:#ffbfb5;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:16px;right:11px;display:block;content:'';width:20px;height:19px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@else if($brandName=="clue") {
+			//CLUE
+			&.clue {
+				$hdrBgColor : #f8bbac;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 71px;//로고 너비
+				$logoHei : 34px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_clue_v2_N.png';//브랜드몰 Bg sprite
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#333;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#f3927a;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#f3927a;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #e6e6e6;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:4px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:44px;height:47px;background:none;
+							&:after {position:absolute;top:16px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:17px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:22px;height:23px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:42px;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:9px;right:3px;z-index:1;width:16px;height:16px;background:#fff;color:#f8bbac;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:10px;display:block;content:'';width:24px;height:22px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@else if($brandName=="kinder") {
+			//KINDER
+			&.kinder {
+				$hdrBgColor : #edaa00;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 93px;//로고 너비
+				$logoHei : 28px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_kinder_v2.png';//브랜드몰 Bg sprite
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#333;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#edaa00;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#edaa00;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #e6e6e6;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:9px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:48px;height:46px;background:none;
+							&:after {position:absolute;top:17px;left:12px;display:block;content:'';overflow:hidden;width:20px;height:15px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:22px;height:23px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:42px;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:9px;right:3px;z-index:1;width:16px;height:16px;background:#00a94e;color:#fff;border:1px solid #fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:10px;display:block;content:'';width:24px;height:22px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="whoau") {
+			//WHOAU
+			&.whoau {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 85px;//로고 너비
+				$logoHei : 16px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_whoau_v2.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#222;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#f07e02;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {display:none;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#222;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #000;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:72px;padding-bottom:12px;
+					.head{height:72px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:16px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:42px;height:46px;background:none;
+							&:after {position:absolute;top:17px;left:12px;display:block;content:'';overflow:hidden;width:17px;height:15px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:27px;margin:45px 48px 0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:27px;border-bottom:0;border-radius:20px;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;left:0;right:auto;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border:2px solid #f08109;border-radius:0;background:#fff;
+										&:after {position:absolute;top:50%;left:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 27px 0 35px;height:23px;line-height:23px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:43px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:19px;height:21px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:41px;width:39px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:10px;right:5px;z-index:1;width:16px;height:16px;background:#f08109;color:#fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:8px;display:block;content:'';width:23px;height:21px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="luxury") {
+			//luxury
+			&.luxury {
+				$hdrBgColor : #000;//헤더BG 컬러
+				$gnbMenuBgColor : #000;//gnb메뉴BG 컬러
+				$logoWid : 177px;//로고 너비
+				$logoHei : 33px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_luxury_v2.png';
+				$elandBgUrl : '../../images/mobile/main/elandmall_white.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:58px;z-index:50;width:100%;min-width:320px;height:42px;padding-left:0;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:42px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding:13px 0 11px;font-size:16px;font-weight:bold;letter-spacing:0em;line-height:1em;color:#888;font-weight:400;font-family:"jost","Roboto","Droid Sans","Apple-Gothic","dotum";box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#fff;}
+									&.on span:after {position:absolute;bottom:9px;left:0;right:0;display:block;content:'';height:2px;border:none;background:#fff;border-radius:0;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #000;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:58px;/* padding-bottom:12px; */
+					.head{height:58px;
+						h1{width:$logoWid;height:$logoHei;margin:0;padding:15px 0 0 50px;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:1px;left:0;z-index:999;width:40px;height:49px;background:none;
+							&:after {position:absolute;top:20px;left:15px;display:block;content:'';overflow:hidden;width:17px;height:16px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:auto;;margin:0;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;
+								&.bcd{display:none;}
+								&.sch {position:absolute;top:5px;right:42px;width:35px;height:48px;background:none;
+									.sch_btn{position:relative;display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:-1px;bottom:0;left:0;right:0;display:block;content:'';width:18px;height:19px;margin:auto;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+									}
+									// .txt_btn{position:relative;width:100%;text-align:left;padding:0;height:27px;border-radius:20px;background:#fff;
+									// 	&:after {position:absolute;top:50%;left:4px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+									// 	b{display:block;overflow:hidden;padding:0 27px 0 35px;height:27px;border-bottom:1px solid #000;line-height:27px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:center;}
+									// }
+								}
+								&.myp{display:none;position:absolute;top:4px;right:6px;width:35px;height:48px;
+									a {position:relative;display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:0;bottom:0;left:0;right:0;display:block;content:'';width:20px;height:19px;margin:auto;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:6px;right:6px;width:35px;height:48px;
+									a {position:relative;display:block;width:100%;height:100%;background:none;
+										em {top:19px;right:1px;z-index:1;overflow:visible;width:17px;height:17px;background:#fff;color:#000;font-size:11px;line-height:20px;border-radius:17px;
+											// &:before {position:absolute;bottom:-4px;left:50%;z-index:2;display:block;content:'';margin:0 0 0 -2px;border:2px solid #c3862c;border-bottom:2px solid transparent;border-right:2px solid transparent;}
+										}
+										&:after {position:absolute;top:12px;bottom:0;left:0;right:0;display:block;content:'';width:20px;height:19px;margin:0 auto;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+						}
+					}
+				}
+				.search_wrap:before{display:none;} // 검색 영역이 아닌 경우 1px 보더 필요 없음.
+				&.sch_part{
+					&:not(.cate_part){
+						.search_wrap:before{display:block;}
+						//검색 결과 화면
+						.header{height:88px;padding-bottom:12px;
+							.head{height:100px;
+								.hnb{height:55px;
+									ul{height:35px;margin:55px 14px 0 14px;padding:0;background:transparent;
+										li.sch{position:relative;right:auto;top:auto;width:100%;height:35px;border-bottom:0;box-sizing:border-box;
+											button.back{display:none;top:-10px;left:-41px;}
+											.txt_btn{height:35px;background:#fff;
+												b{text-indent:14px;}
+											}
+											.sch_btn{position:absolute;top:0;right:0;width:35px;
+												&:after{background-position:-125px -60px;}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					// .s_filter{background-color:#666;}
+					.sch_kwd{top:100px;
+						&.fixed{top:45px;}
+					}
+					&.head_up{
+						.header{top:-46px !important;transition:top 0s;}
+						.sch_sort{top:42px;
+							.sch_kwd{top:-45px;}
+						}
+					}
+				}
+			}
+		}
+		@else if($brandName=="nc") {
+			//nc mall
+			&.nc {
+				$hdrBgColor : #fff;//헤더BG 컬러
+				$gnbMenuBgColor : #fff;//gnb메뉴BG 컬러
+				$logoWid : 127px;//로고 너비
+				$logoHei : 28px;//로고 높이
+				$bgUrl : '../../images/mobile/renewal/bg_main_nc.png';//브랜드몰 Bg sprite
+				$elandBgUrl : '../../images/mobile/main/elandmall_black.png';//이랜드로고 아이콘
+
+				//GNB MENU
+				.main_top{position:fixed;left:0;top:72px;z-index:50;width:100%;min-width:320px;height:38px;padding-left:38px;background:$gnbMenuBgColor;-webkit-transition:top 0.3s;-moz-transition:top 0.3s;-o-transition:top 0.3s;-ms-transition:top 0.3s;transition:top 0.3s;transition-delay:0.2s;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);border-bottom:none;box-sizing:border-box;-webkit-box-sizing:border-box;
+					.gnb_wrap{position:relative;min-width:320px;box-sizing:border-box;-webkit-box-sizing:border-box;
+						.gnb{position:relative;z-index:12;overflow:hidden;width:100%;height:38px;background:none;
+							ul{overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+								li{position:relative;float:left;height:100%;
+									span{position:relative;display:block;width:auto;height:100%;margin:0 12px;padding-top:11px;padding-left:0;padding-right:0;font-size:15px;line-height:16px;color:#333;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+									&.on span{border:none;color:#c41e20;font-weight:bold;letter-spacing:-1px;}
+									&.on span:after {position:absolute;bottom:0;left:0;right:0;display:block;content:'';height:3px;border:none;background:#c41e20;border-radius:3px;}
+									a{position:relative;display:block;width:auto;padding:0 0 0 8px;margin:0 0 0 4px;font-size:15px;color:#333;line-height:39px;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
+								}
+							}
+						}
+						.eland {position:absolute;left:-38px;top:0;width:36px;z-index:14;height:calc(100% - 1px);border-bottom:none;background:$gnbMenuBgColor url($elandBgUrl) 12px center no-repeat;background-size:24px 24px;
+							a{display:block;width:100%;height:100%;font-size:0;color:transparent;text-indent:-9999px;}
+						}
+						.sul_tx{position:absolute;top:0;left:0;z-index:13;width:auto;height:100%;padding:0;background:none;box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;
+							a{display:block;
+								img{width:90px;height:100%;vertical-align:top;}
+							}
+						}
+					}
+					&:after {position:absolute;bottom:0;left:0;right:0;z-index:11;display:block;content:'';border-bottom:1px solid #ccc;}
+				}
+				//브랜드몰HEADER
+				.header{background:$hdrBgColor;height:153px;
+					.head{height:104px;padding-bottom:10px;
+						h1{width:$logoWid;height:$logoHei;margin:0 auto;padding:30px 0 0;z-index:999;
+							a{position:absolute;display:block;width:$logoWid;height:$logoHei;background:url($bgUrl) no-repeat 0 0;background-size:200px 200px;z-index:999;}
+						}
+						.left_open {display:block;position:absolute;top:0;left:0;z-index:999;width:43px;height:45px;background:none;
+							&:after {position:absolute;top:16px;left:12px;display:block;content:'';overflow:hidden;width:19px;height:16px;background:url($bgUrl) no-repeat 0 -60px;background-size:200px 200px;}
+						}
+						.hnb{width:100%;top:0;right:0;background:transparent;
+							ul{height:34px;margin:70px 16px 0 16px;padding:0;background:transparent;} /* 너비 고정 */
+							/* ul{margin:40px 53px 0;height:27px;background:#fff;} 너비 유동*/
+							li{margin:0;}
+							.sch{width:100%;height:34px;border-bottom:0;border-radius:20px;border:1px solid #000;box-sizing:border-box;background:#fff;}
+							li{
+								&.sch {
+									.sch_btn{position:absolute;top:0;right:0;width:35px;}
+									.txt_btn{position:relative;width:100%;text-align:left;padding:0;height:32px;border-radius:20px;background:none;
+										&:after {position:absolute;top:50%;right:12px;display:block;content:'';width:19px;height:19px;margin-top:-9px;background:url($bgUrl) no-repeat -90px -60px;background-size:200px 200px;}
+										b{display:block;overflow:hidden;padding:0 35px 0 9px;height:32px;line-height:32px;font-size:13px;color:#666;font-weight:400;text-indent:8px;text-align:left;}
+									}
+								}
+								
+								&.myp {position:absolute;top:0;right:0;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:14px;right:12px;display:block;content:'';width:18px;height:18px;background:url($bgUrl) no-repeat -60px -60px;background-size:200px 200px;}
+									}
+								}
+								&.cart {position:absolute;top:0;right:35px;width:42px;height:46px;
+									a {display:block;width:100%;height:100%;background:none;
+										em {top:9px;right:1px;z-index:1;width:16px;height:16px;background:#c31d1f;color:#fff;border:1px solid #fff;border-radius:8px;font-size:11px;line-height:18px;}
+										&:after {position:absolute;top:14px;right:8px;display:block;content:'';width:24px;height:20px;background:url($bgUrl) no-repeat -30px -60px;background-size:200px 200px;}
+									}
+								}
+								&.bcd{display:none;position:absolute;top:49px;right:38px;width:22px;height:22px;
+									a {display:block;width:100%;height:100%;background:none;
+										&:after {position:absolute;top:0;left:0;display:block;content:'';width:22px;height:22px;background:url($bgUrl) no-repeat -119px -60px;background-size:200px 200px;}
+									}
+								}
+							}
+							&.sch_bcd{
+								ul{margin:46px 68px 0 38px}
+								li{
+									&.bcd{display:block;}
+								}
+							}
+						}
+					}
+					.qck_dest{position:absolute;bottom:0;width:100%;height:39px;
+						a{position:relative;display:block;width:100%;height:100%;padding-left:32px;line-height:40px;font-size:13px;color:#111;letter-spacing:-0.04em;box-sizing:border-box;border-bottom:1px solid #ddd;border-top:1px solid #000;
+							span{display:block;padding-right:33px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+							&:before{position:absolute;bottom:13px;left:16px;width:10px;height:13px;background:url("../../images/mobile/renewal/bg_main_nc.png") 0 -100px no-repeat;background-size:200px 200px;content:"";}
+							&:after{position:absolute;bottom:12px;right:16px;width:8px;height:14px;background:url("../../images/mobile/renewal/bg_main_nc.png") -25px -100px no-repeat;background-size:200px 200px;content:"";}
+							&.disabled{
+								&:before{background-position:0 -125px;}
+								span{float:left;max-width:calc(100% - 121px);padding:0;}
+								em.flag{float:left;width:73px;height:20px;margin:8px 0 0 7px;line-height:22px;font-size:11px;color:#ea2424;letter-spacing:-0.04em;text-align:center;border:1px solid #ea2424;border-radius:3px;}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.head_up .main_top .gnb {padding-top:0;}
+		&.head_up .main_top .gnb ul {padding-top:0;}
+	}
+}

@@ -1,0 +1,227 @@
+﻿
+<script>
+<!--
+$(document).ready(function(){
+
+	var 
+	var evtSlider01 = new Swiper('#evt_silder01 .swiper_container', {
+		speed: 1200
+		,simulateTouch : false
+		,createPagination: false
+		,loop : true
+	});
+	$('#evt_silder01 .btn_prev').on('click',function(e){e.preventDefault();evtSlider01.swipePrev();})
+	$('#evt_silder01 .btn_next').on('click',function(e){e.preventDefault();evtSlider01.swipeNext();})
+
+	var cDate = Number(new Date().format('yyyyMMddHH'));
+	if(cDate >= '2018090300' && cDate <= '2018090323'){
+		evtSlider01.swipeTo(0, 0 , true);
+	}else if(cDate >= '2018090400'&& cDate <= '2018090423'){
+		evtSlider01.swipeTo(1, 0 , true);
+	}else if(cDate >= '2018090500'&& cDate <= '2018090523'){
+		evtSlider01.swipeTo(2, 0 , true);
+	}else if(cDate >= '2018090600'&& cDate <= '2018090623'){
+		evtSlider01.swipeTo(3, 0 , true);
+	}else if(cDate >= '2018090700'&& cDate <= '2018090723'){
+		evtSlider01.swipeTo(4, 0 , true);
+	}
+
+
+	preStockCheck("6c13f837-45ce-0641-08ad-7acba42a0fb7");
+	preSaleTimeCheck();
+
+	var running_chk = false;
+});
+
+preStockCheck = function(args){
+
+	var stock_chk_done = false;
+	
+	$.ajax({
+		url: fo_event_url,
+		xhrFields: {withCredentials: true},
+		async: false,
+		crossDomain: true,
+		cors: true,
+		data: {event_key: args},
+		type: "POST",
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+		dataType: "json",
+		success: function(result){
+			if(result.error == 'success'){
+				arrMakeDisableOnClick(result);
+			} else if(result.error == '0001' || result.error == '0004'){
+				alert("비정상적인 접근입니다.");
+			} else if(result.error == '0003'){
+				alert("등록되지 않은 이벤트입니다.");
+			} else {	
+				alert("서비스가 원활하지 않습니다. 다시 시도해 주세요.");
+			}
+			stock_chk_done = true;
+		},error:function(e){
+			console.log(e);
+			stock_chk_done = true;
+		}
+	});
+
+	//A loop to check done if ajax call is done.
+	while (!stock_chk_done) {
+		setTimeout(function(){}, 500); // take a sleep.
+	}
+
+}
+
+arrMakeDisableOnClick = function(args){
+
+	var arr_goods_nos = "AFABECDE492486E8016DEB0D3B38833A|94FF5E38FABA0056F0F8A47763A0CC28|24CDCD1891F9445980AA1177423C1B36|04ACD1FC037D8D040A0E72B57E96F4A3|B7D19CF8C78D85BA148BBD04BD423440".split("|");
+	var js_func = "";
+	
+	for(i = 0; i < arr_goods_nos.length; i++){
+		if(args.data.indexOf(arr_goods_nos[i]) != -1){
+
+			js_func = "alert('이벤트가 종료되었습니다.'); return false;";
+
+			$("#"+arr_goods_nos[i]).removeAttr("onclick");
+			$("#"+arr_goods_nos[i]).attr('onclick', js_func);
+
+		}
+	}
+}
+
+preSaleTimeCheck = function(){
+
+	var goods_no = "";
+	var msg = "";
+
+	$.ajax({
+		url:"/goods/getCurrentDateTime.action",
+		async: false,
+		data: {pattern : 'yyyyMMddHHmm'},
+		type:"get",
+		dataType:"json",
+		success: function(result){
+		var currentDate = result.currentDateTime.substring(0,8);
+		var currentTime = result.currentDateTime.substring(8,12);
+
+			if(Number(currentDate) > 20180903) {
+				goods_no = "AFABECDE492486E8016DEB0D3B38833A";
+				msg = "이벤트가 종료되었습니다.";
+				
+				strMakeDisableOnClick(msg, goods_no);
+			} else if(Number(currentDate) <= 20180903) {
+				goods_no = 'AFABECDE492486E8016DEB0D3B38833A';
+				if(950 > Number(currentTime)) {
+					msg = "3일 오전 10시에 오픈합니다.";
+					
+					strMakeDisableOnClick(msg, goods_no);
+				}
+			}
+
+			if(Number(currentDate) > 20180904) {
+				goods_no = '94FF5E38FABA0056F0F8A47763A0CC28';
+				msg = "이벤트가 종료되었습니다.";
+				
+				strMakeDisableOnClick(msg, goods_no);
+			} else if(Number(currentDate) <= 20180904) {
+				goods_no = '94FF5E38FABA0056F0F8A47763A0CC28';
+				if(950 > Number(currentTime)) {
+					msg = "4일 오전 10시에 오픈합니다.";
+
+					strMakeDisableOnClick(msg, goods_no);
+				}
+				
+			}
+
+			if(Number(currentDate) > 20180905) {
+				goods_no = '24CDCD1891F9445980AA1177423C1B36';
+				msg = "이벤트가 종료되었습니다.";
+				
+				strMakeDisableOnClick(msg, goods_no);
+			} else if(Number(currentDate) <= 20180905) {
+				goods_no = '24CDCD1891F9445980AA1177423C1B36';
+				if(950 > Number(currentTime)) {
+					msg = "5일 오전 10시에 오픈합니다.";
+
+					strMakeDisableOnClick(msg, goods_no);
+				}
+				
+			}
+			
+			if(Number(currentDate) > 20180906) {
+				goods_no = '04ACD1FC037D8D040A0E72B57E96F4A3';
+				msg = "이벤트가 종료되었습니다.";
+				
+				strMakeDisableOnClick(msg, goods_no);
+			} else if(Number(currentDate) <= 20180906) {
+				goods_no = '04ACD1FC037D8D040A0E72B57E96F4A3';
+				if(950 > Number(currentTime)) {
+					msg = "6일 오전 10시에 오픈합니다.";
+
+					strMakeDisableOnClick(msg, goods_no);
+				}
+				
+			}			
+			
+			if(Number(currentDate) > 20180907) {
+				goods_no = 'B7D19CF8C78D85BA148BBD04BD423440';
+				msg = "이벤트가 종료되었습니다.";
+				
+				strMakeDisableOnClick(msg, goods_no);
+			} else if(Number(currentDate) <= 20180907) {
+				goods_no = 'B7D19CF8C78D85BA148BBD04BD423440';
+				if(950 > Number(currentTime)) {
+					msg = "7일 오전 10시에 오픈합니다.";
+
+					strMakeDisableOnClick(msg, goods_no);
+				}
+				
+			}			
+
+		},error:function(e){
+			alert(e);
+		}
+	});
+
+}
+
+strMakeDisableOnClick = function(msg, goods_no){
+
+	var alertmsg = msg;
+	var js_func = "alert('"+alertmsg+"'); return false;";
+
+	$("#"+goods_no).removeAttr("onclick");
+	$("#"+goods_no).attr('onclick', js_func);
+
+}
+//-->
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- evt_silder_wrap -->
+<div class="evt_silder_wrap" id="evt_silder01">
+<div class="evt_slider_cnt">
+<div class="swiper_container">
+<ul class="swiper-wrapper">
+	<li class="swiper-slide"><img alt="아웃백 오지치즈후라이즈" id="AFABECDE492486E8016DEB0D3B38833A" onclick="elandmall.goodsSkipDetail.click2Shortcut({event_key: '6c13f837-45ce-0641-08ad-7acba42a0fb7', event_start_date: '2018-09-03 10:00:00', event_end_date: '2018-09-03 23:59:59', goods_no: 'AFABECDE492486E8016DEB0D3B38833A', vir_vend_no: 'VV17005032', smsg: '3일 오전 10시에 오픈합니다.', emsg: '준비한 재고가 모두 소진되었습니다. 감사합니다.', check_type: 'event_goods_no'});" src="http://img2.elandmall.com/event/2018_markting/180901/mo01/180901_night_mo_deal_01.jpg" /></li>
+	<li class="swiper-slide"><img alt="롯데시네마 영화예매권" id="94FF5E38FABA0056F0F8A47763A0CC28" onclick="elandmall.goodsSkipDetail.click2Shortcut({event_key: '6c13f837-45ce-0641-08ad-7acba42a0fb7', event_start_date: '2018-09-04 10:00:00', event_end_date: '2018-09-04 23:59:59', goods_no: '94FF5E38FABA0056F0F8A47763A0CC28', vir_vend_no: 'VV17005032', smsg: '4일 오전 10시에 오픈합니다.', emsg: '준비한 재고가 모두 소진되었습니다. 감사합니다.', check_type: 'event_goods_no'});" src="http://img2.elandmall.com/event/2018_markting/180901/mo01/180901_night_mo_deal_02.jpg" /></li>
+	<li class="swiper-slide"><img alt="BHC 후라이드반+양념반+콜라1.25L" id="24CDCD1891F9445980AA1177423C1B36" onclick="elandmall.goodsSkipDetail.click2Shortcut({event_key: '6c13f837-45ce-0641-08ad-7acba42a0fb7', event_start_date: '2018-09-05 10:00:00', event_end_date: '2018-09-05 23:59:59', goods_no: '24CDCD1891F9445980AA1177423C1B36', vir_vend_no: 'VV17005032', smsg: '5일 오전 10시에 오픈합니다.', emsg: '준비한 재고가 모두 소진되었습니다. 감사합니다.', check_type: 'event_goods_no'});" src="http://img2.elandmall.com/event/2018_markting/180901/mo01/180901_night_mo_deal_03.jpg" /></li>
+	<li class="swiper-slide"><img alt="베스킨라빈스 파인트" id="04ACD1FC037D8D040A0E72B57E96F4A3" onclick="elandmall.goodsSkipDetail.click2Shortcut({event_key: '6c13f837-45ce-0641-08ad-7acba42a0fb7', event_start_date: '2018-09-06 10:00:00', event_end_date: '2018-09-06 23:59:59', goods_no: '04ACD1FC037D8D040A0E72B57E96F4A3', vir_vend_no: 'VV17005032', smsg: '6일 오전 10시에 오픈합니다.', emsg: '준비한 재고가 모두 소진되었습니다. 감사합니다.', check_type: 'event_goods_no'});" src="http://img2.elandmall.com/event/2018_markting/180901/mo01/180901_night_mo_deal_04.jpg" /></li>
+	<li class="swiper-slide"><img alt="도미노 포테이토피자(M)" id="B7D19CF8C78D85BA148BBD04BD423440" onclick="elandmall.goodsSkipDetail.click2Shortcut({event_key: '6c13f837-45ce-0641-08ad-7acba42a0fb7', event_start_date: '2018-09-07 10:00:00', event_end_date: '2018-09-07 23:59:59', goods_no: 'B7D19CF8C78D85BA148BBD04BD423440', vir_vend_no: 'VV17005032', smsg: '7일 오전 10시에 오픈합니다.', emsg: '준비한 재고가 모두 소진되었습니다. 감사합니다.', check_type: 'event_goods_no'});" src="http://img2.elandmall.com/event/2018_markting/180901/mo01/180901_night_mo_deal_05.jpg" /></li>
+</ul>
+</div>
+
+<div class="br_controll"><a class="d_prev_br btn_prev" href="#"><span class="ir">이전</span></a> <a class="d_next_br btn_next" href="#"><span class="ir">다음</span></a></div>
+</div>
+</div>
+<!-- //evt_silder_wrap -->

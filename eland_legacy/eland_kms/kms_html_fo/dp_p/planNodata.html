@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>KIMS CLUB</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean&family=Roboto:wght@400;700&display=swap">
+  <link rel="shortcut icon" type="image/x-icon" href="../../images/pcweb/kms_pcweb/common/ico_kms.ico" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_main.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/category.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/pcweb/kms_pcweb/main.css" />
+  <script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/jquery.plugin.js"></script> 
+  <script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+  <script type="text/javascript" src="../../pcweb/js/kms_ui.js"></script>
+</head>
+
+<body>
+ <!-- wrapper -->
+ <div id="wrapper" class="kims">
+  
+  <!-- HEADER -->
+  <script src="../common/incHeaderW.js"></script>
+  <script type="text/javascript">
+    //gnb
+    $(document).ready(function(){
+      cateSwiper('gnbScroll',10,1)
+    })
+    //gnbAllCate
+    $('.catg_lyr .lnb_cate_main ul li').on('focusin mouseover', function(){
+      $(this).addClass('on').siblings('li').removeClass('on');
+    })
+    .on('mouseleave', function() {
+      $(this).removeClass('on');
+    });   
+    //topBn
+    $(document).ready (function(){
+      $(".btn_hdtb_close").on("click",function(){
+        $(".header_top_banner").removeClass("on");
+        $(".btn_hdtb_open").focus();
+      });
+      $(".btn_hdtb_open").on("click",function(){
+        $(".header_top_banner").addClass("on");
+        $(".btn_hdtb_img").focus();
+      });
+    });
+  </script> 
+  <!-- //HEADER -->
+
+  <!-- container -->
+  <div id="container">
+   <!-- content -->
+   <div id="content">     
+
+    <!-- Title -->
+    <div class="tit_shop">기획전</div>
+    <!-- //Title -->    
+
+    <!-- 진행중인 기획전 없음 -->
+    <div class="no_data plan">
+      <div class="no_data_txt">
+        준비중 입니다.
+      </div>
+    </div>
+    <!-- //진행중인 기획전 없음 -->
+
+   </div>
+   <!-- content -->
+  </div>
+  <!--- //container -->
+  
+  <!-- FOOTER -->
+  <script src="../common/incFooter.js"></script>
+  <!--- //FOOTER -->
+ 
+ </div>
+ <!-- //wrapper -->
+
+</body>
+</html>

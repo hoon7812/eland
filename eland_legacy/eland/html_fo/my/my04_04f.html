@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>E랜드 통합몰</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" /> <!-- D : css 임포트 파일 임. 개발에 적용 x  :   Cache 문제로 css 파일 하나씩 풀어서 적용 중 -->
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/main_renewal.css" />
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/ui.js"></script>
+	<script type="text/javascript" src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<!-- 코딩페이지 에서만 씀 -->
+	<script type="text/javascript" src="../../pcweb/js/ui.header.js"></script>
+	<!-- //코딩페이지 에서만 씀 -->
+</head>
+<body>
+	<!-- skip navigation -->
+	<div id="skipNav">
+		<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<!-- wrapper -->
+	<div id="wrapper" class="renewal">
+		<!-- header_area -->
+		<script type="text/javascript" src="../inc/ui.inc.header.js"></script>
+		<!-- //header_area -->
+
+		<!-- container -->
+		<div id="container">
+			<!-- wing_area -->
+			<script type="text/javascript" src="../inc/ui.inc.wing.js"></script>
+			<!-- //wing_area -->
+			<!-- content -->
+			<div id="content">
+				<div class="location">
+					<ul>
+						<li><a class="home" href="#">HOME</a></li>
+						<li class="lct_txt"><span>마이페이지</span></li>
+					</ul>
+				</div>
+
+				<div class="mypage_wrap">
+					<!-- 마이페이지 top 정보 -->
+					<div class="mypage_top">
+						<div class="title">
+							<h2 class="tit_img high"><img src="../../images/pcweb/mypage/h2_mypage.gif" alt="마이페이지" /></h2> <!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : .high 추가 -->
+						</div>
+						<div class="set_my_info">
+							<div class="smi dv01">
+								<div class="s_cont">
+									<div class="box_info_grade">
+										<div class="l_scont">
+											<span class="ico_grd vip"><em class="ir">구매등급 아이콘  : VIP</em></span>
+											<!-- <span class="ico_grd gld"><em class="ir">구매등급 아이콘  : Gold</em></span>
+											<span class="ico_grd slv"><em class="ir">구매등급 아이콘  : Silver</em></span>
+											<span class="ico_grd brz"><em class="ir">구매등급 아이콘  : Bronze</em></span>
+											<span class="ico_grd"><em class="ir">구매등급 아이콘  :  Welcome</em></span> -->
+										</div>
+										<div class="r_scont">
+											<div class="grd_info">
+												<strong class="usr_name">한동기</strong> 님의 <br />1월 구매등급은 <span class="usr_grd vip">VVIP</span>입니다.<!-- vip, gld, slv, brz -->
+												<a href="#" class="ico_tooltip d_tooltip">툴팁</a>
+												<div class="set_tooltip">
+													<div class="tip_info">
+														<dl class="list_dot01">
+															<dt>VVIP 등급 혜택</dt>
+															<dd>APP 7%장바구니 (최대2만원)</dd>
+															<dd>APP 3천원 장바구니 (5만원 이상 구매시)</dd>
+															<dd>APP 3천원 배송비 (1만원 이상 구매시)</dd>
+														</dl>
+														<dl class="list_dot01 mt15">
+															<dt>VVIP 등급 유지를 위해서는 <a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade3.png" alt="구매 내역 확인" /></a></dt>
+															<dd>구매 건수는 <span class="txt_c01">3건</span>/구매 금액은 <span class="txt_c01">200,000원</span>이 필요합니다.<br />(산정기간 : 2018.02~2018.04)</dd>
+														</dl>
+
+														<p class="txt_s_info01 txt_c04 mt15"><em>*</em> 필요 구매 조건은 확인 시점에 따라 오차가 발생할 수 있습니다.</p>
+														<a href="#" class="tip_close">툴팁 닫기</a>
+													</div>
+												</div>
+											</div>
+											<a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade1.png" alt="등급혜택 받기" /></a> <!-- 버튼 추가 및 디자인 변경 -->
+											<a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade2.png" alt="등급산정 내역 확인" /></a> <!-- 버튼 추가 및 디자인 변경 -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- NGCPO-4890 [PC/MO] 포인트 UI개선 -->
+							<div class="smi dv03">
+								<div class="s_cont">
+									<div class="sum_point">
+										<dl>
+											<dt class="rep"><a href="javascript:">포인트</a></dt>
+											<dd class="rep"><a href="javascript:"><em>9,999,999</em>P</a></dd>
+											<dt>구매포인트</dt>
+											<dd><em>99,999</em>P</dd>
+											<dt>이벤트 포인트</dt>
+											<dd><em>99,999</em>P</dd>
+											<dt>당월 소멸예정 포인트</dt>
+											<dd><em>999,999</em>P</dd>
+										</dl>
+										<a class="arr_btn" href="#"><img src="../../images/pcweb/mypage/btn_grade4.png" alt="포인트 소멸안내" /></a>
+									</div>
+								</div>
+							</div>
+							<div class="smi dv04">
+								<div class="s_cont">
+									<div class="partic p02"> <!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : 2단 - .p02   3단 - .p03 -->
+										<dl>
+											<dt><a href="javascript:">예치금</a></dt>
+											<dd><a href="javascript:"><em>9,999,999</em>원</a></dd>
+										</dl>
+									</div>
+									<div class="partic p02">
+										<dl>
+											<dt><a href="javascript:">사용가능쿠폰</a></dt>
+											<dd><a href="javascript:"><em>99</em>장</a></dd>
+										</dl>
+									</div>
+
+									<!-- NGCPO-4890 [PC/MO] 포인트 UI개선 : 3단 케이스
+									<div class="partic p03">
+										<dl>
+											<dt><a href="javascript:">복지포인티</a></dt>
+											<dd><a href="javascript:"><em>9,999,999</em>원</a></dd>
+										</dl>
+									</div>
+									<div class="partic p03">
+										<dl>
+											<dt><a href="javascript:">예치금</a></dt>
+											<dd><a href="javascript:"><em>9,999,999</em>원</a></dd>
+										</dl>
+									</div>
+									<div class="partic p03">
+										<dl>
+											<dt><a href="javascript:">사용가능쿠폰</a></dt>
+											<dd><a href="javascript:"><em>99</em>장</a></dd>
+										</dl>
+									</div> -->
+								</div>
+							</div>
+							<!-- //NGCPO-4890 [PC/MO] 포인트 UI개선 -->
+						</div>
+					</div>
+					<!-- //마이페이지 top 정보 -->
+
+					<div class="mypage_cont">
+						<!-- my_l_cont -->
+						<div class="my_l_cont">
+							<!-- lnb_mypage -->
+							<div class="lnb_mypage">
+								<ul>
+									<li><strong class="stit">나의 쇼핑정보</strong>
+										<div class="depth2">
+											<ul>
+												<li class="on"><a href="#">주문/배송 조회</a></li>
+												<li><a href="#">취소/교환/반품 내역</a></li>
+												<li><a href="#">항공원 예약확인</a></li>
+												<li><a href="#">증빙 서류 발급</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><strong class="stit">나의 쇼핑 통장</strong>
+										<div class="depth2">
+											<ul>
+												<li><a href="#">포인트 조회</a></li>
+												<li><a href="#">쿠폰 조회</a></li>
+												<li><a href="#">예치금 조회</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><strong class="stit">나의 서비스 정보</strong>
+										<div class="depth2">
+											<ul>
+												<li><a href="#">나의 상품평</a></li>
+												<li><a href="#">나의 문의/답변</a></li>
+												<li><a href="#">나의 Mix&amp;Match</a></li>
+												<li><a href="#">나의 찜 목록</a></li>
+												<li><a href="#">최근 본 상품</a></li>
+												<li><a href="#">이벤트 참여 현황</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><strong class="stit">회원 정보</strong>
+										<div class="depth2">
+											<ul>
+												<li><a href="#">배송지 관리</a></li>
+												<li><a href="#">환불 계좌 관리</a></li>
+												<li><a href="#">주문정보 수신 설정</a></li>
+												<li><a href="#">개인정보 수정</a></li>
+												<li><a href="#">비밀번호 변경</a></li>
+												<li><a href="#">온라인 회원 탈퇴</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- //lnb_mypage -->
+
+							<!-- 고객센터 바로가기 -->
+							<div class="btn_customer_center">
+								<a href="#">
+									<div class="cc_top"><strong>고객센터 바로가기</strong></div>
+									<div class="cc_cont">
+										<img class="img" src="../../images/pcweb/common/img_customer_center.gif" alt="" />
+										<strong class="tel">1899-9500</strong>
+										<span class="txt">오전9시~오후6시<br />(주말/공휴일 휴무)</span>
+									</div>
+								</a>
+							</div>
+							<!-- //고객센터 바로가기 -->
+						</div>
+						<!-- //my_l_cont -->
+
+						<!-- my_r_cont -->
+						<div class="my_r_cont">
+							<div class="title">
+								<h2 class="tit_h2_dot">나의 찜 목록</h2>
+							</div>
+							<div class="txt_msg01">
+								<strong class="txt_c07">‘한동기’</strong> 님이 찜 한 모든 정보를 보실 수 있습니다.
+							</div>
+
+							<div class="tab_type02 full_free">
+								<ul class="d_tab">
+									<li><a href="#">찜 상품 (<strong>20</strong>건)</a></li>
+									<li><a href="#">찜 브랜드 (<strong>99</strong>건)</a></li>
+									<li><a href="#">찜 카테고리 (<strong>99</strong>건)</a></li>
+									<li><a href="#">찜 검색어 (<strong>99</strong>건)</a></li>
+									<li><a href="#">찜 기획전 (<strong>99</strong>건)</a></li>
+									<li class="on"><a href="#">찜 MIX&amp;MATCH (<strong>99</strong>건)</a></li>
+								</ul>
+							</div>
+<!-- 찜 기획전 -->
+
+							<div class="set_btn_up left">
+								<button type="button" class="btn03 c01"><span>MIX&amp;MATCH 전체 선택</span></button>
+								<button type="button" class="btn03 c01"><span>MIX&amp;MATCH 선택 삭제</span></button>
+								<button type="button" class="btn03 c03"><span>선택 MIX&amp;MATCH 해지</span></button>
+								<button type="button" class="btn03 c03"><span>종료 MIX&amp;MATCH 일괄 삭제</span></button>
+							</div>
+							<div class="list_mix mp_list type02">
+								<ul>
+									<li>
+										<div class="mix_box">
+											<!-- 조합 상품이 2개인 경우 -->
+											<div class="thumb_img2"><a href="#">
+												<span><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /></span>
+												<span><img src="../../images/pcweb/temp/_sample_240x240_2.jpg" alt="두번째 상품 이미지" /></span>
+											</a></div>
+										</div>
+<!-- 160318 -->
+										<p class="my_del_chks">
+											<label for="chk01"><input id="chk01" type="checkbox" class="chkbox" /> <span class="ir">선택</span></label>
+											<a href="#" class="my_del_chks_btn">삭제</a>
+										</p>
+<!-- //160318 -->
+									</li>
+									<li>
+										<div class="mix_box">
+											<!-- 조합 상품이 3개인 경우 -->
+											<div class="thumb_img3"><a href="#">
+												<span class="first"><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /></span>
+												<span><img src="../../images/pcweb/temp/_sample_240x240_2.jpg" alt="두번째 상품 이미지" /></span>
+												<span><img src="../../images/pcweb/temp/_sample_240x240_3.jpg" alt="세번째 상품 이미지" /></span>
+											</a></div>
+										</div>
+										<p class="my_del_chks">
+											<label for="chk01"><input id="chk01" type="checkbox" class="chkbox" /> <span class="ir">선택</span></label>
+											<a href="#" class="my_del_chks_btn">삭제</a>
+										</p>
+									</li>
+									<li>
+										<div class="mix_box">
+											<!-- 조합 상품이 4개인 경우 -->
+											<div class="thumb_img4"><a href="#">
+												<span><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /></span>
+												<span><img src="../../images/pcweb/temp/_sample_240x240_2.jpg" alt="두번째 상품 이미지" /></span>
+												<span><img src="../../images/pcweb/temp/_sample_240x240_3.jpg" alt="세번째 상품 이미지" /></span>
+												<span><img src="../../images/pcweb/temp/_sample_240x240_4.jpg" alt="네번째 상품 이미지" /></span>
+											</a></div>
+										</div>
+										<p class="my_del_chks">
+											<label for="chk01"><input id="chk01" type="checkbox" class="chkbox" /> <span class="ir">선택</span></label>
+											<a href="#" class="my_del_chks_btn">삭제</a>
+										</p>
+									</li>
+
+									<li>
+										<div class="mix_box">
+											<!-- 품절인 경우 -->
+											<div class="thumb_img2"><a href="#">
+												<div class="mp_thumb_soldout"><span>해당 Mix&amp;Match<br />상품이<br />삭제 되었습니다</span></div>
+												<span><img src="../../images/pcweb/temp/_sample_240x240_1.jpg" alt="첫번째 상품 이미지" /></span>
+												<span><img src="../../images/pcweb/temp/_sample_240x240_2.jpg" alt="두번째 상품 이미지" /></span>
+											</a></div>
+										</div>
+										<p class="my_del_chks">
+											<label for="chk01"><input id="chk01" type="checkbox" class="chkbox" /> <span class="ir">선택</span></label>
+											<a href="#" class="my_del_chks_btn">삭제</a>
+										</p>
+									</li>
+								</ul>
+							</div>
+							<!-- 페이징 -->
+							<div class="box_page">
+								<span class="num">
+									<a class="btn_paging_first" href="#"><img src="../../images/pcweb/common/btn_paging_first.gif" alt="처음페이지이동" /></a>
+									<a class="btn_paging_prev" href="#"><img src="../../images/pcweb/common/btn_paging_prev.gif" alt="이전페이지이동" /></a>
+									<a href="#" class="on">1</a>
+									<a href="#">2</a>
+									<a href="#">3</a>
+									<a href="#">4</a>
+									<a href="#">5</a>
+									<a href="#">6</a>
+									<a href="#">7</a>
+									<a href="#">8</a>
+									<a href="#">9</a>
+									<a href="#">10</a>
+									<a class="btn_paging_next" href="#"><img src="../../images/pcweb/common/btn_paging_next.gif" alt="다음페이지이동" /></a>
+									<a class="btn_paging_end" href="#"><img src="../../images/pcweb/common/btn_paging_end.gif" alt="마지막페이지이동" /></a>
+								</span>
+							</div>
+							<!-- //페이징 -->
+<!-- 내역 없을 때 -->
+							<div class="no_data ordlist">
+								<p class="no_data_txt">
+									등록된 찜 MIX&amp;MATCH가 없습니다.
+								</p>
+							</div>
+<!-- //내역 없을 때 -->
+
+<!-- //찜 기획전 -->
+						</div>
+						<!-- //my_r_cont -->
+					</div>
+				</div>
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- footer -->
+		<script type="text/javascript" src="../inc/ui.inc.footer.js"></script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

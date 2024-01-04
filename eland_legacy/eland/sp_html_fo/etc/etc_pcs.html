@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>Shoopen | 대량구매</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/pcweb/sp_pcweb/common/ico_sp.ico" />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap&subset=korean&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/eland_sub.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/sp_pcweb/common.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/sp_pcweb/etc.css" />
+	<script src="../../common/js/jquery-1.11.3.min.js"></script>
+	<script src="../../pcweb/js/idangerous.swiper.min.js"></script>
+	<script src="../../pcweb/js/jquery-ui.js"></script>
+	<script src="../../pcweb/js/sp_ui.ori.js"></script>
+	<script src="../../pcweb/js/sp_ui.js"></script>
+
+</head>
+<body>
+	<!-- wrapper -->
+	<div id="wrapper" class="shoopen">
+
+		<div id="skipNav">
+			<a href="#content" onClick="document.getElementById('content').tabIndex = -1;document.getElementById('content').focus();return false;">컨텐츠바로가기</a>
+			<a href="#d_gnb" onClick="document.getElementById('header').tabIndex = -1;document.getElementById('header').focus();return false;">메뉴바로가기</a>
+		</div>
+
+		<!-- HEADER -->
+		<script src="../common/incHeader.js"></script>
+		<!-- //HEADER -->
+
+		<!-- container -->
+		<div id="container">	
+			<!-- content -->
+			<div id="content" role="main">
+
+				<div class="etcPcs">
+					<div>
+						<h2>
+							<strong>대량구매/협업문의</strong>
+							<span><i>슈</i><i>펜</i><i>은</i> <i>함</i><i>께</i><i>하</i><i>실</i> <i>모</i><i>든</i> <i>분</i><i>들</i><i>께</i> <i>언</i><i>제</i><i>나</i> <i>열</i><i>려</i><i>있</i><i>습</i><i>니</i><i>다.</i></span>
+						</h2>
+						<div class="tx">2013년 아시아 최초 신발SPA로 시작한 슈펜은<br>2021년 신발 플랫폼으로 도약을 준비하고 있습니다.<br><br>홀세일 비즈니스, 브랜드 콜라보레이션, 인플루언서 협업,<br>서비스 제휴 등 메일 주시면 검토, 회신드리겠습니다.</div>
+						<div class="mail">대표이메일<a href="#mailTo:contact_shoopen@eland.co.kr ">contact_shoopen@eland.co.kr </a></div>
+						<ul class="lst">
+							<li><span><img src="../../images/pcweb/sp_pcweb/etc/ico_pcs_0.png" alt=""><em>홀세일 비즈니스</em></span></li>
+							<li><span><img src="../../images/pcweb/sp_pcweb/etc/ico_pcs_1.png" alt=""><em>브랜드 콜라보레이션</em></span></li>
+							<li><span><img src="../../images/pcweb/sp_pcweb/etc/ico_pcs_2.png" alt=""><em>인플루언서 협업</em></span></li>
+							<li><span><img src="../../images/pcweb/sp_pcweb/etc/ico_pcs_3.png" alt=""><em>서비스 제휴</em></span></li>
+						</ul>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						var startD = 500
+						setTimeout(function(){
+							$('.etcPcs').addClass('on')
+						},startD)
+						setTimeout(function(){
+							sqcAin('.etcPcs h2 span i', 160, 200)
+						},400+startD)
+						setTimeout(function(){
+							var rdBx = $('.etcPcs .lst li')
+							for (var  i = 0; i < rdBx.length; i++) {
+								rdBx.eq(i).each(function() {
+									var $this = $(this)
+									$this.delay(780*i).animate({
+										opacity:0
+									},{
+										duration:200,
+										done: function(now, fx){
+											$this.css({transform:'scale(1)',opacity:1})
+											$this.addClass('on')
+										}
+									})
+								})
+							}
+						},4500+startD)
+					})
+				</script>
+
+
+			</div>
+			<!-- content -->
+		</div>
+		<!--- //container -->
+
+		<!-- FOOTER -->
+		<script src="../common/incFooter.js"></script>
+		<!-- //FOOTER -->
+	</div>
+	<!-- //wrapper -->
+
+</body>
+</html>

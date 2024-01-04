@@ -1,0 +1,12 @@
+# docker build -t ngcp-mo_webroot:${tag} . -f mobile/DockerFile
+
+FROM nginx:1.15.1-alpine
+
+ENV WWW_BASE /usr/local/nginx
+
+ADD mobile/nginx.conf /etc/nginx/nginx.conf
+ADD . ${WWW_BASE}/fo_webroot
+
+EXPOSE 80
+
+CMD nginx -g 'daemon off;'

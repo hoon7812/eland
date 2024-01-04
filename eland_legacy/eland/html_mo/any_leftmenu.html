@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no">
+<title>anybody</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean&family=Roboto:wght@400;700&display=swap">
+<link rel="stylesheet" href="../css/mobile/eland.css" type="text/css">
+<link rel="stylesheet" href="../css/mobile/main_new.css" type="text/css">
+
+<link rel="shortcut icon" href="../images/mobile/icon/any_favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="../images/mobile/icon/any_200x200.png">
+<link rel="apple-touch-icon-precomposed" href="../images/mobile/icon/any_200x200.png">
+<link rel="shortcut icon" sizes="192x192" type="image/png" href="../images/mobile/icon/any_192x192.png">
+<link rel="shortcut icon" sizes="160x160" type="image/png" href="../images/mobile/icon/any_160x160.png">
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../mobile/js/jquery.plugin.mobile.js"></script>
+</head>
+<body class="left_menu_bg anybody">
+<!--
+	브랜드몰별 클래스
+	모던하우스 : modern
+-->
+	<!-- LEFT MENU LANDING VER -->
+	<div id="leftMenu" class="lft_menu_wrap">
+		<div class="lft_cont">
+			<!-- FIXED AREA -->
+			<div class="lft_hdr">
+				<div class="lft_fixed_area">
+					<div class="lnb_hd">
+						<div class="hd">
+							<h1><a href="renewal_Main.html"><b class="ir">메인 바로가기</b></a></h1>
+							<!-- <div class="login_id">한동기님</div> -->
+							<a class="login" href="#">Login</a> 
+							<!-- <a class="logout" href="#">Logout</a> -->
+						</div>
+					</div>
+					
+					<div class="lnb_tnb">
+						<ul>
+							<li class="myp"><a href="#"><b>마이페이지</b></a></li>
+							<li class="drv"><a href="#"><b>주문/배송조회</b></a></li>
+							<li class="wish"><a href="#"><b>나의 찜목록</b></a></li>
+							<li class="cpn"><a href="#"><b>쿠폰 <em>12</em></b></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //FIXED AREA -->
+			
+			<!-- 최근 본 상품 -->
+			<div class="box_rectly_prd">
+				<div class="s_title">
+					<h2>최근 본 상품</h2>
+				</div>
+				<div class="box_no_result">최근 본 상품이 없습니다.</div>
+				<div id="listRectlyPrd" class="list_only_thumb1">
+					<div class="swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_0.jpg" alt="상품 네임"></span></a>
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_1.jpg" alt="상품 네임"></span></a>
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_2.jpg" alt="상품 네임"></span></a>
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_3.jpg" alt="상품 네임"></span></a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_4.jpg" alt="상품 네임"></span></a>
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_5.jpg" alt="상품 네임"></span></a>
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_6.jpg" alt="상품 네임"></span></a>
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_7.jpg" alt="상품 네임"></span></a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_8.jpg" alt="상품 네임"></span></a>
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_9.jpg" alt="상품 네임"></span></a>
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_0.jpg" alt="상품 네임"></span></a>
+								<a href="#"><span><img src="../images/mobile/temp/any_192x192_1.jpg" alt="상품 네임"></span></a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="pagination">
+						<a href="#none" class="swiper-pagination-switch"><b class="ir">1번 이미지 보기</b></a>
+						<a href="#none" class="swiper-pagination-switch"><b class="ir">2번 이미지 보기</b></a>
+						<a href="#none" class="swiper-pagination-switch"><b class="ir">3번 이미지 보기</b></a>
+					</div>
+				</div>
+				<a class="btn_txt_more" href="#"><span class="ir">최근 본 상품</span>전체보기</a>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					//$('#main_bn_wrap .swiper-slide').show(); 
+					var listRectlyPrd = new Swiper('#listRectlyPrd .swiper-container',{
+						createPagination: false,
+						simulateTouch: true,
+						calculateHeight: true,
+						pagination: '#listRectlyPrd .pagination',
+						loop: true,
+						paginationClickable: true
+					});
+					console.log(listRectlyPrd);
+					$(window).resize(function(){
+						listRectlyPrd.reInit();
+					});
+				});
+			</script>
+			<!-- //최근 본 상품 -->
+
+			<!-- 카테고리 -->
+			<div class="box_cate_menu">
+				<div class="s_title">
+					<h2>카테고리</h2>
+				</div> 
+				<div class="list_cate">
+					<ul>
+						<li>
+							<a href="#">
+								<em><img src="../images/mobile/temp/any_ctg_0.jpg" alt="란제리"></em><!-- 2021-07-28 : em추가 -->
+								<span>란제리</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em><img src="../images/mobile/temp/any_ctg_1.jpg" alt="라운지"></em>
+								<span>라운지</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em><img src="../images/mobile/temp/any_ctg_2.jpg" alt="액티브"></em>
+								<span>액티브</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em><img src="../images/mobile/temp/any_ctg_3.jpg" alt="주니어"></em>
+								<span>주니어</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em><img src="../images/mobile/temp/any_ctg_4.jpg" alt="베이직"></em>
+								<span>베이직</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em><img src="../images/mobile/temp/any_ctg_5.jpg" alt="남성"></em>
+								<span>남성</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="brdAbout">
+					<a href="#"><img src="../images/mobile/temp/any_leftmenu_bn.jpg" alt="ABOUT ANYBODY 데일리 라이프 스타일"></a>
+				</div>
+			</div>
+			<!-- //카테고리 -->
+
+			<!-- [v2-2] : 공식 브랜드 몰 -->
+			<div class="box_brand_mall">
+				<div class="s_title">
+					<h2>공식 브랜드 몰</h2>
+				</div>
+				<div class="list_brand_mall">
+					<ul>
+						<li><a href="#">
+							<em><img src="../images/mobile/renewal/@sample_lnb_brand_126x90.png" alt=""></em>
+							<span>인디고뱅크 키즈</span>
+						</a></li>
+						<li><a href="#">
+							<em><img src="../images/mobile/renewal/@sample_lnb_brand_126x90.png" alt=""></em>
+							<span>인디고뱅크 키즈</span>
+						</a></li>
+						<li><a href="#">
+							<em><img src="../images/mobile/renewal/@sample_lnb_brand_126x90.png" alt=""></em>
+							<span>인디고뱅크 키즈</span>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //[v2-2] : 공식 브랜드 몰 -->
+
+			<!-- BTN PREV PAGE -->
+			<a class="btn_cmn_x" href="#"><span class="ir">이전 페이지로 돌아가기</span></a>
+			<!-- //BTN PREV PAGE -->
+		</div>
+
+		<footer class="left_menu_footer">
+			<div class="tel_customer_center"><a href="tel:1899-9500">고객센터 <span>1899-9500</span></a></div>
+		</footer>
+	</div>
+	<!-- //LEFT MENU LANDING VER -->
+
+	<script type="text/javascript" src="../mobile/js/ui.mobile.renewal.js"></script>
+<script type="text/javascript">
+	var $body = $('body');
+	var currentBrandClass ='';
+	$('#mallSelect').on('change',function(e) {
+		var val = $(this).attr('value');
+		if(currentBrandClass) {
+			$body.removeClass(currentBrandClass);
+		}
+		if(val=='folder') {
+			location.href="renewal_leftmenu_type3.html";
+		} else if(val=='modern') {
+			location.href="renewal_leftmenu_type4.html";
+		} else if(val=='kims') {
+			location.href="renewal_leftmenu_type5.html";
+		} else if(val=='') {
+			location.href="renewal_leftmenu.html";
+		}
+		$body.addClass(val);
+		currentBrandClass = val;
+	});
+
+</script>
+</body>
+</html>

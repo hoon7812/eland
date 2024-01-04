@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>E랜드 통합몰 | 코딩협의사항</title>
+	<link rel="stylesheet" type="text/css" href="../../css/pcweb/common.css">
+	<link rel="stylesheet" type="text/css" href="./css/guide.css">
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<h1 class="guide-tit-h1">코딩협의사항</h1>
+<div class="guide-section">
+	<h2 class="guide-tit-h2">환경</h2>
+	<ol class="guide-ol-list">
+		<li>
+			<strong>01. Doctype</strong>
+			<div class="cont">html5 , &lt;!doctype html&gt;</div>
+		</li>
+
+		<p>&nbsp;</p>
+		<li>
+			<strong>02. 인코딩타입</strong>
+			<div class="cont">utf-8</div>
+		</li>
+
+		<li>
+			<strong>03. 크로스브라우징</strong>
+			<div class="cont">IE8이상, 크롬, 사파리, 파이어폭스, 오페라(최신 버전 기준)</div>
+		</li>
+	</ol>
+
+	<h2 class="guide-tit-h2">html 규칙</h2>
+	<ol class="guide-ol-list">
+		<li>
+			<strong>01. 들여쓰기</strong>
+			<div class="cont">앞은 탭(1탭=4스페이스)으로 들여쓰고 그 이외 부분은 1스페이스로 합니다.</div>
+		</li>
+
+		<li>
+			<strong>02. 특수기호</strong>
+			<div class="cont">
+				 &lt; , &gt; , &amp; 등은 html 코드에 사용되어 오류가 날 수 있으므로 아래와 같이 표기합니다.<br />
+				&lt; = &lt;lt;<br />
+				&gt; = &gt;gt;<br />
+				&amp; = &amp;amp;
+			</div>
+		</li>
+	</ol>
+
+	<h2 class="guide-tit-h2">css 규칙</h2>
+	<ol class="guide-ol-list">
+		<li>
+			<strong>01. style 순서</strong>
+			<div class="cont">
+				<div class="guide-data-table01">
+				<table summary="css-style 선언 순서 안내 표입니다. 순서, 속성, 의미 순으로 나옵니다. ">
+					<colgroup>
+						<col width="33%" /><col width="33%" /><col width="34%" />
+					</colgroup>
+					<thead>
+					<tr>
+						<th scope="col">순서</th>
+						<th scope="col">속성</th>
+						<th scope="col">의미</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="align-c">1</td>
+						<td>display</td>
+						<td>표시</td>
+					</tr>
+					<tr>
+						<td class="align-c">2</td>
+						<td>visibility</td>
+						<td>표시</td>
+					</tr>
+					<tr>
+						<td class="align-c">3</td>
+						<td>overflow</td>
+						<td>넘침</td>
+					</tr>
+					<tr>
+						<td class="align-c">4</td>
+						<td>float</td>
+						<td>흐름</td>
+					</tr>
+					<tr>
+						<td class="align-c">5</td>
+						<td>position(left,top,z-index)</td>
+						<td>위치</td>
+					</tr>
+					<tr>
+						<td class="align-c">6</td>
+						<td>width &amp; height</td>
+						<td>크기</td>
+					</tr>
+					<tr>
+						<td class="align-c">7</td>
+						<td>margin &amp; padding</td>
+						<td>간격</td>
+					</tr>
+					<tr>
+						<td class="align-c">8</td>
+						<td>border</td>
+						<td>보더</td>
+					</tr>
+					<tr>
+						<td class="align-c">9</td>
+						<td>background</td>
+						<td>배경</td>
+					</tr>
+					<tr>
+						<td class="align-c">10</td>
+						<td>font</td>
+						<td>폰트</td>
+					</tr>
+					<tr>
+						<td class="align-c">11</td>
+						<td>etc</td>
+						<td>기타 나머지 속성</td>
+					</tr>
+					</tbody>
+				</table>
+				</div>
+			</div>
+		</li>
+
+		<li>
+			<strong>02. 네이밍 규칙</strong>
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>id는 camelcase 방식으로 하며, class는 underbar 방식으로 사용한다. (ex: id="RollingBnr" , class="set_btn")</li>
+					<li>네이밍은 형태-의미-상태 순으로 조합하며, 최대 3단계를 넘기지 않도록 권장한다.</li>
+				</ul>
+				<div class="guide-data-table01 mt10">
+				<table summary="css 네이밍 안내 표입니다. 순서, 속성, 의미 순으로 나옵니다. ">
+					<colgroup>
+						<col width="33%" /><col width="33%" /><col width="34%" />
+					</colgroup>
+					<thead>
+					<tr>
+						<th scope="col">클래스 네임</th>
+						<th scope="col">형태</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="align-c">btn-xxx</td>
+						<td>버튼</td>
+					</tr>
+					<tr>
+						<td class="align-c">list-xxx</td>
+						<td>리스트</td>
+					</tr>
+					<tr>
+						<td class="align-c">box-xxx</td>
+						<td>박스</td>
+					</tr>
+					<tr>
+						<td class="align-c">기타</td>
+						<td>네이밍 규칙에 맞게 생성</td>
+					</tr>
+					</tbody>
+				</table>
+				</div>
+			</div>
+		</li>
+	</ol>
+
+	<h2 class="guide-tit-h2">image 규칙</h2>
+	<ol class="guide-ol-list">
+		<li>
+			<strong>01. 이미지 타입</strong>
+			<div class="cont">
+				<ul class="guide-ul-list">
+					<li>gif : 기본</li>
+					<li>jpg : 인물이나 실사 이미지와 같이, 색 변화 및 그라데이션이 풍부한 경우 및 운영성 이미지에 주로 사용한다.<br />
+						(Save for web 기준 : Original 혹은 JPG Quality 90 이상)
+					</li>
+					<li>png : 투명한 이미지일 경우 사용함.</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<strong>02. 네이밍 규칙</strong>
+			<div class="cont">
+				<div class="guide-data-table01">
+				<table summary="이미지 네이밍 안내 표입니다. 순서, 속성, 의미 순으로 나옵니다. ">
+					<colgroup>
+						<col width="33%" /><col width="33%" /><col width="34%" />
+					</colgroup>
+					<thead>
+					<tr>
+						<th scope="col">네임</th>
+						<th scope="col">형태</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="align-c">btn_xxx</td>
+						<td>버튼</td>
+					</tr>
+					<tr>
+						<td class="align-c">bg_xxx</td>
+						<td>배경</td>
+					</tr>
+					<tr>
+						<td class="align-c">ico_xxx</td>
+						<td>아이콘</td>
+					</tr>
+					<tr>
+						<td class="align-c">bul_xxx</td>
+						<td>블릿</td>
+					</tr>
+					<tr>
+						<td class="align-c">flag_xxx</td>
+						<td>플래그</td>
+					</tr>
+					<tr>
+						<td class="align-c">img_페이지명_이미지성격</td>
+						<td>비주얼 이미지</td>
+					</tr>
+
+					<tr>
+						<td class="align-c">@sample_300(너비)X300(높이)</td>
+						<td>샘플 이미지</td>
+					</tr>
+					</tbody>
+				</table>
+				</div>
+			</div>
+		</li>
+	</ol>
+</div>
+</body>
+</html>
